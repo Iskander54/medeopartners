@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="page-heading header-text layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 style="color:white;">Ils nous font confiance </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- testimonial section start -->
+ <div class="testimonial_section layout_padding">
+     <div id="my_carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+           <li data-target="#my_carousel" data-slide-to="0" class="active"></li>
+           <li data-target="#my_carousel" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+           <div class="carousel-item active">
+              <div class="container">
+                 <div class="testimonial_section_2">
+                    <div class="row">
+                       <div class="col-md-6">
+                          <div class="testimonial_box">
+                             <div class="jonimo_taital_main">
+                                <h4 class="jonimo_text">Fintis </h4>
+                                <div class="quick_icon"><i class="fa-solid fa-quote-right"></i></div>
+                                <div class="quick_icon_1"><i class="fa-solid fa-quote-right"></i></div>
+                             </div>
+                             <img src="{{url_for('static',filename='images/fintis_logo.png') }}" class="logo_temoignages">
+                             <p class="dummy_text justify">MEDEO est un partenaire efficace, à l’écoute et soucieux de nos besoins très souvent changeants</p>
+                          </div>
+                       </div>
+                       <div class="col-md-6">
+                          <div class="testimonial_box">
+                             <div class="jonimo_taital_main">
+                                <h4 class="jonimo_text">Empruntis l’agence Angers</h4>
+                                <div class="quick_icon"><i class="fa-solid fa-quote-right"></i></div>
+                                <div class="quick_icon_1"><i class="fa-solid fa-quote-right"></i></div>
+                             </div>
+                             <img src="{{url_for('static',filename='images/empruntis_logo.png') }}" class="logo_temoignages">
+                             <p class="dummy_text justify">Nous sommes fiers de notre partenariat avec MEDEO. Une entente joviale, une rigueur à tous les étages et surtout une capacité à dépasser nos attentes en termes de qualité de service.</p>
+
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="carousel-item">
+              <div class="container">
+                 <div class="testimonial_section_2">
+                    <div class="row">
+                       <div class="col-md-6">
+                          <div class="testimonial_box">
+                             <div class="jonimo_taital_main">
+                                <h4 class="jonimo_text">Bamana Solutions</h4>
+                                <div class="quick_icon"><i class="fa-solid fa-quote-right"></i></div>
+                                <div class="quick_icon_1"><i class="fa-solid fa-quote-right"></i></div>
+                             </div>
+                             <img src="{{url_for('static',filename='images/bamana_solutions_logo.jpeg') }}" class="logo_temoignages">
+                             <p class="dummy_text justify">Les compétences et l'expertise d'Avi et Israel nous ont beaucoup aidé dans la creation de notre entreprise.
+                              La réactivité et la disponibilité des associés sont très appreciable durant une phase aussi dense et stressante que la création d'une entreprise.</p>
+
+                          </div>
+                       </div>
+                       <div class="col-md-6">
+                          <div class="testimonial_box">
+                             <div class="jonimo_taital_main">
+                                <h4 class="jonimo_text">Energy Consulting</h4>
+                                <div class="quick_icon"><i class="fa-solid fa-quote-right"></i></div>
+                                <div class="quick_icon_1"><i class="fa-solid fa-quote-right"></i></div>
+                             </div>
+                             <img src="{{url_for('static',filename='images/energy_consulting_logo.png') }}" class="logo_temoignages">
+                             <p class="dummy_text justify">Je suis ravi de la prestation fournie par Medeo Partners que j'ai rencontré récemment. Le prrofessionnalisme de l'équipe, leurs compétences et leur capacité à comprendre mes besoins m'ont vraiment impressionné. Ils ont pris le temps de répondre à toutes mes questions avec une grande attention aux détails. Je recommande vivement cet expert comptable à quiconque recherche un service fiable et de haute qualité. Merci encore pour votre travail exceptionnel !"</p>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+        <!-- blog section start -->
+        <div class="blog_section layout_padding padding-bottom">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="blog_img"><img src="{{ url_for('static',filename='images/african-american.jpg') }}"></div>
+               </div>
+               <div class="col-md-6">
+                  <h1 class="blog_taital">Développez facilement votre entreprise</h1>
+                  <p class="blog_text justify">Nos clients nous félicitent pour nos excellents résultats et nos conseils avisés. Notre client a été satisfait de notre service rapide, facile et personnalisé qui s'appuie sur les connaissances de notre expert en comptabilité et en fiscalité et sur la livraison à temps.</p>
+                  <div class="read_bt"><a href="nouscontacter">Contactez Nous</a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+{% endblock content %}

@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!-- Page Content -->
+    <div class="page-heading header-text layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 style="color:white;">Audit</h1>
+              <span>Nos experts sont spécialisés dans l'audit, le conseil ainsi que les services comptables, fiscaux et juridiques.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+<br><br>
+<div class="container">
+    <div class="panel-group" id="accordionserv">
+    <div class="row">
+            <div class="col-lg-4">
+                <div class="panel accordion">
+                        <div class="panel-heading business-head" data-target="#audit-contractuel" data-toggle="collapse" aria-expanded="true">
+                            <span class="panel-title">Audit-Contractuel</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                        </div>
+                        <div class="panel-heading business-head" data-target="#commissariat-aux-comptes" data-toggle="collapse" aria-expanded="false">
+                            <span class="panel-title">Commissariat aux comptes</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                        </div>
+                    </div>
+                </div>
+        <div class="col-lg-8">
+            <div class="panel-collapse collapse show" id="audit-contractuel" data-parent="#accordionserv">
+                <div class="panel-body justify" data-parent="#accordionserv">
+                    <img src="{{ url_for('static',filename='images/service/single_service_01.jpg') }}">
+                    <br/>
+                    <h1>Audit-Contractuel</h1>
+                    <div class="text_nos_expertises">
+                        Nous effectuons un examen indépendant et systématique des états financiers de nos clients en tant qu'auditeurs qualifiés, en conformité avec les normes d'audit.
+                        <br><br>
+                        Le but de notre audit contractuel est de fournir une opinion sur la fiabilité et la conformité des états financiers avec les principes comptables officiels.
+                        <br><br>
+                        Il permet également de détecter les erreurs, les omissions et les irrégularités financières.</p>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="commissariat-aux-comptes" data-parent="#accordionserv">
+                <div class="panel-body justify" data-parent="#accordionserv">
+                    <img src="{{ url_for('static',filename='images/service/single_service_04.jpg') }}">
+                    <h4>Comissariat aux comptes</h4>
+                    <p>Nous fournissons un service de commissariat aux comptes en tant que commissaires indépendants pour garantir la fiabilité et la transparence des états financiers de nos clients.
+                        <br><br>
+                        Notre rôle consiste à examiner les comptes annuels de votre entreprise, à vérifier la conformité aux normes comptables, à formuler des opinions sur la sincérité et la justesse des états financiers et à signaler tout problème de conformité.</p>
+                </div>
+            </div>
+                <div class="panel-collapse collapse" id="cessions" data-parent="#accordionserv">
+                    <div class="panel-body justify">
+                        <img src="{{ url_for('static',filename='images/service/single_service_03.jpg') }}">
+                        <h4>Cessions</h4>
+                        <p>Nous pouvons aider une entreprise lors d'une cession en lui fournissant des services tels que :
+                            <br><br>
+                            · Évaluation de la valeur de l'entreprise
+                            <br><br>
+                            · Conseil fiscal sur les conséquences de la cession
+                            <br><br>
+                            · Assistance à la préparation des documents financiers pour la transaction
+                            <br><br>
+                            · Conseil sur les meilleures stratégies pour maximiser la valeur de la cession
+                            <br><br>
+                            · Assistance à la négociation des termes financiers de la transaction.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel-collapse collapse" id="fusions-acquisitions" data-parent="#accordionserv">
+                        <div class="panel-body justify">
+                            <img src="{{ url_for('static',filename='images/service/single_service_02.jpg') }}">
+                            <h4>Fusions & acquisitions</h4>
+                            <p>Nous pouvons guider les entreprises dans les fusions et acquisitions en les aidant à :
+                                <br><br>
+                                · Évaluer la performance financière de la société cible
+                                <br><br>
+                                · Minimiser les coûts fiscaux liés à la transaction
+                                <br><br>
+                                · Effectuer une analyse approfondie de la situation financière et comptable de la société cible
+                                <br><br>
+                                · Négocier les termes financiers de la transaction
+                                <br><br>
+                                · Mettre en place les aspects financiers de la transaction.</p>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+        <!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script type="text/javascript" src="static/calendly/widget.js" ></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="hh">Prendre RDV', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
+<!-- Calendly badge widget end -->
+
+<script>
+    $(document).ready(function() {
+        document.querySelector("body > div.calendly-badge-widget > div > span").style.display = 'none';
+        document.querySelector("body > div.calendly-badge-widget > div > span").style.visibility = 'hidden'
+
+    });
+
+
+</script>
+
+
+{% endblock content %}

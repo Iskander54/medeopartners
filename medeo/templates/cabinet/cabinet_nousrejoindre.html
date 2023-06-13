@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- donate section start -->
+<div class="donate_section layout_padding">
+    <div class="container"><br/>
+       <h1 class="donate_taital" >Rejoignez l'aventure !</h1>
+       <div class="donate_taital_main">
+          <div id="main_slider" class="carousel slide" data-ride="carousel">
+             <div class="carousel-inner">
+                <div class="carousel-item active">
+                   <div class="donate_right">
+                     <p class="dummy_text_joinus">Vous souhaitez rejoindre une entreprise dynamique et innovante qui valorise ses employés et leur développement personnel et professionnel ? Alors, vous êtes au bon endroit !</p>
+                     <p class="dummy_text_joinus">Chez MEDEO PARTNERS, nous sommes constamment à la recherche de nouveaux talents pour rejoindre notre équipe. Nous sommes convaincus que chaque personne peut apporter sa contribution et nous sommes fiers de pouvoir offrir des opportunités de carrière passionnantes à nos collaborateurs.</p>
+                     <p class="dummy_text_joinus">Nous sommes à la recherche de personnes motivées, créatives et enthousiastes qui partagent nos valeurs d'intégrité, de respect et d'excellence. Que vous soyez en début de carrière ou que vous possédiez une expérience solide dans votre domaine, nous sommes ouverts à toutes les candidatures.</p>
+                     <p class="dummy_text_joinus">Chez MEDEO PARTNERS, nous valorisons la diversité et nous sommes engagés à offrir un environnement de travail inclusif et équitable pour tous nos employés. Nous offrons également une large gamme d'avantages et d'opportunités de développement pour aider nos employés à atteindre leur plein potentiel.</p>
+                     <p class="dummy_text_joinus">Si vous êtes prêt à relever des défis passionnants et à travailler dans un environnement stimulant et convivial, rejoignez-nous dès aujourd'hui !</p>
+                      </p>
+                      <div class="contact_main">
+                        <form class="submitForm" method="post" enctype="multipart/form-data" action="">
+                            {{ form.hidden_tag() }}
+                            {{ form.csrf_token }}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ form.firstname.label(class="form-control-label white") }}
+                                            {% if form.firstname.errors %}
+                                                {{ form.firstname(class="form-control form-control-lg is-invalid") }}
+                                                <div class="invalid-feedback">
+                                                    {% for error in form.firstname.errors %}
+                                                        <span>{{ error }}</span>
+                                                    {% endfor %}
+                                                </div>
+                                            {% else %}
+                                                {{ form.firstname(class="form-control form-control-lg") }}
+                                            {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ form.lastname.label(class="form-control-label white") }}
+                                        {% if form.lastname.errors %}
+                                            {{ form.lastname(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.lastname.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.lastname(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ form.phonenumber.label(class=" white") }}
+                                        {% if form.phonenumber.errors %}
+                                            {{ form.phonenumber(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.phonenumber.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.phonenumber(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ form.email.label(class="form-control-label white") }}
+                                        {% if form.email.errors %}
+                                            {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.email.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.email(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        {{ form.file.label(class="form-control-label white") }}
+                                        {% if form.file.errors %}
+                                            {{ form.file(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.file.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.file(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row recaptcha">
+                                        {{form.recaptcha}}
+                                        {{ form.submit(class="btn btn-outline-info btn-lg") }}
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- donate section end -->
+{% endblock content %}

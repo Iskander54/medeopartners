@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  medeo:
+    build: .
+    container_name: medeo
+    ports:
+      - 5000:5000
+    volumes:
+      - ./:/app
+    environment:
+      - EMAIL_SERVER=maildev
+      - EMAIL_PORT=1025
+
+  maildev:
+    image: maildev/maildev
+    container_name: maildev
+    ports:
+    - 1080:1080
+    - 1025:1025

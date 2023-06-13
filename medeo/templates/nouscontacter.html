@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+{% block content %}
+      <!-- contact section start -->
+      <div class="contact_section layout_padding">
+        <div class="container">
+        </br>
+           <h1 class="contact_taital">Contactez-nous !</h1>
+           <p class="contact_text">Remplissez le formulaire et nous reviendrons vers vous aux plus vite !</p>
+           <div class="contact_section_2 layout_padding">
+              <div class="row">
+                 <div class="col-md-6">
+                    <div class="contact_main">
+                        <form class="submitForm" method="post" enctype="multipart/form-data" action="">
+                            {{ form.hidden_tag() }}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ form.firstname.label(class="form-control-label white") }}
+                                            {% if form.firstname.errors %}
+                                                {{ form.firstname(class="form-control form-control-lg is-invalid") }}
+                                                <div class="invalid-feedback">
+                                                    {% for error in form.firstname.errors %}
+                                                        <span>{{ error }}</span>
+                                                    {% endfor %}
+                                                </div>
+                                            {% else %}
+                                                {{ form.firstname(class="form-control form-control-lg") }}
+                                            {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ form.lastname.label(class="form-control-label white") }}
+                                        {% if form.lastname.errors %}
+                                            {{ form.lastname(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.lastname.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.lastname(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ form.phonenumber.label(class=" white") }}
+                                        {% if form.phonenumber.errors %}
+                                            {{ form.phonenumber(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.phonenumber.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.phonenumber(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ form.email.label(class="form-control-label white") }}
+                                        {% if form.email.errors %}
+                                            {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.email.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.email(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        {{ form.subject.label(class="form-control-label white") }}
+                                        {% if form.subject.errors %}
+                                            {{ form.subject(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.subject.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.subject(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                {{ form.content.label(class="form-control-label white") }}
+                                {% if form.content.errors %}
+                                    {{ form.content(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.content.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.content(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <div class="row recaptcha">
+                                    {{form.recaptcha}}
+                                    {{ form.submit(class="btn btn-outline-info btn-lg") }}
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="map_main">
+                       <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.47396743264!2d2.2919001999999997!3d48.868240500000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fef9dc13b81%3A0xd10e353a0f7bb24a!2s42%20Rue%20de%20l&#39;Amiral%20Hamelin%2C%2075116%20Paris%2C%20France!5e0!3m2!1sfr!2sus!4v1683465461341!5m2!1sfr!2sus" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <!-- contact section end -->
+{% endblock content %}
