@@ -1,11 +1,21 @@
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
-
+# from app import *
 
 
 class Config:
 
-    load_dotenv()
+    # load_dotenv(override=True)
+
+
+    RECAPTCHA_PUBLIC_KEY= os.getenv('CAPTCHA_PUBLIC_KEY')
+    RECAPTCHA_PRIVATE_KEY=os.getenv('CAPTCHA_PRIVATE_KEY')
+    print('HELLO')
+    print(RECAPTCHA_PUBLIC_KEY)
+    print(RECAPTCHA_PRIVATE_KEY)
+
+
+
 
     # Google Cloud SQL (change this accordingly)
     PASSWORD ="**********"
@@ -37,5 +47,13 @@ class Config:
     RECAPTCHA_OPTIONS= {'theme':'black'}
     RECAPTCHA_PUBLIC_KEY= os.getenv('CAPTCHA_PUBLIC_KEY')
     RECAPTCHA_PRIVATE_KEY=os.getenv('CAPTCHA_PRIVATE_KEY')
+    print('HELLO')
+    print(RECAPTCHA_PUBLIC_KEY)
+    print(RECAPTCHA_PRIVATE_KEY)
+    # print(os.environ['CAPTCHA_PUBLIC_KEY'])
+    # print(os.environ.get('CAPTCHA_PUBLIC_KEY'))
+    # print(os.getenv('CAPTCHA_PUBLIC_KEY'))
+    # print(os.environ.get('CAPTCHA_PUBLIC_KEY', 'default value'))
+
     
 

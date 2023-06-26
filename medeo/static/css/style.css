@@ -192,7 +192,7 @@ img {
     display: flex!important;
     background: white;
     height: 0em;
-    min-height: 12vh;
+    min-height: 15vh;
     border-bottom: 3px solid #E91C2A;
 }
 
@@ -1593,4 +1593,5 @@ padding-right: 5%;
 
 .cyb{
     font-size: 1.2em;
+    color: rgba(0,0,0,.5);
 }
