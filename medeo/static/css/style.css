@@ -1227,7 +1227,7 @@ textarea#comment::placeholder {
     float: left;
     background-image: url(../images/page-heading-bg.jpeg);
     height: auto;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: 100%;
     padding-bottom: 90px;
 }
@@ -1619,13 +1619,14 @@ hr.hr_vertical{
   }
 
 .date_encart{
-    color: black;
-    background-color: #8e8e8e;
+    color: grey;
+    background-color: antiquewhite;
     margin: 3px;
 }
 
 .titre_article{
-    color:red;
+    color:black;
+    font-weight: bold;
 }
 
 .separation{
