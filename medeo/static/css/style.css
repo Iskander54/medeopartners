@@ -1617,3 +1617,34 @@ hr.hr_vertical{
     font-size: 12px;
     font-family: Roboto;
   }
+
+.date_encart{
+    color: black;
+    background-color: #8e8e8e;
+    margin: 3px;
+}
+
+.titre_article{
+    color:red;
+}
+
+.separation{
+    width: 60%;
+    margin: 0 auto 10px;
+}
+
+.debut_article{
+    color:black;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+  

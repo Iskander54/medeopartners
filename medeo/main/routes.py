@@ -71,3 +71,36 @@ def espace_clients():
     return render_template('espace_clients.html',title='Espace Clients')
 
 
+
+##############
+#      NEWS
+##############
+
+@main.route("/news_fiscalite")
+def news_fiscalite():
+    return render_template('/news/news_fiscalite.html',title='News Fiscalite')
+
+@main.route("/news_juridique")
+def news_juridique():
+    return render_template('/news/news_juridique.html',title='News Juridique')
+
+@main.route("/news_social")
+def news_social():
+    return render_template('/news/news_social.html',title='News Social')
+
+@main.route("/news_metiers")
+def news_metiers():
+    return render_template('/news/news_metiers.html',title='News Metiers')
+
+@main.route("/news_immobiliers")
+def news_immobiliers():
+    return render_template('/news/news_immobiliers.html',title='News Immobilier')
+
+
+##############
+##############
+
+@main.route("/newstransmissionbailrural")
+def newstransmissionbailrural():
+    return render_template('/news/fiscalite/transmissionbailrural.html',title='News Fiscalite')
+

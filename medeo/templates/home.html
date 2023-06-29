@@ -1,21 +1,5 @@
 {% extends "layout.html" %}
 {% block content %}
-<!-- <div class="intro">
-   <div class="container">
-     <div class="row">
-       <div class="col-md-12">
-         <div class="text-main">
-           <img src="{{url_for('static', filename='medeo_images/Medeo_partners_blc.png') }}" style="width:50%;" alt="Medeo_tax_blc">
-           <div class="text-intro">
-            À l’instar d’un médecin, MEDEO Partners vous accompagne durant le cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos projets.
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </div> -->
-
-
 
  <div class="header_section">
    <!--banner section start -->
@@ -89,35 +73,12 @@
      </div>
    </div><!--banner section end -->
  </div><!--about section start -->
- <!-- <div class="about_section layout_padding">
-   <div class="container">
-     <h1 class="about_taital">Medeo Partners</h1>
-     <div class="about_section_2">
-       <div class="row">
-         <div class="col-lg-6">
-           <div class="about_image"><img src="{{url_for('static', filename='images/startup-business.jpg') }}" style="width:150%;" alt="Medeo_tax_blc">
-          </div>
-         
-           
-         
-         
-          </div>
-         <div class="col-lg-6">
-           <div class="about_taital_main">
-             <p class="our_goal justify">Notre priorité est d'axer notre collaboration avec nos clients autour du conseil, de la fiscalité et de la performance. Si besoin, nous sommes en mesure de solliciter des experts spécialisés tels que des avocats, des ingénieurs financiers, des assureurs ou des prestataires de services informatiques afin de vous proposer des solutions personnalisées et performantes, parfaitement adaptées à vos intérêts.</p>
-             <div class="read_bt">
-               <a href="nouscontacter">Contactez-nous</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
  
  
  
  
-  </div>about section end -->
+ 
+  </div>
  <div class="fundraiser_section">
    <div class="fundraise_section_main">
     <br/>
@@ -198,7 +159,46 @@
     </div>
   </div>
 </div>
+
+
+
+
+
       {% endblock content %}
+
+
+
+      <style>
+      /* Add additional CSS styles */
+    .logo-animation {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: fade-in 1s forwards, fade-out 1s forwards 4s;
+      z-index: 9999;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+      </style>
+
+
 
 <script>
    const rect = document.getElementById("rect");
