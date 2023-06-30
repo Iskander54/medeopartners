@@ -216,7 +216,7 @@ img {
 
 #navbarSupportedContent{
     background: #fff;
-    z-index: 99999;
+    z-index: 9997;
 }
 .navbar-toggler span + span{
     margin-top: 4px;
@@ -267,10 +267,6 @@ img {
     width: 170px;
 }
 
-#navbarSupportedContent{
-    background: #fff;
-    z-index: 99999;
-}
 .badge {
      font-weight: 500;
 }
@@ -1649,3 +1645,89 @@ hr.hr_vertical{
     border-radius: 4px;
   }
   
+
+
+  .loader {
+    animation: rotate 2s infinite;
+    height: 50px;
+    width: 50px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    z-index: 9999;
+    /* display: none; */
+
+    /* width: 100px; */
+    /* height: 100px; */
+  }
+  .hidden {
+    display: none;
+  }
+  .loader:before,
+  .loader:after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+  .loader:before {
+    animation: ball1 1s infinite;
+    background-color: #114a69;
+    box-shadow: 30px 0 0 #ff3d00;
+    margin-bottom: 10px;
+  }
+  .loader:after {
+    animation: ball2 1s infinite;
+    background-color: #ff3d00;
+    box-shadow: 30px 0 0 #114a69;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg) scale(0.8) }
+    50% { transform: rotate(360deg) scale(1.2) }
+    100% { transform: rotate(720deg) scale(0.8) }
+  }
+
+  @keyframes ball1 {
+    0% {
+      box-shadow: 30px 0 0 #ff3d00;
+    }
+    50% {
+      box-shadow: 0 0 0 #ff3d00;
+      margin-bottom: 0;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #ff3d00;
+      margin-bottom: 10px;
+    }
+  }
+
+  @keyframes ball2 {
+    0% {
+      box-shadow: 30px 0 0 #114a69;
+    }
+    50% {
+      box-shadow: 0 0 0 #114a69;
+      margin-top: -20px;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #114a69;
+      margin-top: 0;
+    }
+  }
+
+  .foreg{
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    background-color:#d0dff5;
+    z-index: 9998;
+  }

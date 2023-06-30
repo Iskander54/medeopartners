@@ -50,7 +50,7 @@
 </head>
 
 <body>
-
+   
 <header class="site-header">
 
    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="display:flex">
@@ -212,6 +212,19 @@
 <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+         var loaderDiv = document.getElementById('loaderid');
+         var foregroundDiv = document.getElementById('foregid');
+         // Show the div
+         foregroundDiv.style.display = 'block';
+         loaderDiv.style.display = 'block';
+         // Hide the div after 5 seconds
+         setTimeout(function() {
+            loaderDiv.style.display = 'none';
+            foregroundDiv.style.display = 'none';
+            }, 1000);
+    });
+
       $(document).ready(function() {
          $(".sousmenu-auditconseil").hide();
          $(".sousmenu-fiscajuridique").hide();
@@ -244,22 +257,8 @@
 
          });
          
-         // $(".test").hide();
 
-         // $(".histo").on("mouseenter", function() {
-         //    $(".test").show();
-         // });
-
-
-         // $(".histo").on("mouselenter", function() {
-  	      //    $(".test").hide();
-         // });
-
-
-         // $('.histo').on('click', function() {
-         //    $('.test').toggle();
-         // });
-
+         console.log('kkk')
       });
    </script>
 </body>
