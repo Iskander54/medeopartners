@@ -1,6 +1,15 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template,request,g
+from flask_babel import _,refresh
 
-errors = Blueprint('errors', __name__)
+errors = Blueprint('errors', __name__, url_prefix='/<lang_code>')
+
+@errors.url_defaults
+def add_language_code(endpoint, values):
+    values.setdefault('lang_code', g.lang_code)
+
+@errors.url_value_preprocessor
+def pull_lang_code(endpoint, values):
+    g.lang_code = values.pop('lang_code')
 
 
 @errors.app_errorhandler(404)

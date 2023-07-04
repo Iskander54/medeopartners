@@ -5,8 +5,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 style="color:white;">Conseil-Optimisation</h1>
-              <span>Nos experts sont spécialisés dans l'audit, le conseil ainsi que les services comptables, fiscaux et juridiques.</span>
+              <h1 style="color:white;">{{_('Conseil-Optimisation')}}</h1>
+              <span>{{_('Nos experts sont spécialisés dans l\'audit, le conseil ainsi que les services comptables, fiscaux et juridiques.')}}</span>
             </div>
           </div>
         </div>
@@ -18,22 +18,22 @@
             <div class="col-lg-4">
                 <div class="panel accordion">
                         <!-- <div class="panel-heading business-head" data-target="#conseil-optimisation" data-toggle="collapse" aria-expanded="true">
-                            <span class="panel-title">Conseil-Optimisation</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Conseil-Optimisation')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div> -->
                         <div class="panel-heading business-head" data-target="#cessions" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Cessions</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Cessions')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#fusions-acquisitions" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Fusions & Acquisitions</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Fusions & Acquisitions')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#accompagnement-international" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Accompagnement International</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Accompagnement International')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#conseil-particuliers" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Conseil aux particuliers</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Conseil aux particuliers')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#service-informatique" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Services Informatiques</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Services Informatiques')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                     </div>
                 </div>
@@ -42,69 +42,69 @@
                 <div class="panel-body justify" data-parent="#accordionserv">
                     <img src="{{ url_for('static',filename='images/service/single_service_01.jpg') }}">
                     <br/>
-                    <h1>Cessions</h1>
+                    <h1>{{_('Cessions')}}</h1>
                     <div class="text_nos_expertises">
-                    Nous pouvons aider une entreprise lors d'une cession en lui fournissant des services tels que :
+                        {{_(' Nous pouvons aider une entreprise lors d\'une cession en lui fournissant des services tels que :')}}
                         <br><br>
-                        · Évaluation de la valeur de l'entreprise
+                        {{_('· Évaluation de la valeur de l\'entreprise')}}
                         <br><br>
-                        · Conseil fiscal sur les conséquences de la cession
+                        {{_('· Conseil fiscal sur les conséquences de la cession')}}
                         <br><br>
-                        · Assistance à la préparation des documents financiers pour la transaction
+                        {{_('· Assistance à la préparation des documents financiers pour la transaction')}}
                         <br><br>
-                        · Conseil sur les meilleures stratégies pour maximiser la valeur de la cession
+                        {{_('· Conseil sur les meilleures stratégies pour maximiser la valeur de la cession')}}
                         <br><br>
-                        · Assistance à la négociation des termes financiers de la transaction.
+                        {{_('· Assistance à la négociation des termes financiers de la transaction.')}}
                         </div>
                     </div>
             </div>
             <div class="panel-collapse collapse" id="fusions-acquisitions" data-parent="#accordionserv">
                 <div class="panel-body justify" data-parent="#accordionserv">
                     <img src="{{ url_for('static',filename='images/service/single_service_04.jpg') }}">
-                    <h4>Fusions & Acquisitions</h4>
-                    <p>Nous pouvons guider les entreprises dans les fusions et acquisitions en les aidant à :
+                    <h4>{{_('Fusions & Acquisitions')}}</h4>
+                    <p>{{_('Nous pouvons guider les entreprises dans les fusions et acquisitions en les aidant à :')}}
                         <br><br>
-                        · Évaluer la performance financière de la société cible
+                        {{_('· Évaluer la performance financière de la société cible')}}
                         <br><br>
-                        · Minimiser les coûts fiscaux liés à la transaction
+                        {{_('· Minimiser les coûts fiscaux liés à la transaction')}}
                         <br><br>
-                        · Effectuer une analyse approfondie de la situation financière et comptable de la société cible
+                        {{_('· Effectuer une analyse approfondie de la situation financière et comptable de la société cible')}}
                         <br><br>
-                        · Négocier les termes financiers de la transaction
+                        {{_('· Négocier les termes financiers de la transaction')}}
                         <br><br>
-                        · Mettre en place les aspects financiers de la transaction.</p>
+                        {{_('· Mettre en place les aspects financiers de la transaction.</p>')}}
                     </div>
             </div>
                 <div class="panel-collapse collapse" id="accompagnement-international" data-parent="#accordionserv">
                     <div class="panel-body justify">
                         <img src="{{ url_for('static',filename='images/service/single_service_03.jpg') }}">
-                        <h4>Accompagnement International</h4>
-                        <p>Vous souhaitez vous implanter en France ?
+                        <h4>{{_('Accompagnement International')}}</h4>
+                        <p>{{_('Vous souhaitez vous implanter en France ?')}}
                             <br><br>
-                            Nos experts accompagnent les investisseurs et les sociétés étrangères dans la tenue comptable, fiscale et sociale de leur structure implantée en France, jusqu’à la réalisation de due diligences, en passant par la domiciliation et un conseil juridique et fiscal d’exception.</p>
+                            {{_('Nos experts accompagnent les investisseurs et les sociétés étrangères dans la tenue comptable, fiscale et sociale de leur structure implantée en France, jusqu\'à la réalisation de due diligences, en passant par la domiciliation et un conseil juridique et fiscal d\'exception.')}}</p>
                         </div>
                     </div>
                     <div class="panel-collapse collapse" id="conseil-particuliers" data-parent="#accordionserv">
                         <div class="panel-body justify">
                             <img src="{{ url_for('static',filename='images/service/single_service_02.jpg') }}">
-                            <h4>Conseil aux particuliers</h4>
-                            <p>Nous pouvons aussi aider les particuliers à gérer leur patrimoine en leur fournissant des conseils sur la planification fiscale et l'optimisation de leurs finances personnelles.
+                            <h4>{{_('Conseil aux particuliers')}}</h4>
+                            <p>{{_('Nous pouvons aussi aider les particuliers à gérer leur patrimoine en leur fournissant des conseils sur la planification fiscale et l\'optimisation de leurs finances personnelles.')}}
                                 <br><br>
-                                Nous pouvons les aider à comprendre leurs obligations fiscales et à préparer leurs déclarations de revenus de manière efficace.
+                                {{_('Nous pouvons les aider à comprendre leurs obligations fiscales et à préparer leurs déclarations de revenus de manière efficace.')}}
                                 <br><br>
-                                Nous pouvons également les aider à élaborer des stratégies pour minimiser leurs impôts, gérer leur épargne et leur retraite, et à prendre des décisions financières optimales.</p>
+                                {{_('Nous pouvons également les aider à élaborer des stratégies pour minimiser leurs impôts, gérer leur épargne et leur retraite, et à prendre des décisions financières optimales.')}}</p>
                             </div>
                         </div>
 
                         <div class="panel-collapse collapse" id="service-informatique" data-parent="#accordionserv">
                             <div class="panel-body justify">
                                 <img src="{{ url_for('static',filename='images/service/single_service_01.jpg') }}">
-                                <h4>Services informatiques</h4>
-                                <p>Nous pouvons aussi fournir des services informatiques pour aider les entreprises à optimiser leur utilisation de la technologie.
+                                <h4>{{_('Services informatiques')}}</h4>
+                                <p>{{_('Nous pouvons aussi fournir des services informatiques pour aider les entreprises à optimiser leur utilisation de la technologie.')}}
                                     <br><br>
-                                    Les services informatiques que nous pouvons offrir incluent la mise en place et la gestion de systèmes comptables et financiers, la mise en place de systèmes de gestion de la paie, la mise en place de systèmes de suivi des stocks et de la facturation, et des conseils sur les logiciels et les technologies les plus appropriées pour les besoins de l'entreprise.
+                                    {{_('Les services informatiques que nous pouvons offrir incluent la mise en place et la gestion de systèmes comptables et financiers, la mise en place de systèmes de gestion de la paie, la mise en place de systèmes de suivi des stocks et de la facturation, et des conseils sur les logiciels et les technologies les plus appropriées pour les besoins de l\'entreprise.')}}
                                     <br><br>
-                                    Nous pouvons aussi aider les entreprises à garantir la sécurité de leurs données financières et à les protéger contre les cybermenaces.</p>
+                                    {{_('Nous pouvons aussi aider les entreprises à garantir la sécurité de leurs données financières et à les protéger contre les cybermenaces.')}}</p>
                                 </div>
                             </div>
             </div>

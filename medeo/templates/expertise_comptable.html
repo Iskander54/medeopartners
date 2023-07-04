@@ -5,8 +5,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 style="color:white;">Expertise-Comptable</h1>
-              <span>Nos experts sont spécialisés dans l'audit, le conseil ainsi que les services comptables, fiscaux et juridiques.</span>
+              <h1 style="color:white;">{{_('Expertise-Comptable')}}</h1>
+              <span>{{_('Nos experts sont spécialisés dans l\'audit, le conseil ainsi que les services comptables, fiscaux et juridiques.')}}</span>
             </div>
           </div>
         </div>
@@ -18,19 +18,19 @@
             <div class="col-lg-4">
                 <div class="panel accordion">
                         <div class="panel-heading business-head" data-target="#expert-comptable" data-toggle="collapse" aria-expanded="true">
-                            <span class="panel-title">Expertise-comptable</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Expertise-comptable')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#fiscalite" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Fiscalité</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Fiscalité')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#juridique" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Juridique</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Juridique')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#social" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Social</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Social')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#creation-dentreprise" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Création d'entreprise</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Création d\'entreprise')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                     </div>
                 </div>
@@ -39,67 +39,67 @@
                 <div class="panel-body justify" data-parent="#accordionserv">
                     <img src="{{ url_for('static',filename='images/service/single_service_01.jpg') }}">
                     <br/>
-                    <h1>Expertise-comptable</h1>
+                    <h1>{{_('Expertise-comptable')}}</h1>
                     <div class="text_nos_expertises">
-                        Nous fournissons des conseils pour aider les entreprises à prendre des décisions financières et fiscales éclairées.
+                        {{_('Nous fournissons des conseils pour aider les entreprises à prendre des décisions financières et fiscales éclairées.')}}
                         <br><br>
-                        Nous les aidons à établir et à surveiller les systèmes financiers et comptables pour garantir l'exactitude de leurs données.
+                        {{_('Nous les aidons à établir et à surveiller les systèmes financiers et comptables pour garantir l\'exactitude de leurs données.')}}
                         <br><br>
-                        Nous préparons et examinons les déclarations fiscales pour s'assurer que les entreprises remplissent leurs obligations fiscales.
+                        {{_('Nous préparons et examinons les déclarations fiscales pour s\'assurer que les entreprises remplissent leurs obligations fiscales.')}}
                         <br><br>
-                        Nous offrons des conseils stratégiques pour maximiser les opérations commerciales et les stratégies financières des entreprises.
+                        {{_('Nous offrons des conseils stratégiques pour maximiser les opérations commerciales et les stratégies financières des entreprises.')}}
                         
-                        Nous aidons à prévenir les litiges financiers et à les gérer lorsqu'ils se produisent.</p>
+                        {{_('Nous aidons à prévenir les litiges financiers et à les gérer lorsqu\'ils se produisent.')}}</p>
                     </div>
                 </div>
             </div>
             <div class="panel-collapse collapse" id="fiscalite" data-parent="#accordionserv">
                 <div class="panel-body justify" data-parent="#accordionserv">
                     <img src="{{ url_for('static',filename='images/service/single_service_04.jpg') }}">
-                    <h1>Fiscalité</h1>
+                    <h1>{{_('Fiscalité')}}</h1>
                     <div class="text_nos_expertises">
 
-                    Nous aidons les entreprises à comprendre leurs obligations fiscales, à élaborer des stratégies fiscales pour minimiser les coûts et à préparer et déposer les déclarations fiscales à temps.
+                        {{_('Nous aidons les entreprises à comprendre leurs obligations fiscales, à élaborer des stratégies fiscales pour minimiser les coûts et à préparer et déposer les déclarations fiscales à temps.')}}
                     </div>
                 </div>
             </div>
                 <div class="panel-collapse collapse" id="juridique" data-parent="#accordionserv">
                     <div class="panel-body justify">
                         <img src="{{ url_for('static',filename='images/service/single_service_03.jpg') }}">
-                        <h1>Juridique</h1>
+                        <h1>{{_('Juridique')}}</h1>
                         <div class="text_nos_expertises">
 
-                        Nous fournissons des conseils juridiques sur les obligations légales des entreprises, aidons à gérer les litiges et élaborons des stratégies pour minimiser les risques juridiques.
+                        {{_('Nous fournissons des conseils juridiques sur les obligations légales des entreprises, aidons à gérer les litiges et élaborons des stratégies pour minimiser les risques juridiques.')}}
                         </div>
                         </div>
                     </div>
                     <div class="panel-collapse collapse" id="social" data-parent="#accordionserv">
                         <div class="panel-body justify">
                             <img src="{{ url_for('static',filename='images/service/single_service_02.jpg') }}">
-                            <h1>Social</h1>
+                            <h1>{{_('Social')}}</h1>
                             <div class="text_nos_expertises">
 
-                            Nous aidons les entreprises à comprendre et à remplir leurs obligations sociales, telles que les obligations de sécurité sociale, de paie et de protection de l'emploi.
+                                {{_('Nous aidons les entreprises à comprendre et à remplir leurs obligations sociales, telles que les obligations de sécurité sociale, de paie et de protection de l\'emploi.')}}
                             </div>
                             </div>
                     </div>
                     <div class="panel-collapse collapse" id="creation-dentreprise" data-parent="#accordionserv">
                         <div class="panel-body justify">
                             <img src="{{ url_for('static',filename='images/service/single_service_02.jpg') }}">
-                            <h1>Création d'entreprise</h1>
+                            <h1>{{_('Création d\'entreprise')}}</h1>
                             <div class="text_nos_expertises">
 
-                            Nous pouvons aider à la création de votre entreprise en vous fournissant des services tels que :
+                                {{_('Nous pouvons aider à la création de votre entreprise en vous fournissant des services tels que :')}}
                             <br><br>
-                            Structure juridique : conseil sur le choix de la structure juridique la plus appropriée pour votre entreprise en fonction de vos objectifs et de vos besoins.
+                            {{_('Structure juridique : conseil sur le choix de la structure juridique la plus appropriée pour votre entreprise en fonction de vos objectifs et de vos besoins.')}}
                             <br><br>
-                            Conseil fiscal : conseils pour minimiser les coûts fiscaux en choisissant un régime fiscal le plus adapté.
+                            {{_('Conseil fiscal : conseils pour minimiser les coûts fiscaux en choisissant un régime fiscal le plus adapté.')}}
                             <br><br>
-                            Comptabilité : Nous pouvons aider à mettre en place les systèmes comptables et financiers pour votre entreprise.
+                            {{_('Comptabilité : Nous pouvons aider à mettre en place les systèmes comptables et financiers pour votre entreprise.')}}
                             <br><br>
-                            Conseil sur les financements : aide pour trouver les sources de financement les plus appropriées pour votre entreprise.
+                            {{_('Conseil sur les financements : aide pour trouver les sources de financement les plus appropriées pour votre entreprise.')}}
                             <br><br>
-                            Obligations légales et fiscales : veille et vigilance sur la nécessité de votre entreprise à remplir toutes les obligations légales et fiscales requises.</p>
+                            {{_('Obligations légales et fiscales : veille et vigilance sur la nécessité de votre entreprise à remplir toutes les obligations légales et fiscales requises.')}}</p>
                             </div>
                             </div>
                     </div>

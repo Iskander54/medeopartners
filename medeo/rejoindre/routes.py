@@ -5,7 +5,7 @@ from medeo import mail
 from medeo.rejoindre.forms import RejoindreForm
 import os
 
-rejoindre = Blueprint('rejoindre', __name__)
+rejoindre = Blueprint('rejoindre', __name__,url_prefix='/<lang_code>')
 
 
 #@rejoindre.url_defaults

@@ -2,18 +2,19 @@ from flask import (render_template, url_for, flash,
                    redirect, Blueprint,g)
 from flask_mail import Message
 from medeo import mail
+from flask_babel import _,refresh
 from medeo.contacts.forms import ContactForm
 
-contacts = Blueprint('contacts', __name__)
+contacts = Blueprint('contacts', __name__,url_prefix='/<lang_code>')
 
+@contacts.url_defaults
+def add_language_code(endpoint, values):
+    values.setdefault('lang_code', g.lang_code)
 
-#@contacts.url_defaults
-#def add_language_code(endpoint, values):
-#    values.setdefault('lang_code', g.lang_code)
-#
-#@contacts.url_value_preprocessor
-#def pull_lang_code(endpoint, values):
-#    g.lang_code = values.pop('lang_code')
+@contacts.url_value_preprocessor
+def pull_lang_code(endpoint, values):
+    g.lang_code = values.pop('lang_code')
+
 
 @contacts.route("/nouscontacter", methods=['GET','POST'])
 def contact():

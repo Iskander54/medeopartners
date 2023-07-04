@@ -16,10 +16,9 @@
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
-@import url(css/font-awesome.min.css);
+@import url(font-awesome.min.css);
 @import url(meanmenu.css);
 @import url(owl.carousel.min.css);
-@import url(swiper.min.css);
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
@@ -590,6 +589,10 @@ button {
     float: left;
     padding-bottom: 60px;
     background-color:#FCE3E4 ;
+    background-image: url(../images/cabinet-bottom.png);
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: 90% 40%;
 }
 .blog_img{
     width: 100%;
@@ -1408,7 +1411,7 @@ textarea#comment::placeholder {
 
 .box_main_1 {
     width: 100%;
-    background-color: #7092a5;
+    background-color: #114a69;
     clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
     height:100%;
     padding: 30px 20px 70px 20px;
@@ -1648,3 +1651,74 @@ hr.hr_vertical{
     border-radius: 4px;
   }
   
+  .animate-opa {
+    animation-duration: 10s;
+    animation-name: animate-opa;
+    animation-delay: 0s;
+    animation-fill-mode: backwards;
+  }
+  
+  @keyframes animate-opa {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-right {
+    animation-duration: 2s;
+    animation-name: animate-right;
+    animation-delay: 0s;
+    animation-fill-mode: backwards;
+  }
+  
+  @keyframes animate-right {
+    0% {
+      opacity: 0;
+      transform: translateX(300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .animate-left {
+    animation-duration: 2s;
+    animation-name: animate-left;
+    animation-delay: 0s;
+    animation-fill-mode: backwards;
+  }
+  
+  @keyframes animate-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .square-animation {
+      animation-name: wipe-enter;
+      animation-duration: 1.5s;
+    }
+  }
+
+  @keyframes wipe-enter {
+	0% {
+		transform: scale(0.5, .00);
+        opacity: 0.5;
+        
+	}
+	50% {
+		transform: scale(1, .00);
+        opacity:1;
+        
+	}
+}

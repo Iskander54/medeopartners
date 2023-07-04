@@ -5,8 +5,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h1 style="color:white;">Fiscalite - Juridique</h1>
-              <span>Nos experts sont spécialisés dans l'audit, le conseil ainsi que les services comptables, fiscaux et juridiques.</span>
+              <h1 style="color:white;">{{_('Fiscalite - Juridique')}}</h1>
+              <span>{{_('Nos experts sont spécialisés dans l\'audit, le conseil ainsi que les services comptables, fiscaux et juridiques.')}}</span>
             </div>
           </div>
         </div>
@@ -18,16 +18,16 @@
             <div class="col-lg-4">
                 <div class="panel accordion">
                         <div class="panel-heading business-head" data-target="#fiscalité" data-toggle="collapse" aria-expanded="true">
-                            <span class="panel-title">Fiscalité</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Fiscalité')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#juridique" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Juridique</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Juridique')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#social" data-toggle="collapse" aria-expanded="false">   
-                            <span class="panel-title">Social</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Social')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                         <div class="panel-heading business-head" data-target="#creation-entreprise" data-toggle="collapse" aria-expanded="false">
-                            <span class="panel-title">Création d'entreprise</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
+                            <span class="panel-title">{{_('Création d\'entreprise')}}</span><i class="fa fa-angle-right" style="margin-left:35%;"></i>
                         </div>
                     </div>
                 </div>
@@ -35,39 +35,39 @@
             <div class="panel-collapse collapse" id="fiscalité" data-parent="#accordionserv">
                 <div class="panel-body justify">
                     <img src="{{ url_for('static',filename='images/service/single_service_02.jpg') }}">
-                    <h4>Fiscalité</h4>
-                    <p>Nous aidons les entreprises à comprendre leurs obligations fiscales, à élaborer des stratégies fiscales pour minimiser les coûts et à préparer et déposer les déclarations fiscales à temps.</p>
+                    <h4>{{_('Fiscalité')}}</h4>
+                    <p>{{_('Nous aidons les entreprises à comprendre leurs obligations fiscales, à élaborer des stratégies fiscales pour minimiser les coûts et à préparer et déposer les déclarations fiscales à temps.')}}</p>
                 </div>
             </div>
             <div class="panel-collapse collapse" id="juridique" data-parent="#accordionserv">
                 <div class="panel-body justify">
                     <img src="{{ url_for('static',filename='images/service/single_service_01.jpg') }}">
-                    <h4>Juridique</h4>
-                    <p>Nous fournissons des conseils juridiques sur les obligations légales des entreprises, aidons à gérer les litiges et élaborons des stratégies pour minimiser les risques juridiques.</p>
+                    <h4>{{_('Juridique')}}</h4>
+                    <p>{{_('Nous fournissons des conseils juridiques sur les obligations légales des entreprises, aidons à gérer les litiges et élaborons des stratégies pour minimiser les risques juridiques.')}}</p>
                     </div>
                 </div>
                 <div class="panel-collapse collapse" id="social" data-parent="#accordionserv">
                     <div class="panel-body justify">
                         <img src="{{ url_for('static',filename='images/service/single_service_03.jpg') }}">
-                        <h4>Social</h4>
-                        <p>Nous aidons les entreprises à comprendre et à remplir leurs obligations sociales, telles que les obligations de sécurité sociale, de paie et de protection de l'emploi.</p>
+                        <h4>{{_('Social')}}</h4>
+                        <p>{{_('Nous aidons les entreprises à comprendre et à remplir leurs obligations sociales, telles que les obligations de sécurité sociale, de paie et de protection de l\'emploi.')}}</p>
                         </div>
                     </div>
                 <div class="panel-collapse collapse" id="creation-entreprise" data-parent="#accordionserv">
                     <div class="panel-body justify">
                         <img src="{{ url_for('static',filename='images/service/single_service_04.jpg') }}">
-                        <h4>Création d'entreprise</h4>
-                        <p>Nous pouvons aider à la création de votre entreprise en vous fournissant des services tels que :
+                        <h4>{{_('Création d\'entreprise')}}</h4>
+                        <p>{{_('Nous pouvons aider à la création de votre entreprise en vous fournissant des services tels que :')}}
                             <br><br>
-                            Structure juridique : conseil sur le choix de la structure juridique la plus appropriée pour votre entreprise en fonction de vos objectifs et de vos besoins.
+                            {{_('Structure juridique : conseil sur le choix de la structure juridique la plus appropriée pour votre entreprise en fonction de vos objectifs et de vos besoins.')}}
                             <br><br>
-                            Conseil fiscal : conseils pour minimiser les coûts fiscaux en choisissant un régime fiscal le plus adapté.
+                            {{_('Conseil fiscal : conseils pour minimiser les coûts fiscaux en choisissant un régime fiscal le plus adapté.')}}
                             <br><br>
-                            Comptabilité : Nous pouvons aider à mettre en place les systèmes comptables et financiers pour votre entreprise.
+                            {{_('Comptabilité : Nous pouvons aider à mettre en place les systèmes comptables et financiers pour votre entreprise.')}}
                             <br><br>
-                            Conseil sur les financements : aide pour trouver les sources de financement les plus appropriées pour votre entreprise.
+                            {{_('Conseil sur les financements : aide pour trouver les sources de financement les plus appropriées pour votre entreprise.')}}
                             <br><br>
-                            Obligations légales et fiscales : veille et vigilance sur la nécessité de votre entreprise à remplir toutes les obligations légales et fiscales requises.</p>
+                            {{_('Obligations légales et fiscales : veille et vigilance sur la nécessité de votre entreprise à remplir toutes les obligations légales et fiscales requises.')}}</p>
                         </div>
                     </div>
             </div>
