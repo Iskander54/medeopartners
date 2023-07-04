@@ -340,7 +340,7 @@ button {
 .banner_main {
     width: 44%;
     float: left;
-    background: #fff;
+    background: transparent;
     padding: 8px;
 }
 
