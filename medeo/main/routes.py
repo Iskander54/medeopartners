@@ -138,3 +138,8 @@ def news_immobiliers():
 def newstransmissionbailrural():
     return render_template('/news/fiscalite/transmissionbailrural.html',title='News Fiscalite')
 
+@main.route("/news_fisca_deduire_impayes_clients")
+def news_fisca_deduire_impayes_clients():
+    return render_template('/news/fiscalite/news_fisca_deduire_impayes_clients.html',title='News Fiscalite')
+
+
