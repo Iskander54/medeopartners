@@ -8,16 +8,16 @@ import os
 rejoindre = Blueprint('rejoindre', __name__,url_prefix='/<lang_code>')
 
 
-#@rejoindre.url_defaults
-#def add_language_code(endpoint, values):
-#    values.setdefault('lang_code', g.lang_code)
-#
-#@rejoindre.url_value_preprocessor
-#def pull_lang_code(endpoint, values):
-#    g.lang_code = values.pop('lang_code')
+@rejoindre.url_defaults
+def add_language_code(endpoint, values):
+    values.setdefault('lang_code', g.lang_code)
+
+@rejoindre.url_value_preprocessor
+def pull_lang_code(endpoint, values):
+    g.lang_code = values.pop('lang_code')
 
 @rejoindre.route("/cabinet_nousrejoindre", methods=['GET','POST'])
-def rejoignznous():
+def rejoigneznous():
     print(os.environ.get('CAPTCHA_PUBLIC_KEY'))
     form=RejoindreForm()
     if form.validate_on_submit():

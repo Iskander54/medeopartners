@@ -21,7 +21,6 @@ def contact():
     form=ContactForm()
     if form.validate_on_submit():
         with mail.connect() as conn:
-
             # Mail sent to medeo to get info
             msg1 = Message(form.subject.data,
                         sender='contact@medeo-partners.com',
