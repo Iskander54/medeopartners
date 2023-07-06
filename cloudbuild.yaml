@@ -10,4 +10,3 @@ steps:
   entrypoint: 'bash'
   args: ['-c', 'gcloud datastore indexes create index.yaml']
   timeout: '1600s'
-  
