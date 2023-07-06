@@ -7,6 +7,6 @@ steps:
     - 'CAPTCHA_PUBLIC_KEY=$_CAPTCHA_PUBLIC_KEY'
     - 'CAPTCHA_PRIVATE_KEY=$_CAPTCHA_PRIVATE_KEY'
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-entrypoint: 'bash'
-args: ['-c', 'gcloud datastore indexes create index.yaml']
-timeout: '1600s'
+  entrypoint: 'bash'
+  args: ['-c', 'gcloud datastore indexes create index.yaml']
+  timeout: '1600s'
