@@ -38,4 +38,4 @@ Werkzeug==2.2.2
 WTForms==3.0.1
 zipp==2.1.0
 gunicorn==19.3.0
-
+python3
