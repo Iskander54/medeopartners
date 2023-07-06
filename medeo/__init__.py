@@ -24,6 +24,8 @@ def create_app(config_class=Config):
     login_manager.init_app(app)
     mail.init_app(app)
     babel.init_app(app)
+    print('test')
+    print(app.config['RECAPTCHA_PUBLIC_KEY'])
 
     from medeo.users.routes import users
     from medeo.posts.routes import posts

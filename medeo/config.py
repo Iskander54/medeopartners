@@ -1,4 +1,4 @@
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import os
 # from app import *
 
@@ -6,11 +6,11 @@ import os
 class Config:
     LANGUAGES = ['fr', 'en']
 
-    # load_dotenv(override=True)
-    RECAPTCHA_PUBLIC_KEY='6Ld4NfsmAAAAAFSgPup-gE6I92BM2U98j7SkRVei'
-    RECAPTCHA_PRIVATE_KEY='6Ld4NfsmAAAAADh9GdtSCsY4CpsPy0W2Mn4w0I1v'
-    #RECAPTCHA_PUBLIC_KEY= os.getenv('CAPTCHA_PUBLIC_KEY')
-    #RECAPTCHA_PRIVATE_KEY=os.getenv('CAPTCHA_PRIVATE_KEY')
+    load_dotenv(override=True)
+    #RECAPTCHA_PUBLIC_KEY='6LdlSeolAAAAAEtXiWHFMbkBOQfMUXwKaLrJO5yI'
+    #RECAPTCHA_PRIVATE_KEY='6LdlSeolAAAAAFADdbOZcXm_0RB4v2pKvXI-SIYA'
+    RECAPTCHA_PUBLIC_KEY= os.environ.get('CAPTCHA_PUBLIC_KEY')
+    RECAPTCHA_PRIVATE_KEY=os.environ.get('CAPTCHA_PRIVATE_KEY')
 
     # Google Cloud SQL (change this accordingly)
     PASSWORD ="**********"
@@ -40,8 +40,6 @@ class Config:
     #MAIL_PASSWORD = os.environ.get('EMAIL_PASS')
     RECAPTCHA_USE_SSL= False
     RECAPTCHA_OPTIONS= {'theme':'black'}
-    RECAPTCHA_PUBLIC_KEY= os.getenv('CAPTCHA_PUBLIC_KEY')
-    RECAPTCHA_PRIVATE_KEY=os.getenv('CAPTCHA_PRIVATE_KEY')
     # print(os.environ['CAPTCHA_PUBLIC_KEY'])
     # print(os.environ.get('CAPTCHA_PUBLIC_KEY'))
     # print(os.getenv('CAPTCHA_PUBLIC_KEY'))
