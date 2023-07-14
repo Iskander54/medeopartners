@@ -9,5 +9,5 @@ class RejoindreForm(FlaskForm):
     phonenumber = StringField(label=('Téléphone'),validators=[Length(min=10, max=10)])
     email = EmailField(label=('Email'),validators=[DataRequired(), Email()])
     file = FileField(label=('Pièce Jointe'),validators=[DataRequired()])
-    recaptcha = RecaptchaField(validators=[DataRequired()])
+    recaptcha = RecaptchaField()
     submit = SubmitField(label=('Envoyer'))

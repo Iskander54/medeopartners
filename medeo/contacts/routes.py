@@ -21,10 +21,11 @@ def contact():
     form=ContactForm()
     if form.validate_on_submit():
         with mail.connect() as conn:
+            print(conn)
             # Mail sent to medeo to get info
             msg1 = Message(form.subject.data,
-                        sender='contact@medeo-partners.com',
-                        recipients=["israel.haikou@medeo-partners.com","alex-kevin.loembe@medeo-partners.com"])
+                        sender='alex-kevin.loembe@medeo-tax.com',
+                        recipients=["a.loembe@prometheuscomputing.com"])
 
             msg1.body = """
             Hello Team,
@@ -36,25 +37,6 @@ def contact():
             Message: {}
             """.format(form.firstname.data,form.lastname.data,form.phonenumber.data,form.email.data,form.content.data)
             conn.send(msg1)
-
-            # Mail sent to the new client
-            msg2 = Message("Merci pour votre prise de contact  ",
-                sender='contact@medeo-partners.com',
-                recipients=[form.email.data])
-            msg2.body="""
-            Bonjour {} {},
-
-            MEDEO PARTNERS tiens à vous remercier pour votre intérêt pour nos services. Nous avons bien reçu votre demande de renseignements via notre formulaire de contact sur notre site internet et nous vous en remercions.
-
-            Nous reviendrons vers vous pour organiser un appel téléphonique ou une réunion en personne.
-
-
-            Cordialement,
-
-            MEDEO TEAM
-            """.format(form.firstname.data,form.lastname.data)
-            conn.send(msg2)
-
             flash('Votre message a été delivré à la MEDEO Team !', 'success')
             return redirect(url_for('main.home'))
     return render_template('nouscontacter.html',title='Contact',form=form)

@@ -1,16 +1,15 @@
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 # from app import *
 
 
 class Config:
+    load_dotenv()
     LANGUAGES = ['fr', 'en']
-
-    load_dotenv(override=True)
     #RECAPTCHA_PUBLIC_KEY='6LdlSeolAAAAAEtXiWHFMbkBOQfMUXwKaLrJO5yI'
     #RECAPTCHA_PRIVATE_KEY='6LdlSeolAAAAAFADdbOZcXm_0RB4v2pKvXI-SIYA'
-    RECAPTCHA_PUBLIC_KEY= os.environ.get('CAPTCHA_PUBLIC_KEY')
-    RECAPTCHA_PRIVATE_KEY=os.environ.get('CAPTCHA_PRIVATE_KEY')
+    RECAPTCHA_PUBLIC_KEY= os.getenv('CAPTCHA_PUBLIC_KEY')
+    RECAPTCHA_PRIVATE_KEY=os.getenv('CAPTCHA_PRIVATE_KEY')
 
     # Google Cloud SQL (change this accordingly)
     PASSWORD ="**********"
@@ -28,18 +27,24 @@ class Config:
 
     ## CONFIG LOCAL 
     # CONFIG LOCAL MAILDEV
-    MAIL_SERVER = 'localhost'
-    MAIL_PORT = 1025
+    #MAIL_SERVER = 'localhost'
+    #MAIL_PORT = 1025
     
 
     #CONFIG PRO EMAIL
-    #MAIL_SERVER = os.environ.get('EMAIL_SERVER')
-    #MAIL_PORT = os.environ.get('EMAIL_PORT')
-    #MAIL_USE_TLS = True
-    #MAIL_USERNAME = os.environ.get('EMAIL_USER')
-    #MAIL_PASSWORD = os.environ.get('EMAIL_PASS')
-    RECAPTCHA_USE_SSL= False
+    MAIL_SERVER = os.getenv('EMAIL_SERVER')
+    MAIL_PORT = os.getenv('EMAIL_PORT')
+    MAIL_USERNAME = os.getenv('EMAIL_USER')
+    MAIL_PASSWORD = os.getenv('EMAIL_PASS')
+    MAIL_USE_SSL= False
+    MAIL_USE_TLS = True
+    #MAIL_SERVER='smtp.office365.com'
+    #MAIL_PORT='587'
+    #MAIL_USERNAME='alex-kevin.loembe@medeo-tax.com'
+    #MAIL_PASSWORD='Hakimalex54'
+
     RECAPTCHA_OPTIONS= {'theme':'black'}
+    
     # print(os.environ['CAPTCHA_PUBLIC_KEY'])
     # print(os.environ.get('CAPTCHA_PUBLIC_KEY'))
     # print(os.getenv('CAPTCHA_PUBLIC_KEY'))
