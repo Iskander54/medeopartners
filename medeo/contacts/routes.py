@@ -24,8 +24,8 @@ def contact():
             print(conn)
             # Mail sent to medeo to get info
             msg1 = Message(form.subject.data,
-                        sender='alex-kevin.loembe@medeo-tax.com',
-                        recipients=["a.loembe@prometheuscomputing.com"])
+                        sender='contact@medeo-partners.com',
+                        recipients=["contact@medeo-partners.com"])
 
             msg1.body = """
             Hello Team,
