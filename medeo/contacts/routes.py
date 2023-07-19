@@ -17,7 +17,7 @@ def pull_lang_code(endpoint, values):
 
 
 @contacts.route("/nouscontacter", methods=['GET','POST'])
-def contact():
+def contaceznous():
     form=ContactForm()
     if form.validate_on_submit():
         with mail.connect() as conn:
