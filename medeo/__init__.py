@@ -19,16 +19,13 @@ mail = Mail()
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
-    print(app.config['MAIL_USERNAME'])
-    print(app.config['MAIL_PORT'])
     db.init_app(app)
     bcrypt.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
     mail.init_mail(app.config)
     babel.init_app(app)
-    print('test')
-    print(app.config['RECAPTCHA_PUBLIC_KEY'])
+
 
     from medeo.users.routes import users
     from medeo.posts.routes import posts
