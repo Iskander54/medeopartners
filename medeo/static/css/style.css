@@ -1809,13 +1809,15 @@ hr.hr_vertical{
   /* ------------------test------------------------ */
 
 .mentions_legales{
-        width: 50%;
-        padding-bottom: 2%;
-        border: solid red;
-        border-radius: 31px;
-        margin-bottom: 50px;
-        margin-top: 50px;
-        display: flex;
+    width: 50%;
+    padding-bottom: 2%;
+    border: solid red;
+    border-radius: 31px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+        
 }
 
 .text_legal{
