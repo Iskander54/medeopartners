@@ -1808,7 +1808,6 @@ hr.hr_vertical{
     z-index: 9998;
   }
 
-
 /* ####### */
 /* ####### *//* ####### *//* ####### *//* ####### */
 /* ####### *//* ####### *//* ####### *//* ####### *//* ####### */
@@ -1860,4 +1859,36 @@ hr.hr_vertical{
 .location_text a {
     color: white;
     font-size: 16px;
+  /* ------------------test------------------------ */
+
+.mentions_legales{
+    width: 50%;
+    padding-bottom: 2%;
+    border: solid red;
+    border-radius: 31px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+        
 }
+
+.text_legal{
+    color: black;
+    padding-left: 10px;
+}
+
+.titre_mention{
+    color: #114a69; 
+    font-size: 30px;            
+    text-align: center;
+    font-weight: bolder;
+    margin : 10px;
+}
+
+.sous-titre_legal{
+    color: #114a69;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 30px;
