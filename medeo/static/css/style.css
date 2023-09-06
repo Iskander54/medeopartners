@@ -977,17 +977,6 @@ textarea#comment::placeholder {
     font-family: 'Roboto', sans-serif;    
 } */
 
-.Enter_text {
-    width: 100%;
-    float: left;
-    font-size: 18px;
-    color: #8e8e8e;
-    background-color: transparent;
-    border-bottom: 1px solid #ffffff !important;
-    padding: 8px 10px 4px 0px;
-    margin-top: 10px;
-    border: 0px;
-}
 
 .social_icon {
     width: 100%;
