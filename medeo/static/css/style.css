@@ -1808,7 +1808,6 @@ hr.hr_vertical{
     z-index: 9998;
   }
 
-
 /* ####### */
 /* ####### *//* ####### *//* ####### *//* ####### */
 /* ####### *//* ####### *//* ####### *//* ####### *//* ####### */
@@ -1860,12 +1859,19 @@ hr.hr_vertical{
 .location_text a {
     color: white;
     font-size: 16px;
+<<<<<<< HEAD
 }
 
 
 /* mentions legales  */
 .mentions_legales{
     width: 80%;
+=======
+  /* ------------------test------------------------ */
+
+.mentions_legales{
+    width: 50%;
+>>>>>>> 2b119870c5838dde4fa6dadce73b62203afc1a6e
     padding-bottom: 2%;
     border: solid red;
     border-radius: 31px;
@@ -1895,6 +1901,7 @@ hr.hr_vertical{
     font-weight: bold;
     padding-left: 10px;
     padding-top: 30px;
+<<<<<<< HEAD
 }
 
 /* FIN mentions legales  */
@@ -2003,3 +2010,5 @@ hr.hr_vertical{
     padding-top: 30px;
     
 }
+=======
+>>>>>>> 2b119870c5838dde4fa6dadce73b62203afc1a6e
