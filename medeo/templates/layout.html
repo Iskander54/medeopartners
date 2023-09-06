@@ -14,7 +14,8 @@
    <meta name="description" content="">
    <meta name="author" content="">
    <!-- bootstrap css -->
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+   <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"> -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
       
    <!-- style css -->
    
@@ -51,84 +52,176 @@
    
 <header class="site-header">
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="display:flex">
 
+
+
+
+
+<img class="bg-img" src="{{ url_for('static',filename='images/service/image-background.png') }}" alt="Bg image">
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-light ">
+   <div class="container-fluid">
       <a class="navbar-brand" href="{{_('accueil')}}">
-         <img src="/static/medeo_images/Medeo_partners_couleur.png" width="100">
+         <img src="/static/medeo_images/Medeo_partners_couleur.png" >
       </a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-         aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-         <span></span>
-         <span></span>
-         <span></span>
-      </button>
 
-      <div class="flags">
-         <a href="{{ url_for(request.endpoint, lang_code='en') }}"><img class="navbar-img" src="{{ url_for('static', filename='flags/us-flag.png') }}"></a>
-         <a href="{{ url_for(request.endpoint, lang_code='fr') }}"><img class="navbar-img" src="{{ url_for('static', filename='flags/fr-flag.png') }}"></a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <span class="cyb">𝒞𝓊𝓇𝑒 𝓎𝑜𝓊𝓇 𝒷𝓊𝓈𝒾𝓃𝑒𝓈𝓈</span>
-         <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="true">
-                  {{_('Le cabinet')}}
-               </a>
-               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item histo" href="{{_('cabinet_historique')}}">{{_('Historique & valeurs')}}</a>
-                  <!-- <a class="dropdown-item" href="cabinet_valeurs">Valeurs</a> -->
-                  <a class="dropdown-item" href="{{_('cabinet_associes')}}">{{_('Les associés')}}</a>
-                  <a class="dropdown-item" href="{{_('cabinet_temoignages')}}">{{_('Témoignages')}}</a>
-                  <a class="dropdown-item" href="{{_('cabinet_nousrejoindre')}}">{{_('Nous rejoindre')}}</a>
+
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+       <ul class="navbar-nav">
+         <!-- <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="#">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#">Features</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#">Pricing</a>
+         </li> -->
+
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <div class="sous-titre">
+              Votre cabinet
                </div>
-            </li>
-            
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_dos" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="true">
-                  {{_('Nos expertises')}}
-               </a>
-               <div class="dropdown-menu" aria-labelledby="navbarDropdown_dos">
-                  <!-- <a class="dropdown-item" href="nos_expertises#expert-comptable">Expert-Comptable</a> -->
-                  <a class="dropdown-item auditconseil" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
-                  <a class="dropdown-item fiscajuridique" href="{{_('audit')}}">{{_('Audit')}}</a>
-                  <a class="dropdown-item finance" href="{{_('conseil_optimisation')}}">{{_('Conseil-Optimisation')}}</a>
-
-               </div>
-            </li>
-
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_three" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="true" >
-               {{_('Actualités')}}
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown_three">
-               <a class="dropdown-item fiscalite" href="{{_('news_fiscalite')}}">{{_('Fiscalité')}}</a>
-               <a class="dropdown-item juridique" href="{{_('news_juridique')}}">{{_('Juridique')}}</a>
-               <a class="dropdown-item social" href="{{_('news_social')}}">{{_('Social')}}</a>
-               <a class="dropdown-item metiers" href="{{_('news_metiers')}}">{{_('Métiers')}}</a>
-               <a class="dropdown-item immobilier" href="{{_('news_immobilier')}}">{{_('Immobilier')}}</a>
-
-            </div>
-            </li>
-
-            <li class="nav-item">
-               <a class="nav-link" href="{{_('nouscontacter')}}">{{_('Nous contacter')}}</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link disabled" href="#">{{_('Espace clients')}}</a>
-            </li>
-            <li class="nav-item" style="margin-top: 15px;">
-               <a href="https://www.instagram.com/medeo_partners/" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
-               <a href="https://www.linkedin.com/company/medeo-partners/" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
-               <a href="https://wa.me/33669066804/?text=Hello" target="_blank"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
-            </li>
-         </ul>
-
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <div class="sous-titre">
+              Notre expertise
+               </div>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <div class="sous-titre">
+             Actualités
+               </div>
+           </a>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+             <li><a class="dropdown-item" href="#">Action</a></li>
+             <li><a class="dropdown-item" href="#">Another action</a></li>
+             <li><a class="dropdown-item" href="#">Something else here</a></li>
+           </ul>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="#">
+               <div class="sous-titre">
+               Nous contacter
+               </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+               <div class="sous-titre">
+               Espace client
+               </div>
+            </a>
+          </li> 
+          
+       </ul>
+       <ul>
+      
+         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+                 <a class="nav-link active" aria-current="page" href="#">Home</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="#">Link</a>
+             </li>
+         </ul>     
       </div>
-   </nav>
+    </div>
+   
+</nav>
+
+
+<!-- 
+<nav class="navbar navbar-expand-md bg-light">
+   <div class="container-fluid">
+       <a class="navbar-brand" href="#">
+           <img src="..." alt="">
+       </a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+               <li class="nav-item">
+                   <a class="nav-link active" aria-current="page" href="#">Home</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="#">Link</a>
+               </li>
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Dropdown
+                   </a>
+                   <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="#">Action</a></li>
+                       <li><a class="dropdown-item" href="#">Another action</a></li>
+                       <li>
+                           <hr class="dropdown-divider">
+                       </li>
+                       <li><a class="dropdown-item" href="#">Something else here</a></li>
+                   </ul>
+               </li>
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Dropdown
+                   </a>
+                   <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="#">Action</a></li>
+                       <li><a class="dropdown-item" href="#">Another action</a></li>
+                       <li>
+                           <hr class="dropdown-divider">
+                       </li>
+                       <li><a class="dropdown-item" href="#">Something else here</a></li>
+                   </ul>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link">Another Link</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link">Another Link</a>
+               </li>
+           </ul>
+           <div class="search-and-icons">
+               <form class="d-flex mb-2 me-4" role="search">
+                   <input class="form-control me-2" type="search" aria-label="Search">
+               </form>
+               <div class="user-icons d-flex mb-2">
+                   <div class="account"><i class="bi bi-person"></i></div>
+                   <div class="wishlist"><i class="bi bi-heart"></i></div>
+                   <div class="cart"><i class="bi bi-cart3"></i></div>
+                 </div>
+           </div>
+           <div class="contact-info">
+               <p>+9876543210 | +1234567890</p>
+               <p><a href="mailto:">contact@domainname.com</a></p>
+           </div>
+       </div>
+   </div>
+</nav> -->
+
+
 
 </header>
 <main role="main" class="container pt-130">
@@ -205,7 +298,8 @@
 <script src="{{url_for('static', filename='js/jquery.min.js') }}"></script>
 <script src="{{url_for('static', filename='js/dropdown.js') }}"></script>
 <script src="{{url_for('static', filename='js/popper.min.js') }}"></script>
-<script src="{{url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+<!-- <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="{{url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
 <script src="{{url_for('static', filename='js/plugin.js') }}"></script>
 <!-- sidebar -->
