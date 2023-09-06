@@ -920,7 +920,7 @@ textarea#comment::placeholder {
     width: 100%;
     float: left;
     background-color: #1d1d1d;
-    height: auto; */
+    height: auto; 
 }
 .location_main {
     width: 100%;
@@ -977,17 +977,6 @@ textarea#comment::placeholder {
     font-family: 'Roboto', sans-serif;    
 } */
 
-.Enter_text {
-    width: 100%;
-    float: left;
-    font-size: 18px;
-    color: #8e8e8e;
-    background-color: transparent;
-    border-bottom: 1px solid #ffffff !important;
-    padding: 8px 10px 4px 0px;
-    margin-top: 10px;
-    border: 0px;
-}
 
 .social_icon {
     width: 100%;
@@ -1859,10 +1848,11 @@ hr.hr_vertical{
 .location_text a {
     color: white;
     font-size: 16px;
+}
   /* ------------------test------------------------ */
 
 .mentions_legales{
-    width: 50%;
+    width: 80%;
     padding-bottom: 2%;
     border: solid red;
     border-radius: 31px;
@@ -1892,3 +1882,4 @@ hr.hr_vertical{
     font-weight: bold;
     padding-left: 10px;
     padding-top: 30px;
+}
