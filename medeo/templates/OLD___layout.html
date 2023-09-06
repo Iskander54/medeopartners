@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   {% extends "layout.html" %}
+   {% block content %}
+
+        <!-- footer section start -->
+        <div class="footer_section">
+         <div class="container_footer">
+            <div class="footer_section_2">
+               <div class="row">
+                  <div class="col">
+                     <h2 class="footer_taital">{{_('À propos')}}</h2>
+                     <a class="footer_text" href="{{_('cabinet_associes')}}">{{_('Le Cabinet')}}</a>
+                     <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Expert-Comptable')}}</a>
+                     <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Commissariat aux comptes')}}</a>
+                  </div>
+                  <div class="col">
+                     <h2 class="footer_taital">{{_('Adresse')}}</h2>
+                     <p class="location_text">
+                        <img src="{{url_for('static', filename='images/map-icon.png') }}"><span class="padding_left_10">
+                           <a href="https://www.google.com/maps/search/?api=1&query=1831+2nd+St+NE+1831+2nd+Washington+DC">42 rue de l'Amiral Hamelin 75116 Paris</a>
+                        </span></br>
+                        <img src="{{url_for('static', filename='images/call-icon.png') }}"><span class="padding_left_10"><a href="#">01 83 64 16 04</a></span></br>            
+                        <img src="{{url_for('static', filename='images/mail-icon.png') }}"><span class="padding_left_10"><a href="mailto:contact@medeo-partners.com">contact@medeo-partners.com</a></span></br>
+                     </p>
+                  </div>
+
+                  <div class="col col_footer">
+                     <h2 class="footer_taital">{{_('Nous contacter')}}</h2>
+                     <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
+                     <a class="footer_text" href="{{_('cabinet_associes')}}">{{_('L\'équipe')}}</a>
+
+                  </div>
+    {% endblock content%}
