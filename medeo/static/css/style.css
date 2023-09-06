@@ -920,7 +920,7 @@ textarea#comment::placeholder {
     width: 100%;
     float: left;
     background-color: #1d1d1d;
-    height: auto; */
+    height: auto; 
 }
 .location_main {
     width: 100%;
@@ -1859,6 +1859,7 @@ hr.hr_vertical{
 .location_text a {
     color: white;
     font-size: 16px;
+}
   /* ------------------test------------------------ */
 
 .mentions_legales{
@@ -1892,3 +1893,4 @@ hr.hr_vertical{
     font-weight: bold;
     padding-left: 10px;
     padding-top: 30px;
+}
