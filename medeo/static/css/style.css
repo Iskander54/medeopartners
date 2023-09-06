@@ -915,11 +915,12 @@ textarea#comment::placeholder {
 /* contact section end */
 
 /* footer section start */
+
 .footer_section {
     width: 100%;
     float: left;
     background-color: #1d1d1d;
-    height: auto;
+    height: auto; */
 }
 .location_main {
     width: 100%;
@@ -933,13 +934,14 @@ textarea#comment::placeholder {
     font-family: 'Roboto', sans-serif;
 }
 
-.location_text a {
+/* .location_text a {
     color: #8e8e8e;
     font-size: 13px;
-}
+} */
 .location_text a:hover {
-    color: #ffffff;
+    color: red;
 }
+
 .padding_left_10 {
     padding-left: 10px;
 }
@@ -950,12 +952,12 @@ textarea#comment::placeholder {
     text-align: right;
     float: right;
 }
-.footer_section_2{
+/* .footer_section_2{
     width: 100%;
     float: left;
     padding-top: 25px;
     padding-left: 30px;
-}
+} */
 .footer_taital{
     width: 100%;
     float: left;
@@ -965,7 +967,7 @@ textarea#comment::placeholder {
     font-family: 'Roboto', sans-serif;
     text-align: center;    
 }
-.footer_text{
+/* .footer_text{
     width: 80%;
     float: left;
     font-size: 16px;
@@ -973,7 +975,7 @@ textarea#comment::placeholder {
     margin: 0px;
     padding-top: 20px;
     font-family: 'Roboto', sans-serif;    
-}
+} */
 
 .Enter_text {
     width: 100%;
@@ -1023,12 +1025,12 @@ textarea#comment::placeholder {
 
 /* copyright section start */
 
-.copyright_section {
+/* .copyright_section {
     width: 100%;
     float: left;
     background-color: #1d1d1d;
     height: auto;
-}
+} */
 .copyright_text {
     width: 100%;
     float: left;
@@ -1806,6 +1808,57 @@ hr.hr_vertical{
     z-index: 9998;
   }
 
+/* ####### */
+/* ####### *//* ####### *//* ####### *//* ####### */
+/* ####### *//* ####### *//* ####### *//* ####### *//* ####### */
+
+
+/* NEW VERSION ALIZA  */
+
+
+
+
+
+.footer_section_2{
+    width: 100%;
+    float: left;
+    padding-top: 25px;
+    padding-left: 30px;
+    background-color: #114a69;
+}
+
+.copyright_section {
+    width: 100%;
+    float: left;
+    background-color: #114a69;
+    height: auto;
+
+}
+
+.footer_text{
+    width: 80%;
+    float: left;
+    font-size: 16px;
+    color: white;
+    margin: 0px;
+    padding-top: 20px;
+    font-family: 'Roboto', sans-serif;    
+}
+ .footer_text:hover {
+    color: red;
+ }
+.location_text {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    line-height: 3;
+}
+
+.location_text a {
+    color: white;
+    font-size: 16px;
   /* ------------------test------------------------ */
 
 .mentions_legales{
@@ -1839,6 +1892,3 @@ hr.hr_vertical{
     font-weight: bold;
     padding-left: 10px;
     padding-top: 30px;
-
-
-}
