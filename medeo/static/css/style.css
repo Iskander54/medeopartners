@@ -1883,3 +1883,29 @@ hr.hr_vertical{
     padding-left: 10px;
     padding-top: 30px;
 }
+
+
+
+
+
+/* REFONTE HAKIM */
+
+.page-heading-notre-expertise{
+    width: 100vw;
+    height: 10vw;
+    /* display: flex; */
+    margin: auto;
+    text-align: center;
+    padding: 7vw;
+    color: blue;
+}
+
+.logo-nos-expertises{
+    width: 100px;
+    height: auto;
+}
+
+.speech-nos-expertises{
+    color: blue;
+    text-align: justify;
+}
