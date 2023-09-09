@@ -1929,3 +1929,13 @@ hr.hr_vertical{
     max-width: inherit;
     border-radius: 25px;
 }
+
+.page-heading-contactez-nous{
+    width: 100vw;
+    height: 10vw;
+    /* display: flex; */
+    margin: auto;
+    text-align: center;
+    padding: 7vw;
+    color: blue;   
+}
