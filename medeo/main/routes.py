@@ -143,3 +143,10 @@ def news_fisca_deduire_impayes_clients():
     return render_template('/news/fiscalite/news_fisca_deduire_impayes_clients.html',title='News Fiscalite')
 
 
+
+##############
+##############
+@main.route("/firm",defaults={'lang_code':'en'})
+@main.route("/cabinet",defaults={'lang_code':'fr'})
+def cabinet():
+    return render_template('cabinet.html',title='Nous contacter')

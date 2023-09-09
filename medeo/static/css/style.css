@@ -1909,3 +1909,23 @@ hr.hr_vertical{
     color: blue;
     text-align: justify;
 }
+
+
+.page-heading-cabinet{
+    width: 100vw;
+    height: 10vw;
+    /* display: flex; */
+    margin: auto;
+    text-align: center;
+    padding: 7vw;
+    color: blue;
+}
+
+.speech-cabinet{
+    color: #120a78;
+}
+
+.images_cabinet{
+    max-width: inherit;
+    border-radius: 25px;
+}
