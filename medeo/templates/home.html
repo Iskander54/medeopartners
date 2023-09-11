@@ -1,22 +1,83 @@
 {% extends "layout.html" %}
 {% block content %}
-<div id="foregid" class="foreg"></div>
-<span id="loaderid" class="loader"></span>
+<!-- <div id="foregid" class="foreg"></div> -->
+<!-- <span id="loaderid" class="loader"></span> -->
 
- <div class="header_section">
-   <!--banner section start -->
-   <div class="banner_section layout_padding">
+<div>
+
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col" style="height: 22vw; ">
+        <h1 class="banner_taital">{{_('Bienvenue chez Medeo Partners')}}</h1>
+        <br>
+        <br>
+        <p class="banner_text" style="text-align: center;">
+          {{_('Fort de plus 10 ans d\'expertise en comptabilité, et fiscalité, nous')}} <br>
+          {{_('accompagnons nos clients de tout secteurs dans leurs démarches')}}<br>
+          {{_('de création d\'entreprise, de de projets, et d\'optimisation.')}}<br /></p>
+
+      </div>
+      <div class="col" style="height: 22vw;">
+        <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
+      </div>
+    </div>
+  </div>
+
+  <h1 class="banner_taital">{{_('Notre expertise à votre service')}}</h1>
+  </br>
+  <p class="what_text_1" style="font-style: italic;">{{_('Medeo , Cure your business')}}</p>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-2" style="background-color: brown;">
+      <img src="{{ url_for('static',filename='images/accounting.png') }}" style="max-width: 70px;"><br>
+      jkjkjkjkdfg
+    </div>
+    <div class="col-2" style="background-color: red;">
+      <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px;"><br>
+      jkjkjkjk
+
+    </div>
+    <div class="col-2" style="background-color: green;">
+      <img src="{{ url_for('static',filename='images/budget.png') }}" style="max-width: 70px;"><br>
+      dfgh
+    </div>
+    <div class="col-2" style="background-color: black;">
+      <img src="{{ url_for('static',filename='images/ux.png') }}" style="max-width: 70px;"><br>
+      jkjkjkjk
+
+    </div>
+  </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<!-- NEWWWWWWWWWWWWWWWWWWWWWWWWWWWW -->
+<!--  -->
+
+<br>
+<br>
+<div>
+
+  <!-- banner section start -->
+  <!-- <div class="banner_section layout_padding">
      <div class="container-fluid">
        <section class="slide-wrapper">
          <div class="container-fluid">
-           <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-             <!-- Indicators -->
-             <ol class="carousel-indicators">
+           <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000"> -->
+  <!-- Indicators -->
+  <!-- <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-             </ol><!-- Wrapper for slides -->
-             <div class="carousel-inner" style="height:380px;">
+              <li data-target="#myCarousel" data-slide-to="2"></li> -->
+  <!-- </ol>Wrapper for slides -->
+  <!-- <div class="carousel-inner" style="height:380px;">
               <div class="carousel-item active" style="min-height:max-content;">
                 <div class="container">
                   <div class="banner_main">
@@ -32,8 +93,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              
+              </div> -->
+  <!--               
                 <div class="carousel-item">
                  <div class="container">
                    <div class="banner_main">
@@ -49,8 +110,8 @@
                      </div>
                    </div>
                  </div>
-               </div>
-               <div class="carousel-item" style="min-height:max-content;">
+               </div> -->
+  <!-- <div class="carousel-item" style="min-height:max-content;">
                  <div class="container">
                    <div class="banner_main">
                      <h1 class="banner_taital">{{_('Premier diagnostic')}}</h1>
@@ -73,55 +134,64 @@
          </div>
        </section>
      </div>
-   </div><!--banner section end -->
- </div><!--about section start -->
- 
- 
- 
- 
- 
-  </div>
- <div class="fundraiser_section">
-   <div class="fundraise_section_main">
-    <br/>
-     <div class="row">
+   </div>banner section end -->
+  <!-- </div>about section start -->
+
+
+
+
+
+</div>
+<div class="fundraiser_section">
+  <div class="fundraise_section_main">
+    <br />
+    <div class="row">
       <div class="col-lg-3 col-md-3 col-sd-3 polyg">
         <div class="box_main_1 square-animation" style="animation-delay: 0.2s;">
-           <h4 class="volunteer_text">{{_('Expertise Comptable')}}</h4>
-           <hr class="hr_vertical">
-           <div class="text_polygon">{{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}</div>
-         </div>
-       </div>
-       <div class="col-lg-3 col-md-3 col-sd-3 polyg">
+          <h4 class="volunteer_text">{{_('Expertise Comptable')}}</h4>
+          <hr class="hr_vertical">
+          <div class="text_polygon">{{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des
+            services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sd-3 polyg">
         <div class="box_main_1 square-animation" style="animation-delay: 0.7s;">
-           <div class="icon_1"></div>
-           <h4 class="volunteer_text">{{_('Audit')}}</h4>
-           <hr class="hr_vertical">
-           <p class="text_polygon">{{_('Notre cabinet comptable est spécialisé dans l\'audit et la certification des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons en étroite collaboration avec nos clients pour assurer la conformité de leurs comptes avec les normes comptables et fiscales en vigueur.')}}</p>
-         </div>
-       </div>
-       <div class="col-lg-3 col-md-3 col-sd-3 polyg">
+          <div class="icon_1"></div>
+          <h4 class="volunteer_text">{{_('Audit')}}</h4>
+          <hr class="hr_vertical">
+          <p class="text_polygon">{{_('Notre cabinet comptable est spécialisé dans l\'audit et la certification des
+            comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons en étroite collaboration
+            avec nos clients pour assurer la conformité de leurs comptes avec les normes comptables et fiscales en
+            vigueur.')}}</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sd-3 polyg">
         <div class="box_main_1 square-animation" style="animation-delay: 0.7s;">
-           <div class="icon_1"></div>
-           <h4 class="volunteer_text">{{_('Conseil-Optimisation')}}</h4>
-           <hr class="hr_vertical">
-           <p class="text_polygon">{{_('Nos services d\'optimisation d\'entreprise incluent l\'analyse de la performance, l\'identification des leviers de croissance, la mise en place de plans d\'action pour l\'amélioration de la rentabilité, la gestion de projets de transformation, la gestion du changement, l\'optimisation de la chaîne d\'approvisionnement et l\'analyse des coûts.')}}</p>
-         </div>
-       </div>
-       <div class="col-lg-3 col-md-3 col-sd-3 polyg">
-        <div class="box_main_1 square-animation" style="animation-delay: 0.2s;" >
-           <div class="icon_1"></div>
-           <h4 class="volunteer_text">{{_('Service Informatique')}}</h4>
-           <hr class="hr_vertical">
-           <p class="text_polygon">{{_('Notre département informatique gère tout type de problématiques liés aux systèmes d\'information, à la gestion de vos données clients ainsi qu\'à l\'amélioration de vos process.')}} </p>
-         </div>
-       </div>
-     </div>
-   </div>
- </div><!-- blog section start -->
+          <div class="icon_1"></div>
+          <h4 class="volunteer_text">{{_('Conseil-Optimisation')}}</h4>
+          <hr class="hr_vertical">
+          <p class="text_polygon">{{_('Nos services d\'optimisation d\'entreprise incluent l\'analyse de la performance,
+            l\'identification des leviers de croissance, la mise en place de plans d\'action pour l\'amélioration de la
+            rentabilité, la gestion de projets de transformation, la gestion du changement, l\'optimisation de la chaîne
+            d\'approvisionnement et l\'analyse des coûts.')}}</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sd-3 polyg">
+        <div class="box_main_1 square-animation" style="animation-delay: 0.2s;">
+          <div class="icon_1"></div>
+          <h4 class="volunteer_text">{{_('Service Informatique')}}</h4>
+          <hr class="hr_vertical">
+          <p class="text_polygon">{{_('Notre département informatique gère tout type de problématiques liés aux systèmes
+            d\'information, à la gestion de vos données clients ainsi qu\'à l\'amélioration de vos process.')}} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- blog section start -->
 
 
- <!-- <div class="blog_section layout_padding" style="padding-bottom:90px;padding-top: 60px;">
+<!-- <div class="blog_section layout_padding" style="padding-bottom:90px;padding-top: 60px;">
     <div class="bg-image">
       <div class="container">
         <div class="row">
@@ -141,8 +211,9 @@
   
  </div>-->
 
- <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -153,7 +224,8 @@
       </div>
       <div class="modal-body">
         <!-- Calendly inline widget begin -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/medeo-partners/30min" style="min-width:320px;height:630px;"></div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/medeo-partners/30min"
+          style="min-width:320px;height:630px;"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         <!-- Calendly inline widget end -->
 
@@ -167,47 +239,47 @@
 </div>
 
 
-      {% endblock content %}
+{% endblock content %}
 
 <script>/*
-  console.log('test')
-  const elements = document.querySelectorAll('blog_section');
-  const options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: .4
+console.log('test')
+const elements = document.querySelectorAll('blog_section');
+const options = {
+root: null,
+rootMargin: '0px',
+threshold: .4
 }
 
 var selection = document.querySelector('.blog_section') !== null;
 if (selection) {
-  alert('The element exists in the page.');
+alert('The element exists in the page.');
 } else {
-  alert('The element does not exists in the page.');
+alert('The element does not exists in the page.');
 }
 
 const callbacks = (entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){
-      entry.target.classList.add('animate-opa');
-    }
-  });
+entries.forEach(entry => {
+if (entry.isIntersecting){
+entry.target.classList.add('animate-opa');
+}
+});
 }
 
 let observer = new IntersectionObserver(callbacks, options);
 elements.forEach(element => {
-  observer.observe(element);
+observer.observe(element);
 });
 
 // Create the observer, same as before:
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      square.classList.add('animate-opa');
-      return;
-    }
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+square.classList.add('animate-opa');
+return;
+}
 
-    square.classList.remove('animate-opa');
-  });
+square.classList.remove('animate-opa');
+});
 });
 
 observer.observe(document.querySelectorAll('.blog-taital'));*/
@@ -215,8 +287,8 @@ observer.observe(document.querySelectorAll('.blog-taital'));*/
 
 
 <script>
-   const rect = document.getElementById("rect");
-rect.addEventListener("click", function() {
-  rect.style.animationPlayState = (rect.style.animationPlayState === "paused") ? "running" : "paused";
-});
+  const rect = document.getElementById("rect");
+  rect.addEventListener("click", function () {
+    rect.style.animationPlayState = (rect.style.animationPlayState === "paused") ? "running" : "paused";
+  });
 </script>

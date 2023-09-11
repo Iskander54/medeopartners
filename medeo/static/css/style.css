@@ -350,6 +350,7 @@ button {
     font-size: 48px;
     color: #114a69;
     font-weight: bold;
+    text-align: center;
 }
 .banner_text {
     width: 100%;
@@ -396,7 +397,7 @@ button {
     float: left;
     font-size: 16px;
     color: #ffffff;
-    background-color: #114a69;
+    background-color: red;
     text-align: center;
     padding: 10px 0px;
     border-radius: 40px;
@@ -1859,19 +1860,18 @@ hr.hr_vertical{
 .location_text a {
     color: white;
     font-size: 16px;
-<<<<<<< HEAD
+
 }
 
 
 /* mentions legales  */
 .mentions_legales{
     width: 80%;
-=======
+}
   /* ------------------test------------------------ */
 
 .mentions_legales{
     width: 50%;
->>>>>>> 2b119870c5838dde4fa6dadce73b62203afc1a6e
     padding-bottom: 2%;
     border: solid red;
     border-radius: 31px;
@@ -1901,7 +1901,6 @@ hr.hr_vertical{
     font-weight: bold;
     padding-left: 10px;
     padding-top: 30px;
-<<<<<<< HEAD
 }
 
 /* FIN mentions legales  */
@@ -1949,7 +1948,7 @@ hr.hr_vertical{
   }
   @media screen and (min-width: 768px) {
     .navbar .navbar-brand img {
-      max-width: 6em;
+      max-width: 4em;
     }
     .navbar-collapse {
       display: flex;
@@ -1994,8 +1993,8 @@ hr.hr_vertical{
   .navbar form input[type="search"] {
     height: 2em;
     background: #fff
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='grey' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
-      no-repeat 95%;
+      /* url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='grey' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+      no-repeat 95%; */
   }
   .navbar form input[type="search"]:focus {
     background: #fff;
@@ -2010,5 +2009,10 @@ hr.hr_vertical{
     padding-top: 30px;
     
 }
-=======
->>>>>>> 2b119870c5838dde4fa6dadce73b62203afc1a6e
+
+
+.images_cabinet{
+    width: 300px;
+    border-radius: 70px;
+    margin: 40px;
+}
