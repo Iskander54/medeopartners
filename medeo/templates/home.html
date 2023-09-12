@@ -1,24 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-<!-- <div id="foregid" class="foreg"></div> -->
-<!-- <span id="loaderid" class="loader"></span> -->
+<div id="foregid" class="foreg"></div>
+<span id="loaderid" class="loader"></span>
 
 <div>
 
-  
+
   <div class="container-fluid">
     <div class="row">
-      <div class="col" style="height: 22vw; ">
+      <div class="col" style="height: 22vw; padding-top: 7vw;">
         <h1 class="banner_taital">{{_('Bienvenue chez Medeo Partners')}}</h1>
-        <br>
-        <br>
-        <p class="banner_text" style="text-align: center;">
+
+        <p class="banner_text">
           {{_('Fort de plus 10 ans d\'expertise en comptabilité, et fiscalité, nous')}} <br>
           {{_('accompagnons nos clients de tout secteurs dans leurs démarches')}}<br>
           {{_('de création d\'entreprise, de de projets, et d\'optimisation.')}}<br /></p>
 
+        <div class="readmore_bt">
+          <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
+        </div>
+
       </div>
-      <div class="col" style="height: 22vw;">
+      <div class="col" style="height: 22vw; padding-top: 2vw;">
         <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
       </div>
     </div>
@@ -26,13 +29,13 @@
 
   <h1 class="banner_taital">{{_('Notre expertise à votre service')}}</h1>
   </br>
-  <p class="what_text_1" style="font-style: italic;">{{_('Medeo , Cure your business')}}</p>
+  <p class="what_text_1" style="font-style: italic;">{{_('Medeo , "Cure your business"')}}</p>
 </div>
 
 
 
 <div class="container-fluid">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center" style="margin-top: 4vw">
     <div class="col-2" style="background-color: brown;">
       <img src="{{ url_for('static',filename='images/accounting.png') }}" style="max-width: 70px;"><br>
       jkjkjkjkdfg
@@ -58,137 +61,140 @@
 <br>
 <br>
 <br>
-<!-- NEWWWWWWWWWWWWWWWWWWWWWWWWWWWW -->
-<!--  -->
-
 <br>
-<br>
-<div>
-
-  <!-- banner section start -->
+<!-- <div class="header_section"> -->
+  <!--banner section start -->
   <!-- <div class="banner_section layout_padding">
-     <div class="container-fluid">
-       <section class="slide-wrapper">
-         <div class="container-fluid">
-           <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000"> -->
-  <!-- Indicators -->
-  <!-- <ol class="carousel-indicators">
+    <div class="container-fluid">
+      <section class="slide-wrapper">
+        <div class="container-fluid">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000"> -->
+            <!-- Indicators -->
+            <!-- <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li> -->
-  <!-- </ol>Wrapper for slides -->
-  <!-- <div class="carousel-inner" style="height:380px;">
+              <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+            </ol>Wrapper for slides -->
+            <!-- <div class="carousel-inner" style="height:380px;">
               <div class="carousel-item active" style="min-height:max-content;">
                 <div class="container">
-                  <div class="banner_main">
-                    <h1 class="banner_taital">{{_('Bienvenue chez Medeo Partners')}}</h1>
-                    <p class="banner_text">{{_('Fort de plus 10 ans d\'expertise en comptabilité, et fiscalité, nous accompagnons nos clients de tout secteurs dans leurs démarches de création d\'entreprise, de de projets,  et d\'optimisation.')}} <br/></p>
-                    <div class="btn_main">
-                      <div class="contact_bt active">
-                        <a href="nouscontacter">{{_('Contactez Nous')}}</a>
-                      </div>
-                      <div class="readmore_bt">
-                        <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
-                      </div>
-                    </div>
+                  <div class="banner_main" style="background-color: aqua;border-radius: 25px;">
+                    <img src="{{url_for('static',filename='images/id/Israel.png') }}" class="image_7">
+
+                    <h1 class="banner_taital">Israel HAIKOU</h1>
+                    <p class="banner_text">CEO, Expert-comptable et commissaire aux comptes <br></p>
+                    <p class="banner_text">Israel.haikou@medeo-partners.com<br></p>
+
+                  </div>
+                  <div class="banner_main secondary">
+                    <i>"Pour réussir, il n'y a que des plans A pas de plans B "</i><br> Cette phrase
+                    caractérise bien mon état d'esprit.
+                    <br><br>
+
+                    Diplômé en Licence d'économie, je suis me suis réorienté dans un domaine qui m'a toujours
+                    passionné : la comptabilité. J'ai donc obtenu une deuxième licence en comptabilité (DCG), un
+                    master en comptabilité (DSCG), puis le DEC (Bac+8). Mon cursus m'a permis d'avoir une vision
+                    plus complète du monde de l'entreprenariat.
+
+                    Depuis le début de ma carrière, j'avais pour ambition de fonder mon cabinet. Je m'étais
+                    donné une dizaine d'années pour le faire.
+
+                    J'ai exercé pendant plus de 10 ans en France et aux Etats-Unis, ce qui m'a permis d'acquérir
+                    une expérience solide et très enrichissante.
+                    <br><br>
+                    Dix ans plus tard, j'ai obtenu mon diplôme d'Expert-Comptable et de Commissaire aux comptes,
+                    j'ai co-fondé mon entreprise.
+
+                    Avant tout, je suis un fervent amateur de la culture entrepreneuriale et un mentor dans
+                    l'âme.
+
+                    Entreprendre a toujours été pour moi une seconde nature et la comptabilité, une passion. Le
+                    mélange des deux vous donne une personne motivée et déterminée à construire une entreprise
+                    de renommée internationale.
+
+                    MEDEO Partners sera plus qu'un cabinet d'expertise-comptable et de commissariat aux comptes
+                    : il sera un partenaire privilégié de mes clients car ce n'est qu'ensemble que nous
+                    avancerons.
+
                   </div>
                 </div>
-              </div> -->
-  <!--               
-                <div class="carousel-item">
-                 <div class="container">
-                   <div class="banner_main">
-                     <h2 class="banner_taital">{{_('Bienvenue chez Medeo Partners')}}</h2>
-                     <p class="banner_text">{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos projets.')}}</p>
-                     <div class="btn_main">
-                       <div class="contact_bt active">
-                         <a href="nouscontacter">{{_('Contactez Nous')}}</a>
-                       </div>
-                       <div class="readmore_bt">
-                         <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
-               </div> -->
-  <!-- <div class="carousel-item" style="min-height:max-content;">
-                 <div class="container">
-                   <div class="banner_main">
-                     <h1 class="banner_taital">{{_('Premier diagnostic')}}</h1>
-                     <p class="banner_text">{{_('Notre cabinet comptable est situé au 42 rue Hamelin dans le 16ème arrondissement à Paris. Venez rencontrer nos équipes afin de bénéficier d\'un accompagnement personnalisé.')}} <br/>
-                        {{_('Programmez un premier appel téléphonique pour discuter de vos besoins.')}}</p>
-                     <div class="btn_main">
-                       <div class="contact_bt active">
-                         <a href="nouscontacter">{{_('Contactez-nous')}}</a>
-                       </div>
-                       <div class="readmore_bt button_rdv">
-                         <a data-toggle="modal" data-target="#exampleModal" style="color:white;">{{_('Prendre RDV')}}</a>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
-               </div>
+              </div>
 
-             </div>
-           </div>
-         </div>
-       </section>
-     </div>
-   </div>banner section end -->
-  <!-- </div>about section start -->
+              <div class="carousel-item ">
+                <div class="container">
+                  <div class="banner_main" style="background-color: aqua;border-radius: 25px;">
+                    <img src="{{url_for('static',filename='images/id/Avi.png') }}" class="image_7">
+
+                    <h2 class="banner_taital">Avi GOZLANE</h2>
+                    <p class="banner_text">Associé, directeur de mission</p>
+                    <p class="banner_text">avi.gozlane@medeo-partners.com<br></p>
 
 
+                  </div>
+                  <div class="banner_main secondary">
+                    <i>« L'art de la réussite consiste à savoir s'entourer des meilleurs. » John Fitzgerald
+                      Kennedy</i><br>
+
+                    Fort de 10 années d'expérience en cabinet d'expertise comptable et de commissariat aux
+                    comptes, et de mon cursus universitaire en comptabilité et gestion, je souhaite accompagner
+                    les entreprises et prendre soin de mes clients.
+                    La diversité de mon parcours professionnel m'a permis de développer une expertise
+                    considérable dans mon domaine et une assurance au quotidien, au chevet de mes partenaires.
+                    <br><br>
+                    Méticuleux, rigoureux et réactif, je me positionne comme le garant de la bonne gestion de
+                    votre activité.
+                    MEDEO Partners sera plus qu'un cabinet d'expertise-comptable et de commissariat aux comptes
+                    : un appui sans faille pour votre entreprise, que ce soit au niveau juridique, fiscal,
+                    social, ou dans le cadre de contrôles sociaux et/ou fiscaux.
+
+                  </div>
+                </div>
+              </div>
 
 
-
-</div>
-<div class="fundraiser_section">
-  <div class="fundraise_section_main">
-    <br />
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sd-3 polyg">
-        <div class="box_main_1 square-animation" style="animation-delay: 0.2s;">
-          <h4 class="volunteer_text">{{_('Expertise Comptable')}}</h4>
-          <hr class="hr_vertical">
-          <div class="text_polygon">{{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des
-            services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sd-3 polyg">
-        <div class="box_main_1 square-animation" style="animation-delay: 0.7s;">
-          <div class="icon_1"></div>
-          <h4 class="volunteer_text">{{_('Audit')}}</h4>
-          <hr class="hr_vertical">
-          <p class="text_polygon">{{_('Notre cabinet comptable est spécialisé dans l\'audit et la certification des
-            comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons en étroite collaboration
-            avec nos clients pour assurer la conformité de leurs comptes avec les normes comptables et fiscales en
-            vigueur.')}}</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sd-3 polyg">
-        <div class="box_main_1 square-animation" style="animation-delay: 0.7s;">
-          <div class="icon_1"></div>
-          <h4 class="volunteer_text">{{_('Conseil-Optimisation')}}</h4>
-          <hr class="hr_vertical">
-          <p class="text_polygon">{{_('Nos services d\'optimisation d\'entreprise incluent l\'analyse de la performance,
-            l\'identification des leviers de croissance, la mise en place de plans d\'action pour l\'amélioration de la
-            rentabilité, la gestion de projets de transformation, la gestion du changement, l\'optimisation de la chaîne
-            d\'approvisionnement et l\'analyse des coûts.')}}</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sd-3 polyg">
-        <div class="box_main_1 square-animation" style="animation-delay: 0.2s;">
-          <div class="icon_1"></div>
-          <h4 class="volunteer_text">{{_('Service Informatique')}}</h4>
-          <hr class="hr_vertical">
-          <p class="text_polygon">{{_('Notre département informatique gère tout type de problématiques liés aux systèmes
-            d\'information, à la gestion de vos données clients ainsi qu\'à l\'amélioration de vos process.')}} </p>
-        </div>
-      </div>
+      </section>
+    </div>
+  </div>banner section end -->
+</div>
+
+
+<h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
+  </br>
+
+<div class="container">
+  <div class="row">
+    <div class="my_div_aliza" style="background-color: palevioletred;">
+      <img src="{{ url_for('static',filename='images/main-img.png') }}" width="100px">
+     
+    op,k
+
     </div>
   </div>
-</div><!-- blog section start -->
+  <div class="row">
+    <div class="my_div_aliza" style="background-color: pink;">
+       
+      <img src="{{ url_for('static',filename='images/woman_home.jpg') }}" width="100px">
+     
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="my_div_aliza" style="background-color: palegreen; margin-bottom: 100px;"> 
+      <img src="{{ url_for('static',filename='images/tour-eiffel.png') }}" width="100px">
+     
+      koipo
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 
 
 <!-- <div class="blog_section layout_padding" style="padding-bottom:90px;padding-top: 60px;">
@@ -212,7 +218,7 @@
  </div>-->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -222,20 +228,20 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <!-- Calendly inline widget begin -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/medeo-partners/30min"
+      <div class="modal-body"> -->
+<!-- Calendly inline widget begin -->
+<!-- <div class="calendly-inline-widget" data-url="https://calendly.com/medeo-partners/30min"
           style="min-width:320px;height:630px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        <!-- Calendly inline widget end -->
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
+<!-- Calendly inline widget end -->
 
-      </div>
-      <!-- <div class="modal-footer">
+</div>
+<!-- <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div> -->
-    </div>
-  </div>
+</div>
+</div>
 </div>
 
 

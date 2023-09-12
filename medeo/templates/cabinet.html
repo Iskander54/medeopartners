@@ -1,0 +1,225 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="page-heading-cabinet">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{_('Votre cabinet')}}</h1>
+                <h3>{{_('Medeo, Cure your business')}}</h3>
+                <br><br>
+                <h1>{{_('Notre histoire')}}</h1>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 speech-cabinet">
+            {{_('MEDEO Partners est un cabinet d\'expertise comptable et de commissariat aux comptes')}}<br /><br />
+
+            {{_('inscrit à l\'Ordre des experts-comptables (OEC) de Paris et auprès de la Compagnie régionale des
+            commissaires aux comptes de Paris (CRCC).')}}<br /><br />
+
+            <br><br>
+
+            {{_('MEDEO, signifiant « prendre soin » ')}}
+
+        </div>
+        <div class="col-6">
+            <img class="images_cabinet" src="{{url_for('static',filename='images/medeo_talking.png') }}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <img class="images_cabinet" src="{{url_for('static',filename='images/heart_take_care.jpeg') }}">
+
+
+        </div>
+        <div class="col-6 speech-cabinet">
+            {{_('en grec ancien, caractérise le désir de ses fondateurs d\'incarner le rôle de « médecins des
+            entreprises ».')}}
+
+            <br><br>
+            {{_('PARTNERS, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant
+            l\'association et la complémentarité de ses fondateurs :')}}' <span class="names"
+                onclick="window.location.href='/cabinet_associes'">Israel HAIKOU</span> et <span class="names"
+                onclick="window.location.href='/cabinet_associes'">Avi GOZLANE</span> {{_('ont fondé le cabinet en
+            octobre 2022. ')}}
+            <br><br>
+
+            {{_('Après une collaboration efficace de plus de sept ans et une expérience respective de plus de dix
+            ans dans la comptabilité, ces « néo-médecins des entreprises » souhaitent mettre leurs expertises au
+            service des entreprises.')}}<br /><br /><br />
+            <br><br>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-6 speech-cabinet">
+
+            {{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le cycle de vie de votre entreprise :
+            en prenant soin du bien-être et de la croissance de vos projets.')}}
+            {{_('Nous voulons casser l\'image stéréotypée, traditionnelle et rigide des cabinets comptables en y
+            apportant une touche plus jeune et moderne, tout en maintenant le sérieux et la rigueur de la profession du
+            chiffre.')}}<br /><br /><br />
+
+        </div>
+        <div class="col-6">
+            <img class="images_cabinet" src="{{url_for('static',filename='images/medeo_talking.png') }}">
+
+        </div>
+    </div>
+
+</div>
+
+
+<div class="page-heading-cabinet">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{_('Nos valeurs')}}</h1>
+                <br><br>
+                <button type="button" class="btn btn-primary">Respect</button>
+                <button type="button" class="btn btn-secondary">Communication</button>
+                <button type="button" class="btn btn-success">Rigueur</button>
+                <button type="button" class="btn btn-danger">Ecologie</button>
+                <button type="button" class="btn btn-warning">Mixité et inclusion</button>
+                <button type="button" class="btn btn-info">Expérience internationale</button>
+                <button type="button" class="btn btn-light">Jeunesse</button>
+                <button type="button" class="btn btn-dark">Engagement</button>
+                <button type="button" class="btn btn-primary">Qualité de service</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<div class="page-heading-cabinet">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{_('L\'équipe')}}</h1>
+                <br><br>
+                **** Carousel EQUIPE ****
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>
+
+<div class="header_section">
+    <!--banner section start -->
+    <div class="banner_section layout_padding">
+      <div class="container-fluid">
+        <section class="slide-wrapper">
+          <div class="container-fluid">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+               <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+              </ol><!-- Wrapper for slides -->
+              <div class="carousel-inner" style="height:380px;">
+               <div class="carousel-item active" style="min-height:max-content;">
+                 <div class="container">
+                   <div class="banner_main" style="background-color: aqua;border-radius: 25px;">
+                    <img src="{{url_for('static',filename='images/id/Israel.png') }}" class="image_7">
+
+                     <h1 class="banner_taital">Israel HAIKOU</h1>
+                     <p class="banner_text">CEO, Expert-comptable et commissaire aux comptes <br></p>
+                     <p class="banner_text">Israel.haikou@medeo-partners.com<br></p>
+
+                   </div>
+                   <div class="banner_main secondary">
+                        <i>"Pour réussir, il n'y a que des plans A pas de plans B "</i><br> Cette phrase
+                        caractérise bien mon état d'esprit.
+                        <br><br>
+
+                        Diplômé en Licence d'économie, je suis me suis réorienté dans un domaine qui m'a toujours
+                        passionné : la comptabilité. J'ai donc obtenu une deuxième licence en comptabilité (DCG), un
+                        master en comptabilité (DSCG), puis le DEC (Bac+8). Mon cursus m'a permis d'avoir une vision
+                        plus complète du monde de l'entreprenariat.
+
+                        Depuis le début de ma carrière, j'avais pour ambition de fonder mon cabinet. Je m'étais
+                        donné une dizaine d'années pour le faire.
+
+                        J'ai exercé pendant plus de 10 ans en France et aux Etats-Unis, ce qui m'a permis d'acquérir
+                        une expérience solide et très enrichissante.
+                        <br><br>
+                        Dix ans plus tard, j'ai obtenu mon diplôme d'Expert-Comptable et de Commissaire aux comptes,
+                        j'ai co-fondé mon entreprise.
+
+                        Avant tout, je suis un fervent amateur de la culture entrepreneuriale et un mentor dans
+                        l'âme.
+
+                        Entreprendre a toujours été pour moi une seconde nature et la comptabilité, une passion. Le
+                        mélange des deux vous donne une personne motivée et déterminée à construire une entreprise
+                        de renommée internationale.
+
+                        MEDEO Partners sera plus qu'un cabinet d'expertise-comptable et de commissariat aux comptes
+                        : il sera un partenaire privilégié de mes clients car ce n'est qu'ensemble que nous
+                        avancerons.
+
+                   </div>
+                 </div>
+               </div>
+               
+                 <div class="carousel-item ">
+                  <div class="container">
+                    <div class="banner_main" style="background-color: aqua;border-radius: 25px;">
+                        <img src="{{url_for('static',filename='images/id/Avi.png') }}" class="image_7">
+
+                        <h2 class="banner_taital">Avi GOZLANE</h2>
+                        <p class="banner_text">Associé, directeur de mission</p>
+                        <p class="banner_text">avi.gozlane@medeo-partners.com<br></p>
+
+
+                    </div>
+                    <div class="banner_main secondary" >
+                            <i>« L'art de la réussite consiste à savoir s'entourer des meilleurs. » John Fitzgerald
+                                Kennedy</i><br>
+
+                            Fort de 10 années d'expérience en cabinet d'expertise comptable et de commissariat aux
+                            comptes, et de mon cursus universitaire en comptabilité et gestion, je souhaite accompagner
+                            les entreprises et prendre soin de mes clients.
+                            La diversité de mon parcours professionnel m'a permis de développer une expertise
+                            considérable dans mon domaine et une assurance au quotidien, au chevet de mes partenaires.
+                            <br><br>
+                            Méticuleux, rigoureux et réactif, je me positionne comme le garant de la bonne gestion de
+                            votre activité.
+                            MEDEO Partners sera plus qu'un cabinet d'expertise-comptable et de commissariat aux comptes
+                            : un appui sans faille pour votre entreprise, que ce soit au niveau juridique, fiscal,
+                            social, ou dans le cadre de contrôles sociaux et/ou fiscaux.
+
+                    </div>
+                  </div>
+                </div>
+
+ 
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div><!--banner section end -->
+  </div>
+
+
+
+
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script type="text/javascript" src="static/calendly/widget.js"></script>
+<script
+    type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="hh">Prendre RDV', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
+<!-- Calendly badge widget end -->
+
+{% endblock content %}
