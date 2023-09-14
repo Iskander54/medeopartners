@@ -33,6 +33,21 @@ def home():
     page = request.args.get('page', 1, type=int)
     return render_template('home.html')
 
+@main.route("/firm",defaults={'lang_code':'en'})
+@main.route("/cabinet",defaults={'lang_code':'fr'})
+def cabinet():
+    return render_template('cabinet.html',title='Le cabinet')
+
+
+@main.route("/our_expertise",defaults={'lang_code':'en'})
+@main.route("/notre_expertise",defaults={'lang_code':'fr'})
+def notre_expertise():
+    return render_template('notre_expertise.html',title='Notre expertise')
+
+
+
+
+
 @main.route("/cabinet_historique", defaults={'lang_code':'fr'})
 @main.route("/firm_history", defaults={'lang_code':'en'})
 def cabinet_historique():
@@ -146,7 +161,3 @@ def news_fisca_deduire_impayes_clients():
 
 ##############
 ##############
-@main.route("/firm",defaults={'lang_code':'en'})
-@main.route("/cabinet",defaults={'lang_code':'fr'})
-def cabinet():
-    return render_template('cabinet.html',title='Nous contacter')
