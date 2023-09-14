@@ -1605,6 +1605,10 @@ hr.hr_vertical{
     margin-top: 13vh;
 }
 
+
+
+hr_blue { background-color: red; height: 1px; border: 0; }
+
 .content {
     max-width: 60%;
   }
@@ -2032,7 +2036,7 @@ hr.hr_vertical{
     margin-top: 25px;
     background-color: #b8c7d4;
     display: flex;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     
 }
 .my_div_aliza{
@@ -2088,8 +2092,7 @@ background-image: url(../images/main-img.png);
 .text_bottom_home{
     color: #114a69;
     margin: auto;
-    font-size: small;
-   
+    opacity: 0.7;
 }
 
 .col-size {
@@ -2111,3 +2114,12 @@ background-image: url(../images/main-img.png);
     height: 15vw;
 }
 
+.presentation_expertises_home{
+    color:#114a69;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+}
