@@ -50,85 +50,94 @@
 <body>
    
 <header class="site-header">
+   <img class="bg-img" src="{{ url_for('static',filename='images/service/image-background.png') }}" alt="Bg image">
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="display:flex">
-
-      <a class="navbar-brand" href="{{_('accueil')}}">
-         <img src="/static/medeo_images/Medeo_partners_couleur.png" width="100">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-         aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-         <span></span>
-         <span></span>
-         <span></span>
-      </button>
-
-      <div class="flags">
-         <a href="{{ url_for(request.endpoint, lang_code='en') }}"><img class="navbar-img" src="{{ url_for('static', filename='flags/us-flag.png') }}"></a>
-         <a href="{{ url_for(request.endpoint, lang_code='fr') }}"><img class="navbar-img" src="{{ url_for('static', filename='flags/fr-flag.png') }}"></a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <span class="cyb">𝒞𝓊𝓇𝑒 𝓎𝑜𝓊𝓇 𝒷𝓊𝓈𝒾𝓃𝑒𝓈𝓈</span>
-         <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="true">
-                  {{_('Le cabinet')}}
-               </a>
-               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item histo" href="{{_('cabinet_historique')}}">{{_('Historique & valeurs')}}</a>
-                  <!-- <a class="dropdown-item" href="cabinet_valeurs">Valeurs</a> -->
-                  <a class="dropdown-item" href="{{_('cabinet_associes')}}">{{_('Les associés')}}</a>
-                  <a class="dropdown-item" href="{{_('cabinet_temoignages')}}">{{_('Témoignages')}}</a>
-                  <a class="dropdown-item" href="{{_('cabinet_nousrejoindre')}}">{{_('Nous rejoindre')}}</a>
-               </div>
-            </li>
-            
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_dos" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="true">
-                  {{_('Nos expertises')}}
-               </a>
-               <div class="dropdown-menu" aria-labelledby="navbarDropdown_dos">
-                  <!-- <a class="dropdown-item" href="nos_expertises#expert-comptable">Expert-Comptable</a> -->
-                  <a class="dropdown-item auditconseil" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
-                  <a class="dropdown-item fiscajuridique" href="{{_('audit')}}">{{_('Audit')}}</a>
-                  <a class="dropdown-item finance" href="{{_('conseil_optimisation')}}">{{_('Conseil-Optimisation')}}</a>
-
-               </div>
-            </li>
-
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_three" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="true" >
-               {{_('Actualités')}}
+<nav class="navbar navbar-expand-md navbar-light bg-light ">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="{{_('accueil')}}">
+               <img src="/static/medeo_images/Medeo_partners_couleur.png">
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown_three">
-               <a class="dropdown-item fiscalite" href="{{_('news_fiscalite')}}">{{_('Fiscalité')}}</a>
-               <a class="dropdown-item juridique" href="{{_('news_juridique')}}">{{_('Juridique')}}</a>
-               <a class="dropdown-item social" href="{{_('news_social')}}">{{_('Social')}}</a>
-               <a class="dropdown-item metiers" href="{{_('news_metiers')}}">{{_('Métiers')}}</a>
-               <a class="dropdown-item immobilier" href="{{_('news_immobilier')}}">{{_('Immobilier')}}</a>
 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+               aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+               <ul class="navbar-nav">
+
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{_('cabinet')}}">
+                        <div class="sous-titre">
+                           Votre cabinet
+                        </div>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{_('notre_expertise')}}">
+                        <div class="sous-titre">
+                           Notre expertise
+                        </div>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{_('actualites')}}">
+                        <div class="sous-titre">
+                           Actualités
+                        </div>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{_('nouscontacter')}}">
+                        <div class="sous-titre">
+                           Nous contacter
+                        </div>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{_('espace_client')}}">
+                        <div class="sous-titre">
+                           Espace client
+                        </div>
+                     </a>
+                  </li>
+
+               </ul>
+               <ul>
+
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                     
+                        
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">
+                           <div class="nav_icone">
+                              <a href="https://instagram.com/medeo_partners?igshid=MzRlODBiNWFlZA==">
+                                 <i class="fa-brands fa-instagram fa-xl"></i></br>
+                           </div>
+                        </a>
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">
+                           <div class="nav_icone">
+                              <a href="https://www.linkedin.com/search/results/all/?keywords=medeo%20partners&origin=GLOBAL_SEARCH_HEADER&sid=~KP">
+                                 <i class="fa-brands fa-linkedin fa-xl"></i></a>
+                              </a></br>
+                           </div>
+                        </a>
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">
+                           <div class="nav_icone">
+                              <a href="https://instagram.com/medeo_partners?igshid=MzRlODBiNWFlZA==">
+                                 <i class="fa-brands fa-whatsapp fa-xl"></i></a></br>
+                           </div>
+                        </a>
+   
+                  </ul>
             </div>
-            </li>
+         </div>
 
-            <li class="nav-item">
-               <a class="nav-link" href="{{_('nouscontacter')}}">{{_('Nous contacter')}}</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link disabled" href="#">{{_('Espace clients')}}</a>
-            </li>
-            <li class="nav-item" style="margin-top: 15px;">
-               <a href="https://www.instagram.com/medeo_partners/" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
-               <a href="https://www.linkedin.com/company/medeo-partners/" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
-               <a href="https://wa.me/33669066804/?text=Hello" target="_blank"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
-            </li>
-         </ul>
-
-      </div>
-   </nav>
+      </nav>
 
 </header>
 <main role="main" class="container pt-130">
@@ -163,7 +172,7 @@
                   <div class="col">
                      <h2 class="footer_taital">{{_('Adresse')}}</h2>
                      <p class="location_text">
-                        <img src="{{url_for('static', filename='images/map-icon.png') }}"><span class="padding_left_10"><a href="https://www.google.com/maps/search/?api=1&query=1831+2nd+St+NE+1831+2nd+Washington+DC">42 rue de l'Amiral Hamelin 75116 Paris</a></span></br>
+                        <img src="{{url_for('static', filename='images/map-icon.png') }}"><span class="padding_left_10"><a href="https://www.google.com/maps/search/?api=1&query=1831+2nd+St+NE+1831+2nd+Washington+DC">97 Bd Malesherbes <br> 75008 Paris </a></span></br>
                         <img src="{{url_for('static', filename='images/call-icon.png') }}"><span class="padding_left_10"><a href="#">01 83 64 16 04</a></span></br>            
                         <img src="{{url_for('static', filename='images/mail-icon.png') }}"><span class="padding_left_10"><a href="mailto:contact@medeo-partners.com">contact@medeo-partners.com</a></span></br>
                      </p>
@@ -228,44 +237,7 @@
             }, 1000);
     });
 
-      $(document).ready(function() {
-         $(".sousmenu-auditconseil").hide();
-         $(".sousmenu-fiscajuridique").hide();
-         $(".sousmenu-finance").hide();
-         
-         $(".dropdown-toggle").on("click", function() {
-            $(".sousmenu-auditconseil").hide();
-            $(".sousmenu-fiscajuridique").hide();
-            $(".sousmenu-finance").hide(); 
-         });
-
-         $(".auditconseil").on("mouseenter", function() {
-            $(".sousmenu-auditconseil").show();
-            $(".sousmenu-fiscajuridique").hide();
-            $(".sousmenu-finance").hide();
-
-         });
-         
-         $(".fiscajuridique").on("mouseenter", function() {
-            $(".sousmenu-fiscajuridique").show();
-            $(".sousmenu-auditconseil").hide();
-            $(".sousmenu-finance").hide();
-
-         });
-
-         $(".finance").on("mouseenter", function() {
-            $(".sousmenu-finance").show();
-            $(".sousmenu-fiscajuridique").hide();
-            $(".sousmenu-auditconseil").hide();
-
-         });
-
-         
-         
-
-         console.log('kkk')
-      });
-   </script>
+       </script>
 </body>
 
 </html>
