@@ -2195,3 +2195,10 @@ hr.hr_vertical {
     padding-top: 30px;
     
 }
+
+.news_carousel{
+    border-radius: 9vh;
+    background-color: #114a69; 
+    color: white;
+    height: auto;  
+}
