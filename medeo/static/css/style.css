@@ -2334,8 +2334,31 @@ hr.hr_vertical {
     cursor: not-allowed; /* Change the cursor style to indicate it's not clickable */
 }
 
+input[id=firstname]:focus{
+    outline: 2px solid orange;
+    background-color: #f7a49e;
+  }
 
+  input[id=lastname]:focus{
+    outline: 2px solid orange;
+    background-color: #f7a49e;
+  }
+  input[id=phonenumber]:focus{
+    outline: 2px solid orange;
+    background-color: #f7a49e;
+  }
+  input[id=email]:focus{
+    outline: 2px solid orange;
+    background-color: #f7a49e;
+  }
+  input[id=subject]:focus{
+    outline: 2px solid orange;
+    background-color: #f7a49e;
+  }
 
-
+  textarea[id=content]:focus{
+    outline: 2px solid orange;
+    background-color: #f7a49e;
+  }
 
 
