@@ -33,10 +33,10 @@ def home():
     page = request.args.get('page', 1, type=int)
     return render_template('home.html')
 
-@main.route("/firm",defaults={'lang_code':'en'})
-@main.route("/cabinet",defaults={'lang_code':'fr'})
-def cabinet():
-    return render_template('cabinet.html',title='Le cabinet')
+@main.route("/your_firm",defaults={'lang_code':'en'})
+@main.route("/votre_cabinet",defaults={'lang_code':'fr'})
+def votre_cabinet():
+    return render_template('votre_cabinet.html',title='Votre cabinet')
 
 
 @main.route("/our_expertise",defaults={'lang_code':'en'})
