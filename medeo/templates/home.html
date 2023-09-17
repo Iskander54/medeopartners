@@ -1,65 +1,77 @@
 {% extends "layout.html" %}
 {% block content %}
-<!-- <div id="foregid" class="foreg"></div>
-<span id="loaderid" class="loader"></span> -->
 
-<div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col" style="padding-top: 7vw;">
-        <h1 class="banner_taital">{{_('Bienvenue chez Medeo Partners')}}</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col" style="padding-top: 7vw;">
+      <h1 class="banner_taital">{{_('Bienvenue chez Medeo Partners')}}</h1>
 
-        <p class="banner_text">
-          {{_('Fort de plus 10 ans d\'expertise en comptabilité, et fiscalité, nous')}} <br>
-          {{_('accompagnons nos clients de tout secteurs dans leurs démarches')}}<br>
-          {{_('de création d\'entreprise, de de projets, et d\'optimisation.')}}<br /></p>
+      <p class="banner_text" style="text-indent: 1px;">
+        {{_('Fort de plus 10 ans d\'expertise en comptabilité, et fiscalité, nous')}} <br>
+        {{_('accompagnons nos clients de tout secteurs dans leurs démarches')}}<br>
+        {{_('de création d\'entreprise, de de projets, et d\'optimisation.')}}<br /></p>
 
-        <div class="readmore_bt">
-          <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
-        </div>
-
+      <div class="readmore_bt">
+        <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
       </div>
-      <div class="col" style="height: 22vw; padding-top: 2vw;">
-        <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
-      </div>
+
+    </div>
+    <div class="col" style="height: 22vw; padding-top: 2vw;">
+      <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
     </div>
   </div>
-
-  <h1 class="banner_taital" style="top: 150px;">{{_('Notre expertise à votre service')}}</h1>
-  </br>
-  <p class="what_text_1" style="font-style: italic; margin-top: 10vw;">{{_('Medeo , "Cure your business"')}}</p>
 </div>
 
+<div class="container">
+  <div class="row">
+    <h1 class="banner_taital" style="top: 150px;">{{_('Notre expertise à votre service')}}</h1>
+    </br>
+    <p class="what_text_1" style="font-style: italic; margin-top: 10vw;">{{_('Medeo , "Cure your business"')}}</p>
 
+  </div>
+</div>
 
 <div class="container-fluid">
   <div class="row justify-content-center" style="margin-top: 5vw">
     <div class="col-2">
       <img src="{{ url_for('static',filename='images/accounting.png') }}" style="max-width: 70px;"><br>
-      <h2>Expertise Comptable</h2>
-      <div class="presentation_expertises_home">Notre équipe dispose d'une expertise de haut niveau pour vous offrir des services de conseil et d'assistance dans les domaines de la gestion financière, comptable et fiscale.<br>
+      <h2 class="title_expertise">Expertise Comptable</h2>
+      <div class="">`</div>
+      <div class="presentation_expertises_home">
+        Notre équipe dispose d'une expertise de haut niveau pour vous offrir des
+        services de conseil et d'assistance dans les domaines de la gestion financière, comptable et fiscale.
       </div>
     </div>
     <div class="col-2">
       <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px;"><br>
-      <h2>Audit </h2>
-      <div class="presentation_expertises_home">Notre cabinet comptable est spécialisé dans l'audit et la certification des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons en étroite collaboration avec nos clients pour assurer la conformité de leurs comptes avec les normes comptables et fiscales en vigueur.</div>
+      <h2 class="title_expertise">Audit</h2>
+      <div class="">`</div>
+      <div class="presentation_expertises_home">Notre cabinet comptable est spécialisé dans l'audit et la certification
+        des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons en étroite collaboration
+        avec nos clients pour assurer la conformité de leurs comptes avec les normes comptables et fiscales en vigueur.
+      </div>
     </div>
     <div class="col-2">
       <img src="{{ url_for('static',filename='images/budget.png') }}" style="max-width: 70px;"><br>
-      <h2>Conseil optimisation </h2>
-      <div class="presentation_expertises_home">Nos services d'optimisation d'entreprise incluent l'analyse de la performance, l'identification des leviers de croissance, la mise en place de plans d'action pour l'amélioration de la rentabilité, la gestion de projets de transformation, la gestion du changement, l'optimisation de la chaîne d'approvisionnement et l'analyse des coûts.</div>
+      <h2 class="title_expertise">Conseil optimisation </h2>
+      <div class="">`</div>
+      <div class="presentation_expertises_home">Nos services d'optimisation d'entreprise incluent l'analyse de la
+        performance, l'identification des leviers de croissance, la mise en place de plans d'action pour l'amélioration
+        de la rentabilité, la gestion de projets de transformation, la gestion du changement, l'optimisation de la
+        chaîne d'approvisionnement et l'analyse des coûts.</div>
 
     </div>
     <div class="col-2">
       <img src="{{ url_for('static',filename='images/ux.png') }}" style="max-width: 70px;"><br>
-      <h2> Service Informatique</h2><hr_blue>
-      <div class="presentation_expertises_home">Notre département informatique gère tout type de problématiques liés aux systèmes d'information, à la gestion de vos données clients ainsi qu'à l'amélioration de vos process.</div>
+      <h2 class="title_expertise"> Service Informatique</h2>
+      <div class="">`</div>
+        <div class="presentation_expertises_home">Notre département informatique gère tout type de problématiques liés
+          aux systèmes d'information, à la gestion de vos données clients ainsi qu'à l'amélioration de vos process.
+        </div>
 
     </div>
   </div>
 </div>
-
 
 
 <div class="header_section">
@@ -75,11 +87,11 @@
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol><!-- Wrapper for slides -->
-            <div class="carousel-inner" >
+            <div class="carousel-inner">
               <div class="carousel-item active" style="min-height:max-content;">
                 <div class="container">
                   <div class="banner_main news_carousel">
-                  <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
+                    <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
                     <h2 style="color: white;">{{_('Finance')}}</h2>
 
                     <div>{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le
@@ -93,9 +105,9 @@
               <div class="carousel-item">
                 <div class="container">
                   <div class="banner_main news_carousel">
-                  <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
-                  <h2 style="color: white;">{{_('Juridique')}}</h2>
-                  <div>{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le
+                    <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
+                    <h2 style="color: white;">{{_('Juridique')}}</h2>
+                    <div>{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le
                       cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos
                       projets.')}}</div>
 
@@ -105,12 +117,12 @@
               <div class="carousel-item" style="min-height:max-content;">
                 <div class="container">
                   <div class="banner_main news_carousel">
-                  <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
+                    <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
 
-                  <h2 style="color: white;">{{_('Social')}}</h2>
-                  <div>{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le
-                    cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos
-                    projets.')}}</div><br>
+                    <h2 style="color: white;">{{_('Social')}}</h2>
+                    <div>{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le
+                      cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos
+                      projets.')}}</div><br>
 
                   </div>
                 </div>
@@ -125,13 +137,11 @@
 </div><!--about section start -->
 
 
-
-
-
-<h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
-<br>
 <div class="container">
   <div class="row">
+    <br>
+    <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
+    <br>
     <div class="cocon">
       <div class="my_div_aliza"> </div>
 
@@ -151,10 +161,10 @@
 
       <h2 class="text_bottom_home">Nous rejoindre</h2>
 
-        <span class="fa-stack fa-2x" style="margin-top: inherit;">
-          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
-          <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
-        </span>
+      <span class="fa-stack fa-2x" style="margin-top: inherit;">
+        <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
+        <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
+      </span>
     </div>
   </div>
 
@@ -164,10 +174,10 @@
 
 
       <h2 class="text_bottom_home">Nos bureaux</h2>
-        <span class="fa-stack fa-2x" style="margin-top: inherit;">
-          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
-          <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
-        </span>
+      <span class="fa-stack fa-2x" style="margin-top: inherit;">
+        <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
+        <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
+      </span>
 
 
 
@@ -175,7 +185,5 @@
   </div>
 
 </div>
-
-
 
 {% endblock content %}

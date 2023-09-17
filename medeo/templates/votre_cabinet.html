@@ -5,31 +5,24 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="banner_taital">{{_('Votre cabinet')}}</h1>
-                <p class="what_text_1" style="font-style: italic;">Medeo , "Cure your business"</p>
-                <br>
-                <h1 class="banner_taital" style=" margin-top: 10vw;">{{_('Notre histoire')}}</h1>
-
+                <p class="what_text_1" style="font-style: italic;">{{_('Medeo, Cure your business')}}</p>
             </div>
         </div>
     </div>
 </div>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
+
 
 <div class="container">
     <div class="row">
         <div class="col-6 speech-cabinet">
-            <h2 style="color: #114a69;">{{_('MEDEO Partners est un cabinet d\'expertise comptable et de commissariat aux comptes')}}</h2>
+            {{_('MEDEO Partners est un cabinet d\'expertise comptable et de commissariat aux comptes')}}<br /><br />
 
-            <br />
-            <h3 style="color: #114a69;">{{_('inscrit à l\'Ordre des experts-comptables (OEC) de Paris et auprès de la Compagnie régionale des
-                commissaires aux comptes de Paris (CRCC).')}}</h3>
+            {{_('inscrit à l\'Ordre des experts-comptables (OEC) de Paris et auprès de la Compagnie régionale des
+            commissaires aux comptes de Paris (CRCC).')}}<br /><br />
 
-            <br><br><br/>
+            <br><br>
 
-            <h1 style="color: #114a69;">{{_('MEDEO, signifiant « prendre soin » ')}}</h1>
+            {{_('MEDEO, signifiant « prendre soin » ')}}
 
         </div>
         <div class="col-6">
@@ -49,9 +42,9 @@
 
             <br><br>
             {{_('PARTNERS, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant
-            l\'association et la complémentarité de ses fondateurs :')}}' <span class="names"
-                onclick="window.location.href='/cabinet_associes'">Israel HAIKOU</span> et <span class="names"
-                onclick="window.location.href='/cabinet_associes'">Avi GOZLANE</span> {{_('ont fondé le cabinet en
+            l\'association et la complémentarité de ses fondateurs :')}} 
+            <a class="names" href="{{_('votre_cabinet#carousel_partners')}}" >Israel HAIKOU</a> et 
+            <a class="names" href="{{_('votre_cabinet#carousel_partners')}}">Avi GOZLANE</a> {{_('ont fondé le cabinet en
             octobre 2022. ')}}
             <br><br>
 
@@ -88,7 +81,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{_('Nos valeurs')}}</h1>
+                <h1 class="banner_taital">{{_('Nos valeurs')}}</h1>
+                <br><br>
                 <br><br>
                 <button type="button" class="btn btn-dark btn-red">Respect</button>
                 <button type="button" class="btn btn-secondary btn-blue">Communication</button>
@@ -106,11 +100,19 @@
 </div>
 
 <br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
+
+
+
+<div class="page-heading-cabinet">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="banner_taital">{{_('L\'équipe')}}</h1>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="banner_section layout_padding">
     <div class="container-fluid">
@@ -122,8 +124,8 @@
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1" class=""></li>
             </ol><!-- Wrapper for slides -->
-            <div class="carousel-inner">
-              <div class="carousel-item active" style="min-height:max-content;">
+            <div class="carousel-inner" id="carousel_partners">
+              <div class="carousel-item active" id="carouselIsrael" style="min-height:max-content;">
                 <div class="container">
                   <div class="banner_main news_carousel">
                     <img src="/static/images/id/Israel.png" class="image_7">                    
@@ -134,7 +136,7 @@
                 </div>
               </div>
 
-              <div class="carousel-item">
+              <div class="carousel-item" id="carouselAvi" style="min-height:max-content;">
                 <div class="container">
                   <div class="banner_main news_carousel">
                     <img src="/static/images/id/Avi.png" class="image_7">                  
@@ -154,8 +156,6 @@
     </div>
   </div>
 <br><br><br>
-
-
 
 
 
