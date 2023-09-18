@@ -34,8 +34,9 @@
 <div class="container-fluid">
   <div class="row justify-content-center" style="margin-top: 5vw">
     <div class="col-2">
-      <img src="{{ url_for('static',filename='images/accounting.png') }}" style="max-width: 70px;"><br>
-      <h2 class="title_expertise">Expertise Comptable</h2>
+      <img src="{{ url_for('static',filename='images/accounting.png') }}"
+        style="max-width: 70px; margin-left: 40%;"><br>
+      <h2 class="title_expertise">Expertise <br>Comptable</h2>
       <div class="">`</div>
       <div class="presentation_expertises_home">
         Notre équipe dispose d'une expertise de haut niveau pour vous offrir des
@@ -43,8 +44,8 @@
       </div>
     </div>
     <div class="col-2">
-      <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px;"><br>
-      <h2 class="title_expertise">Audit</h2>
+      <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px; margin-left: 40%;"><br>
+      <h2 class="title_expertise">Audit<br></h2>
       <div class="">`</div>
       <div class="presentation_expertises_home">Notre cabinet comptable est spécialisé dans l'audit et la certification
         des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons en étroite collaboration
@@ -52,8 +53,8 @@
       </div>
     </div>
     <div class="col-2">
-      <img src="{{ url_for('static',filename='images/budget.png') }}" style="max-width: 70px;"><br>
-      <h2 class="title_expertise">Conseil optimisation </h2>
+      <img src="{{ url_for('static',filename='images/budget.png') }}" style="max-width: 70px; margin-left: 40%;"><br>
+      <h2 class="title_expertise">Conseil <br>optimisation </h2>
       <div class="">`</div>
       <div class="presentation_expertises_home">Nos services d'optimisation d'entreprise incluent l'analyse de la
         performance, l'identification des leviers de croissance, la mise en place de plans d'action pour l'amélioration
@@ -62,12 +63,12 @@
 
     </div>
     <div class="col-2">
-      <img src="{{ url_for('static',filename='images/ux.png') }}" style="max-width: 70px;"><br>
-      <h2 class="title_expertise"> Service Informatique</h2>
+      <img src="{{ url_for('static',filename='images/ux.png') }}" style="max-width: 70px; margin-left: 40%;"><br>
+      <h2 class="title_expertise"> Service <br>Informatique</h2>
       <div class="">`</div>
-        <div class="presentation_expertises_home">Notre département informatique gère tout type de problématiques liés
-          aux systèmes d'information, à la gestion de vos données clients ainsi qu'à l'amélioration de vos process.
-        </div>
+      <div class="presentation_expertises_home">Notre département informatique gère tout type de problématiques liés
+        aux systèmes d'information, à la gestion de vos données clients ainsi qu'à l'amélioration de vos process.
+      </div>
 
     </div>
   </div>
@@ -80,7 +81,7 @@
     <div class="container-fluid">
       <section class="slide-wrapper">
         <div class="container-fluid">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="400000">
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -91,46 +92,102 @@
               <div class="carousel-item active" style="min-height:max-content;">
                 <div class="container">
                   <div class="banner_main news_carousel">
-                    <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
+                    <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}"
+                      style="width: 40vh;">
                     <h2 style="color: white;">{{_('Finance')}}</h2>
 
-                    <div>{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le
+                    <div class="carousel_home_txt">{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant
+                      le
                       cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos
                       projets.')}}</div>
 
                   </div>
-                </div>
-              </div>
 
-              <div class="carousel-item">
-                <div class="container">
-                  <div class="banner_main news_carousel">
-                    <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
-                    <h2 style="color: white;">{{_('Juridique')}}</h2>
-                    <div>{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le
-                      cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos
-                      projets.')}}</div>
+                  <div class="col-size">
+                    <h1 class="banner_taital" style="color: pink;">Actualités</h1>
+                    <p style="font-size: xx-large; font-weight: 500;">Lorem consipsum<br>
+                      dolor sit gffamet,<br>
+                      consectetur adipis<br>
+                      cing elit,</p>
+                    <p class="text-start" style="font-size: large;font-weight: 400;color: #114A69;">sed do eiusmod
+                      tempor<br>
+                      incididunt utquis nostrud<br>
+                      exercitation<br>
+                      ullamco laboris</p>
 
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item" style="min-height:max-content;">
-                <div class="container">
-                  <div class="banner_main news_carousel">
-                    <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}">
-
-                    <h2 style="color: white;">{{_('Social')}}</h2>
-                    <div>{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne durant le
-                      cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos
-                      projets.')}}</div><br>
-
+                    <div class="readmore_bt">
+                      <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
+                    </div>
                   </div>
                 </div>
               </div>
 
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="banner_main news_carousel">
+                      <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}"
+                        style="width: 40vh;">
+                      <h2 style="color: white;">{{_('Juridique')}}</h2>
+                      <div class="carousel_home_txt">{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne
+                        durant le
+                        cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos
+                        projets.')}}</div>
+
+                    </div>
+                    <div class="col-size">
+                      <h1 class="banner_taital" style="color: pink;">Actualités</h1>
+                      <p style="font-size: xx-large; font-weight: 500;">Lorem consipsum<br>
+                        dolor sit gffamet,<br>
+                        consectetur adipis<br>
+                        cing elit,</p>
+                      <p class="text-start" style="font-size: large;font-weight: 400;color: #114A69;">sed do eiusmod
+                        tempor<br>
+                        incididunt utquis nostrud<br>
+                        exercitation<br>
+                        ullamco laboris</p>
+
+                      <div class="readmore_bt">
+                        <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
+                      </div>
+                    </div>
+                    <!-- <div class="col-size">uio</div> -->
+                  </div>
+                </div>
+                <div class="carousel-item" style="min-height:max-content;">
+                  <div class="container">
+
+                    <div class="banner_main news_carousel">
+                      <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}"
+                        style="width: 40vh;">
+
+                      <h2 style="color: white;">{{_('Social')}}</h2>
+                      <div class="carousel_home_txt">{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne
+                        durant le
+                        cycle de vie de votre entreprise : en prenant soin du bien-être et de la croissance de vos
+                        projets.')}}</div><br>
+                    </div>
+                    <div class="col-size">
+                      <h1 class="banner_taital" style="color: pink;">Actualités</h1>
+                      <p style="font-size: xx-large; font-weight: 500;">Lorem consipsum<br>
+                        dolor sit gffamet,<br>
+                        consectetur adipis<br>
+                        cing elit,</p>
+                      <p class="text-start" style="font-size: large;font-weight: 400;color: #114A69;">sed do eiusmod
+                        tempor<br>
+                        incididunt utquis nostrud<br>
+                        exercitation<br>
+                        ullamco laboris</p>
+  
+                      <div class="readmore_bt">
+                        <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
+                      </div>
+                    </div>
+                    <!-- <div class="col-size">uio</div> -->
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
       </section>
     </div>
   </div><!--banner section end -->
@@ -146,8 +203,8 @@
       <div class="my_div_aliza"> </div>
 
       <h2 class="text_bottom_home">Nous contacter</h2>
-      <span class="fa-stack fa-2x" style="margin-top: inherit;">
-        <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
+      <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+        <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
         <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
       </span>
 
@@ -161,7 +218,7 @@
 
       <h2 class="text_bottom_home">Nous rejoindre</h2>
 
-      <span class="fa-stack fa-2x" style="margin-top: inherit;">
+      <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
         <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
         <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
       </span>
@@ -174,7 +231,7 @@
 
 
       <h2 class="text_bottom_home">Nos bureaux</h2>
-      <span class="fa-stack fa-2x" style="margin-top: inherit;">
+      <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
         <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
         <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
       </span>

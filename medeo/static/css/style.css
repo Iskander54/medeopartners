@@ -131,7 +131,7 @@ p {
     margin: 20px;
     font-weight: 300;
     font-size: 12.5px;
-    line-height: 24px;
+    line-height: 26px;
 }
 
 a {
@@ -329,6 +329,7 @@ button {
     color: #114a69;
     font-weight: 900;
     text-align: center;
+    
 }
 
 .banner_text {
@@ -337,6 +338,8 @@ button {
     font-size: 16px;
     color: #114a69;
     margin-left: 115px;
+    font-family: ARIAL;
+    /* font-size: 2vh; */
 }
 
 .title_expertise {
@@ -345,9 +348,10 @@ button {
     font-size: 30px;
     color: #114a69;
     line-height: 1.5em;
-    height: 3em;
+    /* height: 3em; */
     overflow: hidden;
-    text-align: left;
+    text-align: center;
+    font-weight: 900;
 }
 
 .btn_main {
@@ -1111,9 +1115,10 @@ textarea#comment::placeholder {
 .what_text_1 {
     width: 50%;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 25px;
     color: #114a69;
     text-align: center;
+    font-weight: bolder;
 }
 
 .team_section_2 {
@@ -2069,7 +2074,7 @@ hr.hr_vertical {
     margin-top: 25px;
     background-color: #b8c7d4;
     display: flex;
-
+    opacity: 0.8;
 }
 
 .my_div_aliza {
@@ -2130,19 +2135,43 @@ hr.hr_vertical {
     color: #114a69;
     margin: auto;
     opacity: 0.7;
+    font-weight: bolder;
 }
-
+/* 
 .bg-img {
-    /* height: 100vw; */
+    height: 100vw;
     width: 100vw;
+    object-fit: cover;
+    filter: brightness(0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat:repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+
+} */
+
+.bg-img2{
+    background-image: url("../images/service/image-background.png");
+    /* background-color: #000; */
+    height: 1000%;
+    width: 100%;
     object-fit: cover;
     /* filter: brightness(0.6); */
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-    background-repeat: no-repeat;
-
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  
 }
 
 
@@ -2393,3 +2422,25 @@ textarea[id=content]:focus {
     outline: 2px solid orange;
     background-color: #f7a49e;
 }
+
+.col-size {
+    width: 60%;
+    padding: 10%!important;
+    background-color: #E91C2A;
+    opacity: .8;
+    margin-left: auto;
+  }
+
+
+  .carousel_home_txt{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-align: center;
+  }
+
+  .modal-custom-content{
+    background-color: #114a69;
+  }
