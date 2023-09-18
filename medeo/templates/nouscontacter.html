@@ -1,14 +1,81 @@
 {% extends "layout.html" %}
 {% block content %}
-      <!-- contact section start -->
-      <div class="contact_section layout_padding">
-        <div class="container">
+
+<div class="page-heading-cabinet">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="banner_taital">{{_('Nous contacter')}}</h1>
+                <p class="what_text_1" style="font-style: italic;">Medeo , "Cure your business"</p>
+                <h1 class="banner_taital" style=" margin-top: 7vw;">{{_('Nos bureaux')}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+      <div class="cocon_contact">
+        <iframe style="border-radius: 25px;" height="300" width="60%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=97%20boulevard%20Malesherbes+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Find Population on Map</a></iframe>
+        <div class="adresse_contact">
+            <h1> PARIS</h1><br>
+            <h2> MEDEO PARTNERS</h2>
+            <h2> 42 RUE DE L'AMIRAL HAMELIN</h2>
+            <h2> 75116 Paris</h2>
+            <h2> 01 83 64 16 04</h2>
+        </div>
+    </div>
+    </div>
+  
+    <div class="row">
+      <div class="cocon_contact">
+
+        <div class="adresse_contact">
+            <h1> WASHINGTON</h1><br>
+            <h2> MEDEO TAX</h2>
+            <h2> 1831 2nd ST NE UNIT#509</h2>
+            <h2> WASHINGTON, DC 20002-1596 Paris</h2>
+            <h2> +240 217 90 53</h2>
+        </div>
+        <!-- <iframe style="border-radius: 25px;" height="300" width="60%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=97%20boulevard%20Malesherbes+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Find Population on Map</a></iframe> -->
+        <iframe style="border-radius: 25px;" height="300" width="60%"frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1831%202nd%20ST%20washington%20DC+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Find Population on Map</a></iframe>
+      </div>
+    </div>
+  
+  
+  </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="page-heading-cabinet">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="banner_taital">{{_('Nous écrire ')}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact section start -->
+<div class="contact_section layout_padding">
+    <div class="container">
         </br>
-           <h1 class="contact_taital">{{_('Contactez-nous !')}}</h1>
-           <p class="contact_text">{{_('Remplissez le formulaire et nous reviendrons vers vous aux plus vite !')}}</p>
-           <div class="contact_section_2 layout_padding">
-              <div class="row">
-                 <div class="col-md-6">
+        <div class="contact_section_2 layout_padding">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
                     <div class="contact_main">
                         <form class="submitForm" method="post" enctype="multipart/form-data" action="">
                             {{ form.hidden_tag() }}
@@ -16,30 +83,30 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         {{ form.firstname.label(class="form-control-label white") }}
-                                            {% if form.firstname.errors %}
-                                                {{ form.firstname(class="form-control form-control-lg is-invalid") }}
-                                                <div class="invalid-feedback">
-                                                    {% for error in form.firstname.errors %}
-                                                        <span>{{ error }}</span>
-                                                    {% endfor %}
-                                                </div>
-                                            {% else %}
-                                                {{ form.firstname(class="form-control form-control-lg") }}
-                                            {% endif %}
+                                        {% if form.firstname.errors %}
+                                        {{ form.firstname(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.firstname.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                        {% else %}
+                                        {{ form.firstname(class="form-control form-control-lg") }}
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         {{ form.lastname.label(class="form-control-label white") }}
                                         {% if form.lastname.errors %}
-                                            {{ form.lastname(class="form-control form-control-lg is-invalid") }}
-                                            <div class="invalid-feedback">
-                                                {% for error in form.lastname.errors %}
-                                                    <span>{{ error }}</span>
-                                                {% endfor %}
-                                            </div>
+                                        {{ form.lastname(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.lastname.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
                                         {% else %}
-                                            {{ form.lastname(class="form-control form-control-lg") }}
+                                        {{ form.lastname(class="form-control form-control-lg") }}
                                         {% endif %}
                                     </div>
                                 </div>
@@ -47,16 +114,16 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        {{ form.phonenumber.label(class=" white") }}
+                                        {{ form.phonenumber.label(class=" form-control-label white") }}
                                         {% if form.phonenumber.errors %}
-                                            {{ form.phonenumber(class="form-control form-control-lg is-invalid") }}
-                                            <div class="invalid-feedback">
-                                                {% for error in form.phonenumber.errors %}
-                                                    <span>{{ error }}</span>
-                                                {% endfor %}
-                                            </div>
+                                        {{ form.phonenumber(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.phonenumber.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
                                         {% else %}
-                                            {{ form.phonenumber(class="form-control form-control-lg") }}
+                                        {{ form.phonenumber(class="form-control form-control-lg") }}
                                         {% endif %}
                                     </div>
                                 </div>
@@ -64,14 +131,14 @@
                                     <div class="form-group">
                                         {{ form.email.label(class="form-control-label white") }}
                                         {% if form.email.errors %}
-                                            {{ form.email(class="form-control form-control-lg is-invalid") }}
-                                            <div class="invalid-feedback">
-                                                {% for error in form.email.errors %}
-                                                    <span>{{ error }}</span>
-                                                {% endfor %}
-                                            </div>
+                                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
                                         {% else %}
-                                            {{ form.email(class="form-control form-control-lg") }}
+                                        {{ form.email(class="form-control form-control-lg") }}
                                         {% endif %}
                                     </div>
                                 </div>
@@ -81,14 +148,14 @@
                                     <div class="form-group">
                                         {{ form.subject.label(class="form-control-label white") }}
                                         {% if form.subject.errors %}
-                                            {{ form.subject(class="form-control form-control-lg is-invalid") }}
-                                            <div class="invalid-feedback">
-                                                {% for error in form.subject.errors %}
-                                                    <span>{{ error }}</span>
-                                                {% endfor %}
-                                            </div>
+                                        {{ form.subject(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.subject.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
                                         {% else %}
-                                            {{ form.subject(class="form-control form-control-lg") }}
+                                        {{ form.subject(class="form-control form-control-lg") }}
                                         {% endif %}
                                     </div>
                                 </div>
@@ -96,14 +163,14 @@
                             <div class="form-group">
                                 {{ form.content.label(class="form-control-label white") }}
                                 {% if form.content.errors %}
-                                    {{ form.content(class="form-control form-control-lg is-invalid") }}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.content.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
+                                {{ form.content(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.content.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
                                 {% else %}
-                                    {{ form.content(class="form-control form-control-lg") }}
+                                {{ form.content(class="form-control form-control-lg") }}
                                 {% endif %}
                             </div>
                             <div class="form-group">
@@ -114,17 +181,76 @@
                             </div>
                         </form>
                     </div>
-                 </div>
-                 <div class="col-md-6">
-                    <div class="map_main">
-                       <div class="map-responsive">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.47396743264!2d2.2919001999999997!3d48.868240500000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fef9dc13b81%3A0xd10e353a0f7bb24a!2s42%20Rue%20de%20l&#39;Amiral%20Hamelin%2C%2075116%20Paris%2C%20France!5e0!3m2!1sfr!2sus!4v1683465461341!5m2!1sfr!2sus" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
+                </div>
+
+            </div>
         </div>
-     </div>
-     <!-- contact section end -->
+    </div>
+</div>
+<!-- contact section end -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="banner_taital">{{_('Nous rejoindre ')}}</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="banner_section layout_padding">
+    <div class="container-fluid">
+      <section class="slide-wrapper">
+        <div class="container-fluid">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+              <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            </ol><!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="carousel-item active" style="min-height:max-content;">
+                <div class="container">
+                  <div class="banner_main news_carousel">
+                    <img src="/static/images/id/Israel.png" class="image_7">                    
+                    <h2 style="color: white;">Candidature Spontanée</h2>
+                    <div>Lorem ipsumLorem ipsumLorem ipsum</div><br>
+                    <div>Lorem ipsumLorem ipsumLorem ipsumLorem ipsum</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="container">
+                  <div class="banner_main news_carousel">
+                    <img src="/static/images/id/Avi.png" class="image_7">                  
+                    <h2 style="color: white;">Poste : Gestionnaire comptabilité CDI (H/F)</h2>
+                    <div>Lorem ipsumLorem ipsum</div><br>
+                    <div>Lorem ipsumLorem ipsumLorem ipsum</div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="container">
+                  <div class="banner_main news_carousel">
+                    <img src="/static/images/id/Avi.png" class="image_7">                  
+                    <h2 style="color: white;">Poste : Chargé de paye</h2>
+                    <div>Lorem ipsumLorem ipsumLorem ipsum</div><br>
+                    <div>Lorem ipsumLorem ipsumLorem ipsum</div>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 {% endblock content %}
