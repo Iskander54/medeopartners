@@ -1129,6 +1129,9 @@ textarea#comment::placeholder {
 .image_7 {
     width: 50%;
     text-align: center;
+    border-radius: 3vw;
+    margin-bottom: 25px;
+
 }
 
 .readable_text {
@@ -2074,7 +2077,8 @@ hr.hr_vertical {
     margin-top: 25px;
     background-color: #b8c7d4;
     display: flex;
-    opacity: 0.8;
+    margin-left: auto;
+    background: rgba(154, 141, 139, 0.3);
 }
 
 .my_div_aliza {
@@ -2280,17 +2284,18 @@ hr.hr_vertical {
     height: 24vw;
     text-align: center;
     padding-top: 2vw;
+    margin-top: 33px;
 }
 
 .btn-blue {
-    background-color: #120a78;
+    background-color: #114a69;
     margin: 1vw;
     color: white;
     border-radius: 15px;
 }
 
 .btn-grey {
-    background-color: grey;
+    background-color: #b1c2d0;
     margin: 1vw;
     color: white;
     border-radius: 15px;
@@ -2425,10 +2430,11 @@ textarea[id=content]:focus {
 
 .col-size {
     width: 60%;
-    padding: 10%!important;
+    padding: 7%!important;
     background-color: #E91C2A;
-    opacity: .8;
     margin-left: auto;
+    background: rgba(233,28, 42, 0.3);
+    border-radius: 20px;
   }
 
 
@@ -2441,6 +2447,43 @@ textarea[id=content]:focus {
     text-align: center;
   }
 
-  .modal-custom-content{
-    background-color: #114a69;
+  .modal-body{
+    /* background-color: #114a69; */
+    font-style: italic;
+    color: #114a69;
+    
   }
+
+  .modal-content{
+    border-radius: 40px;
+    background-image: url(../images/service/image-background.png);
+  }
+
+  .modal-title{
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+
+  }
+
+  .modal-header{
+    padding-left: 11vw;
+    border-bottom : 0;
+  }
+
+  .title_carousel{
+    color: #114a69;
+    font-size: xx-large; 
+    font-weight: 900;
+    font-style: italic;
+    
+
+}
+
+.text-start{
+    font-size: large;
+    font-weight: 400;
+    color: #114A69;
+    font-style: italic;
+}
+ 
