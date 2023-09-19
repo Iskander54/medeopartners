@@ -2014,7 +2014,8 @@ hr.hr_vertical {
     color: #114a69;
     text-align: justify;
     margin: auto;
-
+    font-family: Arial;
+    font-size: 16px;
 }
 
 
@@ -2142,6 +2143,24 @@ hr.hr_vertical {
     left: 0;
     z-index: -1;
     background-repeat: no-repeat;
+
+}
+
+.bg-img2 {
+    background-image: url("../images/service/image-background.png");
+    /* background-color: #000; */
+    height: 1000%;
+    width: 100%;
+    object-fit: cover;
+    /* filter: brightness(0.6); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 
 }
 
@@ -2392,4 +2411,13 @@ input[id=subject]:focus {
 textarea[id=content]:focus {
     outline: 2px solid orange;
     background-color: #f7a49e;
+}
+
+
+.title-nos-expertises{
+    width: 100%;
+    float: left;
+    font-size: 48px;
+    color: #114a69;
+    font-weight: 900;
 }
