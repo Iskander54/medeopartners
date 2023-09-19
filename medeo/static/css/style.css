@@ -279,6 +279,7 @@ button {
     background-position: 80% 25%;
     height: auto;
     background-size: 40%;
+    
 }
 
 .bg-light {
@@ -315,13 +316,16 @@ button {
     border-bottom: 80px solid #E91C2A;
 }
 
+@media screen and (min-width: 50px) {
 .banner_main {
     width: 44%;
     float: left;
     background: transparent;
     padding: 8px;
+    }
 }
 
+@media screen and (min-width: 1300px) {
 .banner_taital {
     width: 100%;
     float: left;
@@ -329,8 +333,19 @@ button {
     color: #114a69;
     font-weight: 900;
     text-align: center;
-    
+}   
 }
+
+@media screen and (min-width: 1000px) {
+    .banner_taital {
+        width: 100%;
+        float: left;
+        font-size: 48px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }   
+    }
 
 .banner_text {
     width: 100%;
@@ -1111,7 +1126,8 @@ textarea#comment::placeholder {
     width: 100%;
     float: left;
 }
-
+@media screen and (min-width: 1300px) {
+  
 .what_text_1 {
     width: 50%;
     margin: 0 auto;
@@ -1120,7 +1136,7 @@ textarea#comment::placeholder {
     text-align: center;
     font-weight: bolder;
 }
-
+}
 .team_section_2 {
     width: 100%;
     float: left;
@@ -2066,12 +2082,12 @@ hr.hr_vertical {
     -webkit-box-orient: vertical;
     text-align: justify;
 }
-
+@media screen and (min-width: 50px) {
 .cocon {
     margin: auto;
-    font-size: 18px;
-    border-radius: 30px;
-    height: 150px;
+    font-size: 1.5em;
+    border-radius: 2em;
+    /* height: 150px; */
     width: 60%;
     border-spacing: 60px;
     margin-top: 25px;
@@ -2079,6 +2095,7 @@ hr.hr_vertical {
     display: flex;
     margin-left: auto;
     background: rgba(154, 141, 139, 0.3);
+    }
 }
 
 .my_div_aliza {
@@ -2276,7 +2293,7 @@ hr.hr_vertical {
     padding-top: 30px;
 
 }
-
+@media screen and (min-width: 1000px) {
 .news_carousel {
     border-radius: 9vh;
     background-color: #114a69;
@@ -2285,8 +2302,8 @@ hr.hr_vertical {
     text-align: center;
     padding-top: 2vw;
     margin-top: 33px;
+    }
 }
-
 .btn-blue {
     background-color: #114a69;
     margin: 1vw;
@@ -2427,7 +2444,7 @@ textarea[id=content]:focus {
     outline: 2px solid orange;
     background-color: #f7a49e;
 }
-
+@media screen and (min-width: 400px) {
 .col-size {
     width: 60%;
     padding: 7%!important;
@@ -2436,6 +2453,7 @@ textarea[id=content]:focus {
     background: rgba(233,28, 42, 0.3);
     border-radius: 20px;
   }
+}
 
 
   .carousel_home_txt{
