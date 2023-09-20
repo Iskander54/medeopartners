@@ -15,28 +15,33 @@
    <meta name="author" content="">
    <!-- bootstrap css -->
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      
+
    <!-- style css -->
-   
+
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
    <!-- Responsive-->
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}">
-   
+
    <!-- Scrollbar Custom CSS -->
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.min.css') }}">
+   <link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.min.css') }}">
    <!-- Tweaks for older IEs-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
    <!-- fonts -->
    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
-   <!-- owl stylesheets --> 
+   <!-- owl stylesheets -->
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+      media="screen">
 
    <!-- Favicon -->
-   <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='/images/favicon_io/apple-touch-icon.png')}}">
-   <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='/images/favicon_io/favicon-32x32.png')}}">
-   <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='/images/favicon_io/favicon-16x16.png')}}">
+   <link rel="apple-touch-icon" sizes="180x180"
+      href="{{url_for('static', filename='/images/favicon_io/apple-touch-icon.png')}}">
+   <link rel="icon" type="image/png" sizes="32x32"
+      href="{{url_for('static', filename='/images/favicon_io/favicon-32x32.png')}}">
+   <link rel="icon" type="image/png" sizes="16x16"
+      href="{{url_for('static', filename='/images/favicon_io/favicon-16x16.png')}}">
    <link rel="manifest" href="{{url_for('static', filename='/images/favicon_io/site.webmanifest')}}">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -48,12 +53,12 @@
 </head>
 
 <body>
-   
-<header class="site-header">
-   <!-- <img class="bg-img" src="{{ url_for('static',filename='images/service/image-background.png') }}" alt="Bg image"> -->
-   <div class="bg-img2"></div>
 
-<nav class="navbar navbar-expand-md navbar-light bg-light ">
+   <header class="site-header">
+      <!-- <img class="bg-img2" src="{{ url_for('static',filename='images/service/image-background.png') }}" alt="Bg image"> -->
+      <div class="bg-img2"></div>
+
+      <nav class="navbar navbar-expand-md navbar-light bg-light ">
          <div class="container-fluid">
             <a class="navbar-brand" href="{{_('accueil')}}">
                <img src="/static/medeo_images/Medeo_partners_couleur.png">
@@ -88,7 +93,7 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="{{_('nouscontacter')}}" >
+                     <a class="nav-link" href="{{_('nouscontacter')}}">
                         <div class="sous-titre">
                            Nous contacter
                         </div>
@@ -103,147 +108,155 @@
                   </li>
 
                </ul>
-               <ul>
+               <!-- <ul> -->
 
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                     
-                        
+               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                           <div class="nav_icone">
-                              <a href="https://instagram.com/medeo_partners?igshid=MzRlODBiNWFlZA==">
-                                 <i class="fa-brands fa-instagram fa-xl"></i></br>
-                           </div>
-                        </a>
 
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                           <div class="nav_icone">
-                              <a href="https://www.linkedin.com/search/results/all/?keywords=medeo%20partners&origin=GLOBAL_SEARCH_HEADER&sid=~KP">
-                                 <i class="fa-brands fa-linkedin fa-xl"></i></a>
-                              </a></br>
-                           </div>
-                        </a>
 
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                           <div class="nav_icone">
-                              <a href="https://instagram.com/medeo_partners?igshid=MzRlODBiNWFlZA==">
-                                 <i class="fa-brands fa-whatsapp fa-xl"></i></a></br>
-                           </div>
-                        </a>
-   
-                  </ul>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                        <div class="nav_icone">
+                           <a href="https://instagram.com/medeo_partners?igshid=MzRlODBiNWFlZA==">
+                              <i class="fa-brands fa-instagram fa-xl"></i></br>
+                        </div>
+                     </a>
+
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                        <div class="nav_icone">
+                           <a
+                              href="https://www.linkedin.com/search/results/all/?keywords=medeo%20partners&origin=GLOBAL_SEARCH_HEADER&sid=~KP">
+                              <i class="fa-brands fa-linkedin fa-xl"></i></a>
+                     </a></br>
             </div>
+            </a>
+
+            <li class="nav-item">
+               <a class="nav-link" href="#">
+                  <div class="nav_icone">
+                     <a href="https://instagram.com/medeo_partners?igshid=MzRlODBiNWFlZA==">
+                        <i class="fa-brands fa-whatsapp fa-xl"></i></a></br>
+                  </div>
+               </a>
+               </ul>
+         </div>
          </div>
 
       </nav>
 
-</header>
+   </header>
 
 
 
-<main role="main" class="container pt-130">
-   {% with messages = get_flashed_messages(with_categories=true) %}
-   {% if messages %}
-   {% for category, message in messages %}
-   <div class="alert alert-{{ category }}">
-      {{ message }}
-   </div>
-   {% endfor %}
-   {% endif %}
-   {% endwith %}
-</main>
+   <main role="main" class="container pt-130">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">
+         {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+   </main>
 
-<!-- <div id="foregid" class="foreg"></div>
-<span id="loaderid" class="loader"></span> -->
+   <div id="foregid" class="foreg"></div>
+   <span id="loaderid" class="loader"></span>
 
-{% block content %}{% endblock %}
+   {% block content %}{% endblock %}
 
-        <!-- footer section start -->
-        <div class="footer_section">
-         <div class="container_footer">
-            <div class="footer_section_2">
-              
-              
-               <div class="row">
-                  <div class="col">
-                     <h2 class="footer_taital">À propos</h2>
-                     <a class="footer_text" href="{{_('votre_cabinet')}}">{{_('Le Cabinet')}}</a>
-                     <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Expert-Comptable')}}</a>
-                     <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Commissariat aux comptes')}}</a>
+   <!-- footer section start -->
+   <div class="footer_section">
+      <div class="container_footer">
+         <div class="footer_section_2">
 
-                  </div>
-                  <div class="col">
-                     <h2 class="footer_taital">{{_('Adresse')}}</h2>
-                     <p class="location_text">
-                        <img src="{{url_for('static', filename='images/map-icon.png') }}"><span class="padding_left_10"><a href="https://www.google.com/maps/search/?api=1&query=1831+2nd+St+NE+1831+2nd+Washington+DC">97 Bd Malesherbes <br> 75008 Paris </a></span></br>
-                        <img src="{{url_for('static', filename='images/call-icon.png') }}"><span class="padding_left_10"><a href="#">01 83 64 16 04</a></span></br>            
-                        <img src="{{url_for('static', filename='images/mail-icon.png') }}"><span class="padding_left_10"><a href="mailto:contact@medeo-partners.com">contact@medeo-partners.com</a></span></br>
-                     </p>
-                  </div>
 
-                  <div class="col col_footer">
-                     <h2 class="footer_taital">{{_('Nous contacter')}}</h2>
-                     <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
-                     <a class="footer_text" href="{{_('votre_cabinet')}}">{{_('L\'équipe')}}</a>
+            <div class="row">
+               <div class="col">
+                  <h2 class="footer_taital">À propos</h2>
+                  <a class="footer_text" href="{{_('votre_cabinet')}}">{{_('Le Cabinet')}}</a>
+                  <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Expert-Comptable')}}</a>
+                  <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Commissariat aux comptes')}}</a>
 
-                  </div>
-                  <div class="col">
-                     <img src="{{url_for('static', filename='medeo_images/Medeo_partners_blc.png') }}" style="max-width:60%;"><span class="padding_left_10"></span><br/>
-                  </div>
-                  <div class="col">
-                     <div class="crcc-logo"><a href="https://www.crcc-paris.fr/" target="_blank"><img src="{{url_for('static', filename='images/logo-crcc-black.png')}}"></a></div><br/>
-                     <br/>
-                     <div class="oec-logo"><a href="https://www.oec-paris.fr/" target="_blank"><img src="{{url_for('static', filename='images/oec.png')}}"></a></div><br/>
-                  </div>
-                  
+               </div>
+               <div class="col">
+                  <h2 class="footer_taital">{{_('Adresse')}}</h2>
+                  <p class="location_text">
+                     <img src="{{url_for('static', filename='images/map-icon.png') }}"><span class="padding_left_10"><a
+                           href="https://www.google.com/maps/search/?api=1&query=1831+2nd+St+NE+1831+2nd+Washington+DC">97
+                           Bd Malesherbes <br> 75008 Paris </a></span></br>
+                     <img src="{{url_for('static', filename='images/call-icon.png') }}"><span class="padding_left_10"><a
+                           href="#">01 83 64 16 04</a></span></br>
+                     <img src="{{url_for('static', filename='images/mail-icon.png') }}"><span class="padding_left_10"><a
+                           href="mailto:contact@medeo-partners.com">contact@medeo-partners.com</a></span></br>
+                  </p>
+               </div>
+
+               <div class="col col_footer">
+                  <h2 class="footer_taital">{{_('Nous contacter')}}</h2>
+                  <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
+                  <a class="footer_text" href="{{_('votre_cabinet')}}">{{_('L\'équipe')}}</a>
+
+               </div>
+               <div class="col">
+                  <img src="{{url_for('static', filename='medeo_images/Medeo_partners_blc.png') }}"
+                     style="max-width:60%;"><span class="padding_left_10"></span><br />
+               </div>
+               <div class="col">
+                  <div class="crcc-logo"><a href="https://www.crcc-paris.fr/" target="_blank"><img
+                           src="{{url_for('static', filename='images/logo-crcc-black.png')}}"></a></div><br />
+                  <br />
+                  <div class="oec-logo"><a href="https://www.oec-paris.fr/" target="_blank"><img
+                           src="{{url_for('static', filename='images/oec.png')}}"></a></div><br />
                </div>
 
             </div>
+
          </div>
+      </div>
 
       <!-- footer section end -->
       <!-- copyright section start -->
       <div class="copyright_section">
          <div class="container">
             <div class="row">
-            <p class="copyright_text">MEDEO Partners Copyright 2023© - Tous droits réservés | <a href="legal">Mentions légales</a> </p>
+               <p class="copyright_text">MEDEO Partners Copyright 2023© - Tous droits réservés | <a
+                     href="legal">Mentions légales</a> </p>
             </div>
-            
+
          </div>
       </div>
    </div>
-<!-- copyright section end -->
-<!-- Javascript files-->
-<script src="{{url_for('static', filename='js/jquery.min.js') }}"></script>
-<script src="{{url_for('static', filename='js/dropdown.js') }}"></script>
-<script src="{{url_for('static', filename='js/popper.min.js') }}"></script>
-<script src="{{url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
-<script src="{{url_for('static', filename='js/plugin.js') }}"></script>
-<!-- sidebar -->
-<script src="{{url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-<script src="{{url_for('static', filename='js/custom.js') }}"></script>
-<!-- javascript -->
-<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+   <!-- copyright section end -->
+   <!-- Javascript files-->
+   <script src="{{url_for('static', filename='js/jquery.min.js') }}"></script>
+   <script src="{{url_for('static', filename='js/dropdown.js') }}"></script>
+   <script src="{{url_for('static', filename='js/popper.min.js') }}"></script>
+   <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
+   <script src="{{url_for('static', filename='js/plugin.js') }}"></script>
+   <!-- sidebar -->
+   <script src="{{url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+   <script src="{{url_for('static', filename='js/custom.js') }}"></script>
+   <!-- javascript -->
+   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
    <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
          var loaderDiv = document.getElementById('loaderid');
          var foregroundDiv = document.getElementById('foregid');
          // Show the div
          foregroundDiv.style.display = 'block';
          loaderDiv.style.display = 'block';
          // Hide the div after 1 seconds
-         setTimeout(function() {
+         setTimeout(function () {
             loaderDiv.style.display = 'none';
             foregroundDiv.style.display = 'none';
-            }, 1000);
-    });
+         }, 1000);
+      });
 
-       </script>
+   </script>
 </body>
 
 </html>
