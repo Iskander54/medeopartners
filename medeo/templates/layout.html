@@ -78,11 +78,27 @@
                         </div>
                      </a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                      <a class="nav-link" href="{{_('notre_expertise')}}">
                         <div class="sous-titre">
                            Notre expertise
-                        </div>
+                        </div> -->
+
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_dos" role="button" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="true">
+                              <div class="sous-titre">
+                              {{_('Nos expertises')}}
+                              </div>
+                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown_dos">
+                              <!-- <a class="dropdown-item" href="nos_expertises#expert-comptable">Expert-Comptable</a> -->
+                              <a class="dropdown-item auditconseil" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
+                              <a class="dropdown-item fiscajuridique" href="{{_('audit')}}">{{_('Audit')}}</a>
+                              <a class="dropdown-item finance" href="{{_('conseil_optimisation')}}">{{_('Conseil-Optimisation')}}</a>
+            
+                           </div>
+                        </li>
                      </a>
                   </li>
                   <li class="nav-item">
@@ -135,7 +151,7 @@
             <li class="nav-item">
                <a class="nav-link" href="#">
                   <div class="nav_icone">
-                     <a href="https://instagram.com/medeo_partners?igshid=MzRlODBiNWFlZA==">
+                     <a href="https://wa.me/33669066804">
                         <i class="fa-brands fa-whatsapp fa-xl"></i></a></br>
                   </div>
                </a>

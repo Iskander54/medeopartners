@@ -7,9 +7,10 @@
       <h1 class="banner_taital">{{_('Bienvenue chez Medeo Partners')}}</h1>
 
       <p class="banner_text" style="text-indent: 1px;">
-        {{_('Fort de plus 10 ans d\'expertise en comptabilité, et fiscalité, nous')}} <br>
+        {{_('Fort de plus 10 ans d\'expertise en comptabilité, et fiscalité, nous')}}<br>
         {{_('accompagnons nos clients de tout secteurs dans leurs démarches')}}<br>
-        {{_('de création d\'entreprise, de de projets, et d\'optimisation.')}}<br /></p>
+        {{_('de création d\'entreprise, de de projets, et d\'optimisation.')}}<br />
+      </p>
 
       <div class="readmore_bt">
         <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
@@ -21,7 +22,7 @@
     </div>
   </div>
 </div>
-
+ 
 <div class="container">
   <div class="row">
     <h1 class="banner_taital" style="top: 150px;">{{_('Notre expertise à votre service')}}</h1>
@@ -36,16 +37,16 @@
     <div class="col-2">
       <img src="{{ url_for('static',filename='images/accounting.png') }}"
         style="max-width: 70px; margin-left: 40%;"><br>
-      <h2 class="title_expertise">Expertise <br>Comptable</h2>
+      <h2 class="title_expertise">{{_('Expertise <br>Comptable')}}</h2>
       <div class="">`</div>
       <div class="presentation_expertises_home">
-        Notre équipe dispose d'une expertise de haut niveau pour vous offrir des
-        services de conseil et d'assistance dans les domaines de la gestion financière, comptable et fiscale.
+        {{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des
+        services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
       </div>
     </div>
     <div class="col-2">
       <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px; margin-left: 40%;"><br>
-      <h2 class="title_expertise">Audit<br></h2>
+      <h2 class="title_expertise">{{_('Audit')}}<br><br></h2>
       <div class="">`</div>
       <div class="presentation_expertises_home">Notre cabinet comptable est spécialisé dans l'audit et la certification
         des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons en étroite collaboration
@@ -81,7 +82,7 @@
     <div class="container-fluid">
       <section class="slide-wrapper">
         <div class="container-fluid">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="400000">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -91,7 +92,7 @@
             <div class="carousel-inner">
               <div class="carousel-item active" style="min-height:max-content;">
                 <div class="container">
-                  <div class="banner_main news_carousel">
+                  <div class="banner_main news_carousel_2">
                     <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}"
                       style="width: 40vh;">
                     <h2 style="color: white;">{{_('Finance')}}</h2>
@@ -131,7 +132,7 @@
 
               <div class="carousel-item" style="min-height:max-content;">
                 <div class="container">
-                  <div class="banner_main news_carousel">
+                  <div class="banner_main news_carousel_2">
                     <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}"
                       style="width: 40vh;">
                     <h2 style="color: white;">{{_('Juridique')}}</h2>
@@ -162,13 +163,13 @@
                       <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
                     </div>
                   </div>
-                  <!-- <div class="col-size">uio</div> -->
+                 
                 </div>
               </div>
               <div class="carousel-item" style="min-height:max-content;">
                 <div class="container">
 
-                  <div class="banner_main news_carousel">
+                  <div class="banner_main news_carousel_2">
                     <img class="images_cabinet" src="{{ url_for('static',filename='images/medeo_talking.png') }}"
                       style="width: 40vh;">
 
@@ -199,7 +200,7 @@
                       <a href="/expertise_comptable">{{_('Plus d\'informations')}}</a>
                     </div>
                   </div>
-                  <!-- <div class="col-size">uio</div> -->
+                 
                 </div>
               </div>
             </div>
