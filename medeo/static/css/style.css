@@ -132,7 +132,7 @@ p {
     margin: 20px;
     font-weight: 300;
     font-size: 12.5px;
-    line-height: 24px;
+    line-height: 26px;
 }
 
 a {
@@ -280,6 +280,7 @@ button {
     background-position: 80% 25%;
     height: auto;
     background-size: 40%;
+    
 }
 
 .bg-light {
@@ -316,13 +317,16 @@ button {
     border-bottom: 80px solid #E91C2A;
 }
 
+@media screen and (min-width: 50px) {
 .banner_main {
     width: 44%;
     float: left;
     background: transparent;
     padding: 8px;
+    }
 }
 
+@media screen and (min-width: 1300px) {
 .banner_taital {
     width: 100%;
     float: left;
@@ -330,7 +334,19 @@ button {
     color: #114a69;
     font-weight: 900;
     text-align: center;
+}   
 }
+
+@media screen and (min-width: 1000px) {
+    .banner_taital {
+        width: 100%;
+        float: left;
+        font-size: 48px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }   
+    }
 
 
 .banner_taital_h3 {
@@ -347,6 +363,8 @@ button {
     font-size: 16px;
     color: #114a69;
     margin-left: 115px;
+    font-family: ARIAL;
+    /* font-size: 2vh; */
 }
 
 .title_expertise {
@@ -355,9 +373,10 @@ button {
     font-size: 30px;
     color: #114a69;
     line-height: 1.5em;
-    height: 3em;
+    /* height: 3em; */
     overflow: hidden;
-    text-align: left;
+    text-align: center;
+    font-weight: 900;
 }
 
 .btn_main {
@@ -1117,15 +1136,17 @@ textarea#comment::placeholder {
     width: 100%;
     float: left;
 }
-
+@media screen and (min-width: 1300px) {
+  
 .what_text_1 {
     width: 50%;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 25px;
     color: #114a69;
     text-align: center;
+    font-weight: bolder;
 }
-
+}
 .team_section_2 {
     width: 100%;
     float: left;
@@ -1134,6 +1155,9 @@ textarea#comment::placeholder {
 .image_7 {
     width: 50%;
     text-align: center;
+    border-radius: 3vw;
+    margin-bottom: 25px;
+
 }
 
 .readable_text {
@@ -2082,18 +2106,20 @@ hr.hr_vertical {
     -webkit-box-orient: vertical;
     text-align: justify;
 }
-
+@media screen and (min-width: 50px) {
 .cocon {
     margin: auto;
-    font-size: 18px;
-    border-radius: 30px;
-    height: 150px;
+    font-size: 1.5em;
+    border-radius: 2em;
+    /* height: 150px; */
     width: 60%;
     border-spacing: 60px;
     margin-top: 25px;
     background-color: #b8c7d4;
     display: flex;
-
+    margin-left: auto;
+    background: rgba(154, 141, 139, 0.3);
+    }
 }
 
 .my_div_aliza {
@@ -2154,19 +2180,43 @@ hr.hr_vertical {
     color: #114a69;
     margin: auto;
     opacity: 0.7;
+    font-weight: bolder;
 }
-
+/* 
 .bg-img {
-    /* height: 100vw; */
+    height: 100vw;
     width: 100vw;
+    object-fit: cover;
+    filter: brightness(0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat:repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+
+} */
+
+.bg-img2{
+    background-image: url("../images/service/image-background.png");
+    /* background-color: #000; */
+    height: 1000%;
+    width: 100%;
     object-fit: cover;
     /* filter: brightness(0.6); */
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-    background-repeat: no-repeat;
-
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  
 }
 
 .bg-img2 {
@@ -2285,7 +2335,7 @@ hr.hr_vertical {
     padding-top: 30px;
 
 }
-
+@media screen and (min-width: 1000px) {
 .news_carousel {
     border-radius: 9vh;
     background-color: #114a69;
@@ -2293,17 +2343,18 @@ hr.hr_vertical {
     height: 24vw;
     text-align: center;
     padding-top: 2vw;
+    margin-top: 33px;
+    }
 }
-
 .btn-blue {
-    background-color: #120a78;
+    background-color: #114a69;
     margin: 1vw;
     color: white;
     border-radius: 15px;
 }
 
 .btn-grey {
-    background-color: grey;
+    background-color: #b1c2d0;
     margin: 1vw;
     color: white;
     border-radius: 15px;
@@ -2435,6 +2486,67 @@ textarea[id=content]:focus {
     outline: 2px solid orange;
     background-color: #f7a49e;
 }
+@media screen and (min-width: 400px) {
+.col-size {
+    width: 60%;
+    padding: 7%!important;
+    background-color: #E91C2A;
+    margin-left: auto;
+    background: rgba(233,28, 42, 0.3);
+    border-radius: 20px;
+  }
+}
+
+
+  .carousel_home_txt{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-align: center;
+  }
+
+  .modal-body{
+    /* background-color: #114a69; */
+    font-style: italic;
+    color: #114a69;
+    
+  }
+
+  .modal-content{
+    border-radius: 40px;
+    background-image: url(../images/service/image-background.png);
+  }
+
+  .modal-title{
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+
+  }
+
+  .modal-header{
+    padding-left: 11vw;
+    border-bottom : 0;
+  }
+
+  .title_carousel{
+    color: #114a69;
+    font-size: xx-large; 
+    font-weight: 900;
+    font-style: italic;
+    
+
+}
+
+.text-start{
+    font-size: large;
+    font-weight: 400;
+    color: #114A69;
+    font-style: italic;
+}
+ 
 
 
 .title-nos-expertises{
