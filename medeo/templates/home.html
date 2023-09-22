@@ -213,52 +213,96 @@
 
 
 <div class="container">
-  <div class="row">
-    <br>
-    <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
-    <br>
-    <div class="cocon">
-      <div class="my_div_aliza"> </div>
-
-      <h2 class="text_bottom_home">Nous contacter</h2>
-      <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
-        <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
-        <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
-      </span>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="cocon">
-      <div class="my_div_aliza_two">
+  <a href="{{_('nouscontacter')}}">
+    <div class="row">
+      <br>
+      <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
+      <br>
+      <div class="cocon">
+        <div class="my_div_aliza"> </div>
+  
+        <h2 class="text_bottom_home">Nous contacter</h2>
+        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
+          <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
+        </span>
+  
       </div>
-
-      <h2 class="text_bottom_home">Nous rejoindre</h2>
-
-      <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
-        <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
-        <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
-      </span>
     </div>
-  </div>
+  </a>
 
-  <div class="row" style="margin-bottom: 90px;">
-    <div class="cocon">
-      <div class="my_div_aliza_tree"></div>
-
-
-      <h2 class="text_bottom_home">Nos bureaux</h2>
-      <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
-        <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
-        <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
-      </span>
-
-
-
+  <a href="{{_('nouscontacter#nous_rejoindre')}}">
+    <div class="row">
+      <div class="cocon">
+        <div class="my_div_aliza_two">
+        </div>
+  
+        <h2 class="text_bottom_home">Nous rejoindre</h2>
+  
+        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
+          <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
+        </span>
+      </div>
     </div>
-  </div>
+  </a>
+
+
+  <a href="{{_('nouscontacter#nos_bureaux')}}">
+    <div class="row" style="margin-bottom: 90px;">
+      <div class="cocon">
+        <div class="my_div_aliza_tree"></div>
+  
+  
+        <h2 class="text_bottom_home">Nos bureaux</h2>
+        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a;"></i>
+          <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
+        </span>
+  
+  
+  
+      </div>
+    </div>
+  </a>
+
 
 </div>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+     var lienScroll_nos_bureaux = document.querySelector('a[href="#nos_bureaux"]');
+     var lienScroll_nous_rejoindre = document.querySelector('a[href="#nos_bureaux"]');
+     
+     lienScroll_nos_bureaux.addEventListener("click", function(e) {
+        e.preventDefault(); // Empêche le comportement par défaut du lien
+  
+        var divCible = document.querySelector('#nos_bureaux');
+        
+        if (divCible) {
+           divCible.scrollIntoView({ behavior: 'smooth' }); // Fait défiler jusqu'à la div cible de manière fluide
+        }
+     });
+
+
+     lienScroll_nous_rejoindre.addEventListener("click", function(e) {
+        e.preventDefault(); // Empêche le comportement par défaut du lien
+  
+        var divCible = document.querySelector('#nous_rejoindre');
+        
+        if (divCible) {
+           divCible.scrollIntoView({ behavior: 'smooth' }); // Fait défiler jusqu'à la div cible de manière fluide
+        }
+     });
+
+  });
+  </script>
+  Avec ce code en place, lorsque vous cliquez sur le lien, la page défilera automatiquement jusqu'à la div spécifique, offrant une expérience de défilement fluide pour les utilisateurs.
+  
+  
+  
+  
+  
+  
 {% endblock content %}
