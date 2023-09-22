@@ -5,13 +5,13 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="banner_taital">{{_('"Votre" cabinet')}}</h1>
-        <p class="what_text_1" style="font-style: italic;">{{_('Medeo, Cure your business')}}</p>
+        <p class="what_text_1" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</p>
       </div>
     </div>
   </div>
 </div>
 
-<h1 class="banner_taital">{{_('Notre histoire')}}</h1>
+<h1 class="banner_taital" style="padding-bottom: 60px">{{_('Notre histoire')}}</h1>
 
 <div class="container">
   <div class="row">
@@ -25,20 +25,18 @@
 
 
         <br><br>
-
-        {{_('MEDEO, signifiant «
-        <style=" ">prendre soin</style> » ')}}
+        <div class="what_text_1">{{_('MEDEO, signifiant «prendre soin»')}}</div>
               </p>
 
         </div>
-        <div class=" col-6">
+        <div class="col-6">
           <img class="images_cabinet" src="{{url_for('static',filename='images/medeo_talking.png') }}">
     </div>
   </div>
 
   <div class="row">
     <div class="col-6">
-      <img class="images_cabinet" src="{{url_for('static',filename='images/heart.png') }}">
+      <img class="images_cabinet" src="{{url_for('static',filename='images/heart_take_care.jpeg') }}">
 
 
     </div>
@@ -360,7 +358,7 @@
   <div class="container-fluid">
     <section class="slide-wrapper">
       <div class="container-fluid">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="400000">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

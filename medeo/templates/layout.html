@@ -5,7 +5,6 @@
    <!-- basic -->
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- mobile metas -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -78,13 +77,31 @@
                         </div>
                      </a>
                   </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="{{_('notre_expertise')}}">
+
+
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_dos" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <div class="sous-titre">
-                           Notre expertise
+                           {{_('Nos expertises')}}
+                           <span class="dropdown-arrow">&#9662;</span>
                         </div>
                      </a>
+                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown_dos">
+                        <li>
+                           <a class="dropdown-item menuderoulant" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item menuderoulant" href="{{_('audit')}}">{{_('Audit')}}</a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item menuderoulant" href="{{_('conseil_optimisation')}}">{{_('Conseil-Optimisation')}}</a>
+                        </li>
+                     </ul>
                   </li>
+                  
+
+
                   <li class="nav-item">
                      <a class="nav-link disabled" href="{{_('actualites')}}">
                         <div class="sous-titre" style="color: gray;">
@@ -108,39 +125,35 @@
                   </li>
 
                </ul>
-               <!-- <ul> -->
-
-               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-
-
+               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row">
                   <li class="nav-item">
                      <a class="nav-link" href="#">
                         <div class="nav_icone">
                            <a href="https://instagram.com/medeo_partners?igshid=MzRlODBiNWFlZA==">
-                              <i class="fa-brands fa-instagram fa-xl"></i></br>
+                              <i class="fa-brands fa-instagram fa-xl"></i>
+                           </a>
                         </div>
                      </a>
-
+                  </li>
                   <li class="nav-item">
                      <a class="nav-link" href="#">
                         <div class="nav_icone">
-                           <a
-                              href="https://www.linkedin.com/search/results/all/?keywords=medeo%20partners&origin=GLOBAL_SEARCH_HEADER&sid=~KP">
-                              <i class="fa-brands fa-linkedin fa-xl"></i></a>
-                     </a></br>
-            </div>
-            </a>
-
-            <li class="nav-item">
-               <a class="nav-link" href="#">
-                  <div class="nav_icone">
-                     <a href="https://instagram.com/medeo_partners?igshid=MzRlODBiNWFlZA==">
-                        <i class="fa-brands fa-whatsapp fa-xl"></i></a></br>
-                  </div>
-               </a>
+                           <a href="https://www.linkedin.com/search/results/all/?keywords=medeo%20partners&origin=GLOBAL_SEARCH_HEADER&sid=~KP">
+                              <i class="fa-brands fa-linkedin fa-xl"></i>
+                           </a>
+                        </div>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">
+                        <div class="nav_icone">
+                           <a href="https://wa.me/33669066804">
+                              <i class="fa-brands fa-whatsapp fa-xl"></i>
+                           </a>
+                        </div>
+                     </a>
                </ul>
-         </div>
+            </div>
          </div>
 
       </nav>
@@ -161,9 +174,10 @@
       {% endwith %}
    </main>
 
-   <div id="foregid" class="foreg"></div>
-   <span id="loaderid" class="loader"></span>
-
+   <div>
+      <div id="foregid" class="foreg"></div>
+      <span id="loaderid" class="loader"></span>
+   </div>
    {% block content %}{% endblock %}
 
    <!-- footer section start -->
@@ -255,6 +269,30 @@
             foregroundDiv.style.display = 'none';
          }, 1000);
       });
+
+
+      // Fonction pour ajuster la hauteur du contenu principal
+      function adjustMainContentHeight() {
+         var windowHeight = window.innerHeight;
+         var bgImageHeight = document.querySelector('.bg-img2').clientHeight;
+         var mainContent = document.querySelector('main');
+
+         // Calculer la hauteur du contenu principal
+         var mainContentHeight = windowHeight - bgImageHeight;
+
+         // Ajuster la hauteur du contenu principal
+         mainContent.style.minHeight = mainContentHeight + 'px';
+      }
+
+      // Appeler la fonction au chargement de la page et lors du redimensionnement de la fenêtre
+      window.addEventListener('load', adjustMainContentHeight);
+      window.addEventListener('resize', adjustMainContentHeight);
+
+
+
+
+
+
 
    </script>
 </body>

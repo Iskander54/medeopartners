@@ -46,53 +46,10 @@ def notre_expertise():
 
 
 
-
-
-@main.route("/cabinet_historique", defaults={'lang_code':'fr'})
-@main.route("/firm_history", defaults={'lang_code':'en'})
-def cabinet_historique():
-    return render_template('/cabinet/cabinet_historique.html',title='Historique')
-
-
-@main.route("/firm_associates",defaults={'lang_code':'en'})
-@main.route("/cabinet_associes",defaults={'lang_code':'fr'})
-def cabinet_associes():
-    return render_template('/cabinet/cabinet_associes.html',title='Associés')
-
-@main.route("/firm_reviews",defaults={'lang_code':'en'})
-@main.route("/cabinet_temoignages",defaults={'lang_code':'fr'})
-def cabinet_temoignages():
-    return render_template('/cabinet/cabinet_temoignages.html',title='Témoignages')
-
 @main.route("/firm_joinus",defaults={'lang_code':'en'})
 @main.route("/cabinet_nousrejoindre",defaults={'lang_code':'fr'})
 def cabinet_nousrejoindre():
     return render_template('/cabinet/cabinet_nousrejoindre.html',title='Nous rejoindre')
-
-@main.route("/audit-council",defaults={'lang_code':'en'})
-@main.route("/audit-conseil",defaults={'lang_code':'fr'})
-def auditconseil():
-    return render_template('/audit-conseil.html',title='Audit - Conseil')
-
-@main.route("/council_optimization",defaults={'lang_code':'en'})
-@main.route("/conseil_optimisation",defaults={'lang_code':'fr'})
-def conseil_optimisation():
-    return render_template('/conseil_optimisation.html',title='Conseil Optimisation')
-
-@main.route("/auditing",defaults={'lang_code':'en'})
-@main.route("/audit",defaults={'lang_code':'fr'})
-def audit():
-    return render_template('/audit.html',title='Audit')
-
-@main.route("/accounting",defaults={'lang_code':'en'})
-@main.route("/expertise_comptable",defaults={'lang_code':'fr'})
-def expertise_comptable():
-    return render_template('/expertise_comptable.html',title='Expertise Comptable')
-
-@main.route("/taxation-legal",defaults={'lang_code':'en'})
-@main.route("/fiscalite-juridique",defaults={'lang_code':'fr'})
-def fiscalitejuridique():
-    return render_template('/fiscalite-juridique.html',title='Fiscalité - Juridique')
 
 @main.route("/our_expertise",defaults={'lang_code':'en'})
 @main.route("/nos_expertises",defaults={'lang_code':'fr'})
@@ -118,6 +75,21 @@ def legal():
 @main.route("/espace_clients",defaults={'lang_code':'fr'})
 def espace_clients():
     return render_template('espace_clients.html',title='Espace Clients')
+
+@main.route("/council_optimization",defaults={'lang_code':'en'})
+@main.route("/conseil_optimisation",defaults={'lang_code':'fr'})
+def conseil_optimisation():
+    return render_template('/conseil_optimisation.html',title='Conseil Optimisation')
+
+@main.route("/auditing",defaults={'lang_code':'en'})
+@main.route("/audit",defaults={'lang_code':'fr'})
+def audit():
+    return render_template('/audit.html',title='Audit')
+
+@main.route("/accounting",defaults={'lang_code':'en'})
+@main.route("/expertise_comptable",defaults={'lang_code':'fr'})
+def expertise_comptable():
+    return render_template('/expertise_comptable.html',title='Expertise Comptable')
 
 
 
