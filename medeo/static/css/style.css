@@ -243,6 +243,10 @@ img {
     background: transparent;
     padding: 8px;
     }
+
+    .nav-item.dropdown .dropdown-toggle::after {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1300px) {
@@ -254,6 +258,10 @@ img {
     font-weight: 900;
     text-align: center;
 }   
+
+.nav-item.dropdown .dropdown-toggle::after {
+    display: none;
+}
 }
 
 @media screen and (min-width: 1000px) {
@@ -1057,11 +1065,14 @@ hr.hr_vertical {
     .navbar .navbar-brand img {
         max-width: 7em;
     }
+    .nav-item.dropdown .dropdown-toggle::after {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) {
     .navbar .navbar-brand img {
-        max-width: 4em;
+        /* max-width: 4em; */
     }
 
     .navbar-collapse {
@@ -1084,6 +1095,10 @@ hr.hr_vertical {
 
     .navbar form {
         flex: 1;
+    }
+
+    .nav-item.dropdown .dropdown-toggle::after {
+        display: none;
     }
 }
 
@@ -1125,7 +1140,7 @@ hr.hr_vertical {
 
 .sous-titre {
     color: #114a69;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     padding-left: 10px;
     padding-top: 30px;
@@ -1141,6 +1156,10 @@ hr.hr_vertical {
     padding-top: 2vw;
     margin-top: 33px;
     }
+    .nav-item.dropdown .dropdown-toggle::after {
+        display: none;
+    }
+    
 }
 .btn-blue {
     background-color: #114a69;
@@ -1291,6 +1310,10 @@ textarea[id=content]:focus {
     background: rgba(233,28, 42, 0.3);
     border-radius: 20px;
   }
+
+  .nav-item.dropdown .dropdown-toggle::after {
+    display: none;
+}
 }
 
 
@@ -1361,3 +1384,10 @@ textarea[id=content]:focus {
     padding-top: 2vw;
     margin-top: 33px;
     }
+
+
+
+.nav_icone {
+    margin-right: 5px;
+    margin-left: 5px;
+}
