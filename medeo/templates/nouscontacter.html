@@ -22,8 +22,8 @@
             <h1 class="banner_taital" style="margin-bottom: 20px;"> PARIS</h1><br>
             
             <h3 class="banner_taital_h3"> MEDEO PARTNERS</h3>
-            <h3 class="banner_taital_h3"> 42 RUE DE L'AMIRAL HAMELIN</h3>
-            <h3 class="banner_taital_h3"> 75116 Paris</h3>
+            <h3 class="banner_taital_h3"> 97 BD MALESHERBES</h3>
+            <h3 class="banner_taital_h3"> 75008 Paris</h3>
             <h3 class="banner_taital_h3"> 01 83 64 16 04</h3>
         </div>
     </div>
@@ -37,7 +37,7 @@
             
             <h3 class="banner_taital_h3"> MEDEO TAX</h3>
             <h3 class="banner_taital_h3"> 1831 2nd ST NE UNIT#509</h3>
-            <h3 class="banner_taital_h3"> WASHINGTON, DC 20002-1596 Paris</h3>
+            <h3 class="banner_taital_h3"> WASHINGTON, DC 20002</h3>
             <h3 class="banner_taital_h3"> +240 217 90 53</h3>
         </div>
         <!-- <iframe style="border-radius: 25px;" height="300" width="60%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=97%20boulevard%20Malesherbes+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Find Population on Map</a></iframe> -->
@@ -70,7 +70,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        {{ form.firstname.label(class="form-control-label white") }}
+                                        <!-- {{ form.firstname.label(class="form-control-label white") }} -->
                                         {% if form.firstname.errors %}
                                         {{ form.firstname(class="form-control form-control-lg is-invalid") }}
                                         <div class="invalid-feedback">
@@ -79,13 +79,13 @@
                                             {% endfor %}
                                         </div>
                                         {% else %}
-                                        {{ form.firstname(class="form-control form-control-lg") }}
+                                        {{ form.firstname(class="form-control form-control-lg", placeholder="PRÉNOM") }}
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        {{ form.lastname.label(class="form-control-label white") }}
+                                        <!-- {{ form.lastname.label(class="form-control-label white") }} -->
                                         {% if form.lastname.errors %}
                                         {{ form.lastname(class="form-control form-control-lg is-invalid") }}
                                         <div class="invalid-feedback">
@@ -94,7 +94,7 @@
                                             {% endfor %}
                                         </div>
                                         {% else %}
-                                        {{ form.lastname(class="form-control form-control-lg") }}
+                                        {{ form.lastname(class="form-control form-control-lg", placeholder="NOM") }}
                                         {% endif %}
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        {{ form.phonenumber.label(class=" form-control-label white") }}
+                                        <!-- {{ form.phonenumber.label(class=" form-control-label white") }} -->
                                         {% if form.phonenumber.errors %}
                                         {{ form.phonenumber(class="form-control form-control-lg is-invalid") }}
                                         <div class="invalid-feedback">
@@ -111,13 +111,13 @@
                                             {% endfor %}
                                         </div>
                                         {% else %}
-                                        {{ form.phonenumber(class="form-control form-control-lg") }}
+                                        {{ form.phonenumber(class="form-control form-control-lg", placeholder="TÉLÉPHONE") }}
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        {{ form.email.label(class="form-control-label white") }}
+                                        <!-- {{ form.email.label(class="form-control-label white") }} -->
                                         {% if form.email.errors %}
                                         {{ form.email(class="form-control form-control-lg is-invalid") }}
                                         <div class="invalid-feedback">
@@ -126,7 +126,7 @@
                                             {% endfor %}
                                         </div>
                                         {% else %}
-                                        {{ form.email(class="form-control form-control-lg") }}
+                                        {{ form.email(class="form-control form-control-lg", placeholder="E-MAIL") }}
                                         {% endif %}
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        {{ form.subject.label(class="form-control-label white") }}
+                                        <!-- {{ form.subject.label(class="form-control-label white") }} -->
                                         {% if form.subject.errors %}
                                         {{ form.subject(class="form-control form-control-lg is-invalid") }}
                                         <div class="invalid-feedback">
@@ -143,13 +143,13 @@
                                             {% endfor %}
                                         </div>
                                         {% else %}
-                                        {{ form.subject(class="form-control form-control-lg") }}
+                                        {{ form.subject(class="form-control form-control-lg", placeholder="SUJET") }}
                                         {% endif %}
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                {{ form.content.label(class="form-control-label white") }}
+                                <!-- {{ form.content.label(class="form-control-label white") }} -->
                                 {% if form.content.errors %}
                                 {{ form.content(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
@@ -158,7 +158,7 @@
                                     {% endfor %}
                                 </div>
                                 {% else %}
-                                {{ form.content(class="form-control form-control-lg") }}
+                                {{ form.content(class="form-control form-control-lg", placeholder="MESSAGE") }}
                                 {% endif %}
                             </div>
                             <div class="form-group">
