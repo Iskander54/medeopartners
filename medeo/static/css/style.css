@@ -330,6 +330,28 @@ img {
     background-color: #E91C2A;
 }
 
+
+.ensavoir_plus_bt {
+    width: 170px;
+    float: left;
+    margin-left: 115px;
+}
+
+.ensavoir_plus_bt a {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #114a69;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 40px;
+}
+
+.ensavoir_plus_bt a:hover {
+    color: #ffffff;
+    background-color: #E91C2A;
+}
 .carousel-indicators li {
     width: 20px;
     height: 20px;
@@ -1479,29 +1501,7 @@ hr.hr_vertical {
 }
 
 .bg-img2 {
-
     background-image: url("../images/service/image-background.png");
-    /* min-height: 1000%; */
-    min-height: 50vh;
-    width: 100%;
-    
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-
-}
-
-.bg-img3{
-    background-image: url("../images/service/image-background.png");
-
-    height: 100vh;
-    background-attachment: fixed;
     position: fixed;
     top: 0;
     left: 0;
@@ -1510,9 +1510,10 @@ hr.hr_vertical {
     z-index: -1;
     background-repeat: no-repeat;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
 }
+
+
 
 .navbar {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.18);
@@ -1798,6 +1799,7 @@ textarea[id=content]:focus {
     margin-left: auto;
     background: rgba(233,28, 42, 0.3);
     border-radius: 20px;
+    /* max-height: 175vh; */
   }
 
   .nav-item.dropdown .dropdown-toggle::after {
@@ -1853,6 +1855,7 @@ textarea[id=content]:focus {
     font-weight: 400;
     color: #114A69;
     font-style: italic;
+
 }
 
 

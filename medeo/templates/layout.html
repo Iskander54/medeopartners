@@ -87,7 +87,13 @@
                            <span class="dropdown-arrow">&#9662;</span>
                         </div>
                      </a>
-                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown_dos">
+                     <ul class="dropdown-menu dropdd" aria-labelledby="navbarDropdown_dos">
+                        
+                        <li>
+                           <a class="dropdown-item menuderoulant" href="{{_('notre_expertise')}}">{{_('Nos expertises')}}</a>
+                        </li>                        
+                        <div class="dropdown-divider"></div>
+
                         <li>
                            <a class="dropdown-item menuderoulant" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
                         </li>
@@ -179,6 +185,16 @@
       <span id="loaderid" class="loader"></span>
    </div>
    {% block content %}{% endblock %}
+
+
+
+   <!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script type="text/javascript" src="{{url_for('static', filename='calendly/widget.js') }}" ></script>
+<script type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="hh">Prendre RDV', color: '#114a69', textColor: '#ffffff', branding: true }); }</script>
+<!-- Calendly badge widget end -->
+
+
 
    <!-- footer section start -->
    <div class="footer_section">
