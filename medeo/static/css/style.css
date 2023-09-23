@@ -1029,9 +1029,10 @@ hr.hr_vertical {
 }
 
 
-.bg-img2 {
+.bg-img2-old {
     background-image: url("../images/service/image-background.png");
-    min-height: 1000%;
+    /* min-height: 1000%; */
+    min-height: 50vh;
     width: 100%;
     object-fit: cover;
     position: absolute;
@@ -1043,6 +1044,19 @@ hr.hr_vertical {
     background-position: center;
     background-size: cover;
 
+}
+
+.bg-img2 {
+    background-image: url("../images/service/image-background.png");
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .navbar {

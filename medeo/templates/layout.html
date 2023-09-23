@@ -270,6 +270,30 @@
          }, 1000);
       });
 
+
+      // Fonction pour ajuster la hauteur du contenu principal
+      function adjustMainContentHeight() {
+         var windowHeight = window.innerHeight;
+         var bgImageHeight = document.querySelector('.bg-img2').clientHeight;
+         var mainContent = document.querySelector('main');
+
+         // Calculer la hauteur du contenu principal
+         var mainContentHeight = windowHeight - bgImageHeight;
+
+         // Ajuster la hauteur du contenu principal
+         mainContent.style.minHeight = mainContentHeight + 'px';
+      }
+
+      // Appeler la fonction au chargement de la page et lors du redimensionnement de la fenêtre
+      window.addEventListener('load', adjustMainContentHeight);
+      window.addEventListener('resize', adjustMainContentHeight);
+
+
+
+
+
+
+
    </script>
 </body>
 
