@@ -15,6 +15,11 @@
 runtime: python37
 entrypoint: gunicorn -w 2 run:app
 
+handlers:
+- url: /.*
+  script: auto
+  secure: always
+
 env_variables:
   CAPTCHA_PUBLIC_KEY: '6LdlSeolAAAAAEtXiWHFMbkBOQfMUXwKaLrJO5yI'
   CAPTCHA_PRIVATE_KEY: '6LdlSeolAAAAAFADdbOZcXm_0RB4v2pKvXI-SIYA'
