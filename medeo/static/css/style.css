@@ -2225,4 +2225,10 @@ textarea[id=content]:focus {
   }
   
 
-    
+.effet_ombre{
+    border-radius: 51px;
+    background: linear-gradient(145deg, #d1d5d9, #f8feff);
+    box-shadow:  24px 24px 41px #9ea1a4,
+                 -24px -24px 41px #ffffff;
+    padding: 21px;
+}
