@@ -1237,17 +1237,17 @@ hr.hr_vertical {
 
 @keyframes ball1 {
     0% {
-        box-shadow: 30px 0 0 #ff3d00;
+        box-shadow: 30px 0 0 #E91C2A;
     }
 
     50% {
-        box-shadow: 0 0 0 #ff3d00;
+        box-shadow: 0 0 0 #E91C2A;
         margin-bottom: 0;
         transform: translate(15px, 15px);
     }
 
     100% {
-        box-shadow: 30px 0 0 #ff3d00;
+        box-shadow: 30px 0 0 #E91C2A;
         margin-bottom: 10px;
     }
 }
@@ -2247,3 +2247,8 @@ textarea[id=content]:focus {
                  -24px -24px 41px #ffffff;
 }
 
+.effet_ombre_boutons_valeurs{
+    border-radius: 51px;
+    box-shadow:  24px 24px 41px #9ea1a4,
+                 -24px -24px 41px #ffffff;
+}
