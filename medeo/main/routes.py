@@ -77,9 +77,13 @@ def expertise_comptable():
 
 
 
-##############
+############################
 # NEWS
+############################
+
+# FISCAL
 ##############
+
 @main.route("/news/fiscal/news_1234")
 def news_1234():
     return render_template('/news/fiscal/news_1234.html',title='news_1234')
@@ -116,3 +120,37 @@ def news_4322():
 @main.route("/news/fiscal/news_1200")
 def news_1200():
     return render_template('/news/fiscal/news_1200.html',title='news_1200')
+
+
+
+
+# SOCIAL
+##############
+
+@main.route("/news/social/news_1")
+def news_1():
+    return render_template('/news/social/news_1.html',title='news_1')
+
+
+@main.route("/news/social/news_2")
+def news_2():
+    return render_template('/news/social/news_2.html',title='news_2')
+
+
+@main.route("/news/social/news_3")
+def news_3():
+    return render_template('/news/social/news_3.html',title='news_3')
+
+
+@main.route("/news/social/news_4")
+def news_4():
+    return render_template('/news/social/news_4.html',title='news_4')
+
+
+
+
+
+
+############################
+#  END NEWS
+############################
