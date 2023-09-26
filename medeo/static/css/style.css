@@ -940,7 +940,7 @@ textarea#comment::placeholder {
 }
 
 .names {
-    color: black;
+    color: #E91C2A;
 }
 
 .about_page_blue {
@@ -1079,9 +1079,6 @@ textarea#comment::placeholder {
     font-family: 'Open Sans', sans-serif;
 }
 
-.names {
-    color: black;
-}
 
 .col_footer {
     text-align: center;
