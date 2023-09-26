@@ -2232,3 +2232,18 @@ textarea[id=content]:focus {
                  -24px -24px 41px #ffffff;
     padding: 21px;
 }
+
+
+.effet_ombre_nous_contacter{
+    border-radius: 51px;
+    background: linear-gradient(145deg, #b8c7d4, #f8feff);
+    box-shadow:  24px 24px 41px #9ea1a4,
+                 -24px -24px 41px #ffffff;
+}
+
+.effet_ombre_form{
+    border-radius: 51px;
+    box-shadow:  24px 24px 41px #9ea1a4,
+                 -24px -24px 41px #ffffff;
+}
+
