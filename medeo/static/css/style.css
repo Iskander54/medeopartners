@@ -249,6 +249,51 @@ img {
     }
 }
 
+    .banner_taital {
+        width: 100%;
+        float: left;
+        font-size: 48px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+
+/* Styles pour les écrans plus petits (par exemple, les smartphones) */
+@media (min-width: 300px) and (max-width: 767px) {
+    .banner_taital {
+        font-size: 36px;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+}
+
+/* Styles pour les écrans de taille moyenne (par exemple, les tablettes) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .banner_taital {
+        font-size: 42px;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+}
+
+/* Styles pour les écrans plus grands (par exemple, les ordinateurs de bureau) */
+@media (min-width: 992px) and (max-width: 1299){
+    .banner_taital {
+        font-size: 48px;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+}
+
 @media screen and (min-width: 1300px) {
 
 .banner_taital {
@@ -265,16 +310,6 @@ img {
 }
 }
 
-@media screen and (min-width: 1000px) {
-    .banner_taital {
-        width: 100%;
-        float: left;
-        font-size: 48px;
-        color: #114a69;
-        font-weight: 900;
-        text-align: center;
-    }
-}
 
 
 .banner_taital_h3 {
@@ -334,7 +369,7 @@ img {
 .ensavoir_plus_bt {
     width: 170px;
     float: left;
-    margin-left: 115px;
+    /* margin-left: 115px; */
 }
 
 .ensavoir_plus_bt a {
@@ -666,17 +701,29 @@ textarea#comment::placeholder {
     float: left;
 }
 
-@media screen and (min-width: 1300px) {
+.what_text_1 {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 25px;
+    color: #114a69;
+    text-align: center;
+    font-weight: bolder;
+}
 
+@media screen and (max-width: 767px) {
     .what_text_1 {
-        width: 50%;
-        margin: 0 auto;
-        font-size: 25px;
-        color: #114a69;
-        text-align: center;
-        font-weight: bolder;
+        width: 90%;
+        font-size: 20px;
     }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1800px) {
+    .what_text_1 {
+        width: 90%;
+        font-size: 22px;
+    }
+}
+
 
 .team_section_2 {
     width: 100%;
@@ -1039,17 +1086,6 @@ textarea#comment::placeholder {
 
 /* Tean Section */
 
-@media screen and (min-width: 1300px) {
-  
-.what_text_1 {
-    width: 50%;
-    margin: 0 auto;
-    font-size: 25px;
-    color: #114a69;
-    text-align: center;
-    font-weight: bolder;
-}
-}
 
 .image_7 {
     width: 50%;
@@ -1180,17 +1216,22 @@ hr.hr_vertical {
 }
 
 
+
+.loader-container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 .loader {
     animation: rotate 2s infinite;
     height: 50px;
     width: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
+    position: relative;
     z-index: 9999;
 }
+
 
 .hidden {
     display: none;
@@ -1265,6 +1306,7 @@ hr.hr_vertical {
         margin-top: 0;
     }
 }
+
 
 .foreg {
     width: 100%;
@@ -1371,6 +1413,7 @@ hr.hr_vertical {
     margin: auto;
     font-family: Arial;
     font-size: 16px;
+    
 }
 
 
@@ -1421,8 +1464,6 @@ hr.hr_vertical {
     word-spacing: -1px;
 }
 
-@media screen and (min-width: 50px) {
-
 .cocon {
     margin: auto;
     font-size: 1.5em;
@@ -1435,7 +1476,22 @@ hr.hr_vertical {
     margin-left: auto;
     background: rgba(154, 141, 139, 0.3);
     }
-}
+
+    @media (max-width: 768px) {
+        .cocon {
+            width: 60%;
+        }
+    }
+    
+    /* Media query pour les écrans de petite taille (par exemple, smartphones) */
+    @media (max-width: 576px) {
+        .cocon {
+            width: 90%; /* Ajustez la largeur selon vos besoins pour les écrans de petite taille */
+            font-size: 1em; /* Ajustez la taille de la police */
+            border-spacing: 50px; /* Ajustez l'espacement entre les éléments */
+            margin-top: 15px; /* Ajustez la marge supérieure */
+        }
+    }
 
 .my_div_aliza {
     font-size: 18px;
@@ -1470,7 +1526,6 @@ hr.hr_vertical {
     background-size: auto;
 
 }
-
 
 .cocon_contact {
     margin: auto;
@@ -1540,7 +1595,7 @@ hr.hr_vertical {
 
 @media screen and (min-width: 768px) {
     .navbar .navbar-brand img {
-        /* max-width: 4em; */
+        max-width: 7em;
     }
 
     .navbar-collapse {
@@ -1799,6 +1854,8 @@ textarea[id=content]:focus {
     border-radius: 20px;
     /* max-height: 175vh; */
   }
+
+  
 
   .nav-item.dropdown .dropdown-toggle::after {
     display: none;

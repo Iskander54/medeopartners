@@ -31,12 +31,12 @@ check requirements.txt
 `pybabel extract -F babel.cfg -o messages.pot .`
 
 2- Create translation file where we will manually translate text
-`pybabel init -i messages.pot -d rewards/translations -l en`
+`pybabel init -i messages.pot -d medeo/translations -l en`
 
 translate text in that file
 
 3- Compile all of the translation
-`pybabel compile -d rewards/translations`
+`pybabel compile -d medeo/translations`
 
 messages.mo is created
 

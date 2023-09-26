@@ -17,21 +17,21 @@
   <div class="row">
     <div class="col-7">
       <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/accounting.png') }}" alt="blog-img" loading="lazy">
-      <h1 class="title-nos-expertises"> Expertise comptable</h1><br>
+      <h1 class="title-nos-expertises">{{_('Expertise comptable')}} </h1><br>
       <p class="speech-nos-expertises">
-        Nous fournissons des conseils pour aider les entreprises à prendre des décisions financières et fiscales
+        {{_('Nous fournissons des conseils pour aider les entreprises à prendre des décisions financières et fiscales
         éclairées.
         <br><br>
-        Nous les aidons à établir et à surveiller les systèmes financiers et comptables pour garantir l'exactitude de
+        Nous les aidons à établir et à surveiller les systèmes financiers et comptables pour garantir l\'exactitude de
         leurs données.
         <br><br>
-        Nous préparons et examinons les déclarations fiscales pour s'assurer que les entreprises remplissent leurs
+        Nous préparons et examinons les déclarations fiscales pour s\'assurer que les entreprises remplissent leurs
         obligations fiscales.
         <br><br>
         Nous offrons des conseils stratégiques pour maximiser les opérations commerciales et les stratégies financières
-        des entreprises. Nous aidons à prévenir les litiges financiers et à les gérer lorsqu'ils se produisent.
+        des entreprises. Nous aidons à prévenir les litiges financiers et à les gérer lorsqu\'ils se produisent.
         <br><br>
-        Nous aidons à prévenir les litiges financiers et à les gérer lorsqu'ils se produisent
+        Nous aidons à prévenir les litiges financiers et à les gérer lorsqu\'ils se produisent')}}
         <br><br>
       </p>
 
@@ -52,24 +52,25 @@
 
     <div class="col-7">
       <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/audit.png') }}" alt="blog-img" loading="lazy">
-      <h1 class="title-nos-expertises"> Audit </h1><br>
+      <h1 class="title-nos-expertises"> {{_('Audit')}} </h1><br>
 
 
       <p class="speech-nos-expertises">
-        Nous effectuons un examen indépendant et systématique des états financiers de nos clients en tant qu'auditeurs
-        qualifiés, en conformité avec les normes d'audit.
+        {{_('Nous effectuons un examen indépendant et systématique des états financiers de nos clients en tant qu\'auditeurs
+        qualifiés, en conformité avec les normes d\'audit.
         <br><br>
         Le but de notre audit contractuel est de fournir une opinion sur la fiabilité et la conformité des états
         financiers avec les principes comptables officiels.
         <br><br>
-        Il permet également de détecter les erreurs, les omissions et les irrégularités financières.
+        Il permet également de détecter les erreurs, les omissions et les irrégularités financières.')}}
         <br><br>
       </p>
+     
       <div class="ensavoir_plus_bt">
-        <a hhref="{{_('audit')}}">{{_('En savoir plus')}}</a>
+        <a href="{{_('audit')}}">{{_('En savoir plus')}}</a>
         
       </div>
-
+     
     </div>
   </div>
 
@@ -79,17 +80,17 @@
   <div class="row">
     <div class="col-7">
       <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/budget.png') }}" alt="blog-img" loading="lazy">
-      <h1 class="title-nos-expertises"> Conseil d'optimisation </h1><br>
+      <h1 class="title-nos-expertises"> {{_('Conseil d\'optimisation')}} </h1><br>
 
       <p class="speech-nos-expertises">
-        Nous fournissons un service de conseil pour aider les entreprises à prendre des décisions éclairées et à
+        {{_('Nous fournissons un service de conseil pour aider les entreprises à prendre des décisions éclairées et à
         atteindre leurs objectifs commerciaux et financiers.
         <br><br>
         Nous offrons des conseils sur les stratégies financières, les opérations commerciales, la gestion de la
         trésorerie, la planification fiscale et les opérations internationales.
         <br><br>
-        Nous aidons également les entreprises à gérer les risques financiers, les opportunités d'investissement et les
-        relations avec les actionnaires et les parties prenantes.
+        Nous aidons également les entreprises à gérer les risques financiers, les opportunités d\'investissement et les
+        relations avec les actionnaires et les parties prenantes.')}}
         <br><br>
 
       </p>
@@ -109,7 +110,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="banner_taital">{{_('Témoignages ')}}</h1>
+        <h1 class="banner_taital" style="margin-top: 20px;">{{_('Témoignages ')}}</h1>
         <br>
       </div>
     </div>
@@ -143,7 +144,7 @@
               <div class="col-md-6">
                 <div class="testimonial_box">
                   <div class="jonimo_taital_main">
-                    <h4 class="jonimo_text">Empruntis l'agence Angers</h4>
+                    <h4 class="jonimo_text">{{_('Empruntis l'agence Angers')}}</h4>
                     <div class="quick_icon"><i class="fa-solid fa-quote-right"></i></div>
                     <div class="quick_icon_1"><i class="fa-solid fa-quote-right"></i></div>
                   </div>
