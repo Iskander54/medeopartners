@@ -45,17 +45,6 @@ def notre_expertise():
     return render_template('notre_expertise.html',title='Notre expertise')
 
 
-
-@main.route("/firm_joinus",defaults={'lang_code':'en'})
-@main.route("/cabinet_nousrejoindre",defaults={'lang_code':'fr'})
-def cabinet_nousrejoindre():
-    return render_template('/cabinet/cabinet_nousrejoindre.html',title='Nous rejoindre')
-
-@main.route("/our_expertise",defaults={'lang_code':'en'})
-@main.route("/nos_expertises",defaults={'lang_code':'fr'})
-def nos_expertises():
-    return render_template('nos_expertises.html',title='Nos expertises')
-
 @main.route("/news",defaults={'lang_code':'en'})
 @main.route("/actualites",defaults={'lang_code':'fr'})
 def actualites():
@@ -65,11 +54,6 @@ def actualites():
 @main.route("/nouscontacter",defaults={'lang_code':'fr'})
 def nouscontacter():
     return render_template('nouscontacter.html',title='Nous contacter')
-
-@main.route("/law",defaults={'lang_code':'en'})
-@main.route("/legal",defaults={'lang_code':'fr'})
-def legal():
-    return render_template('legal.html',title='Nous contacter')
 
 @main.route("/account",defaults={'lang_code':'en'})
 @main.route("/espace_clients",defaults={'lang_code':'fr'})
@@ -96,40 +80,39 @@ def expertise_comptable():
 ##############
 # NEWS
 ##############
-
-@main.route("/news_fiscalite")
-def news_fiscalite():
-    return render_template('/news/news_fiscalite.html',title='News Fiscalite')
-
-@main.route("/news_juridique")
-def news_juridique():
-    return render_template('/news/news_juridique.html',title='News Juridique')
-
-@main.route("/news_social")
-def news_social():
-    return render_template('/news/news_social.html',title='News Social')
-
-@main.route("/news_metiers")
-def news_metiers():
-    return render_template('/news/news_metiers.html',title='News Metiers')
-
-@main.route("/news_immobiliers")
-def news_immobiliers():
-    return render_template('/news/news_immobiliers.html',title='News Immobilier')
+@main.route("/news/fiscal/news_1234")
+def news_1234():
+    return render_template('/news/fiscal/news_1234.html',title='news_1234')
 
 
-##############
-##############
-
-@main.route("/newstransmissionbailrural")
-def newstransmissionbailrural():
-    return render_template('/news/fiscalite/transmissionbailrural.html',title='News Fiscalite')
-
-@main.route("/news_fisca_deduire_impayes_clients")
-def news_fisca_deduire_impayes_clients():
-    return render_template('/news/fiscalite/news_fisca_deduire_impayes_clients.html',title='News Fiscalite')
+@main.route("/news/fiscal/news_787")
+def news_787():
+    return render_template('/news/fiscal/news_787.html',title='news_787')
 
 
+@main.route("/news/fiscal/news_1112")
+def news_1112():
+    return render_template('/news/fiscal/news_1112.html',title='news_1112')
 
-##############
-##############
+@main.route("/news/fiscal/news_4456")
+def news_4456():
+    return render_template('/news/fiscal/news_4456.html',title='news_4456')
+
+
+@main.route("/news/fiscal/news_5555")
+def news_5555():
+    return render_template('/news/fiscal/news_5555.html',title='news_5555')
+
+
+@main.route("/news/fiscal/news_1212")
+def news_1212():
+    return render_template('/news/fiscal/news_1212.html',title='news_1212')
+
+
+@main.route("/news/fiscal/news_4322")
+def news_4322():
+    return render_template('/news/fiscal/news_4322.html',title='news_4322')
+
+@main.route("/news/fiscal/news_1200")
+def news_1200():
+    return render_template('/news/fiscal/news_1200.html',title='news_1200')
