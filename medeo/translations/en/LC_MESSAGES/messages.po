@@ -227,7 +227,7 @@ msgid "Bienvenue chez Medeo Partners"
 msgstr ""
 
 #: medeo/templates/home.html:10
-msgid "Fort de plus 10 ans d'expertise en comptabilité, et fiscalité, nous"
+msgid "Forts de plus 10 ans d'expertise en comptabilité, et fiscalité, nous"
 msgstr ""
 
 #: medeo/templates/home.html:11
@@ -758,7 +758,7 @@ msgstr ""
 
 #: medeo/templates/votre_cabinet.html:420
 msgid ""
-"Fort de 10 années d'expérience en cabinet d'expertise comptable et de "
+"Forts de 10 années d'expérience en cabinet d'expertise comptable et de "
 "commissariat aux"
 msgstr ""
 
