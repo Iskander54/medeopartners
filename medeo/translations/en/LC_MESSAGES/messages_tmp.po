@@ -737,7 +737,7 @@ msgstr "«The art of success is knowing how to surround yourself with the best.�
 
 #: medeo/templates/cabinet/cabinet_associes.html:94
 msgid ""
-"Fort de 10 années d'expérience en cabinet d'expertise comptable et de "
+"Forts de 10 années d'expérience en cabinet d'expertise comptable et de "
 "commissariat aux"
 msgstr "With 10 years of experience in accounting and auditing firms,"
 

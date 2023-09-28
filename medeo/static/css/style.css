@@ -365,6 +365,28 @@ img {
     background-color: #E91C2A;
 }
 
+.readmore_news {
+    width: 170px;
+    /* float: left; */
+    /* margin-left: 115px; */
+    margin: auto;
+}
+
+.readmore_news a {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #E91C2A;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 40px;
+}
+
+.readmore_news a:hover {
+    color: #ffffff;
+    background-color: #E91C2A;
+}
 
 .ensavoir_plus_bt {
     width: 170px;
@@ -474,6 +496,15 @@ textarea#comment::placeholder {
     padding: 55px 30px 100px 30px;
     box-shadow: 0px 2px 12px 10px #f3f2f2;
     height: 465px;
+    border-radius: 40px;
+}
+
+.testimonial_box_jobs {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 55px 30px 100px 30px;
+    box-shadow: 0px 2px 12px 10px #f3f2f2;
+    height: 550px;
     border-radius: 40px;
 }
 
@@ -1452,6 +1483,11 @@ hr.hr_vertical {
     margin: auto;
 }
 
+.images_carousel_home {
+    width: 20vh;
+    border-radius: 9vh;
+    margin: auto;
+}
 
 .presentation_expertises_home {
     color: #114a69;
@@ -1500,8 +1536,8 @@ hr.hr_vertical {
     width: 40%;
     border-spacing: 60px;
     margin-left: -20px;
-    background-image: url(../images/woman_home.jpg);
-
+    background-image: url(../images/woman_phone.jpeg);
+    background-size: contain;
 }
 
 .my_div_aliza_two {
@@ -1511,19 +1547,21 @@ hr.hr_vertical {
     width: 40%;
     border-spacing: 60px;
     margin-left: -20px;
-    background-image: url(../images/main-img.png);
+    background-image: url(../images/main-img.jpeg);
+    background-size: cover;
+
 
 }
 
-.my_div_aliza_tree {
+.my_div_aliza_three {
     font-size: 18px;
     border-radius: 30px;
     height: 150px;
     width: 40%;
     border-spacing: 60px;
     margin-left: -20px;
-    background-image: url(../images/tour-eiffel.png);
-    background-size: auto;
+    background-image: url(../images/eiffel_tower.jpeg);
+    background-size: cover;
 
 }
 
@@ -1905,11 +1943,18 @@ textarea[id=content]:focus {
 
 }
 
-.text-start {
+.text-start-home {
     font-size: large;
     font-weight: 400;
     color: #114A69;
     font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+    word-spacing: -1px;
 
 }
 
@@ -1928,7 +1973,7 @@ textarea[id=content]:focus {
     border-radius: 9vh;
     background-color: #114a69;
     color: white;
-    height: 24vw;
+    height: 20vw;
     text-align: center;
     padding-top: 2vw;
     margin-top: 33px;

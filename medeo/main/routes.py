@@ -75,6 +75,11 @@ def audit():
 def expertise_comptable():
     return render_template('/expertise_comptable.html',title='Expertise Comptable')
 
+@main.route("/legal",defaults={'lang_code':'en'})
+@main.route("/legal",defaults={'lang_code':'fr'})
+def legal():
+    return render_template('/legal.html',title='Mentions Légales')
+
 
 
 ############################
@@ -86,40 +91,40 @@ def expertise_comptable():
 
 @main.route("/news/fiscal/news_1234")
 def news_1234():
-    return render_template('/news/fiscal/news_1234.html',title='news_1234')
+    return render_template('/news/fiscal/news_1234.html',title='Fiscal')
 
 
 @main.route("/news/fiscal/news_787")
 def news_787():
-    return render_template('/news/fiscal/news_787.html',title='news_787')
+    return render_template('/news/fiscal/news_787.html',title='Fiscal')
 
 
 @main.route("/news/fiscal/news_1112")
 def news_1112():
-    return render_template('/news/fiscal/news_1112.html',title='news_1112')
+    return render_template('/news/fiscal/news_1112.html',title='Fiscal')
 
 @main.route("/news/fiscal/news_4456")
 def news_4456():
-    return render_template('/news/fiscal/news_4456.html',title='news_4456')
+    return render_template('/news/fiscal/news_4456.html',title='Fiscal')
 
 
 @main.route("/news/fiscal/news_5555")
 def news_5555():
-    return render_template('/news/fiscal/news_5555.html',title='news_5555')
+    return render_template('/news/fiscal/news_5555.html',title='Fiscal')
 
 
 @main.route("/news/fiscal/news_1212")
 def news_1212():
-    return render_template('/news/fiscal/news_1212.html',title='news_1212')
+    return render_template('/news/fiscal/news_1212.html',title='Fiscal')
 
 
 @main.route("/news/fiscal/news_4322")
 def news_4322():
-    return render_template('/news/fiscal/news_4322.html',title='news_4322')
+    return render_template('/news/fiscal/news_4322.html',title='Fiscal')
 
 @main.route("/news/fiscal/news_1200")
 def news_1200():
-    return render_template('/news/fiscal/news_1200.html',title='news_1200')
+    return render_template('/news/fiscal/news_1200.html',title='Fiscal')
 
 
 
@@ -129,23 +134,30 @@ def news_1200():
 
 @main.route("/news/social/news_1")
 def news_1():
-    return render_template('/news/social/news_1.html',title='news_1')
+    return render_template('/news/social/news_1.html',title='Social')
 
 
 @main.route("/news/social/news_2")
 def news_2():
-    return render_template('/news/social/news_2.html',title='news_2')
+    return render_template('/news/social/news_2.html',title='Social')
 
 
 @main.route("/news/social/news_3")
 def news_3():
-    return render_template('/news/social/news_3.html',title='news_3')
+    return render_template('/news/social/news_3.html',title='Social')
 
 
 @main.route("/news/social/news_4")
 def news_4():
-    return render_template('/news/social/news_4.html',title='news_4')
+    return render_template('/news/social/news_4.html',title='Social')
 
+
+# JURIDIQUE
+##############
+
+@main.route("/news/juridique/news_12")
+def news_12():
+    return render_template('/news/juridique/news_12.html',title='Juridique')
 
 
 

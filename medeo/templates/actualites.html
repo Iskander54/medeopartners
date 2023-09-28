@@ -13,8 +13,8 @@
   
       <div class="ui-group">
         <div class="button-group js-radio-button-group group-2" data-filter-group="medium">
-          <button class="button" data-filter=".all-media">{{_('All')}}</button><button class="button" data-filter=".fiscal">{{_('Fiscal')}}</button><button class="button" data-filter=".economie">{{_('economie')}}</button><button class="button" data-filter=".social">{{_('social')}}</button>
-          <button class="button" data-filter=".juridique">{{_('juridique')}}</button><button class="button" data-filter=".audio">{{_('Audio')}}</button>
+          <button class="button" data-filter=".all-media">{{_('All')}}</button><button class="button" data-filter=".fiscal">{{_('Fiscal')}}</button><button class="button" data-filter=".social">{{_('social')}}</button>
+          <button class="button" data-filter=".juridique">{{_('juridique')}}</button>
         </div>
       </div>
     </div>
@@ -164,6 +164,19 @@
                 href="{{ url_for('main.news_4') }}">
                 
                 <img alt="" src="{{url_for('static', filename='/images/news/social/news_4.jpeg')}}" loading="lazy">
+            </a>
+        </div>
+      </div>
+
+
+      <div class="all-types all-media content licensed juridique">
+        <div class="c-container">
+            <a 
+                client="Mécénat d’entreprise : et si vous participiez à l’achat d’une œuvre exceptionnelle ?"
+                data-featherlight="iframe" 
+                href="{{ url_for('main.news_12') }}">
+                
+                <img alt="" src="{{url_for('static', filename='/images/news/juridique/juridique_one.jpeg')}}" loading="lazy">
             </a>
         </div>
       </div>
