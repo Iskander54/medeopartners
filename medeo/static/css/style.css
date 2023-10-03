@@ -247,6 +247,20 @@ img {
         text-align: center;
     }
 
+    
+.title-nos-expertises {
+    width: 100%;
+    float: left;
+    font-size: 30px;
+    color: #114a69;
+    font-weight: 900;
+
+}
+.contact_section_2 {
+    width: 90%;
+    float: left;
+    padding-top: 50px;
+}
     .cocon{
     margin: auto;
     font-size: 1.5em;
@@ -288,6 +302,18 @@ img {
         color: #114a69;
         font-weight: 900;
         text-align: center;
+        
+    }
+
+    
+    .title_contact {
+        margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        font-size: 20px;
         
     }
 
@@ -376,6 +402,29 @@ img {
     text-align: justify;
     word-spacing: -1px;
 }
+
+
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 10px;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+.cocon_contact {
+    margin: 20px;
+    font-size: 18px;
+    border-radius: 30px;
+    height: 300px;
+    border-spacing: 60px;
+    margin-top: 25px;
+    background-color: #b8c7d4;
+    display: flex;
+
+}
 }
 
 /* Small Devices (e.g., larger smartphones and small tablets) */
@@ -389,6 +438,20 @@ img {
 
     }
 
+    
+.title-nos-expertises {
+    width: 100%;
+    float: left;
+    font-size: 30px;
+    color: #114a69;
+    font-weight: 900;
+
+}
+.contact_section_2 {
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+}
     .images_cabinet {
         width: 60vh;
         border-radius: 9vh;
@@ -411,6 +474,16 @@ img {
     }
 
     .banner_taital {
+        font-size: 36px;
+        margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        
+    }
+    .title_contact {
         font-size: 36px;
         margin-top: 10vw;
         width: 100%;
@@ -516,6 +589,29 @@ img {
     -webkit-box-orient: vertical;
     word-spacing: -1px;
 }
+
+
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
+
+.cocon_contact {
+    margin: auto;
+    font-size: 18px;
+    border-radius: 30px;
+    height: 300px;
+    width: 100%;
+    border-spacing: 60px;
+    margin-top: 25px;
+    background-color: #b8c7d4;
+    display: flex;
+
+}
 }
 
 
@@ -542,6 +638,20 @@ img {
         margin: auto;
     }
 
+    
+.title-nos-expertises {
+    width: 100%;
+    float: left;
+    font-size: 30px;
+    color: #114a69;
+    font-weight: 900;
+
+}
+.contact_section_2 {
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+}
     .img_home {
         width: 60vh;
         border-radius: 9vh;
@@ -574,6 +684,15 @@ img {
         color: #114a69;
         font-weight: 900;
         text-align: center;
+    }
+    .title_contact {
+        font-size: 36px;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        
     }
     .what_text_1 {
         width: 90%;
@@ -694,6 +813,29 @@ img {
     word-spacing: -1px;
 }
 
+
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+.cocon_contact {
+    margin: auto;
+    font-size: 18px;
+    border-radius: 30px;
+    height: 300px;
+    width: 100%;
+    border-spacing: 60px;
+    margin-top: 25px;
+    background-color: #b8c7d4;
+    display: flex;
+
+}
 }
 
 /* Large Devices (e.g., desktops and laptops) */
@@ -719,10 +861,25 @@ img {
             -24px -24px 41px #ffffff;
 
     }
+
+    
+.title-nos-expertises {
+    width: 100%;
+    float: left;
+    font-size: 35px;
+    color: #114a69;
+    font-weight: 900;
+
+}
+.contact_section_2 {
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+}
     .images_cabinet {
         width: 60vh;
         border-radius: 9vh;
-        margin: auto;
+       margin-top: 30%;
     }
 
     .img_home {
@@ -828,6 +985,16 @@ img {
         font-weight: 900;
         text-align: center;
     }
+    .title_contact {
+        font-size: 36px;
+        margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        
+    }
 
     .my_div_aliza {
         font-size: 18px;
@@ -884,6 +1051,29 @@ img {
     -webkit-box-orient: vertical;
     word-spacing: -1px;
 }
+
+
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
+
+.cocon_contact {
+    margin: auto;
+    font-size: 18px;
+    border-radius: 30px;
+    height: 300px;
+    width: 100%;
+    border-spacing: 60px;
+    margin-top: 25px;
+    background-color: #b8c7d4;
+    display: flex;
+
+}
 }
 
 /* Extra Large Devices (e.g., large desktop screens) */
@@ -900,6 +1090,21 @@ img {
         text-align: center;
         font-weight: 900;
     }
+
+    
+.title-nos-expertises {
+    width: 100%;
+    float: left;
+    font-size: 35px;
+    color: #114a69;
+    font-weight: 900;
+
+}
+.contact_section_2 {
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+}
     
 .cocon {
     margin: auto;
@@ -938,6 +1143,15 @@ img {
         background: transparent;
         padding: 8px;
     }
+    .title_contact {
+        font-size: 36px;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        
+    }
 
     .nav-item.dropdown .dropdown-toggle::after {
         display: none;
@@ -946,6 +1160,9 @@ img {
     .what_text_1 {
         width: 90%;
         font-size: 22px;
+        margin: 0 auto;
+        color: #114a69;
+        text-align: center;
     }
 
     .navbar {
@@ -1090,6 +1307,30 @@ img {
     text-align: justify;
     word-spacing: -1px;
 }
+
+
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+.cocon_contact {
+    margin: auto;
+    font-size: 18px;
+    border-radius: 30px;
+    height: 300px;
+    width: 100%;
+    border-spacing: 60px;
+    margin-top: 25px;
+    background-color: #b8c7d4;
+    display: flex;
+
+}
 }
 
 
@@ -1124,15 +1365,6 @@ img {
 }
 
 
-
-.banner_taital_h3 {
-    width: 100%;
-    float: left;
-    font-size: 18px;
-    color: #114a69;
-    font-weight: 900;
-    text-align: center;
-}
 
 
 .readmore_bt {
@@ -1252,12 +1484,6 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 90px;
-}
-
-.contact_section_2 {
-    width: 100%;
-    float: left;
-    padding-top: 50px;
 }
 
 
@@ -2294,24 +2520,6 @@ hr.hr_vertical {
 } */
 
 
-
-
-
-
-.cocon_contact {
-    margin: auto;
-    font-size: 18px;
-    border-radius: 30px;
-    height: 300px;
-    width: 100%;
-    border-spacing: 60px;
-    margin-top: 25px;
-    background-color: #b8c7d4;
-    display: flex;
-
-}
-
-
 .adresse_contact {
     color: #120a78;
     margin: auto;
@@ -2604,17 +2812,6 @@ textarea[id=content]:focus {
     -webkit-box-orient: vertical;
     text-align: justify;
     word-spacing: -1px;
-
-}
-
-
-
-.title-nos-expertises {
-    width: 100%;
-    float: left;
-    font-size: 48px;
-    color: #114a69;
-    font-weight: 900;
 
 }
 
@@ -2989,9 +3186,9 @@ audio {
         -24px -24px 41px #ffffff;
 }
 
-/* 
+
 .effet_ombre_boutons_valeurs{
     border-radius: 51px;
     box-shadow:  24px 24px 41px #9ea1a4,
                  -24px -24px 41px #ffffff;
-} */
+}
