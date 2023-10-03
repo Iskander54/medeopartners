@@ -252,6 +252,24 @@ img {
 
     }
 
+    .title-nos-expertises {
+        width: 100%;
+        float: left;
+        font-size: 35px;
+        color: #114a69;
+        font-weight: 900;
+    
+    }
+    
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 70%;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
+
     .navbar .navbar-brand img {
         max-width: 100px;
     }
@@ -264,6 +282,14 @@ img {
         padding: 4vw;
         color: blue;
     }
+
+    
+
+.logo-nos-expertises {
+    width: 100px;
+    height: auto;
+    margin-top: 10%;
+}
 
     .cocon {
         margin: auto;
@@ -374,6 +400,16 @@ img {
         font-family: ARIAL;
 
     }
+    .title_contact {
+        margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        font-size: 20px;
+        
+    }
 
     .title_expertise {
         width: 100%;
@@ -424,6 +460,31 @@ img {
     .img_heart{
         display: none;
     }
+    
+.logo-nos-expertises {
+    width: 100px;
+    height: auto;
+    margin-top: 10%;
+}
+
+
+    .title-nos-expertises {
+        width: 100%;
+        float: left;
+        font-size: 35px;
+        color: #114a69;
+        font-weight: 900;
+    
+    }
+    
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
 
     .navbar .navbar-brand img {
         max-width: 100px;
@@ -551,6 +612,15 @@ img {
 
 
     }
+    .title_contact {
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        font-size: 20px;
+        
+    }
 
     .title_expertise {
         width: 100%;
@@ -603,6 +673,29 @@ img {
         margin-left: auto;
         background: rgba(154, 141, 139, 0.3);
     }
+
+    
+.logo-nos-expertises {
+    width: 100px;
+    height: auto;
+}
+
+.title-nos-expertises {
+    width: 100%;
+    float: left;
+    font-size: 35px;
+    color: #114a69;
+    font-weight: 900;
+
+}
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
 
     .img_heart {
         width: 45vh;
@@ -763,6 +856,15 @@ img {
         background-size: cover;
 
     }
+     .title_contact {
+        font-size: 36px;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        
+    }
 
     .title_expertise {
         width: 100%;
@@ -818,6 +920,29 @@ img {
         background: rgba(154, 141, 139, 0.3);
     }
     
+.title-nos-expertises {
+    width: 100%;
+    float: left;
+    font-size: 35px;
+    color: #114a69;
+    font-weight: 900;
+
+}
+
+.logo-nos-expertises {
+    width: 100px;
+    height: auto;
+}
+
+    
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
     .img_heart {
         width: 45vh;
         border-radius: 9vh;
@@ -989,6 +1114,16 @@ img {
         background-size: cover;
 
     }
+    .title_contact {
+        font-size: 36px;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        
+    }
+
 
     .title_expertise {
         width: 100%;
@@ -1039,6 +1174,29 @@ img {
         font-weight: 900;
         text-align: center;
     }
+    
+.logo-nos-expertises {
+    width: 100px;
+    height: auto;
+}
+
+    
+.title-nos-expertises {
+    width: 100%;
+    float: left;
+    font-size: 35px;
+    color: #114a69;
+    font-weight: 900;
+
+}
+.banner_taital_h3 {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #114a69;
+    font-weight: 900;
+    text-align: center;
+}
 
     
     .img_heart {
@@ -1055,6 +1213,15 @@ img {
         color: blue;
     }
 
+    .title_contact {
+        font-size: 36px;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        
+    }
     .title_expertise {
         width: 100%;
         float: left;
@@ -1314,14 +1481,6 @@ img {
 
 
 
-.banner_taital_h3 {
-    width: 100%;
-    float: left;
-    font-size: 18px;
-    color: #114a69;
-    font-weight: 900;
-    text-align: center;
-}
 
 
 .readmore_bt {
@@ -2392,11 +2551,6 @@ hr.hr_vertical {
 
 
 
-.logo-nos-expertises {
-    width: 100px;
-    height: auto;
-}
-
 .speech-nos-expertises {
     color: #114a69;
     text-align: justify;
@@ -2769,14 +2923,6 @@ textarea[id=content]:focus {
 
 
 
-.title-nos-expertises {
-    width: 100%;
-    float: left;
-    font-size: 48px;
-    color: #114a69;
-    font-weight: 900;
-
-}
 
 .news_carousel_2 {
     border-radius: 9vh;
