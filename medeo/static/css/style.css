@@ -341,6 +341,17 @@ img {
         float: left;
         background: transparent;
         padding: 8px;
+
+    }
+
+    .partners {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 80vw!important;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
     }
 
     .nav-item.dropdown .dropdown-toggle::after {
@@ -357,7 +368,27 @@ img {
         text-align: center;
 
     }
+    .banner_taital_news_carousel_home {
+        font-size: 36px;
+        margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
 
+    }
+
+    .banner_taital_news_carousel_home {
+        font-size: 36px;
+        margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+
+    }
     .my_div_aliza {
         font-size: 18px;
         border-radius: 30px;
@@ -392,13 +423,7 @@ img {
     }
 
     .col-size {
-        width: 60%;
-        padding: 7% !important;
-        background-color: #E91C2A;
-        margin-left: auto;
-        background: rgba(233, 28, 42, 0.3);
-        border-radius: 20px;
-        /* max-height: 175vh; */
+        display:none
     }
 
 
@@ -541,17 +566,63 @@ img {
     }
 
     .banner_main {
-        width: 44%;
+        width: 100%!important;
         float: left;
         background: transparent;
         padding: 8px;
+        min-height: 55vw!important;
     }
 
+    .partners {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 40vw;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
+    }
+
+    .li_active{
+        background-color: green;
+    }
+
+    .carousel-indicators .active {
+        background-color: #E91C2A!important;
+    }
     .nav-item.dropdown .dropdown-toggle::after {
         display: none;
     }
 
     .banner_taital {
+        font-size: 36px;
+        margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        margin-left: 25%;
+        /* margin-right: 20%; */
+        text-align: initial;
+
+    }
+
+    .banner_taital_news_carousel_home {
+        font-size: 36px;
+        margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+        margin-left: 25%;
+        /* margin-right: 20%; */
+        text-align: initial;
+
+    }
+
+    .banner_taital_news_carousel_home {
         font-size: 36px;
         margin-top: 10vw;
         width: 100%;
@@ -585,13 +656,7 @@ img {
     }
 
     .col-size {
-        width: 60%;
-        padding: 7% !important;
-        background-color: #E91C2A;
-        margin-left: auto;
-        background: rgba(233, 28, 42, 0.3);
-        border-radius: 20px;
-        /* max-height: 175vh; */
+        display:none;
     }
 
 
@@ -780,10 +845,20 @@ img {
     }
 
     .banner_main {
-        width: 44%;
+        width: 42%!important;
         float: left;
         background: transparent;
         padding: 8px;
+    }
+
+    .partners {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 40vw;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
     }
 
     .nav-item.dropdown .dropdown-toggle::after {
@@ -791,6 +866,16 @@ img {
     }
 
     .banner_taital {
+        font-size: 42px;
+        margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .banner_taital_news_carousel_home {
         font-size: 42px;
         margin-top: 10vw;
         width: 100%;
@@ -1095,6 +1180,16 @@ img {
         margin-top: 33px;
     }
 
+    .partners {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 40vw;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
+    }
+
     .nav-item.dropdown .dropdown-toggle::after {
         display: none;
     }
@@ -1102,7 +1197,6 @@ img {
     .col-size {
         width: 60%;
         padding: 7% !important;
-        background-color: #E91C2A;
         margin-left: auto;
         background: rgba(233, 28, 42, 0.3);
         border-radius: 20px;
@@ -1130,6 +1224,14 @@ img {
         margin-top: 10vw;
         width: 100%;
         float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .banner_taital_news_carousel_home {
+        font-size: 48px;
+        width: 100%;
         color: #114a69;
         font-weight: 900;
         text-align: center;
@@ -1231,6 +1333,22 @@ img {
         font-weight: 900;
         text-align: center;
     }
+
+
+    .banner_taital_news_carousel_home {
+        font-size: 48px;
+        margin-top: 5vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+    
+.logo-nos-expertises {
+    width: 100px;
+    height: auto;
+}
 
     .title_bienvenu_home {
         width: 100%;
@@ -1411,7 +1529,17 @@ img {
         border-radius: 9vh;
         background-color: #114a69;
         color: white;
-        height: 26vw;
+        min-height: 26vw;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
+    }
+
+    .partners {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 26vw;
         text-align: center;
         padding-top: 2vw;
         margin-top: 33px;
@@ -1518,39 +1646,6 @@ img {
 
     }
 }
-
-
-/* 
-.banner_taital {
-    width: 100%;
-    float: left;
-    font-size: 48px;
-    color: #114a69;
-    font-weight: 900;
-    text-align: center;
-} */
-
-
-/* 
-
-@media screen and (min-width: 1300px) {
-
-    .banner_taital {
-        margin-top: 10vw;
-        width: 100%;
-        float: left;
-        font-size: 48px;
-        color: #114a69;
-        font-weight: 900;
-        text-align: center;
-    }
-
-    .nav-item.dropdown .dropdown-toggle::after {
-        display: none;
-    }
-} */
-
-
 
 
 
@@ -3012,7 +3107,7 @@ textarea[id=content]:focus {
     border-radius: 9vh;
     background-color: #114a69;
     color: white;
-    height: 20vw;
+    min-height: 20vw;
     text-align: center;
     padding-top: 2vw;
     margin-top: 33px;
