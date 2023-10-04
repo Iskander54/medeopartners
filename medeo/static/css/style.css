@@ -324,8 +324,17 @@ img {
         float: left;
         background: transparent;
         padding: 8px;
-        min-height: 60vw!important;
 
+    }
+
+    .partners {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 80vw!important;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
     }
 
     .nav-item.dropdown .dropdown-toggle::after {
@@ -533,6 +542,16 @@ img {
         background: transparent;
         padding: 8px;
         min-height: 55vw!important;
+    }
+
+    .partners {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 40vw;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
     }
 
     .li_active{
@@ -789,6 +808,16 @@ img {
         float: left;
         background: transparent;
         padding: 8px;
+    }
+
+    .partners {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 40vw;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
     }
 
     .nav-item.dropdown .dropdown-toggle::after {
@@ -1091,6 +1120,16 @@ img {
         background-color: #114a69;
         color: white;
         height: 26vw;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
+    }
+
+    .partners {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 40vw;
         text-align: center;
         padding-top: 2vw;
         margin-top: 33px;
@@ -1412,6 +1451,16 @@ img {
     }
 
     .news_carousel {
+        border-radius: 9vh;
+        background-color: #114a69;
+        color: white;
+        min-height: 26vw;
+        text-align: center;
+        padding-top: 2vw;
+        margin-top: 33px;
+    }
+
+    .partners {
         border-radius: 9vh;
         background-color: #114a69;
         color: white;
