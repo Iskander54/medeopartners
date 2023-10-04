@@ -242,8 +242,10 @@ img {
 
     
     .icones_langues{
-        margin-top: 27px;
-        border-radius: 41%;
+       
+        width: 34px;
+        margin-top: 12px;
+        padding: 3px;
     }
     /* Your styles for extra small devices */
     .what_text_1 {
@@ -508,8 +510,9 @@ img {
 @media (min-width: 576px) and (max-width: 767px) {
 
     .icones_langues{
-        margin-top: 28px;
-        border-radius: 41%;
+        width: 37px;
+        margin-top: 13px;
+        padding: 3px;
     }
 
     /* Your styles for small devices */
@@ -785,8 +788,8 @@ img {
 @media (min-width: 768px) and (max-width: 991px) {
 
     .icones_langues{
-        margin-top: 26px;
-        border-radius: 41%;
+        width: 25px;
+        margin-top: 21px;
     }
     /* Your styles for medium devices */
 
@@ -1077,8 +1080,8 @@ img {
 @media (min-width: 992px) and (max-width: 1199px) {
 
     .icones_langues{
-        margin-top: 27px;
-        border-radius: 41%;
+        width: 24px;
+        margin-top: 21px;
     }
     /* Your styles for large devices */
 
@@ -1379,8 +1382,8 @@ img {
 @media (min-width: 1200px) {
 
     .icones_langues{
-        margin-top: 12px;
-        border-radius: 41%;
+        width: 26px;
+        margin-top: 8px;
     }
     /* Your styles for extra large devices */
 
