@@ -1200,7 +1200,7 @@ msgstr "Communication is essential to build and maintain"
 " positive  relationships both with our \n"
 "customers and within our company.\n"
 "\n"
-“This involves an ability to communicate clearly and”
+"This involves an ability to communicate clearly and"
 "concise, to take into account opinions and\n"
 "Customer suggestions and offer personalized solutions."
 "\n"
@@ -1235,7 +1235,12 @@ msgstr "Ecology is an essential value of our company. We strive "
 " raise awareness of environmental \n"
 "responsibility.\n"
 "\n"
-"
+"We are uncompromising on our initiatives such as reducing energy consumption, \n"
+"reducing waste, the  establishment of sustainable processes and "
+"the encouragement of ecological \n"
+" behaviour at all levels of the company, such as optimizing business "
+"travel , reusing scrap paper, etc."
+
 
 
 
@@ -1251,11 +1256,20 @@ msgid ""
 "garantir le meilleur service à nos clients et de\n"
 "        veiller à ce que nos propres standards restent toujours aussi "
 "élevés."
-msgstr ""
+msgstr "At MEDEO, we do nothing without rigor. We want each other"
+"detailed and organized, attentive to\n"
+"respect both deadlines and budgets, to follow"
+"internal procedures and prompt provision of information\n"
+"reliable and accurate information.\n"
+"\n"
+"Rigour is the foundation of our activity, allowing us to"
+"guarantee the best service to our customers and\n"
+"ensure that our own standards always remain as high"
+"students."
 
 #: medeo/templates/votre_cabinet.html:222
 msgid "Expérience internationale"
-msgstr ""
+msgstr "International experience"
 
 #: medeo/templates/votre_cabinet.html:228
 msgid ""
@@ -1269,11 +1283,21 @@ msgid ""
 "        internationales, ainsi qu'une capacité à communiquer efficacement"
 " avec des clients de différents pays et à\n"
 "        naviguer avec succès dans un environnement mondialisé."
-msgstr ""
+
+msgstr "Our international experience is an important asset for our clients"
+"looking to expand their\n"
+"portfolio and develop opportunities in new"
+"markets.\n"
+"\n"
+"We have a sensitivity to cultures, a keen understanding"
+"markets and regulations\n"
+"international, as well as an ability to communicate effectively"
+"with customers from different countries and countries\n"
+"navigate successfully in a globalized environment."
 
 #: medeo/templates/votre_cabinet.html:245
 msgid "Mixité et inclusion"
-msgstr ""
+msgstr "Diversity and inclusion"
 
 #: medeo/templates/votre_cabinet.html:251
 msgid ""
@@ -1296,7 +1320,26 @@ msgid ""
 "quotidiennes de l'entreprise, nous pouvons\n"
 "        contribuer à renforcer la mixité, l'inclusion et le respect de "
 "tous les employés."
-msgstr ""
+
+msgstr "We are committed to building an inclusive and respectful environment."
+"by implementing several\n"
+"practices and initiatives:\n"
+"\n"
+" · Diversity in the workforce in terms of recruitment\n"
+"\n"
+" Raising awareness of cultural diversity, by organizing "
+"round tables around the profession\n"
+"\n"
+" · Inclusion policies that guarantee equal opportunities "
+"for all employees\n"
+"\n"
+" · Measures against harassment and discrimination, for "
+"prevent harassment and discrimination.\n"
+"\n"
+"By adopting these values ​​and integrating them into practices"
+"company daily, we can\n"
+"contribute to strengthening diversity, inclusion and respect for"
+"all the employees."
 
 #: medeo/templates/votre_cabinet.html:282
 msgid ""
@@ -1314,7 +1357,21 @@ msgid ""
 "\n"
 "        Miser sur la jeunesse est un pari payant chez MEDEO, où tout le "
 "monde est gagnant."
-msgstr ""
+
+msgstr "We are betting on youth and investing in the future of the "
+"profession.\n"
+"\n"
+"By welcoming work-study students, we give young people the chance"
+"to develop their skills and their\n"
+"professional experience.\n"
+"\n"
+"Working with work-study students obviously means sharing our expertise"
+"know-how and our expertise but also us\n"
+"allowing innovation, thanks to the ingenuity and fresh perspective that"
+"these relate to the profession.\n"
+"\n"
+"Betting on youth is a profitable bet at MEDEO, where everything"
+"the world is a winner."
 
 #: medeo/templates/votre_cabinet.html:308
 msgid ""
@@ -1325,11 +1382,18 @@ msgid ""
 "\n"
 "        Notre seul but : les aider à atteindre leurs objectifs en plaçant"
 " leur satisfaction au premier plan."
-msgstr ""
+
+msgstr "Our commitment to our customers is complete. By sending us their
+"passion and determination,\n"
+“they boost our motivation to provide them with a service”
+"quality.\n"
+"\n"
+“Our only goal: to help them achieve their goals by placing”
+“their satisfaction comes first."
 
 #: medeo/templates/votre_cabinet.html:324
 msgid "Qualité de service"
-msgstr ""
+msgstr "Quality of service"
 
 #: medeo/templates/votre_cabinet.html:330
 msgid ""
@@ -1341,99 +1405,117 @@ msgid ""
 "professionnalisme. Notre capacité à anticiper les\n"
 "        besoins de nos clients nous permet de leur proposer des solutions"
 " sur mesure."
-msgstr ""
+
+msgstr "High quality service is the minimum we can offer to our "
+"customers, ensuring that\n"
+"their expectations are respected, satisfied or even exceeded.\n"
+"\n"
+“To do this, we combined listening, responsiveness, competence and”
+"professionalism. Our ability to anticipate\n"
+“needs of our customers allows us to offer them solutions”
+" custom made."
 
 #: medeo/templates/votre_cabinet.html:373
 msgid "CEO, Expert-Comptable et commissaire aux comptes"
-msgstr ""
+msgstr "CEO, Chartered Accountant and Auditor"
 
 #: medeo/templates/votre_cabinet.html:378
 msgid "\"Pour réussir, il n'y a que des plans A pas de plans B \""
-msgstr ""
+msgstr "\"To succeed, there are only plans A, no plans B\""
 
 #: medeo/templates/votre_cabinet.html:382
 msgid "une phrase qui caractérise bien mon état d'esprit."
-msgstr ""
+msgstr "a sentence that characterizes my state of mind well."
 
 #: medeo/templates/votre_cabinet.html:385
 msgid "\"La facon de commencer est d'arrêter de parler et de commencer à faire\""
-msgstr ""
+msgstr "\"The way to start is to stop talking and start doing\""
 
 #: medeo/templates/votre_cabinet.html:388
 msgid "Walt Disney, cofondateur de The Walt Disney Company"
-msgstr ""
+msgstr "Walt Disney, co-founder of The Walt Disney Company"
 
 #: medeo/templates/votre_cabinet.html:391
 msgid ""
 "Diplômé en Licence d'économie, je suis me suis réorienté dans un domaine "
 "qui m'a toujours"
-msgstr ""
+msgstr "Graduated in Economics, I reoriented myself in a field "
+"who has always"
 
 #: medeo/templates/votre_cabinet.html:392
 msgid ""
 "passionné : la comptabilité. J'ai donc obtenu une deuxième licence en "
 "comptabilité (DCG),\n"
 "                    un"
-msgstr ""
+msgstr "Passionate: accounting. So I obtained a second license in "
+"accounting (DCG),\n"
+"                    A"
 
 #: medeo/templates/votre_cabinet.html:394
 msgid ""
 "master en comptabilité (DSCG), puis le DEC (Bac+8). Mon cursus m'a permis"
 " d'avoir une\n"
 "                    vision"
-msgstr ""
+msgstr "master's degree in accounting (DSCG), then the DEC (Bac+8). My course allowed me"
+"to have a\n"
+"                    vision"
 
 #: medeo/templates/votre_cabinet.html:396
 msgid "plus complète du monde de l'entreprenariat."
-msgstr ""
+msgstr "most complete in the world of entrepreneurship."
 
 #: medeo/templates/votre_cabinet.html:407
 msgid "Associé, Directeur de mission"
-msgstr ""
+msgstr "Partner, Mission Director"
 
 #: medeo/templates/votre_cabinet.html:413
 msgid "\" L'art de la réussite consiste à savoir s'entourer des meilleurs.\""
-msgstr ""
+msgstr "\"The art of success consists of knowing how to surround yourself with the best.\""
 
 #: medeo/templates/votre_cabinet.html:416
 msgid "John Fitzgerald Kennedy"
-msgstr ""
+msgstr "John Fitzgerald Kennedy"
 
 #: medeo/templates/votre_cabinet.html:419
 msgid ""
 "Forts de 10 années d'expérience en cabinet d'expertise comptable et de "
 "commissariat aux"
-msgstr ""
+msgstr "With 10 years of experience in an accounting firm and "
+"commissioner"
 
 #: medeo/templates/votre_cabinet.html:420
 msgid ""
 "comptes, et de mon cursus universitaire en comptabilité et gestion, je "
 "souhaite accompagner"
-msgstr ""
+msgstr "accounts, and my university studies in accounting and management, I "
+"wish to accompany"
 
 #: medeo/templates/votre_cabinet.html:421
 msgid "les entreprises et prendre soin de mes clients."
-msgstr ""
+msgstr "businesses and taking care of my customers."
 
 #: medeo/templates/votre_cabinet.html:422
 msgid ""
 "La diversité de mon parcours professionnel m'a permis de développer une "
 "expertise"
-msgstr ""
+msgstr "The diversity of my professional background has allowed me to develop a "
+"expertise"
 
 #: medeo/templates/votre_cabinet.html:423
 msgid ""
 "considérable dans mon domaine et une assurance au quotidien, au chevet de"
 " mes partenaires."
-msgstr ""
+msgstr "considerable in my field and daily assurance, at the bedside of "
+“my partners."
 
 #: medeo/templates/votre_cabinet.html:425
 msgid ""
 "Méticuleux, rigoureux et réactif, je me positionne comme le garant de la "
 "bonne gestion de"
-msgstr ""
+msgstr "Meticulous, rigorous and responsive, I position myself as the guarantor of "
+"good management of"
 
 #: medeo/templates/votre_cabinet.html:426
 msgid "votre activité."
-msgstr ""
+msgstr "your activity."
 
