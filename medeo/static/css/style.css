@@ -2895,7 +2895,7 @@ textarea[id=content]:focus {
 }
 
 .modal-header {
-    padding-left: 11vw;
+    margin: auto;
     border-bottom: 0;
 }
 
@@ -2923,6 +2923,19 @@ textarea[id=content]:focus {
 
 }
 
+.text-start {
+    font-size: large;
+    font-weight: 400;
+    color: #114A69;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+    word-spacing: -1px;
+
+}
 
 
 
