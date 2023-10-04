@@ -3217,23 +3217,6 @@ input[type=radio]:checked {
     /* Added opacity transition */
 }
 
-/* New addition for Zoom Effect */
-.zoom-container {
-    overflow: hidden;
-    /* Hide the part of the image that extends outside the div */
-}
-
-/* Zoom effect */
-.zoom-container:hover {
-    cursor: default;
-    /* Change cursor to zoom-in icon */
-}
-
-.zoom-container:hover img {
-    transform: scale(1.4);
-    /* Zoom level */
-    transition: transform .5s ease-in-out;
-}
 
 /* Existing transition rules */
 #s1:checked~#slide1,
