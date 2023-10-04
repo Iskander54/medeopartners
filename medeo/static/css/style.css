@@ -3508,3 +3508,12 @@ input[type=radio]:checked {
     height: 25%;
 
 }
+
+
+
+.owl-carousel .item {
+    height: 15rem;
+    background: blue;
+    padding: 1rem;
+    border-radius: 20%;
+}
