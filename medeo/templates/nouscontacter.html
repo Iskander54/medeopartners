@@ -193,283 +193,96 @@
 </div>
 
 
-<section id="slider">
-  <input type="radio" name="slider" id="s1" checked>
-  <input type="radio" name="slider" id="s2">
-  <input type="radio" name="slider" id="s3">
-  <input type="radio" name="slider" id="s4">
-  <label for="s1" id="slide1">
-    <div class="zoom-container">
-      <img alt="Image 1" src="{{url_for('static', filename='/images/fading-blue-background.jpg')}}" loading="lazy">
-      <img style="top: 10%;border-radius: 50%;width: 20%;height: 25%;" src="{{url_for('static', filename='/images/computer_plant.jpg')}}" loading="lazy">
-      
-      <div class="centered">
-        <h2 style="color: white;">CDI - CHARGÉ DE MISSION COMPTABLE (H/F)</h2>
-      </div>
-    </div>
-  </label>
-  <label for="s2" id="slide2">
-    <div class="zoom-container">
-      <img alt="Image 1" src="{{url_for('static', filename='/images/red.jpg')}}" loading="lazy">
-      <img style="top: 10%;border-radius: 50%;width: 20%;height: 25%;" src="{{url_for('static', filename='/images/computer_plant.jpg')}}" loading="lazy">
-      
-      <div class="centered">
-        <h2 style="color: white;">CDI - CHARGÉ DE MISSION COMPTABLE (H/F)</h2>
-      </div>
-    </div>
-  </label>
-  <label for="s3" id="slide3">
-    <div class="zoom-container">
-      <img alt="Image 1" src="{{url_for('static', filename='/images/blue-concrete-textured-wall.jpg')}}" loading="lazy">
-      <img style="top: 10%;border-radius: 50%;width: 20%;height: 25%;" src="{{url_for('static', filename='/images/computer_plant.jpg')}}" loading="lazy">
-      
-      <div class="centered">
-        <h2 style="color: white;">CDI - CHARGÉ DE MISSION COMPTABLE (H/F)</h2>
-      </div>    
-    
-    </div>
-  </label>
-  <label for="s4" id="slide4">
-    <div class="zoom-container">
-      <img alt="Image 1" src="{{url_for('static', filename='/images/blue-concrete-textured-wall.jpg')}}" loading="lazy">
-      <img style="top: 10%;border-radius: 50%;width: 20%;height: 25%;" src="{{url_for('static', filename='/images/computer_plant.jpg')}}" loading="lazy">
-      
-      <div class="centered">
-        <h2 style="color: white;">CDI - CHARGÉ DE MISSION COMPTABLE (H/F)</h2>
-      </div>    
-    
-    </div>
-  </label>
-</section>
-<!-- 
-<div class="img-container">
-  <img class="img1"  src="{{url_for('static', filename='/images/fading-blue-background.jpg')}}" loading="lazy">
-  <img class="img2"  src="{{url_for('static', filename='/images/fading-blue-background.jpg')}}" loading="lazy">
-  <img class="img3"  src="{{url_for('static', filename='/images/fading-blue-background.jpg')}}" loading="lazy">
-  <img class="img4"  src="{{url_for('static', filename='/images/fading-blue-background.jpg')}}" loading="lazy">
+ <div class="header_section">
+  <!--banner section start -->
+  <div class="banner_section layout_padding">
+    <div class="container-fluid">
+      <section class="slide-wrapper">
+        <div class="container-fluid">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active li_active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol><!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="carousel-item active" style="min-height:max-content;">
+                <div class="container">
+                  <div class="nous_rejoindre">
+                    <img class="images_carousel_home" src="{{ url_for('static',filename='images/computer_plant.jpg') }}"
+                    loading="lazy">
+                    <i class="fa-solid fa-quote-right fa-2xl fa-align-right" style="color: #ffffff;"></i>
+                    <h2 style="color: white;">{{_('Candidature Spontanée')}}</h2>
 
-  <div class="arrows">
-    <svg class="prev" viewBox="0 0 256 512" width="100" title="angle-left">
-      <path
-        d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
-    </svg>
-    <svg class="next" viewBox="0 0 256 512" width="100" title="angle-right">
-      <path
-        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
-    </svg>
-  </div>
-</div>
- -->
+                    <div class="carousel_home_txt">
+                      {{_('Retrouvez les dernières actualités Fiscales')}}
 
+                      <div class="readmore_news" style="align-items:center">
+                        <a href="{{_('actualites#type=.all-types&medium=.fiscal')}}">{{_('Plus d\'actualités')}}</a>
+                      </div>
+                    </div>
+                    
 
-<div class="testimonial_section layout_padding">
-  <div id="my_carousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#my_carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#my_carousel" data-slide-to="1" class=""></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item carousel-item-next carousel-item-left">
-        <div class="container">
-          <div class="testimonial_section_2">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="testimonial_box">
-                  <div class="jonimo_taital_main">
-                    <h4 class="jonimo_text">
-                      CDI - Chargé de Mission Comptable (H/F)
-                    </h4>
-                    <div class="quick_icon"><i class="fa-solid fa-quote-right"></i></div>
-                    <div class="quick_icon_1"><i class="fa-solid fa-quote-right"></i></div>
                   </div>
-                  <!-- <img src="/static/images/fintis_logo.png" class="logo_temoignages" loading="lazy"> -->
-                  <p class="dummy_text justify">
-                    Nous recherchons un Chargé de Mission Comptable talentueux pour rejoindre notre équipe dynamique.
-                    Vous travaillerez en étroite collaboration avec nos clients et les aidera à gérer efficacement leurs
-                    besoins comptables.
 
-                    Responsabilités :
+                  
+                </div>
 
-                    Assurer la tenue comptable des clients assignés.
-                    Préparer les déclarations fiscales.
-                    Effectuer des rapprochements bancaires.
-                    Contribuer à l'élaboration des états financiers.
-                    Fournir des conseils comptables aux clients.
-                    Exigences :
+              </div>
 
-                    Diplôme en comptabilité ou finance.
-                    Expérience préalable en cabinet d'experts-comptables (un atout).
-                    Connaissance des normes comptables en vigueur.
-                    Maîtrise des logiciels comptables.
-                    Excellentes compétences en communication et en service client.
-                  </p>
+              
+              <div class="carousel-item" style="min-height:max-content;">
+                <div class="container">
+
+                  <div class="nous_rejoindre">
+                    <img class="images_carousel_home" src="{{ url_for('static',filename='images/computer_plant.jpg') }}"
+                       loading="lazy">
+                       <i class="fa-solid fa-quote-right fa-2xl" style="color: #ffffff;"></i>
+
+                    <h2 style="color: white;">{{_('Poste : XX')}}</h2>
+                    <div class="carousel_home_txt">
+                      {{_('Retrouvez les dernières actualités Sociales')}}
+                      <div class="readmore_news" style="align-items:center">
+                        <a href="{{_('actualites#type=.all-types&medium=.social')}}">{{_('Plus d\'actualités')}}</a>
+                      </div>
+                    </div><br>
+                  </div>
+
+
+                 
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="testimonial_box">
-                  <div class="jonimo_taital_main">
-                    <h4 class="jonimo_text">
-                      Candidature Spontanée
-                    </h4>
-                    <div class="quick_icon"><i class="fa-solid fa-quote-right"></i></div>
-                    <div class="quick_icon_1"><i class="fa-solid fa-quote-right"></i></div>
+
+
+              <div class="carousel-item" style="min-height:max-content;">
+                <div class="container">
+                  <div class="nous_rejoindre">
+                    <img class="images_carousel_home" src="{{ url_for('static',filename='images/computer_plant.jpg') }}"
+                       loading="lazy">
+                       <i class="fa-solid fa-quote-right fa-2xl" style="color: #ffffff;"></i>
+
+                    <h2 style="color: white;">{{_('Poste : YY')}}</h2>
+                    <div class="carousel_home_txt">
+                      {{_('Retrouvez les dernières actualités Juridiques')}}
+                      <div class="readmore_news" style="align-items:center">
+                        <a href="{{_('actualites#type=.all-types&medium=.juridique')}}">{{_('Plus d\'actualités')}}</a>
+                      </div>
+                    </div>
+
                   </div>
-                  <!-- <img src="/static/images/empruntis_logo.png" class="logo_temoignages" loading="lazy"> -->
-                  <p class="dummy_text justify">
-                    Vous êtes passionné par le domaine de la comptabilité et vous souhaitez rejoindre une équipe
-                    d'experts-comptables dynamique ? Nous sommes toujours à la recherche de talents exceptionnels.
-                    Envoyez-nous votre candidature spontanée dès aujourd'hui.
 
-                    Responsabilités :
-
-                    Les responsabilités spécifiques dépendront du poste disponible au moment de la candidature.
-                    Exigences :
-
-                    Formation en comptabilité ou finance.
-                    Capacité à travailler en équipe.
-                    Motivation, autonomie et sens des responsabilités.
-                  </p>
-
+                 
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item active carousel-item-left">
-        <div class="container">
-          <div class="testimonial_section_2">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="testimonial_box">
-                  <div class="jonimo_taital_main">
-                    <h4 class="jonimo_text">
-                      {{_('Expert Comptable CDI (H/F)')}}
-                    </h4>
-                    <div class="quick_icon"><i class="fa-solid fa-quote-right"></i></div>
-                    <div class="quick_icon_1"><i class="fa-solid fa-quote-right"></i></div>
-                  </div>
-                  <!-- <img src="/static/images/bamana_solutions_logo.jpeg" class="logo_temoignages" loading="lazy"> -->
-                  <p class="dummy_text justify">
-                    {{_('Nous recherchons un Expert Comptable expérimenté pour rejoindre notre équipe en tant que
-                    collaborateur en CDI. Si vous avez une solide expérience en expertise comptable et que vous
-                    souhaitez évoluer au sein d\'un cabinet de renom, nous aimerions vous rencontrer.
-
-                    Responsabilités :
-
-                    Gérer un portefeuille clients varié.
-                    Superviser et former une équipe comptable.
-                    Fournir des conseils stratégiques aux clients.
-                    Assurer la conformité fiscale et comptable.
-                    Participer au développement commercial du cabinet.
-                    Exigences :
-
-                    Diplôme d\'Expertise Comptable.
-                    Expérience significative en cabinet comptable.
-                    Excellentes compétences en leadership et en communication.
-                    Connaissance approfondie des lois fiscales et comptables.
-                    Orientation client et sens des responsabilités.')}}
-                  </p>
-
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="testimonial_box">
-                  <div class="jonimo_taital_main">
-                    <h4 class="jonimo_text">{{_('Alternant en Comptabilité')}} </h4>
-                    <div class="quick_icon"><i class="fa-solid fa-quote-right"></i></div>
-                    <div class="quick_icon_1"><i class="fa-solid fa-quote-right"></i></div>
-                  </div>
-                  <!-- <img src="/static/images/energy_consulting_logo.png" loading="lazy" class="logo_temoignages"> -->
-                  <p class="dummy_text justify">
-                    Vous recherchez une opportunité d'alternance en comptabilité au sein d'un cabinet
-                    d'experts-comptables renommé ? Nous offrons un environnement d'apprentissage stimulant pour les
-                    étudiants en comptabilité qui souhaitent acquérir une expérience pratique.
-
-                    Responsabilités :
-
-                    Assister les chargés de mission comptable dans leurs tâches.
-                    Participer à la préparation des déclarations fiscales.
-                    Contribuer à la gestion comptable quotidienne.
-                    Apprendre les normes comptables et fiscales en vigueur.
-                    Travailler en étroite collaboration avec l'équipe comptable.
-                    Exigences :
-
-                    Étudiant en comptabilité ou finance.
-                    Disponibilité pour une période d'alternance.
-                    Motivation à apprendre et à progresser.
-                    Bonnes compétences en communication et en travail d'équipe.
-                    N'oubliez pas d'adapter ces annonces et fiches de poste en fonction de vos besoins spécifiques et
-                    des compétences recherchées pour chaque poste. </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
-  </div>
+  </div><!--banner section end -->
 </div>
 
 
 
-<script>
-
-  let currentSlide = 1;
-  let isPaused = false; // Variable to check if the slideshow is paused
-
-  // Function to change the slide
-  const changeSlide = () => {
-    if (!isPaused) {
-      document.getElementById(`s${currentSlide}`).checked = true;
-      currentSlide++;
-      if (currentSlide > 5) {
-        currentSlide = 1;
-      }
-    }
-  };
-
-  // Start the auto-scroll
-  let slideInterval = setInterval(changeSlide, 5000);
-
-  // Function to pause the auto-scroll
-  const pauseSlide = () => {
-    isPaused = true;
-  };
-
-  // Function to resume the auto-scroll
-  const resumeSlide = () => {
-    isPaused = false;
-  };
-
-  // Adding event listeners to pause and resume auto-scroll on hover
-  document.querySelectorAll('.zoom-container').forEach((container) => {
-    container.addEventListener('mouseover', () => {
-      pauseSlide();
-      container.classList.add('zoomed');
-      container.style.overflow = 'visible'; // Change overflow to visible when zoomed
-    });
-    container.addEventListener('mouseout', () => {
-      resumeSlide();
-      container.classList.remove('zoomed');
-      container.style.overflow = 'hidden'; // Change overflow back to hidden when not zoomed
-    });
-    container.addEventListener('mousemove', (event) => {
-      if (!container.classList.contains('zoomed')) {
-        return;
-      }
-      const boundingRect = container.getBoundingClientRect();
-      const offsetX = event.clientX - boundingRect.left;
-      const offsetY = event.clientY - boundingRect.top;
-      if (
-        offsetX < 0 || offsetX > boundingRect.width ||
-        offsetY < 0 || offsetY > boundingRect.height
-      ) {
-        container.classList.remove('zoomed');
-        container.style.overflow = 'hidden'; // Change overflow back to hidden when not zoomed
-      }
-    });
-  });
-
-</script>
 {% endblock content %}
