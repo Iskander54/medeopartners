@@ -73,8 +73,9 @@
 <body>
 
    <header class="site-header">
-      <!-- <img class="bg-img2" src="{{ url_for('static',filename='images/service/image-background.png') }}" alt="Bg image"> -->
       <div class="bg-img2"></div>
+      <!-- <div class="imaag"></div> -->
+
 
       <nav class="navbar navbar-expand-md navbar-light bg-light ">
          <div class="container-fluid">
@@ -259,7 +260,7 @@
    <!-- Calendly badge widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script type="text/javascript" src="{{url_for('static', filename='calendly/widget.js') }}" ></script>
-<script type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="hh">Prendre RDV', color: '#114a69', textColor: '#ffffff', branding: true }); }</script>
+<script type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="btn_calendly">Prendre RDV', color: '#114a69', textColor: '#ffffff', branding: true }); }</script>
 <!-- Calendly badge widget end -->
 
 
@@ -268,15 +269,12 @@
    <div class="footer_section">
       <div class="container_footer">
          <div class="footer_section_2">
-
-
             <div class="row">
                <div class="col">
                   <h2 class="footer_taital">{{_('À propos')}}</h2>
                   <a class="footer_text" href="{{_('votre_cabinet')}}">{{_('Le Cabinet')}}</a>
                   <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Expert-Comptable')}}</a>
                   <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Commissariat aux comptes')}}</a>
-
                </div>
                <div class="col">
                   <h2 class="footer_taital">{{_('Adresse')}}</h2>
@@ -308,9 +306,7 @@
                   <div class="oec-logo"><a href="https://www.oec-paris.fr/" target="_blank"><img
                            src="{{url_for('static', filename='images/oec.png')}}" loading="lazy"></a></div><br />
                </div>
-
             </div>
-
          </div>
       </div>
 
@@ -336,9 +332,7 @@
    <script src="{{url_for('static', filename='js/plugin.js') }}"></script>
    <!-- sidebar -->
    <script src="{{url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-   <script src="{{url_for('static', filename='js/custom.js') }}"></script>
    <!-- javascript -->
-   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
    <script>
       document.addEventListener('DOMContentLoaded', function () {

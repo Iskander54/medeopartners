@@ -215,7 +215,6 @@ img {
 }
 
 .bg-light {
-    background-image: url(../images/header-bg.png);
     background-color: transparent !important;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -1255,6 +1254,7 @@ img {
 
     .col-size {
         width: 60%;
+        min-height: 46vw;
         padding: 7% !important;
         margin-left: auto;
         background: rgba(233, 28, 42, 0.3);
@@ -1623,6 +1623,7 @@ img {
 
     .col-size {
         width: 60%;
+        min-height: 46vw;
         padding: 7% !important;
         background-color: #E91C2A;
         margin-left: auto;
@@ -3805,3 +3806,14 @@ main#carousel {
     }
 }
 
+
+
+.imaag {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://source.unsplash.com/-UWtb-3v6jQ/1600x1000");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top center;
+  }
