@@ -327,6 +327,15 @@ img {
 
     }
 
+    .nous_rejoindre {
+        width: 60%!important;
+        /* float: left; */
+        background: #114a69;
+        padding: 8px;
+        min-height: 30vw!important;
+        margin: auto;
+        border-radius: 9vh;
+    }
     .partners {
         border-radius: 9vh;
         background-color: #114a69;
@@ -541,7 +550,17 @@ img {
         float: left;
         background: transparent;
         padding: 8px;
-        min-height: 55vw!important;
+        min-height: 30vw!important;
+    }
+
+    .nous_rejoindre {
+        width: 60%!important;
+        /* float: left; */
+        background: #114a69;
+        padding: 8px;
+        min-height: 30vw!important;
+        margin: auto;
+        border-radius: 9vh;
     }
 
     .partners {
@@ -810,6 +829,16 @@ img {
         padding: 8px;
     }
 
+    .nous_rejoindre {
+        width: 60%!important;
+        /* float: left; */
+        background: #114a69;
+        padding: 8px;
+        min-height: 30vw!important;
+        margin: auto;
+        border-radius: 9vh;
+    }
+
     .partners {
         border-radius: 9vh;
         background-color: #114a69;
@@ -1073,6 +1102,15 @@ img {
         padding: 8px;
     }
 
+    .nous_rejoindre {
+        width: 60%!important;
+        /* float: left; */
+        background: #114a69;
+        padding: 8px;
+        min-height: 30vw!important;
+        margin: auto;
+        border-radius: 9vh;
+    }
     .nav-item.dropdown .dropdown-toggle::after {
         display: none;
     }
@@ -1390,6 +1428,15 @@ img {
         padding: 8px;
     }
 
+    .nous_rejoindre {
+        width: 60%!important;
+        /* float: left; */
+        background: #114a69;
+        padding: 8px;
+        min-height: 30vw!important;
+        margin: auto;
+        border-radius: 9vh;
+    }
     .nav-item.dropdown .dropdown-toggle::after {
         display: none;
     }
@@ -2675,9 +2722,10 @@ hr.hr_vertical {
 }
 
 .images_carousel_home {
-    width: 20vh;
-    border-radius: 9vh;
+    width: 25vh;
+    border-radius: 28vh;
     margin: auto;
+    height: 12vw;
 }
 
 
