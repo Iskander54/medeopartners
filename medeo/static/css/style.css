@@ -2610,7 +2610,7 @@ hr.hr_vertical {
 }
 
 .loader {
-    animation: rotate 2s infinite;
+    animation: rotate 1.5s infinite;
     height: 50px;
     width: 50px;
     position: relative;
@@ -3781,3 +3781,24 @@ main#carousel {
   }
   
   
+
+
+
+  .animate-top{
+    animation-name:animate-top;
+    animation-duration:3s;
+    animation-fill-mode: backwards;
+}
+
+
+@keyframes animate-top {
+    0%{
+        opacity: 0;
+      transform: translateY(-100px)
+    }
+    100%{
+        opacity: 1;
+      transform: translateY(0px)
+    }
+}
+
