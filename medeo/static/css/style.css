@@ -240,6 +240,11 @@ img {
 /* Extra Small Devices (e.g., smartphones) */
 @media (max-width: 575px) {
 
+    
+    .icones_langues{
+        margin-top: 27px;
+        border-radius: 41%;
+    }
     /* Your styles for extra small devices */
     .what_text_1 {
         margin: 0 auto;
@@ -501,6 +506,11 @@ img {
 
 /* Small Devices (e.g., larger smartphones and small tablets) */
 @media (min-width: 576px) and (max-width: 767px) {
+
+    .icones_langues{
+        margin-top: 28px;
+        border-radius: 41%;
+    }
 
     /* Your styles for small devices */
     .effet_ombre_boutons_valeurs {
@@ -774,6 +784,10 @@ img {
 /* Medium Devices (e.g., larger tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
 
+    .icones_langues{
+        margin-top: 26px;
+        border-radius: 41%;
+    }
     /* Your styles for medium devices */
 
     .title_bienvenu_home {
@@ -1062,6 +1076,10 @@ img {
 /* Large Devices (e.g., desktops and laptops) */
 @media (min-width: 992px) and (max-width: 1199px) {
 
+    .icones_langues{
+        margin-top: 27px;
+        border-radius: 41%;
+    }
     /* Your styles for large devices */
 
 
@@ -1360,6 +1378,10 @@ img {
 /* Extra Large Devices (e.g., large desktop screens) */
 @media (min-width: 1200px) {
 
+    .icones_langues{
+        margin-top: 12px;
+        border-radius: 41%;
+    }
     /* Your styles for extra large devices */
 
     .banner_taital {
@@ -3085,6 +3107,17 @@ textarea[id=content]:focus {
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     text-align: center;
+}
+
+
+.carousel_careers {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    width: 83%;
 }
 
 .modal-body {
