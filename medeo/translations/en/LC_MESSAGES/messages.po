@@ -42,7 +42,7 @@ msgstr "Audit"
 #: medeo/templates/audit.html:8 medeo/templates/conseil_optimisation.html:8
 #: medeo/templates/expertise_comptable.html:8 medeo/templates/home.html:30
 msgid "Medeo , \"Cure your business\""
-msgstr "Medeo , \"Soignez votre entreprise\"
+msgstr "Medeo , \"Cure your business\""
 
 #: medeo/templates/audit.html:20
 msgid "Audit contractuel"
@@ -89,7 +89,7 @@ msgid ""
 "                aux normes comptables, à formuler des opinions sur la "
 "sincérité et la justesse des états financiers et à\n"
 "                signaler tout problème de conformité."
-msgstr ""Our role is to review your  company’s annual accounts, verify compliance with accounting standards, provide  opinions on the fairness and soundness of financial statements, and report any  compliance issues."
+msgstr "Our role is to review your  company’s annual accounts, verify compliance with accounting standards, provide  opinions on the fairness and soundness of financial statements, and report any  compliance issues."
 
 #: medeo/templates/conseil_optimisation.html:7 medeo/templates/layout.html:123
 msgid "Conseil-Optimisation"
@@ -294,7 +294,7 @@ msgstr "We help businesses understand and meet their social obligations, such as
 
 #: medeo/templates/home.html:7
 msgid "Bienvenue chez Medeo Partners"
-msgstr "Welcome at Medeo Partners"
+msgstr "Welcome to Medeo Partners"
 
 #: medeo/templates/home.html:10
 msgid "Forts de plus 10 ans d'expertise en comptabilité, et fiscalité, nous"
@@ -310,7 +310,7 @@ msgstr "creation and optimization processes."
 
 #: medeo/templates/home.html:16 medeo/templates/layout.html:112
 msgid "notre_expertise"
-msgstr "our expertise"
+msgstr "our_expertise"
 
 #: medeo/templates/home.html:16 medeo/templates/home.html:161
 #: medeo/templates/home.html:194
@@ -339,7 +339,11 @@ msgid ""
 "secteurs. Nous travaillons en étroite collaboration\n"
 "        avec nos clients pour assurer la conformité de leurs comptes avec"
 " les normes comptables et fiscales en vigueur."
-msgstr "Our accounting firm specializes in auditing and certifying\n the accounts of  companies of all sizes and sectors. We work closely with our clients\n to ensure that  their accounts comply with current accounting and tax standards."
+msgstr "Our accounting firm specializes in auditing and certifying\n
+" the accounts of  companies of all sizes and "
+"sectors. We work closely with our clients\n"
+" to ensure that  their accounts comply with "
+"current accounting and tax standards."
 
 #: medeo/templates/home.html:59
 msgid "Conseil <br>optimisation "
@@ -364,7 +368,9 @@ msgid ""
 "Notre département informatique gère tout type de problématiques liés\n"
 "        aux systèmes d'information, à la gestion de vos données clients "
 "ainsi qu'à l'amélioration de vos process."
-msgstr "Our IT department handles all types of issues related to information systems, the  management of your customer data and the improvement of your processes."
+msgstr "Our IT department handles all types of issues related \n"
+"to information systems, the  management of your customer data and "
+"the improvement of your processes."
 
 #: medeo/templates/home.html:103
 msgid "Retrouvez les dernières actualités Fiscales"
@@ -540,7 +546,7 @@ msgstr "news/juridique/news_12"
 #: medeo/templates/layout.html:228 medeo/templates/layout.html:229
 #: medeo/templates/layout.html:247
 msgid "nouscontacter"
-msgstr "contact us"
+msgstr "contactus"
 
 #: medeo/templates/home.html:213
 msgid "Travailler avec nous"
@@ -575,11 +581,11 @@ msgstr "home"
 #: medeo/templates/layout.html:93 medeo/templates/layout.html:227
 #: medeo/templates/layout.html:248
 msgid "votre_cabinet"
-msgstr "our offices"
+msgstr "your_firm"
 
 #: medeo/templates/layout.html:95
 msgid "Votre cabinet"
-msgstr "Our offices"
+msgstr "Your firm"
 
 #: medeo/templates/layout.html:105 medeo/templates/layout.html:112
 msgid "Notre expertises"
@@ -587,7 +593,7 @@ msgstr "Our expertise"
 
 #: medeo/templates/layout.html:117 medeo/templates/notre_expertise.html:39
 msgid "expertise_comptable"
-msgstr "public_accounting"
+msgstr "accounting"
 
 #: medeo/templates/layout.html:117
 msgid "Expertise-Comptable"
@@ -595,7 +601,7 @@ msgstr "Public-Accounting"
 
 #: medeo/templates/layout.html:120 medeo/templates/notre_expertise.html:70
 msgid "audit"
-msgstr "audit"
+msgstr "auditing"
 
 #: medeo/templates/layout.html:123 medeo/templates/notre_expertise.html:98
 msgid "conseil_optimisation"
@@ -814,7 +820,7 @@ msgid ""
 msgstr "  We conduct an independent and systematic"
 "         review of our clients' financial  statements\n"
 "         as qualified auditors, in accordance with audit standards.\n"
-"         <br><br>\n
+"         <br><br>\n"
 "         The purpose  of our contractual audit is to provide an opinion on "
 "         the reliability and compliance of  the financial statements with official accounting principles.\n"
 "         <br><br>\n"
@@ -849,7 +855,7 @@ msgstr "We provide a consultancy service to help businesses "
 "treasury, tax planning and operations"
 "international.\n"
 " <br><br>\n"
-"We also help businesses manage risks."
+"We also help businesses manage risks"
 "financial, investment opportunities and"
 " relations with shareholders and stakeholders."
 
@@ -913,7 +919,7 @@ msgstr "I am delighted with the performance I \n"
 "                   my needs really impressed me."
 " They took the time to answer all my \n"
 "                   questions  with great attention to detail. I "
-highly recommend this accountant to anyone  looking for \n"
+"highly recommend this accountant to anyone  looking for \n"
 "                   a reliable and high quality "
 "                   service. Thank you again for your  outstanding\n "
 "                   work! "
@@ -990,7 +996,7 @@ msgstr "Apprenticeship in accounting"
 
 #: medeo/templates/votre_cabinet.html:7
 msgid "\"Votre\" cabinet"
-msgstr "\"Your\" office"
+msgstr "\"Your\" firm"
 
 #: medeo/templates/votre_cabinet.html:8
 msgid "Medeo, \"Cure your business\""
@@ -1077,7 +1083,7 @@ msgid ""
 "        durant le cycle de vie de votre entreprise :\n"
 "        en prenant soin du bien-être et de la croissance de vos projets."
 
-msgstr "Like a doctor, MEDEO Partners supports you </h1><br>\n"
+msgstr "Conversely a doctor, MEDEO Partners supports you </h1><br>\n"
 " <p class=\"banner_text\" style=\"text-indent: 1px; width: auto; "
 "margin-left: 0;\">\n"
 "during the life cycle of your business:\n"
@@ -1385,11 +1391,11 @@ msgid ""
 
 msgstr "Our commitment to our customers is complete. By sending us their
 "passion and determination,\n"
-“they boost our motivation to provide them with a service”
+"they boost our motivation to provide them with a service"
 "quality.\n"
 "\n"
-“Our only goal: to help them achieve their goals by placing”
-“their satisfaction comes first."
+"Our only goal: to help them achieve their goals by placing"
+"their satisfaction comes first."
 
 #: medeo/templates/votre_cabinet.html:324
 msgid "Qualité de service"
@@ -1410,9 +1416,9 @@ msgstr "High quality service is the minimum we can offer to our "
 "customers, ensuring that\n"
 "their expectations are respected, satisfied or even exceeded.\n"
 "\n"
-“To do this, we combined listening, responsiveness, competence and”
+"To do this, we combined listening, responsiveness, competence and"
 "professionalism. Our ability to anticipate\n"
-“needs of our customers allows us to offer them solutions”
+"needs of our customers allows us to offer them solutions"
 " custom made."
 
 #: medeo/templates/votre_cabinet.html:373
@@ -1506,7 +1512,7 @@ msgid ""
 "considérable dans mon domaine et une assurance au quotidien, au chevet de"
 " mes partenaires."
 msgstr "considerable in my field and daily assurance, at the bedside of "
-“my partners."
+"my partners."
 
 #: medeo/templates/votre_cabinet.html:425
 msgid ""
