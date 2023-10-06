@@ -305,7 +305,7 @@ msgid "accompagnons nos clients de tout secteurs dans leurs démarches"
 msgstr "support our clients in all sectors in their  project"
 
 #: medeo/templates/home.html:12
-msgid "de création d'entreprise, de de projets, et d'optimisation."
+msgid "de création d'entreprise, de projets, et d'optimisation."
 msgstr "creation and optimization processes."
 
 #: medeo/templates/home.html:16 medeo/templates/layout.html:112
