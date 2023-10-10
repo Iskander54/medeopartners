@@ -27,14 +27,16 @@
   <div class="row">
     <h1 class="banner_taital">{{_('Notre expertise à votre service')}}</h1>
     <br>
-    <p class="what_text_1">{{_('Medeo , "Cure your business"')}}</p>
+    <p class="what_text_1">{{_('{{_('Medeo, "Cure your business"')}}')}}</p>
 
   </div>
 </div>
 <br>
 <div class="container-fluid animate-top">
-  <div class="row justify-content-center mt-5" style="margin-top: 5vw">
-    <div class="col-sm-3 col-md-6 col-lg-2">
+  <div class="row">
+    <!-- <div class="col-sm-3 col-md-6 col-lg-2">
+    </div> -->
+    <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
       <img src="{{ url_for('static',filename='images/accounting.png') }}" loading="lazy"
         style="max-width: 70px; margin-left: 40%;"><br>
       <h2 class="title_expertise">{{_('Expertise <br>Comptable')}}</h2>
@@ -44,7 +46,7 @@
         services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
       </div>
     </div>
-    <div class="col-sm-3 col-md-6 col-lg-2">
+    <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
       <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px; margin-left: 40%;"
         loading="lazy"><br>
       <h2 class="title_expertise">{{_('Audit')}}<br><br></h2>
@@ -56,7 +58,7 @@
         vigueur.')}}
       </div>
     </div>
-    <div class="col-sm-3 col-md-6 col-lg-2">
+    <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
       <img src="{{ url_for('static',filename='images/budget.png') }}" style="max-width: 70px; margin-left: 40%;"
         loading="lazy"><br>
       <h2 class="title_expertise">{{_('Conseil <br>optimisation ')}}</h2>
@@ -69,7 +71,7 @@
         chaîne d\'approvisionnement et l\'analyse des coûts.')}}</div>
 
     </div>
-    <div class="col-sm-3 col-md-6 col-lg-2">
+    <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
       <img src="{{ url_for('static',filename='images/ux.png') }}" style="max-width: 70px; margin-left: 40%;"
         loading="lazy"><br>
       <h2 class="title_expertise"> {{_('Service <br>Informatique')}}</h2>
@@ -80,6 +82,8 @@
       </div>
 
     </div>
+    <!-- <div class="col-sm-3 col-md-6 col-lg-2">
+    </div> -->
   </div>
 </div>
 

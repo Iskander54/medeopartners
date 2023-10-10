@@ -354,90 +354,191 @@
   </div>
 </div>
 
-<div class="banner_section layout_padding animate-top">
-  <div class="container-fluid">
-    <section class="slide-wrapper">
-      <div class="container-fluid">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-          </ol><!-- Wrapper for slides -->
-          <div class="carousel-inner" id="carousel_partners">
-            <div class="carousel-item active" id="carouselIsrael" style="min-height:max-content;">
-              <div class="container">
-                <div class="banner_main partners">
-                  <img src="/static/images/israel_haikou.jpg" class="image_7" loading="lazy">
-                  <h2 style="color: white;">Israël HAIKOU</h2>
-                  <div>{{_('CEO, Expert-Comptable et commissaire aux comptes')}}</div><br>
-                  <div>Israel.haikou@medeo-partners.com</div>
-                </div>
-                <div class="col-size">
-                  <p class="title_carousel">
-                    {{_('"Pour réussir, il n\'y a que des plans A pas de plans B "')}}
-                  </p>
-
-                  <p class="text-start">
-                    {{_('une phrase qui caractérise bien mon état d\'esprit.')}}
-                    <br>
-                  <p class="title_carousel">
-                    {{_('"La facon de commencer est d\'arrêter de parler et de commencer à faire"')}}
-                  </p>
-                  <p class="text-start">
-                    {{_('Walt Disney, cofondateur de The Walt Disney Company')}}
-                    <br>
-                    <br>
-                    {{_('Diplômé en Licence d\'économie, je suis me suis réorienté dans un domaine qui m\'a toujours')}}
-                    {{_('passionné : la comptabilité. J\'ai donc obtenu une deuxième licence en comptabilité (DCG),
-                    un')}}
-                    {{_('master en comptabilité (DSCG), puis le DEC (Bac+8). Mon cursus m\'a permis d\'avoir une
-                    vision')}}
-                    {{_('plus complète du monde de l\'entreprenariat.')}}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="carousel-item" id="carouselAvi" style="min-height:max-content;">
-              <div class="container">
-                <div class="banner_main partners">
-                  <img src="/static/images/avi_gozlane.jpg" class="image_7" loading="lazy">
-                  <h2 style="color: white;">Avi GOZLANE</h2>
-                  <div>{{_('Associé, Directeur de mission')}}</div><br>
-                  <div>avi.gozlane@medeo-partners.com</div>
-
-                </div>
-                <div class="col-size">
-                  <p class="title_carousel">
-                    {{_('" L\'art de la réussite consiste à savoir s\'entourer des meilleurs."')}}
-                  </p>
-                  <p class="text-start">
-                  {{_('John Fitzgerald Kennedy')}}
-                   <br><br>
-
-                    {{_('Forts de 10 années d\'expérience en cabinet d\'expertise comptable et de commissariat aux')}}
-                    {{_('comptes, et de mon cursus universitaire en comptabilité et gestion, je souhaite accompagner')}}
-                    {{_('les entreprises et prendre soin de mes clients.')}}
-                    {{_('La diversité de mon parcours professionnel m\'a permis de développer une expertise')}}
-                    {{_('considérable dans mon domaine et une assurance au quotidien, au chevet de mes partenaires.')}}
-                    </br></br>
-                    {{_('Méticuleux, rigoureux et réactif, je me positionne comme le garant de la bonne gestion de')}}
-                    {{_('votre activité.')}}
-                  </p>
-                 
-                </div>
-              </div>
-            </div>
 
 
-          </div>
-        </div>
+
+<link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'> 
+
+
+<!-- <div id="container_newcarousel">
+
+  <div id="holder">
+
+    <div id="image">
+      <div class="img jobs"></div>
+      <div class="img zuck"></div>
+      <div class="img musk"></div>
+    </div>
+
+    <div id="right"></div>
+
+    <div id="text">
+      <div id="centerText">
+        <p class="quote">
+          <i class='fa fa-quote-left' style='font-size:30px;color:blue'></i> CodePen is a social development environment. At its heart, it allows you to write code in the browser, and see the results of it as you build. A useful and liberating online code editor for developers of any skill, and particularly empowering for people learning to code. We focus primarily on front-end languages like HTML, CSS, JavaScript, and preprocessing syntaxes that turn into those things. <i class='fa fa-quote-right' style='font-size:30px;color:blue'></i>
+        </p>
+        <p class="quote">
+          <i class='fa fa-quote-left' style='font-size:30px;color:blue'></i> We say social, because CodePen is a community. Most creations on CodePen are public and open source. They are living things that other people and the community can interact with, from a simple hearting, to leaving a comment, to forking and changing for their own needs. <i class='fa fa-quote-right' style='font-size:30px;color:blue'></i>
+        </p>
+        <p class="quote">
+          <i class='fa fa-quote-left' style='font-size:30px;color:blue'></i> People use CodePen for all sorts of things: prototyping new ideas, reduced test cases for bugs, sending clients things to look at, evaluating potential hires, to finding inspiration. People also use CodePen as a sort of resume and portfolio, showing off their best design and development work. <i class='fa fa-quote-right' style='font-size:30px;color:blue'></i>
+        </p>
       </div>
-    </section>
+
+    </div>
   </div>
-</div>
+
+
+  <div id="nav-cirlces">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+</div> -->
+
+
+
 <br><br><br>
 
 
+<script>
+  $(window).load(function() {
+  $(".circle")
+    .first()
+    .addClass("active");
+  $("#bg .slide")
+    .first()
+    .addClass("active");
+  $("#image .img")
+    .first()
+    .addClass("active");
+  $(".quote")
+    .first()
+    .addClass("active");
+
+  var animate = setInterval(function() {
+    var $this = $(".circle"),
+      currentActiveBubble = $("#nav-cirlces").find(".active"),
+      position = $("#nav-cirlces")
+        .children()
+        .index(currentActiveBubble),
+      num = $(".circle").length;
+
+    if (position < num - 1) {
+      $(".active")
+        .removeClass("active")
+        .next()
+        .addClass("active");
+    } else {
+      $(".circle")
+        .removeClass("active")
+        .first()
+        .addClass("active");
+      $("#bg .slide")
+        .removeClass("active")
+        .first()
+        .addClass("active");
+      $("#image .img")
+        .removeClass("active")
+        .first()
+        .addClass("active");
+      $(".quote")
+        .removeClass("active")
+        .first()
+        .addClass("active");
+    }
+    position++;
+  }, 450000);
+
+  $(".circle").click(function() {
+    clearInterval(animate);
+
+    var $this = $(this),
+      $siblings = $this.parent().children(),
+      position = $siblings.index($this);
+
+    $(".circle")
+      .removeClass("active")
+      .eq(position)
+      .addClass("active");
+    $("#bg .slide")
+      .removeClass("active")
+      .eq(position)
+      .addClass("active");
+    $("#image .img")
+      .removeClass("active")
+      .eq(position)
+      .addClass("active");
+    $(".quote")
+      .removeClass("active")
+      .eq(position)
+      .addClass("active");
+  });
+
+  $("#rightBtn , #leftBtn").click(function() {
+    clearInterval(animate);
+
+    var $this = $(this),
+      currentActiveBubble = $("#nav-cirlces").find(".active"),
+      position = $("#nav-cirlces")
+        .children()
+        .index(currentActiveBubble),
+      num = $(".circle").length;
+
+    if ($this.hasClass("next")) {
+      if (position < num - 1) {
+        $(".active")
+          .removeClass("active")
+          .next()
+          .addClass("active");
+      } else {
+        $(".circle")
+          .removeClass("active")
+          .first()
+          .addClass("active");
+        $("#bg .slide")
+          .removeClass("active")
+          .first()
+          .addClass("active");
+        $("#image .img")
+          .removeClass("active")
+          .first()
+          .addClass("active");
+        $(".quote")
+          .removeClass("active")
+          .first()
+          .addClass("active");
+      }
+    } else {
+      if (position === 0) {
+        $(".circle")
+          .removeClass("active")
+          .last()
+          .addClass("active");
+        $("#bg .slide")
+          .removeClass("active")
+          .last()
+          .addClass("active");
+        $("#image .img")
+          .removeClass("active")
+          .last()
+          .addClass("active");
+        $(".quote")
+          .removeClass("active")
+          .last()
+          .addClass("active");
+      } else {
+        $(".active")
+          .removeClass("active")
+          .prev()
+          .addClass("active");
+      }
+    }
+  });
+});
+
+</script>
 {% endblock content %}
