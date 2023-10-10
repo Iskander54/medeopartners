@@ -89,40 +89,40 @@ def legal():
 # FISCAL
 ##############
 
-@main.route("/news/fiscal/news_1234")
+@main.route("news_1234")
 def news_1234():
     return render_template('/news/fiscal/news_1234.html',title='Fiscal')
 
 
-@main.route("/news/fiscal/news_787")
+@main.route("news_787")
 def news_787():
     return render_template('/news/fiscal/news_787.html',title='Fiscal')
 
 
-@main.route("/news/fiscal/news_1112")
+@main.route("news_1112")
 def news_1112():
     return render_template('/news/fiscal/news_1112.html',title='Fiscal')
 
-@main.route("/news/fiscal/news_4456")
+@main.route("news_4456")
 def news_4456():
     return render_template('/news/fiscal/news_4456.html',title='Fiscal')
 
 
-@main.route("/news/fiscal/news_5555")
+@main.route("news_5555")
 def news_5555():
     return render_template('/news/fiscal/news_5555.html',title='Fiscal')
 
 
-@main.route("/news/fiscal/news_1212")
+@main.route("news_1212")
 def news_1212():
     return render_template('/news/fiscal/news_1212.html',title='Fiscal')
 
 
-@main.route("/news/fiscal/news_4322")
+@main.route("news_4322")
 def news_4322():
     return render_template('/news/fiscal/news_4322.html',title='Fiscal')
 
-@main.route("/news/fiscal/news_1200")
+@main.route("news_1200")
 def news_1200():
     return render_template('/news/fiscal/news_1200.html',title='Fiscal')
 
@@ -132,22 +132,22 @@ def news_1200():
 # SOCIAL
 ##############
 
-@main.route("/news/social/news_1")
+@main.route("news_1")
 def news_1():
     return render_template('/news/social/news_1.html',title='Social')
 
 
-@main.route("/news/social/news_2")
+@main.route("news_2")
 def news_2():
     return render_template('/news/social/news_2.html',title='Social')
 
 
-@main.route("/news/social/news_3")
+@main.route("news_3")
 def news_3():
     return render_template('/news/social/news_3.html',title='Social')
 
 
-@main.route("/news/social/news_4")
+@main.route("news_4")
 def news_4():
     return render_template('/news/social/news_4.html',title='Social')
 
@@ -155,7 +155,7 @@ def news_4():
 # JURIDIQUE
 ##############
 
-@main.route("/news/juridique/news_12")
+@main.route("news_12")
 def news_12():
     return render_template('/news/juridique/news_12.html',title='Juridique')
 
