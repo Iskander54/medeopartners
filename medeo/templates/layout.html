@@ -255,10 +255,13 @@
       {% endwith %}
    </main>
 
-   <div class="loader-container">
-      <div id="foregid" class="foreg"></div>
-      <span id="loaderid" class="loader"></span>
-   </div>
+
+
+
+
+
+
+
    {% block content %}{% endblock %}
 
 
@@ -387,18 +390,7 @@
    <!-- javascript -->
 
    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-         var loaderDiv = document.getElementById('loaderid');
-         var foregroundDiv = document.getElementById('foregid');
-         // Show the div
-         foregroundDiv.style.display = 'block';
-         loaderDiv.style.display = 'block';
-         // Hide the div after 1 seconds
-         setTimeout(function () {
-            loaderDiv.style.display = 'none';
-            foregroundDiv.style.display = 'none';
-         }, 1000);
-      });
+
 
 
       // Fonction pour ajuster la hauteur du contenu principal

@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
+<div id="splash-screen-id" class="splash-screen">
+  <img src="{{url_for('static', filename='images/medeo_logo.png') }}" alt="Medeo Logo" loading="lazy" class="image_accueil_loader">
+</div>
+
 
 <div class="container-fluid animate-top">
   <div class="row">
@@ -311,6 +315,18 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+
+    // Loader de la homepage
+    var loaderLogoMedeo = document.getElementById('splash-screen-id');
+         loaderLogoMedeo.style.display = 'block';
+         document.querySelector('.splash-screen img').classList.add('enlarged');
+         setTimeout(function() {
+            loaderLogoMedeo.style.display = 'none';
+         }, 2500);
+
+
+
+
     var lienScroll_nos_bureaux = document.querySelector('a[href="#nos_bureaux"]');
     var lienScroll_nous_rejoindre = document.querySelector('a[href="#nos_bureaux"]');
 

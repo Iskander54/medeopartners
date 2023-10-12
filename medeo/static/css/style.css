@@ -2717,6 +2717,50 @@ hr.hr_vertical {
     z-index: 9998;
 }
 
+
+.medeo_foreg {
+    width: 100%;
+    height: 1000%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/medeo_logo.png);
+
+    z-index: 9998;
+}
+
+
+.splash-screen {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white; /* Semi-transparent grey background */
+    z-index: 9999;
+}
+
+.splash-screen img {
+    max-width: 100%;
+    max-height: 100%;
+    transform: scale(0.8); /* Start with a smaller size */
+    transition: transform 5s; /* 5-second animation duration */
+}
+
+
+.splash-screen img.enlarged {
+    transform: scale(1.2); /* End with a larger size */
+}
+
+
+
+.image_accueil_loader {
+    width: 20%;
+    margin-top: 30vh
+}
+
+
 .footer_section_2 {
     width: 100%;
     float: left;

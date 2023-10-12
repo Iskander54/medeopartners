@@ -1,5 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="loader-container">
+    <div id="foregid" class="foreg"></div>
+    <span id="loaderid" class="loader"></span>
+  </div>
+
+  
 <div class="page-heading-cabinet animate-top">
     <div class="container">
         <div class="row">
@@ -118,4 +124,25 @@
 
 
 </div>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+    
+        // Loader des autres pages
+        var loaderDiv = document.getElementById('loaderid');
+        var foregroundDiv = document.getElementById('foregid');
+        // Show the div
+        foregroundDiv.style.display = 'block';
+        loaderDiv.style.display = 'block';
+        // Hide the div after 1 seconds
+        setTimeout(function () {
+          loaderDiv.style.display = 'none';
+          foregroundDiv.style.display = 'none';
+        }, 1000);
+    });
+    
+    
+    </script>
 {% endblock content %}
