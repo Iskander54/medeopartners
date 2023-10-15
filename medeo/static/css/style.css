@@ -3200,7 +3200,7 @@ textarea[id=content]:focus {
 }
 
 .title_carousel {
-    color: #114a69;
+    color: #114a69!important;
     font-size: xx-large;
     font-weight: 900;
     font-style: italic;
@@ -3216,7 +3216,7 @@ textarea[id=content]:focus {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 10;
+    -webkit-line-clamp: 8;
     -webkit-box-orient: vertical;
     text-align: justify;
     word-spacing: -1px;
@@ -3230,7 +3230,7 @@ textarea[id=content]:focus {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 10;
+    -webkit-line-clamp: 8;
     -webkit-box-orient: vertical;
     text-align: justify;
     word-spacing: -1px;
@@ -4296,7 +4296,7 @@ p.quote:nth-child(2) {
 
 .slide.active {
     /*right: 0%;*/
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 
@@ -4483,9 +4483,9 @@ ul.slides input {
     flex:1;
     width: 70%;
     height: 100%;
-    background-color: rgba(233, 28, 42, 0.8);;
+    background-color: rgba(233, 28, 42, 0.3);;
     
-    opacity: 0.3;
+    /* opacity: 0.3; */
 }
 
 .encart_bleu_nous_contacter{
