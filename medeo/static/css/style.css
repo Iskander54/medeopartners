@@ -1848,7 +1848,6 @@ img {
     height: auto;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 90px;
 }
 
 .contact_section_2 {
@@ -2731,20 +2730,24 @@ hr.hr_vertical {
     left: 0;
     width: 100%;
     height: 100%;
-    background: white; /* Semi-transparent grey background */
+    background: white;
+    /* Semi-transparent grey background */
     z-index: 9999;
 }
 
 .splash-screen img {
     max-width: 100%;
     max-height: 100%;
-    transform: scale(0.8); /* Start with a smaller size */
-    transition: transform 5s; /* 5-second animation duration */
+    transform: scale(0.8);
+    /* Start with a smaller size */
+    transition: transform 5s;
+    /* 5-second animation duration */
 }
 
 
 .splash-screen img.enlarged {
-    transform: scale(1.2); /* End with a larger size */
+    transform: scale(1.2);
+    /* End with a larger size */
 }
 
 
@@ -3202,7 +3205,7 @@ textarea[id=content]:focus {
 }
 
 .title_carousel {
-    color: #114a69!important;
+    color: #114a69 !important;
     font-size: xx-large;
     font-weight: 900;
     font-style: italic;
@@ -4163,7 +4166,7 @@ input:nth-of-type(5):checked~main#carousel {
     bottom: 0;
     margin: auto;
     z-index: 100;
-    
+
 }
 
 
@@ -4445,12 +4448,12 @@ ul.slides {
 }
 
 ul.slides input {
-    display: none; 
+    display: none;
 }
 
 
-.slide-container { 
-    display: block; 
+.slide-container {
+    display: block;
 }
 
 .slide-image {
@@ -4461,7 +4464,7 @@ ul.slides input {
     top: 0;
     opacity: 0;
     transition: all .7s ease-in-out;
-}   
+}
 
 
 
@@ -4469,34 +4472,55 @@ ul.slides input {
     display: flex;
     justify-content: space-between;
     width: 100%;
-  }
+}
 
-.encart_bleu{
+.encart_bleu {
     width: 40%;
     height: 70%;
     margin: auto;
-    right:0px;
+    right: 0px;
     border-radius: 70px;
     background-color: #114a69;
 
 }
 
-.encart_rouge{
-    flex:1;
+.encart_rouge {
+    flex: 1;
     width: 70%;
     height: 100%;
-    background-color: rgba(233, 28, 42, 0.3);;
-    
+    background-color: rgba(233, 28, 42, 0.3);
+    ;
+
     /* opacity: 0.3; */
 }
 
-.encart_bleu_nous_contacter{
-    width: 50%;
+.encart_bleu_nous_contacter {
+    width: 40%;
     height: 70%;
     margin: auto;
-    right:0px;
+    right: 0px;
     border-radius: 70px;
     background-color: #114a69;
+
+}
+
+.encart_gris_nous_contacter {
+    width: 40%;
+    height: 70%;
+    margin: auto;
+    right: 0px;
+    border-radius: 70px;
+    background-color: #b1c1d0;
+
+}
+
+.encart_rouge_nous_contacter {
+    width: 40%;
+    height: 70%;
+    margin: auto;
+    right: 0px;
+    border-radius: 70px;
+    background-color: #e91e29;
 
 }
 
@@ -4520,7 +4544,7 @@ ul.slides input {
     cursor: pointer;
 }
 
-.slide-image:hover + .carousel-controls label{
+.slide-image:hover+.carousel-controls label {
     opacity: 0.5;
 }
 
@@ -4554,42 +4578,45 @@ ul.slides input {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #114a69;
+    ;
     opacity: 0.5;
     margin: 10px;
 }
 
-input:checked + .slide-container .slide-image {
+input:checked+.slide-container .slide-image {
     opacity: 1;
     transform: scale(1);
     transition: opacity 1s ease-in-out;
 }
 
-input:checked + .slide-container .carousel-controls label {
-     display: block; 
+input:checked+.slide-container .carousel-controls label {
+    display: block;
 }
 
-input#img-1:checked ~ .carousel-dots label#img-dot-1,
-input#img-2:checked ~ .carousel-dots label#img-dot-2,
-input#img-3:checked ~ .carousel-dots label#img-dot-3,
-input#img-4:checked ~ .carousel-dots label#img-dot-4,
-input#img-5:checked ~ .carousel-dots label#img-dot-5,
-input#img-6:checked ~ .carousel-dots label#img-dot-6 {
-	opacity: 1;
+input#img-1:checked~.carousel-dots label#img-dot-1,
+input#img-2:checked~.carousel-dots label#img-dot-2,
+input#img-3:checked~.carousel-dots label#img-dot-3,
+input#img-4:checked~.carousel-dots label#img-dot-4,
+input#img-5:checked~.carousel-dots label#img-dot-5,
+input#img-6:checked~.carousel-dots label#img-dot-6 {
+    opacity: 1;
 }
 
 
-input:checked + .slide-container .nav label { display: block; }
+input:checked+.slide-container .nav label {
+    display: block;
+}
 
 
-.deuxieme{ 
+.deuxieme {
     width: 50%;
     height: 50%;
     background-color: red;
 }
 
 .calendly-badge-widget {
-    right: 65px!important;
+    right: 65px !important;
 }
 
 
@@ -4603,7 +4630,6 @@ input:checked + .slide-container .nav label { display: block; }
 }
 
 .guillemets {
-    font-size: 7em!important;
+    font-size: 7em !important;
     margin-left: 30%;
 }
-
