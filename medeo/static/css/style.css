@@ -4501,6 +4501,7 @@ ul.slides input {
     right: 0px;
     border-radius: 70px;
     background-color: #114a69;
+    text-align: center;
 
 }
 
@@ -4511,6 +4512,7 @@ ul.slides input {
     right: 0px;
     border-radius: 70px;
     background-color: #b1c1d0;
+    text-align: center;
 
 }
 
@@ -4521,6 +4523,7 @@ ul.slides input {
     right: 0px;
     border-radius: 70px;
     background-color: #e91e29;
+    text-align: center;
 
 }
 
@@ -4616,7 +4619,7 @@ input:checked+.slide-container .nav label {
 }
 
 .calendly-badge-widget {
-    right: 65px !important;
+    left: 15px !important;
 }
 
 
@@ -4633,3 +4636,58 @@ input:checked+.slide-container .nav label {
     font-size: 7em !important;
     margin-left: 30%;
 }
+
+.image_temoignage{
+    margin-top: 15%;
+}
+
+
+  
+  .section_carousel {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  article {
+    display: flex;
+    width: 200%;
+    animation: bannermove 20s linear infinite;
+  }
+  
+  article.paused {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  
+  .div_carousel {
+    width: 100%;
+  }
+
+  .carousel-ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .carousel-li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @keyframes bannermove {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
