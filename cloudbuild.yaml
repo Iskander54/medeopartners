@@ -1,0 +1,21 @@
+steps:
+#- name: install
+ # entrypoint: bash
+#  args:
+#    - -c
+ #   - apt update && apt-get -y install gcc && python -m pip install -r requirements.txt -t lib
+
+#- name: python
+#    entrypoint: pip
+#    args: ["install", "-r", "requirements.txt", "--user"]
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args: ['-c', 'gcloud config set project mystical-runway-364716 && gcloud       config set app/cloud_build_timeout 1600 && gcloud app deploy --project=mystical-runway-364716
+']
+  env:
+    - 'CAPTCHA_PUBLIC_KEY=$_CAPTCHA_PUBLIC_KEY'
+    - 'CAPTCHA_PRIVATE_KEY=$_CAPTCHA_PRIVATE_KEY'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args: ['-c', 'gcloud datastore indexes create index.yaml']
+  timeout: '1600s'
