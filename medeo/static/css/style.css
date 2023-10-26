@@ -4715,3 +4715,11 @@ input:checked+.slide-container .nav label {
       transform: translateX(-50%);
     }
   }
+
+
+  .subheading {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: smaller;
+    color: #455A64;
+  }

@@ -89,6 +89,11 @@ def legal():
 # FISCAL
 ##############
 
+@main.route("news_template")
+def news_template():
+    return render_template('/news/news_template.html',title='News Template')
+
+
 @main.route("news_1234")
 def news_1234():
     return render_template('/news/fiscal/news_1234.html',title='Fiscal')
