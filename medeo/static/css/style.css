@@ -3287,6 +3287,30 @@ textarea[id=content]:focus {
     margin: 0.5rem 0 1rem !important;
 }
 
+.blog-head h6{
+    color: #114A69;
+    position: relative;
+    display: inline-block;
+    text-transform: capitalize;
+  }
+  
+  .blog-head h6:after, .blog-head h6:before{
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: #114A69;
+    top: 50%;
+  }
+  
+  .blog-head h6:after{
+    right: 120%;
+  }
+  
+  .blog-head h6:before{
+    left: 120%;
+  }
+
 .button {
     display: inline-block !important;
     padding: 10px 30px !important;
@@ -4476,6 +4500,8 @@ ul.slides input {
     right: 0px;
     border-radius: 70px;
     background-color: #114a69;
+    position: relative;
+    z-index: 1;
 
 }
 
@@ -4486,7 +4512,10 @@ ul.slides input {
     background-color: rgba(233, 28, 42, 0.3);
     ;
 
-    /* opacity: 0.3; */
+    position: relative;
+    z-index: 2;
+    margin-left: -60px;
+    padding-left: 50px;
 }
 
 .encart_bleu_nous_contacter {
@@ -4605,6 +4634,7 @@ input#img-6:checked~.carousel-dots label#img-dot-6 {
 input:checked+.slide-container .nav label {
     display: block;
 }
+
 
 
 .deuxieme {
