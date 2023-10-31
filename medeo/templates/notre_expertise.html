@@ -113,10 +113,32 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-xs-4 col-sm-5 col-md-5 col-lg-5">
+    </div>
+    <div class="col-xs-8 col-sm-7 col-md-7 col-lg-7">
+      <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/ux.png') }}" alt="blog-img"
+        loading="lazy">
+      <h1 class="title-nos-expertises"> {{_('Conseil informatique')}} </h1><br>
 
+      <p class="speech-nos-expertises">
+        <br><br>
+        {{_('Notre département informatique gère tout type de problématiques liés aux systèmes d\'information, à la
+        gestion de vos données clients ainsi qu\'à l\'amélioration de vos process.')}}
+        <br><br>
+
+      </p>
+      <div class="ensavoir_plus_bt">
+        <a href="{{_('conseil_optimisation')}}">{{_('En savoir plus')}}</a>
+      </div>
+    </div>
+
+  </div>
 
 </div>
-
+<br/>
+<br/>
+<br/>
 <div class="page-heading-cabinet animate-top">
   <div class="container">
     <div class="row">
@@ -132,17 +154,15 @@
 <div class="animate-top">
   <div class="carousel">
     <ul class="slides">
-      <input type="radio" name="radio-buttons" id="img-1" checked />
+      <input type="radio" name="radio-buttons" id="img-1" checked>
       <li class="slide-container">
         <div class="slide-image">
           <div class="encart_rouge_nous_contacter">
-            <img class="image_temoignage" src="{{ url_for('static',filename='images/fintis_logo.png') }}"
-                       loading="lazy">
-              <div class="carousel_careers">
-                {{_('MEDEO est un partenaire efficace, à l\'écoute et soucieux de nos
-                    besoins très souvent changeants')}}
-                
-              </div>
+            <img class="image_temoignage" src="{{ url_for('static', filename='images/fintis_logo.png') }}"
+                 loading="lazy">
+            <div class="carousel_careers">
+              {{ _('MEDEO est un partenaire efficace, à l\'écoute et soucieux de nos besoins très souvent changeants') }}
+            </div>
           </div>
         </div>
 
@@ -155,21 +175,17 @@
           </label>
         </div>
       </li>
-      <input type="radio" name="radio-buttons" id="img-2" />
+      <input type="radio" name="radio-buttons" id="img-2">
       <li class="slide-container">
         <div class="slide-image">
           <div class="encart_bleu_nous_contacter">
-            <img class="image_temoignage" src="{{ url_for('static',filename='images/empruntis_logo.png') }}"
-                       loading="lazy">
-
-                    <div class="carousel_careers">
-                      {{_('Nous sommes fiers de notre partenariat avec MEDEO. Une entente
-                    joviale, une rigueur à tous les étages et surtout une capacité à dépasser nos attentes en termes de
-                    qualité de service.')}}
-
-
-                    </div>
+            <img class="image_temoignage" src="{{ url_for('static', filename='images/empruntis_logo.png') }}"
+                 loading="lazy">
+            <div class="carousel_careers">
+              {{ _('Nous sommes fiers de notre partenariat avec MEDEO. Une entente joviale, une rigueur à tous les étages et surtout une capacité à dépasser nos attentes en termes de qualité de service.') }}
+            </div>
           </div>
+        </div>
         <div class="carousel-controls">
           <label for="img-1" class="prev-slide">
             <span>&lsaquo;</span>
@@ -179,41 +195,39 @@
           </label>
         </div>
       </li>
-      <input type="radio" name="radio-buttons" id="img-3" />
+      <input type="radio" name="radio-buttons" id="img-3">
       <li class="slide-container">
         <div class="slide-image">
           <div class="encart_gris_nous_contacter">
-            <img  class="image_temoignage" src="{{ url_for('static',filename='images/bamana_solutions_logo.jpeg') }}"
-                       width="200vw" height="200vw" loading="lazy">
+            <img class="image_temoignage" src="{{ url_for('static', filename='images/bamana_solutions_logo.jpeg') }}"
+                 width="200vw" height="200vw" loading="lazy">
             <div class="carousel_careers">
-              {{_('Les compétences et l\'expertise d\'Avi et Israel nous ont beaucoup
-                    aidé dans la creation de notre entreprise.')}}
-                    {{_('La réactivité et la disponibilité des associés sont très appreciable durant une phase aussi
-                    dense et stressante que la création d\'une entreprise.')}}
+              {{ _('Les compétences et l\'expertise d\'Avi et Israel nous ont beaucoup aidé dans la création de notre entreprise.') }}
+              {{ _('La réactivité et la disponibilité des associés sont très appréciables durant une phase aussi dense et stressante que la création d\'une entreprise.') }}
+            </div>
           </div>
-          </div>
+        </div>
         <div class="carousel-controls">
           <label for="img-2" class="prev-slide">
             <span>&lsaquo;</span>
           </label>
-          <label for="img-1" class="next-slide">
+          <label for="img-1" class "next-slide">
             <span>&rsaquo;</span>
           </label>
         </div>
       </li>
-      <input type="radio" name="radio-buttons" id="img-4" />
+      <input type="radio" name="radio-buttons" id="img-4">
       <li class="slide-container">
         <div class="slide-image">
           <div class="encart_rouge_nous_contacter">
-            <img class="image_temoignage" src="{{ url_for('static',filename='images/energy_consulting_logo.png') }}"
-                       loading="lazy">
+            <img class="image_temoignage" src="{{ url_for('static', filename='images/energy_consulting_logo.png') }}"
+                 loading="lazy">
             <div class="carousel_careers">
-              {{_('Les compétences et l\'expertise d\'Avi et Israel nous ont beaucoup
-                    aidé dans la creation de notre entreprise.')}}
-                    {{_('La réactivité et la disponibilité des associés sont très appreciable durant une phase aussi
-                    dense et stressante que la création d\'une entreprise.')}}
+              {{ _('Les compétences et l\'expertise d\'Avi et Israel nous ont beaucoup aidé dans la création de notre entreprise.') }}
+              {{ _('La réactivité et la disponibilité des associés sont très appréciables durant une phase aussi dense et stressante que la création d\'une entreprise.') }}
+            </div>
           </div>
-          </div>
+        </div>
         <div class="carousel-controls">
           <label for="img-3" class="prev-slide">
             <span>&lsaquo;</span>
@@ -233,7 +247,8 @@
   </div>
 </div>
 
-<br/><br/><br/>
+
+<br /><br /><br />
 <div class="page-heading-cabinet animate-top">
   <div class="container">
     <div class="row">
@@ -244,31 +259,33 @@
   </div>
 </div>
 
-<br/>
-<br/>
+<br />
+<br />
 
 <section class="container section_carousel animate-top" style="margin-bottom: 15%;">
   <article>
     <div class="div_carousel">
       <ul class="carousel-ul">
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/axonaut.png') }}"  loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/dext.png') }}"  loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/docusign.png') }}"  loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/gocardless.png') }}"  loading="lazy"></li>
+        <li class="carousel-li"><img src="{{url_for('static',filename='images/axonaut.png') }}" loading="lazy"></li>
+        <li class="carousel-li"><img src="{{url_for('static',filename='images/dext.png') }}" loading="lazy"></li>
+        <li class="carousel-li"><img src="{{url_for('static',filename='images/docusign.png') }}" loading="lazy"></li>
+        <li class="carousel-li"><img src="{{url_for('static',filename='images/gocardless.png') }}" loading="lazy"></li>
       </ul>
     </div>
     <div class="div_carousel">
       <ul class="carousel-ul">
-        <li class="carousel-li"><img width="1200px;" src="{{url_for('static',filename='images/google_cloud.png') }}"  loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/bamanasolutions.png') }}"  loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/inpi.png') }}"  loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/sage2.png') }}"  loading="lazy"></li>
+        <li class="carousel-li"><img width="1200px;" src="{{url_for('static',filename='images/google_cloud.png') }}"
+            loading="lazy"></li>
+        <li class="carousel-li"><img src="{{url_for('static',filename='images/bamanasolutions.png') }}" loading="lazy">
+        </li>
+        <li class="carousel-li"><img src="{{url_for('static',filename='images/inpi.png') }}" loading="lazy"></li>
+        <li class="carousel-li"><img src="{{url_for('static',filename='images/sage2.png') }}" loading="lazy"></li>
       </ul>
     </div>
     <div class="div_carousel">
       <ul class="carousel-ul">
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/silae.png') }}"  loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/sobank.png') }}"  loading="lazy"></li>
+        <li class="carousel-li"><img src="{{url_for('static',filename='images/silae.png') }}" loading="lazy"></li>
+        <li class="carousel-li"><img src="{{url_for('static',filename='images/sobank.png') }}" loading="lazy"></li>
       </ul>
     </div>
   </article>

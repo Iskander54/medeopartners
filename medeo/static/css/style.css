@@ -4501,7 +4501,7 @@ ul.slides input {
     border-radius: 70px;
     background-color: #114a69;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
 }
 
@@ -4513,7 +4513,7 @@ ul.slides input {
     ;
 
     position: relative;
-    z-index: 2;
+    z-index: 1;
     margin-left: -60px;
     padding-left: 50px;
 }

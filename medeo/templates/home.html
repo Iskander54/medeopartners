@@ -93,65 +93,9 @@
 </div>
 
 
-
-
-
-<div class="container animate-top">
-  <a href="{{_('nouscontacter')}}">
-    <div class="row">
-      <br>
-      <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
-      <br>
-      <div class="cocon effet_ombre">
-        <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
-
-        <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
-        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
-          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
-          <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
-        </span>
-
-      </div>
-    </div>
-  </a>
-
-  <a href="{{_('nouscontacter#nous_rejoindre')}}">
-    <div class="row">
-      <div class="cocon effet_ombre">
-        <div class="my_div_aliza_two col-xs-2 col-sm-3 col-md-6 col-lg-5">
-        </div>
-
-        <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
-
-        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
-          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
-          <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
-        </span>
-      </div>
-    </div>
-  </a>
-
-
-  <a href="{{_('nouscontacter#nos_bureaux')}}">
-    <div class="row" style="margin-bottom: 90px;">
-      <div class="cocon effet_ombre">
-        <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
-
-
-        <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
-        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
-          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px"></i>
-          <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
-        </span>
-
-
-
-      </div>
-    </div>
-  </a>
-
-
-</div>
+<br/>
+<br/>
+<br/>
 
 
 <div class="animate-top">
@@ -332,6 +276,63 @@
     </ul>
   </div>
 </div>
+
+<div class="container animate-top">
+  <a href="{{_('nouscontacter#nous_ecrire')}}">
+    <div class="row">
+      <br>
+      <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
+      <br>
+      <div class="cocon effet_ombre">
+        <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
+
+        <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
+        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
+          <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
+        </span>
+
+      </div>
+    </div>
+  </a>
+
+  <a href="{{_('nouscontacter#nous_rejoindre')}}">
+    <div class="row">
+      <div class="cocon effet_ombre">
+        <div class="my_div_aliza_two col-xs-2 col-sm-3 col-md-6 col-lg-5">
+        </div>
+
+        <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
+
+        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
+          <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
+        </span>
+      </div>
+    </div>
+  </a>
+
+
+  <a href="{{_('nouscontacter#nos_bureaux')}}">
+    <div class="row" style="margin-bottom: 90px;">
+      <div class="cocon effet_ombre">
+        <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
+
+
+        <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
+        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px"></i>
+          <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
+        </span>
+
+
+
+      </div>
+    </div>
+  </a>
+
+
+</div>
 <br /><br /><br />
 
 
@@ -346,32 +347,6 @@
       loaderLogoMedeo.style.display = 'none';
     }, 2500);
 
-
-
-
-    var lienScroll_nos_bureaux = document.querySelector('a[href="#nos_bureaux"]');
-    var lienScroll_nous_rejoindre = document.querySelector('a[href="#nos_bureaux"]');
-
-    lienScroll_nos_bureaux.addEventListener("click", function (e) {
-      e.preventDefault(); // Empêche le comportement par défaut du lien
-
-      var divCible = document.querySelector('#nos_bureaux');
-
-      if (divCible) {
-        divCible.scrollIntoView({ behavior: 'smooth' }); // Fait défiler jusqu'à la div cible de manière fluide
-      }
-    });
-
-
-    lienScroll_nous_rejoindre.addEventListener("click", function (e) {
-      e.preventDefault(); // Empêche le comportement par défaut du lien
-
-      var divCible = document.querySelector('#nous_rejoindre');
-
-      if (divCible) {
-        divCible.scrollIntoView({ behavior: 'smooth' }); // Fait défiler jusqu'à la div cible de manière fluide
-      }
-    });
 
   });
 </script>
