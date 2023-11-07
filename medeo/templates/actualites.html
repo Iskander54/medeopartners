@@ -5,175 +5,183 @@
   <span id="loaderid" class="loader"></span>
 </div>
 
+<div id="content">
+  <div class="container page-heading-cabinet animate-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 blog-head">
+          <h1 data-translate class="banner_taital">Actualités</h1>
+          <h6 data-translate > Derniers articles</h6>
+          <br /><br />
+          <div class="portfolio">
+            <div class="filters">
+              <div class="ui-group">
+                <div class="button-group js-radio-button-group group-2" data-filter-group="medium">
 
-<div class="container page-heading-cabinet animate-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 blog-head">
-        <h1 class="banner_taital">{{_('Actualités')}}</h1>
-        <h6> Derniers articles</h6>
-        <br/><br/>
-        <div class="portfolio">
-          <div class="filters">
-            <div class="ui-group">
-              <div class="button-group js-radio-button-group group-2" data-filter-group="medium">
+                  <button data-translate type="button" class="btn btn-red btn-lg effet_ombre_boutons_valeurs"
+                    data-filter=".all-media">Tout</button>
+                  <button data-translate type="button" class="btn btn-blue btn-lg effet_ombre_boutons_valeurs"
+                    data-filter=".fiscal">Fiscal</button>
+                  <button data-translate type="button" class="btn btn-grey btn-lg effet_ombre_boutons_valeurs"
+                    data-filter=".social">Social</button>
+                  <button data-translate type="button" class="btn btn-red btn-lg effet_ombre_boutons_valeurs"
+                    data-filter=".juridique">Juridique</button>
 
-                <button type="button" class="btn btn-red btn-lg effet_ombre_boutons_valeurs"
-                  data-filter=".all-media">{{_('Tout')}}</button>
-                <button type="button" class="btn btn-blue btn-lg effet_ombre_boutons_valeurs" 
-                data-filter=".fiscal">{{_('Fiscal')}}</button>
-                <button type="button" class="btn btn-grey btn-lg effet_ombre_boutons_valeurs" 
-                data-filter=".social">{{_('Social')}}</button>
-                <button type="button" class="btn btn-red btn-lg effet_ombre_boutons_valeurs" 
-                data-filter=".juridique">{{_('Juridique')}}</button>
+                </div>
+              </div>
+            </div>
+            <div class="grid">
 
-              </div>
-            </div>
-          </div>
-          <div class="grid">
+              <div class="all-types all-media content licensed fiscal">
+                <div class="c-container">
+                  <a client="Plus que quelques jours pour opter pour le régime de l'auto-entrepreneur en 2024"
+                    data-featherlight="iframe" href="{{ url_for('main.news_1234') }}">
 
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Plus que quelques jours pour opter pour le régime de l'auto-entrepreneur en 2024"
-                  data-featherlight="iframe" href="{{ url_for('main.news_1234') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1234.jpeg')}}" loading="lazy">
-                </a>
+                    <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1234.jpeg')}}"
+                      loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Taxation des logements vacants ou secondaires : la nouvelle liste des zones tendues est parue"
-                  data-featherlight="iframe" href="{{ url_for('main.news_787') }}">
-        
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_787.jpeg')}}" loading="lazy">
-                </a>
+
+              <div class="all-types all-media content licensed fiscal">
+                <div class="c-container">
+                  <a client="Taxation des logements vacants ou secondaires : la nouvelle liste des zones tendues est parue"
+                    data-featherlight="iframe" href="{{ url_for('main.news_787') }}">
+
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_787.jpeg')}}"
+                      loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Heures supplémentaires : les missions complémentaires du Pacte enseignant sont défiscalisées"
-                  data-featherlight="iframe" href="{{ url_for('main.news_1112') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1112.jpeg')}}" loading="lazy">
-                </a>
+
+              <div class="all-types all-media content licensed fiscal">
+                <div class="c-container">
+                  <a client="Heures supplémentaires : les missions complémentaires du Pacte enseignant sont défiscalisées"
+                    data-featherlight="iframe" href="{{ url_for('main.news_1112') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1112.jpeg')}}"
+                      loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Les modalités d’exercice du droit de communication auprès des opérateurs de l’internet sont définies"
-                  data-featherlight="iframe" href="{{ url_for('main.news_4456') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_4456.jpeg')}}" loading="lazy">
-                </a>
+
+              <div class="all-types all-media content licensed fiscal">
+                <div class="c-container">
+                  <a client="Les modalités d’exercice du droit de communication auprès des opérateurs de l’internet sont définies"
+                    data-featherlight="iframe" href="{{ url_for('main.news_4456') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_4456.jpeg')}}"
+                      loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Les déficits relatifs à des exercices prescrits peuvent être contrôlés avant même leur imputation"
-                  data-featherlight="iframe" href="{{ url_for('main.news_5555') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_5555.jpeg')}}" loading="lazy">
-                </a>
+
+              <div class="all-types all-media content licensed fiscal">
+                <div class="c-container">
+                  <a client="Les déficits relatifs à des exercices prescrits peuvent être contrôlés avant même leur imputation"
+                    data-featherlight="iframe" href="{{ url_for('main.news_5555') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_5555.jpeg')}}"
+                      loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="La présomption de salariat des artistes du spectacle ne s'applique pas aux sportifs professionnels"
-                  data-featherlight="iframe" href="{{ url_for('main.news_1212') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1212.jpeg')}}" loading="lazy">
-                </a>
+
+              <div class="all-types all-media content licensed fiscal">
+                <div class="c-container">
+                  <a client="La présomption de salariat des artistes du spectacle ne s'applique pas aux sportifs professionnels"
+                    data-featherlight="iframe" href="{{ url_for('main.news_1212') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1212.jpeg')}}"
+                      loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Crédit d’impôt recherche : le Conseil d’État définit la notion de « subvention publique »"
-                  data-featherlight="iframe" href="{{ url_for('main.news_4322') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_4322.jpeg')}}" loading="lazy">
-                </a>
+
+              <div class="all-types all-media content licensed fiscal">
+                <div class="c-container">
+                  <a client="Crédit d’impôt recherche : le Conseil d’État définit la notion de « subvention publique »"
+                    data-featherlight="iframe" href="{{ url_for('main.news_4322') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_4322.jpeg')}}"
+                      loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="La liste des États qui participent avec la France à la déclaration pays par pays est actualisée"
-                  data-featherlight="iframe" href="{{ url_for('main.news_1200') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1200.jpeg')}}" loading="lazy">
-                </a>
+
+              <div class="all-types all-media content licensed fiscal">
+                <div class="c-container">
+                  <a client="La liste des États qui participent avec la France à la déclaration pays par pays est actualisée"
+                    data-featherlight="iframe" href="{{ url_for('main.news_1200') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1200.jpeg')}}"
+                      loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-        
-            <div class="all-types all-media content licensed social">
-              <div class="c-container">
-                <a client="Une semaine de jurisprudence sociale à la Cour de cassation" data-featherlight="iframe"
-                  href="{{ url_for('main.news_1') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/social/news_1.jpeg')}}" loading="lazy">
-                </a>
+
+
+              <div class="all-types all-media content licensed social">
+                <div class="c-container">
+                  <a client="Une semaine de jurisprudence sociale à la Cour de cassation" data-featherlight="iframe"
+                    href="{{ url_for('main.news_1') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/social/news_1.jpeg')}}" loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-            <div class="all-types all-media content licensed social">
-              <div class="c-container">
-                <a client="Preuve d’une faute rapportée par des « clients mystères » : recevable sous conditions"
-                  data-featherlight="iframe" href="{{ url_for('main.news_2') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/social/news_2.jpeg')}}" loading="lazy">
-                </a>
+
+              <div class="all-types all-media content licensed social">
+                <div class="c-container">
+                  <a client="Preuve d’une faute rapportée par des « clients mystères » : recevable sous conditions"
+                    data-featherlight="iframe" href="{{ url_for('main.news_2') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/social/news_2.jpeg')}}" loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-            <div class="all-types all-media content licensed social">
-              <div class="c-container">
-                <a client="L'employeur qui licencie un salarié ayant requis des élections doit prouver l'absence de discrimination"
-                  data-featherlight="iframe" href="{{ url_for('main.news_3') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/social/news_3.jpeg')}}" loading="lazy">
-                </a>
+
+              <div class="all-types all-media content licensed social">
+                <div class="c-container">
+                  <a client="L'employeur qui licencie un salarié ayant requis des élections doit prouver l'absence de discrimination"
+                    data-featherlight="iframe" href="{{ url_for('main.news_3') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/social/news_3.jpeg')}}" loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-        
-            <div class="all-types all-media content licensed social">
-              <div class="c-container">
-                <a client="Forfait jours : un salarié devant être présent 6 heures par jour dans l'entreprise n'est pas autonome"
-                  data-featherlight="iframe" href="{{ url_for('main.news_4') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/social/news_4.jpeg')}}" loading="lazy">
-                </a>
+
+
+              <div class="all-types all-media content licensed social">
+                <div class="c-container">
+                  <a client="Forfait jours : un salarié devant être présent 6 heures par jour dans l'entreprise n'est pas autonome"
+                    data-featherlight="iframe" href="{{ url_for('main.news_4') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/social/news_4.jpeg')}}" loading="lazy">
+                  </a>
+                </div>
               </div>
-            </div>
-        
-        
-            <div class="all-types all-media content licensed juridique">
-              <div class="c-container">
-                <a client="Mécénat d’entreprise : et si vous participiez à l’achat d’une œuvre exceptionnelle ?"
-                  data-featherlight="iframe" href="{{ url_for('main.news_12') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/juridique/juridique_one.jpeg')}}" loading="lazy">
-                </a>
+
+
+              <div class="all-types all-media content licensed juridique">
+                <div class="c-container">
+                  <a client="Mécénat d’entreprise : et si vous participiez à l’achat d’une œuvre exceptionnelle ?"
+                    data-featherlight="iframe" href="{{ url_for('main.news_12') }}">
+
+                    <img alt="" src="{{url_for('static', filename='/images/news/juridique/juridique_one.jpeg')}}"
+                      loading="lazy">
+                  </a>
+                </div>
               </div>
+
             </div>
-        
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
 
 
 <script>

@@ -1,135 +1,143 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="loader-container">
-    <div id="foregid" class="foreg"></div>
-    <span id="loaderid" class="loader"></span>
-  </div>
+<div id="content">
+    <div class="loader-container">
+        <div id="foregid" class="foreg"></div>
+        <span id="loaderid" class="loader"></span>
+    </div>
 
-  
-<div class="page-heading-cabinet animate-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="banner_taital">{{_('Conseil-Optimisation')}}</h1>
-                <p class="what_text_1" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</p>
-                <br>
+
+    <div class="page-heading-cabinet animate-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 data-translate class="banner_taital">Conseil-Optimisation</h1>
+                    <p class="what_text_1" style="font-style: italic;">Medeo, "Cure your business"</p>
+                    <br>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="container animate-top">
+        <div class="row">
+            <div class="col-7">
+                <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/delegation.png') }}"
+                    alt="blog-img" loading="lazy">
+                <h1 data-translate class="title-nos-expertises"> Cession</h1><br>
+                <p data-translate class="speech-nos-expertises">
+                    Nous pouvons aider une entreprise lors d'une cession en lui fournissant des services tels que
+                    :
+                    <br>
+                    · Évaluation de la valeur de l'entreprise
+                    <br>
+                    · Conseil fiscal sur les conséquences de la cession
+                    <br>
+                    · Assistance à la préparation des documents financiers pour la transaction
+                    <br>
+                    · Conseil sur les meilleures stratégies pour maximiser la valeur de la cession
+                    <br>
+                    · Assistance à la négociation des termes financiers de la transaction.
+                    <br>
+                </p>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-5">
+            </div>
+
+            <div class="col-7">
+                <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/acquisition.png') }}"
+                    alt="blog-img" loading="lazy">
+                <h1 data-translate class="title-nos-expertises"> Fusions & Acquisitions </h1><br>
+
+
+                <p data-translate class="speech-nos-expertises">
+                    Nous pouvons guider les entreprises dans les fusions et acquisitions en les aidant à :
+                    <br>
+                    · Évaluer la performance financière de la société cible
+                    <br>
+                    · Minimiser les coûts fiscaux liés à la transaction
+                    <br>
+                    · Effectuer une analyse approfondie de la situation financière et comptable de la société
+                    cible
+                    <br>
+                    · Négocier les termes financiers de la transaction
+                    <br>
+                    · Mettre en place les aspects financiers de la transaction.
+                    <br>
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-7">
+                <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/international.png') }}"
+                    alt="blog-img" loading="lazy">
+                <h1 data-translate class="title-nos-expertises"> Accompagnement International </h1><br>
+
+                <p data-translate class="speech-nos-expertises">
+                    Vous souhaitez vous implanter en France ?
+                    <br><br>
+                    Nos experts accompagnent les investisseurs et les sociétés étrangères dans la tenue comptable,
+                    fiscale
+                    et sociale de leur structure implantée en France, jusqu'à la réalisation de due diligences,
+                    en passant par la domiciliation et un conseil juridique et fiscal d'exception.
+
+                </p>
+            </div>
+            <div class="col-5">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+            </div>
+            <div class="col-7">
+
+                <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/ancestors.png') }}"
+                    alt="blog-img" loading="lazy">
+                <h1 data-translate class="title-nos-expertises"> Conseil aux particuliers </h1><br>
+
+                <p data-translate class="speech-nos-expertises" style="margin-bottom: 10%;">
+                    <br>
+                    Nous pouvons aussi aider les particuliers à gérer leur patrimoine en leur fournissant des
+                    conseils
+                    sur la planification fiscale et l'optimisation de leurs finances personnelles.
+                    <br><br>
+                    Nous pouvons les aider à comprendre leurs obligations fiscales et à préparer leurs déclarations
+                    de
+                    revenus de manière efficace.
+                    <br><br>
+                    Nous pouvons également les aider à élaborer des stratégies pour minimiser leurs impôts, gérer
+                    leur
+                    épargne et leur retraite, et à prendre des décisions financières optimales.
+                </p>
+            </div>
+        </div>
+
+
+
+
+    </div>
 </div>
-
-<div class="container animate-top">
-    <div class="row">
-        <div class="col-7">
-            <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/delegation.png') }}"
-                alt="blog-img" loading="lazy">
-            <h1 class="title-nos-expertises"> {{_('Cession')}}</h1><br>
-            <p class="speech-nos-expertises">
-                {{_(' Nous pouvons aider une entreprise lors d\'une cession en lui fournissant des services tels que
-                :')}}
-                <br>
-                {{_('· Évaluation de la valeur de l\'entreprise')}}
-                <br>
-                {{_('· Conseil fiscal sur les conséquences de la cession')}}
-                <br>
-                {{_('· Assistance à la préparation des documents financiers pour la transaction')}}
-                <br>
-                {{_('· Conseil sur les meilleures stratégies pour maximiser la valeur de la cession')}}
-                <br>
-                {{_('· Assistance à la négociation des termes financiers de la transaction.')}}
-                <br>
-            </p>
-        </div>
-
-    </div>
-
-
-
-
-    <div class="row">
-        <div class="col-5">
-        </div>
-
-        <div class="col-7">
-            <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/acquisition.png') }}" alt="blog-img" loading="lazy">
-            <h1 class="title-nos-expertises"> {{_('Fusions & Acquisitions')}} </h1><br>
-
-
-            <p class="speech-nos-expertises">
-                {{_('Nous pouvons guider les entreprises dans les fusions et acquisitions en les aidant à :')}}
-                <br>
-                {{_('· Évaluer la performance financière de la société cible')}}
-                <br>
-                {{_('· Minimiser les coûts fiscaux liés à la transaction')}}
-                <br>
-                {{_('· Effectuer une analyse approfondie de la situation financière et comptable de la société cible')}}
-                <br>
-                {{_('· Négocier les termes financiers de la transaction')}}
-                <br>
-                {{_('· Mettre en place les aspects financiers de la transaction.')}}
-                <br>
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-
-
-    <div class="row">
-        <div class="col-7">
-            <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/international.png') }}" alt="blog-img" loading="lazy">
-            <h1 class="title-nos-expertises"> {{_('Accompagnement International')}} </h1><br>
-
-            <p class="speech-nos-expertises">
-                {{_('Vous souhaitez vous implanter en France ?')}}
-                <br><br>
-                {{_('Nos experts accompagnent les investisseurs et les sociétés étrangères dans la tenue comptable,
-                fiscale
-                et sociale de leur structure implantée en France, jusqu\'à la réalisation de due diligences,
-                en passant par la domiciliation et un conseil juridique et fiscal d\'exception.')}}
-
-            </p>
-        </div>
-        <div class="col-5">
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-5">
-        </div>
-        <div class="col-7">
-
-            <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/ancestors.png') }}" alt="blog-img" loading="lazy">
-            <h1 class="title-nos-expertises"> {{_('Conseil aux particuliers')}} </h1><br>
-
-            <p class="speech-nos-expertises" style="margin-bottom: 10%;">
-                <br>
-                {{_('Nous pouvons aussi aider les particuliers à gérer leur patrimoine en leur fournissant des conseils
-                sur la planification fiscale et l\'optimisation de leurs finances personnelles.')}}
-                <br><br>
-                {{_('Nous pouvons les aider à comprendre leurs obligations fiscales et à préparer leurs déclarations de
-                revenus de manière efficace.')}}
-                <br><br>
-                {{_('Nous pouvons également les aider à élaborer des stratégies pour minimiser leurs impôts, gérer leur
-                épargne et leur retraite, et à prendre des décisions financières optimales.')}}
-            </p>
-        </div>
-    </div>
-
-
-
-
-</div>
-
 
 <script>
 
     document.addEventListener('DOMContentLoaded', function () {
-    
+
         // Loader des autres pages
         var loaderDiv = document.getElementById('loaderid');
         var foregroundDiv = document.getElementById('foregid');
@@ -138,11 +146,11 @@
         loaderDiv.style.display = 'block';
         // Hide the div after 1 seconds
         setTimeout(function () {
-          loaderDiv.style.display = 'none';
-          foregroundDiv.style.display = 'none';
+            loaderDiv.style.display = 'none';
+            foregroundDiv.style.display = 'none';
         }, 1000);
     });
-    
-    
-    </script>
+
+
+</script>
 {% endblock content %}

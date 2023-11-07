@@ -33,7 +33,7 @@ class Config:
     MAIL_PASSWORD = os.getenv('EMAIL_PASS')
     MAIL_USE_SSL= False
     MAIL_USE_TLS = True
-
+    G_API_KEY = os.environ.get('G_API_KEY')
     RECAPTCHA_OPTIONS= {'theme':'black'}
     
 

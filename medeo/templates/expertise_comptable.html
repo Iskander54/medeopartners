@@ -1,124 +1,133 @@
 {% extends "layout.html" %}
 {% block content %}
 
+<div id="content">
 <div class="loader-container">
   <div id="foregid" class="foreg"></div>
   <span id="loaderid" class="loader"></span>
 </div>
 
 
-<div class="page-heading-cabinet animate-top">
+  <div class="page-heading-cabinet animate-top">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="banner_taital">{{_('Expertise comptable')}}</h1>
-          <p class="what_text_1" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</p>
+          <h1 data-translate class="banner_taital">Expertise comptable</h1>
+          <p class="what_text_1" style="font-style: italic;">Medeo, "Cure your business"</p>
           <br>
         </div>
       </div>
     </div>
   </div>
-  
+
   <div class="container animate-top">
     <div class="row">
       <div class="col-7" id="id_expertise_comptable">
-        <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/accounting.png') }}" alt="blog-img" loading="lazy">
-        <h1 class="title-nos-expertises">{{_('Expertise comptable')}}</h1><br>
-        <p class="speech-nos-expertises">
-          {{_('Nous fournissons des conseils pour aider les entreprises à prendre des décisions financières et fiscales
-          éclairées.')}}
+        <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/accounting.png') }}" alt="blog-img"
+          loading="lazy">
+        <h1 data-translate class="title-nos-expertises">Expertise comptable</h1><br>
+        <p data-translate class="speech-nos-expertises">
+          Nous fournissons des conseils pour aider les entreprises à prendre des décisions financières et fiscales
+          éclairées.
           <br><br>
-          {{_('Nous les aidons à établir et à surveiller les systèmes financiers et comptables pour garantir l\'exactitude de
-          leurs données.')}}
+          Nous les aidons à établir et à surveiller les systèmes financiers et comptables pour garantir
+          l'exactitude de
+          leurs données.
           <br><br>
-          {{_('Nous préparons et examinons les déclarations fiscales pour s\'assurer que les entreprises remplissent leurs
-          obligations fiscales.')}}
+          Nous préparons et examinons les déclarations fiscales pour s\'assurer que les entreprises remplissent
+          leurs
+          obligations fiscales.
           <br><br>
-          {{_('Nous offrons des conseils stratégiques pour maximiser les opérations commerciales et les stratégies financières
-          des entreprises. Nous aidons à prévenir les litiges financiers et à les gérer lorsqu\'ils se produisent.')}}
+          Nous offrons des conseils stratégiques pour maximiser les opérations commerciales et les stratégies
+          financières
+          des entreprises. Nous aidons à prévenir les litiges financiers et à les gérer lorsqu'ils se produisent.
           <br><br>
-          {{_('Nous aidons à prévenir les litiges financiers et à les gérer lorsqu\'ils se produisent.')}}          <br><br>
+          Nous aidons à prévenir les litiges financiers et à les gérer lorsqu\'ils se produisent. <br><br>
         </p>
       </div>
       <div class="col-5">
       </div>
     </div>
-  
-  
-  
-  
+
+
+
+
     <div class="row">
       <div class="col-5">
       </div>
-  
+
       <div class="col-7">
-        <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/tax.png') }}" alt="blog-img" loading="lazy">
-        <h1 class="title-nos-expertises"> {{_('Fiscalité')}} </h1><br>
-  
-  
-        <p class="speech-nos-expertises">
-            {{_('Nous aidons les entreprises à comprendre leurs obligations fiscales, à élaborer des stratégies fiscales pour minimiser les coûts et à préparer et déposer les déclarations fiscales à temps.')}}
+        <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/tax.png') }}" alt="blog-img"
+          loading="lazy">
+        <h1 data-translate class="title-nos-expertises"> Fiscalité </h1><br>
+
+
+        <p data-translate class="speech-nos-expertises">
+          Nous aidons les entreprises à comprendre leurs obligations fiscales, à élaborer des stratégies fiscales
+          pour minimiser les coûts et à préparer et déposer les déclarations fiscales à temps.
           <br><br>
         </p>
-  
+
       </div>
     </div>
-  
-  
-  
-  
+
+
+
+
     <div class="row">
       <div class="col-7">
-        <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/compliant.png') }}" alt="blog-img" loading="lazy">
-        <h1 class="title-nos-expertises"> {{_('Juridique')}} </h1><br>
-  
-        <p class="speech-nos-expertises">
-            {{_('Nous fournissons des conseils juridiques sur les obligations légales des entreprises, aidons à gérer les litiges et élaborons des stratégies pour minimiser les risques juridiques.')}}
+        <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/compliant.png') }}" alt="blog-img"
+          loading="lazy">
+        <h1 data-translate class="title-nos-expertises"> Juridique </h1><br>
+
+        <p data-translate class="speech-nos-expertises">
+          Nous fournissons des conseils juridiques sur les obligations légales des entreprises, aidons à gérer les
+          litiges et élaborons des stratégies pour minimiser les risques juridiques.
           <br><br>
-  
+
         </p>
       </div>
       <div class="col-5">
       </div>
     </div>
-  
-  
+
+
     <div class="row">
       <div class="col-5">
       </div>
       <div class="col-7">
-  
-        <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/group.png') }}" alt="blog-img" loading="lazy">
-        <h1 class="title-nos-expertises"> {{_('Social')}} </h1><br>
-  
-        <p class="speech-nos-expertises" style="margin-bottom: 10%;">
+
+        <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/group.png') }}" alt="blog-img"
+          loading="lazy">
+        <h1 data-translate class="title-nos-expertises"> Social </h1><br>
+
+        <p data-translate class="speech-nos-expertises" style="margin-bottom: 10%;">
           <br>
-          {{_('Nous aidons les entreprises à comprendre et à remplir leurs obligations sociales, telles que les obligations de sécurité sociale, de paie et de protection de l\'emploi.')}}
+          Nous aidons les entreprises à comprendre et à remplir leurs obligations sociales, telles que les
+          obligations de sécurité sociale, de paie et de protection de l'emploi.
           <br><br>
         </p>
       </div>
     </div>
   </div>
+</div>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // Loader des autres pages
+    var loaderDiv = document.getElementById('loaderid');
+    var foregroundDiv = document.getElementById('foregid');
+    // Show the div
+    foregroundDiv.style.display = 'block';
+    loaderDiv.style.display = 'block';
+    // Hide the div after 1 seconds
+    setTimeout(function () {
+      loaderDiv.style.display = 'none';
+      foregroundDiv.style.display = 'none';
+    }, 1000);
+  });
 
 
-
-  <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-    
-        // Loader des autres pages
-        var loaderDiv = document.getElementById('loaderid');
-        var foregroundDiv = document.getElementById('foregid');
-        // Show the div
-        foregroundDiv.style.display = 'block';
-        loaderDiv.style.display = 'block';
-        // Hide the div after 1 seconds
-        setTimeout(function () {
-          loaderDiv.style.display = 'none';
-          foregroundDiv.style.display = 'none';
-        }, 1000);
-    });
-    
-    
-    </script>
+</script>
 {% endblock content %}

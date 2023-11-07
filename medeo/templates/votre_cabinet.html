@@ -1,514 +1,536 @@
 {% extends "layout.html" %}
 {% block content %}
-   <div class="loader-container">
-      <div id="foregid" class="foreg"></div>
-      <span id="loaderid" class="loader"></span>
-   </div>
 
+<div id="content">
+  <div class="loader-container">
+    <div id="foregid" class="foreg"></div>
+    <span id="loaderid" class="loader"></span>
+  </div>
 
-<div class="page-heading-cabinet animate-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="banner_taital">«{{_('Votre')}}» {{_('cabinet')}}</h1>
-        <p class="what_text_1" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</p>
+  <div class="page-heading-cabinet animate-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 data-translate class="banner_taital">«Votre» cabinet</h1>
+          <p class="what_text_1" style="font-style: italic;">Medeo, "Cure your business"</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<h1 class="banner_taital animate-top" style="padding-bottom: 60px">{{_('Notre histoire')}}</h1>
+  <h1 data-translate class="banner_taital animate-top" style="padding-bottom: 60px">Notre histoire</h1>
 
-<div class="container animate-top">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
+  <div class="container animate-top">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
 
-      <h1 class="banner_taital">{{_('MEDEO Partners</h1><br>
-      <p class="banner_text" style="text-indent: 1px; width: auto; margin-left: 0;">
-        est un cabinet d\'expertise comptable et de commissariat aux comptes')}} <br>
-        {{_('inscrit à l\'Ordre des experts-comptables (OEC) de Paris et auprès de la Compagnie régionale des
-        commissaires aux comptes de Paris (CRCC).')}}<br>
+        <h1 data-translate class="banner_taital">MEDEO Partners</h1><br>
+        <p data-translate class="banner_text" style="text-indent: 1px; width: auto; margin-left: 0;">
+          est un cabinet d'expertise comptable et de commissariat aux comptes <br>
+          inscrit à l'Ordre des experts-comptables (OEC) de Paris et auprès de la Compagnie régionale des
+          commissaires aux comptes de Paris (CRCC).<br>
 
 
-        <br><br>
-        <div class="what_text_1">{{_('MEDEO, signifiant «prendre soin»')}}</div>
-       
-      </p>
+          <br><br>
+        <div class="what_text_1">MEDEO, signifiant «prendre soin»</div>
+
+        </p>
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <img class="images_cabinet" src="{{url_for('static',filename='images/medeo_talking.png') }}" loading="lazy">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <img class="img_heart" src="{{url_for('static',filename='images/heart_take_care.jpeg') }}" loading="lazy">
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
+
+        <p data-translate class="banner_text" style="text-indent: 1px; width: auto; margin-left: 0;">
+          en grec ancien, caractérise le désir de ses fondateurs d'incarner le rôle de « médecins des
+          entreprises ».
+
+          <br><br>
+          PARTNERS, emprunté à l'anglais, souligne la notion de « partenariat », un terme représentant
+          l'association et la complémentarité de ses fondateurs :
+
+          <a data-translate class="names" href="votre_cabinet#carousel_partners">Israel HAIKOU</a> et
+          <a data-translate class="names" href="votre_cabinet#carousel_partners">Avi GOZLANE</a> ont fondé le cabinet en
+          octobre 2022.
+          <br><br>
+
+          Après une collaboration efficace de plus de sept ans et une expérience respective de plus de dix
+          ans dans la comptabilité, ces « néo-médecins des entreprises » souhaitent mettre leurs expertises au
+          service des entreprises.<br /><br /><br />
+          <br><br>
+        </p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
+
+        <h1 data-translate class="banner_taital">À l'instar d\'un médecin, MEDEO Partners vous accompagne </h1><br>
+        <p data-translate class="banner_text" style="text-indent: 1px; width: auto; margin-left: 0;">
+          durant le cycle de vie de votre entreprise :
+          en prenant soin du bien-être et de la croissance de vos projets.<br><br>
+          Nous voulons casser l'image stéréotypée, traditionnelle et rigide des cabinets comptables en y
+          apportant une touche plus jeune et moderne, tout en maintenant le sérieux et la rigueur de la profession du
+          chiffre.<br /><br /><br />
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <img class="images_cabinet" src="{{url_for('static',filename='images/medecin.avif') }}" loading="lazy">
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="page-heading-cabinet animate-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 data-translate class="banner_taital">Nos valeurs</h1>
+
+          <button data-translate type="button" class="btn btn-red effet_ombre_boutons_valeurs btn-lg"
+            data-toggle="modal" data-target="#modal_respect">Respect</button>
+          <button data-translate type="button" class="btn btn-blue effet_ombre_boutons_valeurs btn-lg"
+            data-toggle="modal" data-target="#modal_communication">Communication</button>
+          <button data-translate type="button" class="btn btn-grey effet_ombre_boutons_valeurs btn-lg"
+            data-toggle="modal" data-target="#modal_eco">Ecologie</button>
+          <button data-translate type="button" class="btn btn-red effet_ombre_boutons_valeurs btn-lg"
+            data-toggle="modal" data-target="#modal_rigueur">Rigueur</button>
+          <button data-translate type="button" class="btn btn-blue effet_ombre_boutons_valeurs btn-lg"
+            data-toggle="modal" data-target="#modal_experience">Expérience
+            internationale</button>
+          <button data-translate type="button" class="btn btn-grey effet_ombre_boutons_valeurs btn-lg"
+            data-toggle="modal" data-target="#modal_mix">Mixité et
+            inclusion</button>
+          <button data-translate type="button" class="btn btn-red effet_ombre_boutons_valeurs btn-lg"
+            data-toggle="modal" data-target="#modal_jeunesse">Jeunesse</button>
+          <button data-translate type="button" class="btn btn-blue effet_ombre_boutons_valeurs btn-lg"
+            data-toggle="modal" data-target="#modal_engagement">Engagement</button>
+          <button data-translate type="button" class="btn btn-grey effet_ombre_boutons_valeurs btn-lg"
+            data-toggle="modal" data-target="#modal_qualite">Qualité
+            de service</button>
 
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <img class="images_cabinet" src="{{url_for('static',filename='images/medeo_talking.png') }}" loading="lazy">
+      </div>
     </div>
   </div>
+  <!-- Begin modal logic -->
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6">
-      <img class="img_heart" src="{{url_for('static',filename='images/heart_take_care.jpeg') }}" loading="lazy">
+  <div class="modal fade" id="modal_respect" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-translate class="modal-title" id="exampleModalLongTitle">Respect</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div data-translate class="modal-body">
+          Le respect est une valeur intangible, néanmoins fondamentale, qui doit être ancrée dans la culture de toute
+          entreprise soucieuse de son image et de sa réputation.
 
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
+          Le respect doit être cultivé dans toutes les interactions entre les employés, les clients, les partenaires
+          commerciaux et les autres parties prenantes de l\'entreprise. Cela signifie que chacun doit être traité
+          équitablement et sans discrimination, indépendamment de sa race, de son sexe, de son orientation sexuelle, de
+          sa
+          religion ou de tout autre critère.
 
-      <p class="banner_text" style="text-indent: 1px; width: auto; margin-left: 0;">
-        {{_('en grec ancien, caractérise le désir de ses fondateurs d\'incarner le rôle de « médecins des
-        entreprises ».')}}
-
-        <br><br>
-        {{_('PARTNERS, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant
-        l\'association et la complémentarité de ses fondateurs :')}}
-
-        <a class="names" href="{{_('votre_cabinet#carousel_partners')}}">Israel HAIKOU</a> et
-        <a class="names" href="{{_('votre_cabinet#carousel_partners')}}">Avi GOZLANE</a> {{_('ont fondé le cabinet en
-        octobre 2022. ')}}
-        <br><br>
-
-        {{_('Après une collaboration efficace de plus de sept ans et une expérience respective de plus de dix
-        ans dans la comptabilité, ces « néo-médecins des entreprises » souhaitent mettre leurs expertises au
-        service des entreprises.')}}<br /><br /><br />
-        <br><br>
-      </p>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
-
-      <h1 class="banner_taital">{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne </h1><br>
-      <p class="banner_text" style="text-indent: 1px; width: auto; margin-left: 0;">
-        durant le cycle de vie de votre entreprise :
-        en prenant soin du bien-être et de la croissance de vos projets.')}}<br><br>
-        {{_('Nous voulons casser l\'image stéréotypée, traditionnelle et rigide des cabinets comptables en y
-        apportant une touche plus jeune et moderne, tout en maintenant le sérieux et la rigueur de la profession du
-        chiffre.')}}<br /><br /><br />
-      </p>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6">
-      <img class="images_cabinet" src="{{url_for('static',filename='images/medecin.avif') }}" loading="lazy">
-
-    </div>
-  </div>
-
-</div>
-
-
-
-<div class="page-heading-cabinet animate-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="banner_taital">{{_('Nos valeurs')}}</h1>
-
-        <button type="button" class="btn btn-red effet_ombre_boutons_valeurs btn-lg" data-toggle="modal" data-target="#modal_respect">{{_('Respect')}}</button>
-        <button type="button" class="btn btn-blue effet_ombre_boutons_valeurs btn-lg" data-toggle="modal"
-          data-target="#modal_communication">{{_('Communication')}}</button>
-        <button type="button" class="btn btn-grey effet_ombre_boutons_valeurs btn-lg" data-toggle="modal" data-target="#modal_eco">{{_('Ecologie')}}</button>
-        <button type="button" class="btn btn-red effet_ombre_boutons_valeurs btn-lg" data-toggle="modal" data-target="#modal_rigueur">{{_('Rigueur')}}</button>
-        <button type="button" class="btn btn-blue effet_ombre_boutons_valeurs btn-lg" data-toggle="modal" data-target="#modal_experience">{{_('Expérience
-          internationale')}}</button>
-        <button type="button" class="btn btn-grey effet_ombre_boutons_valeurs btn-lg" data-toggle="modal" data-target="#modal_mix">{{_('Mixité et
-          inclusion')}}</button>
-        <button type="button" class="btn btn-red effet_ombre_boutons_valeurs btn-lg" data-toggle="modal" data-target="#modal_jeunesse">{{_('Jeunesse')}}</button>
-        <button type="button" class="btn btn-blue effet_ombre_boutons_valeurs btn-lg" data-toggle="modal"
-          data-target="#modal_engagement">{{_('Engagement')}}</button>
-        <button type="button" class="btn btn-grey effet_ombre_boutons_valeurs btn-lg" data-toggle="modal" data-target="#modal_qualite">{{_('Qualité
-          de service')}}</button>
+          Nous croyons au respect en tant que valeur fondamentale de notre institution, un atout nécessaire à la
+          croissance et à la prospérité de de notre entreprise.
+        </div>
 
       </div>
     </div>
   </div>
-</div>
-<!-- Begin modal logic -->
-
-<div class="modal fade" id="modal_respect" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">{{_('Respect')}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{_('Le respect est une valeur intangible, néanmoins fondamentale, qui doit être ancrée dans la culture de toute
-        entreprise soucieuse de son image et de sa réputation.
-
-        Le respect doit être cultivé dans toutes les interactions entre les employés, les clients, les partenaires
-        commerciaux et les autres parties prenantes de l\'entreprise. Cela signifie que chacun doit être traité
-        équitablement et sans discrimination, indépendamment de sa race, de son sexe, de son orientation sexuelle, de sa
-        religion ou de tout autre critère.
-
-        Nous croyons au respect en tant que valeur fondamentale de notre institution, un atout nécessaire à la
-        croissance et à la prospérité de de notre entreprise.')}}
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
-<div class="modal fade" id="modal_communication" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">{{_('Communication')}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{_('La communication est essentielle pour établir et maintenir des relations positives à la fois avec nos
-        clients et au sein de notre entreprise.
+  <div class="modal fade" id="modal_communication" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-translate class="modal-title" id="exampleModalLongTitle">Communication</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div data-translate class="modal-body">
+          La communication est essentielle pour établir et maintenir des relations positives à la fois avec nos
+          clients et au sein de notre entreprise.
 
-        Cela implique une capacité à communiquer de manière claire et concise, à prendre en compte les opinions et les
-        suggestions des clients et à offrir des solutions personnalisées.
+          Cela implique une capacité à communiquer de manière claire et concise, à prendre en compte les opinions et les
+          suggestions des clients et à offrir des solutions personnalisées.
 
-        Nous croyons profondément qu\'en étant réactifs et proches de nos clients, nous arriverons à répondre
-        efficacement à leurs besoins et à surmonter n\'importe quel imprévu')}}
-      </div>
+          Nous croyons profondément qu\'en étant réactifs et proches de nos clients, nous arriverons à répondre
+          efficacement à leurs besoins et à surmonter n'importe quel imprévu
+        </div>
 
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modal_eco" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">{{_('Ecologie')}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{_('L\'écologie est une valeur essentielle de notre entreprise. Nous nous efforçons de vulgariser les pratiques
-        durables, d\'intégrer au quotidien des gestes écologiques et de sensibiliser à la responsabilité
-        environnementale.
-
-        Nous sommes intransigeants sur nos initiatives telles que la réduction de la consommation d\'énergie, la
-        réduction des déchets, la mise en place de processus durables et l\'encouragement de comportements écologiques à
-        tous les niveaux de l\'entreprise comme optimiser les déplacements professionnels, réutiliser du papier en
-        brouillon, etc.')}}
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modal_rigueur" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">{{_('Rigueur')}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{_('Chez MEDEO, nous ne faisons rien sans rigueur. Nous nous voulons minutieux et organisés, soucieux de
-        respecter à la fois les délais et les budgets, de suivre les procédures internes et prompts à fournir des
-        informations fiables et précises.
-
-        La rigueur est le socle de notre activité, nous permettant de garantir le meilleur service à nos clients et de
-        veiller à ce que nos propres standards restent toujours aussi élevés.')}}
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modal_experience" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">{{_('Expérience internationale')}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{_('Notre expérience internationale est un atout important pour nos clients cherchant à élargir leur
-        portefeuille et à développer des opportunités dans de nouveaux marchés.
-
-        Nous avons une sensibilité des cultures, une compréhension fine des marchés et des réglementations
-        internationales, ainsi qu\'une capacité à communiquer efficacement avec des clients de différents pays et à
-        naviguer avec succès dans un environnement mondialisé.')}}
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modal_mix" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">{{_('Mixité et inclusion')}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{_('Nous nous engageons à construire un environnement inclusif et respectueux en mettant en œuvre plusieurs
-        pratiques et initiatives :
-
-        · Diversité dans les effectifs en matière de recrutement
-
-        · Sensibilisation à la diversité culturelle, en organisant des tables rondes autour du métier
-
-        · Politiques d\'inclusion qui garantissent l\'égalité des chances pour tous les employés
-
-        · Mesures contre le harcèlement et la discrimination, pour prévenir le harcèlement et la discrimination.
-
-        En adoptant ces valeurs et en les intégrant dans les pratiques quotidiennes de l\'entreprise, nous pouvons
-        contribuer à renforcer la mixité, l\'inclusion et le respect de tous les employés.')}}
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="modal_jeunesse" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">{{_('Jeunesse')}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{_('Nous parions sur la jeunesse et investissons dans l\'avenir de la profession.
-
-        En accueillant des alternants, nous donnons aux jeunes la chance de développer leurs compétences et leur
-        expérience professionnelle.
-
-        Travailler avec des alternants, c\'est évidemment partager notre savoir-faire et notre expertise mais aussi nous
-        permettre d\'innover, grâce à l\'ingéniosité et au regard neuf que portent ces derniers sur la profession.
-
-        Miser sur la jeunesse est un pari payant chez MEDEO, où tout le monde est gagnant.')}}
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modal_engagement" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">{{_('Engagement')}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{_('Notre engagement envers nos clients est entier. En nous transmettant leur passion et leur détermination,
-        ils boostent notre motivation à leur fournir un service de qualité.
-
-        Notre seul but : les aider à atteindre leurs objectifs en plaçant leur satisfaction au premier plan.')}}
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="modal_qualite" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">{{_('Qualité de service')}}</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {{_('Un service de haute qualité est le minimum que nous pouvons offrir à nos clients, en veillant à ce que
-        leurs attentes soient respectées, satisfaites voire dépassées.
-
-        Pour ce faire, nous allions écoute, réactivité, compétence et professionnalisme. Notre capacité à anticiper les
-        besoins de nos clients nous permet de leur proposer des solutions sur mesure.')}}
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- End modal logic -->
-<br><br>
-
-
-
-<div class="page-heading-cabinet animate-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="banner_taital">{{_('L\'équipe')}}</h1>
-        <br><br>
       </div>
     </div>
   </div>
-</div>
-<br/>
-<div class="animate-top">
-  <div class="carousel">
-    <ul class="slides">
-      <input type="radio" name="radio-buttons" id="img-1" checked />
-      <li class="slide-container">
-        <div class="slide-image">
+
+  <div class="modal fade" id="modal_eco" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-translate class="modal-title" id="exampleModalLongTitle">Ecologie</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div data-translate class="modal-body">
+          L'écologie est une valeur essentielle de notre entreprise. Nous nous efforçons de vulgariser les pratiques
+          durables, d'intégrer au quotidien des gestes écologiques et de sensibiliser à la responsabilité
+          environnementale.
+
+          Nous sommes intransigeants sur nos initiatives telles que la réduction de la consommation d'énergie, la
+          réduction des déchets, la mise en place de processus durables et l'encouragement de comportements écologiques
+          à
+          tous les niveaux de l'entreprise comme optimiser les déplacements professionnels, réutiliser du papier en
+          brouillon, etc.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal_rigueur" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-translate class="modal-title" id="exampleModalLongTitle">Rigueur</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div data-translate class="modal-body">
+          Chez MEDEO, nous ne faisons rien sans rigueur. Nous nous voulons minutieux et organisés, soucieux de
+          respecter à la fois les délais et les budgets, de suivre les procédures internes et prompts à fournir des
+          informations fiables et précises.
+
+          La rigueur est le socle de notre activité, nous permettant de garantir le meilleur service à nos clients et de
+          veiller à ce que nos propres standards restent toujours aussi élevés.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal_experience" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-translate class="modal-title" id="exampleModalLongTitle">Expérience internationale</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div data-translate class="modal-body">
+          Notre expérience internationale est un atout important pour nos clients cherchant à élargir leur
+          portefeuille et à développer des opportunités dans de nouveaux marchés.
+
+          Nous avons une sensibilité des cultures, une compréhension fine des marchés et des réglementations
+          internationales, ainsi qu'une capacité à communiquer efficacement avec des clients de différents pays et à
+          naviguer avec succès dans un environnement mondialisé.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal_mix" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-translate class="modal-title" id="exampleModalLongTitle">Mixité et inclusion</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div data-translate class="modal-body">
+          Nous nous engageons à construire un environnement inclusif et respectueux en mettant en œuvre plusieurs
+          pratiques et initiatives :
+
+          · Diversité dans les effectifs en matière de recrutement
+
+          · Sensibilisation à la diversité culturelle, en organisant des tables rondes autour du métier
+
+          · Politiques d\'inclusion qui garantissent l'égalité des chances pour tous les employés
+
+          · Mesures contre le harcèlement et la discrimination, pour prévenir le harcèlement et la discrimination.
+
+          En adoptant ces valeurs et en les intégrant dans les pratiques quotidiennes de l'entreprise, nous pouvons
+          contribuer à renforcer la mixité, l'inclusion et le respect de tous les employés.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal_jeunesse" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-translate class="modal-title" id="exampleModalLongTitle">Jeunesse</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div data-translate class="modal-body">
+          Nous parions sur la jeunesse et investissons dans l'avenir de la profession.
+
+          En accueillant des alternants, nous donnons aux jeunes la chance de développer leurs compétences et leur
+          expérience professionnelle.
+
+          Travailler avec des alternants, c'est évidemment partager notre savoir-faire et notre expertise mais aussi
+          nous
+          permettre d'innover, grâce à l'ingéniosité et au regard neuf que portent ces derniers sur la profession.
+
+          Miser sur la jeunesse est un pari payant chez MEDEO, où tout le monde est gagnant.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal_engagement" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-translate class="modal-title" id="exampleModalLongTitle">Engagement</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div data-translate class="modal-body">
+          Notre engagement envers nos clients est entier. En nous transmettant leur passion et leur détermination,
+          ils boostent notre motivation à leur fournir un service de qualité.
+
+          Notre seul but : les aider à atteindre leurs objectifs en plaçant leur satisfaction au premier plan.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal_qualite" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-translate class="modal-title" id="exampleModalLongTitle">Qualité de service</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div data-translate class="modal-body">
+          Un service de haute qualité est le minimum que nous pouvons offrir à nos clients, en veillant à ce que
+          leurs attentes soient respectées, satisfaites voire dépassées.
+
+          Pour ce faire, nous allions écoute, réactivité, compétence et professionnalisme. Notre capacité à anticiper
+          les
+          besoins de nos clients nous permet de leur proposer des solutions sur mesure.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- End modal logic -->
+  <br><br>
+
+
+
+  <div class="page-heading-cabinet animate-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 data-translate class="banner_taital">L'équipe</h1>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="animate-top">
+    <div class="carousel">
+      <ul class="slides">
+        <input type="radio" name="radio-buttons" id="img-1" checked />
+        <li class="slide-container">
+          <div class="slide-image">
             <div class="encart_bleu">
               <img src="/static/images/israel_haikou.jpg" class="image_7" loading="lazy">
               <h2 style="color: white;text-align: center;">Israël HAIKOU</h2>
-              <div style="color: white;text-align: center;">{{_('CEO, Expert-Comptable et commissaire aux comptes')}}</div><br>
+              <div data-translate style="color: white;text-align: center;">CEO, Expert-Comptable et commissaire aux
+                comptes</div><br>
               <div style="color: white;text-align: center;">
-                <a style="color: white;text-align: center;" href="Israel.haikou@medeo-partners.com">Israel.haikou@medeo-partners.com</a>
+                <a style="color: white;text-align: center;"
+                  href="Israel.haikou@medeo-partners.com">Israel.haikou@medeo-partners.com</a>
               </div>
 
             </div>
             <div class="encart_rouge">
-              <p class="title_carousel">
-                {{_('"Pour réussir, il n\'y a que des plans A pas de plans B "')}}
+              <p data-translate class="title_carousel">
+                "Pour réussir, il n'y a que des plans A pas de plans B "
               </p>
 
-              <p class="text-start">
-                {{_('une phrase qui caractérise bien mon état d\'esprit.')}}
+              <p data-translate class="text-start">
+                une phrase qui caractérise bien mon état d\'esprit.
               </p>
-                <br>
-              <p class="title_carousel">
-                {{_('"La facon de commencer est d\'arrêter de parler et de commencer à faire"')}}
+              <br>
+              <p data-translate class="title_carousel">
+                "La facon de commencer est d'arrêter de parler et de commencer à faire"
               </p>
-              <p class="text-start">
-                {{_('Walt Disney, cofondateur de The Walt Disney Company')}}
+              <p data-translate class="text-start">
+                Walt Disney, cofondateur de The Walt Disney Company
                 <br>
                 <br>
-                {{_('Diplômé en Licence d\'économie, je suis me suis réorienté dans un domaine qui m\'a toujours')}}
-                {{_('passionné : la comptabilité. J\'ai donc obtenu une deuxième licence en comptabilité (DCG),
-                un')}}
-                {{_('master en comptabilité (DSCG), puis le DEC (Bac+8). Mon cursus m\'a permis d\'avoir une
-                vision')}}
-                {{_('plus complète du monde de l\'entreprenariat.')}}
+                Diplômé en Licence d'économie, je me suis réorienté dans un domaine qui m'a toujours
+                passionné : la comptabilité. J'ai donc obtenu une deuxième licence en comptabilité (DCG),
+                un
+                master en comptabilité (DSCG), puis le DEC (Bac+8). Mon cursus m'a permis d'avoir une
+                vision
+                plus complète du monde de l'entreprenariat.
               </p>
             </div>
-        </div>
+          </div>
 
-        <div class="carousel-controls">
-          <label for="img-3" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-2" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-2" />
-      <li class="slide-container">
-        <div class="slide-image">
-          <div class="encart_bleu">
-            <img src="/static/images/avi_gozlane.jpg" class="image_7" loading="lazy">
-            <h2 style="color: white;text-align: center;">Avi GOZLANE</h2>
-            <div style="color: white;text-align: center;">{{_('Associé, Directeur de mission')}}</div><br>
-            <div style="color: white;text-align: center;">
-              <a style="color: white;text-align: center;" href="avi.gozlane@medeo-partners.com">avi.gozlane@medeo-partners.com</a>
+          <div class="carousel-controls">
+            <label for="img-3" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-2" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
+          </div>
+        </li>
+        <input type="radio" name="radio-buttons" id="img-2" />
+        <li class="slide-container">
+          <div class="slide-image">
+            <div class="encart_bleu">
+              <img src="/static/images/avi_gozlane.jpg" class="image_7" loading="lazy">
+              <h2 style="color: white;text-align: center;">Avi GOZLANE</h2>
+              <div data-translate style="color: white;text-align: center;">Associé, Directeur de mission</div><br>
+              <div style="color: white;text-align: center;">
+                <a style="color: white;text-align: center;"
+                  href="avi.gozlane@medeo-partners.com">avi.gozlane@medeo-partners.com</a>
+              </div>
+            </div>
+            <div class="encart_rouge">
+              <p data-translate class="title_carousel">
+                " L'art de la réussite consiste à savoir s'entourer des meilleurs."
+              </p>
+              <p data-translate class="text-start">
+                John Fitzgerald Kennedy
+                <br><br>
+
+                Forts de 10 années d'expérience en cabinet d'expertise comptable et de commissariat aux
+                comptes, et de mon cursus universitaire en comptabilité et gestion, je souhaite accompagner
+                les entreprises et prendre soin de mes clients.
+                La diversité de mon parcours professionnel m'a permis de développer une expertise
+                considérable dans mon domaine et une assurance au quotidien, au chevet de mes partenaires.
+                </br></br>
+                Méticuleux, rigoureux et réactif, je me positionne comme le garant de la bonne gestion de
+                votre activité.
+              </p>
+
             </div>
           </div>
-          <div class="encart_rouge">
-            <p class="title_carousel">
-              {{_('" L\'art de la réussite consiste à savoir s\'entourer des meilleurs."')}}
-            </p>
-            <p class="text-start">
-            {{_('John Fitzgerald Kennedy')}}
-             <br><br>
-
-              {{_('Forts de 10 années d\'expérience en cabinet d\'expertise comptable et de commissariat aux')}}
-              {{_('comptes, et de mon cursus universitaire en comptabilité et gestion, je souhaite accompagner')}}
-              {{_('les entreprises et prendre soin de mes clients.')}}
-              {{_('La diversité de mon parcours professionnel m\'a permis de développer une expertise')}}
-              {{_('considérable dans mon domaine et une assurance au quotidien, au chevet de mes partenaires.')}}
-              </br></br>
-              {{_('Méticuleux, rigoureux et réactif, je me positionne comme le garant de la bonne gestion de')}}
-              {{_('votre activité.')}}
-            </p>
-
+          <div class="carousel-controls">
+            <label for="img-1" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-3" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
           </div>
-          </div>
-        <div class="carousel-controls">
-          <label for="img-1" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-3" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
+        </li>
+
+        <div class="carousel-dots">
+          <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+          <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
         </div>
-      </li>
-
-      <div class="carousel-dots">
-        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-      </div>
-    </ul>
-  </div>
-</div>
-<br/><br/><br/>
-
-
-<link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
-
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'> 
-
-
-<div id="container_newcarousel" style="display: none;">
-
-  <div id="holder">
-
-    <div id="image">
-      <div class="img israel_haikou"></div>
-
-      <div class="img avi_gozlane"></div>
-    </div>
-
-    <div id="right"></div>
-
-    <div id="text">
-      <div id="centerText">
-        <p class="quote">
-          CodePen is a social development environment. At its heart, it allows you to write code in the browser, and see the results of it as you build. A useful and liberating online code editor for developers of any skill, and particularly empowering for people learning to code. We focus primarily on front-end languages like HTML, CSS, JavaScript, and preprocessing syntaxes that turn into those things. 
-        </p>
-        <p class="quote">
-          We say social, because CodePen is a community. Most creations on CodePen are public and open source. They are living things that other people and the community can interact with, from a simple hearting, to leaving a comment, to forking and changing for their own needs. 
-        </p>
-        <p class="quote">
-          People use CodePen for all sorts of things: prototyping new ideas, reduced test cases for bugs, sending clients things to look at, evaluating potential hires, to finding inspiration. People also use CodePen as a sort of resume and portfolio, showing off their best design and development work. 
-        </p>
-      </div>
-
+      </ul>
     </div>
   </div>
+  <br /><br /><br />
 
 
-  <div id="nav-cirlces">
-    <div class="circle"></div>
-    <div class="circle"></div>
+  <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+
+
+  <div id="container_newcarousel" style="display: none;">
+
+    <div id="holder">
+
+      <div id="image">
+        <div class="img israel_haikou"></div>
+
+        <div class="img avi_gozlane"></div>
+      </div>
+
+      <div id="right"></div>
+
+      <div id="text">
+        <div id="centerText">
+          <p data-translate class="quote">
+            CodePen is a social development environment. At its heart, it allows you to write code in the browser, and
+            see the results of it as you build. A useful and liberating online code editor for developers of any skill,
+            and particularly empowering for people learning to code. We focus primarily on front-end languages like
+            HTML, CSS, JavaScript, and preprocessing syntaxes that turn into those things.
+          </p>
+          <p data-translate class="quote">
+            We say social, because CodePen is a community. Most creations on CodePen are public and open source. They
+            are living things that other people and the community can interact with, from a simple hearting, to leaving
+            a comment, to forking and changing for their own needs.
+          </p>
+          <p data-translate class="quote">
+            People use CodePen for all sorts of things: prototyping new ideas, reduced test cases for bugs, sending
+            clients things to look at, evaluating potential hires, to finding inspiration. People also use CodePen as a
+            sort of resume and portfolio, showing off their best design and development work.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div id="nav-cirlces">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+
   </div>
 
+
 </div>
-
-
-
 <br><br><br>
 
 <script>
 
-document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
 
     // Loader des autres pages
     var loaderDiv = document.getElementById('loaderid');
@@ -521,95 +543,33 @@ document.addEventListener('DOMContentLoaded', function () {
       loaderDiv.style.display = 'none';
       foregroundDiv.style.display = 'none';
     }, 1000);
-});
+  });
 
 
 </script>
 <script>
-  $(window).load(function() {
-  $(".circle")
-    .first()
-    .addClass("active");
-  $("#bg .slide")
-    .first()
-    .addClass("active");
-  $("#image .img")
-    .first()
-    .addClass("active");
-  $(".quote")
-    .first()
-    .addClass("active");
-
-  var animate = setInterval(function() {
-    var $this = $(".circle"),
-      currentActiveBubble = $("#nav-cirlces").find(".active"),
-      position = $("#nav-cirlces")
-        .children()
-        .index(currentActiveBubble),
-      num = $(".circle").length;
-
-    if (position < num - 1) {
-      $(".active")
-        .removeClass("active")
-        .next()
-        .addClass("active");
-    } else {
-      $(".circle")
-        .removeClass("active")
-        .first()
-        .addClass("active");
-      $("#bg .slide")
-        .removeClass("active")
-        .first()
-        .addClass("active");
-      $("#image .img")
-        .removeClass("active")
-        .first()
-        .addClass("active");
-      $(".quote")
-        .removeClass("active")
-        .first()
-        .addClass("active");
-    }
-    position++;
-  }, 450000);
-
-  $(".circle").click(function() {
-    clearInterval(animate);
-
-    var $this = $(this),
-      $siblings = $this.parent().children(),
-      position = $siblings.index($this);
-
+  $(window).load(function () {
     $(".circle")
-      .removeClass("active")
-      .eq(position)
+      .first()
       .addClass("active");
     $("#bg .slide")
-      .removeClass("active")
-      .eq(position)
+      .first()
       .addClass("active");
     $("#image .img")
-      .removeClass("active")
-      .eq(position)
+      .first()
       .addClass("active");
     $(".quote")
-      .removeClass("active")
-      .eq(position)
+      .first()
       .addClass("active");
-  });
 
-  $("#rightBtn , #leftBtn").click(function() {
-    clearInterval(animate);
+    var animate = setInterval(function () {
+      var $this = $(".circle"),
+        currentActiveBubble = $("#nav-cirlces").find(".active"),
+        position = $("#nav-cirlces")
+          .children()
+          .index(currentActiveBubble),
+        num = $(".circle").length;
 
-    var $this = $(this),
-      currentActiveBubble = $("#nav-cirlces").find(".active"),
-      position = $("#nav-cirlces")
-        .children()
-        .index(currentActiveBubble),
-      num = $(".circle").length;
-
-    if ($this.hasClass("next")) {
       if (position < num - 1) {
         $(".active")
           .removeClass("active")
@@ -633,33 +593,95 @@ document.addEventListener('DOMContentLoaded', function () {
           .first()
           .addClass("active");
       }
-    } else {
-      if (position === 0) {
-        $(".circle")
-          .removeClass("active")
-          .last()
-          .addClass("active");
-        $("#bg .slide")
-          .removeClass("active")
-          .last()
-          .addClass("active");
-        $("#image .img")
-          .removeClass("active")
-          .last()
-          .addClass("active");
-        $(".quote")
-          .removeClass("active")
-          .last()
-          .addClass("active");
+      position++;
+    }, 450000);
+
+    $(".circle").click(function () {
+      clearInterval(animate);
+
+      var $this = $(this),
+        $siblings = $this.parent().children(),
+        position = $siblings.index($this);
+
+      $(".circle")
+        .removeClass("active")
+        .eq(position)
+        .addClass("active");
+      $("#bg .slide")
+        .removeClass("active")
+        .eq(position)
+        .addClass("active");
+      $("#image .img")
+        .removeClass("active")
+        .eq(position)
+        .addClass("active");
+      $(".quote")
+        .removeClass("active")
+        .eq(position)
+        .addClass("active");
+    });
+
+    $("#rightBtn , #leftBtn").click(function () {
+      clearInterval(animate);
+
+      var $this = $(this),
+        currentActiveBubble = $("#nav-cirlces").find(".active"),
+        position = $("#nav-cirlces")
+          .children()
+          .index(currentActiveBubble),
+        num = $(".circle").length;
+
+      if ($this.hasClass("next")) {
+        if (position < num - 1) {
+          $(".active")
+            .removeClass("active")
+            .next()
+            .addClass("active");
+        } else {
+          $(".circle")
+            .removeClass("active")
+            .first()
+            .addClass("active");
+          $("#bg .slide")
+            .removeClass("active")
+            .first()
+            .addClass("active");
+          $("#image .img")
+            .removeClass("active")
+            .first()
+            .addClass("active");
+          $(".quote")
+            .removeClass("active")
+            .first()
+            .addClass("active");
+        }
       } else {
-        $(".active")
-          .removeClass("active")
-          .prev()
-          .addClass("active");
+        if (position === 0) {
+          $(".circle")
+            .removeClass("active")
+            .last()
+            .addClass("active");
+          $("#bg .slide")
+            .removeClass("active")
+            .last()
+            .addClass("active");
+          $("#image .img")
+            .removeClass("active")
+            .last()
+            .addClass("active");
+          $(".quote")
+            .removeClass("active")
+            .last()
+            .addClass("active");
+        } else {
+          $(".active")
+            .removeClass("active")
+            .prev()
+            .addClass("active");
+        }
       }
-    }
+    });
   });
-});
 
 </script>
 {% endblock content %}

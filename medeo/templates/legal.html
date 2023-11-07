@@ -1,62 +1,73 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="container">
-    <div class="mentions_legales">
-        <h3 class="titre_mention">
-         {{_('MENTIONS LÉGALES')}}
-       </h3>
-    
-       <h3 class="sous-titre_legal">
-        {{_('Site réalisé et hébergé par Bamana Solutions')}}
-        </h3>
-        <div class="text_legal">
-           
-           {{_(' SARL au capital de 5 000 euros
-            <br>
-            Siret : 951 922 707 00017
-            <br>
-            RCS : 951 922 707 R.C.S. Paris
-            <br>
-            Siège social : 97 Boulevard Malesherbes 75008 PARIS
-            <br>
-            Tél. : 06 69 06 68 04')}}
-            <br>
-        </div>
+<div id="content">
+    <div class="container">
+        <div class="mentions_legales">
+            <h3 data-translate class="titre_mention">
+                MENTIONS LÉGALES
+            </h3>
 
-        <h3 class="sous-titre_legal">{{_('Edition du site')}}</h3>
-        <div class="text_legal">
-       
-        {{_('SARL au capital de 10 000 euros
-        <br>
-        Siret : 92078049100014
-        <br>
-        RCS : 920 780 491 R.C.S Paris
-        <br>
-        Siège social : 97 Boulevard Malesherbes 75008 PARIS')}}
-        <br>
-        </div>
+            <h3 data-translate class="sous-titre_legal">
+                Site réalisé et hébergé par Bamana Solutions
+            </h3>
+            <div data-translate class="text_legal">
 
-        <h3 class="sous-titre_legal">{{_('Nous contacter')}}</h3>
-        <div class="text_legal">
-        {{_('Par email : contact@bamana-solutions.com
-        <br>
-        Par téléphone : 06 69 06 68 04')}}
-        <br>
-        {{_('Notre site : ')}}<a href="https://www.bamana-solutions.com/fr/accueil">https://www.bamana-solutions.com</a>
-        </div>
-        <h3 class="sous-titre_legal">{{_('Hébergeur')}}</h3>
-        <div class="text_legal">
-        {{_('Propriété intellectuelle :L\'ensemble de ce site relève des législations Françaises et Internationales sur les droits
-        d\'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés pour les textes et les
-        photographies de ce site. La reproduction de tout ou partie de ce site sur un support électronique ou autre quel
-        qu\'il soit, est formellement interdite sauf autorisation écrite de l\'auteur, conformément à l\'article L 122-4 du
-        Code de la Propriété intellectuelle.Liens hypertextes & droit de réponse :Les liens hypertextes mis en place dans le
-        cadre du présent site internet en direction d\'autres ressources présentes sur le réseau Internet, et notamment vers
-        ses partenaires ont fait l\'objet d\'une autorisation préalable, expresse et écrite auprès de l\'éditeur. - Toute
-        personne citée sur le site peut faire valoir un droit de réponse. Une simple demande sera adressée par courrier.')}}
-        </div>
+                 SARL au capital de 5 000 euros
+                <br>
+                Siret : 951 922 707 00017
+                <br>
+                RCS : 951 922 707 R.C.S. Paris
+                <br>
+                Siège social : 97 Boulevard Malesherbes 75008 PARIS
+                <br>
+                Tél. : 06 69 06 68 04
+                <br>
+            </div>
 
+            <h3 data-translate class="sous-titre_legal">Edition du site</h3>
+            <div data-translate class="text_legal">
+
+                SARL au capital de 10 000 euros
+                <br>
+                Siret : 92078049100014
+                <br>
+                RCS : 920 780 491 R.C.S Paris
+                <br>
+                Siège social : 97 Boulevard Malesherbes 75008 PARIS
+                <br>
+            </div>
+
+            <h3 data-translate class="sous-titre_legal">Nous contacter</h3>
+            <div data-translate class="text_legal">
+                Par email : contact@bamana-solutions.com
+                <br>
+                Par téléphone : 06 69 06 68 04
+                <br>
+                Notre site : <a
+                    href="https://www.bamana-solutions.com/fr/accueil">https://www.bamana-solutions.com</a>
+            </div>
+            <h3 data-translate class="sous-titre_legal">Hébergeur</h3>
+            <div data-translate class="text_legal">
+                Propriété intellectuelle :L'ensemble de ce site relève des législations Françaises et
+                Internationales sur les droits
+                d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés pour les textes
+                et les
+                photographies de ce site. La reproduction de tout ou partie de ce site sur un support électronique ou
+                autre quel
+                qu'il soit, est formellement interdite sauf autorisation écrite de l'auteur, conformément à l'article
+                L 122-4 du
+                Code de la Propriété intellectuelle.Liens hypertextes & droit de réponse :Les liens hypertextes mis en
+                place dans le
+                cadre du présent site internet en direction d'autres ressources présentes sur le réseau Internet, et
+                notamment vers
+                ses partenaires ont fait l'objet d\'une autorisation préalable, expresse et écrite auprès de
+                l'éditeur. - Toute
+                personne citée sur le site peut faire valoir un droit de réponse. Une simple demande sera adressée par
+                courrier.
+            </div>
+
+        </div>
     </div>
 </div>
 {% endblock content %}
