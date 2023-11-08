@@ -1,4 +1,4 @@
-from flask import Flask, request,g,redirect, url_for, render_template
+from flask import Flask, request, g, redirect, url_for, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -8,7 +8,7 @@ from flask_babel import Babel
 from flask_babelex import Babel
 # from flask_sslify import SSLify
 
-babel = Babel( default_locale='fr')
+babel = Babel(default_locale='fr')
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
@@ -30,7 +30,6 @@ def create_app(config_class=Config):
     mail.init_mail(app.config)
     babel.init_app(app)
 
-
     from medeo.users.routes import users
     from medeo.posts.routes import posts
     from medeo.main.routes import main
@@ -47,12 +46,13 @@ def create_app(config_class=Config):
     @babel.localeselector
     def get_locale():
         if not g.get('lang_code', None):
-            g.lang_code = request.accept_languages.best_match(app.config['LANGUAGES'])
+            g.lang_code = request.accept_languages.best_match(
+                app.config['LANGUAGES'])
         return g.lang_code
 
     @app.route('/')
     def start():
         g.lang_code = 'fr'
-        return redirect(url_for('main.home'))
+        return redirect(url_for('main.accueil'))
 
     return app
