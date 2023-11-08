@@ -285,6 +285,42 @@ img {
 
     }
 
+    .logo-nos-expertises-droite {
+        width: 100px;
+        height: auto;
+    }
+    
+
+    
+    .title-nos-expertises-droite {
+        width: 100%;
+        float: left;
+        font-size: 35px;
+        color: #114a69;
+        font-weight: 900;
+
+    }
+
+    
+
+    .speech-nos-expertises {
+        color: #114a69;
+        text-align: justify;
+        margin: auto;
+        font-family: Arial;
+        font-size: 16px;
+
+    }
+    .speech-nos-expertises-droite {
+        color: #114a69;
+        text-align: justify;
+        margin: auto;
+        font-family: Arial;
+        font-size: 16px;
+        margin-top: 5vw
+    }
+    
+
     .banner_taital_h3 {
         width: 100%;
         float: left;
@@ -313,6 +349,7 @@ img {
         width: 100px;
         height: auto;
         margin-top: 10%;
+        
     }
 
     .cocon {
@@ -385,6 +422,15 @@ img {
         text-align: center;
 
     }
+    .banner_taital_cab {
+        font-size: 30px;
+        margin-top: 5vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
 
     .banner_taital_news_carousel_home {
         font-size: 36px;
@@ -453,13 +499,21 @@ img {
 
 
     .banner_text {
-
-        float: left;
         font-size: 16px;
         color: #114a69;
         margin-left: 15px;
         font-family: ARIAL;
+        line-height: 9px;
 
+
+    }
+
+
+    .banner_text_cabinet {
+        font-size: 16px;
+        color: #114a69;
+        margin-left: 15px;
+        font-family: ARIAL;
     }
 
     .title_contact {
@@ -556,7 +610,42 @@ img {
         font-weight: 900;
 
     }
+    .logo-nos-expertises-droite {
+        width: 100px;
+        height: auto;
+        float: inline-end;
+    }
+    
 
+    
+    .title-nos-expertises-droite {
+        width: 100%;
+        float: left;
+        font-size: 35px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: end;
+
+    }
+    
+
+.speech-nos-expertises {
+    color: #114a69;
+    text-align: justify;
+    margin: auto;
+    font-family: Arial;
+    font-size: 16px;
+
+}
+
+.speech-nos-expertises-droite {
+    color: #114a69;
+    text-align: justify;
+    margin: auto;
+    font-family: Arial;
+    font-size: 16px;
+    margin-top: 10vw;
+}
     .banner_taital_h3 {
         width: 100%;
         float: left;
@@ -643,6 +732,15 @@ img {
         text-align: initial;
 
     }
+    .banner_taital_cab {
+        font-size: 30px;
+        margin-top: 5vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
 
     .banner_taital_news_carousel_home {
         font-size: 36px;
@@ -703,12 +801,18 @@ img {
 
     .banner_text {
         width: 100%;
-        float: left;
         font-size: 16px;
         color: #114a69;
         margin-left: 115px;
         font-family: ARIAL;
+        line-height: 9px;
+    }
 
+    .banner_text_cabinet {
+        font-size: 16px;
+        color: #114a69;
+        margin-left: 15px;
+        font-family: ARIAL;
     }
 
     .my_div_aliza {
@@ -836,6 +940,42 @@ img {
 
     }
 
+    .logo-nos-expertises-droite {
+        width: 100px;
+        height: auto;
+        float: inline-end;
+    }
+    
+
+    
+    .title-nos-expertises-droite {
+        width: 100%;
+        float: left;
+        font-size: 35px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: end;
+
+    }
+
+    
+
+.speech-nos-expertises {
+    color: #114a69;
+    text-align: justify;
+    margin: auto;
+    font-family: Arial;
+    font-size: 16px;
+
+}
+.speech-nos-expertises-droite {
+    color: #114a69;
+    text-align: justify;
+    margin: auto;
+    font-family: Arial;
+    font-size: 16px;
+    margin-top: 10vw
+}
     .banner_taital_h3 {
         width: 100%;
         float: left;
@@ -925,6 +1065,15 @@ img {
         font-weight: 900;
         text-align: center;
     }
+    .banner_taital_cab {
+        font-size: 30px;
+        margin-top: 5vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
 
     .banner_taital_news_carousel_home {
         font-size: 42px;
@@ -991,12 +1140,18 @@ img {
     }
 
     .banner_text {
-        float: left;
         font-size: 16px;
         color: #114a69;
         margin-left: 115px;
         font-family: ARIAL;
+        line-height: 9px;
+    }
 
+    .banner_text_cabinet {
+        font-size: 16px;
+        color: #114a69;
+        margin-left: 15px;
+        font-family: ARIAL;
     }
 
     .my_div_aliza {
@@ -1124,6 +1279,41 @@ img {
         font-weight: 900;
 
     }
+    .logo-nos-expertises-droite {
+        width: 100px;
+        height: auto;
+        float: inline-end;
+    }
+    
+
+    
+    .title-nos-expertises-droite {
+        width: 100%;
+        float: left;
+        font-size: 35px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: end;
+
+    }
+    
+
+.speech-nos-expertises {
+    color: #114a69;
+    text-align: justify;
+    margin: auto;
+    font-family: Arial;
+    font-size: 16px;
+
+}
+.speech-nos-expertises-droite {
+    color: #114a69;
+    text-align: justify;
+    margin: auto;
+    font-family: Arial;
+    font-size: 16px;
+    margin-top: 5vw
+}
 
     .logo-nos-expertises {
         width: 100px;
@@ -1278,17 +1468,32 @@ img {
 
     .banner_text {
         width: 100%;
-        float: left;
         font-size: 16px;
         color: #114a69;
         margin-left: 115px;
         font-family: ARIAL;
+        line-height: 9px;
+    }
 
+    .banner_text_cabinet {
+        font-size: 16px;
+        color: #114a69;
+        margin-left: 15px;
+        font-family: ARIAL;
     }
 
     .banner_taital {
         font-size: 48px;
         margin-top: 10vw;
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+    .banner_taital_cab {
+        font-size: 30px;
+        margin-top: 5vw;
         width: 100%;
         float: left;
         color: #114a69;
@@ -1405,6 +1610,15 @@ img {
         font-weight: 900;
         text-align: center;
     }
+    .banner_taital_cab {
+        font-size: 30px;
+        /* margin-top: 5vw; */
+        width: 100%;
+        float: left;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
 
 
     .banner_taital_news_carousel_home {
@@ -1437,6 +1651,30 @@ img {
         width: 100px;
         height: auto;
     }
+    .logo-nos-expertises-droite {
+        width: 100px;
+        height: auto;
+        float: inline-end;
+    }
+    
+
+.speech-nos-expertises {
+    color: #114a69;
+    text-align: justify;
+    margin: auto;
+    font-family: Arial;
+    font-size: 16px;
+
+}
+.speech-nos-expertises-droite {
+    color: #114a69;
+    text-align: justify;
+    margin: auto;
+    font-family: Arial;
+    font-size: 16px;
+    margin-top: 5vw
+}
+
 
 
     .title-nos-expertises {
@@ -1447,6 +1685,17 @@ img {
         font-weight: 900;
 
     }
+    
+    .title-nos-expertises-droite {
+        width: 100%;
+        float: left;
+        font-size: 35px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: end;
+
+    }
+  
 
     .banner_taital_h3 {
         width: 100%;
@@ -1459,7 +1708,7 @@ img {
 
 
     .img_heart {
-        width: 45vh;
+        width: 70vh;
         border-radius: 9vh;
         margin: auto;
         display: block;
@@ -1518,7 +1767,7 @@ img {
         width: 60vh;
         border-radius: 9vh;
         margin: auto;
-        margin-top: 25%;
+        /* margin-top: 15%; */
 
     }
 
@@ -1650,12 +1899,19 @@ img {
 
     .banner_text {
         width: 100%;
-        float: left;
         font-size: 16px;
         color: #114a69;
         margin-left: 115px;
         font-family: ARIAL;
+        line-height: 9px;
 
+    }
+
+    .banner_text_cabinet {
+        font-size: 16px;
+        color: #114a69;
+        margin-left: 15px;
+        font-family: ARIAL;
     }
 
     .my_div_aliza {
@@ -1792,6 +2048,7 @@ img {
     text-align: center;
     padding: 10px 0px;
     border-radius: 40px;
+    margin-top: 20px;
 }
 
 .ensavoir_plus_bt a:hover {
@@ -2386,7 +2643,8 @@ textarea#comment::placeholder {
 }
 
 .names {
-    color: #E91C2A;
+    color: #114A69;
+    font-weight: bold;
 }
 
 .about_page_blue {
@@ -2835,20 +3093,6 @@ hr.hr_vertical {
     padding-top: 30px;
 }
 
-
-
-
-
-
-
-.speech-nos-expertises {
-    color: #114a69;
-    text-align: justify;
-    margin: auto;
-    font-family: Arial;
-    font-size: 16px;
-
-}
 
 
 
@@ -4723,3 +4967,166 @@ input:checked+.slide-container .nav label {
     font-size: smaller;
     color: #455A64;
   }
+
+  
+.notice_slide_item_body {
+    color: #858585;
+    position: relative
+}
+.notice_slide_item_star {
+    margin: 0 .104vw
+}
+.notice_star_icon {
+    height: 10px;
+    position: relative;
+    width: 11px
+}
+.notice_slide_item_stars {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative
+}
+
+.notice_slide_item_stars_wrapper {
+    position: relative
+}
+
+.notice_slide_item_info_usejob {
+    font-size: .625vw
+}
+.notice_slide_item_info_username {
+    font-size: .833vw
+}
+.notice_slide_item_info_txt {
+    margin: auto .781vw
+}
+.notice_slide_item_info_avatar_wrapper {
+    width: 2.396vw
+}
+
+
+.notice_slide_item_info_avatar_wrapper {
+    width: 3.532vw
+}
+
+.notice_slide_item_info {
+    align-items: center;
+    display: flex;
+    position: relative
+}
+
+.notice_slide_item_head {
+    margin: 0 0 1.042vw
+}
+
+.notice_slide_item {
+    width: 88.208vw
+}
+
+.notice_slide .swiper-slide {
+    padding: 0 1.953vw
+}
+.notice_slide {
+    position: relative
+}
+.notice_grid_star {
+    margin: 0 .104vw
+}
+
+.notice_block {
+    position: 7.552vw 0 8.984vw;
+}
+.notice_slide {
+    position: relative;
+}
+.swiper-horizontal{
+    touch-action: pan-y;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial);
+    box-sizing: content-box;
+} 
+
+.support_section {
+    padding: 5.891vw 0 6.901vw;
+}
+
+.notice_section{ 
+    padding: 8.323vw 0 0;
+}
+
+.notice_block_head{
+    padding: 0 4.818vw;
+}
+.notice_title{
+    color: #fff;
+    margin: 0 0 30px;
+    position: relative;
+    text-align: center;
+}
+
+.h3_42{
+    line-height: 4.427vw;
+}
+
+.notice_description{
+    max-width: 57.943vw;
+}
+
+.h6_20{
+    line-height: 3.3vw;
+}
+
+.notice_grids{
+    margin: 0 0 5.859vw;
+}
+
+.notice_grid{
+    padding: 0 2.344vw;
+}
+
+.notice_grid_stars{
+    
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    
+}
+
+.notice_grid_star_icon{
+    height: 2.002vw;
+    position: relative;
+}
+
+
+.h8_bis_14{
+    letter-spacing: 2%;
+}
+
+.notice_grid_stars_info {
+    color: #fff;
+    position: relative;
+}
+
+.notice_block_body{
+    position: relative;
+}
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: clip;
+    list-style: none;
+    z-index: 1;
+}

@@ -41,49 +41,41 @@ def votre_cabinet():
     return render_template('votre_cabinet.html', title='Votre cabinet', apikey=current_app.config['G_API_KEY'])
 
 
-@main.route("/our_expertise", defaults={'lang_code': 'en'})
 @main.route("/notre_expertise", defaults={'lang_code': 'fr'})
 def notre_expertise():
     return render_template('notre_expertise.html', title='Notre expertise', apikey=current_app.config['G_API_KEY'])
 
 
-@main.route("/news", defaults={'lang_code': 'en'})
 @main.route("/actualites", defaults={'lang_code': 'fr'})
 def actualites():
     return render_template('actualites.html', title='Actualités', apikey=current_app.config['G_API_KEY'])
 
 
-@main.route("/contactus", defaults={'lang_code': 'en'})
 @main.route("/nouscontacter", defaults={'lang_code': 'fr'})
 def nouscontacter():
     return render_template('nouscontacter.html', title='Nous contacter', apikey=current_app.config['G_API_KEY'])
 
 
-@main.route("/account", defaults={'lang_code': 'en'})
 @main.route("/espace_clients", defaults={'lang_code': 'fr'})
 def espace_clients():
     return render_template('espace_clients.html', title='Espace Clients', apikey=current_app.config['G_API_KEY'])
 
 
-@main.route("/council_optimization", defaults={'lang_code': 'en'})
 @main.route("/conseil_optimisation", defaults={'lang_code': 'fr'})
 def conseil_optimisation():
     return render_template('/conseil_optimisation.html', title='Conseil Optimisation', apikey=current_app.config['G_API_KEY'])
 
 
-@main.route("/auditing", defaults={'lang_code': 'en'})
 @main.route("/audit", defaults={'lang_code': 'fr'})
 def audit():
     return render_template('/audit.html', title='Audit', apikey=current_app.config['G_API_KEY'])
 
 
-@main.route("/accounting", defaults={'lang_code': 'en'})
 @main.route("/expertise_comptable", defaults={'lang_code': 'fr'})
 def expertise_comptable():
     return render_template('/expertise_comptable.html', title='Expertise Comptable', apikey=current_app.config['G_API_KEY'])
 
 
-@main.route("/legal", defaults={'lang_code': 'en'})
 @main.route("/legal", defaults={'lang_code': 'fr'})
 def legal():
     return render_template('/legal.html', title='Mentions Légales', apikey=current_app.config['G_API_KEY'])
