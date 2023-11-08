@@ -85,7 +85,7 @@
 
 
          <nav class="navbar navbar-expand-md navbar-light bg-light ">
-            <div class="container-fluid">
+            <div class="container-fluid" id="languageSelector">
                <a class="navbar-brand" href="accueil">
                   <img src="/static/medeo_images/Medeo_partners_couleur.png" loading="lazy">
                </a>
@@ -161,7 +161,7 @@
                      </li>
 
                   </ul>
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row" id="languagelist">
                      <li class="nav-item">
                         <a class="nav-link" href="#">
                            <div class="nav_icone">
@@ -189,61 +189,28 @@
                            </div>
                         </a>
                      </li>
-
-
-
-
-                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='en') }}">
-
+                     <li data-value="" class="selected"></li>
+                     <li class="nav-item" data-value="en">
+                        <a class="nav-link">
                            <img class="icones_langues" src="{{url_for('static',filename='flags/usa.png') }}"
                               loading="lazy">
                         </a>
                      </li>
-
-                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='fr') }}">
-
+                     <li class="nav-item" data-value="fr">
+                        <a class="nav-link">
                            <img class="icones_langues" src="{{url_for('static',filename='flags/france.png') }}"
                               loading="lazy">
                         </a>
                      </li>
-                     <div class="dropdown-menu menuderoulant" aria-labelledby="navbarDropdown_langue">
-                        <a id="reloadButton" class="dropdown-item menuderoulant" href="{{ url_for(request.endpoint, lang_code='fr') }}">
-                            <img class="navbar-img" src="{{ url_for('static', filename='flags/fr-flag.png') }}"
-                                 alt="Français">
-                        </a>
-                        <a class="dropdown-item menuderoulant" href="{{ url_for(request.endpoint, lang_code='en') }}">
-                            <img class="navbar-img" src="{{ url_for('static', filename='flags/us-flag.png') }}"
-                                 alt="English">
-                        </a>
-                    </div>
-                     </li>
-                     <div id="languageSelector">
-                        <label style="color:white;" for="languageSelect">Select Language:</label>
-                        <select id="languageSelect">
-                           <option value="fr">Français</option>
-                           <option value="en">English</option>
-                           
-                        </select>
-                     </div>
-                     <div class="dropdown-menu menuderoulant" aria-labelledby="navbarDropdown_langue">
-                        <a id="frButton" class="dropdown-item menuderoulant" href="{{ url_for(request.endpoint, lang_code='fr') }}">
-                            <img class="navbar-img" src="{{ url_for('static', filename='flags/fr-flag.png') }}"
-                                 alt="Français">
-                        </a>
-                        <a id="enButton" class="dropdown-item menuderoulant" href="{{ url_for(request.endpoint, lang_code='en') }}">
-                            <img class="navbar-img" src="{{ url_for('static', filename='flags/us-flag.png') }}"
-                                 alt="English">
-                        </a>
-                    </div>
-                    </li>
-                    
-                   
-                    
+                  </ul>
                </div>
 
-               <!-- 
+
+
+
+            </div>
+
+            <!-- 
 
                      
                      <li class="nav-item dropdown">
@@ -274,7 +241,7 @@
                         </ul>
                     </li>
                </ul> -->
-            </div>
+
             <!-- </div> -->
 
          </nav>
@@ -480,41 +447,59 @@
             .catch(error => console.error(error));
       }
 
-      // Function to automatically translate content based on user's selected or detected language
-      function autoTranslateContent() {
-         const languageSelector = document.getElementById('languageSelect');
-         const content = document.getElementById('content');
-         console.log(content)
-         //const contents = document.querySelectorAll
-         // Get the selected or detected language
-         const selectedLanguage = languageSelector.value;
-
-         // Translate content based on the selected or detected language
-         content.querySelectorAll('[data-translate]').forEach(element => {
-            const textKey = element.getAttribute('data-translate');
-
-            // Translate and replace the text
-            translateText(element.textContent, selectedLanguage, translatedText => {
-               element.textContent = translatedText;
-            });
-         });
+      function encodeBrTag(text) {
+         return text.replace(/<br>/g, '&lt;br&gt;');
       }
 
-      // Add event listener to the language selector
-      const languageSelector = document.getElementById('languageSelect');
-      languageSelector.addEventListener('change', autoTranslateContent);
+      function decodeBrTag(text) {
+         return text.replace(/&lt;br&gt;/g, '<br>');
+      }
+
+      // Function to automatically translate content based on user's selected or detected language
+      function autoTranslateContent() {
+         const languageList = document.getElementById('languagelist');
+         const languageOptions = languageList.querySelectorAll('li')
+
+         languageOptions.forEach(option => {
+            option.addEventListener('click', () => {
+               // Get the selected language value
+               const selectedValue = option.getAttribute('data-value');
+
+               // Update the selected class
+               languageOptions.forEach(opt => opt.classList.remove('selected'));
+               option.classList.add('selected');
+
+               // You can perform actions based on the selected language here
+               console.log('Selected language:', selectedValue);
+               if (selectedValue == 'fr') {
+                  location.reload()
+               } else if (selectedValue == 'en') {
+                  // Translate content based on the selected or detected language
+                  const content = document.getElementById('content');
+                  content.querySelectorAll('[data-translate]').forEach(element => {
+                     const textKey = element.getAttribute('data-translate');
+                     //const enctextContent = encodeBrTag(element.textContent)
+
+                     // Translate and replace the text
+                     translateText(element.textContent, selectedValue, translatedText => {
+                        //const decotextContent = decodeBrTag(translatedText)
+                        element.textContent = translatedText;
+                     });
+                  });
+               } else {
+                  console.log('unknown language')
+               }
+            });
+         });
+
+
+
+      }
 
       // Automatically translate content on page load (you can also detect user's language here)
       autoTranslateContent();
 
 
-
-      document.getElementById("reloadButton").addEventListener("click", function(event) {
-        // Prevent the default link behavior
-        event.preventDefault();
-        // Reload the page
-        location.reload();
-    });
 
 
    </script>
