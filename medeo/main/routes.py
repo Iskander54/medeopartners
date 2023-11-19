@@ -31,7 +31,7 @@ def before_request():
 @main.route("/home", defaults={'lang_code':'en'})
 def home():
     page = request.args.get('page', 1, type=int)
-    return render_template('home.html')
+    return render_template('home.html',apikey=current_app.config['G_API_KEY'])
 
 @main.route("/your_firm",defaults={'lang_code':'en'})
 @main.route("/votre_cabinet",defaults={'lang_code':'fr'})

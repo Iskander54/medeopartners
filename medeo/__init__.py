@@ -19,9 +19,11 @@ mail = Mail()
 
 def create_app(config_class=Config):
     app = Flask(__name__)
-    sslify = SSLify(app)
+    # sslify = SSLify(app)
 
     app.config.from_object(Config)
+    print(app.config['G_API_KEY'])
+
     # db.init_app(app)
     bcrypt.init_app(app)
     login_manager.init_app(app)

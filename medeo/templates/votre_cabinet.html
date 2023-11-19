@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
+<div id="content">
    <div class="loader-container">
       <div id="foregid" class="foreg"></div>
       <span id="loaderid" class="loader"></span>
    </div>
 
 
-<div class="page-heading-cabinet animate-top">
+<div data-translate class="page-heading-cabinet animate-top">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -56,8 +57,8 @@
         {{_('PARTNERS, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant
         l\'association et la complémentarité de ses fondateurs :')}}
 
-        <a class="names" href="{{_('votre_cabinet#carousel_partners')}}">Israel HAIKOU</a> et
-        <a class="names" href="{{_('votre_cabinet#carousel_partners')}}">Avi GOZLANE</a> {{_('ont fondé le cabinet en
+        <a class="names" href="{{_('#lequipe')}}">Israel HAIKOU</a> et
+        <a class="names" href="{{_('#lequipe')}}">Avi GOZLANE</a> {{_('ont fondé le cabinet en
         octobre 2022. ')}}
         <br><br>
 
@@ -349,7 +350,7 @@
 
 
 
-<div class="page-heading-cabinet animate-top">
+<div id="lequipe" class="page-heading-cabinet animate-top">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -505,7 +506,7 @@
 
 
 <br><br><br>
-
+</div>
 <script>
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -661,5 +662,22 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+</script>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 </script>
 {% endblock content %}

@@ -35,6 +35,8 @@ class Config:
     MAIL_USE_TLS = True
 
     RECAPTCHA_OPTIONS= {'theme':'black'}
+    G_API_KEY = os.environ.get('G_API_KEY')
+
     
 
     

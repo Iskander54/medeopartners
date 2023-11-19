@@ -136,161 +136,679 @@
   </div>
 
 </div>
-<br/>
-<br/>
-<br/>
-<div class="page-heading-cabinet animate-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="banner_taital" style="margin-top: 20px;">{{_('Témoignages ')}}</h1>
-        <br>
+
+
+
+
+<body>
+  <section class="témoignages">
+    <div class="container-fluid">
+      <div class="row mx-0">
+        <div class="col-lg-12">
+          <h1 class="banner_taital">Témoignages</h1>
+        </div>
+      </div>
+      <div class="content_NEW">
+        <div class="your-class">
+          <div class="témoignages-card bg-blue">
+            <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
+            <div class="header">
+              <div class="row mx-0">
+                <div class="col-lg-6">
+                  <div class="main-image">
+                    <img
+                      src="{{ url_for('static', filename='images/fintis_logo.png') }}"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <h5>
+                Cabinet de conseil en investissement
+              </h5>
+              <p>
+                MEDEO est un partenaire efficace, à l'écoute et soucieux de nos besoins très souvent changeants
+            
+              </p>
+            </div>
+          </div>
+          <div class="témoignages-card bg-red">
+            <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
+            <div class="header">
+              <div class="row mx-0">
+                <div class="col-lg-6">
+                  <div class="main-image">
+                    <img
+                      src="{{ url_for('static', filename='images/energy_consulting_logo.png') }}"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <h5>
+                Cabinet de consulting en ingénierie
+
+              </h5>
+              <p>
+                
+
+                          
+              </p>
+            </div>
+          </div>
+          <div class="témoignages-card bg-grey">
+            <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
+            <div class="header">
+              <div class="row mx-0">
+                <div class="col-lg-6">
+                  <div class="main-image">
+                    <img
+                      src="{{ url_for('static', filename='images/empruntis_logo.png') }}"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <h5>
+                Courtier immobilier, courtier prêt immobilier
+              </h5>
+              <p>
+                Nous sommes fiers de notre partenariat avec MEDEO. Une entente joviale, une rigueur à tous les étages et surtout une capacité à dépasser nos attentes en termes de qualité de service.
+
+              </p>
+            </div>
+          </div>
+          <div class="témoignages-card bg-blue">
+            <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
+            <div class="header">
+              <div class="row mx-0">
+                <div class="col-lg-6">
+                  <div class="main-image">
+                    <img
+                      src="{{ url_for('static', filename='images/bamana_solutions_logo.jpeg') }}"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <h5>
+                Cabinet de conseil en numérique et transformation digitale
+              </h5>
+              <p>
+                Les compétences et l'expertise d'Avi et Israel nous ont beaucoup aidé dans la création de notre entreprise.
+                La réactivité et la disponibilité des associés sont très appréciables durant une phase aussi dense et stressante que la création d'une entreprise.
+
+              </p>
+            </div>
+          </div>
+          <div class="témoignages-card bg-blue">
+            <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
+            <div class="header">
+              <div class="row mx-0">
+                <div class="col-lg-6">
+                  <div class="main-image">
+                    <img
+                      src="{{ url_for('static', filename='images/fintis_logo.png') }}"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <h5>
+                Lorem consipsum dolor sit gffamet, consectetur adipis cing
+                elit,
+              </h5>
+              <p>
+                sed do eiusmod tempor incididunt utquis nostrud exercitation
+                ullamco laboris
+              </p>
+            </div>
+          </div>
+          <div class="témoignages-card bg-red">
+            <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
+            <div class="header">
+              <div class="row mx-0">
+                <div class="col-lg-6">
+                  <div class="main-image">
+                    <img
+                      src="{{ url_for('static', filename='images/energy_consulting_logo.png') }}"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <h5>
+                Lorem consipsum dolor sit gffamet, consectetur adipis cing
+                elit,
+              </h5>
+              <p>
+                sed do eiusmod tempor incididunt utquis nostrud exercitation
+                ullamco laboris
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-
-<div class="animate-top">
-  <div class="carousel">
-    <ul class="slides">
-      <input type="radio" name="radio-buttons" id="img-1" checked>
-      <li class="slide-container">
-        <div class="slide-image">
-          <div class="encart_rouge_nous_contacter">
-            <img class="image_temoignage" src="{{ url_for('static', filename='images/fintis_logo.png') }}"
-                 loading="lazy">
-            <div class="carousel_careers">
-              {{ _('MEDEO est un partenaire efficace, à l\'écoute et soucieux de nos besoins très souvent changeants') }}
-            </div>
-          </div>
+  <section class="partenaires">
+    <div class="container-fluid">
+      <div class="row mx-0">
+        <div class="col-lg-12">
+          <h1 class="banner_taital">Partenaires</h1>
         </div>
-
-        <div class="carousel-controls">
-          <label for="img-3" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-2" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-2">
-      <li class="slide-container">
-        <div class="slide-image">
-          <div class="encart_bleu_nous_contacter">
-            <img class="image_temoignage" src="{{ url_for('static', filename='images/empruntis_logo.png') }}"
-                 loading="lazy">
-            <div class="carousel_careers">
-              {{ _('Nous sommes fiers de notre partenariat avec MEDEO. Une entente joviale, une rigueur à tous les étages et surtout une capacité à dépasser nos attentes en termes de qualité de service.') }}
-            </div>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <label for="img-1" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-3" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-3">
-      <li class="slide-container">
-        <div class="slide-image">
-          <div class="encart_gris_nous_contacter">
-            <img class="image_temoignage" src="{{ url_for('static', filename='images/bamana_solutions_logo.jpeg') }}"
-                 width="200vw" height="200vw" loading="lazy">
-            <div class="carousel_careers">
-              {{ _('Les compétences et l\'expertise d\'Avi et Israel nous ont beaucoup aidé dans la création de notre entreprise.') }}
-              {{ _('La réactivité et la disponibilité des associés sont très appréciables durant une phase aussi dense et stressante que la création d\'une entreprise.') }}
-            </div>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <label for="img-2" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-1" class "next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-4">
-      <li class="slide-container">
-        <div class="slide-image">
-          <div class="encart_rouge_nous_contacter">
-            <img class="image_temoignage" src="{{ url_for('static', filename='images/energy_consulting_logo.png') }}"
-                 loading="lazy">
-            <div class="carousel_careers">
-              {{ _('Les compétences et l\'expertise d\'Avi et Israel nous ont beaucoup aidé dans la création de notre entreprise.') }}
-              {{ _('La réactivité et la disponibilité des associés sont très appréciables durant une phase aussi dense et stressante que la création d\'une entreprise.') }}
-            </div>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <label for="img-3" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-1" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <div class="carousel-dots">
-        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-        <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
-        <label for="img-4" class="carousel-dot" id="img-dot-4"></label>
       </div>
-    </ul>
-  </div>
-</div>
 
+      <div class="content_NEW">
+        <div class="your-class-2">
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/axonaut.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Axonaut</h5>
+              <p class="text folded">
+                Axonaut est un logiciel de gestion intégrée, optimisant les opérations des PME avec des outils pour la comptabilité, la facturation, le CRM, les RH et la gestion de projet. Sa plateforme intuitive facilite la centralisation et l'efficacité des processus d'entreprise.
+              </p>
+              <button class="btn btn-outline-primary"onclick="toggleText(this)"><i class="fa-solid fa-arrow-down-long" ></i></button>
+              
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/axonaut.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Axonaut</h5>
+              <p class="text folded">
+                Axonaut est un logiciel de gestion intégrée, optimisant les opérations des PME avec des outils pour la comptabilité, la facturation, le CRM, les RH et la gestion de projet. Sa plateforme intuitive facilite la centralisation et l'efficacité des processus d'entreprise.
+              </p>
+              <button class="btn btn-outline-primary"onclick="toggleText(this)"><i class="fa-solid fa-arrow-down-long" ></i></button>
 
-<br /><br /><br />
-<div class="page-heading-cabinet animate-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="banner_taital">{{_('Partenaires ')}}</h1>
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/bamana_solutions_logo.jpeg') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Bamana</h5>
+              <p class="text folded">
+                Bamana Solutions est un cabinet de conseil spécialisé dans le numérique, offrant une expertise approfondie pour accompagner les entreprises dans leur transformation digitale et l'optimisation de leurs processus technologiques.
+              </p>
+              <button class="btn btn-outline-primary"onclick="toggleText(this)"><i class="fa-solid fa-arrow-down-long" ></i></button>
+
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/dext.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Dext</h5>
+              <p class="text folded">
+                
+              Dext est une solution numérique de gestion des finances et des dépenses, conçue pour simplifier et automatiser la comptabilité des entreprises de toutes tailles, en intégrant la collecte de données, le classement et l'analyse des transactions financières.
+              </p>
+              <button class="btn btn-outline-primary"style="cursor: pointer;" onclick="toggleText(this)"><i class="fa-solid fa-arrow-down-long" ></i></button>
+              cursor: pointer;
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/docusign.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Docusign</h5>
+              <p class="text folded">
+                DocuSign offre une solution de signature électronique sécurisée et efficace, facilitant la gestion des accords et la digitalisation des processus documentaires pour les entreprises et les particuliers.
+              </p>
+              <button class="btn btn-outline-primary"style="cursor: pointer;" onclick="toggleText(this)"><i class="fa-solid fa-arrow-down-long" ></i></button>
+
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/gocardless.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">GoCardless</h5>
+              <p class="text folded">
+                GoCardless est un service de paiement spécialisé dans la gestion simplifiée des prélèvements bancaires automatiques, aidant les entreprises à collecter et gérer les paiements récurrents de manière efficace et sécurisée.
+              </p>
+              <button class="btn btn-outline-primary"style="cursor: pointer;" onclick="toggleText(this)"><i class="fa-solid fa-arrow-down-long" ></i></button>
+
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/google_cloud.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Google Cloud</h5>
+              <p class="text folded">
+                Google Cloud fournit une suite complète de services de cloud computing, offrant des solutions de stockage de données, de calcul en nuage et d'analyse avancée, destinées à favoriser l'innovation et l'efficacité opérationnelle des entreprises.
+              </p>
+              <button class="btn btn-outline-primary"onclick="toggleText(this)">Plus/Moins</button>
+
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/inpi.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Inpi</h5>
+              <p class="text folded">
+                L'INPI (Institut National de la Propriété Industrielle) est l'organisme français officiel dédié à l'enregistrement et à la protection des brevets, marques, dessins et modèles, soutenant l'innovation et la compétitivité des entreprises et inventeurs.
+              </p>
+              <button class="btn btn-outline-primary"onclick="toggleText(this)">Plus/Moins</button>
+
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/sage.jpeg') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Sage</h5>
+              <p class="text folded">
+                Sage est un leader mondial en solutions de comptabilité et de gestion d'entreprise, offrant des logiciels innovants pour faciliter la finance, la paie et les ressources humaines, adaptés aux besoins des petites et moyennes entreprises.
+              </p>
+              <button class="btn btn-outline-primary"onclick="toggleText(this)">Plus/Moins</button>
+
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/sage2.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Sage</h5>
+              <p class="text folded">
+                Sage est un leader mondial en solutions de comptabilité et de gestion d'entreprise, offrant des logiciels innovants pour faciliter la finance, la paie et les ressources humaines, adaptés aux besoins des petites et moyennes entreprises.
+              </p>
+              <button class="btn btn-outline-primary"onclick="toggleText(this)">Plus/Moins</button>
+
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/silae.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Silae</h5>
+              <p class="text folded">
+                Silae est un logiciel de paie et de gestion des ressources humaines, conçu pour optimiser et automatiser les processus RH, offrant une solution complète et intuitive adaptée aux besoins spécifiques des entreprises françaises.
+              </p>
+              <button class="btn btn-outline-primary"onclick="toggleText(this)">Plus/Moins</button>
+
+            </div>
+          </div>
+          <div class="parnter-card">
+            <div class="header">
+              <img
+                src="{{ url_for('static', filename='images/silae.png') }}"
+                alt=""
+              />
+            </div>
+            <div class="body">
+              <h5 class="title_partners">Silae</h5>
+              <p class="text folded">
+                Silae est un logiciel de paie et de gestion des ressources humaines, conçu pour optimiser et automatiser les processus RH, offrant une solution complète et intuitive adaptée aux besoins spécifiques des entreprises françaises.
+              </p>
+              <button class="btn btn-outline-primary"onclick="toggleText(this)">Plus/Moins</button>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<br />
-<br />
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
 
-<section class="container section_carousel animate-top" style="margin-bottom: 15%;">
-  <article>
-    <div class="div_carousel">
-      <ul class="carousel-ul">
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/axonaut.png') }}" loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/dext.png') }}" loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/docusign.png') }}" loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/gocardless.png') }}" loading="lazy"></li>
-      </ul>
-    </div>
-    <div class="div_carousel">
-      <ul class="carousel-ul">
-        <li class="carousel-li"><img width="1200px;" src="{{url_for('static',filename='images/google_cloud.png') }}"
-            loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/bamanasolutions.png') }}" loading="lazy">
-        </li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/inpi.png') }}" loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/sage2.png') }}" loading="lazy"></li>
-      </ul>
-    </div>
-    <div class="div_carousel">
-      <ul class="carousel-ul">
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/silae.png') }}" loading="lazy"></li>
-        <li class="carousel-li"><img src="{{url_for('static',filename='images/sobank.png') }}" loading="lazy"></li>
-      </ul>
-    </div>
-  </article>
-</section>
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+  ></script>
+</body>
+<script>
+  //$('.your-class, .your-class-2').css('overflow-x', 'hidden');
+  $(".your-class").slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  });
+
+  $(".your-class-2").slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 6,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  });
+
+  function toggleText(button) {
+    var text = button.previousElementSibling;
+    var icon = button.querySelector('i');
+    
+    if (text.classList.contains("folded")) {
+        text.classList.remove("folded");
+        icon.className = "fa-solid fa-arrow-up-long";
+    } else {
+        text.classList.add("folded");
+        icon.className = "fa-solid fa-arrow-up-long";
+    }
+}
+</script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Roboto', sans-serif;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+  
+    .bg-blue{
+        background-color:#0D4A78;
+    }
+
+    .bg-red{
+        background-color: #E91D2A;
+    }
+
+    .bg-grey{
+        background-color: #B1C2D0;
+    }
+
+  .témoignages-card{
+    padding: 2rem;
+
+    border-radius: 65px;
+    margin: 1rem;
+    color: #fff;
+    position: relative;
+    height: 330px;
+  }
+  .témoignages-card .header {
+    margin-top: 1.2rem;
+}
+
+
+  .témoignages-card .body{
+    margin-top: 1rem;
+    width: 70%;
+  }
+
+  .témoignages-card .body h5{
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+  }
+  .témoignages-card .body p{
+    font-weight: 100;
+    font-size: 15px;
+    line-height: 1.3;
+    margin-top: 0.25rem;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+  }
+
+  .main-image{
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+  }
+
+  .main-image img{
+    display: inline-block;
+    width: 100%;
+    border-radius: 50%;
+    margin: auto;
+  }
+
+  .quotes-img {
+    position: absolute;
+    right: 7%;
+    width: 90px;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: black;
+}
+.slick-dots li button:before{
+    font-size: 18px;
+}
+
+.slick-dots li.slick-active button:before{
+    color: #0D4A78;
+    opacity: 1;
+}
+
+.partenaires .slick-dots li.slick-active button:before{
+    color: #E91D2A;
+    opacity: 1;
+}
+
+.parnter-card .body{
+    margin-top: 1rem;
+}
+
+.parnter-card .body h5{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.parnter-card .body h5, .parnter-card .body p{
+    color: #0D4A78;
+}
+
+.parnter-card .body p{
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+.slider-container {
+    max-width: 100%;
+    overflow: hidden !important;
+}
+
+
+
+.parnter-card .header img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.parnter-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.témoignages h1, .partenaires h1{
+    color: #0D4A78;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-align: center;
+}
+
+section{
+    margin: 3rem 0;
+}
+
+.slick-list {
+    margin: 2rem 0;
+}
+
+.slick-dots {
+    bottom: 0px;
+}
+
+.slick-initialized { overflow: hidden; }
+
+</style>
 
 
 

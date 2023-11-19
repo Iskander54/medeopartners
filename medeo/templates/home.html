@@ -1,341 +1,343 @@
 {% extends "layout.html" %}
-{% block content %}
-<div id="splash-screen-id" class="splash-screen">
-  <img src="{{url_for('static', filename='images/medeo_logo.png') }}" alt="Medeo Logo" loading="lazy"
-    class="image_accueil_loader">
-</div>
+{% block content %}`
+<div id="content">
 
-
-<div class="container-fluid animate-top">
-  <div class="row">
-    <div class="col-xs-8 col-sm-8">
-      <h1 class="title_bienvenu_home">{{_('Bienvenue chez Medeo Partners')}}</h1>
-
-      <p class="banner_text">
-        {{_('Forts de plus 10 ans d\'expertise en comptabilité, et fiscalité, nous')}}<br>
-        {{_('accompagnons nos clients de tout secteurs dans leurs démarches')}}<br>
-        {{_('de création d\'entreprise, de projets, et d\'optimisation.')}}<br />
-      </p>
-
-      <div class="readmore_bt">
-        <a href="{{_('notre_expertise')}}">{{_('Plus d\'informations')}}</a>
-      </div>
-
-    </div>
-    <div class="col-xs-4 col-sm-4">
-      <img class="img_home" src="{{ url_for('static',filename='images/medeo_talking.png') }}" loading="lazy">
-    </div>
+  <div id="splash-screen-id" class="splash-screen">
+    <img src="{{url_for('static', filename='images/medeo_logo.png') }}" alt="Medeo Logo" loading="lazy"
+      class="image_accueil_loader">
   </div>
-</div>
 
-<div class="container animate-top">
-  <div class="row">
-    <h1 class="banner_taital">{{_('Notre expertise à votre service')}}</h1>
-    <br>
-    <p class="what_text_1">{{_('Medeo, "Cure your business"')}}</p>
-
-  </div>
-</div>
-<br>
-<div class="container-fluid animate-top">
-  <div class="row">
-    <!-- <div class="col-sm-3 col-md-6 col-lg-2">
-    </div> -->
-    <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
-      <img src="{{ url_for('static',filename='images/accounting.png') }}" loading="lazy"
-        style="max-width: 70px; margin-left: 40%;"><br>
-      <h2 class="title_expertise">{{_('Expertise <br>Comptable')}}</h2>
-      <div class="">`</div>
-      <div class="presentation_expertises_home">
-        {{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des
-        services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
-      </div>
-    </div>
-    <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
-      <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px; margin-left: 40%;"
-        loading="lazy"><br>
-      <h2 class="title_expertise">{{_('Audit')}}<br><br></h2>
-      <div class="">`</div>
-      <div class="presentation_expertises_home">
-        {{_('Notre cabinet comptable est spécialisé dans l\'audit et la certification
-        des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons en étroite collaboration
-        avec nos clients pour assurer la conformité de leurs comptes avec les normes comptables et fiscales en
-        vigueur.')}}
-      </div>
-    </div>
-    <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
-      <img src="{{ url_for('static',filename='images/budget.png') }}" style="max-width: 70px; margin-left: 40%;"
-        loading="lazy"><br>
-      <h2 class="title_expertise">{{_('Conseil <br>optimisation ')}}</h2>
-      <div class="">`</div>
-      <div class="presentation_expertises_home">
-        {{_('Nos services d\'optimisation d\'entreprise incluent l\'analyse de la
-        performance, l\'identification des leviers de croissance, la mise en place de plans d\'action pour
-        l\'amélioration
-        de la rentabilité, la gestion de projets de transformation, la gestion du changement, l\'optimisation de la
-        chaîne d\'approvisionnement et l\'analyse des coûts.')}}</div>
-
-    </div>
-    <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
-      <img src="{{ url_for('static',filename='images/ux.png') }}" style="max-width: 70px; margin-left: 40%;"
-        loading="lazy"><br>
-      <h2 class="title_expertise"> {{_('Service <br>Informatique')}}</h2>
-      <div class="">`</div>
-      <div class="presentation_expertises_home">
-        {{_('Notre département informatique gère tout type de problématiques liés
-        aux systèmes d\'information, à la gestion de vos données clients ainsi qu\'à l\'amélioration de vos process.')}}
-      </div>
-
-    </div>
-    <!-- <div class="col-sm-3 col-md-6 col-lg-2">
-    </div> -->
-  </div>
-</div>
-
-
-<br/>
-<br/>
-<br/>
-
-
-<div class="animate-top">
-  <div class="carousel">
-    <ul class="slides">
-      <input type="radio" name="radio-buttons" id="img-1" checked />
-      <li class="slide-container">
-        <div class="slide-image">
-          <div class="encart_bleu">
-            <img class="images_carousel_home" src="{{ url_for('static',filename='images/social.jpeg') }}">
-            <h2 style="color: white;text-align: center;">{{_('Social')}}</h2>
-            <div class="carousel_home_txt">
-              {{_('Retrouvez les dernières actualités Sociales')}}
-              <div class="readmore_news" style="align-items:center">
-                <a href="{{_('actualites#type=.all-types&medium=.social')}}">{{_('Plus d\'actualités')}}</a>
-              </div>
-            </div><br>
-          </div>
-          <div class="encart_rouge">
-            <h1 class="banner_taital_news_carousel_home" >{{_('Social')}}</h1>
-            <p class="title_carousel">
-              {{_('Une semaine de jurisprudence sociale à la Cour de cassation')}}
-            </p>
-            <p class="text-start-home">
-              {{_('Exécution du contrat Le salarié qui relate ou témoigne de faits constitutifs d\'un délit ou
-              d\'un crime dont il aurait eu connaissance dans l\'exercice de ses fonctions n\'est pas soumis à
-              l\'exigence d\'agir de manière désintéressée au sens de l\'article 6 de la loi 2016-1691 du 9
-              décembre 2016. Il ne peut pas être licencié pour ce motif, sauf mauvaise foi, laquelle ne peut
-              résulter que de la connaissance de la fausseté des faits qu\'il dénonce et non de la seule
-              circonstance que les faits dénoncés ne sont pas établis (Cass. soc. 13-9-2023 n° 21-22.301 FS-B).
-              Si des mesures peuvent être réservées à certains salariés, c\'est à la condition que tous ceux
-              placés dans une situation identique, au regard de l\'avantage en cause, aient la possibilité d\'en
-              bénéficier, à moins que la différence de traitement soit justifiée par des raisons objectives et
-              pertinentes. Une cour d\'appel ne peut pas décider que la différence de qualification entre deux
-              salariés lors de leur embauche constitue une raison objective à la différence de salaire dont se
-              plaint l\'un d\'eux, sans préciser en quoi cette différence entre les salariés, respectivement
-              engagés en qualité d\'assistant journaliste reporter d\'images stagiaire et d\'assistant
-              journaliste reporter d\'images, constitue une raison objective et pertinente justifiant la
-              disparité de traitement dans l\'exercice des mêmes fonctions de grand reporter groupe (Cass. soc.
-              13-9-2023 n° 22-11.338 F-PB). Dès lors que les données issues du terminal de saisie portatif
-              destinées aux relevés des consommations d\'énergie pour ERDF/GRDF permettent également de
-              contrôler et de surveiller l\'activité des salariés et ont été utilisées par l\'employeur afin de
-              collecter et d\'exploiter des informations concernant personnellement le salarié, il en résulte
-              que, s\'agissant d\'un traitement de données à caractère personnel, l\'employeur est tenu de
-              procéder à une déclaration préalable auprès de la Cnil et d\'informer les salariés sur
-              l\'utilisation de ce dispositif à cette fin. A défaut, ce moyen de preuve est illicite (Cass. soc.
-              13-9-2023 n° 22-14.461 F-D).')}}
-            </p>
-            <div class="readmore_bt">
-              <a href="{{_('news/social/news_1')}}">{{_('Plus d\'informations')}}</a>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="carousel-controls">
-          <label for="img-3" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-2" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-2" />
-      <li class="slide-container">
-        <div class="slide-image">
-          <div class="encart_bleu">
-            <img class="images_carousel_home" src="{{ url_for('static',filename='images/juridique.jpeg') }}">
-            <h2 style="color: white;text-align: center;">{{_('Juridique')}}</h2>
-            <div class="carousel_home_txt">
-              {{_('Retrouvez les dernières actualités Juridiques')}}
-              <div class="readmore_news" style="align-items:center">
-                <a href="{{_('actualites#type=.all-types&medium=.juridique')}}">{{_('Plus d\'actualités')}}</a>
-              </div>
-            </div><br>
-          </div>
-          <div class="encart_rouge">
-            <h1 class="banner_taital_news_carousel_home">{{_('Juridique')}}</h1>
-            <p class="title_carousel">
-              {{_('Une semaine de jurisprudence sociale à la Cour de cassation')}}
-            </p>
-            <p class="text-start-home">
-              Au printemps dernier, la Bibliothèque nationale de France avait ouvert une souscription publique
-              afin d\'acquérir un exceptionnel manuscrit enluminé réalisé vers 1370 pour le roi de France
-              Charles V. Mais, début septembre, la somme de 1,6 M€ nécessaire à cette acquisition n\'était pas
-              encore réunie. C\'est pourquoi l\'État se tourne désormais vers le mécénat d\'entreprise en vue de
-              collecter la somme de 460 000 €. À ce titre, la ministre de la Culture a publié un avis visant à
-              informer les entreprises soumises à l\'impôt sur les sociétés, d\'après leur bénéfice réel,
-              qu\'elles peuvent profiter d\'une réduction d\'impôt allant jusqu\'à 90 % des dons effectués en
-              contribution à l\'achat de cette œuvre présentant un intérêt majeur pour le patrimoine national.
-              Ànoter : les versements ne sont pas déductibles des résultats imposables de l\'entreprise
-              donatrice. Pour cela, les entreprises intéressées doivent adresser, en double exemplaire, une
-              offre de versement, établie selon le modèle prévu à cet effet, à la direction générale des
-              patrimoines et de l\'architecture, service des musées de France, 182 rue Saint-Honoré, 75001
-              Paris. Puis, les dons doivent être acceptés par les ministres de la Culture et du Budget. La
-              réduction s\'applique sur l\'impôt dû au titre de l\'exercice d\'acceptation des versements. Et
-              attention, elle ne peut pas excéder 50 % du montant de cet impôt. Précision : l\'appel aux dons
-              est ouvert jusqu\'au 31 décembre 2023.
-            </p>
-
-
-            <div class="readmore_bt">
-              <a href="{{_('news/juridique/news_12')}}">{{_('Plus d\'informations')}}</a>
-            </div>
-
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <label for="img-1" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-3" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-3" />
-      <li class="slide-container">
-        <div class="slide-image">
-          <div class="encart_bleu">
-            <img class="images_carousel_home" src="{{ url_for('static',filename='images/work.jpeg') }}">
-            <h2 style="color: white;text-align: center;">{{_('Fiscalité')}}</h2>
-            <div class="carousel_home_txt">
-              {{_('Retrouvez les dernières actualités Fiscales')}}
-              <div class="readmore_news" style="align-items:center">
-                <a href="{{_('actualites#type=.all-types&medium=.social')}}">{{_('Plus d\'actualités')}}</a>
-              </div>
-            </div><br>
-          </div>
-          <div class="encart_rouge">
-            <h1 class="banner_taital_news_carousel_home">{{_('Fiscalité')}}</h1>
-            <p class="title_carousel">
-              {{_('Plus que quelques jours pour opter pour le régime de l\'auto-entrepreneur en 2024')}}
-            </p>
-            <p class="text-start-home">
-              {{_('Les exploitants individuels soumis au régime micro-BIC ou micro-BNC et relevant du régime
-              micro-social ont la possibilité d\'opter pour le régime de l\'auto-entrepreneur prévu à l\'article
-              151-0 du CGI, sous réserve que le montant des revenus nets du foyer fiscal soit inférieur ou égal,
-              pour une part de quotient familial, à 27 478 €. Les exploitants qui optent pour le régime de
-              l\'auto-entrepreneur s\'acquittent auprès d\'un seul interlocuteur de l\'impôt sur le revenu et de
-              l\'ensemble des cotisations et contributions de sécurité sociale par des versements libératoires
-              mensuels ou trimestriels égaux à un pourcentage du chiffre d\'affaires ou des recettes réalisés au
-              cours de la période considérée.
-
-              Pour l\'imposition des revenus perçus en 2024, l\'option pour le régime de l\'auto-entrepreneur
-              doit être exercée au plus tard le 30 septembre 2023 auprès des organismes sociaux compétents.
-
-              A noter :
-              En cas de création d\'entreprise, l\'option pour le régime de l\'auto-entrepreneur doit être
-              exercée au plus tard le dernier jour du troisième mois qui suit celui de la création de
-              l\'entreprise et peut être formulée auprès du guichet unique électronique des formalités
-              d\'entreprises.')}}
-
-              {{_('© Editions Francis Lefebvre - La Quotidienne')}}
-            <div class="readmore_bt">
-              <a href="{{_('news/fiscal/news_1234')}}">{{_('En savoir plus')}}</a>
-            </div>
-
-          </div>
-
-        </div>
-        <div class="carousel-controls">
-          <label for="img-2" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-1" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <div class="carousel-dots">
-        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-        <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
-      </div>
-    </ul>
-  </div>
-</div>
-
-<div class="container animate-top">
-  <a href="{{_('nouscontacter#nous_ecrire')}}">
+  <div class="container-fluid animate-top">
     <div class="row">
-      <br>
-      <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
-      <br>
-      <div class="cocon effet_ombre">
-        <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
+      <div class="col-xs-8 col-sm-8">
+        <h1 data-translate class="title_bienvenu_home">{{_('Bienvenue chez Medeo Partners')}}</h1>
 
-        <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
-        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
-          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
-          <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
-        </span>
+        <p data-translate class="banner_text">
+          {{_('Forts de plus 10 ans d\'expertise en comptabilité, et fiscalité, nous')}}<br>
+          {{_('accompagnons nos clients de tout secteurs dans leurs démarches')}}<br>
+          {{_('de création d\'entreprise, de projets, et d\'optimisation.')}}<br />
+        </p>
 
-      </div>
-    </div>
-  </a>
-
-  <a href="{{_('nouscontacter#nous_rejoindre')}}">
-    <div class="row">
-      <div class="cocon effet_ombre">
-        <div class="my_div_aliza_two col-xs-2 col-sm-3 col-md-6 col-lg-5">
+        <div class="readmore_bt">
+          <a data translate href="{{_('notre_expertise')}}">{{_('Plus d\'informations')}}</a>
         </div>
 
-        <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
-
-        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
-          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
-          <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
-        </span>
+      </div>
+      <div class="col-xs-4 col-sm-4">
+        <img class="img_home" src="{{ url_for('static',filename='images/medeo_talking.png') }}" loading="lazy">
       </div>
     </div>
-  </a>
+  </div>
 
+  <div class="container animate-top">
+    <div class="row">
+      <h1 class="banner_taital">{{_('Notre expertise à votre service')}}</h1>
+      <br>
+      <p class="what_text_1">{{_('Medeo, "Cure your business"')}}</p>
 
-  <a href="{{_('nouscontacter#nos_bureaux')}}">
-    <div class="row" style="margin-bottom: 90px;">
-      <div class="cocon effet_ombre">
-        <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
-
-
-        <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
-        <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
-          <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px"></i>
-          <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
-        </span>
-
-
+    </div>
+  </div>
+  <br>
+  <div class="container-fluid animate-top">
+    <div class="row">
+      <!-- <div class="col-sm-3 col-md-6 col-lg-2">
+    </div> -->
+      <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
+        <img src="{{ url_for('static',filename='images/accounting.png') }}" loading="lazy"
+          style="max-width: 70px; margin-left: 40%;"><br>
+        <h2 class="title_expertise">{{_('Expertise <br>Comptable')}}</h2>
+        <div class="">`</div>
+        <div class="presentation_expertises_home">
+          {{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des
+          services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
+        <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px; margin-left: 40%;"
+          loading="lazy"><br>
+        <h2 class="title_expertise">{{_('Audit')}}<br><br></h2>
+        <div class="">`</div>
+        <div class="presentation_expertises_home">
+          {{_('Notre cabinet comptable est spécialisé dans l\'audit et la certification
+          des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons en étroite collaboration
+          avec nos clients pour assurer la conformité de leurs comptes avec les normes comptables et fiscales en
+          vigueur.')}}
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
+        <img src="{{ url_for('static',filename='images/budget.png') }}" style="max-width: 70px; margin-left: 40%;"
+          loading="lazy"><br>
+        <h2 class="title_expertise">{{_('Conseil <br>optimisation ')}}</h2>
+        <div class="">`</div>
+        <div class="presentation_expertises_home">
+          {{_('Nos services d\'optimisation d\'entreprise incluent l\'analyse de la
+          performance, l\'identification des leviers de croissance, la mise en place de plans d\'action pour
+          l\'amélioration
+          de la rentabilité, la gestion de projets de transformation, la gestion du changement, l\'optimisation de la
+          chaîne d\'approvisionnement et l\'analyse des coûts.')}}</div>
 
       </div>
-    </div>
-  </a>
+      <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
+        <img src="{{ url_for('static',filename='images/ux.png') }}" style="max-width: 70px; margin-left: 40%;"
+          loading="lazy"><br>
+        <h2 class="title_expertise"> {{_('Service <br>Informatique')}}</h2>
+        <div class="">`</div>
+        <div class="presentation_expertises_home">
+          {{_('Notre département informatique gère tout type de problématiques liés
+          aux systèmes d\'information, à la gestion de vos données clients ainsi qu\'à l\'amélioration de vos
+          process.')}}
+        </div>
 
+      </div>
+      <!-- <div class="col-sm-3 col-md-6 col-lg-2">
+    </div> -->
+    </div>
+  </div>
+
+
+  <br />
+  <br />
+  <br />
+
+
+  <div class="animate-top">
+    <div class="carousel">
+      <ul class="slides">
+        <input type="radio" name="radio-buttons" id="img-1" checked />
+        <li class="slide-container">
+          <div class="slide-image">
+            <div class="encart_bleu">
+              <img class="images_carousel_home" src="{{ url_for('static',filename='images/social.jpeg') }}">
+              <h2 style="color: white;text-align: center;">{{_('Social')}}</h2>
+              <div class="carousel_home_txt">
+                {{_('Retrouvez les dernières actualités Sociales')}}
+                <div class="readmore_news" style="align-items:center">
+                  <a href="{{_('actualites#type=.all-types&medium=.social')}}">{{_('Plus d\'actualités')}}</a>
+                </div>
+              </div><br>
+            </div>
+            <div class="encart_rouge">
+              <h1 class="banner_taital_news_carousel_home">{{_('Social')}}</h1>
+              <p class="title_carousel">
+                {{_('Une semaine de jurisprudence sociale à la Cour de cassation')}}
+              </p>
+              <p class="text-start-home">
+                {{_('Exécution du contrat Le salarié qui relate ou témoigne de faits constitutifs d\'un délit ou
+                d\'un crime dont il aurait eu connaissance dans l\'exercice de ses fonctions n\'est pas soumis à
+                l\'exigence d\'agir de manière désintéressée au sens de l\'article 6 de la loi 2016-1691 du 9
+                décembre 2016. Il ne peut pas être licencié pour ce motif, sauf mauvaise foi, laquelle ne peut
+                résulter que de la connaissance de la fausseté des faits qu\'il dénonce et non de la seule
+                circonstance que les faits dénoncés ne sont pas établis (Cass. soc. 13-9-2023 n° 21-22.301 FS-B).
+                Si des mesures peuvent être réservées à certains salariés, c\'est à la condition que tous ceux
+                placés dans une situation identique, au regard de l\'avantage en cause, aient la possibilité d\'en
+                bénéficier, à moins que la différence de traitement soit justifiée par des raisons objectives et
+                pertinentes. Une cour d\'appel ne peut pas décider que la différence de qualification entre deux
+                salariés lors de leur embauche constitue une raison objective à la différence de salaire dont se
+                plaint l\'un d\'eux, sans préciser en quoi cette différence entre les salariés, respectivement
+                engagés en qualité d\'assistant journaliste reporter d\'images stagiaire et d\'assistant
+                journaliste reporter d\'images, constitue une raison objective et pertinente justifiant la
+                disparité de traitement dans l\'exercice des mêmes fonctions de grand reporter groupe (Cass. soc.
+                13-9-2023 n° 22-11.338 F-PB). Dès lors que les données issues du terminal de saisie portatif
+                destinées aux relevés des consommations d\'énergie pour ERDF/GRDF permettent également de
+                contrôler et de surveiller l\'activité des salariés et ont été utilisées par l\'employeur afin de
+                collecter et d\'exploiter des informations concernant personnellement le salarié, il en résulte
+                que, s\'agissant d\'un traitement de données à caractère personnel, l\'employeur est tenu de
+                procéder à une déclaration préalable auprès de la Cnil et d\'informer les salariés sur
+                l\'utilisation de ce dispositif à cette fin. A défaut, ce moyen de preuve est illicite (Cass. soc.
+                13-9-2023 n° 22-14.461 F-D).')}}
+              </p>
+              <div class="readmore_bt">
+                <a href="{{_('news/social/news_1')}}">{{_('Plus d\'informations')}}</a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="carousel-controls">
+            <label for="img-3" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-2" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
+          </div>
+        </li>
+        <input type="radio" name="radio-buttons" id="img-2" />
+        <li class="slide-container">
+          <div class="slide-image">
+            <div class="encart_bleu">
+              <img class="images_carousel_home" src="{{ url_for('static',filename='images/juridique.jpeg') }}">
+              <h2 style="color: white;text-align: center;">{{_('Juridique')}}</h2>
+              <div class="carousel_home_txt">
+                {{_('Retrouvez les dernières actualités Juridiques')}}
+                <div class="readmore_news" style="align-items:center">
+                  <a href="{{_('actualites#type=.all-types&medium=.juridique')}}">{{_('Plus d\'actualités')}}</a>
+                </div>
+              </div><br>
+            </div>
+            <div class="encart_rouge">
+              <h1 class="banner_taital_news_carousel_home">{{_('Juridique')}}</h1>
+              <p class="title_carousel">
+                {{_('Une semaine de jurisprudence sociale à la Cour de cassation')}}
+              </p>
+              <p class="text-start-home">
+                Au printemps dernier, la Bibliothèque nationale de France avait ouvert une souscription publique
+                afin d\'acquérir un exceptionnel manuscrit enluminé réalisé vers 1370 pour le roi de France
+                Charles V. Mais, début septembre, la somme de 1,6 M€ nécessaire à cette acquisition n\'était pas
+                encore réunie. C\'est pourquoi l\'État se tourne désormais vers le mécénat d\'entreprise en vue de
+                collecter la somme de 460 000 €. À ce titre, la ministre de la Culture a publié un avis visant à
+                informer les entreprises soumises à l\'impôt sur les sociétés, d\'après leur bénéfice réel,
+                qu\'elles peuvent profiter d\'une réduction d\'impôt allant jusqu\'à 90 % des dons effectués en
+                contribution à l\'achat de cette œuvre présentant un intérêt majeur pour le patrimoine national.
+                Ànoter : les versements ne sont pas déductibles des résultats imposables de l\'entreprise
+                donatrice. Pour cela, les entreprises intéressées doivent adresser, en double exemplaire, une
+                offre de versement, établie selon le modèle prévu à cet effet, à la direction générale des
+                patrimoines et de l\'architecture, service des musées de France, 182 rue Saint-Honoré, 75001
+                Paris. Puis, les dons doivent être acceptés par les ministres de la Culture et du Budget. La
+                réduction s\'applique sur l\'impôt dû au titre de l\'exercice d\'acceptation des versements. Et
+                attention, elle ne peut pas excéder 50 % du montant de cet impôt. Précision : l\'appel aux dons
+                est ouvert jusqu\'au 31 décembre 2023.
+              </p>
+
+
+              <div class="readmore_bt">
+                <a href="{{_('news/juridique/news_12')}}">{{_('Plus d\'informations')}}</a>
+              </div>
+
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <label for="img-1" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-3" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
+          </div>
+        </li>
+        <input type="radio" name="radio-buttons" id="img-3" />
+        <li class="slide-container">
+          <div class="slide-image">
+            <div class="encart_bleu">
+              <img class="images_carousel_home" src="{{ url_for('static',filename='images/work.jpeg') }}">
+              <h2 style="color: white;text-align: center;">{{_('Fiscalité')}}</h2>
+              <div class="carousel_home_txt">
+                {{_('Retrouvez les dernières actualités Fiscales')}}
+                <div class="readmore_news" style="align-items:center">
+                  <a href="{{_('actualites#type=.all-types&medium=.social')}}">{{_('Plus d\'actualités')}}</a>
+                </div>
+              </div><br>
+            </div>
+            <div class="encart_rouge">
+              <h1 class="banner_taital_news_carousel_home">{{_('Fiscalité')}}</h1>
+              <p class="title_carousel">
+                {{_('Plus que quelques jours pour opter pour le régime de l\'auto-entrepreneur en 2024')}}
+              </p>
+              <p class="text-start-home">
+                {{_('Les exploitants individuels soumis au régime micro-BIC ou micro-BNC et relevant du régime
+                micro-social ont la possibilité d\'opter pour le régime de l\'auto-entrepreneur prévu à l\'article
+                151-0 du CGI, sous réserve que le montant des revenus nets du foyer fiscal soit inférieur ou égal,
+                pour une part de quotient familial, à 27 478 €. Les exploitants qui optent pour le régime de
+                l\'auto-entrepreneur s\'acquittent auprès d\'un seul interlocuteur de l\'impôt sur le revenu et de
+                l\'ensemble des cotisations et contributions de sécurité sociale par des versements libératoires
+                mensuels ou trimestriels égaux à un pourcentage du chiffre d\'affaires ou des recettes réalisés au
+                cours de la période considérée.
+
+                Pour l\'imposition des revenus perçus en 2024, l\'option pour le régime de l\'auto-entrepreneur
+                doit être exercée au plus tard le 30 septembre 2023 auprès des organismes sociaux compétents.
+
+                A noter :
+                En cas de création d\'entreprise, l\'option pour le régime de l\'auto-entrepreneur doit être
+                exercée au plus tard le dernier jour du troisième mois qui suit celui de la création de
+                l\'entreprise et peut être formulée auprès du guichet unique électronique des formalités
+                d\'entreprises.')}}
+
+                {{_('© Editions Francis Lefebvre - La Quotidienne')}}
+              <div class="readmore_bt">
+                <a href="{{_('news/fiscal/news_1234')}}">{{_('En savoir plus')}}</a>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="carousel-controls">
+            <label for="img-2" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-1" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
+          </div>
+        </li>
+        <div class="carousel-dots">
+          <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+          <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+          <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container animate-top">
+    <a href="{{_('nouscontacter#nous_ecrire')}}">
+      <div class="row">
+        <br>
+        <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
+        <br>
+        <div class="cocon effet_ombre">
+          <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
+
+          <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
+          <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+            <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
+            <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
+          </span>
+
+        </div>
+      </div>
+    </a>
+
+    <a href="{{_('nouscontacter#nous_rejoindre')}}">
+      <div class="row">
+        <div class="cocon effet_ombre">
+          <div class="my_div_aliza_two col-xs-2 col-sm-3 col-md-6 col-lg-5">
+          </div>
+
+          <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
+
+          <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+            <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
+            <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
+          </span>
+        </div>
+      </div>
+    </a>
+
+
+    <a href="{{_('nouscontacter#nos_bureaux')}}">
+      <div class="row" style="margin-bottom: 90px;">
+        <div class="cocon effet_ombre">
+          <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
+
+
+          <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
+          <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+            <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px"></i>
+            <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
+          </span>
+
+
+
+        </div>
+      </div>
+    </a>
+
+
+  </div>
+  <br /><br /><br />
 
 </div>
-<br /><br /><br />
-
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
 

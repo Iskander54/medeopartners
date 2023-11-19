@@ -4723,3 +4723,16 @@ input:checked+.slide-container .nav label {
     font-size: smaller;
     color: #455A64;
   }
+
+
+
+.title_partners{
+    text-align:center;
+  }
+
+.text.folded {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

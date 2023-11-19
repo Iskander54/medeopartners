@@ -33,7 +33,6 @@
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
    <!-- style css -->
-
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
    <!-- Responsive-->
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}">
@@ -68,6 +67,33 @@
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
    
+
+   <!-- <link
+   rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+ /> -->
+ <link
+   rel="stylesheet"
+   type="text/css"
+   href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+ />
+ <link
+   rel="stylesheet"
+   type="text/css"
+   href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+ />
+
+
+
+
+
+ <!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
    {% if title %}
    <title>Medeo Partners - {{ title }}</title>
    {% else %}
@@ -108,14 +134,14 @@
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_dos" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <div class="sous-titre">
-                           {{_('Notre expertises')}}
+                           {{_('Notre expertise')}}
                            <span class="dropdown-arrow">&#9662;</span>
                         </div>
                      </a>
                      <ul class="dropdown-menu dropdd" aria-labelledby="navbarDropdown_dos">
                         
                         <li>
-                           <a class="dropdown-item menuderoulant" href="{{_('notre_expertise')}}">{{_('Notre expertises')}}</a>
+                           <a class="dropdown-item menuderoulant" href="{{_('notre_expertise')}}">{{_('Notre expertise')}}</a>
                         </li>                        
                         <div class="dropdown-divider"></div>
 
@@ -201,7 +227,14 @@
                            <img class="icones_langues" src="{{url_for('static',filename='flags/france.png') }}" loading="lazy">     
                      </a>
                   </li>
-             
+                  <div id="languageSelector" style="display: none;">
+                     <label style="color:white;" for="languageSelect">Select Language:</label>
+                     <select id="languageSelect">
+                         <option value="en">English</option>
+                         <option value="es">Español</option>
+                         <option value="fr">Français</option>
+                     </select>
+                 </div>        
 <!-- 
 
                      
@@ -412,10 +445,56 @@
 
 
 
+// Google Translate API key (replace with your own)
+const apiKey = "{{ apikey }} ";
+        console.log(apiKey)
+        // Function to translate text using Google Translate API
+        function translateText(text, targetLanguage, callback) {
+            const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}&q=${text}&target=${targetLanguage}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const translatedText = data.data.translations[0].translatedText;
+                    callback(translatedText);
+                })
+                .catch(error => console.error(error));
+        }
+
+        // Function to automatically translate content based on user's selected or detected language
+        function autoTranslateContent() {
+            const languageSelector = document.getElementById('languageSelect');
+            const content = document.getElementById('content');
+            //const contents = document.querySelectorAll
+            // Get the selected or detected language
+            const selectedLanguage = languageSelector.value;
+
+            // Translate content based on the selected or detected language
+            content.querySelectorAll('[data-translate]').forEach(element => {
+                const textKey = element.getAttribute('data-translate');
+
+                // Translate and replace the text
+                translateText(element.textContent, selectedLanguage, translatedText => {
+                    element.textContent = translatedText;
+                });
+            });
+        }
 
 
 
+        /*
+        // Add event listener to the language selector
+        const languageSelector = document.getElementById('languageSelect');
+        languageSelector.addEventListener('change', autoTranslateContent);
+
+        // Automatically translate content on page load (you can also detect user's language here)
+        autoTranslateContent();
+
+        */
    </script>
+
+
+   
 </body>
 
 </html>
