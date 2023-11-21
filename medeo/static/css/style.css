@@ -4194,9 +4194,6 @@ input:nth-of-type(5):checked~main#carousel {
 }
 
 
-
-
-
 #nav-cirlces {
     width: 96px;
     height: 20px;
@@ -4735,4 +4732,29 @@ input:checked+.slide-container .nav label {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+
+
+
+.témoignages-card{
+    padding: 2rem;
+
+    border-radius: 65px;
+    margin: 1rem;
+    color: #fff;
+    position: relative;
+    height: 420px!important;
+  }
+
+
+  .bg-blue{
+    background-color:#0D4A78;
+}
+
+.bg-red{
+    background-color: #E91D2A;
+}
+
+.bg-grey{
+    background-color: #B1C2D0;
 }
