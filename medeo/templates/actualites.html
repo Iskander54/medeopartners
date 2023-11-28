@@ -5,173 +5,324 @@
   <span id="loaderid" class="loader"></span>
 </div>
 
+<section class="section-news">
+  <div class="fade-up-container">
+    <h1 class="">Actualités</h1>
+    <p>Derniers Articles</p>
+  </div>
+</section>
 
-<div class="container page-heading-cabinet animate-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 blog-head">
-        <h1 class="banner_taital">{{_('Actualités')}}</h1>
-        <h6> Derniers articles</h6>
-        <br/><br/>
-        <div class="portfolio">
-          <div class="filters">
-            <div class="ui-group">
-              <div class="button-group js-radio-button-group group-2" data-filter-group="medium">
 
-                <button type="button" class="btn btn-red btn-lg effet_ombre_boutons_valeurs"
-                  data-filter=".all-media">{{_('Tout')}}</button>
-                <button type="button" class="btn btn-blue btn-lg effet_ombre_boutons_valeurs" 
-                data-filter=".fiscal">{{_('Fiscal')}}</button>
-                <button type="button" class="btn btn-grey btn-lg effet_ombre_boutons_valeurs" 
-                data-filter=".social">{{_('Social')}}</button>
-                <button type="button" class="btn btn-red btn-lg effet_ombre_boutons_valeurs" 
-                data-filter=".juridique">{{_('Juridique')}}</button>
+<div class="filters d-flex align-items-center justify-content-center">
+  <div class="ui-group">
+    <div class="button-group js-radio-button-group group-2" data-filter-group="medium">
 
-              </div>
-            </div>
-          </div>
-          <div class="grid">
+      <button type="button" class="btn btn-red btn-lg effet_ombre_boutons_valeurs" data-filter=".all-media">Tout</button>
+      <button type="button" class="btn btn-blue btn-lg effet_ombre_boutons_valeurs" data-filter=".fiscal">Fiscal</button>
+      <button type="button" class="btn btn-grey btn-lg effet_ombre_boutons_valeurs" data-filter=".social">Social</button>
+      <button type="button" class="btn btn-red btn-lg effet_ombre_boutons_valeurs" data-filter=".juridique">Juridique</button>
 
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Plus que quelques jours pour opter pour le régime de l'auto-entrepreneur en 2024"
-                  data-featherlight="iframe" href="{{ url_for('main.news_1234') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1234.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Taxation des logements vacants ou secondaires : la nouvelle liste des zones tendues est parue"
-                  data-featherlight="iframe" href="{{ url_for('main.news_787') }}">
-        
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_787.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Heures supplémentaires : les missions complémentaires du Pacte enseignant sont défiscalisées"
-                  data-featherlight="iframe" href="{{ url_for('main.news_1112') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1112.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Les modalités d’exercice du droit de communication auprès des opérateurs de l’internet sont définies"
-                  data-featherlight="iframe" href="{{ url_for('main.news_4456') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_4456.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Les déficits relatifs à des exercices prescrits peuvent être contrôlés avant même leur imputation"
-                  data-featherlight="iframe" href="{{ url_for('main.news_5555') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_5555.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="La présomption de salariat des artistes du spectacle ne s'applique pas aux sportifs professionnels"
-                  data-featherlight="iframe" href="{{ url_for('main.news_1212') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1212.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="Crédit d’impôt recherche : le Conseil d’État définit la notion de « subvention publique »"
-                  data-featherlight="iframe" href="{{ url_for('main.news_4322') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_4322.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-            <div class="all-types all-media content licensed fiscal">
-              <div class="c-container">
-                <a client="La liste des États qui participent avec la France à la déclaration pays par pays est actualisée"
-                  data-featherlight="iframe" href="{{ url_for('main.news_1200') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/fiscal/news_1200.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-        
-            <div class="all-types all-media content licensed social">
-              <div class="c-container">
-                <a client="Une semaine de jurisprudence sociale à la Cour de cassation" data-featherlight="iframe"
-                  href="{{ url_for('main.news_1') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/social/news_1.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-            <div class="all-types all-media content licensed social">
-              <div class="c-container">
-                <a client="Preuve d’une faute rapportée par des « clients mystères » : recevable sous conditions"
-                  data-featherlight="iframe" href="{{ url_for('main.news_2') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/social/news_2.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-            <div class="all-types all-media content licensed social">
-              <div class="c-container">
-                <a client="L'employeur qui licencie un salarié ayant requis des élections doit prouver l'absence de discrimination"
-                  data-featherlight="iframe" href="{{ url_for('main.news_3') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/social/news_3.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-        
-            <div class="all-types all-media content licensed social">
-              <div class="c-container">
-                <a client="Forfait jours : un salarié devant être présent 6 heures par jour dans l'entreprise n'est pas autonome"
-                  data-featherlight="iframe" href="{{ url_for('main.news_4') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/social/news_4.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-        
-            <div class="all-types all-media content licensed juridique">
-              <div class="c-container">
-                <a client="Mécénat d’entreprise : et si vous participiez à l’achat d’une œuvre exceptionnelle ?"
-                  data-featherlight="iframe" href="{{ url_for('main.news_12') }}">
-        
-                  <img alt="" src="{{url_for('static', filename='/images/news/juridique/juridique_one.jpeg')}}" loading="lazy">
-                </a>
-              </div>
-            </div>
-        
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
+
+
+
+<div class="card-container">
+  <div class="card fiscal" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/fiscal/news_1234.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-fiscal">Fiscal</a>
+        <div class="card-time">6/11/2023</div>
+      </div>
+      <h1 class="card-title">
+        Plus que quelques jours pour opter pour le régime de
+        l'auto-entrepreneur en 2024
+      </h1>
+    </div>
+  </div>
+  <div class="card fiscal" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/fiscal/news_787.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-fiscal">Fiscal</a>
+        <div class="card-time">6/07/2023</div>
+      </div>
+      <h1 class="card-title">
+        Taxation des logements vacants ou secondaires : la nouvelle liste
+        des zones tendues est parue
+      </h1>
+    </div>
+  </div>
+  <div class="card fiscal" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/fiscal/news_1112.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-fiscal">Fiscal</a>
+        <div class="card-time">5/27/2023</div>
+      </div>
+      <h1 class="card-title">
+        Heures supplémentaires : les missions complémentaires du Pacte
+        enseignant sont défiscalisées
+      </h1>
+    </div>
+  </div>
+  <div class="card fiscal" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/fiscal/news_4456.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-fiscal">Fiscal</a>
+        <div class="card-time">5/20/2023</div>
+      </div>
+      <h1 class="card-title">
+        Les modalités d’exercice du droit de communication auprès des
+        opérateurs de l’internet sont définies
+      </h1>
+    </div>
+  </div>
+  <div class="card fiscal" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/fiscal/news_5555.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-fiscal">Fiscal</a>
+        <div class="card-time">6/11/2023</div>
+      </div>
+      <h1 class="card-title">
+        Les déficits relatifs à des exercices prescrits peuvent être
+        contrôlés avant même leur imputation
+      </h1>
+    </div>
+  </div>
+  <div class="card fiscal" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/fiscal/news_1212.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-fiscal">Fiscal</a>
+        <div class="card-time">6/07/2023</div>
+      </div>
+      <h1 class="card-title">
+        La présomption de salariat des artistes du spectacle ne s'applique
+        pas aux sportifs professionnels
+      </h1>
+    </div>
+  </div>
+  <div class="card fiscal" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/fiscal/news_4322.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-fiscal">Fiscal</a>
+        <div class="card-time">5/27/2023</div>
+      </div>
+      <h1 class="card-title">
+        Crédit d’impôt recherche : le Conseil d’État définit la notion de «
+        subvention publique »
+      </h1>
+    </div>
+  </div>
+  <div class="card fiscal" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/fiscal/news_1200.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-fiscal">Fiscal</a>
+        <div class="card-time">5/20/2023</div>
+      </div>
+      <h1 class="card-title">
+        La liste des États qui participent avec la France à la déclaration
+        pays par pays est actualisée
+      </h1>
+    </div>
+  </div>
+  <div class="card social" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="news-detail.html" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/social/news_1.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-social">Social</a>
+        <div class="card-time">6/11/2023</div>
+      </div>
+      <h1 class="card-title">
+        Une semaine de jurisprudence sociale à la Cour de cassation
+      </h1>
+    </div>
+  </div>
+  <div class="card social" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/social/news_2.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-social">Social</a>
+        <div class="card-time">6/07/2023</div>
+      </div>
+      <h1 class="card-title">
+        Preuve d’une faute rapportée par des « clients mystères » :
+        recevable sous conditions
+      </h1>
+    </div>
+  </div>
+  <div class="card social" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/social/news_3.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-social">Social</a>
+        <div class="card-time">5/27/2023</div>
+      </div>
+      <h1 class="card-title">
+        L'employeur qui licencie un salarié ayant requis des élections doit
+        prouver l'absence de discrimination
+      </h1>
+    </div>
+  </div>
+  <div class="card social" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/social/news_4.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-social">Social</a>
+        <div class="card-time">5/20/2023</div>
+      </div>
+      <h1 class="card-title">
+        Forfait jours : un salarié devant être présent 6 heures par jour
+        dans l'entreprise n'est pas autonome
+      </h1>
+    </div>
+  </div>
+  <div class="card juridique" data-href="{{_('news_detail')}}">
+    <div class="card-img"></div>
+    <a href="{{_('news_detail')}}" class="card-link">
+      <div
+        class="card-img-hovered"
+        style="
+          background-image: var(--card-img-hovered-overlay),
+            url('../static/images/news/juridique/juridique_one.jpeg');
+        "
+      ></div>
+    </a>
+    <div class="card-info">
+      <div class="card-about">
+        <a class="card-tag tag-juridique">Juridique</a>
+        <div class="card-time">5/20/2023</div>
+      </div>
+      <h1 class="card-title">
+        Mécénat d’entreprise : et si vous participiez à l’achat d’une œuvre
+        exceptionnelle ?
+      </h1>
+    </div>
+  </div>
+</div>
+
+<style>
+  :root {
+  --card-img-height: 200px;
+}
+
+
+</style>
 
 
 
@@ -196,137 +347,5 @@
 
 </script>
 
-<script>
-  // Filter based on two factors
-  // Uses URI hash as trigger allowing direct links
-  // Losely based on: http://isotope.metafizzy.co/filtering.html#url-hash and a Lynda/LinkedinLearning series, lol
 
-  jQuery(document).ready(function ($) {
-    var $container = $(".grid");
-
-    // Filter isotope
-    $container.isotope({
-      // options
-      itemSelector: ".content",
-      layoutMode: "masonry",
-      // fade in from bottom
-      visibleStyle: {
-        opacity: 1,
-        transform: "translateY(0)"
-      },
-      hiddenStyle: {
-        opacity: 0,
-        transform: "translateY(100px)"
-      }
-    });
-
-    // layout Isotope again after all images have loaded
-    $container.imagesLoaded(function () {
-      $container.isotope("layout");
-    });
-
-    // Set up filters array with default values
-    var filters = {};
-
-    // When a button is pressed, run filterSelect
-    $(".button-group button").on("click", filterSelect);
-
-    // Set the URI hash to the current selected filters
-    function filterSelect() {
-      // Current hash value
-      var hashFilter = getHashFilter();
-
-      // Set filters to current values (important for first run)
-      filters["type"] = hashFilter["type"];
-      filters["medium"] = hashFilter["medium"];
-
-      // data-filter attribute of clicked button
-      var currentFilter = $(this).attr("data-filter");
-      // Navigation group (subject or author) as object
-      var $navGroup = $(this).parents(".button-group");
-      // data-filter-group key for the current nav group
-      var filterGroup = $navGroup.attr("data-filter-group");
-
-      // If the current data-filter attribute matches the current filter,
-      if (
-        currentFilter == hashFilter["type"] ||
-        currentFilter == hashFilter["medium"]
-      ) {
-        // Reset group filter as the user has unselected the button
-        filters[filterGroup] = "";
-      } else {
-        // Set data-filter of current button as value with filterGroup as key
-        filters[filterGroup] = $(this).attr("data-filter");
-      }
-
-      // Create new hash
-      var newHash =
-        "type=" +
-        encodeURIComponent(filters["type"]) +
-        "&medium=" +
-        encodeURIComponent(filters["medium"]);
-
-      // Apply the new hash to the URI, triggering onHashchange()
-      location.hash = newHash;
-    } // filterSelect
-
-    function onHashChange() {
-      // Current hash value
-      var hashFilter = getHashFilter();
-      // Concatenate subject and author for Isotope filtering
-      var theFilter = hashFilter["type"] + hashFilter["medium"];
-
-      if (hashFilter) {
-        // Repaint Isotope container with current filters and sorts
-        $container.isotope({
-          filter: decodeURIComponent(theFilter)
-        });
-
-        // Toggle checked status of filter buttons
-        $(".button-group")
-          .find(".is-checked")
-          .removeClass("is-checked");
-        $(".button-group")
-          .find(
-            "[data-filter='" +
-            hashFilter["type"] +
-            "'],[data-filter='" +
-            hashFilter["medium"] +
-            "']"
-          )
-          .addClass("is-checked");
-      }
-    } // onHashchange
-
-    function getHashFilter() {
-      // Get filters (matches)
-      var type = location.hash.match(/type=([^&]+)/i);
-      var medium = location.hash.match(/medium=([^&]+)/i);
-
-      // Set up a hashFilter array
-      var hashFilter = {};
-      // Populate array with matches using ternary logic
-      hashFilter["type"] = type ? type[1] : ".all-types";
-      hashFilter["medium"] = medium ? medium[1] : ".all-media";
-
-      return hashFilter;
-    } // getHashFilter
-
-    // When the hash changes, run onHashchange
-    window.onhashchange = onHashChange;
-
-    // When the page loads for the first time, run onHashChange
-    onHashChange();
-  });
-
-  //caption display code
-  $.featherlight.prototype.afterContent = function () {
-    var caption = this.$currentTarget.find("img").attr("title");
-    this.$instance.find(".d-caption").remove();
-    $('<div class="d-caption">')
-      .text(caption)
-      .appendTo(this.$instance.find(".featherlight-content"));
-  };
-
-</script>>
 {% endblock content %}
