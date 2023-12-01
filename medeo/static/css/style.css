@@ -32,7 +32,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     overflow-x: hidden !important;
 }
 
@@ -2633,8 +2633,11 @@ hr.hr_vertical {
     animation: rotate 1.5s infinite;
     height: 50px;
     width: 50px;
-    position: relative;
+    position: absolute;
     z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
