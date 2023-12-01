@@ -1,11 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="loader-container">
-  <div id="foregid" class="foreg"></div>
-  <span id="loaderid" class="loader"></span>
+  <div id="foregid" class="foreg" style="display:block"></div>
+  <span id="loaderid" class="loader" style="display:block"></span>
 </div>
-
-
 
 
 <div class="fade_in page-heading-nouscontacter animate-top">
@@ -190,38 +188,37 @@
   </div>
 </div>
 
-<h1 class="banner_taital">{{_('Nous rejoindre ')}}</h1>
+<!-- <h1 class="banner_taital">{{_('Nous rejoindre ')}}</h1> -->
 
 <body>
   <section class="témoignages">
-    <div class="container-fluid">
-      <div class="row mx-0">
+    <div class="container">
+      <div class="row mx-0_HAKIM">
         <div class="col-lg-12">
-          <h1 class="banner_taital">{{_('Nous rejoindre ')}}</h1>
+          <h1 class="banner_taital" style="margin-top: 0vw;">{{_('Nous rejoindre')}}</h1>
         </div>
       </div>
       <div class="content_NEW">
         <div class="your-class">
-          <div class="témoignages-card bg-blue">
+          <div class="openposition-card bg-blue">
             <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
             <div class="header">
-              <div class="row mx-0">
+              <div class="row mx-0_HAKIM">
                 <div class="col-lg-6">
                   <div class="main-image">
                     <img
-                      
-                      src="{{ url_for('static', filename='images/plant_comp.jpeg') }}"
-                      alt=""
+                    src="{{ url_for('static', filename='images/plant_comp.jpeg') }}"
+                    alt=""
                     />
                   </div>
                 </div>
               </div>
             </div>
             <div class="body">
-              <h5>
+              <h5 class="titre_carousel_notre_expertise">
                 Poste : Expert Comptable CDI (H/F)
               </h5>
-              <p>
+              <p class="text_carousel_notre_expertise">
                 Nous recherchons un Expert Comptable expérimenté pour rejoindre notre équipe en tant que
               collaborateur en CDI. Si vous avez une solide expérience en expertise comptable et que vous
               souhaitez évoluer au sein d'un cabinet de renom, nous aimerions vous rencontrer.
@@ -244,26 +241,26 @@
               </p>
             </div>
           </div>
-          <div class="témoignages-card bg-red">
+          <div class="openposition-card bg-red">
             <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
             <div class="header">
-              <div class="row mx-0">
+              <div class="row mx-0_HAKIM">
                 <div class="col-lg-6">
                   <div class="main-image">
                     <img
-                      src="{{ url_for('static', filename='images/energy_consulting_logo.png') }}"
-                      alt=""
+                    src="{{ url_for('static', filename='images/plant_comp.jpeg') }}"
+                    alt=""
                     />
                   </div>
                 </div>
               </div>
             </div>
             <div class="body">
-              <h5>
+              <h5 class="titre_carousel_notre_expertise">
                 Candidature Spontanée
 
               </h5>
-              <p>
+              <p class="text_carousel_notre_expertise">
                 Vous êtes passionné par le domaine de la comptabilité et vous souhaitez rejoindre une équipe
                 d'experts-comptables dynamique ? Nous sommes toujours à la recherche de talents exceptionnels.
                 Envoyez-nous votre candidature spontanée dès aujourd'hui.
@@ -276,20 +273,18 @@
                 Formation en comptabilité ou finance.
                 Capacité à travailler en équipe.
                 Motivation, autonomie et sens des responsabilités.
-
-
               </p>
             </div>
           </div>
-          <div class="témoignages-card bg-grey">
+          <div class="openposition-card bg-grey">
             <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
             <div class="header">
-              <div class="row mx-0">
+              <div class="row mx-0_HAKIM">
                 <div class="col-lg-6">
                   <div class="main-image">
                     <img
-                      src="{{ url_for('static', filename='images/empruntis_logo.png') }}"
-                      alt=""
+                    src="{{ url_for('static', filename='images/plant_comp.jpeg') }}"
+                    alt=""
                     />
                   </div>
                 </div>
@@ -297,8 +292,10 @@
             </div>
             <div class="body">
               <h5 class="titre_carousel_notre_expertise">
-                Poste : Alternant en Comptabilité              </h5>
+                Poste : Alternant en Comptabilité 
+              </h5>
               <p class="text_carousel_notre_expertise">
+
                 Vous recherchez une opportunité d'alternance en comptabilité au sein d'un cabinet
                 d'experts-comptables renommé ? Nous offrons un environnement d'apprentissage stimulant pour les
                 étudiants en comptabilité qui souhaitent acquérir une expérience pratique.
@@ -318,7 +315,6 @@
                 Bonnes compétences en communication et en travail d'équipe.
                 N'oubliez pas d'adapter ces annonces et fiches de poste en fonction de vos besoins spécifiques et
                 des compétences recherchées pour chaque poste.
-    
               </p>
             </div>
           </div>
@@ -548,25 +544,27 @@ section{
 </style>
 
 
+
+
 <script>
 
   document.addEventListener('DOMContentLoaded', function () {
-  
-      // Loader des autres pages
-      var loaderDiv = document.getElementById('loaderid');
-      var foregroundDiv = document.getElementById('foregid');
-      // Show the div
-      foregroundDiv.style.display = 'block';
-      loaderDiv.style.display = 'block';
-      // Hide the div after 1 seconds
-      setTimeout(function () {
-        loaderDiv.style.display = 'none';
-        foregroundDiv.style.display = 'none';
-      }, 1000);
+
+    // Loader des autres pages
+    var loaderDiv = document.getElementById('loaderid');
+    var foregroundDiv = document.getElementById('foregid');
+    // Show the div
+    foregroundDiv.style.display = 'block';
+    loaderDiv.style.display = 'block';
+    // Hide the div after 1 seconds
+    setTimeout(function () {
+      loaderDiv.style.display = 'none';
+      foregroundDiv.style.display = 'none';
+    }, 1000);
   });
-  
-  
-  </script>
+
+
+</script>
 
 
 

@@ -4746,7 +4746,15 @@ input:checked+.slide-container .nav label {
     height: 420px!important;
   }
 
+  .openposition-card{
+    padding: 2rem;
 
+    border-radius: 65px;
+    margin: 1rem;
+    color: #fff;
+    position: relative;
+    height: 800px!important;
+  }
   .bg-blue{
     background-color:#0D4A78;
 }
