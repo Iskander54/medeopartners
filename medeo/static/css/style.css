@@ -2137,6 +2137,19 @@ textarea#comment::placeholder {
     margin-top: 15px;
 }
 
+.image_news {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 48%;
+    /* border-radius: 50%; */
+    border-top-left-radius: 52px;
+    border-top-right-radius: 52px;
+    margin-top: 30px;
+}
+
+
 .readable_text {
     width: 100%;
     float: left;
@@ -3236,6 +3249,20 @@ textarea[id=content]:focus {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+    word-spacing: -1px;
+
+}
+
+.text-start-actus {
+    font-size: large;
+    font-weight: 400;
+    color: #114A69;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
     text-align: justify;
     word-spacing: -1px;

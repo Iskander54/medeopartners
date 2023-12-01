@@ -5,12 +5,159 @@
   <span id="loaderid" class="loader"></span>
 </div>
 
-<section class="section-news">
-  <div class="fade-up-container">
-    <h1 class="">Actualités</h1>
-    <p>Derniers Articles</p>
+
+<div class="fade_in page-heading-nouscontacter animate-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="banner_taital">{{_('Actualités')}}</h1>
+        <p class="what_text_1" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</p>
+        <h1 class="banner_taital" style=" margin-top: 7vw;">{{_('Infos à la une')}}</h1>
+      </div>
+    </div>
   </div>
-</section>
+</div>
+
+
+<div class="animate-top">
+  <div class="carousel">
+    <ul class="slides">
+      <input type="radio" name="radio-buttons" id="img-1" checked />
+      <li class="slide-container">
+        <div class="slide-image">
+            <div class="encart_bleu">
+              <img src="/static/images/team_working.jpeg" class="image_news" loading="lazy">
+              <h2 style="margin-top:40px;font-weight: bold; color: white;text-align: center;">Social</h2>
+              <div style="color: white;text-align: center;">
+                  Une semaine de jurisprudence sociale à la Cour de cassation
+              </div><br>
+              <div style="color: white;text-align: center;">
+                <a style="color: white;text-align: center;"></a>
+              </div>
+
+            </div>
+            <div class="encart_rouge">
+              <p class="title_carousel">
+                Le décret fixant la liste des zones tendues est paru. Plus de 2 000 nouvelles communes vont pouvoir majorer la taxe d’habitation sur les résidences secondaires. Dans ces communes, les logements vacants seront imposables de plein droit.
+              </p>
+
+              <p class="text-start-actus">
+                La loi de finances pour 2023 a élargi la définition des zones dites « tendues », dans lesquelles s’appliquent, de plein droit, la taxe sur les logements vacants (TLV) prévue par l’article 232 du CGI et, sur délibération des communes, la majoration de la taxe d’habitation sur les résidences secondaires prévue par l’article 1407 ter du même Code. Attendu pour le début de l’année 2023 et âprement discuté, le décret fixant la liste des communes concernées vient de paraître (Décret 2023-822 du 25-8-2023). A noter : Les logements vacants s’entendent des logements habitables, mais non meublés et inoccupés, tandis que les résidences secondaires constituent des locaux meublés non affectés à l’habitation principale. Plus de 2 000 nouvelles communes sont concernées              
+              <div class="readmore_bt">
+                <a data translate href="{{_('news_detail')}}">{{_('Lire l\'article')}}</a>
+              </div>
+              </p>
+
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+          <label for="img-3" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-2" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+
+      <input type="radio" name="radio-buttons" id="img-3" />
+      <li class="slide-container">
+        <div class="slide-image">
+          <div class="encart_bleu">
+            <img src="/static/images/team_working.jpeg" class="image_news" loading="lazy">
+            <h2 style="margin-top:40px;font-weight: bold; color: white;text-align: center;">Fiscal</h2>
+            <div style="color: white;text-align: center;">
+              blabla
+            </div><br>
+            <div style="color: white;text-align: center;">
+              <a style="color: white;text-align: center;"></a>
+            </div>
+          </div>
+          <div class="encart_rouge">
+            <p class="title_carousel">
+                blabla
+            </p>
+            <p class="text-start-actus">
+                blabla
+              <div class="readmore_bt">
+                <a data translate href="{{_('news_detail')}}">{{_('Lire l\'article')}}</a>
+              </div>
+            </p>
+
+          </div>
+          </div>
+        <div class="carousel-controls">
+          <label for="img-2" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-1" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+
+
+      <input type="radio" name="radio-buttons" id="img-2" />
+      <li class="slide-container">
+        <div class="slide-image">
+          <div class="encart_bleu">
+            <img src="/static/images/team_working.jpeg" class="image_news" loading="lazy">
+            <h2 style="margin-top:40px;font-weight: bold; color: white;text-align: center;">Juridique</h2>
+            <div style="color: white;text-align: center;">
+              blablaaaaa
+            </div><br>
+            <div style="color: white;text-align: center;">
+              <a style="color: white;text-align: center;" ></a>
+            </div>
+          </div>
+          <div class="encart_rouge">
+            <p class="title_carousel">
+                ffff
+            </p>
+            <p class="text-start-actus">
+                fffff
+              <div class="readmore_bt">
+                <a data translate href="{{_('news_detail')}}">{{_('Lire l\'article')}}</a>
+              </div>
+  
+            </p>
+
+          </div>
+          </div>
+        <div class="carousel-controls">
+          <label for="img-1" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-3" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+
+      <div class="carousel-dots">
+        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+        <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+      </div>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="fade_in page-heading-nouscontacter animate-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="banner_taital" style=" margin-top: 7vw;">{{_('Nos derniers articles')}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div class="filters d-flex align-items-center justify-content-center">
