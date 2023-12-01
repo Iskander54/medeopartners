@@ -3220,6 +3220,13 @@ textarea[id=content]:focus {
     border-bottom: 0;
 }
 
+.modal-header .close {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    margin: 0px!important;
+}
+
 .title_carousel {
     color: #114a69 !important;
     font-size: xx-large;
@@ -3652,7 +3659,7 @@ audio {
     background: linear-gradient(145deg, #d1d5d9, #f8feff);
     box-shadow: 24px 24px 41px #9ea1a4,
         -24px -24px 41px #ffffff;
-    padding: 21px;
+    /* padding: 21px; */
 }
 
 
