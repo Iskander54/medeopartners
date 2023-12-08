@@ -256,6 +256,15 @@ img {
         font-size: 20px;
         font-style: italic;
 
+    }
+
+    .what_text_2 {
+        margin: 0 auto;
+        color: #114a69;
+        text-align: center;
+        width: 90%;
+        font-size: 20px;
+        font-style: italic;
 
     }
 
@@ -286,6 +295,15 @@ img {
     }
 
     .banner_taital_h3 {
+        width: 100%;
+        float: left;
+        font-size: 70%;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .banner_taital_h3_dos {
         width: 100%;
         float: left;
         font-size: 70%;
@@ -507,6 +525,19 @@ img {
         display: flex;
 
     }
+    .text-start {
+        font-size: large;
+        font-weight: 400;
+        color: #114A69;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+        text-align: justify;
+        word-spacing: -1px;
+    
+    }
 }
 
 /* Small Devices (e.g., larger smartphones and small tablets) */
@@ -558,6 +589,15 @@ img {
     }
 
     .banner_taital_h3 {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .banner_taital_h3_dos {
         width: 100%;
         float: left;
         font-size: 18px;
@@ -680,6 +720,14 @@ img {
         text-align: center;
     }
 
+    .what_text_2 {
+        width: 90%;
+        font-size: 22px;
+        font-style: italic;
+        color: #114A69;
+        text-align: center;
+    }
+
     .cocon {
         margin: auto;
         font-size: 1.5em;
@@ -785,6 +833,20 @@ img {
         display: flex;
 
     }
+
+    .text-start {
+        font-size: smaller;
+        font-weight: 400;
+        color: #114A69;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+        text-align: justify;
+        word-spacing: -1px;
+    
+    }
 }
 
 
@@ -837,6 +899,15 @@ img {
     }
 
     .banner_taital_h3 {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .banner_taital_h3_dos {
         width: 100%;
         float: left;
         font-size: 18px;
@@ -937,6 +1008,14 @@ img {
     }
 
     .what_text_1 {
+        width: 90%;
+        font-size: 23px;
+        font-style: italic;
+        color: #114A69;
+        text-align: center;
+    }
+
+    .what_text_2 {
         width: 90%;
         font-size: 23px;
         font-style: italic;
@@ -1079,6 +1158,20 @@ img {
 
     }
 
+    .text-start {
+        font-size: large;
+        font-weight: 400;
+        color: #114A69;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+        text-align: justify;
+        word-spacing: -1px;
+    
+    }
+
 }
 
 /* Large Devices (e.g., desktops and laptops) */
@@ -1132,6 +1225,15 @@ img {
 
 
     .banner_taital_h3 {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #114a69;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .banner_taital_h3_dos {
         width: 100%;
         float: left;
         font-size: 18px;
@@ -1199,6 +1301,14 @@ img {
     }
 
     .what_text_1 {
+        width: 90%;
+        font-size: 23px;
+        font-style: italic;
+        color: #114A69;
+        text-align: center;
+    }
+
+    .what_text_2 {
         width: 90%;
         font-size: 23px;
         font-style: italic;
@@ -1384,6 +1494,21 @@ img {
         display: flex;
 
     }
+
+
+    .text-start {
+        font-size: large;
+        font-weight: 400;
+        color: #114A69;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+        text-align: justify;
+        word-spacing: -1px;
+    
+    }
 }
 
 /* Extra Large Devices (e.g., large desktop screens) */
@@ -1454,6 +1579,15 @@ img {
         font-size: 18px;
         color: #114a69;
         font-weight: 900;
+        text-align: center;
+    }
+
+    .banner_taital_h3_dos {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #114a69;
+        font-weight: 400;
         text-align: center;
     }
 
@@ -1559,6 +1693,17 @@ img {
         text-align: center;
         margin-left: 37%;
         margin-right: 35%;
+    }
+
+    .what_text_2 {
+
+        font-size: 23px;
+        font-style: italic;
+        color: #114A69;
+        text-align: center;
+        margin-left: 16%;
+        margin-right: 35%;
+        margin-top: 5%;
     }
 
     .navbar {
@@ -1727,6 +1872,22 @@ img {
         background-color: #b8c7d4;
         display: flex;
 
+    }
+
+
+
+    .text-start {
+        font-size: large;
+        font-weight: 400;
+        color: #114A69;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+        text-align: justify;
+        word-spacing: -1px;
+    
     }
 }
 
@@ -2399,7 +2560,7 @@ textarea#comment::placeholder {
 }
 
 .names {
-    color: #E91C2A;
+    color: #114a69;
 }
 
 .about_page_blue {
@@ -3251,19 +3412,7 @@ textarea[id=content]:focus {
 
 }
 
-.text-start {
-    font-size: large;
-    font-weight: 400;
-    color: #114A69;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 10;
-    -webkit-box-orient: vertical;
-    text-align: justify;
-    word-spacing: -1px;
 
-}
 
 .text-start-actus {
     font-size: large;
@@ -4790,7 +4939,7 @@ input:checked+.slide-container .nav label {
     margin: 1rem;
     color: #fff;
     position: relative;
-    height: 800px!important;
+    height: 500px!important;
   }
   .bg-blue{
     background-color:#0D4A78;
