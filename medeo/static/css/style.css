@@ -917,7 +917,7 @@ img {
     }
 
     .img_heart {
-        width: 45vh;
+        /* width: 45vh; */
         border-radius: 9vh;
         margin: auto;
         display: block;
@@ -1243,7 +1243,7 @@ img {
     }
 
     .img_heart {
-        width: 45vh;
+        /* width: 45vh; */
         border-radius: 9vh;
         margin: auto;
         display: block;
@@ -1593,7 +1593,7 @@ img {
 
 
     .img_heart {
-        width: 45vh;
+        /* width: 45vh; */
         border-radius: 9vh;
         margin: auto;
         display: block;
