@@ -6,7 +6,7 @@ from flask_mail import Mail
 from medeo.config import Config
 from flask_babel import Babel
 from flask_babelex import Babel
-from flask_sslify import SSLify
+# from flask_sslify import SSLify
 
 babel = Babel( default_locale='fr')
 db = SQLAlchemy()
