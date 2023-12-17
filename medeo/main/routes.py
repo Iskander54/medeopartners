@@ -176,3 +176,9 @@ def news_12():
 ############################
 #  END NEWS
 ############################
+
+
+
+@main.route('/robots.txt')
+def robots_txt():
+    return Response("User-agent: *\nDisallow: ", content_type='text/plain')
