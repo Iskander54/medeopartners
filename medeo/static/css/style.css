@@ -3051,7 +3051,7 @@ hr.hr_vertical {
 }
 
 .images_carousel_home {
-    height: 55%;
+    height: auto;
     width: 73%;
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
@@ -4828,6 +4828,7 @@ input:checked+.slide-container .nav label {
 
 .calendly-badge-widget {
     left: 15px !important;
+    width: 20%;
 }
 
 
