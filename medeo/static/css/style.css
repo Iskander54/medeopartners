@@ -1519,6 +1519,13 @@ img {
         margin-top: 8px;
     }
 
+    .medeo-cure-your{
+        font-size: 45px;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin-top: 20%;
+    }
     /* Your styles for extra large devices */
 
     .banner_taital {
@@ -5223,3 +5230,7 @@ input:checked+.slide-container .nav label {
     color: red!important; /* Change this to the desired color */
 }
   
+
+.crcc-logo{
+    width: 70%;
+}
