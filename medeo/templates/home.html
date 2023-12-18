@@ -13,7 +13,7 @@
         <h1 data-translate class="title_bienvenu_home">{{_('Bienvenue chez Medeo Partners')}}</h1>
 
         <p data-translate class="banner_text">
-          {{_('Forts de plus 10 ans d\'expertise en comptabilité et fiscalité, nous')}}<br>
+          {{_('Fort de plus 10 ans d\'expertise en comptabilité et fiscalité, nous')}}<br>
           {{_('accompagnons nos clients de tous secteurs dans leurs démarches')}}<br>
           {{_('de création d\'entreprise, de projets, et d\'optimisation.')}}<br />
 
@@ -44,7 +44,8 @@
     <div class="row">
       <!-- <div class="col-sm-3 col-md-6 col-lg-2">
     </div> -->
-      <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
+    
+      <div id="prez_expert_comptable" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3">
         <img src="{{ url_for('static',filename='images/accounting.png') }}" loading="lazy"
           style="max-width: 70px; margin-left: 40%;"><br>
         <h2 class="title_expertise">{{_('Expertise <br>Comptable')}}</h2>
@@ -54,7 +55,7 @@
           services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
         </div>
       </div>
-      <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
+      <div id="prez_audit" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3">
         <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px; margin-left: 40%;"
           loading="lazy"><br>
         <h2 class="title_expertise">{{_('Audit')}}<br><br></h2>
@@ -66,7 +67,7 @@
           vigueur.')}}
         </div>
       </div>
-      <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
+      <div id="prez_conseil_optimisation" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3">
         <img src="{{ url_for('static',filename='images/budget.png') }}" style="max-width: 70px; margin-left: 40%;"
           loading="lazy"><br>
         <h2 class="title_expertise">{{_('Conseil <br>optimisation ')}}</h2>
@@ -79,7 +80,7 @@
           chaîne d\'approvisionnement et l\'analyse des coûts.')}}</div>
 
       </div>
-      <div class="col-sm-3 col-md-6 col-lg-3 col-xl-3">
+      <div id="prez_service_info" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3">
         <img src="{{ url_for('static',filename='images/ux.png') }}" style="max-width: 70px; margin-left: 40%;"
           loading="lazy"><br>
         <h2 class="title_expertise"> {{_('Service <br>Informatique')}}</h2>
@@ -176,10 +177,34 @@
     }, 2500);
 
 
+
+    ////   LIENS DES ENCARTS CLICKABLES
+    document.getElementById('prez_expert_comptable').addEventListener('click', function() {
+        window.location.href = 'expertise_comptable';
+    });
+
+    document.getElementById('prez_audit').addEventListener('click', function() {
+        window.location.href = 'audit';
+    });
+
+    document.getElementById('prez_conseil_optimisation').addEventListener('click', function() {
+        window.location.href = 'conseil_optimisation';
+    });
+
+    document.getElementById('prez_service_info').addEventListener('click', function() {
+        window.location.href = 'notre_expertise';
+    });
+
   });
 </script>
 
+<style>
+  .clickable_encart{
+    cursor: pointer;
 
+  }
+
+</style>
 
 
 

@@ -186,7 +186,7 @@
                </ul>
                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row">
                   <li class="nav-item">
-                     <a class="nav-link" href="#">
+                     <a class="nav-link">
                         <div class="nav_icone">
                            <a href="https://instagram.com/medeo_partners">
                               <i class="fa-brands fa-instagram fa-xl"></i>
@@ -194,17 +194,17 @@
                         </div>
                      </a>
                   </li>
-                  <!-- <li class="nav-item">
-                     <a class="nav-link" href="#">
+                  <li class="nav-item">
+                     <a class="nav-link">
                         <div class="nav_icone">
                            <a href="https://www.linkedin.com/company/medeo-partners">
                               <i class="fa-brands fa-linkedin fa-xl"></i>
                            </a>
                         </div>
                      </a>
-                  </li> -->
+                  </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">
+                     <a class="nav-link">
                         <div class="nav_icone">
                            <a href="https://wa.me/33669066804">
                               <i class="fa-brands fa-whatsapp fa-xl"></i>
@@ -303,7 +303,7 @@
    <!-- Calendly badge widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script type="text/javascript" src="{{url_for('static', filename='calendly/widget.js') }}" ></script>
-<script type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="btn_calendly">Prendre RDV', color: '#114a69', textColor: '#ffffff', branding: true }); }</script>
+<script type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="btn_calendly">Prendre RDV', color: '#114a79', textColor: '#ffffff', branding: true }); }</script>
 <!-- Calendly badge widget end -->
 
 
@@ -381,7 +381,7 @@
                <div class="col col_footer">
                   <h2 class="footer_taital">{{_('Nous contacter')}}</h2>
                   <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
-                  <a class="footer_text" href="{{_('votre_cabinet')}}">{{_('L\'équipe')}}</a>
+                  <a class="footer_text" href="{{_('votre_cabinet#carousel_partners')}}">{{_('L\'équipe')}}</a>
 
                </div>
                <div class="col">
@@ -484,15 +484,7 @@ const apiKey = "{{ apikey }} ";
 
 
 
-        /*
-        // Add event listener to the language selector
-        const languageSelector = document.getElementById('languageSelect');
-        languageSelector.addEventListener('change', autoTranslateContent);
 
-        // Automatically translate content on page load (you can also detect user's language here)
-        autoTranslateContent();
-
-        */
    </script>
 
 
