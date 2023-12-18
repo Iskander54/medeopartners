@@ -4227,6 +4227,7 @@ input:nth-of-type(5):checked~main#carousel {
     fill: #fff;
     width: 35px;
     height: 35px;
+    margin-top: 10px!important;
 }
 
 .sticky-button a,
