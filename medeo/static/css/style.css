@@ -247,7 +247,24 @@ img {
         padding: 3px;
     }
 
-    /* Your styles for extra small devices */
+    .medeo-cure-your{
+        font-size: large;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin-top: 20%;
+    }
+
+    .medeo-cure-your-home{
+        font-size: xx-large;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 35px;
+    }
+
+
     .what_text_1 {
         margin: 0 auto;
         color: #114a79;
@@ -529,7 +546,7 @@ img {
         font-size: large;
         font-weight: 400;
         color: #114a79;
-        overflow: hidden;
+        /* overflow: hidden; */
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 10;
@@ -549,7 +566,23 @@ img {
         padding: 3px;
     }
 
-    /* Your styles for small devices */
+    .medeo-cure-your{
+        font-size: xx-large;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin-top: 20%;
+    }
+
+    .medeo-cure-your-home{
+        font-size: xx-large;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 35px;
+    }
+
     .effet_ombre_boutons_valeurs {
         border-radius: 51px;
         box-shadow: 24px 24px 41px #9ea1a4,
@@ -838,7 +871,7 @@ img {
         font-size: smaller;
         font-weight: 400;
         color: #114a79;
-        overflow: hidden;
+        /* overflow: hidden; */
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 10;
@@ -858,7 +891,22 @@ img {
         margin-top: 21px;
     }
 
-    /* Your styles for medium devices */
+    .medeo-cure-your{
+        font-size: xx-large;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin-top: 20%;
+    }
+
+    .medeo-cure-your-home{
+        font-size: xx-large;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 35px;
+    }
 
     .title_bienvenu_home {
         float: left;
@@ -1162,7 +1210,7 @@ img {
         font-size: large;
         font-weight: 400;
         color: #114a79;
-        overflow: hidden;
+        /* overflow: hidden; */
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 10;
@@ -1182,7 +1230,22 @@ img {
         margin-top: 21px;
     }
 
-    /* Your styles for large devices */
+    .medeo-cure-your{
+        font-size: xx-large;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin-top: 20%;
+    }
+
+    .medeo-cure-your-home{
+        font-size: xx-large;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 35px;
+    }
 
 
     .title_bienvenu_home {
@@ -1500,7 +1563,7 @@ img {
         font-size: large;
         font-weight: 400;
         color: #114a79;
-        overflow: hidden;
+        /* overflow: hidden; */
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 10;
@@ -1513,20 +1576,30 @@ img {
 
 /* Extra Large Devices (e.g., large desktop screens) */
 @media (min-width: 1200px) {
-
+    .effet_ombre_boutons_valeurs {
+        border-radius: 51px;
+        box-shadow: 24px 24px 41px #9ea1a4, -24px -24px 41px #ffffff;
+    }
     .icones_langues {
         width: 26px;
         margin-top: 8px;
     }
 
     .medeo-cure-your{
-        font-size: 45px;
+        font-size: xx-large;
         font-style: italic;
         color: #114a79;
         text-align: center;
-        margin-top: 20%;
+        margin-top: 15%;
     }
-    /* Your styles for extra large devices */
+    .medeo-cure-your-home{
+        font-size: xx-large;
+        font-style: italic;
+        color: #114a79;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 35px;
+    }
 
     .banner_taital {
         font-size: 48px;
@@ -1887,7 +1960,7 @@ img {
         font-size: large;
         font-weight: 400;
         color: #114a79;
-        overflow: hidden;
+        /* overflow: hidden; */
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 10;
@@ -3409,7 +3482,7 @@ textarea[id=content]:focus {
     font-weight: 400;
     color: #114a79;
     font-style: italic;
-    overflow: hidden;
+    /* overflow: hidden; */
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 8;
@@ -3425,7 +3498,7 @@ textarea[id=content]:focus {
     font-size: large;
     font-weight: 400;
     color: #114a79;
-    overflow: hidden;
+    /* overflow: hidden; */
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 7;
@@ -4640,7 +4713,7 @@ p.quote:nth-child(2) {
 ul.slides {
     display: block;
     position: relative;
-    height: 600px;
+    height: 730px;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -4785,7 +4858,7 @@ ul.slides input {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 20px;
+    bottom: -15px;
     z-index: 999;
     text-align: center;
 }
@@ -4991,13 +5064,7 @@ input:checked+.slide-container .nav label {
     color: white;
     border-radius: 15px;
   }
-  
-  @media (min-width: 1200px){
-  .effet_ombre_boutons_valeurs {
-      border-radius: 51px;
-      box-shadow: 24px 24px 41px #9ea1a4, -24px -24px 41px #ffffff;
-  }
-  }
+
   
   
   .section-news {
@@ -5232,4 +5299,10 @@ input:checked+.slide-container .nav label {
 
 .crcc-logo{
     width: 70%;
+}
+
+.quotes-img {
+    position: absolute;
+    right: 7%;
+    width: 20%;
 }
