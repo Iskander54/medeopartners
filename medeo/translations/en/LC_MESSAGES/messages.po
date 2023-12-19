@@ -795,18 +795,18 @@ msgstr ""
 
 #: medeo/templates/notre_expertise.html:180
 msgid "Cabinet de conseil en investissement"
-msgstr ""
+msgstr "Investment Consulting Firm"
 
 #: medeo/templates/notre_expertise.html:183
 msgid ""
 "MEDEO est un partenaire efficace, à l'écoute et soucieux de nos besoins "
 "très souvent\n"
 "                changeants"
-msgstr ""
+msgstr "MEDEO is an efficient partner, attentive, and concerned about our often-changing needs."
 
 #: medeo/templates/notre_expertise.html:202
 msgid "Cabinet de consulting en ingénierie"
-msgstr ""
+msgstr "Engineering Consulting Firm"
 
 #: medeo/templates/notre_expertise.html:206
 msgid ""
@@ -814,11 +814,11 @@ msgid ""
 "et réactive comprend nos\n"
 "                enjeux et apporte constamment des réponses pertinentes à "
 "nos problématiques comptables."
-msgstr ""
+msgstr "With Medeo, we have found a trusted ally. Their dedicated and responsive team understands our challenges and consistently provides relevant answers to our accounting issues."
 
 #: medeo/templates/notre_expertise.html:224
 msgid "Courtier immobilier"
-msgstr ""
+msgstr "Real Estate Broker"
 
 #: medeo/templates/notre_expertise.html:227
 msgid ""
@@ -826,25 +826,25 @@ msgid ""
 "une rigueur à tous les\n"
 "                étages et surtout une capacité à dépasser nos attentes en"
 " termes de qualité de service."
-msgstr ""
+msgstr "We are proud of our partnership with MEDEO. A cheerful agreement, rigor at every level, and above all, an ability to exceed our expectations in terms of service quality."
 
 #: medeo/templates/notre_expertise.html:245
 msgid "Cabinet de conseil en numérique et transformation digitale"
-msgstr ""
+msgstr "Digital Consulting and Digital Transformation Firm"
 
 #: medeo/templates/notre_expertise.html:248
 msgid ""
 "Les compétences et l'expertise d'Avi et Israel nous ont beaucoup aidé "
 "dans la création de notre\n"
 "                entreprise."
-msgstr ""
+msgstr "The skills and expertise of Avi and Israel have been very helpful in the creation of our company."
 
 #: medeo/templates/notre_expertise.html:250
 msgid ""
 "La réactivité et la disponibilité des associés sont très appréciables "
 "durant une phase aussi dense\n"
 "                et stressante que la création d'une entreprise."
-msgstr ""
+msgstr "The reactivity and availability of the partners are highly appreciated during a phase as intense and stressful as the creation of a company."
 
 #: medeo/templates/notre_expertise.html:268
 msgid "Agence DMC"
@@ -857,11 +857,11 @@ msgid ""
 "                capacité à anticiper nos besoins. Leur accompagnement "
 "personnalisé est un atout majeur pour notre\n"
 "                entreprise."
-msgstr ""
+msgstr "The expertise of Medeo is undeniable. They demonstrate great attentiveness and a real ability to anticipate our needs. Their personalized support is a major asset for our company."
 
 #: medeo/templates/notre_expertise.html:290
 msgid "Cabinet de conseil en investissements financiers"
-msgstr ""
+msgstr "Financial Investment Consulting Firm"
 
 #: medeo/templates/notre_expertise.html:293
 msgid ""
@@ -869,7 +869,7 @@ msgid ""
 "à s'adapter, ce cabinet\n"
 "                offre des solutions sur mesure qui répondent parfaitement"
 " à l'évolution de nos exigences."
-msgstr ""
+msgstr "Medeo stands out for its exceptional professionalism. Always ready to adapt, this firm offers tailor-made solutions that perfectly meet the evolution of our requirements."
 
 #: medeo/templates/notre_expertise.html:321
 msgid ""
@@ -879,7 +879,7 @@ msgid ""
 "gestion de projet. Sa plateforme intuitive\n"
 "                facilite la centralisation et l'efficacité des processus "
 "d'entreprise."
-msgstr ""
+msgstr "Axonaut is an integrated management software optimizing the operations of SMEs with tools for accounting, invoicing, CRM, HR, and project management. Its intuitive platform facilitates the centralization and efficiency of business processes."
 
 #: medeo/templates/notre_expertise.html:337
 msgid ""
@@ -888,7 +888,7 @@ msgid ""
 "                approfondie pour accompagner les entreprises dans leur "
 "transformation digitale et l'optimisation de\n"
 "                leurs processus technologiques."
-msgstr ""
+msgstr "Bamana Solutions is a consulting firm specializing in digital technology, providing in-depth expertise to assist businesses in their digital transformation and optimization of technological processes."
 
 #: medeo/templates/notre_expertise.html:353
 msgid ""
@@ -897,7 +897,7 @@ msgid ""
 "                automatiser la comptabilité des entreprises de toutes "
 "tailles, en intégrant la collecte de données, le\n"
 "                classement et l'analyse des transactions financières."
-msgstr ""
+msgstr "Dext is a digital solution for financial and expense management, designed to simplify and automate the accounting of businesses of all sizes by integrating data collection, categorization, and analysis of financial transactions."
 
 #: medeo/templates/notre_expertise.html:369
 msgid ""
@@ -906,7 +906,7 @@ msgid ""
 "                des accords et la digitalisation des processus "
 "documentaires pour les entreprises et les\n"
 "                particuliers."
-msgstr ""
+msgstr "DocuSign provides a secure and efficient electronic signature solution, facilitating agreement management and the digitization of document processes for businesses and individuals."
 
 #: medeo/templates/notre_expertise.html:385
 msgid ""
@@ -915,7 +915,7 @@ msgid ""
 "                bancaires automatiques, aidant les entreprises à "
 "collecter et gérer les paiements récurrents de manière\n"
 "                efficace et sécurisée."
-msgstr ""
+msgstr "GoCardless is a payment service specialized in simplified management of direct debits, assisting businesses in efficiently and securely collecting and managing recurring payments."
 
 #: medeo/templates/notre_expertise.html:400
 msgid ""
@@ -924,7 +924,7 @@ msgid ""
 "                stockage de données, de calcul en nuage et d'analyse "
 "avancée, destinées à favoriser l'innovation et\n"
 "                l'efficacité opérationnelle des entreprises."
-msgstr ""
+msgstr "Google Cloud provides a comprehensive suite of cloud computing services, offering solutions for data storage, cloud computing, and advanced analytics, aimed at fostering innovation and operational efficiency for businesses."
 
 #: medeo/templates/notre_expertise.html:416
 msgid ""
@@ -933,7 +933,8 @@ msgid ""
 "                l'enregistrement et à la protection des brevets, marques,"
 " dessins et modèles, soutenant l'innovation\n"
 "                et la compétitivité des entreprises et inventeurs."
-msgstr ""
+msgstr 
+"The INPI (National Institute of Industrial Property) is the official French organization dedicated to the registration and protection of patents, trademarks, designs, and models, supporting innovation and the competitiveness of businesses and inventors."
 
 #: medeo/templates/notre_expertise.html:432
 msgid ""
@@ -942,7 +943,7 @@ msgid ""
 "                logiciels innovants pour faciliter la finance, la paie et"
 " les ressources humaines, adaptés aux besoins\n"
 "                des petites et moyennes entreprises."
-msgstr ""
+msgstr "Sage is a global leader in accounting and business management solutions, providing innovative software to facilitate finance, payroll, and human resources, tailored to the needs of small and medium-sized enterprises."
 
 #: medeo/templates/notre_expertise.html:449
 msgid ""
@@ -951,7 +952,7 @@ msgid ""
 "                automatiser les processus RH, offrant une solution "
 "complète et intuitive adaptée aux besoins spécifiques\n"
 "                des entreprises françaises."
-msgstr ""
+msgstr "Silae is payroll and human resources management software designed to optimize and automate HR processes, providing a comprehensive and intuitive solution tailored to the specific needs of French businesses."
 
 #: medeo/templates/nouscontacter.html:65
 msgid "Nous contacter "
@@ -1357,7 +1358,7 @@ msgid ""
 "propre cabinet. Je m'étais \n"
 "\n"
 "                donné une dizaine d'années pour y parvenir."
-msgstr ""
+msgstr "Since the beginning of my career, I have had the ambition to establish my own firm. I had given myself about ten years to achieve this."
 
 #: medeo/templates/votre_cabinet.html:431
 msgid ""
