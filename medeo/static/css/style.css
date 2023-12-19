@@ -3482,7 +3482,7 @@ textarea[id=content]:focus {
     font-weight: 400;
     color: #114a79;
     font-style: italic;
-    /* overflow: hidden; */
+    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 8;
@@ -4859,7 +4859,7 @@ ul.slides input {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -15px;
+    bottom: 0px;
     z-index: 999;
     text-align: center;
 }
@@ -5307,4 +5307,25 @@ input:checked+.slide-container .nav label {
     position: absolute;
     right: 7%;
     width: 20%;
+}
+
+.news_carousel_btn{
+    position: absolute;
+    right: 7%;
+    /* position: relative; 
+    z-index: 10;  */
+
+}
+
+.readmore_bt {
+    position: relative; /* Use 'absolute' if it fits your layout better */
+    z-index: 100;       /* Adjust this value as needed */
+}
+
+.readmore_bt {
+    pointer-events: auto; /* Ensure it's clickable */
+}
+
+.carousel {
+    z-index: 10; /* Lower than the button's z-index */
 }
