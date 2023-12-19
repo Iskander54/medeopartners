@@ -1217,24 +1217,18 @@ msgstr "Medeo, \"Cure your business\""
 msgid "Notre histoire"
 msgstr "Our history"
 
-#: medeo/templates/votre_cabinet.html:20
+#: medeo/templates/votre_cabinet.html:28
 msgid ""
-"MEDEO Partners</h1><br>\n"
-"      <p class=\"banner_text\" style=\"text-indent: 1px; width: auto; "
-"margin-left: 0;\">\n"
-"        est un cabinet d'expertise comptable et de commissariat aux "
-"comptes"
-msgstr "MEDEO Partners</h1><br>\n"
-" <p class=\"banner_text\" style=\"text-indent: 1px; width: auto; "
-"margin-left: 0;\">\n"
-"is an accounting and auditing firm"
-"accounts"
+"MEDEO Partners est un cabinet d'expertise comptable et de commissariat "
+"aux comptes"
+msgstr "MEDEO Partners is an accounting and auditing firm accounts"
 
 #: medeo/templates/votre_cabinet.html:29
 msgid ""
 "inscrit à <b>l'Ordre des experts-comptables (OEC) de Paris</b> et auprès "
 "de la <b>Compagnie régionale des\n"
 "        commissaires aux comptes de Paris (CRCC).</b>"
+msgstr ""
 msgstr "registered with the Ordre des experts-comptables  (OEC) of Paris and with the "
 "<b>Regional Company of\n"
 "Paris auditors (CRCC).</b>"
@@ -1430,7 +1424,7 @@ msgstr "Communication is essential to build and maintain"
 
 
 
-#: medeo/templates/votre_cabinet.html:180
+#: medeo/templates/votre_cabinet.html:188
 msgid ""
 "L'écologie est une valeur essentielle de notre entreprise. Nous nous "
 "efforçons de vulgariser les pratiques\n"
