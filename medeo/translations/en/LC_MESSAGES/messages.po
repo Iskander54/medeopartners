@@ -933,8 +933,7 @@ msgid ""
 "                l'enregistrement et à la protection des brevets, marques,"
 " dessins et modèles, soutenant l'innovation\n"
 "                et la compétitivité des entreprises et inventeurs."
-msgstr 
-"The INPI (National Institute of Industrial Property) is the official French organization dedicated to the registration and protection of patents, trademarks, designs, and models, supporting innovation and the competitiveness of businesses and inventors."
+msgstr "The INPI (National Institute of Industrial Property) is the official French organization dedicated to the registration and protection of patents, trademarks, designs, and models, supporting innovation and the competitiveness of businesses and inventors."
 
 #: medeo/templates/notre_expertise.html:432
 msgid ""
