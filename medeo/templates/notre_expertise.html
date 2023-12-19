@@ -13,7 +13,7 @@
       <div class="col-md-12">
         <h1 class="banner_taital">{{_('Notre expertise')}}</h1>
 
-        <p class="what_text_1" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</p>
+        <p class="medeo-cure-your" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</p>
         <br>
       </div>
     </div>
@@ -252,7 +252,7 @@
               </p>
             </div>
           </div>
-          <div class="témoignages-card bg-blue">
+          <div class="témoignages-card bg-red">
             <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
             <div class="header">
               <div class="row mx-0">
@@ -274,7 +274,7 @@
               </p>
             </div>
           </div>
-          <div class="témoignages-card bg-red">
+          <div class="témoignages-card bg-grey">
             <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.png') }}" alt="" />
             <div class="header">
               <div class="row mx-0">
@@ -482,6 +482,8 @@
     speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,           
+    autoplaySpeed: 2000, 
     responsive: [
       {
         breakpoint: 1024,
@@ -518,6 +520,9 @@
     speed: 300,
     slidesToShow: 6,
     slidesToScroll: 2,
+    autoplay: true,           
+    autoplaySpeed: 2000,     
+
     responsive: [
       {
         breakpoint: 1024,
