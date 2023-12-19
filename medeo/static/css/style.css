@@ -462,21 +462,22 @@ img {
     .my_div_aliza {
         font-size: 18px;
         border-radius: 30px;
-        width: 40%;
+        width: 15%;
         border-spacing: 60px;
         margin-left: -20px;
-        background-image: url(../images/woman_phone.jpeg);
-        background-size: cover;
+        /* background-image: url(../images/woman_phone.jpeg); */
+        /* background-size: cover; */
     }
+   
 
     .my_div_aliza_two {
         font-size: 18px;
         border-radius: 30px;
-        width: 40%;
+        width: 15%;
         border-spacing: 60px;
         margin-left: -20px;
-        background-image: url(../images/main-img.jpeg);
-        background-size: cover;
+        /* background-image: url(../images/main-img.jpeg); */
+        /* background-size: cover; */
 
 
     }
@@ -484,11 +485,11 @@ img {
     .my_div_aliza_three {
         font-size: 18px;
         border-radius: 30px;
-        width: 40%;
+        width: 15%;
         border-spacing: 60px;
         margin-left: -20px;
-        background-image: url(../images/eiffel_tower.jpeg);
-        background-size: cover;
+        /* background-image: url(../images/eiffel_tower.jpeg); */
+        /* background-size: cover; */
 
     }
 
