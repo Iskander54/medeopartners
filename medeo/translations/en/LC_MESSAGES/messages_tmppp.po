@@ -297,11 +297,11 @@ msgid "Bienvenue chez Medeo Partners"
 msgstr "Welcome to Medeo Partners"
 
 #: medeo/templates/home.html:16
-msgid "Forts de plus 10 ans d'expertise en comptabilité et fiscalité, nous"
+msgid "Forts de plus 10 ans d'expertise en comptabilité, et fiscalité, nous"
 msgstr "With more than 10 years of  expertise in accounting and taxation, we"
 
 #: medeo/templates/home.html:17
-msgid "accompagnons nos clients de tous secteurs dans leurs démarches"
+msgid "accompagnons nos clients de tout secteurs dans leurs démarches"
 msgstr "support our clients in all sectors in their  project"
 
 #: medeo/templates/home.html:18
@@ -328,18 +328,17 @@ msgstr "Accounting <br>Expertise"
 #: medeo/templates/home.html:53
 msgid ""
 "Notre équipe dispose d'une expertise de haut niveau pour vous offrir des\n"
-"          services de conseil et d'assistance dans les domaines de la "
+"        services de conseil et d'assistance dans les domaines de la "
 "gestion financière, comptable et fiscale."
 msgstr "Our team has a high level of expertise to offer you consulting and assistance  services in the areas of financial, accounting and tax management."
 
 #: medeo/templates/home.html:63
 msgid ""
 "Notre cabinet comptable est spécialisé dans l'audit et la certification\n"
-"          des comptes des entreprises de toutes tailles et de tous "
+"        des comptes des entreprises de toutes tailles et de tous "
 "secteurs. Nous travaillons en étroite collaboration\n"
-"          avec nos clients pour assurer la conformité de leurs comptes "
-"avec les normes comptables et fiscales en\n"
-"          vigueur."
+"        avec nos clients pour assurer la conformité de leurs comptes avec"
+" les normes comptables et fiscales en vigueur."
 msgstr "Our accounting firm specializes in auditing and certifying\n
 " the accounts of  companies of all sizes and "
 "sectors. We work closely with our clients\n"
@@ -353,13 +352,12 @@ msgstr "Council <br>Optimization"
 #: medeo/templates/home.html:75
 msgid ""
 "Nos services d'optimisation d'entreprise incluent l'analyse de la\n"
-"          performance, l'identification des leviers de croissance, la "
-"mise en place de plans d'action pour\n"
-"          l'amélioration\n"
-"          de la rentabilité, la gestion de projets de transformation, la "
+"        performance, l'identification des leviers de croissance, la mise "
+"en place de plans d'action pour l'amélioration\n"
+"        de la rentabilité, la gestion de projets de transformation, la "
 "gestion du changement, l'optimisation de la\n"
-"          chaîne d'approvisionnement et l'analyse des coûts."
-msgstr "Our business optimization services include performance analysis, identification of  growth drivers, implementation of action plans for improving profitability,  management of transformation projects, change management, supply chain  optimization and cost analysis."
+"        chaîne d'approvisionnement et l'analyse des coûts."
+msgstr ""Our business optimization services include performance analysis, identification of  growth drivers, implementation of action plans for improving profitability,  management of transformation projects, change management, supply chain  optimization and cost analysis."
 
 #: medeo/templates/home.html:70
 msgid "Service <br>Informatique"
@@ -368,9 +366,8 @@ msgstr "IT Department"
 #: medeo/templates/home.html:88
 msgid ""
 "Notre département informatique gère tout type de problématiques liés\n"
-"          aux systèmes d'information, à la gestion de vos données clients"
-" ainsi qu'à l'amélioration de vos\n"
-"          process."
+"        aux systèmes d'information, à la gestion de vos données clients "
+"ainsi qu'à l'amélioration de vos process."
 msgstr "Our IT department handles all types of issues related \n"
 "to information systems, the  management of your customer data and "
 "the improvement of your processes."
@@ -394,37 +391,30 @@ msgid ""
 "en 2024"
 msgstr "Only a few days left to opt for the self-employed regime in 2024"
 
-#: medeo/templates/carousel_common.html:130
+#: medeo/templates/home.html:119
 msgid ""
 "Les exploitants individuels soumis au régime micro-BIC ou micro-BNC et "
-"relevant du régime\n"
-"                micro-social ont la possibilité d'opter pour le régime de"
-" l'auto-entrepreneur prévu à l'article\n"
-"                151-0 du CGI, sous réserve que le montant des revenus "
-"nets du foyer fiscal soit inférieur ou égal,\n"
-"                pour une part de quotient familial, à 27 478 €. Les "
-"exploitants qui optent pour le régime de\n"
-"                l'auto-entrepreneur s'acquittent auprès d'un seul "
-"interlocuteur de l'impôt sur le revenu et de\n"
-"                l'ensemble des cotisations et contributions de sécurité "
-"sociale par des versements libératoires\n"
-"                mensuels ou trimestriels égaux à un pourcentage du "
-"chiffre d'affaires ou des recettes réalisés au\n"
-"                cours de la période considérée.\n"
-"  \n"
-"                Pour l'imposition des revenus perçus en 2024, l'option "
-"pour le régime de l'auto-entrepreneur\n"
-"                doit être exercée au plus tard le 30 septembre 2023 "
-"auprès des organismes sociaux compétents.\n"
-"  \n"
-"                A noter :\n"
-"                En cas de création d'entreprise, l'option pour le régime "
-"de l'auto-entrepreneur doit être\n"
-"                exercée au plus tard le dernier jour du troisième mois "
-"qui suit celui de la création de\n"
-"                l'entreprise et peut être formulée auprès du guichet "
-"unique électronique des formalités\n"
-"                d'entreprises."
+"relevant du régime micro-social ont la possibilité d'opter pour le régime"
+" de l'auto-entrepreneur prévu à l'article 151-0 du CGI, sous réserve que "
+"le montant des revenus nets du foyer fiscal soit inférieur ou égal, pour "
+"une part de quotient familial, à 27 478 €. Les exploitants qui optent "
+"pour le régime de l'auto-entrepreneur s'acquittent auprès d'un seul "
+"interlocuteur de l'impôt sur le revenu et de l'ensemble des cotisations "
+"et contributions de sécurité sociale par des versements libératoires "
+"mensuels ou trimestriels égaux à un pourcentage du chiffre d'affaires ou "
+"des recettes réalisés au cours de la période considérée.\n"
+"\n"
+"                      Pour l'imposition des revenus perçus en 2024, "
+"l'option pour le régime de l'auto-entrepreneur doit être exercée au plus "
+"tard le 30 septembre 2023 auprès des organismes sociaux compétents.\n"
+"                      \n"
+"                      A noter :\n"
+"                      En cas de création d'entreprise, l'option pour le "
+"régime de l'auto-entrepreneur doit être exercée au plus tard le dernier "
+"jour du troisième mois qui suit celui de la création de l'entreprise et "
+"peut être formulée auprès du guichet unique électronique des formalités "
+"d'entreprises."
+
 msgstr "Individual operators subject to the micro-BIC or micro-BNC regime and "
 "falling under the micro-social regime have the possibility of opting for the regime"
 "of the self-employed person provided for in article 151-0 of the CGI, provided that"
@@ -552,7 +542,9 @@ msgstr "actualites#type=.all-types&medium=.juridique"
 msgid "news/juridique/news_12"
 msgstr "news/juridique/news_12"
 
-#: medeo/templates/layout.html:172 medeo/templates/layout.html:383
+#: medeo/templates/home.html:210 medeo/templates/layout.html:138
+#: medeo/templates/layout.html:228 medeo/templates/layout.html:229
+#: medeo/templates/layout.html:247
 msgid "nouscontacter"
 msgstr "contactus"
 
@@ -619,200 +611,6 @@ msgstr "Public-Accounting"
 msgid "audit"
 msgstr "auditing"
 
-#: medeo/templates/notre_expertise.html:122
-msgid "Conseil informatique"
-msgstr "IT Services"
-
-#: medeo/templates/notre_expertise.html:126
-msgid ""
-"Notre département informatique gère tout type de problématiques liés aux "
-"systèmes d'information, à la\n"
-"        gestion de vos données clients ainsi qu'à l'amélioration de vos "
-"process."
-msgstr "Our IT department handles all types of issues related to information systems,\n the management of your customer data, as well as the improvement of your"
-
-#: medeo/templates/notre_expertise.html:130
-msgid ""
-"Les services informatiques que nous pouvons offrir incluent la\n"
-"        mise en place et la gestion de systèmes comptables et\n"
-"        financiers, la mise en place de systèmes de gestion de la\n"
-"        paie, la mise en place de systèmes de suivi des stocks et de\n"
-"        la facturation, et des conseils sur les logiciels et les\n"
-"        technologies les plus appropriées pour les besoins de\n"
-"        l'entreprise."
-msgstr "The IT services we can offer include the setup and management of accounting and \n "
- "financial systems, the implementation of payroll management systems, the implementation\n "
- "of inventory tracking and billing systems, and advice on the most suitable software and \n "
- "technologies for the business needs."
-
-#: medeo/templates/notre_expertise.html:140
-msgid ""
-"Nous pouvons aussi aider les entreprises à garantir la\n"
-"        sécurité de leurs données"
-msgstr "We can also help businesses ensure \m the security of their data."
-
-
-#: medeo/templates/notre_expertise.html:180
-msgid "Cabinet de conseil en investissement"
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:183
-msgid ""
-"MEDEO est un partenaire efficace, à l'écoute et soucieux de nos besoins "
-"très souvent\n"
-"                changeants"
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:202
-msgid "Cabinet de consulting en ingénierie"
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:206
-msgid ""
-"Avec Medeo, nous avons trouvé un allié de confiance. Leur équipe dévouée "
-"et réactive comprend nos\n"
-"                enjeux et apporte constamment des réponses pertinentes à "
-"nos problématiques comptables."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:224
-msgid "Courtier immobilier"
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:227
-msgid ""
-"Nous sommes fiers de notre partenariat avec MEDEO. Une entente joviale, "
-"une rigueur à tous les\n"
-"                étages et surtout une capacité à dépasser nos attentes en"
-" termes de qualité de service."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:245
-msgid "Cabinet de conseil en numérique et transformation digitale"
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:248
-msgid ""
-"Les compétences et l'expertise d'Avi et Israel nous ont beaucoup aidé "
-"dans la création de notre\n"
-"                entreprise."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:250
-msgid ""
-"La réactivité et la disponibilité des associés sont très appréciables "
-"durant une phase aussi dense\n"
-"                et stressante que la création d'une entreprise."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:268
-msgid "Agence DMC"
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:271
-msgid ""
-"L'expertise de Medeo est incontestable. Ils font preuve 'une grande "
-"écoute et d'une réelle\n"
-"                capacité à anticiper nos besoins. Leur accompagnement "
-"personnalisé est un atout majeur pour notre\n"
-"                entreprise."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:290
-msgid "Cabinet de conseil en investissements financiers"
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:293
-msgid ""
-"Medeo se distingue par son professionnalisme exceptionnel. Toujours prêt "
-"à s'adapter, ce cabinet\n"
-"                offre des solutions sur mesure qui répondent parfaitement"
-" à l'évolution de nos exigences."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:321
-msgid ""
-"Axonaut est un logiciel de gestion intégrée, optimisant les opérations "
-"des PME avec des outils pour\n"
-"                la comptabilité, la facturation, le CRM, les RH et la "
-"gestion de projet. Sa plateforme intuitive\n"
-"                facilite la centralisation et l'efficacité des processus "
-"d'entreprise."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:337
-msgid ""
-"Bamana Solutions est un cabinet de conseil spécialisé dans le numérique, "
-"offrant une expertise\n"
-"                approfondie pour accompagner les entreprises dans leur "
-"transformation digitale et l'optimisation de\n"
-"                leurs processus technologiques."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:353
-msgid ""
-"Dext est une solution numérique de gestion des finances et des dépenses, "
-"conçue pour simplifier et\n"
-"                automatiser la comptabilité des entreprises de toutes "
-"tailles, en intégrant la collecte de données, le\n"
-"                classement et l'analyse des transactions financières."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:369
-msgid ""
-"DocuSign offre une solution de signature électronique sécurisée et "
-"efficace, facilitant la gestion\n"
-"                des accords et la digitalisation des processus "
-"documentaires pour les entreprises et les\n"
-"                particuliers."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:385
-msgid ""
-"GoCardless est un service de paiement spécialisé dans la gestion "
-"simplifiée des prélèvements\n"
-"                bancaires automatiques, aidant les entreprises à "
-"collecter et gérer les paiements récurrents de manière\n"
-"                efficace et sécurisée."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:400
-msgid ""
-"Google Cloud fournit une suite complète de services de cloud computing, "
-"offrant des solutions de\n"
-"                stockage de données, de calcul en nuage et d'analyse "
-"avancée, destinées à favoriser l'innovation et\n"
-"                l'efficacité opérationnelle des entreprises."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:416
-msgid ""
-"L'INPI (Institut National de la Propriété Industrielle) est l'organisme "
-"français officiel dédié à\n"
-"                l'enregistrement et à la protection des brevets, marques,"
-" dessins et modèles, soutenant l'innovation\n"
-"                et la compétitivité des entreprises et inventeurs."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:432
-msgid ""
-"Sage est un leader mondial en solutions de comptabilité et de gestion "
-"d'entreprise, offrant des\n"
-"                logiciels innovants pour faciliter la finance, la paie et"
-" les ressources humaines, adaptés aux besoins\n"
-"                des petites et moyennes entreprises."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:449
-msgid ""
-"Silae est un logiciel de paie et de gestion des ressources humaines, "
-"conçu pour optimiser et\n"
-"                automatiser les processus RH, offrant une solution "
-"complète et intuitive adaptée aux besoins spécifiques\n"
-"                des entreprises françaises."
-msgstr ""
-
-
 #: medeo/templates/layout.html:123 medeo/templates/notre_expertise.html:98
 msgid "conseil_optimisation"
 msgstr "council_optimization"
@@ -827,11 +625,11 @@ msgstr "News"
 
 #: medeo/templates/layout.html:145
 msgid "espace_client"
-msgstr "Account"
+msgstr "Customer Area"
 
 #: medeo/templates/layout.html:147
 msgid "Espace client"
-msgstr "Account"
+msgstr "Customer Area"
 
 #: medeo/templates/layout.html:226
 msgid "À propos"
@@ -1015,11 +813,10 @@ msgstr "We provide advice to help businesses take "
 "We help prevent and manage financial disputes"
 "when they occur"
 
-#: medeo/templates/notre_expertise.html:68
+#: medeo/templates/notre_expertise.html:59
 msgid ""
 "Nous effectuons un examen indépendant et systématique des états "
-"financiers de nos clients en tant\n"
-"        qu'auditeurs\n"
+"financiers de nos clients en tant qu'auditeurs\n"
 "        qualifiés, en conformité avec les normes d'audit.\n"
 "        <br><br>\n"
 "        Le but de notre audit contractuel est de fournir une opinion sur "
@@ -1070,8 +867,8 @@ msgstr "We provide a consultancy service to help businesses "
 "financial, investment opportunities and"
 " relations with shareholders and stakeholders."
 
-#: medeo/templates/notre_expertise.html:162
-msgid "Témoignages"
+#: medeo/templates/notre_expertise.html:113
+msgid "Témoignages "
 msgstr "Testimonials"
 
 #: medeo/templates/notre_expertise.html:140
@@ -1230,34 +1027,34 @@ msgstr "MEDEO Partners</h1><br>\n"
 "is an accounting and auditing firm"
 "accounts"
 
-#: medeo/templates/votre_cabinet.html:29
+#: medeo/templates/votre_cabinet.html:23
 msgid ""
-"inscrit à <b>l'Ordre des experts-comptables (OEC) de Paris</b> et auprès "
-"de la <b>Compagnie régionale des\n"
-"        commissaires aux comptes de Paris (CRCC).</b>"
-msgstr "registered with the Ordre des experts-comptables  (OEC) of Paris and with the "
-"<b>Regional Company of\n"
-"Paris auditors (CRCC).</b>"
+"inscrit à l'Ordre des experts-comptables (OEC) de Paris et auprès de la "
+"Compagnie régionale des\n"
+"        commissaires aux comptes de Paris (CRCC)."
+msgstr "registered with the Order of Chartered Accountants (OEC) of Paris and with the "
+"Regional company of\n"
+"Paris auditors (CRCC)."
 
-#: medeo/templates/votre_cabinet.html:36
-msgid "<b>MEDEO,</b> signifiant <b>«prendre soin de»</b>"
-msgstr "<b>MEDEO,</b> meaning <b>«to take care»</b>"
+#: medeo/templates/votre_cabinet.html:28
+msgid "MEDEO, signifiant «prendre soin»"
+msgstr "MEDEO, meaning “to take care”"
 
-#: medeo/templates/votre_cabinet.html:54
+#: medeo/templates/votre_cabinet.html:46
 msgid ""
 "en grec ancien, caractérise le désir de ses fondateurs d'incarner le rôle"
-" de <b>« médecins des\n"
-"        entreprises ».</b>"
+" de « médecins des\n"
+"        entreprises »."
 msgstr "in ancient Greek, characterizes the desire of its founders to embody the role"
 "from "doctors of\n"
 "companies"."
 
-#: medeo/templates/votre_cabinet.html:58
+#: medeo/templates/votre_cabinet.html:50
 msgid ""
-"<b>PARTNERS</b>, emprunté à l'anglais, souligne la notion de « "
-"partenariat », un terme représentant\n"
+"PARTNERS, emprunté à l'anglais, souligne la notion de « partenariat », un"
+" terme représentant\n"
 "        l'association et la complémentarité de ses fondateurs :"
-msgstr "<b>PARTNERS</b>, borrowed from English, underlines the notion of "partnership", a "
+msgstr "PARTNERS, borrowed from English, underlines the notion of "partnership", a "
 "representative term\n"
 "the association and complementarity of its founders:"
 
@@ -1294,7 +1091,7 @@ msgid ""
 "        durant le cycle de vie de votre entreprise :\n"
 "        en prenant soin du bien-être et de la croissance de vos projets."
 
-msgstr "Like a doctor, MEDEO Partners supports you </h1><br>\n"
+msgstr "Conversely a doctor, MEDEO Partners supports you </h1><br>\n"
 " <p class=\"banner_text\" style=\"text-indent: 1px; width: auto; "
 "margin-left: 0;\">\n"
 "during the life cycle of your business:\n"

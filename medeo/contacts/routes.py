@@ -15,7 +15,7 @@ def add_language_code(endpoint, values):
 def pull_lang_code(endpoint, values):
     g.lang_code = values.pop('lang_code')
 
-
+@contacts.route("/contactus", methods=['GET','POST'])
 @contacts.route("/nouscontacter", methods=['GET','POST'])
 def contaceznous():
     form=ContactForm()
