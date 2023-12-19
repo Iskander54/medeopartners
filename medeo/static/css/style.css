@@ -240,6 +240,22 @@ img {
 @media (max-width: 575px) {
 
 
+    .txt_votrecab {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #114a79;
+        text-align: center;
+    }
+    
+    .txt_img_votrecab {
+        margin: 0 auto;
+        color: #114a79;
+        text-align: center;
+        width: 90%;
+        font-size: 325%
+    
+    }
     .icones_langues {
 
         width: 34px;
@@ -565,6 +581,22 @@ img {
         margin-top: 13px;
         padding: 3px;
     }
+    .txt_votrecab {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #114a79;
+        text-align: center;
+    }
+    
+    .txt_img_votrecab {
+        margin: 0 auto;
+        color: #114a79;
+        text-align: center;
+        width: 90%;
+        font-size: 325%
+    
+    }
 
     .medeo-cure-your{
         font-size: xx-large;
@@ -886,6 +918,22 @@ img {
 /* Medium Devices (e.g., larger tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
 
+    .txt_votrecab {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #114a79;
+        text-align: center;
+    }
+    
+    .txt_img_votrecab {
+        margin: 0 auto;
+        color: #114a79;
+        text-align: center;
+        width: 90%;
+        font-size: 200%;
+    
+    }
     .icones_langues {
         width: 25px;
         margin-top: 21px;
@@ -1228,6 +1276,22 @@ img {
     .icones_langues {
         width: 24px;
         margin-top: 21px;
+    }
+    .txt_votrecab {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #114a79;
+        text-align: center;
+    }
+    
+    .txt_img_votrecab {
+        margin: 0 auto;
+        color: #114a79;
+        text-align: center;
+        width: 90%;
+        font-size: 325%
+    
     }
 
     .medeo-cure-your{
@@ -1579,6 +1643,22 @@ img {
     .effet_ombre_boutons_valeurs {
         border-radius: 51px;
         box-shadow: 24px 24px 41px #9ea1a4, -24px -24px 41px #ffffff;
+    }
+    .txt_votrecab {
+        width: 100%;
+        float: left;
+        font-size: 18px;
+        color: #114a79;
+        text-align: center;
+    }
+    
+    .txt_img_votrecab {
+        margin: 0 auto;
+        color: #114a79;
+        text-align: center;
+        width: 90%;
+        font-size: 325%
+    
     }
     .icones_langues {
         width: 26px;
@@ -2641,6 +2721,7 @@ textarea#comment::placeholder {
 
 .names {
     color: #114a79;
+    font-weight: bolder;
 }
 
 .about_page_blue {
@@ -5307,4 +5388,8 @@ input:checked+.slide-container .nav label {
     position: absolute;
     right: 7%;
     width: 20%;
+}
+
+.gras_txt{
+    font-weight: bolder;
 }
