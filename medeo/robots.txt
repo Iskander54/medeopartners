@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://medeo-partners.com/fr/sitemap.xml

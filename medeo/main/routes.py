@@ -1,5 +1,7 @@
-from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response
+from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response,send_from_directory
 from flask_babel import _,refresh
+
+
 main = Blueprint('main', __name__, url_prefix='/<lang_code>')
 
 @main.url_defaults
