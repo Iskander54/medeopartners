@@ -1,27 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
-<br />
-<br />
+<div class="loader-container">
+    <div id="foregid" class="foreg"></div>
+    <span id="loaderid" class="loader"></span>
+  </div>
 
 
-<div class="container">
-    <p class="subheading">Fiscal</p>
-    <br />
-    <h1 class="banner_taital" style="margin-top: 10px;">
+
+
+  <section class="news-detail-header">
+    <a class="news-category" href="">Fiscal</a>
+    <h1 class="news-heading">
         Taxation des logements vacants ou secondaires : la nouvelle liste des zones tendues est parue </h1>
-
-    <h3 class="banner_taital_h3">
-        Le décret fixant la liste des zones tendues est paru. Plus de 2 000 nouvelles communes vont pouvoir majorer la
-        taxe d’habitation sur les résidences secondaires. Dans ces communes, les logements vacants seront imposables de
-        plein droit.
-    </h3>
-
-
-    <img class="image_article" src="{{url_for('static', filename='/images/news/fiscal/news_787.jpeg')}}" loading="lazy">
-
-
-
-    <p class="text_bottom_home">
+    </h1>
+    <span class="news-description">
+        Les exploitants individuels qui souhaitent relever du régime de l'auto-entrepreneur au titre de l'année 2024 doivent exercer l'option pour ce régime au plus tard le 30 septembre 2023.
+      </span
+    >
+  </section>
+  <section class="news-detail-img">
+    <img src="../static/images/news/fiscal/news_787.jpeg" alt="" />
+  </section>
+  <section class="news-detail-header">
+    <p class="news-description">
         1. La loi de finances pour 2023 a élargi la définition des zones dites « tendues », dans lesquelles
         s’appliquent, de plein droit, la taxe sur les logements vacants (TLV) prévue par l’article 232 du CGI et, sur
         délibération des communes, la majoration de la taxe d’habitation sur les résidences secondaires prévue par
@@ -89,11 +90,29 @@
         vacance.
     </p>
 
-    <p class="text_bottom_home">
 
-        © Editions Francis Lefebvre - La Quotidienne
-    </p>
+  </section>
 
 
-</div>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+  
+      // Loader des autres pages
+      var loaderDiv = document.getElementById('loaderid');
+      var foregroundDiv = document.getElementById('foregid');
+      // Show the div
+      foregroundDiv.style.display = 'block';
+      loaderDiv.style.display = 'block';
+      // Hide the div after 1 seconds
+      setTimeout(function () {
+        loaderDiv.style.display = 'none';
+        foregroundDiv.style.display = 'none';
+      }, 1000);
+    });
+  
+  
+  </script>
+
+
 {% endblock content %}

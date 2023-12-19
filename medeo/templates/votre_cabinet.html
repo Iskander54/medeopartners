@@ -519,53 +519,7 @@
   <br /><br /><br />
 
 
-  <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
-
-
-  <div id="container_newcarousel" style="display: none;">
-
-    <div id="holder">
-
-      <div id="image">
-        <div class="img israel_haikou"></div>
-
-        <div class="img avi_gozlane"></div>
-      </div>
-
-      <div id="right"></div>
-
-      <div id="text">
-        <div id="centerText">
-          <p class="quote">
-            CodePen is a social development environment. At its heart, it allows you to write code in the browser, and
-            see the results of it as you build. A useful and liberating online code editor for developers of any skill,
-            and particularly empowering for people learning to code. We focus primarily on front-end languages like
-            HTML, CSS, JavaScript, and preprocessing syntaxes that turn into those things.
-          </p>
-          <p class="quote">
-            We say social, because CodePen is a community. Most creations on CodePen are public and open source. They
-            are living things that other people and the community can interact with, from a simple hearting, to leaving
-            a comment, to forking and changing for their own needs.
-          </p>
-          <p class="quote">
-            People use CodePen for all sorts of things: prototyping new ideas, reduced test cases for bugs, sending
-            clients things to look at, evaluating potential hires, to finding inspiration. People also use CodePen as a
-            sort of resume and portfolio, showing off their best design and development work.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-
-    <div id="nav-cirlces">
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
-
-  </div>
 
 
 
@@ -585,148 +539,34 @@
     setTimeout(function () {
       loaderDiv.style.display = 'none';
       foregroundDiv.style.display = 'none';
+    // }, 1000000);
     }, 1000);
   });
 
 
 </script>
 <script>
-  $(window).load(function () {
-    $(".circle")
-      .first()
-      .addClass("active");
-    $("#bg .slide")
-      .first()
-      .addClass("active");
-    $("#image .img")
-      .first()
-      .addClass("active");
-    $(".quote")
-      .first()
-      .addClass("active");
+  $(document).ready(function() {
+    var totalSlides = $('input[name="radio-buttons"]').length;
+    var currentIndex = 0;
 
-    var animate = setInterval(function () {
-      var $this = $(".circle"),
-        currentActiveBubble = $("#nav-cirlces").find(".active"),
-        position = $("#nav-cirlces")
-          .children()
-          .index(currentActiveBubble),
-        num = $(".circle").length;
+    var autoSlide = setInterval(function() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
+    }, 8000); // Change slide every 6 seconds
 
-      if (position < num - 1) {
-        $(".active")
-          .removeClass("active")
-          .next()
-          .addClass("active");
-      } else {
-        $(".circle")
-          .removeClass("active")
-          .first()
-          .addClass("active");
-        $("#bg .slide")
-          .removeClass("active")
-          .first()
-          .addClass("active");
-        $("#image .img")
-          .removeClass("active")
-          .first()
-          .addClass("active");
-        $(".quote")
-          .removeClass("active")
-          .first()
-          .addClass("active");
-      }
-      position++;
-    }, 450000);
-
-    $(".circle").click(function () {
-      clearInterval(animate);
-
-      var $this = $(this),
-        $siblings = $this.parent().children(),
-        position = $siblings.index($this);
-
-      $(".circle")
-        .removeClass("active")
-        .eq(position)
-        .addClass("active");
-      $("#bg .slide")
-        .removeClass("active")
-        .eq(position)
-        .addClass("active");
-      $("#image .img")
-        .removeClass("active")
-        .eq(position)
-        .addClass("active");
-      $(".quote")
-        .removeClass("active")
-        .eq(position)
-        .addClass("active");
-    });
-
-    $("#rightBtn , #leftBtn").click(function () {
-      clearInterval(animate);
-
-      var $this = $(this),
-        currentActiveBubble = $("#nav-cirlces").find(".active"),
-        position = $("#nav-cirlces")
-          .children()
-          .index(currentActiveBubble),
-        num = $(".circle").length;
-
-      if ($this.hasClass("next")) {
-        if (position < num - 1) {
-          $(".active")
-            .removeClass("active")
-            .next()
-            .addClass("active");
-        } else {
-          $(".circle")
-            .removeClass("active")
-            .first()
-            .addClass("active");
-          $("#bg .slide")
-            .removeClass("active")
-            .first()
-            .addClass("active");
-          $("#image .img")
-            .removeClass("active")
-            .first()
-            .addClass("active");
-          $(".quote")
-            .removeClass("active")
-            .first()
-            .addClass("active");
-        }
-      } else {
-        if (position === 0) {
-          $(".circle")
-            .removeClass("active")
-            .last()
-            .addClass("active");
-          $("#bg .slide")
-            .removeClass("active")
-            .last()
-            .addClass("active");
-          $("#image .img")
-            .removeClass("active")
-            .last()
-            .addClass("active");
-          $(".quote")
-            .removeClass("active")
-            .last()
-            .addClass("active");
-        } else {
-          $(".active")
-            .removeClass("active")
-            .prev()
-            .addClass("active");
-        }
-      }
+    // Reset the interval on manual click
+    $('.carousel-controls label, .carousel-dots label').click(function() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(function() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
+      }, 8000);
     });
   });
-
 </script>
+
+
 
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -744,4 +584,6 @@
     });
   });
 </script>
+
+
 {% endblock content %}

@@ -239,6 +239,16 @@ img {
 /* Extra Small Devices (e.g., smartphones) */
 @media (max-width: 575px) {
 
+    .encart_bleu {
+        width: 40%;
+        height: 40%;
+        margin: auto;
+        right: 0px;
+        border-radius: 70px;
+        background-color: #114a79;
+        position: relative;
+        z-index: 2;
+    }
 
     .txt_votrecab {
         width: 100%;
@@ -576,6 +586,17 @@ img {
 
 /* Small Devices (e.g., larger smartphones and small tablets) */
 @media (min-width: 576px) and (max-width: 767px) {
+
+    .encart_bleu {
+        width: 40%;
+        height: 40%;
+        margin: auto;
+        right: 0px;
+        border-radius: 70px;
+        background-color: #114a79;
+        position: relative;
+        z-index: 2;
+    }
 
     .icones_langues {
         width: 37px;
@@ -918,6 +939,17 @@ img {
 
 /* Medium Devices (e.g., larger tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
+
+    .encart_bleu {
+        width: 40%;
+        height: 70%;
+        margin: auto;
+        right: 0px;
+        border-radius: 70px;
+        background-color: #114a79;
+        position: relative;
+        z-index: 2;
+    }
 
     .txt_votrecab {
         width: 100%;
@@ -1273,6 +1305,17 @@ img {
 
 /* Large Devices (e.g., desktops and laptops) */
 @media (min-width: 992px) and (max-width: 1199px) {
+
+    .encart_bleu {
+        width: 40%;
+        height: 70%;
+        margin: auto;
+        right: 0px;
+        border-radius: 70px;
+        background-color: #114a79;
+        position: relative;
+        z-index: 2;
+    }
 
     .icones_langues {
         width: 24px;
@@ -1641,6 +1684,19 @@ img {
 
 /* Extra Large Devices (e.g., large desktop screens) */
 @media (min-width: 1200px) {
+
+    .encart_bleu {
+        width: 40%;
+        height: 70%;
+        margin: auto;
+        right: 0px;
+        border-radius: 70px;
+        background-color: #114a79;
+        position: relative;
+        z-index: 2;
+    }
+
+
     .effet_ombre_boutons_valeurs {
         border-radius: 51px;
         box-shadow: 24px 24px 41px #9ea1a4, -24px -24px 41px #ffffff;
@@ -2955,7 +3011,7 @@ hr.hr_vertical {
 .loader {
     animation: rotate 1.5s infinite;
     height: 50px;
-    width: 50px;
+    /* width: 50px; */
     position: absolute;
     z-index: 9999;
     top: 50%;
@@ -4839,7 +4895,7 @@ ul.slides input {
     width: 100%;
 }
 
-.encart_bleu {
+/* .encart_bleu {
     width: 40%;
     height: 70%;
     margin: auto;
@@ -4848,8 +4904,7 @@ ul.slides input {
     background-color: #114a79;
     position: relative;
     z-index: 2;
-
-}
+} */
 
 .encart_rouge {
     flex: 1;

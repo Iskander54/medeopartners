@@ -199,6 +199,27 @@
   });
 </script>
 
+
+<script>
+  $(document).ready(function() {
+    var totalSlides = $('input[name="radio-buttons"]').length;
+    var currentIndex = 0;
+
+    var autoSlide = setInterval(function() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
+    }, 8000); // Change slide every 6 seconds
+
+    // Reset the interval on manual click
+    $('.carousel-controls label, .carousel-dots label').click(function() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(function() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
+      }, 8000);
+    });
+  });
+</script>
 <style>
   .clickable_encart{
     cursor: pointer;
