@@ -27,37 +27,39 @@
 
         <h3 class="banner_taital_h3" style="font-size: 250%">{{_('MEDEO Partners est un cabinet d\'expertise comptable
           et de commissariat aux comptes')}}</h3><br>
-        {{_('inscrit à <b>l\'Ordre des experts-comptables (OEC) de Paris</b> et auprès de la <b>Compagnie régionale des
-          commissaires aux comptes de Paris (CRCC).</b>')}}
+        <div class="txt_votrecab">{{_('inscrit à <b>l\'Ordre des experts-comptables (OEC) de Paris</b> et auprès de la <b>Compagnie régionale des
+          commissaires aux comptes de Paris (CRCC).</b>')}}</div>
         <p class="banner_text" style="text-indent: 1px; width: auto; margin-left: 0;">
           <br>
 
 
           <br><br>
-        <div class="what_text_2">{{_('<b>MEDEO,</b> signifiant <b>«prendre soin de»</b>')}}</div>
+        <div class="txt_img_votrecab">{{_('<b>MEDEO,</b> signifiant <b>«prendre soin de»</b>')}}</div>
 
         </p>
 
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6">
-        <img class="images_cabinet" src="{{url_for('static',filename='images/medeo_talking.png') }}" loading="lazy">
+        <img class="images_cabinet" style="margin-bottom: 30%;"src="{{url_for('static',filename='images/medeo_talking.png') }}" loading="lazy">
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-bottom: 10%;">
       <div class="col-xs-12 col-sm-12 col-md-6">
         <img class="img_heart" src="{{url_for('static',filename='images/heart_take_care.png') }}" loading="lazy">
 
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
 
-        <p class="banner_taital_h3_dos" style="text-indent: 1px; width: auto; margin-left: 0;">
-          {{_('en grec ancien, caractérise le désir de ses fondateurs d\'incarner le rôle de <b>« médecins des
-            entreprises ».</b>')}}
+        <p class="txt_votrecab" style="text-indent: 1px; width: auto; margin-left: 0;">
+          {{_('en grec ancien, caractérise le désir de ses fondateurs d\'incarner le rôle de 
+          <a class="gras_txt"><b>« médecins des
+            entreprises »')}}</a></b>
+          
 
           <br><br>
-          {{_('<b>PARTNERS</b>, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant
-          l\'association et la complémentarité de ses fondateurs :')}}
+          {{_('PARTNERS, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant
+          l\'association et la complémentarité  <a class="gras_txt"><b> de ses fondateurs :')}}</a></b>
 
           <a class="names" href="{{_('#lequipe')}}"><b style="font-size: xx-large;">Israel HAIKOU</b></a> et
           <a class="names" href="{{_('#lequipe')}}"><b style="font-size: xx-large;">Avi GOZLANE</b></a> {{_('ont fondé
@@ -78,7 +80,7 @@
       <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
 
         <h1 class="banner_taital">{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne </h1><br>
-        <p class="banner_text" style="text-indent: 1px; width: auto; margin-left: 0;">
+        <p class="txt_votrecab" style="text-indent: 1px; width: auto; margin-left: 0;">
           durant le cycle de vie de votre entreprise :
           en prenant soin du bien-être et de la croissance de vos projets.')}}<br><br>
           {{_('Nous voulons casser l\'image stéréotypée, traditionnelle et rigide des cabinets comptables en y
