@@ -1,4 +1,4 @@
-from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response,send_from_directory
+from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response,send_from_directory,current_app, send_from_directory
 from flask_babel import _,refresh
 
 
@@ -38,24 +38,30 @@ def home():
 @main.route("/your_firm",defaults={'lang_code':'en'})
 @main.route("/votre_cabinet",defaults={'lang_code':'fr'})
 def votre_cabinet():
-    return render_template('votre_cabinet.html',title='Votre cabinet')
+    return render_template('votre_cabinet.html',title='Votre cabinet', active_page='votre_cabinet')
 
 
 @main.route("/our_expertise",defaults={'lang_code':'en'})
 @main.route("/notre_expertise",defaults={'lang_code':'fr'})
 def notre_expertise():
-    return render_template('notre_expertise.html',title='Notre expertise')
+    return render_template('notre_expertise.html',title='Notre expertise',active_page='notre_expertise')
 
 
 @main.route("/news",defaults={'lang_code':'en'})
 @main.route("/actualites",defaults={'lang_code':'fr'})
 def actualites():
-    return render_template('actualites.html',title='Actualités')
+    active_page = 'actualites'
+    print("ICI 1")
+    print(active_page)
+    return render_template('actualites.html',title='Actualités', active_page='actualites')
 
 @main.route("/contactus",defaults={'lang_code':'en'})
 @main.route("/nouscontacter",defaults={'lang_code':'fr'})
 def nouscontacter():
-    return render_template('nouscontacter.html',title='Nous contacter')
+    active_page = 'nouscontacter'
+    print("ICI 2")
+    print(active_page)
+    return render_template('nouscontacter.html',title='Nous contacter', active_page='nouscontacter')
 
 @main.route("/account",defaults={'lang_code':'en'})
 @main.route("/espace_clients",defaults={'lang_code':'fr'})
@@ -65,17 +71,17 @@ def espace_clients():
 @main.route("/council_optimization",defaults={'lang_code':'en'})
 @main.route("/conseil_optimisation",defaults={'lang_code':'fr'})
 def conseil_optimisation():
-    return render_template('/conseil_optimisation.html',title='Conseil Optimisation')
+    return render_template('/conseil_optimisation.html',title='Conseil Optimisation',active_page='conseil_optimisation')
 
 @main.route("/auditing",defaults={'lang_code':'en'})
 @main.route("/audit",defaults={'lang_code':'fr'})
 def audit():
-    return render_template('/audit.html',title='Audit')
+    return render_template('/audit.html',title='Audit',active_page='audit')
 
 @main.route("/accounting",defaults={'lang_code':'en'})
 @main.route("/expertise_comptable",defaults={'lang_code':'fr'})
 def expertise_comptable():
-    return render_template('/expertise_comptable.html',title='Expertise Comptable')
+    return render_template('/expertise_comptable.html',title='Expertise Comptable',active_page='expertise_comptable')
 
 @main.route("/legal",defaults={'lang_code':'en'})
 @main.route("/legal",defaults={'lang_code':'fr'})
@@ -183,7 +189,8 @@ def news_12():
 
 @main.route('/robots.txt')
 def robots_txt():
-    return Response("User-agent: *\nDisallow: ", content_type='text/plain')
+    # return Response("User-agent: *\nDisallow: ", content_type='text/plain')
+    return send_from_directory(current_app.static_folder, 'robots.txt')
 
 @main.route('/sitemap.xml')
 def sitemap():

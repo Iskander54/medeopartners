@@ -60,9 +60,10 @@
           <br><br>
           {{_('PARTNERS, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant
           l\'association et la complémentarité  <a class="gras_txt"><b> de ses fondateurs :')}}</a></b>
+          
+          <a class="names" href="#" onclick="goToSlide(1);"><b style="font-size: xx-large;">Israel HAIKOU</b></a> et
+          <a class="names" href="#" onclick="goToSlide(2);"><b style="font-size: xx-large;">Avi GOZLANE</b></a> {{_('ont fondé
 
-          <a class="names" href="#" data-slide="1"><b style="font-size: xx-large;">Israel HAIKOU</b></a> et
-          <a class="names" href="#" data-slide="2"><b style="font-size: xx-large;">Avi GOZLANE</b></a> {{_('ont fondé
           le cabinet en
           octobre 2022. ')}}
           <br><br>
@@ -587,13 +588,12 @@
 
 
 <script>
-  $(document).ready(function() {
-    $('.slide-link').click(function(e) {
-      e.preventDefault(); // Prevent default anchor behavior
+  function goToSlide(slideNumber) {
+      document.getElementById('img-' + slideNumber).checked = true;
 
-      var slideNumber = $(this).data('slide'); // Get slide number from data attribute
-      $('input[name="radio-buttons"][id="img-' + slideNumber + '"]').prop('checked', true); // Check the corresponding radio button
-    });
-  });
+      document.getElementById('carousel_partners').scrollIntoView({ behavior: 'smooth' });
+
+  }
 </script>
+  
 {% endblock content %}
