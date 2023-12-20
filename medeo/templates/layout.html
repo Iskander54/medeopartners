@@ -14,6 +14,21 @@
    gtag('config', 'G-XNNEV4QVDK');
    </script>
 
+
+
+
+   <!-- SECOND Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11452962790">
+   </script>
+   <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'AW-11452962790');
+   </script>
+
+
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <!-- mobile metas -->
@@ -123,7 +138,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                <ul class="navbar-nav">
 
-                  <li class="nav-item">
+                  <li class="nav-item {{ 'active' if active_page == 'votre_cabinet' else '' }}">
                      <a class="nav-link" href="{{_('votre_cabinet')}}">
                         <div class="sous-titre">
                            «{{_('Votre')}}»  {{_('cabinet')}}
@@ -161,14 +176,14 @@
                   
 
 
-                  <li class="nav-item">
+                  <li class="nav-item {{ 'active' if active_page == 'actualites' else '' }}">
                      <a class="nav-link" href="{{_('actualites')}}">
-                        <div class="sous-titre" >
+                        <div class="sous-titre">
                            {{_('Actualités')}}
                         </div>
                      </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item {{ 'active' if active_page == 'nouscontacter' else '' }}">
                      <a class="nav-link" href="{{_('nouscontacter')}}">
                         <div class="sous-titre">
                            {{_('Nous contacter')}}
@@ -483,12 +498,7 @@ const apiKey = "{{ apikey }} ";
             });
         }
 
-
-
-
    </script>
-
-
    
 </body>
 

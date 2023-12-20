@@ -4662,9 +4662,9 @@ p.quote:nth-child(2) {
     top: 25px;
 }
 
-.active {
+/* .active {
     background: #232323;
-}
+} */
 
 .img {
     width: 100%;
@@ -5471,3 +5471,9 @@ input:checked+.slide-container .nav label {
 .carousel {
     z-index: 10; /* Lower than the button's z-index */
 }
+
+
+.nav-item.active .nav-link .sous-titre {
+    color: #E91C2A; 
+}
+

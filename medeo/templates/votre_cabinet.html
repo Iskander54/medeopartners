@@ -61,8 +61,8 @@
           {{_('PARTNERS, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant
           l\'association et la complémentarité  <a class="gras_txt"><b> de ses fondateurs :')}}</a></b>
 
-          <a class="names" href="{{_('#lequipe')}}"><b style="font-size: xx-large;">Israel HAIKOU</b></a> et
-          <a class="names" href="{{_('#lequipe')}}"><b style="font-size: xx-large;">Avi GOZLANE</b></a> {{_('ont fondé
+          <a class="names" href="#" data-slide="1"><b style="font-size: xx-large;">Israel HAIKOU</b></a> et
+          <a class="names" href="#" data-slide="2"><b style="font-size: xx-large;">Avi GOZLANE</b></a> {{_('ont fondé
           le cabinet en
           octobre 2022. ')}}
           <br><br>
@@ -553,7 +553,7 @@
     var autoSlide = setInterval(function() {
       currentIndex = (currentIndex + 1) % totalSlides;
       $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
-    }, 8000); // Change slide every 6 seconds
+    }, 7000); 
 
     // Reset the interval on manual click
     $('.carousel-controls label, .carousel-dots label').click(function() {
@@ -561,7 +561,7 @@
       autoSlide = setInterval(function() {
         currentIndex = (currentIndex + 1) % totalSlides;
         $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
-      }, 8000);
+      }, 7000);
     });
   });
 </script>
@@ -586,4 +586,14 @@
 </script>
 
 
+<script>
+  $(document).ready(function() {
+    $('.slide-link').click(function(e) {
+      e.preventDefault(); // Prevent default anchor behavior
+
+      var slideNumber = $(this).data('slide'); // Get slide number from data attribute
+      $('input[name="radio-buttons"][id="img-' + slideNumber + '"]').prop('checked', true); // Check the corresponding radio button
+    });
+  });
+</script>
 {% endblock content %}
