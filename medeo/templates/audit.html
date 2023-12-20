@@ -3,9 +3,9 @@
 <div class="loader-container">
     <div id="foregid" class="foreg"></div>
     <span id="loaderid" class="loader"></span>
-  </div>
+</div>
 
-  
+
 
 <div class="page-heading-cabinet animate-top">
     <div class="container">
@@ -26,11 +26,11 @@
                 alt="blog-img" loading="lazy">
             <h1 class="title-nos-expertises"> {{_('Audit contractuel')}}</h1><br>
             <p class="speech-nos-expertises">
-                {{_('Nous effectuons un examen indépendant et systématique des états financiers de nos clients en tant
-                qu\'auditeurs qualifiés, en conformité avec les normes d\'audit.')}}
+                {{_('Nous effectuons un examen indépendant et systématique des états financiers \n
+                de nos clients en tant qu\'auditeurs qualifiés, en conformité avec les normes d\'audit.')}}
                 <br><br>
-                {{_('Le but de notre audit contractuel est de fournir une opinion sur la fiabilité et la conformité des
-                états financiers avec les principes comptables officiels.')}}
+                {{_('Le but de notre audit contractuel est de fournir une opinion sur la fiabilité et la \n
+                conformité des états financiers avec les principes comptables officiels.')}}
                 <br><br>
                 {{_('Il permet également de détecter les erreurs, les omissions et les irrégularités financières.')}}
                 <br><br>
@@ -47,16 +47,19 @@
         </div>
 
         <div class="col-7" id="commissariatauxcomptes">
-            <img class="logo-nos-expertises" style="display: block;margin-left: auto;" src="{{ url_for('static',filename='images/audit.png') }}" alt="blog-img" loading="lazy">
+            <img class="logo-nos-expertises" style="display: block;margin-left: auto;"
+                src="{{ url_for('static',filename='images/audit.png') }}" alt="blog-img" loading="lazy">
             <h1 class="title-nos-expertises" style="text-align: right;"> {{_('Commissariat aux comptes')}} </h1><br>
 
 
             <p class="speech-nos-expertises" style="margin-bottom: 10%;">
-                {{_('Nous fournissons un service de commissariat aux comptes en tant que commissaires indépendants pour
+                {{_('Nous fournissons un service de commissariat aux comptes en tant que \n
+                commissaires indépendants pour \n
                 garantir la fiabilité et la transparence des états financiers de nos clients.')}}
                 <br><br>
-                {{_('Notre rôle consiste à examiner les comptes annuels de votre entreprise, à vérifier la conformité
-                aux normes comptables, à formuler des opinions sur la sincérité et la justesse des états financiers et à
+                {{_('Notre rôle consiste à examiner les comptes annuels de votre entreprise, à vérifier la conformité\n
+                aux normes comptables, à formuler des opinions sur la sincérité et \n
+                la justesse des états financiers et à \n
                 signaler tout problème de conformité.')}}
                 <br><br>
             </p>
@@ -69,7 +72,7 @@
 <script>
 
     document.addEventListener('DOMContentLoaded', function () {
-    
+
         // Loader des autres pages
         var loaderDiv = document.getElementById('loaderid');
         var foregroundDiv = document.getElementById('foregid');
@@ -78,11 +81,11 @@
         loaderDiv.style.display = 'block';
         // Hide the div after 1 seconds
         setTimeout(function () {
-          loaderDiv.style.display = 'none';
-          foregroundDiv.style.display = 'none';
+            loaderDiv.style.display = 'none';
+            foregroundDiv.style.display = 'none';
         }, 1000);
     });
-    
-    
-    </script>
-    {% endblock content %}
+
+
+</script>
+{% endblock content %}
