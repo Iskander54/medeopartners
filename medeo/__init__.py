@@ -21,9 +21,7 @@ mail = Mail()
 def create_app(config_class=Config):
     app = Flask(__name__)
     ext = Sitemap(app=app)
-    print("-----------")
-    print(ext)
-    # sslify = SSLify(app)
+    sslify = SSLify(app)
 
     app.config.from_object(Config)
     print(app.config['G_API_KEY'])
