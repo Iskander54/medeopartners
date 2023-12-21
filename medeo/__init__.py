@@ -1,4 +1,4 @@
-from flask import Flask, request,g,redirect, url_for, render_template
+from flask import Flask, request,g,redirect, url_for, render_template,send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -57,5 +57,9 @@ def create_app(config_class=Config):
     def start():
         g.lang_code = 'fr'
         return redirect(url_for('main.home'))
+
+    @app.route('/robots.txt')
+    def robots_txt():
+        return send_from_directory(app.static_folder, 'robots.txt')
 
     return app
