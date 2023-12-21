@@ -22,6 +22,9 @@ msgstr ""
 msgid "Actualités"
 msgstr "News"
 
+#: medeo/templates/layout.html:286
+msgid "<div class=\"btn_calendly\">Prendre RDV"
+msgstr "<div class=\"btn_calendly\">Book Appointment"
 
 #: medeo/templates/actualites.html:14 medeo/templates/audit.html:15
 #: medeo/templates/conseil_optimisation.html:14

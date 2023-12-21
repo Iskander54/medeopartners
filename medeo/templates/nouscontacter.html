@@ -155,7 +155,8 @@
                       {% endfor %}
                     </div>
                     {% else %}
-                    {{ form.subject(class="form-control form-control-lg effet_ombre_form", placeholder="SUJET") }}
+                    {{ form.subject(class="form-control form-control-lg effet_ombre_form", placeholder='SUJET')
+                    }}
                     {% endif %}
                   </div>
                 </div>
@@ -206,10 +207,7 @@
               <div class="row mx-0_HAKIM">
                 <div class="col-lg-6">
                   <div class="main-image">
-                    <img
-                    src="{{ url_for('static', filename='images/plant_comp.jpeg') }}"
-                    alt=""
-                    />
+                    <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" alt="" />
                   </div>
                 </div>
               </div>
@@ -220,9 +218,9 @@
               </h5>
               <p class="text_carousel_notre_expertise">
                 Nous recherchons un Expert Comptable expérimenté pour rejoindre notre équipe en tant que
-              collaborateur en CDI. Si vous avez une solide expérience en expertise comptable et que vous
-              souhaitez évoluer au sein d'un cabinet de renom, nous aimerions vous rencontrer.
-              <!-- <br/>
+                collaborateur en CDI. Si vous avez une solide expérience en expertise comptable et que vous
+                souhaitez évoluer au sein d'un cabinet de renom, nous aimerions vous rencontrer.
+                <!-- <br/>
               Responsabilités :
 
               Gérer un portefeuille clients varié.
@@ -237,7 +235,7 @@
               Excellentes compétences en leadership et en communication.
               Connaissance approfondie des lois fiscales et comptables.
               Orientation client et sens des responsabilités. -->
-            
+
               </p>
             </div>
           </div>
@@ -247,10 +245,7 @@
               <div class="row mx-0_HAKIM">
                 <div class="col-lg-6">
                   <div class="main-image">
-                    <img
-                    src="{{ url_for('static', filename='images/plant_comp.jpeg') }}"
-                    alt=""
-                    />
+                    <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" alt="" />
                   </div>
                 </div>
               </div>
@@ -258,13 +253,13 @@
             <div class="body">
               <h5 class="titre_carousel_notre_expertise">
                 Candidature Spontanée
-                <br/>
+                <br />
               </h5>
               <p class="text_carousel_notre_expertise">
                 Vous êtes passionné par le domaine de la comptabilité et vous souhaitez rejoindre une équipe
                 d'experts-comptables dynamique ? Nous sommes toujours à la recherche de talents exceptionnels.
                 Envoyez-nous votre candidature spontanée dès aujourd'hui.
-<!-- 
+                <!-- 
                 Responsabilités :
 
                 Les responsabilités spécifiques dépendront du poste disponible au moment de la candidature.
@@ -282,24 +277,21 @@
               <div class="row mx-0_HAKIM">
                 <div class="col-lg-6">
                   <div class="main-image">
-                    <img
-                    src="{{ url_for('static', filename='images/plant_comp.jpeg') }}"
-                    alt=""
-                    />
+                    <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div class="body">
               <h5 class="titre_carousel_notre_expertise">
-                Poste : Alternant en Comptabilité 
+                Poste : Alternant en Comptabilité
               </h5>
               <p class="text_carousel_notre_expertise">
 
                 Vous recherchez une opportunité d'alternance en comptabilité au sein d'un cabinet
                 d'experts-comptables renommé ? Nous offrons un environnement d'apprentissage stimulant pour les
                 étudiants en comptabilité qui souhaitent acquérir une expérience pratique.
-    
+
                 <!-- Responsabilités :
     
                 Assister les chargés de mission comptable dans leurs tâches.
@@ -332,15 +324,15 @@
 <script>
 
 
-  var observer = new MutationObserver(function(mutations) {
-      var elem = document.getElementById('slick-slide-control00');
-      if (elem) {
-          elem.click();
-          observer.disconnect();
-      }
+  var observer = new MutationObserver(function (mutations) {
+    var elem = document.getElementById('slick-slide-control00');
+    if (elem) {
+      elem.click();
+      observer.disconnect();
+    }
   });
 
-observer.observe(document.body, { childList: true, subtree: true });
+  observer.observe(document.body, { childList: true, subtree: true });
 
   //$('.your-class, .your-class-2').css('overflow-x', 'hidden');
   $(".your-class").slick({
@@ -418,32 +410,32 @@ observer.observe(document.body, { childList: true, subtree: true });
   function toggleText(button) {
     var text = button.previousElementSibling;
     var icon = button.querySelector('i');
-    
+
     if (text.classList.contains("folded")) {
-        text.classList.remove("folded");
-        icon.className = "fa-solid fa-arrow-up-long"; // Icon for unfolded state
+      text.classList.remove("folded");
+      icon.className = "fa-solid fa-arrow-up-long"; // Icon for unfolded state
     } else {
-        text.classList.add("folded");
-        icon.className = "fa-solid fa-arrow-down-long"; // Icon for folded state
+      text.classList.add("folded");
+      icon.className = "fa-solid fa-arrow-down-long"; // Icon for folded state
     }
-}
+  }
 </script>
 
 <style>
-
-.titre_carousel_notre_expertise{
+  .titre_carousel_notre_expertise {
     color: white;
     font-size: x-large;
     font-weight: bold;
-}
+  }
 
-.text_carousel_notre_expertise{
+  .text_carousel_notre_expertise {
     color: white;
     font-size: medium;
-    margin: 0px!important;
+    margin: 0px !important;
     width: 95%;
-}
-  .main-image{
+  }
+
+  .main-image {
     background-color: #fff;
     height: 100px;
     width: 100px;
@@ -452,7 +444,7 @@ observer.observe(document.body, { childList: true, subtree: true });
     border-radius: 50%;
   }
 
-  .main-image img{
+  .main-image img {
     display: inline-block;
     width: 100%;
     border-radius: 50%;
@@ -461,82 +453,86 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 
 
-.slick-dots li.slick-active button:before {
+  .slick-dots li.slick-active button:before {
     opacity: .75;
     color: black;
-}
-.slick-dots li button:before{
-    font-size: 18px;
-}
+  }
 
-.slick-dots li.slick-active button:before{
+  .slick-dots li button:before {
+    font-size: 18px;
+  }
+
+  .slick-dots li.slick-active button:before {
     color: #0D4A78;
     opacity: 1;
-}
+  }
 
-.partenaires .slick-dots li.slick-active button:before{
+  .partenaires .slick-dots li.slick-active button:before {
     color: #E91D2A;
     opacity: 1;
-}
+  }
 
-.parnter-card .body{
+  .parnter-card .body {
     margin-top: 1rem;
-}
+  }
 
-.parnter-card .body h5{
+  .parnter-card .body h5 {
     font-size: 2rem;
     font-weight: 700;
-}
+  }
 
-.parnter-card .body h5, .parnter-card .body p{
+  .parnter-card .body h5,
+  .parnter-card .body p {
     color: #0D4A78;
-}
+  }
 
-.parnter-card .body p{
+  .parnter-card .body p {
     font-size: 14px;
     letter-spacing: 1.5px;
-}
+  }
 
-.slider-container {
+  .slider-container {
     max-width: 100%;
     overflow: hidden !important;
-}
+  }
 
 
 
-.parnter-card .header img{
+  .parnter-card .header img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     margin: 0 auto;
-}
+  }
 
-.parnter-card{
+  .parnter-card {
     display: flex;
     flex-direction: column;
-}
+  }
 
-.témoignages h1, .partenaires h1{
+  .témoignages h1,
+  .partenaires h1 {
     color: #0D4A78;
     letter-spacing: 1px;
     font-weight: 700;
     text-align: center;
-}
+  }
 
-section{
+  section {
     margin: 3rem 0;
-}
+  }
 
-.slick-list {
+  .slick-list {
     margin: 2rem 0;
-}
+  }
 
-.slick-dots {
+  .slick-dots {
     bottom: 0px;
-}
+  }
 
-.slick-initialized { overflow: hidden; }
-
+  .slick-initialized {
+    overflow: hidden;
+  }
 </style>
 
 
@@ -548,7 +544,7 @@ section{
 
 
     window.scrollTo(0, 0);
-    
+
     // Loader des autres pages
     var loaderDiv = document.getElementById('loaderid');
     var foregroundDiv = document.getElementById('foregid');
