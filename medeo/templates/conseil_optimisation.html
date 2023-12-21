@@ -3,9 +3,9 @@
 <div class="loader-container">
     <div id="foregid" class="foreg"></div>
     <span id="loaderid" class="loader"></span>
-  </div>
+</div>
 
-  
+
 <div class="page-heading-cabinet animate-top">
     <div class="container">
         <div class="row">
@@ -51,7 +51,8 @@
         </div>
 
         <div class="col-7">
-            <img class="logo-nos-expertises" style="display: block;margin-left: auto;" src="{{ url_for('static',filename='images/acquisition.png') }}" alt="blog-img" loading="lazy">
+            <img class="logo-nos-expertises" style="display: block;margin-left: auto;"
+                src="{{ url_for('static',filename='images/acquisition.png') }}" alt="blog-img" loading="lazy">
             <h1 class="title-nos-expertises" style="text-align: right;"> {{_('Fusions & Acquisitions')}} </h1><br>
 
 
@@ -80,16 +81,17 @@
 
     <div class="row">
         <div class="col-7">
-            <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/international.png') }}" alt="blog-img" loading="lazy">
+            <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/international.png') }}"
+                alt="blog-img" loading="lazy">
             <h1 class="title-nos-expertises"> {{_('Accompagnement International')}} </h1><br>
 
             <p class="speech-nos-expertises">
                 {{_('Vous souhaitez vous implanter en France ?')}}
                 <br><br>
-                {{_('Nos experts accompagnent les investisseurs et les sociétés étrangères dans la tenue comptable,
-                fiscale
-                et sociale de leur structure implantée en France, jusqu\'à la réalisation de due diligences,
-                en passant par la domiciliation et un conseil juridique et fiscal d\'exception.')}}
+                {{_('Nos experts accompagnent les investisseurs et les sociétés étrangères dans \n
+                la tenue comptable, fiscale \n
+                et sociale de leur structure implantée en France, jusqu\'à la réalisation de due \n
+                diligences, en passant par la domiciliation et un conseil juridique et fiscal d\'exception. \n')}}
 
             </p>
         </div>
@@ -103,19 +105,20 @@
         </div>
         <div class="col-7">
 
-            <img class="logo-nos-expertises" style="display: block;margin-left: auto;" src="{{ url_for('static',filename='images/ancestors.png') }}" alt="blog-img" loading="lazy">
+            <img class="logo-nos-expertises" style="display: block;margin-left: auto;"
+                src="{{ url_for('static',filename='images/ancestors.png') }}" alt="blog-img" loading="lazy">
             <h1 class="title-nos-expertises" style="text-align: right;"> {{_('Conseil aux particuliers')}} </h1><br>
 
             <p class="speech-nos-expertises" style="margin-bottom: 10%;">
                 <br>
-                {{_('Nous pouvons aussi aider les particuliers à gérer leur patrimoine en leur fournissant des conseils
-                sur la planification fiscale et l\'optimisation de leurs finances personnelles.')}}
+                {{_('Nous pouvons aussi aider les particuliers à gérer leur patrimoine en leur fournissant des \n
+                conseils sur la planification fiscale et l\'optimisation de leurs finances personnelles.')}}
                 <br><br>
-                {{_('Nous pouvons les aider à comprendre leurs obligations fiscales et à préparer leurs déclarations de
-                revenus de manière efficace.')}}
+                {{_('Nous pouvons les aider à comprendre leurs obligations fiscales et à préparer leurs \n
+                déclarations de revenus de manière efficace.')}}
                 <br><br>
-                {{_('Nous pouvons également les aider à élaborer des stratégies pour minimiser leurs impôts, gérer leur
-                épargne et leur retraite, et à prendre des décisions financières optimales.')}}
+                {{_('Nous pouvons également les aider à élaborer des stratégies pour minimiser leurs impôts, \n
+                gérer leur épargne et leur retraite, et à prendre des décisions financières optimales.')}}
             </p>
         </div>
     </div>
@@ -129,7 +132,7 @@
 <script>
 
     document.addEventListener('DOMContentLoaded', function () {
-    
+
         // Loader des autres pages
         var loaderDiv = document.getElementById('loaderid');
         var foregroundDiv = document.getElementById('foregid');
@@ -138,11 +141,11 @@
         loaderDiv.style.display = 'block';
         // Hide the div after 1 seconds
         setTimeout(function () {
-          loaderDiv.style.display = 'none';
-          foregroundDiv.style.display = 'none';
+            loaderDiv.style.display = 'none';
+            foregroundDiv.style.display = 'none';
         }, 1000);
     });
-    
-    
-    </script>
+
+
+</script>
 {% endblock content %}
