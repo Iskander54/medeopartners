@@ -2,7 +2,11 @@
 <html>
 
 <head>
+   {% if title %}
+   <title>Medeo Partners - {{ title }}</title>
+   {% else %}
    <title>Medeo Partners</title>
+   {% endif %}
 
    <!-- Google tag (gtag.js) -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNNEV4QVDK"></script>
@@ -32,8 +36,7 @@
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <!-- mobile metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    <meta name="robots" content="index,follow">
    <!-- image -->
    <meta property="og:image" content="/static/medeo_images/Medeo_partners_couleur.png">
@@ -99,19 +102,9 @@
    <link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css"
       rel="stylesheet" />
 
-   <!-- Add the slick-theme.css if you want default styling -->
-   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-   <!-- Add the slick-theme.css if you want default styling -->
-   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
 
    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-   {% if title %}
-   <title>Medeo Partners - {{ title }}</title>
-   {% else %}
-   <title>Medeo Partners</title>
-   {% endif %}
 </head>
 
 <body>
