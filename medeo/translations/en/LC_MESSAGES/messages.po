@@ -1675,3 +1675,15 @@ msgid ""
 "et/ou fiscaux. "
 msgstr "MEDEO Partners will be more than an accounting and auditing firm: an unwavering support for your business, whether it's in legal, fiscal, social matters, or in the context of social and/or fiscal audits."
 
+
+
+#: medeo/templates/layout.html:285
+msgid ""
+"\n"
+"   <script\n"
+"      type=\"text/javascript\">window.onload = function () { "
+"Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-"
+"partners/30min', text: '<div class=\"btn_calendly\">Prendre RDV', color: "
+"'#114a79', textColor: '#ffffff', branding: true }); }</script>\n"
+"   "
+msgstr "<script type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="btn_calendly">Schedule Appointment', color: '#114a79', textColor: '#ffffff', branding: true }); }</script>"
