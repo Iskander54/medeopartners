@@ -1,14 +1,14 @@
 # English translations for PROJECT.
-# Copyright (C) 2024 ORGANIZATION
+# Copyright (C) 2023 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-03 07:24-0500\n"
-"PO-Revision-Date: 2024-01-03 07:24-0500\n"
+"POT-Creation-Date: 2023-12-20 11:02-0500\n"
+"PO-Revision-Date: 2023-12-20 11:02-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -20,7 +20,8 @@ msgstr ""
 
 #: medeo/templates/actualites.html:13 medeo/templates/layout.html:182
 msgid "Actualités"
-msgstr ""
+msgstr "News"
+
 
 #: medeo/templates/actualites.html:14 medeo/templates/audit.html:15
 #: medeo/templates/conseil_optimisation.html:14
@@ -32,7 +33,7 @@ msgstr ""
 
 #: medeo/templates/actualites.html:15
 msgid "Infos à la une"
-msgstr ""
+msgstr "Breaking News"
 
 #: medeo/templates/actualites.html:47 medeo/templates/actualites.html:84
 #: medeo/templates/actualites.html:121
@@ -42,11 +43,11 @@ msgstr ""
 #: medeo/templates/actualites.html:47 medeo/templates/actualites.html:84
 #: medeo/templates/actualites.html:121
 msgid "Lire l'article"
-msgstr ""
+msgstr "Read article"
 
 #: medeo/templates/actualites.html:159
 msgid "Nos derniers articles"
-msgstr ""
+msgstr "Last articles"
 
 #: medeo/templates/actualites.html:181 medeo/templates/actualites.html:183
 #: medeo/templates/carousel_common.html:151
@@ -105,11 +106,11 @@ msgstr ""
 #: medeo/templates/audit.html:14 medeo/templates/home.html:62
 #: medeo/templates/layout.html:168 medeo/templates/notre_expertise.html:65
 msgid "Audit"
-msgstr ""
+msgstr "Auditing"
 
 #: medeo/templates/audit.html:27
 msgid "Audit contractuel"
-msgstr ""
+msgstr "Contractual Audit"
 
 #: medeo/templates/audit.html:29
 msgid ""
@@ -118,7 +119,7 @@ msgid ""
 "\n"
 "                de nos clients en tant qu'auditeurs qualifiés, en "
 "conformité avec les normes d'audit."
-msgstr ""
+msgstr "We conduct an independent and systematic examination of the financial statements of our clients as qualified auditors, in accordance with audit standards."
 
 #: medeo/templates/audit.html:32
 msgid ""
@@ -127,17 +128,17 @@ msgid ""
 "\n"
 "                conformité des états financiers avec les principes "
 "comptables officiels."
-msgstr ""
+msgstr "The purpose of our contractual audit is to provide an opinion on the reliability and compliance of the financial statements with official accounting principles."
 
 #: medeo/templates/audit.html:35
 msgid ""
 "Il permet également de détecter les erreurs, les omissions et les "
 "irrégularités financières."
-msgstr ""
+msgstr "It also helps detect errors, omissions, and financial irregularities."
 
 #: medeo/templates/audit.html:52
 msgid "Commissariat aux comptes"
-msgstr ""
+msgstr "Statutory Auditing"
 
 #: medeo/templates/audit.html:56
 msgid ""
@@ -147,7 +148,7 @@ msgid ""
 "\n"
 "                garantir la fiabilité et la transparence des états "
 "financiers de nos clients."
-msgstr ""
+msgstr "We provide statutory auditing services as independent auditors to ensure the reliability and transparency of our clients' financial statements."
 
 #: medeo/templates/audit.html:60
 msgid ""
@@ -160,7 +161,7 @@ msgid ""
 "                la justesse des états financiers et à \n"
 "\n"
 "                signaler tout problème de conformité."
-msgstr ""
+msgstr "Our role is to review the annual accounts of your company, verify compliance with accounting standards, formulate opinions on the accuracy and fairness of the financial statements, and report any compliance issues."
 
 #: medeo/templates/carousel_common.html:9
 #: medeo/templates/carousel_common.html:16
@@ -170,7 +171,7 @@ msgstr ""
 
 #: medeo/templates/carousel_common.html:11
 msgid "Retrouvez les dernières actualités Sociales"
-msgstr ""
+msgstr "Find the latest Social News"
 
 #: medeo/templates/carousel_common.html:18
 #: medeo/templates/carousel_common.html:76
@@ -301,80 +302,80 @@ msgstr ""
 
 #: medeo/templates/conseil_optimisation.html:13 medeo/templates/layout.html:172
 msgid "Conseil-Optimisation"
-msgstr ""
+msgstr "Consulting and Optimization"
 
 #: medeo/templates/conseil_optimisation.html:26
 msgid "Cession"
-msgstr ""
+msgstr "Assignment"
 
 #: medeo/templates/conseil_optimisation.html:28
 msgid ""
 " Nous pouvons aider une entreprise lors d'une cession en lui fournissant "
 "des services tels que\n"
 "                :"
-msgstr ""
+msgstr "We can assist a company during a transfer by providing services such as:"
 
 #: medeo/templates/conseil_optimisation.html:31
 msgid "· Évaluation de la valeur de l'entreprise"
-msgstr ""
+msgstr "· Evaluation of the company's value"
 
 #: medeo/templates/conseil_optimisation.html:33
 msgid "· Conseil fiscal sur les conséquences de la cession"
-msgstr ""
+msgstr "· Tax advice on the consequences of the transfer"
 
 #: medeo/templates/conseil_optimisation.html:35
 msgid "· Assistance à la préparation des documents financiers pour la transaction"
-msgstr ""
+msgstr "· Assistance in preparing financial documents for the transaction"
 
 #: medeo/templates/conseil_optimisation.html:37
 msgid ""
 "· Conseil sur les meilleures stratégies pour maximiser la valeur de la "
 "cession"
-msgstr ""
+msgstr "· Advice on the best strategies to maximize the value of the transfer"
 
 #: medeo/templates/conseil_optimisation.html:39
 msgid "· Assistance à la négociation des termes financiers de la transaction."
-msgstr ""
+msgstr "· Assistance in negotiating the financial terms of the transaction."
 
 #: medeo/templates/conseil_optimisation.html:56
 msgid "Fusions & Acquisitions"
-msgstr ""
+msgstr "Mergers & Acquisitions"
 
 #: medeo/templates/conseil_optimisation.html:60
 msgid ""
 "Nous pouvons guider les entreprises dans les fusions et acquisitions en "
 "les aidant à :"
-msgstr ""
+msgstr "We can guide companies in mergers and acquisitions by helping them with:"
 
 #: medeo/templates/conseil_optimisation.html:62
 msgid "· Évaluer la performance financière de la société cible"
-msgstr ""
+msgstr "· Evaluate the financial performance of the target company"
 
 #: medeo/templates/conseil_optimisation.html:64
 msgid "· Minimiser les coûts fiscaux liés à la transaction"
-msgstr ""
+msgstr "· Minimize tax costs related to the transaction"
 
 #: medeo/templates/conseil_optimisation.html:66
 msgid ""
 "· Effectuer une analyse approfondie de la situation financière et "
 "comptable de la société cible"
-msgstr ""
+msgstr "· Conduct a thorough analysis of the financial and accounting situation of the target company"
 
 #: medeo/templates/conseil_optimisation.html:68
 msgid "· Négocier les termes financiers de la transaction"
-msgstr ""
+msgstr "· Negotiate the financial terms of the transaction"
 
 #: medeo/templates/conseil_optimisation.html:70
 msgid "· Mettre en place les aspects financiers de la transaction."
-msgstr ""
+msgstr "· Implement the financial aspects of the transaction."
 
 #: medeo/templates/conseil_optimisation.html:86
 msgid "Accompagnement International"
-msgstr ""
+msgstr "International Support"
 
 #: medeo/templates/conseil_optimisation.html:89
 msgid "Vous souhaitez vous implanter en France ?"
-msgstr ""
+msgstr "Do you want to establish a presence in France?"
 
 #: medeo/templates/conseil_optimisation.html:91
 msgid ""
@@ -388,11 +389,11 @@ msgid ""
 "\n"
 "                diligences, en passant par la domiciliation et un conseil"
 " juridique et fiscal d'exception. \n"
-msgstr ""
+msgstr "Our experts assist investors and foreign companies in the accounting, tax, and social management of their structure established in France. From domiciliation to exceptional legal and tax advice, and through the completion of due diligence, we provide comprehensive support."
 
 #: medeo/templates/conseil_optimisation.html:110
 msgid "Conseil aux particuliers"
-msgstr ""
+msgstr "Personal Advisory"
 
 #: medeo/templates/conseil_optimisation.html:114
 msgid ""
@@ -401,7 +402,7 @@ msgid ""
 "\n"
 "                conseils sur la planification fiscale et l'optimisation "
 "de leurs finances personnelles."
-msgstr ""
+msgstr "We can also assist individuals in managing their wealth by providing advice on tax planning and optimizing their personal finances."
 
 #: medeo/templates/conseil_optimisation.html:117
 msgid ""
@@ -409,7 +410,7 @@ msgid ""
 "préparer leurs \n"
 "\n"
 "                déclarations de revenus de manière efficace."
-msgstr ""
+msgstr "We can help them understand their tax obligations and prepare their income tax returns efficiently."
 
 #: medeo/templates/conseil_optimisation.html:120
 msgid ""
@@ -418,13 +419,13 @@ msgid ""
 "\n"
 "                gérer leur épargne et leur retraite, et à prendre des "
 "décisions financières optimales."
-msgstr ""
+msgstr "We can also help them develop strategies to minimize their taxes, manage their savings and retirement, and make optimal financial decisions."
 
 #: medeo/templates/expertise_comptable.html:14
 #: medeo/templates/expertise_comptable.html:27
 #: medeo/templates/notre_expertise.html:28
 msgid "Expertise comptable"
-msgstr ""
+msgstr "Accounting Expertise"
 
 #: medeo/templates/expertise_comptable.html:29
 msgid ""
@@ -432,7 +433,7 @@ msgid ""
 "décisions \n"
 "\n"
 "        financières et fiscales éclairées."
-msgstr ""
+msgstr "We provide advice to help businesses make informed financial and tax decisions."
 
 #: medeo/templates/expertise_comptable.html:32
 msgid ""
@@ -440,7 +441,7 @@ msgid ""
 "comptables pour \n"
 "\n"
 "        garantir l'exactitude de leurs données."
-msgstr ""
+msgstr "We help them establish and monitor financial and accounting systems to ensure the accuracy of their data."
 
 #: medeo/templates/expertise_comptable.html:35
 msgid ""
@@ -448,7 +449,7 @@ msgid ""
 "les \n"
 "\n"
 "        entreprises remplissent leurs obligations fiscales."
-msgstr ""
+msgstr "We prepare and review tax returns to ensure that businesses fulfill their tax obligations."
 
 #: medeo/templates/expertise_comptable.html:38
 msgid ""
@@ -459,13 +460,13 @@ msgid ""
 "les litiges financiers et à \n"
 "\n"
 "        les gérer lorsqu'ils se produisent."
-msgstr ""
+msgstr "We provide strategic advice to maximize business operations and financial strategies for companies. We assist in preventing financial disputes and managing them when they occur."
 
 #: medeo/templates/expertise_comptable.html:42
 msgid ""
 "Nous aidons à prévenir les litiges financiers et à les gérer lorsqu'ils "
 "se produisent."
-msgstr ""
+msgstr "We help prevent financial disputes and manage them when they occur."
 
 #: medeo/templates/expertise_comptable.html:63
 msgid ""
@@ -474,7 +475,7 @@ msgid ""
 "\n"
 "        stratégies fiscales pour minimiser les coûts et à préparer et "
 "déposer les déclarations fiscales à temps."
-msgstr ""
+msgstr "We help businesses understand their tax obligations, develop tax strategies to minimize costs, and prepare and file tax returns on time."
 
 #: medeo/templates/expertise_comptable.html:81
 msgid ""
@@ -483,7 +484,7 @@ msgid ""
 "\n"
 "        à gérer les litiges et élaborons des stratégies pour minimiser "
 "les risques juridiques."
-msgstr ""
+msgstr "We provide legal advice on the legal obligations of businesses, assist in managing disputes, and develop strategies to minimize legal risks."
 
 #: medeo/templates/expertise_comptable.html:103
 msgid ""
@@ -492,35 +493,35 @@ msgid ""
 "\n"
 "        que les obligations de sécurité sociale, de paie et de protection"
 " de l'emploi."
-msgstr ""
+msgstr "We help businesses understand and fulfill their social obligations, such as social security, payroll, and employment protection obligations."
 
 #: medeo/templates/home.html:13
 msgid "Bienvenue chez Medeo Partners"
-msgstr ""
+msgstr "Welcome to Medeo Partners"
 
 #: medeo/templates/home.html:16
 msgid "Fort de plus 10 ans d'expertise en comptabilité et fiscalité, nous"
-msgstr ""
+msgstr "With over 10 years of expertise in accounting and taxation, we"
 
 #: medeo/templates/home.html:17
 msgid "accompagnons nos clients de tous secteurs dans leurs démarches"
-msgstr ""
+msgstr "accompany clients from all sectors in their processes"
 
 #: medeo/templates/home.html:18
 msgid "de création d'entreprise, de projets, et d'optimisation."
-msgstr ""
+msgstr "of business creation, projects, and optimization."
 
 #: medeo/templates/home.html:24 medeo/templates/layout.html:158
 msgid "notre_expertise"
-msgstr ""
+msgstr "our_expertise"
 
 #: medeo/templates/home.html:37
 msgid "Notre expertise à votre service"
-msgstr ""
+msgstr ""Our expertise at your service""
 
 #: medeo/templates/home.html:52
 msgid "Expertise <br>Comptable"
-msgstr ""
+msgstr "Accounting<br>Expertise"
 
 #: medeo/templates/home.html:55
 msgid ""
@@ -529,7 +530,7 @@ msgid ""
 "\n"
 "          services de conseil et d'assistance dans les domaines de la "
 "gestion financière, comptable et fiscale."
-msgstr ""
+msgstr "Our team has high-level expertise to provide you with advisory and assistance services in the areas of financial, accounting, and tax management."
 
 #: medeo/templates/home.html:65
 msgid ""
@@ -542,11 +543,11 @@ msgid ""
 "conformité de leurs comptes avec les normes \n"
 "\n"
 "          comptables et fiscales en vigueur."
-msgstr ""
+msgstr "Our accounting firm specializes in auditing and certifying the accounts of businesses of all sizes and sectors. We work closely with our clients to ensure compliance of their accounts with current accounting and tax standards."
 
 #: medeo/templates/home.html:74
 msgid "Conseil <br>optimisation "
-msgstr ""
+msgstr "Advisory<br>Optimization"
 
 #: medeo/templates/home.html:77
 msgid ""
@@ -560,11 +561,11 @@ msgid ""
 "\n"
 "          l'optimisation de la chaîne d'approvisionnement et l'analyse "
 "des coûts."
-msgstr ""
+msgstr "Our business optimization services include performance analysis, identification of growth drivers, implementation of action plans to improve profitability, project management for transformation, change management, supply chain optimization, and cost analysis."
 
 #: medeo/templates/home.html:86
 msgid "Service <br>Informatique"
-msgstr ""
+msgstr "IT<br>Service"
 
 #: medeo/templates/home.html:89
 msgid ""
@@ -574,7 +575,7 @@ msgid ""
 " ainsi qu'à l'amélioration de vos \n"
 "\n"
 "          process."
-msgstr ""
+msgstr "Our IT department handles all types of issues related to information systems, the management of your customer data, as well as the improvement of your processes."
 
 #: medeo/templates/home.html:110
 msgid "nouscontacter#nous_ecrire"
@@ -582,21 +583,21 @@ msgstr ""
 
 #: medeo/templates/home.html:113
 msgid "Travailler avec nous"
-msgstr ""
+msgstr "Work with us"
 
 #: medeo/templates/home.html:118 medeo/templates/layout.html:190
-#: medeo/templates/layout.html:374 medeo/templates/legal.html:40
+#: medeo/templates/layout.html:371 medeo/templates/legal.html:40
 #: medeo/templates/nouscontacter.html:13
 msgid "Nous contacter"
-msgstr ""
+msgstr "Contact us"
 
 #: medeo/templates/home.html:128
 msgid "nouscontacter#nous_rejoindre"
 msgstr ""
 
-#: medeo/templates/home.html:134 medeo/templates/nouscontacter.html:199
+#: medeo/templates/home.html:134 medeo/templates/nouscontacter.html:198
 msgid "Nous rejoindre"
-msgstr ""
+msgstr "Join us"
 
 #: medeo/templates/home.html:145
 msgid "nouscontacter#nos_bureaux"
@@ -604,132 +605,121 @@ msgstr ""
 
 #: medeo/templates/home.html:151 medeo/templates/nouscontacter.html:15
 msgid "Nos bureaux"
-msgstr ""
+msgstr "Our Office"
 
 #: medeo/templates/layout.html:126
 msgid "accueil"
-msgstr ""
+msgstr "home"
 
-#: medeo/templates/layout.html:138 medeo/templates/layout.html:353
+#: medeo/templates/layout.html:138 medeo/templates/layout.html:350
 msgid "votre_cabinet"
-msgstr ""
+msgstr "your_firm"
 
 #: medeo/templates/layout.html:140 medeo/templates/votre_cabinet.html:14
 msgid "Votre"
-msgstr ""
+msgstr "Your"
 
 #: medeo/templates/layout.html:140 medeo/templates/votre_cabinet.html:14
 msgid "cabinet"
-msgstr ""
+msgstr "firm"
 
 #: medeo/templates/layout.html:151 medeo/templates/notre_expertise.html:14
 msgid "Notre expertise"
-msgstr ""
+msgstr "Our expertise"
 
 #: medeo/templates/layout.html:158
 msgid ""
 "Notre\n"
 "                              expertise"
-msgstr ""
+msgstr "Our expertise"
 
-#: medeo/templates/layout.html:165 medeo/templates/layout.html:354
+#: medeo/templates/layout.html:165 medeo/templates/layout.html:351
 #: medeo/templates/notre_expertise.html:48
 msgid "expertise_comptable"
-msgstr ""
+msgstr "accounting"
 
-#: medeo/templates/layout.html:165 medeo/templates/layout.html:354
+#: medeo/templates/layout.html:165 medeo/templates/layout.html:351
 msgid "Expertise-Comptable"
-msgstr ""
+msgstr "Accounting Expertise"
 
 #: medeo/templates/layout.html:168 medeo/templates/notre_expertise.html:81
 msgid "audit"
-msgstr ""
+msgstr "auditing"
 
 #: medeo/templates/layout.html:172 medeo/templates/notre_expertise.html:110
 #: medeo/templates/notre_expertise.html:147
 msgid "conseil_optimisation"
-msgstr ""
+msgstr "council_optimization"
 
 #: medeo/templates/layout.html:180
 msgid "actualites"
-msgstr ""
+msgstr "news"
 
 #: medeo/templates/layout.html:195
 msgid "espace_client"
-msgstr ""
+msgstr "account"
 
 #: medeo/templates/layout.html:197
 msgid "Espace client"
-msgstr ""
+msgstr "Account"
 
-#: medeo/templates/layout.html:285
-msgid ""
-"\n"
-"   <script\n"
-"      type=\"text/javascript\">window.onload = function () { "
-"Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-"
-"partners/30min', text: '<div class=\"btn_calendly\">Prendre RDV', color: "
-"'#114a79', textColor: '#ffffff', branding: true }); }</script>\n"
-"   "
-msgstr "<script type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="btn_calendly">Schedule Appointment', color: '#114a79', textColor: '#ffffff', branding: true }); }</script>"
+#: medeo/templates/layout.html:349
+msgid "À propos"
+msgstr "About Us"
+
+#: medeo/templates/layout.html:350
+msgid "Le Cabinet"
+msgstr "The Firm"
 
 #: medeo/templates/layout.html:352
-msgid "À propos"
-msgstr ""
-
-#: medeo/templates/layout.html:353
-msgid "Le Cabinet"
-msgstr ""
-
-#: medeo/templates/layout.html:355
 msgid "audit#commissariatauxcomptes"
 msgstr ""
 
-#: medeo/templates/layout.html:355
+#: medeo/templates/layout.html:352
 msgid ""
 "Commissariat aux\n"
 "                     comptes"
-msgstr ""
+msgstr "Statutory Auditing"
 
-#: medeo/templates/layout.html:359
+#: medeo/templates/layout.html:356
 msgid "Adresse"
-msgstr ""
+msgstr "Address"
 
-#: medeo/templates/layout.html:375
+#: medeo/templates/layout.html:372
 msgid "nouscontacter"
-msgstr ""
+msgstr "contactus"
 
-#: medeo/templates/layout.html:375
+#: medeo/templates/layout.html:372
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
-#: medeo/templates/layout.html:376
+#: medeo/templates/layout.html:373
 msgid "votre_cabinet#carousel_partners"
 msgstr ""
 
-#: medeo/templates/layout.html:376 medeo/templates/votre_cabinet.html:375
+#: medeo/templates/layout.html:373 medeo/templates/votre_cabinet.html:375
 msgid "L'équipe"
-msgstr ""
+msgstr "The Team"
 
-#: medeo/templates/layout.html:400
+#: medeo/templates/layout.html:397
 msgid "MEDEO Partners Copyright 2023© - Tous droits réservés | "
-msgstr ""
+msgstr "MEDEO Partners Copyright 2023© - All rights reserved |"
 
-#: medeo/templates/layout.html:401
+#: medeo/templates/layout.html:398
 msgid "legal"
-msgstr ""
+msgstr "legal"
 
-#: medeo/templates/layout.html:401
+#: medeo/templates/layout.html:398
 msgid "Mentions légales"
-msgstr ""
+msgstr "Legal Notice"
 
 #: medeo/templates/legal.html:7
 msgid "MENTIONS LÉGALES"
-msgstr ""
+msgstr "LEGAL NOTICE"
 
 #: medeo/templates/legal.html:11
 msgid "Site réalisé et hébergé par Bamana Solutions"
-msgstr ""
+msgstr "Site created and hosted by Bamana Solutions"
 
 #: medeo/templates/legal.html:15
 msgid ""
@@ -742,11 +732,19 @@ msgid ""
 "            Siège social : 97 Boulevard Malesherbes 75008 PARIS\n"
 "            <br>\n"
 "            Tél. : 06 69 06 68 04"
-msgstr ""
+msgstr "SARL with a capital of 5,000 euros\n"
+"<br>\n"
+"Siret: 951 922 707 00017\n"
+"<br>\n"
+"RCS: 951 922 707 R.C.S. Paris\n"
+"<br>\n"
+"Registered office: 97 Boulevard Malesherbes 75008 PARIS\n"
+"<br>\n"
+"Tel.: 06 69 06 68 04"
 
 #: medeo/templates/legal.html:27
 msgid "Edition du site"
-msgstr ""
+msgstr "Site Edition"
 
 #: medeo/templates/legal.html:30
 msgid ""
@@ -757,22 +755,30 @@ msgid ""
 "            RCS : 920 780 491 R.C.S Paris\n"
 "            <br>\n"
 "            Siège social : 97 Boulevard Malesherbes 75008 PARIS"
-msgstr ""
+msgstr "SARL with a capital of 10,000 euros\n"
+"<br>\n"
+"Siret: 92078049100014\n"
+"<br>\n"
+"RCS: 920 780 491 R.C.S. Paris\n"
+"<br>\n"
+"Registered office: 97 Boulevard Malesherbes 75008 PARIS"
 
 #: medeo/templates/legal.html:42
 msgid ""
 "Par email : contact@bamana-solutions.com\n"
 "            <br>\n"
 "            Par téléphone : 06 69 06 68 04"
-msgstr ""
+msgstr "By email: contact@bamana-solutions.com\n"
+"<br>\n"
+"By phone: 06 69 06 68 04"
 
 #: medeo/templates/legal.html:46
 msgid "Notre site : "
-msgstr ""
+msgstr "Our site : "
 
 #: medeo/templates/legal.html:49
 msgid "Hébergeur"
-msgstr ""
+msgstr "Host"
 
 #: medeo/templates/legal.html:51
 msgid ""
@@ -804,7 +810,7 @@ msgid ""
 "\n"
 "            droit de réponse. Une simple demande sera adressée par "
 "courrier."
-msgstr ""
+msgstr "Intellectual Property: The entire content of this site is subject to French and international laws on copyright and intellectual property. All rights of reproduction are reserved for the texts and photographs on this site. The reproduction of all or part of this site on any electronic medium or any other medium is strictly prohibited without the written authorization of the author, in accordance with Article L 122-4 of the Intellectual Property Code. Hyperlinks & right of reply: The hyperlinks established as part of this website to other resources on the Internet, including its partners, have been subject to prior express written authorization from the publisher. - Anyone mentioned on the site may exercise a right of reply. A simple request will be sent by mail."
 
 #: medeo/templates/notre_expertise.html:30
 msgid ""
@@ -841,14 +847,18 @@ msgid ""
 "\n"
 "        Nous aidons à prévenir les litiges financiers et à les gérer "
 "lorsqu'ils se produisent"
-msgstr ""
+msgstr "We provide advice to help businesses make informed financial and tax decisions."
+"<br><br> We assist in establishing and monitoring financial and accounting systems to ensure the accuracy of their data."
+"<br><br> We prepare and review tax returns to ensure that companies fulfill their tax obligations."
+"<br><br> We offer strategic advice to maximize business operations and financial strategies. We help prevent financial disputes and manage them when they arise."
+"<br><br> We assist in preventing and managing financial disputes as they occur."
 
 #: medeo/templates/notre_expertise.html:48
 #: medeo/templates/notre_expertise.html:81
 #: medeo/templates/notre_expertise.html:110
 #: medeo/templates/notre_expertise.html:147
 msgid "En savoir plus"
-msgstr ""
+msgstr "More information"
 
 #: medeo/templates/notre_expertise.html:69
 msgid ""
@@ -870,11 +880,13 @@ msgid ""
 "\n"
 "        Il permet également de détecter les erreurs, les omissions et les"
 " irrégularités financières."
-msgstr ""
+msgstr "We conduct an independent and systematic examination of the financial statements of our clients as qualified auditors, in compliance with audit standards."
+"<br><br>The purpose of our contractual audit is to provide an opinion on the reliability and compliance of financial statements with official accounting principles."
+"<br><br>It also aims to detect errors, omissions, and financial irregularities."
 
 #: medeo/templates/notre_expertise.html:95
 msgid "Conseil d'optimisation"
-msgstr ""
+msgstr "Optimization Advice"
 
 #: medeo/templates/notre_expertise.html:98
 msgid ""
@@ -897,11 +909,13 @@ msgid ""
 "financiers, les opportunités d'investissement\n"
 "\n"
 "        et les relations avec les actionnaires et les parties prenantes."
-msgstr ""
+msgstr "We provide consulting services to help businesses make informed decisions and achieve their commercial and financial objectives."
+"<br><br>We offer advice on financial strategies, business operations, cash flow management, tax planning, and international operations."
+"<br><br>We also assist companies in managing financial risks, exploring investment opportunities, and handling relationships with shareholders and stakeholders."
 
 #: medeo/templates/notre_expertise.html:123
 msgid "Conseil informatique"
-msgstr ""
+msgstr "IT Services"
 
 #: medeo/templates/notre_expertise.html:127
 msgid ""
@@ -910,7 +924,7 @@ msgid ""
 "\n"
 "        gestion de vos données clients ainsi qu'à l'amélioration de vos "
 "process."
-msgstr ""
+msgstr "Our IT department handles all types of issues related to information systems, the management of your customer data, as well as the improvement of your processes."
 
 #: medeo/templates/notre_expertise.html:131
 msgid ""
@@ -927,33 +941,37 @@ msgid ""
 "        technologies les plus appropriées pour les besoins de\n"
 "\n"
 "        l'entreprise."
-msgstr ""
+msgstr "The IT services we can offer include the establishment and management of accounting and financial systems, the implementation of payroll management systems, the setup of inventory tracking and billing systems, and advice on the most suitable software and technologies for the needs of the business."
 
 #: medeo/templates/notre_expertise.html:141
 msgid ""
 "Nous pouvons aussi aider les entreprises à garantir la\n"
 "\n"
 "        sécurité de leurs données"
-msgstr ""
+msgstr "We can also help businesses ensure the security of their data."
 
 #: medeo/templates/notre_expertise.html:163
 msgid "Témoignages"
-msgstr ""
+msgstr "Testimony"
+
+#: medeo/templates/notre_expertise.html:308
+msgid "Partenaires"
+msgstr "Partners"
 
 #: medeo/templates/notre_expertise.html:181
 msgid "Cabinet de conseil en investissement"
-msgstr ""
+msgstr "Investment Advisory Firm"
 
 #: medeo/templates/notre_expertise.html:184
 msgid ""
 "MEDEO est un partenaire efficace, à l'écoute et soucieux de nos besoins "
 "très souvent\n"
 "                changeants"
-msgstr ""
+msgstr "MEDEO is an efficient partner, attentive, and mindful of our often changing needs."
 
 #: medeo/templates/notre_expertise.html:203
 msgid "Cabinet de consulting en ingénierie"
-msgstr ""
+msgstr "Engineering Consulting Firm"
 
 #: medeo/templates/notre_expertise.html:207
 msgid ""
@@ -962,11 +980,11 @@ msgid ""
 "\n"
 "                enjeux et apporte constamment des réponses pertinentes à "
 "nos problématiques comptables."
-msgstr ""
+msgstr "With Medeo, we have found a trustworthy ally. Their dedicated and responsive team understands our challenges and consistently provides relevant solutions to our accounting issues."
 
 #: medeo/templates/notre_expertise.html:225
 msgid "Courtier immobilier"
-msgstr ""
+msgstr ""Real Estate Broker""
 
 #: medeo/templates/notre_expertise.html:228
 msgid ""
@@ -975,11 +993,11 @@ msgid ""
 "\n"
 "                étages et surtout une capacité à dépasser nos attentes en"
 " termes de qualité de service."
-msgstr ""
+msgstr "We are proud of our partnership with MEDEO. A cheerful agreement, rigor at every level, and above all, an ability to exceed our expectations in terms of service quality."
 
 #: medeo/templates/notre_expertise.html:246
 msgid "Cabinet de conseil en numérique et transformation digitale"
-msgstr ""
+msgstr "Digital Consulting and Digital Transformation Firm"
 
 #: medeo/templates/notre_expertise.html:249
 msgid ""
@@ -987,7 +1005,7 @@ msgid ""
 "dans la création de notre\n"
 "\n"
 "                entreprise."
-msgstr ""
+msgstr "The skills and expertise of Avi and Israel have been very helpful in the creation of our company."
 
 #: medeo/templates/notre_expertise.html:251
 msgid ""
@@ -995,7 +1013,7 @@ msgid ""
 "durant une phase aussi\n"
 "\n"
 "                dense et stressante que la création d'une entreprise."
-msgstr ""
+msgstr "The reactivity and availability of the partners are highly appreciated during a phase as intense and stressful as the creation of a company."
 
 #: medeo/templates/notre_expertise.html:269
 msgid "Agence DMC"
@@ -1010,11 +1028,11 @@ msgid ""
 "personnalisé est un atout majeur pour notre\n"
 "\n"
 "                entreprise."
-msgstr ""
+msgstr "The expertise of Medeo is undeniable. They demonstrate great attentiveness and a real ability to anticipate our needs. Their personalized support is a major asset for our company."
 
 #: medeo/templates/notre_expertise.html:291
 msgid "Cabinet de conseil en investissements financiers"
-msgstr ""
+msgstr "Financial Investment Consulting Firm"
 
 #: medeo/templates/notre_expertise.html:294
 msgid ""
@@ -1023,11 +1041,7 @@ msgid ""
 "\n"
 "                offre des solutions sur mesure qui répondent parfaitement"
 " à l'évolution de nos exigences."
-msgstr ""
-
-#: medeo/templates/notre_expertise.html:308
-msgid "Partenaires"
-msgstr ""
+msgstr "Medeo stands out for its exceptional professionalism. Always ready to adapt, this firm offers tailor-made solutions that perfectly meet the evolution of our requirements."
 
 #: medeo/templates/notre_expertise.html:322
 msgid ""
@@ -1039,7 +1053,7 @@ msgid ""
 "\n"
 "                Sa plateforme intuitive facilite la centralisation et "
 "l'efficacité des processus d'entreprise."
-msgstr ""
+msgstr "Axonaut is an integrated management software optimizing the operations of SMEs with tools for accounting, invoicing, CRM, HR, and project management. Its intuitive platform facilitates the centralization and efficiency of business processes."
 
 #: medeo/templates/notre_expertise.html:338
 msgid ""
@@ -1050,7 +1064,7 @@ msgid ""
 "dans leur transformation digitale et \n"
 "\n"
 "                l'optimisation de leurs processus technologiques."
-msgstr ""
+msgstr "Bamana Solutions is a consulting firm specializing in digital technology, providing in-depth expertise to assist businesses in their digital transformation and optimization of technological processes."
 
 #: medeo/templates/notre_expertise.html:354
 msgid ""
@@ -1061,7 +1075,7 @@ msgid ""
 "tailles, en intégrant la collecte de données,\n"
 "\n"
 "                le classement et l'analyse des transactions financières."
-msgstr ""
+msgstr "Dext is a digital solution for financial and expense management, designed to simplify and automate the accounting of businesses of all sizes by integrating data collection, categorization, and analysis of financial transactions."
 
 #: medeo/templates/notre_expertise.html:370
 msgid ""
@@ -1072,7 +1086,7 @@ msgid ""
 "des processus documentaires\n"
 "\n"
 "                pour les entreprises et les particuliers."
-msgstr ""
+msgstr "DocuSign provides a secure and efficient electronic signature solution, facilitating agreement management and the digitization of document processes for businesses and individuals."
 
 #: medeo/templates/notre_expertise.html:386
 msgid ""
@@ -1083,7 +1097,7 @@ msgid ""
 "entreprises à collecter et gérer les\n"
 "\n"
 "                paiements récurrents de manière efficace et sécurisée."
-msgstr ""
+msgstr "GoCardless is a payment service specialized in simplified management of direct debits, assisting businesses in efficiently and securely collecting and managing recurring payments."
 
 #: medeo/templates/notre_expertise.html:401
 msgid ""
@@ -1095,7 +1109,7 @@ msgid ""
 "\n"
 "                à favoriser l'innovation et l'efficacité opérationnelle "
 "des entreprises."
-msgstr ""
+msgstr "Google Cloud provides a comprehensive suite of cloud computing services, offering solutions for data storage, cloud computing, and advanced analytics, aimed at fostering innovation and operational efficiency for businesses."
 
 #: medeo/templates/notre_expertise.html:417
 msgid ""
@@ -1107,7 +1121,7 @@ msgid ""
 "\n"
 "                modèles, soutenant l'innovation et la compétitivité des "
 "entreprises et inventeurs."
-msgstr ""
+msgstr "The INPI (National Institute of Industrial Property) is the official French organization dedicated to the registration and protection of patents, trademarks, designs, and models, supporting innovation and the competitiveness of businesses and inventors."
 
 #: medeo/templates/notre_expertise.html:433
 msgid ""
@@ -1118,7 +1132,7 @@ msgid ""
 " les ressources humaines, adaptés aux besoins\n"
 "\n"
 "                des petites et moyennes entreprises."
-msgstr ""
+msgstr "Sage is a global leader in accounting and business management solutions, providing innovative software to facilitate finance, payroll, and human resources, tailored to the needs of small and medium-sized enterprises."
 
 #: medeo/templates/notre_expertise.html:450
 msgid ""
@@ -1129,26 +1143,26 @@ msgid ""
 "complète et intuitive adaptée aux\n"
 "\n"
 "                besoins spécifiques des entreprises françaises."
-msgstr ""
+msgstr "Silae is payroll and human resources management software designed to optimize and automate HR processes, providing a comprehensive and intuitive solution tailored to the specific needs of French businesses."
 
 #: medeo/templates/nouscontacter.html:65
 msgid "Nous contacter "
-msgstr ""
+msgstr "Contact us"
 
-#: medeo/templates/nouscontacter.html:192
+#: medeo/templates/nouscontacter.html:191
 msgid "Nous rejoindre "
-msgstr ""
+msgstr "Join us"
 
 #: medeo/templates/votre_cabinet.html:16
 msgid "Notre histoire"
-msgstr ""
+msgstr "Our history"
 
 #: medeo/templates/votre_cabinet.html:28
 msgid ""
 "MEDEO Partners est un cabinet d'expertise comptable\n"
 "\n"
 "          et de commissariat aux comptes"
-msgstr ""
+msgstr "MEDEO Partners is an accounting and audit firm."
 
 #: medeo/templates/votre_cabinet.html:30
 msgid ""
@@ -1157,7 +1171,7 @@ msgid ""
 "\n"
 "          <b>Compagnie régionale des commissaires aux comptes de Paris "
 "(CRCC).</b>"
-msgstr ""
+msgstr "registered with the Order of Chartered Accountants (OEC) of Paris and with the Regional Company of Statutory Auditors of Paris (CRCC)."
 
 #: medeo/templates/votre_cabinet.html:38
 msgid "<b>MEDEO,</b> signifiant <b>«prendre soin de»</b>"
@@ -1169,7 +1183,7 @@ msgid ""
 " de\n"
 "\n"
 "          <a class=\"gras_txt\"><b>« médecins des entreprises »</a></b>"
-msgstr ""
+msgstr "In ancient Greek, characterizes the founders' desire to embody the role of <a class="gras_txt"><b>« business doctors »</a></b>"
 
 #: medeo/templates/votre_cabinet.html:60
 msgid ""
@@ -1178,7 +1192,7 @@ msgid ""
 "\n"
 "          l'association et la complémentarité <a class=\"gras_txt\"><b> "
 "de ses fondateurs :"
-msgstr ""
+msgstr "PARTNERS, borrowed from English, emphasizes the concept of « partnership », a term representing the association and complementarity <a class="gras_txt"><b>of its founders :"
 
 #: medeo/templates/votre_cabinet.html:64
 msgid ""
@@ -1187,7 +1201,7 @@ msgid ""
 "\n"
 "          le cabinet en\n"
 "          octobre 2022. "
-msgstr ""
+msgstr "Founded the firm in October 2022."
 
 #: medeo/templates/votre_cabinet.html:71
 msgid ""
@@ -1198,7 +1212,7 @@ msgid ""
 "entreprises » souhaitent mettre leurs\n"
 "\n"
 "          expertises au service des entreprises."
-msgstr ""
+msgstr "After an effective collaboration of over seven years and respective experience of over ten years in accounting, these 'neo-business doctors' aim to put their expertise at the service of businesses."
 
 #: medeo/templates/votre_cabinet.html:83
 msgid ""
@@ -1210,7 +1224,7 @@ msgid ""
 "          durant le cycle de vie de votre entreprise :\n"
 "\n"
 "          en prenant soin du bien-être et de la croissance de vos projets."
-msgstr ""
+msgstr "Like a doctor, MEDEO Partners accompanies you <p class="txt_votrecab" style="text-indent: 1px; width: auto; margin-left: 0;">throughout the lifecycle of your business, caring for the well-being and growth of your projects."
 
 #: medeo/templates/votre_cabinet.html:87
 msgid ""
@@ -1221,59 +1235,59 @@ msgid ""
 "maintenant le sérieux et la rigueur de\n"
 "\n"
 "          la profession du chiffre."
-msgstr ""
+msgstr "We want to break the stereotypical, traditional, and rigid image of accounting firms by bringing a younger and more modern touch while maintaining the seriousness and rigor of the accounting profession."
 
 #: medeo/templates/votre_cabinet.html:107
 msgid "Nos valeurs"
-msgstr ""
+msgstr "Our values"
 
 #: medeo/templates/votre_cabinet.html:110
 #: medeo/templates/votre_cabinet.html:142
 msgid "Respect"
-msgstr ""
+msgstr "Respect"
 
 #: medeo/templates/votre_cabinet.html:112
 #: medeo/templates/votre_cabinet.html:168
 msgid "Communication"
-msgstr ""
+msgstr "Communication"
 
 #: medeo/templates/votre_cabinet.html:114
 #: medeo/templates/votre_cabinet.html:192
 msgid "Ecologie"
-msgstr ""
+msgstr "Ecology"
 
 #: medeo/templates/votre_cabinet.html:116
 #: medeo/templates/votre_cabinet.html:220
 msgid "Rigueur"
-msgstr ""
+msgstr "Rigor"
 
 #: medeo/templates/votre_cabinet.html:118
 msgid ""
 "Expérience\n"
 "            internationale"
-msgstr ""
+msgstr "International Experience"
 
 #: medeo/templates/votre_cabinet.html:121
 msgid ""
 "Mixité et\n"
 "            inclusion"
-msgstr ""
+msgstr "Diversity and Inclusion"
 
 #: medeo/templates/votre_cabinet.html:124
 #: medeo/templates/votre_cabinet.html:297
 msgid "Jeunesse"
-msgstr ""
+msgstr "Youth"
 
 #: medeo/templates/votre_cabinet.html:126
 #: medeo/templates/votre_cabinet.html:324
 msgid "Engagement"
-msgstr ""
+msgstr "Commitment"
 
 #: medeo/templates/votre_cabinet.html:128
 msgid ""
 "Qualité\n"
 "            de service"
-msgstr ""
+msgstr "Quality of service"
 
 #: medeo/templates/votre_cabinet.html:148
 msgid ""
@@ -1298,7 +1312,7 @@ msgid ""
 "notre institution, un atout nécessaire\n"
 "\n"
 "          à la croissance et à la prospérité de de notre entreprise."
-msgstr ""
+msgstr "Respect is an intangible yet fundamental value that should be ingrained in the culture of any business concerned about its image and reputation. Respect must be cultivated in all interactions among employees, clients, business partners, and other stakeholders of the company. This means that everyone should be treated fairly and without discrimination, regardless of race, gender, sexual orientation, religion, or any other criteria. We believe in respect as a fundamental value of our institution, an essential asset for the growth and prosperity of our business."
 
 #: medeo/templates/votre_cabinet.html:174
 msgid ""
@@ -1319,7 +1333,7 @@ msgid ""
 "\n"
 "          répondre efficacement à leurs besoins et à surmonter n'importe "
 "quel imprévu"
-msgstr ""
+msgstr "Communication is essential for establishing and maintaining positive relationships both with our clients and within our company. This involves the ability to communicate clearly and concisely, to consider clients' opinions and suggestions, and to offer personalized solutions. We firmly believe that by being responsive and close to our clients, we can effectively meet their needs and overcome any unexpected challenges."
 
 #: medeo/templates/votre_cabinet.html:198
 msgid ""
@@ -1327,7 +1341,7 @@ msgid ""
 "efforçons de vulgariser les \n"
 "\n"
 "          pratiques "
-msgstr ""
+msgstr "Ecology is a fundamental value of our company. We strive to popularize sustainable practices, "
 
 #: medeo/templates/votre_cabinet.html:200
 msgid ""
@@ -1335,7 +1349,7 @@ msgid ""
 "sensibiliser à la responsabilité \n"
 "\n"
 "          environnementale."
-msgstr ""
+msgstr "integrate ecological gestures into our daily routine, and raise awareness of environmental responsibility."
 
 #: medeo/templates/votre_cabinet.html:203
 msgid ""
@@ -1343,7 +1357,7 @@ msgid ""
 " la consommation d'énergie,\n"
 "\n"
 "          la"
-msgstr ""
+msgstr "We are unwavering in our initiatives, such as reducing energy consumption,"
 
 #: medeo/templates/votre_cabinet.html:205
 msgid ""
@@ -1351,7 +1365,7 @@ msgid ""
 "l'encouragement de comportements \n"
 "\n"
 "          écologiques"
-msgstr ""
+msgstr "minimizing waste, implementing sustainable processes, and encouraging ecological behaviors at all levels of the company,"
 
 #: medeo/templates/votre_cabinet.html:207
 msgid ""
@@ -1359,7 +1373,8 @@ msgid ""
 "professionnels, \n"
 "\n"
 "          réutiliser du papier en brouillon, etc."
-msgstr ""
+msgstr "such as optimizing professional travel, reusing scrap paper, etc."
+
 
 #: medeo/templates/votre_cabinet.html:226
 msgid ""
@@ -1377,11 +1392,12 @@ msgid ""
 "\n"
 "          clients et de veiller à ce que nos propres standards restent "
 "toujours aussi élevés."
-msgstr ""
+msgstr "At MEDEO, we do nothing without rigor. We strive to be meticulous and organized, mindful of meeting both deadlines and budgets, adhering to internal procedures, and quick to provide reliable and accurate information."
+"Rigor is the cornerstone of our business, enabling us to ensure the best service for our clients and ensuring that our own standards always remain high."
 
 #: medeo/templates/votre_cabinet.html:243
 msgid "Expérience internationale"
-msgstr ""
+msgstr "International Experience"
 
 #: medeo/templates/votre_cabinet.html:249
 msgid ""
@@ -1399,7 +1415,7 @@ msgid ""
 "efficacement avec des clients de différents pays et à \n"
 "\n"
 "          naviguer avec succès dans un environnement mondialisé."
-msgstr ""
+msgstr "Our international experience is a significant asset for clients looking to expand their portfolio and explore opportunities in new markets. We have cultural sensitivity, a deep understanding of global markets and regulations, as well as the ability to communicate effectively with clients from different countries and successfully navigate in a globalized environment."
 
 #: medeo/templates/votre_cabinet.html:266
 msgid "Mixité et inclusion"
@@ -1433,7 +1449,12 @@ msgid ""
 "\n"
 "          contribuer à renforcer la mixité, l'inclusion et le respect de "
 "tous les employés."
-msgstr ""
+msgstr "We are committed to building an inclusive and respectful environment by implementing several practices and initiatives:"
+" ·Diversity in staffing through recruitment"
+" ·Raising awareness of cultural diversity by organizing roundtable discussions on the profession"
+" ·Inclusion policies ensuring equal opportunities for all employees"
+" ·Measures against harassment and discrimination to prevent such occurrences."
+" By adopting these values and integrating them into the daily practices of the company, we can contribute to strengthening diversity, inclusion, and respect for all employees."
 
 #: medeo/templates/votre_cabinet.html:303
 msgid ""
@@ -1459,7 +1480,10 @@ msgid ""
 "\n"
 "          Miser sur la jeunesse est un pari payant chez MEDEO, où tout le"
 " monde est gagnant."
-msgstr ""
+msgstr "We bet on youth and invest in the future of the profession."
+" By welcoming interns, we give young people the opportunity to develop their skills and professional experience."
+" Working with interns not only allows us to share our expertise but also enables us to innovate, thanks to the ingenuity and fresh perspective they bring to the profession."
+" Betting on youth is a winning gamble at MEDEO, where everyone comes out on top."
 
 #: medeo/templates/votre_cabinet.html:330
 msgid ""
@@ -1474,79 +1498,79 @@ msgid ""
 "\n"
 "          Notre seul but : les aider à atteindre leurs objectifs en "
 "plaçant leur satisfaction au premier plan."
-msgstr ""
+msgstr "Our commitment to our clients is whole. By sharing their passion and determination, they boost our motivation to provide them with quality service. Our only goal: to help them achieve their objectives by placing their satisfaction at the forefront."
 
 #: medeo/templates/votre_cabinet.html:347
 msgid "Qualité de service"
-msgstr ""
+msgstr "Quality of service"
 
 #: medeo/templates/votre_cabinet.html:353
 msgid ""
 "Un service de haute qualité est le minimum que nous pouvons offrir à nos "
 "clients, en veillant à ce\n"
 "          que"
-msgstr ""
+msgstr "A high-quality service is the minimum we can offer to our clients, ensuring that their "
 
 #: medeo/templates/votre_cabinet.html:355
 msgid "leurs attentes soient respectées, satisfaites voire dépassées."
-msgstr ""
+msgstr "expectations are met, satisfied, and even exceeded. "
 
 #: medeo/templates/votre_cabinet.html:357
 msgid ""
 "Pour ce faire, nous allions écoute, réactivité, compétence et "
 "professionnalisme. Notre capacité à\n"
 "          anticiper"
-msgstr ""
+msgstr "To achieve this, we combine attentiveness, responsiveness, expertise, and professionalism. "
 
 #: medeo/templates/votre_cabinet.html:359
 msgid ""
 "les besoins de nos clients nous permet de leur proposer des solutions sur"
 " mesure."
-msgstr ""
+msgstr "Our ability to anticipate our clients' needs allows us to offer them tailored solutions."
 
 #: medeo/templates/votre_cabinet.html:394
 msgid "CEO, Expert-Comptable et commissaire aux comptes"
-msgstr ""
+msgstr "CEO, Chartered Accountant, and Statutory Auditor"
 
 #: medeo/templates/votre_cabinet.html:404
 msgid "\"Pour réussir, il n'y a que des plans A pas de plans B \""
-msgstr ""
+msgstr "To succeed, there's only Plan A, no Plan B."
 
 #: medeo/templates/votre_cabinet.html:408
 msgid "une phrase qui caractérise bien mon état d'esprit."
-msgstr ""
+msgstr "A phrase that well characterizes my mindset."
 
 #: medeo/templates/votre_cabinet.html:412
 msgid "\"La facon de commencer est d'arrêter de parler et de commencer à faire\""
-msgstr ""
+msgstr "The way to get started is to stop talking and start doing."
 
 #: medeo/templates/votre_cabinet.html:415
 msgid "Walt Disney, cofondateur de The Walt Disney Company"
-msgstr ""
+msgstr "Walt Disney, co-founder of The Walt Disney Company"
 
 #: medeo/templates/votre_cabinet.html:418
 msgid ""
 "Diplômé en Licence d'économie, je suis me suis réorienté dans un domaine "
 "qui m'a toujours"
-msgstr ""
+msgstr "After gradutading in Economics, I redirected my career towards an area that has always fascinated me."
 
 #: medeo/templates/votre_cabinet.html:419
 msgid ""
 "passionné : la comptabilité. J'ai donc obtenu une deuxième licence en "
 "comptabilité (DCG),\n"
 "                un"
-msgstr ""
+msgstr "passionate about: accounting. So, I obtained a second bachelor's degree in accounting (DCG), and a"
 
 #: medeo/templates/votre_cabinet.html:421
 msgid ""
 "master en comptabilité (DSCG), puis le DEC (Bac+8). Mon cursus m'a permis"
 " d'avoir une\n"
 "                vision"
-msgstr ""
+msgstr "master's degree in accounting (DSCG), and then the DEC (Bac+8). My academic journey has allowed me to have a"
 
 #: medeo/templates/votre_cabinet.html:423
 msgid "plus complète du monde de l'entreprenariat."
-msgstr ""
+msgstr "more comprehensive understanding of the entrepreneurial world."
 
 #: medeo/templates/votre_cabinet.html:427
 msgid ""
@@ -1554,7 +1578,7 @@ msgid ""
 "propre cabinet. Je m'étais \n"
 "\n"
 "                donné une dizaine d'années pour y parvenir."
-msgstr ""
+msgstr "Since the beginning of my career, I have had the ambition to establish my own firm. I had set a goal to achieve this within a decade."
 
 #: medeo/templates/votre_cabinet.html:429
 msgid ""
@@ -1562,7 +1586,7 @@ msgid ""
 "m'a permis d'acquérir\n"
 "\n"
 "                une expérience solide et très enrichissante."
-msgstr ""
+msgstr "I have practiced for more than 10 years in France and the United States, which has allowed me to gain solid and highly enriching experience."
 
 #: medeo/templates/votre_cabinet.html:431
 msgid ""
@@ -1570,13 +1594,13 @@ msgid ""
 "de Commissaire aux\n"
 "\n"
 "                Comptes, j'ai co-fondé mon entreprise."
-msgstr ""
+msgstr "Ten years later, after obtaining my degree as a Chartered Accountant and Statutory Auditor, I co-founded my own business."
 
 #: medeo/templates/votre_cabinet.html:433
 msgid ""
 "Avant tout, je suis un fervent amateur de la culture entrepreneuriale et "
 "un mentor dans l'âme."
-msgstr ""
+msgstr "Above all, I am an ardent enthusiast of entrepreneurial culture and a mentor at heart."
 
 #: medeo/templates/votre_cabinet.html:434
 msgid ""
@@ -1587,7 +1611,7 @@ msgid ""
 "déterminée à construire une entreprise de renommée\n"
 "\n"
 "                internationale."
-msgstr ""
+msgstr "Entrepreneurship has always been a second nature to me, and accounting, a passion. The combination of both results in a motivated and determined individual aiming to build an internationally renowned business."
 
 #: medeo/templates/votre_cabinet.html:437
 msgid ""
@@ -1598,19 +1622,19 @@ msgid ""
 "clients, car c'est ensemble que nous\n"
 "\n"
 "                avancerons."
-msgstr ""
+msgstr "MEDEO Partners will be more than an accounting and audit firm: it will be a privileged partner for my clients, as we will move forward together."
 
 #: medeo/templates/votre_cabinet.html:466
 msgid "Associé, Directeur de mission"
-msgstr ""
+msgstr "Associates, Mission Director"
 
 #: medeo/templates/votre_cabinet.html:474
 msgid "\" L'art de la réussite consiste à savoir s'entourer des meilleurs.\""
-msgstr ""
+msgstr "The art of success is knowing how to surround oneself with the best."
 
 #: medeo/templates/votre_cabinet.html:477
 msgid "John Fitzgerald Kennedy"
-msgstr ""
+msgstr "John Fitzgerald Kennedy"
 
 #: medeo/templates/votre_cabinet.html:480
 msgid ""
@@ -1621,7 +1645,7 @@ msgid ""
 "comptabilité et gestion, je souhaite accompagner\n"
 "\n"
 "                les entreprises et prendre soin de mes clients. "
-msgstr ""
+msgstr "With eight years of experience in an accounting and auditing firm, and my academic background in accounting and management, I aim to support businesses and take care of my clients."
 
 #: medeo/templates/votre_cabinet.html:484
 msgid ""
@@ -1630,14 +1654,14 @@ msgid ""
 "\n"
 "                considérable dans mon domaine et une assurance au "
 "quotidien, au chevet de mes partenaires."
-msgstr ""
+msgstr "The diversity of my professional journey has allowed me to develop considerable expertise in my field and a daily assurance, standing by my partners' side."
 
 #: medeo/templates/votre_cabinet.html:487
 msgid ""
 "Méticuleux, rigoureux et réactif, je me positionne comme le garant de \n"
 "\n"
 "                la bonne gestion de votre activité. "
-msgstr ""
+msgstr "Diligent, rigorous, and responsive, I position myself as the guarantor of the proper management of your business."
 
 #: medeo/templates/votre_cabinet.html:490
 msgid ""
@@ -1649,5 +1673,5 @@ msgid ""
 "\n"
 "                fiscal, social, ou dans le cadre de contrôles sociaux "
 "et/ou fiscaux. "
-msgstr ""
+msgstr "MEDEO Partners will be more than an accounting and auditing firm: an unwavering support for your business, whether it's in legal, fiscal, social matters, or in the context of social and/or fiscal audits."
 
