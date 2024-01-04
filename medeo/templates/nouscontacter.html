@@ -69,7 +69,7 @@
 </div>
 
 
-<div class="fade_in contact_section layout_padding animate-top">
+<div id="formulaire" class="fade_in contact_section layout_padding animate-top">
   <div class="container">
     </br>
     <div class="contact_section_2 layout_padding">
@@ -419,6 +419,16 @@
       icon.className = "fa-solid fa-arrow-down-long"; // Icon for folded state
     }
   }
+
+  
+  var cards = document.querySelectorAll('.carousel-card');
+  console.log("hello")
+  console.log(cards)
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      document.getElementById('formulaire').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 </script>
 
 <style>

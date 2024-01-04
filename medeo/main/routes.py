@@ -1,7 +1,6 @@
 from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response,send_from_directory,current_app, send_from_directory
 from flask_babel import _,refresh
 
-
 main = Blueprint('main', __name__, url_prefix='/<lang_code>')
 
 @main.url_defaults
@@ -187,10 +186,12 @@ def news_12():
 
 
 
-@main.route('/robots.txt')
-def robots_txt():
-    # return Response("User-agent: *\nDisallow: ", content_type='text/plain')
-    return send_from_directory(current_app.static_folder, 'robots.txt')
+# @app.route('/robots.txt')
+# def robots_txt():
+#     # return Response("User-agent: *\nDisallow: ", content_type='text/plain')
+#     # return send_from_directory(current_app.static_folder, 'robots.txt')
+#     # return send_from_directory(current_app.static_folder, 'fr/robots.txt')
+#     return send_from_directory(current_app.static_folder, 'robots.txt')
 
 @main.route('/sitemap.xml')
 def sitemap():
