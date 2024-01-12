@@ -108,16 +108,37 @@
 
   <!-- NEW CAROUSEL-->
 
-  <div class="carousel" data-flickity='{ "autoPlay": true }'>
+  <!-- <div class="carousel" data-flickity='{ "autoPlay": true }'>
+    <div class="carousel-cell encart_rouge"></div>
     <div class="carousel-cell"></div>
     <div class="carousel-cell"></div>
     <div class="carousel-cell"></div>
     <div class="carousel-cell"></div>
-    <div class="carousel-cell"></div>
-  </div>
+  </div> -->
   
 
+  <br/>
+  <br/>
+  <br/>
 
+  <!-- <div class="carousel" data-flickity='{ "autoPlay": true }'>
+    <div class="carousel-cell">
+      <div class="square1"></div>
+      <div class="square2"></div>
+    </div>
+    <div class="carousel-cell">
+      <div class="square1"></div>
+      <div class="square2"></div>
+    </div>
+    <div class="carousel-cell">
+      <div class="square1"></div>
+      <div class="square2"></div>
+    </div>
+    <div class="carousel-cell">
+      <div class="square1"></div>
+      <div class="square2"></div>
+    </div>
+  </div>  -->
 
   <!-- NEW CAROUSEL END-->
   <div class="container animate-top">
@@ -259,12 +280,28 @@
 .carousel-cell:before {
   display: block;
   text-align: center;
-  content: counter(gallery-cell);
+  /* content: counter(gallery-cell); */
   line-height: 200px;
   font-size: 80px;
   color: white;
 }
 
+
+.square1, .square2{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.square1{
+  background-color: red;
+}
+
+.square2{
+  background-color: blue;
+  left: 10%;
+  top: 10%;
+}
 </style>
 
 
