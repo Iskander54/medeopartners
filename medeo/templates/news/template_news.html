@@ -1,32 +1,55 @@
 {% extends "layout.html" %}
 {% block content %}
-
-<div class="container">
-    <h1 class="banner_taital" style="margin-top: 10px;">
-        Lorem ipsum
-    </h1>
-
-    <h3 class="banner_taital_h3">
-        Lorem ipsum
-
-    </h3>
-
-
-    <img class="image_article" src="{{url_for('static', filename='/images/news/news_1234.jpeg')}}" loading="lazy">
-
-
-
-    <p class="text_bottom_home">
-
-        Lorem ipsum
-
-    </p>
-
-    <p class="text_bottom_home">
-    
-        Lorem ipsum
-    </p>
-
-
+<div class="loader-container">
+    <div id="foregid" class="foreg"></div>
+    <span id="loaderid" class="loader"></span>
 </div>
+
+
+
+
+  <section class="news-detail-header">
+    <a class="news-category" href="">XXX</a>
+    <h1 class="news-heading">
+        XXXXX
+    </h1>
+    </h1>
+    <span class="news-description">
+        XXXX
+        </span>
+    
+  </section>
+  <section class="news-detail-img">
+    <img src="../static/images/news/fiscal/news_787.jpeg" alt="" />
+  </section>
+  <section class="news-detail-header">
+    <p class="news-description">
+        XXXX
+    </p>
+
+
+  </section>
+
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+  
+      // Loader des autres pages
+      var loaderDiv = document.getElementById('loaderid');
+      var foregroundDiv = document.getElementById('foregid');
+      // Show the div
+      foregroundDiv.style.display = 'block';
+      loaderDiv.style.display = 'block';
+      // Hide the div after 1 seconds
+      setTimeout(function () {
+        loaderDiv.style.display = 'none';
+        foregroundDiv.style.display = 'none';
+      }, 1000);
+    });
+  
+  
+  </script>
+
+
 {% endblock content %}
