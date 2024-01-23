@@ -1696,6 +1696,17 @@ img {
         z-index: 2;
     }
 
+    .encart_previous{
+        width: 10%;
+        height: 70%;
+        margin: auto;
+        right: 58px;
+        border-radius: 70px;
+        background-color: #E91C2A;
+        position: relative;
+        z-index: 2;
+    }
+
 
     .effet_ombre_boutons_valeurs {
         border-radius: 51px;
@@ -4846,7 +4857,7 @@ p.quote:nth-child(2) {
 
 .carousel {
     margin-left: 10%;
-    margin-right: 5%;
+    /* margin-right: 5%; */
 }
 
 ul.slides {

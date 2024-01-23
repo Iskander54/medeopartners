@@ -106,39 +106,32 @@
   {% include 'carousel_common.html' %}
 
 
-  <!-- NEW CAROUSEL-->
-
-  <!-- <div class="carousel" data-flickity='{ "autoPlay": true }'>
-    <div class="carousel-cell encart_rouge"></div>
-    <div class="carousel-cell"></div>
-    <div class="carousel-cell"></div>
-    <div class="carousel-cell"></div>
-    <div class="carousel-cell"></div>
-  </div> -->
-  
-
   <br/>
   <br/>
   <br/>
 
-  <!-- <div class="carousel" data-flickity='{ "autoPlay": true }'>
+
+  <!--
+<div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
     <div class="carousel-cell">
-      <div class="square1"></div>
-      <div class="square2"></div>
+      <div class="encart_bleu"></div>
+      <div class="encart_rouge"></div>
     </div>
     <div class="carousel-cell">
-      <div class="square1"></div>
-      <div class="square2"></div>
+      <div class="encart_bleu"></div>
+      <div class="encart_rouge"></div>
     </div>
     <div class="carousel-cell">
-      <div class="square1"></div>
-      <div class="square2"></div>
+      <div class="encart_bleu"></div>
+      <div class="encart_rouge"></div>
     </div>
     <div class="carousel-cell">
-      <div class="square1"></div>
-      <div class="square2"></div>
+      <div class="encart_bleu"></div>
+      <div class="encart_rouge"></div>
     </div>
-  </div>  -->
+  </div>
+-->
+
 
   <!-- NEW CAROUSEL END-->
   <div class="container animate-top">
@@ -262,16 +255,12 @@
 
 
 
-
-.carousel {
-  background: #EEE;
-}
-
 .carousel-cell {
   width: 66%;
-  height: 200px;
+  height: 800px;
   margin-right: 10px;
-  background: #8C8;
+  position: relative;
+  /* background: #8C8; */
   border-radius: 5px;
   counter-increment: gallery-cell;
 }
@@ -302,6 +291,10 @@
   left: 10%;
   top: 10%;
 }
+
+
+
+
 </style>
 
 
