@@ -6,5 +6,26 @@
 
 ### L'image est stockée /medeo/static/images/news/fiscal/news_787.jpeg
 
-liste_articles_to_scrape = ['https://www.efl.fr/actualite/loi-finances-2024-mecenat-etendu-aux-organismes-concourant-egalite-homme-femme_fc069c2aa-8778-44a0-8308-f4902d6cf957']
+from bs4 import BeautifulSoup
+import requests
+
+
+liste_articles_to_scrape = ['https://www.lagazettedescommunes.com/893548/les-bases-minimums-de-cfe-un-principe-meconnu/']
+response = requests.get(liste_articles_to_scrape[0])
+
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# print(soup)
+titre_article = soup.find_all(class_="titleA titleA--1 titleA--lineHeight48")
+print(titre_article[0].text)
+
+
+
+
+
+### Generer un fichier html avec les bons éléments
+
+
+
+
 
