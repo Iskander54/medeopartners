@@ -5,10 +5,58 @@ from jinja2 import Environment, FileSystemLoader
 # URL de l'article à scraper
 # Liste initiale
 liste_articles_to_scrape = [
-    'https://www.lagazettedescommunes.com/893548/les-bases-minimums-de-cfe-un-principe-meconnu/'
+    'https://www.lagazettedescommunes.com/893548/les-bases-minimums-de-cfe-un-principe-meconnu/',
+    'https://www.lagazettedescommunes.com/908556/decompte-general-definitif-limportance-de-la-date-de-notification/'
     
 
 ]
+
+
+
+# BEGIN README HAKIM
+
+# Spécifiez le chemin vers le dossier contenant vos templates
+templates_folder = 'medeo/templates/news/'
+
+# Initialisez l'environnement Jinja2 avec un chargeur de système de fichiers
+env = Environment(loader=FileSystemLoader('medeo/templates'))
+template = env.get_template('news/template_news.html')
+
+
+
+for url in liste_articles_to_scrape:
+    print(url)
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Extraction des éléments de l'article (titre, contenu, etc.)
+    titre_article = soup.find_all(class_="titleA titleA--1 titleA--lineHeight48")[0].text
+    content_article = soup.find_all(class_="articleChapo")[0].text
+
+
+
+
+    # Rendez le modèle avec les données de l'article
+    html_output = template.render(titre=titre_article, contenu=content_article)
+
+
+    # Spécifiez l'emplacement et le nom du nouveau fichier HTML à créer
+    chemin_fichier_html = f'medeo/templates/news/lenouvellearticle.html'
+
+    # Écrivez le résultat dans le fichier HTML
+    with open(chemin_fichier_html, 'w', encoding='utf-8') as file:
+        file.write(html_output)
+
+
+
+
+# END README HAKIM
+
+
+
+
+
+
 
 response = requests.get(liste_articles_to_scrape[0])
 soup = BeautifulSoup(response.text, 'html.parser')
