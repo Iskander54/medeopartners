@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
 
 <div class="loader-container">
     <div id="foregid" class="foreg"></div>
@@ -7,7 +9,7 @@
 <section class="news-detail-header">
     <a class="news-category" href="">XXX</a>
     <h1 class="news-heading">
-        {{ titre }}
+        Tourisme : le succès de 2024 suspendu à la réglementation sur les meublés touristiques
     </h1>
     </h1>
     <span class="news-description">
@@ -16,14 +18,15 @@
 </section>
 
 <section class="news-detail-img">
-    {% if image_url %}
-        <img src="{{ image_url }}" alt="Article Image" />
-    {% endif %}
+    
+        <img src="medeo/static/images/news/fiscal/image_4.jpg" alt="Article Image" />
+    
 </section>
 
 <section class="news-detail-header">
     <p class="news-description">
-        {{ contenu }}
+        
+			Dans la droite ligne de 2022, l’année touristique 2023 devrait s’achever en positif, grâce à une stabilité des Français et un retour confirmé des étrangers. Les professionnels parient beaucoup sur 2024, à condition que la réglementation à venir sur les meublés touristiques ne plombe pas leurs statistiques.
     </p>
 </section>
 
@@ -44,3 +47,4 @@
 </script>
 
 
+{% endblock %}

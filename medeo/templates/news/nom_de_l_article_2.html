@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
 
 <div class="loader-container">
     <div id="foregid" class="foreg"></div>
@@ -7,7 +9,7 @@
 <section class="news-detail-header">
     <a class="news-category" href="">XXX</a>
     <h1 class="news-heading">
-        {{ titre }}
+        Réforme de la DGF : le chantier est (re)lancé !
     </h1>
     </h1>
     <span class="news-description">
@@ -16,14 +18,15 @@
 </section>
 
 <section class="news-detail-img">
-    {% if image_url %}
-        <img src="{{ image_url }}" alt="Article Image" />
-    {% endif %}
+    
+        <img src="medeo/static/images/news/fiscal/image_2.jpg" alt="Article Image" />
+    
 </section>
 
 <section class="news-detail-header">
     <p class="news-description">
-        {{ contenu }}
+        
+			Le Comité des finances locales a tenu ce 23 janvier sa première séance de travail consacrée à la réforme de la dotation globale de fonctionnement (DGF), suite à l'annonce d'Emmanuel Macron. Le président du CFL André Laignel a mis comme préalable la nécessité "d'abonder la DGF pour garantir à minima le maintien des montants individuels".
     </p>
 </section>
 
@@ -44,3 +47,4 @@
 </script>
 
 
+{% endblock %}

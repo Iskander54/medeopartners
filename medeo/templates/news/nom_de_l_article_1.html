@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
 
 <div class="loader-container">
     <div id="foregid" class="foreg"></div>
@@ -7,7 +9,7 @@
 <section class="news-detail-header">
     <a class="news-category" href="">XXX</a>
     <h1 class="news-heading">
-        {{ titre }}
+        Les bases minimums de CFE : un principe méconnu
     </h1>
     </h1>
     <span class="news-description">
@@ -16,14 +18,15 @@
 </section>
 
 <section class="news-detail-img">
-    {% if image_url %}
-        <img src="{{ image_url }}" alt="Article Image" />
-    {% endif %}
+    
+        <img src="medeo/static/images/news/fiscal/image_1.jpg" alt="Article Image" />
+    
 </section>
 
 <section class="news-detail-header">
     <p class="news-description">
-        {{ contenu }}
+        
+			Plus discret que le taux annuellement voté, le dispositif de la base minimum de cotisation foncière des entreprises, hérité de l’ex-taxe professionnelle, constitue pourtant un levier efficace de modulation de la pression fiscale sur les petites entreprises et, le cas échéant, de rendement fiscal. 62 % des 4,4 millions d’établissements redevables de cette cotisation (sociétés et entrepreneurs individuels) y sont soumis, parmi lesquels la majorité des commerçants et artisans. Les réorganisations intercommunales des années 2010 l’ont parfois fait évoluer sans réelle logique. Par exemple, dans un tiers des communes, le barème s’avère dégressif selon la taille de l’entreprise.
     </p>
 </section>
 
@@ -44,3 +47,4 @@
 </script>
 
 
+{% endblock %}

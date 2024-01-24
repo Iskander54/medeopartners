@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
 
 <div class="loader-container">
     <div id="foregid" class="foreg"></div>
@@ -7,7 +9,7 @@
 <section class="news-detail-header">
     <a class="news-category" href="">XXX</a>
     <h1 class="news-heading">
-        {{ titre }}
+        La Cour des comptes dénonce la situation des finances publiques en 2024
     </h1>
     </h1>
     <span class="news-description">
@@ -16,14 +18,15 @@
 </section>
 
 <section class="news-detail-img">
-    {% if image_url %}
-        <img src="{{ image_url }}" alt="Article Image" />
-    {% endif %}
+    
+        <img src="medeo/static/images/news/fiscal/image_3.jpg" alt="Article Image" />
+    
 </section>
 
 <section class="news-detail-header">
     <p class="news-description">
-        {{ contenu }}
+        
+			Pierre Moscovici, premier président de la Cour des comptes, dans le cadre de ses vœux à la presse, a jugé la situation des finances publiques "préoccupantes". Il a indiqué que la Cour allait publier encore davantage de rapports, dont certains sont d'initiative citoyenne, parmi lesquels une partie devraient concerner les collectivités territoriales.
     </p>
 </section>
 
@@ -44,3 +47,4 @@
 </script>
 
 
+{% endblock %}
