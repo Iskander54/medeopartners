@@ -245,6 +245,16 @@
         $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
       }, 8000);
     });
+
+
+
+    document.querySelectorAll('.readmore_bt').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+});
+
+
   });
 </script>
 <style>
