@@ -241,7 +241,7 @@ msgstr ""
 #: medeo/templates/carousel_common.html:74
 #: medeo/templates/expertise_comptable.html:78
 msgid "Juridique"
-msgstr ""
+msgstr "Legal"
 
 #: medeo/templates/carousel_common.html:69
 msgid "Retrouvez les dernières actualités Juridiques"
@@ -251,7 +251,7 @@ msgstr ""
 #: medeo/templates/carousel_common.html:126
 #: medeo/templates/expertise_comptable.html:59
 msgid "Fiscalité"
-msgstr ""
+msgstr "Taxation"
 
 #: medeo/templates/carousel_common.html:121
 msgid "Retrouvez les dernières actualités Fiscales"
@@ -547,7 +547,7 @@ msgstr "Our accounting firm specializes in auditing and certifying the accounts 
 
 #: medeo/templates/home.html:74
 msgid "Conseil <br>optimisation "
-msgstr "Advisory<br>Optimization"
+msgstr "Advisory &<br>Optimization"
 
 #: medeo/templates/home.html:77
 msgid ""
@@ -952,7 +952,7 @@ msgstr "We can also help businesses ensure the security of their data."
 
 #: medeo/templates/notre_expertise.html:163
 msgid "Témoignages"
-msgstr "Testimony"
+msgstr "Reviews"
 
 #: medeo/templates/notre_expertise.html:308
 msgid "Partenaires"
@@ -1171,11 +1171,11 @@ msgid ""
 "\n"
 "          <b>Compagnie régionale des commissaires aux comptes de Paris "
 "(CRCC).</b>"
-msgstr "registered with the Order of Chartered Accountants (OEC) of Paris and with the Regional Company of Statutory Auditors of Paris (CRCC)."
+msgstr "registered with the <b>Order of Chartered Accountants (OEC) of Paris</b> and with the <b>Regional Company of Statutory Auditors of Paris (CRCC)</b>."
 
 #: medeo/templates/votre_cabinet.html:38
 msgid "<b>MEDEO,</b> signifiant <b>«prendre soin de»</b>"
-msgstr ""
+msgstr "<b>MEDEO,</b> which means <b>«take care of»</b>"
 
 #: medeo/templates/votre_cabinet.html:57
 msgid ""
@@ -1224,7 +1224,7 @@ msgid ""
 "          durant le cycle de vie de votre entreprise :\n"
 "\n"
 "          en prenant soin du bien-être et de la croissance de vos projets."
-msgstr "Like a doctor, MEDEO Partners accompanies you <p class="txt_votrecab" style="text-indent: 1px; width: auto; margin-left: 0;">throughout the lifecycle of your business, caring for the well-being and growth of your projects."
+msgstr "Like a doctor, MEDEO Partners guides you <p class="txt_votrecab" style="text-indent: 1px; width: auto; margin-left: 0;">throughout the lifecycle of your business, caring for the well-being and growth of your projects."
 
 #: medeo/templates/votre_cabinet.html:87
 msgid ""
