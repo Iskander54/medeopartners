@@ -1,5 +1,8 @@
 from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response,send_from_directory,current_app, send_from_directory
 from flask_babel import _,refresh
+from flask import Flask, render_template
+from dynamic_routes import generate_dynamic_routes 
+from .temp_urls import *
 
 main = Blueprint('main', __name__, url_prefix='/<lang_code>')
 
@@ -94,9 +97,13 @@ def legal():
 ############################
 
 
+generate_dynamic_routes(app)
+
 @main.route("news_detail")
 def news_detail():
     return render_template('/news/news_detail.html',title='News Details')
+
+
 
 # FISCAL
 ##############
