@@ -6,7 +6,9 @@ from urllib.parse import urlparse
 
 # Liste des URL à scraper
 liste_articles_to_scrape = [
-    'https://www.lagazettedescommunes.com/893548/les-bases-minimums-de-cfe-un-principe-meconnu/'
+    'https://www.lagazettedescommunes.com/893548/les-bases-minimums-de-cfe-un-principe-meconnu/',
+    'https://www.lagazettedescommunes.com/909413/reforme-de-la-dgf-le-chantier-est-relance/',
+    'https://www.lagazettedescommunes.com/909102/la-cour-des-comptes-denonce-la-situation-des-finances-publiques-en-2024/'
 ]
 
 # Spécifiez le chemin vers le dossier contenant vos templates
@@ -59,8 +61,13 @@ for i, url in enumerate(liste_articles_to_scrape):
 
     html_output = f'{{% extends "layout.html" %}}\n{{% block content %}}\n{html_output}\n{{% endblock content %}}'
 
+    # Écrire le résultat dans le fichier HTML dans le dossier de la catégorie
+    fichier_html = f'{dossier_templates_category}{titre_url}article{i + 1}.html'
+    with open(fichier_html, 'w', encoding='utf-8') as file:
+        file.write(html_output)
+
     # Ajouter la route dans le fichier temp_urls.py
-    with open('temp_urls.py', 'a', encoding='utf-8') as temp_file:
-        temp_file.write(f'@main.route("/{titre_url}")\n')
-        temp_file.write(f'def {titre_url}():\n')
-        temp_file.write(f'    return render_template("/news/{category_article.lower()}/{titre_url}.html", title="News Template")\n')
+    with open('medeo/main/temp_urls.py', 'a', encoding='utf-8') as temp_file:
+        temp_file.write(f'    @main.route("/{titre_url}")\n')
+        temp_file.write(f'    def {titre_url}():\n')
+        temp_file.write(f'            return render_template("/news/{category_article.lower()}/{titre_url}.html", title="News Template")\n')

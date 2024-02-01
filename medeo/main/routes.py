@@ -1,10 +1,16 @@
 from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response,send_from_directory,current_app, send_from_directory
 from flask_babel import _,refresh
 from flask import Flask, render_template
-from dynamic_routes import generate_dynamic_routes 
-from .temp_urls import *
+
+from .temp_urls import generate_dynamic_routes
 
 main = Blueprint('main', __name__, url_prefix='/<lang_code>')
+
+generate_dynamic_routes(main)
+
+
+
+
 
 @main.url_defaults
 def add_language_code(endpoint, values):
@@ -97,7 +103,7 @@ def legal():
 ############################
 
 
-generate_dynamic_routes(app)
+
 
 @main.route("news_detail")
 def news_detail():
