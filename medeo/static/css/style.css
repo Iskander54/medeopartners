@@ -5474,8 +5474,8 @@ input:checked+.slide-container .nav label {
     position: relative; /* Use 'absolute' if it fits your layout better */
     z-index: 100;       /* Adjust this value as needed */
     pointer-events: auto; /* Ensure it's clickable */
-    top: 12vw;
-    margin-left: 20vw;
+    /* top: 12vw;
+    margin-left: 20vw; */
 }
 
 .carousel {
