@@ -18,6 +18,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
+#: medeo/contacts/forms.py:9 medeo/templates/nouscontacter.html:95
+msgid "PRÉNOM"
+msgstr "FIRSTNAME"
+
+#: medeo/contacts/forms.py:11 medeo/templates/nouscontacter.html:112
+msgid "NOM"
+msgstr "LASTNAME"
+
+#: medeo/contacts/forms.py:13 medeo/templates/nouscontacter.html:130
+msgid "TÉLÉPHONE"
+msgstr "PHONE NUMBER"
+
+#: medeo/contacts/forms.py:15 medeo/templates/nouscontacter.html:147
+msgid "E-MAIL"
+msgstr "EMAIL"
+
+#: medeo/contacts/forms.py:17
+msgid "SUJET"
+msgstr "SUBJECT"
+
+#: medeo/contacts/forms.py:19 medeo/templates/nouscontacter.html:183
+msgid "MESSAGE"
+msgstr "MESSAGE"
+
 #: medeo/templates/actualites.html:13 medeo/templates/layout.html:182
 msgid "Actualités"
 msgstr "News"
@@ -605,7 +629,7 @@ msgstr ""
 
 #: medeo/templates/home.html:151 medeo/templates/nouscontacter.html:15
 msgid "Nos bureaux"
-msgstr "Our Office"
+msgstr "Our Offices"
 
 #: medeo/templates/layout.html:126
 msgid "accueil"

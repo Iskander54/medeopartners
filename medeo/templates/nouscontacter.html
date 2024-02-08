@@ -90,7 +90,9 @@
                       {% endfor %}
                     </div>
                     {% else %}
-                    {{ form.firstname(class="form-control form-control-lg effet_ombre_form", placeholder="PRÉNOM") }}
+                    <!--{{ form.firstname(class="form-control form-control-lg effet_ombre_form") }}-->
+                    <input class="form-control form-control-lg effet_ombre_form" id="firstname" maxlength="30"
+                      minlength="2" name="firstname" placeholder={{_("PRÉNOM")}} required type="text" value>
                     {% endif %}
                   </div>
                 </div>
@@ -105,7 +107,9 @@
                       {% endfor %}
                     </div>
                     {% else %}
-                    {{ form.lastname(class="form-control form-control-lg effet_ombre_form", placeholder="NOM") }}
+                    <!--{{ form.lastname(class="form-control form-control-lg effet_ombre_form") }}-->
+                    <input class="form-control form-control-lg effet_ombre_form" id="lastname" maxlength="30"
+                      minlength="2" name="lastname" placeholder={{_("NOM")}} required type="text" value>
                     {% endif %}
                   </div>
                 </div>
@@ -122,8 +126,9 @@
                       {% endfor %}
                     </div>
                     {% else %}
-                    {{ form.phonenumber(class="form-control form-control-lg effet_ombre_form", placeholder="TÉLÉPHONE")
-                    }}
+                    <input class="form-control form-control-lg effet_ombre_form" id="phonenumber" maxlength="10"
+                      minlength="10" name="phonenumber" placeholder={{_("TÉLÉPHONE")}} required type="text" value>
+                    <!-- {{ form.phonenumber(class="form-control form-control-lg effet_ombre_form")}}-->
                     {% endif %}
                   </div>
                 </div>
@@ -138,7 +143,9 @@
                       {% endfor %}
                     </div>
                     {% else %}
-                    {{ form.email(class="form-control form-control-lg effet_ombre_form", placeholder="E-MAIL") }}
+                    <input class="form-control form-control-lg effet_ombre_form" id="email" name="email"
+                      placeholder={{_("E-MAIL")}} required type="email" value>
+                    <!-- {{ form.email(class="form-control form-control-lg effet_ombre_form") }}-->
                     {% endif %}
                   </div>
                 </div>
@@ -155,8 +162,9 @@
                       {% endfor %}
                     </div>
                     {% else %}
-                    {{ form.subject(class="form-control form-control-lg effet_ombre_form", placeholder='SUJET')
-                    }}
+                    <input class="form-control form-control-lg effet_ombre_form" id="subject" maxlength="50"
+                      minlength="4" name="subject" placeholder={{_("SUBJECT")}} required type="text" value>
+                    <!-- {{ form.subject(class="form-control form-control-lg effet_ombre_form")}}-->
                     {% endif %}
                   </div>
                 </div>
@@ -171,7 +179,9 @@
                   {% endfor %}
                 </div>
                 {% else %}
-                {{ form.content(class="form-control form-control-lg effet_ombre_form", placeholder="MESSAGE") }}
+                <input class="form-control form-control-lg effet_ombre_form" id="content" maxlength="200" minlength="10"
+                  name="content" placeholder={{_("MESSAGE")}} required type="text" value>
+                <!-- {{ form.content(class="form-control form-control-lg effet_ombre_form") }}-->
                 {% endif %}
               </div>
               <div class="form-group">
@@ -420,12 +430,12 @@
     }
   }
 
-  
+
   var cards = document.querySelectorAll('.carousel-card');
   console.log("hello")
   console.log(cards)
-  cards.forEach(function(card) {
-    card.addEventListener('click', function() {
+  cards.forEach(function (card) {
+    card.addEventListener('click', function () {
       document.getElementById('formulaire').scrollIntoView({ behavior: 'smooth' });
     });
   });
