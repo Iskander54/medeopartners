@@ -51,9 +51,10 @@
                 13-9-2023 n° 22-14.461 F-D).')}}
               </p>
               <div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">
-                <a href="{{_('news/social/news_1')}}">{{_('Plus d\'informations')}}</a>
+                <a href="{{ url_for('static', filename='news/social/news_1.html') }}">{{ _('En savoir plus') }}</a>
+
               </div>
-  
+              
             </div>
   
           </div>
@@ -92,7 +93,7 @@
   
   
               <div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">
-                <a href="{{_('news/social/news_12')}}">{{_('Plus d\'informations')}}</a>
+                <a href="{{_('news_1')}}">{{_('Plus d\'informations')}}</a>
               </div>
   
             </div>
@@ -143,9 +144,12 @@
                 d\'entreprises.')}}
   
                 {{_('© Editions Francis Lefebvre - La Quotidienne')}}
-              <div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">
-                <a href="{{_('news_1234')}}">{{_('Plus d\'informations')}}</a>
-              </div>
+                <div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">
+                  <a href="{{ url_for('main.news_1234') }}">{{_('Plus d\'informations')}}</a>
+
+                </div>
+                
+                
   
             </div>
   
