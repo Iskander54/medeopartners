@@ -5029,6 +5029,8 @@ ul.slides input {
     background-color: #114a79;
     opacity: 0.5;
     margin: 10px;
+    bottom: 55px;
+
 }
 
 input:checked+.slide-container .slide-image {
