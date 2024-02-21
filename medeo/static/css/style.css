@@ -580,6 +580,7 @@ img {
         -webkit-box-orient: vertical;
         text-align: justify;
         word-spacing: -1px;
+        padding: 2%;
     
     }
 }
@@ -932,6 +933,8 @@ img {
         -webkit-box-orient: vertical;
         text-align: justify;
         word-spacing: -1px;
+        padding: 2%;
+
     
     }
 }
@@ -1298,6 +1301,8 @@ img {
         -webkit-box-orient: vertical;
         text-align: justify;
         word-spacing: -1px;
+        padding: 2%;
+
     
     }
 
@@ -1678,6 +1683,8 @@ img {
         -webkit-box-orient: vertical;
         text-align: justify;
         word-spacing: -1px;
+        padding: 2%;
+
     
     }
 }
@@ -2115,6 +2122,8 @@ img {
         -webkit-box-orient: vertical;
         text-align: justify;
         word-spacing: -1px;
+        padding: 2%;
+
     
     }
 }
@@ -5007,7 +5016,7 @@ ul.slides input {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0px;
+    bottom: 55px;
     z-index: 999;
     text-align: center;
 }
@@ -5018,9 +5027,10 @@ ul.slides input {
     height: 30px;
     border-radius: 50%;
     background-color: #114a79;
-    ;
     opacity: 0.5;
     margin: 10px;
+    bottom: 55px;
+
 }
 
 input:checked+.slide-container .slide-image {

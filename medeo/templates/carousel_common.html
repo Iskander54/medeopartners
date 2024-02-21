@@ -1,6 +1,14 @@
 
 
-
+<!-- <div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">	         
+  <a href="{{_('news_1')}}">{{_('Plus d\'informations')}}</a>
+</div>
+<div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">	         
+  <a href="{{_('news_1234')}}">{{_('Plus d\'informations')}}</a>
+</div>
+<div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">	         
+  <a href="{{_('news_1234')}}">{{_('Plus d\'informations')}}</a>
+</div> -->
 <div class="animate-top">
 
     <div class="carousel">
@@ -50,10 +58,12 @@
                 l\'utilisation de ce dispositif à cette fin. A défaut, ce moyen de preuve est illicite (Cass. soc.
                 13-9-2023 n° 22-14.461 F-D).')}}
               </p>
-              <div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">
-                <a href="{{_('news/social/news_1')}}">{{_('Plus d\'informations')}}</a>
+              <div class="readmore_bt news_carousel_btn" style="top: 16vw;margin-left: 25vw;">          
+                <a href="{{ url_for('main.news_1') }}">Plus d'informations</a>
+
               </div>
-  
+              
+             
             </div>
   
           </div>
@@ -91,8 +101,8 @@
               </p>
   
   
-              <div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">
-                <a href="{{_('news/social/news_12')}}">{{_('Plus d\'informations')}}</a>
+              <div class="readmore_bt news_carousel_btn" style="top: 16vw;margin-left: 25vw;">          
+                <a id="more_info_juridique" href="#">Plus d'informations</a>
               </div>
   
             </div>
@@ -143,9 +153,12 @@
                 d\'entreprises.')}}
   
                 {{_('© Editions Francis Lefebvre - La Quotidienne')}}
-              <div class="readmore_bt news_carousel_btn" style="top: 12vw;margin-left: 20vw;">
-                <a href="{{_('news_1234')}}">{{_('Plus d\'informations')}}</a>
-              </div>
+                <div class="readmore_bt news_carousel_btn" style="top: 16vw;margin-left: 25vw;">          
+                  <a href="{{ url_for('main.news_1234') }}">Plus d'informations</a>
+
+                </div>
+                
+                
   
             </div>
   
@@ -167,3 +180,32 @@
       </ul>
     </div>
   </div>
+
+
+
+
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Social News Button
+      document.getElementById('more_info_social').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche l'action par défaut
+        window.location.href = '/news_1'; // Mettez ici l'URL de destination
+      });
+    
+      // Juridique News Button
+      document.getElementById('more_info_juridique').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche l'action par défaut
+        window.location.href = '/news_1'; // Mettez ici l'URL de destination
+      });
+    
+      // Fiscal News Button
+      document.getElementById('more_info_fiscal').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche l'action par défaut
+        window.location.href = '/news_1234'; // Mettez ici l'URL de destination
+      });
+    });
+    </script>
+    
