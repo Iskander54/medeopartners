@@ -590,7 +590,7 @@ img {
 
     .encart_bleu {
         width: 40%;
-        height: 40%;
+        height: 45%;
         margin: auto;
         right: 0px;
         border-radius: 70px;
@@ -3629,6 +3629,15 @@ textarea[id=content]:focus {
 .title_carousel {
     color: #114a79 !important;
     font-size: xx-large;
+    font-weight: 900;
+    font-style: italic;
+
+
+}
+
+.title_carousel {
+    color: #114a79 !important;
+    font-size: medium;
     font-weight: 900;
     font-style: italic;
 
