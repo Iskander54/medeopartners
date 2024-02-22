@@ -5025,7 +5025,7 @@ ul.slides input {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 55px;
+    bottom: -15px;
     z-index: 999;
     text-align: center;
 }
