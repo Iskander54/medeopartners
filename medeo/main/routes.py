@@ -83,7 +83,7 @@ def expertise_comptable():
     return render_template('/expertise_comptable.html',title='Expertise Comptable',active_page='expertise_comptable')
 
 @main.route("/legal",defaults={'lang_code':'en'})
-@main.route("/mentions_legales",defaults={'lang_code':'fr'})
+@main.route("/legal",defaults={'lang_code':'fr'})
 def legal():
     return render_template('/legal.html',title='Mentions Légales')
 
