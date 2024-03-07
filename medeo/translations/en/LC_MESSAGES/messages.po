@@ -679,8 +679,8 @@ msgstr "council_optimization"
 msgid "actualites"
 msgstr "news"
 
-#: medeo/templates/layout.html:195
-msgid "espace_client"
+#: medeo/templates/layout.html:192
+msgid "espace_clients"
 msgstr "account"
 
 #: medeo/templates/layout.html:197
