@@ -730,7 +730,7 @@ msgid "MEDEO Partners Copyright 2023© - Tous droits réservés | "
 msgstr "MEDEO Partners Copyright 2023© - All rights reserved |"
 
 #: medeo/templates/layout.html:398
-msgid "legal"
+msgid "mentions_legales"
 msgstr "legal"
 
 #: medeo/templates/layout.html:398
