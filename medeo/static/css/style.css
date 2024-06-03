@@ -2033,8 +2033,9 @@ img {
         float: left;
         font-size: 16px;
         color: #114a79;
-        margin-left: 115px;
+        /* margin-left: 115px; */
         font-family: ARIAL;
+        line-height: 26px;
 
     }
 
