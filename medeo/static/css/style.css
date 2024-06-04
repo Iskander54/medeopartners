@@ -90,11 +90,14 @@ h4 {
 }
 
 h5 {
-    font-size: 14px
+    font-size: 14px;
+    line-height : 30px;
+
 }
 
 h6 {
-    font-size: 13px
+    font-size: 13px;
+    line-height : 30px;
 }
 
 *,
@@ -2033,7 +2036,7 @@ img {
         float: left;
         font-size: 16px;
         color: #114a79;
-        /* margin-left: 115px; */
+        margin-left: 115px;
         font-family: ARIAL;
         line-height: 26px;
 
