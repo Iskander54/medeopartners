@@ -90,11 +90,12 @@ h4 {
 }
 
 h5 {
-    font-size: 14px
+    font-size: 14px;
+
 }
 
 h6 {
-    font-size: 13px
+    font-size: 13px;
 }
 
 *,
@@ -2035,6 +2036,7 @@ img {
         color: #114a79;
         margin-left: 115px;
         font-family: ARIAL;
+        line-height: 26px;
 
     }
 
