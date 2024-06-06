@@ -37,13 +37,13 @@ def home():
 @main.route("/your_firm",defaults={'lang_code':'en'})
 @main.route("/votre_cabinet",defaults={'lang_code':'fr'})
 def votre_cabinet():
-    return render_template('votre_cabinet.html',title='Votre cabinet', active_page='votre_cabinet')
+    return render_template('votre_cabinet.html',title='Votre Cabinet d\'Expertise Comptable et Conseil Fiscal', active_page='votre_cabinet')
 
 
 @main.route("/our_expertise",defaults={'lang_code':'en'})
 @main.route("/notre_expertise",defaults={'lang_code':'fr'})
 def notre_expertise():
-    return render_template('notre_expertise.html',title='Notre expertise',active_page='notre_expertise')
+    return render_template('notre_expertise.html',title='Expertise en Comptabilité, Fiscalité et Gestion',active_page='notre_expertise')
 
 
 @main.route("/news",defaults={'lang_code':'en'})
@@ -52,7 +52,7 @@ def actualites():
     active_page = 'actualites'
     print("ICI 1")
     print(active_page)
-    return render_template('actualites.html',title='Actualités', active_page='actualites')
+    return render_template('actualites.html',title='Actualités et Insights sur la Comptabilité et la Fiscalité', active_page='actualites')
 
 @main.route("/contactus",defaults={'lang_code':'en'})
 @main.route("/nouscontacter",defaults={'lang_code':'fr'})
@@ -60,7 +60,7 @@ def nouscontacter():
     active_page = 'nouscontacter'
     print("ICI 2")
     print(active_page)
-    return render_template('nouscontacter.html',title='Nous contacter', active_page='nouscontacter')
+    return render_template('nouscontacter.html',title='Contactez-Nous pour toute expertise en comptabilité ou audit', active_page='nouscontacter')
 
 @main.route("/account",defaults={'lang_code':'en'})
 @main.route("/espace_clients",defaults={'lang_code':'fr'})
@@ -70,17 +70,17 @@ def espace_clients():
 @main.route("/council_optimization",defaults={'lang_code':'en'})
 @main.route("/conseil_optimisation",defaults={'lang_code':'fr'})
 def conseil_optimisation():
-    return render_template('/conseil_optimisation.html',title='Conseil Optimisation',active_page='conseil_optimisation')
+    return render_template('/conseil_optimisation.html',title='Conseils en Optimisation Fiscale et Financière',active_page='conseil_optimisation')
 
 @main.route("/auditing",defaults={'lang_code':'en'})
 @main.route("/audit",defaults={'lang_code':'fr'})
 def audit():
-    return render_template('/audit.html',title='Audit',active_page='audit')
+    return render_template('/audit.html',title='Spécialistes en Audit Financier et Conformité',active_page='audit')
 
 @main.route("/accounting",defaults={'lang_code':'en'})
 @main.route("/expertise_comptable",defaults={'lang_code':'fr'})
 def expertise_comptable():
-    return render_template('/expertise_comptable.html',title='Expertise Comptable',active_page='expertise_comptable')
+    return render_template('/expertise_comptable.html',title='Spécialistes en Comptabilité et Optimisation Fiscale',active_page='expertise_comptable')
 
 @main.route("/legal",defaults={'lang_code':'en'})
 @main.route("/mentions_legales",defaults={'lang_code':'fr'})
