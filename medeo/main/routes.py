@@ -12,6 +12,14 @@ def pull_lang_code(endpoint, values):
     g.lang_code = values.pop('lang_code')
 
 @main.before_request
+def enforce_www():
+    """Redirect requests to www if not already on www."""
+    netloc = request.url.split('/')[2]
+    if netloc == 'medeo-partners.com':  # Adjust the condition based on your preference
+        new_url = request.url.replace('://medeo-partners.com', '://www.medeo-partners.com')
+        return redirect(new_url, code=301)
+        
+@main.before_request
 def before_request():
     if g.lang_code not in current_app.config['LANGUAGES']:
         adapter = current_app.url_map.bind('')
