@@ -42,4 +42,4 @@ def contaceznous():
             conn.send(msg1)
             flash('Votre message a été delivré à la MEDEO Team !', 'success')
             return redirect(url_for('main.home'))
-    return render_template('nouscontacter.html', title='Contact', form=form)
+    return render_template('nouscontacter.html',title='Contactez-Nous pour toute expertise en comptabilité ou audit', form=form)
