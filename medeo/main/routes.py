@@ -58,16 +58,12 @@ def notre_expertise():
 @main.route("/actualites",defaults={'lang_code':'fr'})
 def actualites():
     active_page = 'actualites'
-    print("ICI 1")
-    print(active_page)
     return render_template('actualites.html',title='Actualités et Insights sur la Comptabilité et la Fiscalité', active_page='actualites')
 
 @main.route("/contactus",defaults={'lang_code':'en'})
 @main.route("/nouscontacter",defaults={'lang_code':'fr'})
 def nouscontacter():
     active_page = 'nouscontacter'
-    print("ICI 2")
-    print(active_page)
     return render_template('nouscontacter.html',title='Contactez-Nous pour toute expertise en comptabilité ou audit', active_page='nouscontacter')
 
 @main.route("/account",defaults={'lang_code':'en'})

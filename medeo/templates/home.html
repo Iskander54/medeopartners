@@ -3,22 +3,23 @@
 <div id="content">
 
   <div id="splash-screen-id" class="splash-screen">
-    <img src="{{url_for('static', filename='images/medeo_logo.png') }}" alt="Medeo Logo" loading="lazy"
+    <img src="{{url_for('static', filename='images/medeo_logo.png') }}" alt="Experts en comptabilité chez Medeo Partners" loading="lazy"
       class="image_accueil_loader">
+      
   </div>
 
   <div class="container-fluid animate-top">
     <div class="row">
       <div class="col-xs-8 col-sm-8">
-        <h1 data-translate class="title_bienvenu_home">{{_('Bienvenue chez Medeo Partners')}}</h1>
+        <h1 data-translate class="title_bienvenu_home">{{_('Bienvenue chez Medeo Partners - Experts en Comptabilité')}}</h1>
 
-        <p data-translate class="banner_text">
+        <h4 data-translate class="banner_text" style="margin-left: 115px;">
           {{_('Fort de plus 10 ans d\'expertise en comptabilité et fiscalité, nous')}}<br>
           {{_('accompagnons nos clients de tous secteurs dans leurs démarches')}}<br>
-          {{_('de création d\'entreprise, de projets, et d\'optimisation.')}}<br />
+          {{_('de création d\'entreprise, de projets, et d\'optimisation fiscale.')}}<br />
 
 
-        </p>
+        </h4>
 
         <div class="readmore_bt">
           <a data translate href="{{_('notre_expertise')}}">{{_('Plus d\'informations')}}</a>
@@ -27,7 +28,7 @@
 
       </div>
       <div class="col-xs-4 col-sm-4">
-        <img class="img_home" src="{{ url_for('static',filename='images/medeo_talking.png') }}" loading="lazy" alt="medeo-talking-img">
+        <img class="img_home" src="{{ url_for('static',filename='images/medeo_talking.png') }}" loading="lazy" alt="Experts en comptabilité chez Medeo Partners">
       </div>
     </div>
   </div>
@@ -47,7 +48,7 @@
     </div> -->
 
       <div id="prez_expert_comptable" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3">
-        <img src="{{ url_for('static',filename='images/accounting.png') }}" loading="lazy" alt="accounting-img"
+        <img src="{{ url_for('static',filename='images/accounting.png') }}" loading="lazy" alt="Services de comptabilité"
           style="max-width: 70px; margin-left: 40%;"><br>
         <h2 class="title_expertise">{{_('Expertise <br>Comptable')}}</h2>
         <div class="">`</div>
@@ -57,7 +58,7 @@
         </div>
       </div>
       <div id="prez_audit" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3">
-        <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px; margin-left: 40%;" alt="audit-img"
+        <img src="{{ url_for('static',filename='images/audit.png') }}" style="max-width: 70px; margin-left: 40%;" alt="Services d'audit financier"
           loading="lazy"><br>
         <h2 class="title_expertise">{{_('Audit')}}<br><br></h2>
         <div class="">`</div>
@@ -70,7 +71,7 @@
       </div>
       <div id="prez_conseil_optimisation" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3">
         <img src="{{ url_for('static',filename='images/budget.png') }}" style="max-width: 70px; margin-left: 40%;"
-          loading="lazy" alt="budget-img"><br>
+          loading="lazy" alt="Optimisation fiscale et gestion de budget"><br>
         <h2 class="title_expertise">{{_('Conseil <br>optimisation ')}}</h2>
         <div class="">`</div>
         <div class="presentation_expertises_home">
