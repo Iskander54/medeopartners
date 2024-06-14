@@ -8,27 +8,14 @@
    <title>Medeo Partners : expertise en comptabilité , gestion, fiscalité </title>
    {% endif %}
 
-   <!-- Google tag (gtag.js) -->
+   <!-- Google Tag Manager and Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNNEV4QVDK"></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11452962790"></script>
    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
-
       gtag('config', 'G-XNNEV4QVDK');
-   </script>
-
-
-
-
-   <!-- SECOND Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11452962790">
-   </script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
       gtag('config', 'AW-11452962790');
    </script>
 
@@ -39,7 +26,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    <meta name="robots" content="index,follow">
    <!-- image -->
-   <meta property="og:image" content="/static/medeo_images/Medeo_partners_couleur.png">
+   <meta property="og:image" content="/static/medeo_images/Medeo_partners_couleur.webp">
    <!-- author -->
    <meta name="author" content="Bamana-Solutions">
 
@@ -67,34 +54,26 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
    <!-- fonts -->
-   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+   <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap"></noscript>
+
    <!-- owl stylesheets -->
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
 
    <!-- Favicon -->
-   <link rel="apple-touch-icon" sizes="180x180"
-      href="{{url_for('static', filename='/images/favicon_io/apple-touch-icon.png')}}">
-   <link rel="icon" type="image/png" sizes="32x32"
-      href="{{url_for('static', filename='/images/favicon_io/favicon-32x32.png')}}">
-   <link rel="icon" type="image/png" sizes="16x16"
-      href="{{url_for('static', filename='/images/favicon_io/favicon-16x16.png')}}">
-   <link rel="manifest" href="{{url_for('static', filename='/images/favicon_io/site.webmanifest')}}">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon_io/apple-touch-icon.png') }}">
+   <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon_io/favicon-32x32.png') }}">
+   <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon_io/favicon-16x16.png') }}">
+   <link rel="manifest" href="{{ url_for('static', filename='images/favicon_io/site.webmanifest') }}">
+   
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
    <script src="{{url_for('static', filename='/js/Isotope/isotope.min.js')}}"></script>
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
 
-
-   <!-- <link
-   rel="stylesheet"
-   href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
- /> -->
    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
    <link rel="stylesheet" type="text/css"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
@@ -109,7 +88,7 @@
 
 
    <!-- Flickity -->
-   <link rel="stylesheet" href="https://unpkg.com/flickity@2.3.0/dist/flickity.css" media="screen">
+   <link rel="preconnect" rel="stylesheet" href="https://unpkg.com/flickity@2.3.0/dist/flickity.css" media="screen">
    <script src="https://unpkg.com/flickity@2.3.0/dist/flickity.pkgd.min.js"></script>
 </head>
 
@@ -123,7 +102,7 @@
       <nav class="navbar navbar-expand-md navbar-light bg-light ">
          <div class="container-fluid">
             <a class="navbar-brand" href="{{_('accueil')}}" rel="canonical">
-               <img src="/static/medeo_images/Medeo_partners_couleur.png" loading="lazy" alt="Cabinet d'experts-comptables à Paris" aria-label="Cabinet d'experts-comptables à Paris">
+               <img src="/static/medeo_images/Medeo_partners_couleur.webp" loading="lazy" alt="Cabinet d'experts-comptables à Paris" aria-label="Cabinet d'experts-comptables à Paris">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -204,7 +183,7 @@
                      <a class="nav-link">
                         <div class="nav_icone">
                            <a href="https://instagram.com/medeo_partners" aria-label="Instagram">
-                              <i class="fa-brands fa-instagram fa-xl"></i>
+                              <i class="fa-brands fa-instagram fa-xl" aria-hidden="true"></i>
                               <span class="sr-only">Instagram</span>
                            </a>
                         </div>
@@ -215,7 +194,7 @@
                      <a class="nav-link">
                         <div class="nav_icone">
                            <a href="https://www.linkedin.com/company/medeo-partners" aria-label="Linkedin">
-                              <i class="fa-brands fa-linkedin fa-xl"></i>
+                              <i class="fa-brands fa-linkedin fa-xl" aria-hidden="true"></i>
                               <span class="sr-only">Linkedin</span>
                            </a>
                         </div>
@@ -225,7 +204,7 @@
                      <a class="nav-link">
                         <div class="nav_icone">
                            <a href="https://wa.me/33633914614" aria-label="Whatsapp">
-                              <i class="fa-brands fa-whatsapp fa-xl"></i>
+                              <i class="fa-brands fa-whatsapp fa-xl" aria-hidden="true"></i>
                               <span class="sr-only">Whatsapp</span>
                            </a>
                         </div>
@@ -361,13 +340,13 @@
                <div class="col">
                   <h2 class="footer_taital">{{_('Adresse')}}</h2>
                   <p class="location_text">
-                     <img src="{{url_for('static', filename='images/map-icon.png') }}" loading="lazy"><span
+                     <img src="{{url_for('static', filename='images/map-icon.webp') }}" loading="lazy"><span
                         class="padding_left_10"><a
                            href="https://www.google.com/maps/search/?api=1&query=97+Boulevard+Malesherbes+75008+Paris">97
                            Bd Malesherbes <br> 75008 Paris </a></span></br>
-                     <img src="{{url_for('static', filename='images/call-icon.png') }}" loading="lazy"><span
+                     <img src="{{url_for('static', filename='images/call-icon.webp') }}" loading="lazy"><span
                         class="padding_left_10"><a href="/">01 83 64 16 04</a></span></br>
-                     <img src="{{url_for('static', filename='images/mail-icon.png') }}" loading="lazy"><span
+                     <img src="{{url_for('static', filename='images/mail-icon.webp') }}" loading="lazy"><span
                         class="padding_left_10"><a
                            href="mailto:contact@medeo-partners.com">contact@medeo-partners.com</a></span></br>
                   </p>
@@ -385,11 +364,11 @@
                </div>
                <div class="col">
                   <div class="crcc-logo"><a href="https://www.cncc.fr" target="_blank"><img
-                           src="{{url_for('static', filename='images/logo-crcc-black.png')}}" loading="lazy" alt="Expertise comtpable Paris" aria-label="CNCC Compagnie nationale des commissaires aux comptes"></a></div>
+                           src="{{url_for('static', filename='images/logo-crcc-black.webp')}}" loading="lazy" alt="Expertise comtpable Paris" aria-label="CNCC Compagnie nationale des commissaires aux comptes"></a></div>
                   <br />
                   <br />
                   <div class="crcc-logo"><a href="https://www.oec-paris.fr/" target="_blank"><img
-                           src="{{url_for('static', filename='images/oec.png')}}" loading="lazy" alt="OEC Ordre des Experts comptables" aria-label="Ordre National des Experts comptables"></a></div><br />
+                           src="{{url_for('static', filename='images/oec.webp')}}" loading="lazy" alt="OEC Ordre des Experts comptables" aria-label="Ordre National des Experts comptables"></a></div><br />
                </div>
             </div>
          </div>
@@ -408,17 +387,7 @@
          </div>
       </div>
    </div>
-   <!-- copyright section end -->
-   <!-- Javascript files-->
-   <script src="{{url_for('static', filename='js/jquery.min.js') }}"></script>
-   <script src="{{url_for('static', filename='js/dropdown.js') }}"></script>
-   <script src="{{url_for('static', filename='js/popper.min.js') }}"></script>
-   <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-   <script src="{{url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
-   <script src="{{url_for('static', filename='js/plugin.js') }}"></script>
-   <!-- sidebar -->
-   <script src="{{url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-   <!-- javascript -->
+
 
    <script>
 
