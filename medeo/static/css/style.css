@@ -476,7 +476,7 @@ img {
         width: 15%;
         border-spacing: 60px;
         margin-left: -20px;
-        /* background-image: url(../images/woman_phone.jpeg); */
+        /* background-image: url(../images/woman_phone.webp); */
         /* background-size: cover; */
     }
    
@@ -499,7 +499,7 @@ img {
         width: 15%;
         border-spacing: 60px;
         margin-left: -20px;
-        /* background-image: url(../images/eiffel_tower.jpeg); */
+        /* background-image: url(../images/eiffel_tower.webp); */
         /* background-size: cover; */
 
     }
@@ -1218,7 +1218,7 @@ img {
         width: 40%;
         border-spacing: 60px;
         margin-left: -20px;
-        background-image: url(../images/woman_phone.jpeg);
+        background-image: url(../images/woman_phone.webp);
         background-size: cover;
     }
 
@@ -1242,7 +1242,7 @@ img {
         width: 40%;
         border-spacing: 60px;
         margin-left: -20px;
-        background-image: url(../images/eiffel_tower.jpeg);
+        background-image: url(../images/eiffel_tower.webp);
         background-size: cover;
 
     }
@@ -1598,7 +1598,7 @@ img {
         width: 40%;
         border-spacing: 60px;
         margin-left: -20px;
-        background-image: url(../images/woman_phone.jpeg);
+        background-image: url(../images/woman_phone.webp);
         background-size: cover;
     }
 
@@ -1622,7 +1622,7 @@ img {
         width: 40%;
         border-spacing: 60px;
         margin-left: -20px;
-        background-image: url(../images/eiffel_tower.jpeg);
+        background-image: url(../images/eiffel_tower.webp);
         background-size: cover;
 
     }
@@ -2047,7 +2047,7 @@ img {
         width: 40%;
         border-spacing: 60px;
         margin-left: -20px;
-        background-image: url(../images/woman_phone.jpeg);
+        background-image: url(../images/woman_phone.webp);
         background-size: contain;
     }
 
@@ -2071,7 +2071,7 @@ img {
         width: 40%;
         border-spacing: 60px;
         margin-left: -20px;
-        background-image: url(../images/eiffel_tower.jpeg);
+        background-image: url(../images/eiffel_tower.webp);
         background-size: cover;
 
     }
@@ -3310,7 +3310,7 @@ hr.hr_vertical {
     width: 40%;
     border-spacing: 60px;
     margin-left: -20px;
-    background-image: url(../images/woman_phone.jpeg);
+    background-image: url(../images/woman_phone.webp);
     background-size: contain;
 }
 
@@ -3334,7 +3334,7 @@ hr.hr_vertical {
     width: 40%;
     border-spacing: 60px;
     margin-left: -20px;
-    background-image: url(../images/eiffel_tower.jpeg);
+    background-image: url(../images/eiffel_tower.webp);
     background-size: cover;
 
 } */
@@ -3354,7 +3354,7 @@ hr.hr_vertical {
 }
 
 .bg-img2 {
-    background-image: url("../images/service/image-background.png");
+    background-image: url("../images/service/image-background.webp");
     position: fixed;
     top: 0;
     left: 0;
@@ -3606,7 +3606,7 @@ textarea[id=content]:focus {
 
 .modal-content {
     border-radius: 40px;
-    background-image: url(../images/service/image-background.png);
+    background-image: url(../images/service/image-background.webp);
 }
 
 .modal-title {
