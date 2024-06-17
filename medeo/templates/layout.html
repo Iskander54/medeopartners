@@ -102,7 +102,7 @@
       <nav class="navbar navbar-expand-md navbar-light bg-light ">
          <div class="container-fluid">
             <a class="navbar-brand" href="{{_('accueil')}}" rel="canonical">
-               <img src="/static/medeo_images/Medeo_partners_couleur.webp" loading="lazy" alt="Cabinet d'experts-comptables à Paris" aria-label="Cabinet d'experts-comptables à Paris">
+               <img src="/static/medeo_images/Medeo_partners_couleur.webp" loading="lazy" style="max-width: 100%;height: auto;" alt="Cabinet d'experts-comptables à Paris" aria-label="Cabinet d'experts-comptables à Paris">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -217,7 +217,7 @@
                   <li class="nav-item">
                      <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='en') }}">
 
-                        <img class="icones_langues" src="{{url_for('static',filename='flags/usa.png') }}"
+                        <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
                            loading="lazy">
                      </a>
                   </li>
@@ -225,7 +225,7 @@
                   <li class="nav-item">
                      <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='fr') }}">
 
-                        <img class="icones_langues" src="{{url_for('static',filename='flags/france.png') }}"
+                        <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
                            loading="lazy">
                      </a>
                   </li>
