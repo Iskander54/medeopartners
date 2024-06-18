@@ -240,6 +240,14 @@ img {
 /* Extra Small Devices (e.g., smartphones) */
 @media (max-width: 575px) {
 
+    .image_7 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-radius: 50%;
+        margin-top: 15px;
+    }
     .encart_bleu {
         width: 40%;
         height: 40%;
@@ -589,6 +597,14 @@ img {
 /* Small Devices (e.g., larger smartphones and small tablets) */
 @media (min-width: 576px) and (max-width: 767px) {
 
+    .image_7 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-radius: 50%;
+        margin-top: 15px;
+    }
     .encart_bleu {
         width: 40%;
         height: 45%;
@@ -944,6 +960,14 @@ img {
 /* Medium Devices (e.g., larger tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
 
+    .image_7 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-radius: 50%;
+        margin-top: 15px;
+    }
     .encart_bleu {
         width: 40%;
         height: 70%;
@@ -1312,6 +1336,14 @@ img {
 /* Large Devices (e.g., desktops and laptops) */
 @media (min-width: 992px) and (max-width: 1199px) {
 
+    .image_7 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-radius: 50%;
+        margin-top: 15px;
+    }
     .encart_bleu {
         width: 40%;
         height: 70%;
@@ -1693,6 +1725,15 @@ img {
 /* Extra Large Devices (e.g., large desktop screens) */
 @media (min-width: 1200px) {
 
+    .image_7 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40vh;
+        height: 40vh;
+        border-radius: 50%;
+        margin-top: 15px;
+    }
     .encart_bleu {
         width: 40%;
         height: 70%;
@@ -2528,14 +2569,6 @@ textarea#comment::placeholder {
     float: left;
 }
 
-.image_7 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    border-radius: 50%;
-    margin-top: 15px;
-}
 
 .image_news {
     display: block;
