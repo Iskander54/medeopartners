@@ -445,6 +445,18 @@ msgid ""
 "décisions financières optimales."
 msgstr "We can also help them develop strategies to minimize their taxes, manage their savings and retirement, and make optimal financial decisions."
 
+#: medeo/templates/espace_clients.html:28
+msgid "Se connecter"
+msgstr "Log in"
+
+#: medeo/templates/espace_clients.html:44
+msgid "S'inscrire"
+msgstr "Sign up"
+
+#: medeo/templates/espace_clients.html:47
+msgid "Inscrivez-vous avec vos informations personnelles pour utiliser toutes les fonctionnalités du site"
+msgstr "Register with your personal information to use all the features of the site"
+
 #: medeo/templates/expertise_comptable.html:14
 #: medeo/templates/expertise_comptable.html:27
 #: medeo/templates/notre_expertise.html:28
@@ -617,7 +629,7 @@ msgstr "Contact us"
 
 #: medeo/templates/home.html:128
 msgid "nouscontacter#nous_rejoindre"
-msgstr ""
+msgstr "contactus#join_us"
 
 #: medeo/templates/home.html:134 medeo/templates/nouscontacter.html:198
 msgid "Nous rejoindre"
@@ -719,7 +731,7 @@ msgstr "Contact"
 
 #: medeo/templates/layout.html:373
 msgid "votre_cabinet#carousel_partners"
-msgstr ""
+msgstr "your_firm#carousel_partners"
 
 #: medeo/templates/layout.html:373 medeo/templates/votre_cabinet.html:375
 msgid "L'équipe"
@@ -1177,9 +1189,47 @@ msgstr "Contact us"
 msgid "Nous rejoindre "
 msgstr "Join us"
 
+#: medeo/templates/nouscontacter.html:227
+msgid "Poste : Expert Comptable CDI (H/F) "
+msgstr "Post : Permanent Accountant (M/F)"
+
+#: medeo/templates/nouscontacter.html:230
+msgid ""
+"Nous recherchons un Expert Comptable expérimenté pour rejoindre notre équipe en tant que\n"
+"collaborateur en CDI. Si vous avez une solide expérience en expertise comptable et que vous\n"
+"souhaitez évoluer au sein d'un cabinet de renom, nous aimerions vous rencontrer"
+msgstr ""
+"We are looking for an experienced Accountant to join our team as a\n"
+"permanent employee. If you have solid experience in accounting and you\n"
+"would like to evolve within a renowned firm, we would like to meet you"
+
+#: medeo/templates/nouscontacter.html:267
+msgid "Candidature Spontanée"
+msgstr "Spontaneous Application"
+
+#: medeo/templates/nouscontacter.html:271
+msgid ""
+"Vous êtes passionné par le domaine de la comptabilité et vous souhaitez rejoindre une équipe\n"
+"d'experts-comptables dynamique ? Nous sommes toujours à la recherche de talents exceptionnels.\n"
+"Envoyez-nous votre candidature spontanée dès aujourd'hui."
+msgstr ""
+"You are passionate about the field of accounting and you want to join a dynamic team of accountants?\n"
+"We are always looking for exceptional talent.\n"
+"Send us your unsolicited application today."
+
+#: medeo/templates/nouscontacter.html:267
+msgid "Poste : Alternant en Comptabilité"
+msgstr "Position: Apprentice in Accounting"
+
 #: medeo/templates/votre_cabinet.html:16
-msgid "Notre histoire"
-msgstr "Our history"
+msgid ""
+"Vous recherchez une opportunité d'alternance en comptabilité au sein d'un cabinet\n"
+    "d'experts-comptables renommé ? Nous offrons un environnement d'apprentissage stimulant pour les\n"
+    "étudiants en comptabilité qui souhaitent acquérir une expérience pratique."
+msgstr ""
+"You are looking for a work-study opportunity in accounting within a firm\n"
+ "renowned accountants? We offer a stimulating learning environment for\n"
+ "accounting students who want to gain practical experience."
 
 #: medeo/templates/votre_cabinet.html:28
 msgid ""
