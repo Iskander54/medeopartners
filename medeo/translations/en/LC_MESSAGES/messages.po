@@ -1201,7 +1201,7 @@ msgid ""
 msgstr ""
 "We are looking for an experienced Accountant to join our team as a\n"
 "permanent employee. If you have solid experience in accounting and you\n"
-"would like to evolve within a renowned firm, we would like to meet you"
+"would like to evolve within a renowned firm, we would like to meet you."
 
 #: medeo/templates/nouscontacter.html:267
 msgid "Candidature Spontanée"
@@ -1209,19 +1209,19 @@ msgstr "Spontaneous Application"
 
 #: medeo/templates/nouscontacter.html:271
 msgid ""
-"Vous êtes passionné par le domaine de la comptabilité et vous souhaitez rejoindre une équipe\n"
-"d'experts-comptables dynamique ? Nous sommes toujours à la recherche de talents exceptionnels.\n"
+"Vous êtes passionné par le domaine de la comptabilité et vous souhaitez rejoindre une équipe "
+"d'experts-comptables dynamique ? Nous sommes toujours à la recherche de talents exceptionnels. "
 "Envoyez-nous votre candidature spontanée dès aujourd'hui."
 msgstr ""
-"You are passionate about the field of accounting and you want to join a dynamic team of accountants?\n"
-"We are always looking for exceptional talent.\n"
+"You are passionate about the field of accounting and you want to join a dynamic team of accountants? "
+"We are always looking for exceptional talent. "
 "Send us your unsolicited application today."
 
-#: medeo/templates/nouscontacter.html:267
+#: medeo/templates/nouscontacter.html:299
 msgid "Poste : Alternant en Comptabilité"
 msgstr "Position: Apprentice in Accounting"
 
-#: medeo/templates/votre_cabinet.html:16
+#: medeo/templates/nouscontacter.html:303
 msgid ""
 "Vous recherchez une opportunité d'alternance en comptabilité au sein d'un cabinet\n"
     "d'experts-comptables renommé ? Nous offrons un environnement d'apprentissage stimulant pour les\n"
@@ -1230,6 +1230,10 @@ msgstr ""
 "You are looking for a work-study opportunity in accounting within a firm\n"
  "renowned accountants? We offer a stimulating learning environment for\n"
  "accounting students who want to gain practical experience."
+
+#: medeo/templates/votre_cabinet.html:16
+msgid "Notre histoire"
+msgstr "Our History"
 
 #: medeo/templates/votre_cabinet.html:28
 msgid ""
