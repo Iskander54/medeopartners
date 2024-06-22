@@ -62,4 +62,20 @@ def create_app(config_class=Config):
     def robots_txt():
         return send_from_directory(app.static_folder, 'robots.txt')
 
+    @app.after_request
+    def apply_csp(response):
+        csp = (
+            "default-src 'self'; "
+            "script-src 'self' https://trusted.cdn.com; "
+            "style-src 'self' 'unsafe-inline'; "
+            "img-src 'self' https://images.example.com; "
+            "object-src 'none'; "
+            "frame-ancestors 'none'; "
+            "base-uri 'self'; "
+            "form-action 'self';"
+        )
+        response.headers['Content-Security-Policy'] = csp
+        return response
+    
+    
     return app
