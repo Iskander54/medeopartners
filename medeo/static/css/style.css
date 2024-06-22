@@ -1101,7 +1101,8 @@ img {
     }
 
     .img_home {
-        width: 60vh;
+        width: 60vh!important;
+        height:auto!important;
         border-radius: 9vh;
         margin-top: 50px;
     }
@@ -1483,7 +1484,8 @@ img {
     }
 
     .img_home {
-        width: 60vh;
+        width: 60vh!important;
+        height: auto!important;
         border-radius: 9vh;
         margin-top: 50px;
     }
@@ -1935,7 +1937,8 @@ img {
 
 
     .img_home {
-        width: 60vh;
+        width: 60vh!important;
+        height: auto!important;
         border-radius: 9vh;
         margin-top: 50px;
 
