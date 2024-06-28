@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Audit Financier",
-        "description": "Audit financier détaillé pour assurer la conformité et l'optimisation des processus financiers.",
+        "description": "Audit financier détaillé pour assurer la conformité et l'optimisation des processus financiers de votre entreprise.",
         "provider": {
             "@type": "Organization",
             "name": "Medeo Partners",

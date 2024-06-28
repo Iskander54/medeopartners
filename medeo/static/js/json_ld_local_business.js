@@ -2,18 +2,18 @@ document.addEventListener("DOMContentLoaded", function() {
     var json_ld_local_business = {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Medeo Partners - Cabinet d'Experts Comptables à Paris",
-            "url": "https://www.medeopartners.com",
+            "name": "Medeo Partners - Cabinet d'Expertise Comptable à Paris",
+            "url": "https://www.medeo-partners.com",
             "logo": "",
             "image": "",
             "description": "Découvrez comment Medeo Partners, avec plus de 10 ans d'expertise en comptabilité et fiscalité, optimise la gestion financière et fiscale de votre société.",
-            "telephone": "+33123456789",
+            "telephone": "+33183641604",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "07 boulevard de Malesharbes",
+                "streetAddress": "97 boulevard de Malesharbes",
                 "addressLocality": "Paris",
                 "addressRegion": "Île-de-France",
-                "postalCode": "75009",
+                "postalCode": "75008",
                 "addressCountry": "FR"
             },
             "geo": {
@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 "longitude": "2.304779"
             },
             "sameAs": [
-                "https://www.facebook.com/medeopartners",
-                "https://www.linkedin.com/company/medeopartners"
+                "https://www.linkedin.com/company/medeo-partners/",
+                "https://instagram.com/medeo_partners"
+
             ],
             "openingHoursSpecification": [
                 {

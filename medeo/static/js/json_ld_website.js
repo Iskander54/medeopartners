@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function() {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Medeo Partners",
-        "url": "https://www.medeopartners.com",
+        "url": "https://www.medeo-partners.com",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://www.medeopartners.com/search?query={search_term_string}",
+            "target": "https://www.medeo-partners.com/search?query={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     };
