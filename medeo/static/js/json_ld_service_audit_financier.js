@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "provider": {
             "@type": "Organization",
             "name": "Medeo Partners",
-            "url": "https://www.medeopartners.com"
+            "url": "https://www.medeo-partners.com"
         }
     };
 

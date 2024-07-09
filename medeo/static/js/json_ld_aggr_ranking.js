@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
             "@type": "LocalBusiness",
             "name": "Medeo Partners - Cabinet d'Experts Comptables et commissaire aux comptas à Paris",
             "url": "https://www.medeo-partners.com"
-          }
+        }
     };
 
     var script = document.createElement('script');
