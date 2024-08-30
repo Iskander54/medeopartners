@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
+<link rel="preload" href="{{ url_for('static', filename='images/medeo_talking.webp') }}" as="image">
+
 <div id="content">
 
   <div id="splash-screen-id" class="splash-screen">
@@ -28,7 +30,7 @@
 
       </div>
       <div class="col-xs-4 col-sm-4">
-        <img class="img_home" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" loading="lazy" width="100" height="100" alt="Experts en comptabilité chez Medeo Partners">
+        <img class="img_home" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" width="100" height="100" alt="Experts en comptabilité chez Medeo Partners">
       </div>
     </div>
   </div>
@@ -104,37 +106,14 @@
   <br />
 
 
-  <!-- {% include 'carousel_common.html' %} -->
-
+  {% include 'carousel_common.html' %}
 
   <br/>
   <br/>
   <br/>
 
 
-  <!--
-<div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
-    <div class="carousel-cell">
-      <div class="encart_bleu"></div>
-      <div class="encart_rouge"></div>
-    </div>
-    <div class="carousel-cell">
-      <div class="encart_bleu"></div>
-      <div class="encart_rouge"></div>
-    </div>
-    <div class="carousel-cell">
-      <div class="encart_bleu"></div>
-      <div class="encart_rouge"></div>
-    </div>
-    <div class="carousel-cell">
-      <div class="encart_bleu"></div>
-      <div class="encart_rouge"></div>
-    </div>
-  </div>
--->
 
-
-  <!-- NEW CAROUSEL END-->
   <div class="container animate-top">
     <a href="{{_('nouscontacter#nous_ecrire')}}">
       <div class="row">

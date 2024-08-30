@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
+<link rel="preload" href="{{ url_for('static', filename='images/medeo_talking.webp') }}" as="image">
+
 <div id="content">
   <div class="loader-container">
     <div id="foregid" class="foreg"></div>
