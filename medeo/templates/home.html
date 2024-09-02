@@ -32,7 +32,15 @@
 
       </div>
       <div class="col-xs-4 col-sm-4">
-        <img class="img_home" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" width="100" height="100" alt="Experts en comptabilité chez Medeo Partners">
+        <img class="img_home" 
+        src="{{ url_for('static',filename='images/medeo_talking.webp') }}"
+        srcset="/static/images/medeo_talking.webp 320w,
+          /static/images/medeo_talking.webp 480w,
+          /static/images/medeo_talking.webp 800w"
+        sizes="(max-width: 600px) 320px,
+              (max-width: 1024px) 480px,
+              800px"
+        width="100" height="100" alt="Experts en comptabilité chez Medeo Partners">
       </div>
     </div>
   </div>
