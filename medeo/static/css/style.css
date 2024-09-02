@@ -4377,7 +4377,7 @@ input:nth-of-type(5):checked~main#carousel {
 }
 
 .button_envoyer_contact {
-    width: max-content;
+    width: 200px;
     float: left;
     font-size: 16px;
     color: #ffffff;
@@ -5204,13 +5204,11 @@ input:checked+.slide-container .nav label {
   }
 
   .openposition-card{
-    padding: 2rem;
-
+    padding: 1rem;
     border-radius: 65px;
     margin: 1rem;
     color: #fff;
     position: relative;
-    height: 500px!important;
   }
   .bg-blue{
     background-color:#114A79;
