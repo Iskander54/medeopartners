@@ -191,51 +191,48 @@
                   </li>
 
                </ul>
-               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row">
-                  <li class="nav-item">
-                     <a class="nav-link" href="https://instagram.com/medeo_partners" aria-label="Instagram">
-                         <div class="nav_icone">
-                             <i class="fa-brands fa-instagram fa-xl" aria-hidden="true"></i>
-                             <span class="sr-only">Instagram</span>
-                         </div>
-                     </a>
-                 </li>
-                 
-                 <li class="nav-item">
-                     <a class="nav-link" href="https://www.linkedin.com/company/medeo-partners" aria-label="Linkedin">
-                         <div class="nav_icone">
-                             <i class="fa-brands fa-linkedin fa-xl" aria-hidden="true"></i>
-                             <span class="sr-only">Linkedin</span>
-                         </div>
-                     </a>
-                 </li>
-                 
-                 <li class="nav-item">
-                     <a class="nav-link" href="https://wa.me/33633914614" aria-label="Whatsapp">
-                         <div class="nav_icone">
-                             <i class="fa-brands fa-whatsapp fa-xl" aria-hidden="true"></i>
-                             <span class="sr-only">Whatsapp</span>
-                         </div>
-                     </a>
-                 </li>
 
-                  <li class="nav-item">
-
-                     <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='en', **request.view_args) }}">
-
-                        <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
-                           loading="lazy" alt="usa icone">
-                     </a>
+               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row align-items-center justify-content-center">
+                  <li class="nav-item mt-2">
+                      <a class="nav-link" href="https://instagram.com/medeo_partners" aria-label="Instagram">
+                          <div class="nav_icone">
+                              <i class="fa-brands fa-instagram fa-xl" aria-hidden="true"></i>
+                              <span class="sr-only">Instagram</span>
+                          </div>
+                      </a>
                   </li>
-
-                  <li class="nav-item">
-                     <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='fr') }}">
-
-                        <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
-                           loading="lazy" alt="france icone">
-                     </a>
+              
+                  <li class="nav-item mt-2">
+                      <a class="nav-link" href="https://www.linkedin.com/company/medeo-partners" aria-label="Linkedin">
+                          <div class="nav_icone">
+                              <i class="fa-brands fa-linkedin fa-xl" aria-hidden="true"></i>
+                              <span class="sr-only">Linkedin</span>
+                          </div>
+                      </a>
                   </li>
-               </ul>
+              
+                  <li class="nav-item mt-2">
+                      <a class="nav-link" href="https://wa.me/33633914614" aria-label="Whatsapp">
+                          <div class="nav_icone">
+                              <i class="fa-brands fa-whatsapp fa-xl" aria-hidden="true"></i>
+                              <span class="sr-only">Whatsapp</span>
+                          </div>
+                      </a>
+                  </li>
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='en', **request.view_args) }}">
+                          <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}" loading="lazy" alt="usa icone" style="width: 32px; height: 32px;">
+                      </a>
+                  </li>
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='fr') }}">
+                          <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}" loading="lazy" alt="france icone" style="width: 32px; height: 32px;">
+                      </a>
+                  </li>
+              </ul>
+              
             </div>
          </div>
 
