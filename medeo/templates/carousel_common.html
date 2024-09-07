@@ -8,7 +8,11 @@
           <div class="slide-image">
             <div class="encart_previous"></div>
             <div class="encart_bleu">
-              <img class="images_carousel_home" src="{{ url_for('static',filename='images/social.webp') }}" alt="img-social" width="430" height="280">
+              <img class="images_carousel_home" src="{{ url_for('static',filename='images/social.webp') }}" alt="img-social" 
+                  width="420" 
+                  height="253" 
+                  loading="lazy">
+
               <h2 style="color: white;text-align: center;">{{_('Social')}}</h2>
               <div class="carousel_home_txt">
                 {{_('Retrouvez les dernières actualités Sociales')}}
@@ -64,7 +68,10 @@
             <div class="encart_previous"></div>
 
             <div class="encart_bleu">
-              <img class="images_carousel_home" src="{{ url_for('static',filename='images/juridique.webp') }}" alt="blog-juridique" width="430" height="280">
+              <img class="images_carousel_home" src="{{ url_for('static',filename='images/juridique.webp') }}" alt="blog-juridique"
+                width="420" 
+                height="253" 
+                loading="lazy">
               <h2 style="color: white;text-align: center;">{{_('Juridique')}}</h2>
               <div class="carousel_home_txt">
                 {{_('Retrouvez les dernières actualités Juridiques')}}
@@ -100,7 +107,13 @@
           <div class="slide-image">
             <div class="encart_previous"></div>
             <div class="encart_bleu">
-              <img class="images_carousel_home" src="{{ url_for('static',filename='images/work.webp') }}" alt="work-img" width="430" height="280" loading="lazy">
+              <img class="images_carousel_home" 
+                  src="{{ url_for('static',filename='images/work.webp') }}" 
+                  alt="work-img" 
+                  width="420" 
+                  height="253" 
+                  loading="lazy">
+                  
               <h2 style="color: white;text-align: center;margin-top: 25px;">{{_('Fiscalité')}}</h2>
               <div class="carousel_home_txt">
                 {{_('Retrouvez les dernières actualités Fiscales')}}

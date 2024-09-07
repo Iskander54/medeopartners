@@ -1,9 +1,6 @@
 
-@import url(animate.min.css);
-@import url(normalize.css);
 @import url(font-awesome.min.css);
 @import url(jquery-ui.css);
-@import url(nice-select.css);
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
@@ -208,15 +205,10 @@ img {
     float: left;
 }
 
-/* header section end */
-
-/* banner section start */
-
 .banner_section {
     padding-top: 40px;
     padding-bottom: 70px;
 }
-
 
 /* Extra Small Devices (e.g., smartphones) */
 @media (max-width: 575px) {
@@ -574,7 +566,6 @@ img {
     
     }
 }
-
 /* Small Devices (e.g., larger smartphones and small tablets) */
 @media (min-width: 576px) and (max-width: 767px) {
 
@@ -936,7 +927,6 @@ img {
     
     }
 }
-
 
 /* Medium Devices (e.g., larger tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2155,8 +2145,6 @@ img {
     }
 }
 
-
-
 .readmore_bt {
     width: 170px;
     float: left;
@@ -2181,8 +2169,6 @@ img {
 
 .readmore_news {
     width: 170px;
-    /* float: left; */
-    /* margin-left: 115px; */
     margin: auto;
 }
 
@@ -2205,7 +2191,6 @@ img {
 .ensavoir_plus_bt {
     width: 170px;
     float: left;
-    /* margin-left: 115px; */
 }
 
 .ensavoir_plus_bt a {
@@ -2235,10 +2220,6 @@ img {
     background-color: #114a79;
 }
 
-/* banner section end */
-
-/* services section start */
-
 .icon_1 {
     color: #E91C2A;
     width: 100%;
@@ -2246,9 +2227,6 @@ img {
     font-size: 2em;
 }
 
-/* services section end */
-
-/* events section start */
 
 @keyframes fadeEffect {
     0% {
@@ -2261,11 +2239,6 @@ img {
         opacity: 0;
     }
 }
-
-
-/* events section end */
-
-/* contact section start */
 
 .contact_section {
     width: 100%;
@@ -2286,10 +2259,6 @@ textarea#comment::placeholder {
     color: #727272;
 }
 
-
-/* contact section end */
-
-/* contact section start */
 
 .testimonial_section {
     width: 100%;
@@ -2399,11 +2368,6 @@ textarea#comment::placeholder {
     margin-top: 90px;
 }
 
-
-/* contact section end */
-
-/* footer section start */
-
 .footer_section {
     width: 100%;
     float: left;
@@ -2424,10 +2388,6 @@ textarea#comment::placeholder {
     font-family: 'Roboto', sans-serif;
 }
 
-/* .location_text a {
-    color: #8e8e8e;
-    font-size: 13px;
-} */
 .location_text a:hover {
     color: red;
 }
@@ -2445,12 +2405,6 @@ textarea#comment::placeholder {
     float: right;
 }
 
-/* .footer_section_2{
-    width: 100%;
-    float: left;
-    padding-top: 25px;
-    padding-left: 30px;
-} */
 .footer_taital {
     width: 100%;
     float: left;
@@ -2460,16 +2414,6 @@ textarea#comment::placeholder {
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
-
-/* .footer_text{
-    width: 80%;
-    float: left;
-    font-size: 16px;
-    color: #8e8e8e;
-    margin: 0px;
-    padding-top: 20px;
-    font-family: 'Roboto', sans-serif;    
-} */
 
 
 .social_icon {
@@ -2506,18 +2450,6 @@ textarea#comment::placeholder {
 .subscribe_bt a:hover {
     color: #ffffff;
 }
-
-/* footer section end */
-
-
-/* copyright section start */
-
-/* .copyright_section {
-    width: 100%;
-    float: left;
-    background-color: #1d1d1d;
-    height: auto;
-} */
 .copyright_text {
     width: 100%;
     float: left;
@@ -2537,7 +2469,6 @@ textarea#comment::placeholder {
 }
 
 
-/* copyright section end */
 
 /* Tean Section */
 .team_section {
@@ -2545,14 +2476,10 @@ textarea#comment::placeholder {
     float: left;
 }
 
-
-
-
 .team_section_2 {
     width: 100%;
     float: left;
 }
-
 
 .image_news {
     display: block;
@@ -2560,12 +2487,10 @@ textarea#comment::placeholder {
     margin-right: auto;
     width: 70%;
     height: 48%;
-    /* border-radius: 50%; */
     border-top-left-radius: 52px;
     border-top-right-radius: 52px;
     margin-top: 30px;
 }
-
 
 .readable_text {
     width: 100%;
@@ -2650,12 +2575,9 @@ textarea#comment::placeholder {
 
 #image-container {
     position: absolute;
-    /* right: 0%; */
     width: 80%;
-    /* height: 50%; */
     animation: slide-in 5s forwards;
     z-index: 9999;
-    /* background-color: white; */
 }
 
 .page-heading {
@@ -2718,12 +2640,8 @@ textarea#comment::placeholder {
 
 .justify {
     text-align: justify;
-    /* text-justify: inter-word; */
 
 }
-
-
-/* donate section start */
 
 .donate_section {
     width: 100%;
@@ -2839,10 +2757,6 @@ textarea#comment::placeholder {
 
 }
 
-/* contact section end */
-
-/* footer section start */
-
 .footer_section {
     width: 100%;
     float: left;
@@ -2887,12 +2801,6 @@ textarea#comment::placeholder {
 }
 
 
-/* footer section end */
-
-
-/* copyright section start */
-
-
 .copyright_text {
     width: 100%;
     float: left;
@@ -2912,20 +2820,10 @@ textarea#comment::placeholder {
 }
 
 
-/* copyright section end */
-
-/* Tean Section */
-
-
-
-
 .justify {
     text-align: justify;
 
 }
-
-
-/* donate section start */
 
 .about_page_taital {
     width: 100%;
@@ -2952,12 +2850,10 @@ textarea#comment::placeholder {
     border-radius: 50%;
 }
 
-/* Add a hover effect if you want */
 .fa:hover {
     opacity: 0.7;
 }
 
-/* Set a specific color for each brand */
 
 .recaptcha {
     display: flex;
@@ -3316,46 +3212,6 @@ hr.hr_vertical {
     margin-left: 12%;
     margin-right: 12%;
 }
-
-
-
-
-/* .my_div_aliza {
-    font-size: 18px;
-    border-radius: 30px;
-    height: 160px;
-    width: 40%;
-    border-spacing: 60px;
-    margin-left: -20px;
-    background-image: url(../images/woman_phone.webp);
-    background-size: contain;
-}
-
-.my_div_aliza_two {
-    font-size: 18px;
-    border-radius: 30px;
-    height: 150px;
-    width: 40%;
-    border-spacing: 60px;
-    margin-left: -20px;
-    background-image: url(../images/main-img.webp);
-    background-size: cover;
-
-
-}
-
-.my_div_aliza_three {
-    font-size: 18px;
-    border-radius: 30px;
-    height: 150px;
-    width: 40%;
-    border-spacing: 60px;
-    margin-left: -20px;
-    background-image: url(../images/eiffel_tower.webp);
-    background-size: cover;
-
-} */
-
 
 .adresse_contact {
     color: #120a78;
@@ -4091,16 +3947,6 @@ audio {
         -24px -24px 41px #ffffff;
 }
 
-/* 
-.effet_ombre_boutons_valeurs{
-    border-radius: 51px;
-    box-shadow:  24px 24px 41px #9ea1a4,
-                 -24px -24px 41px #ffffff;
-} */
-
-
-
-
 
 /* Slider container */
 #slider {
@@ -4323,10 +4169,6 @@ input:nth-of-type(5) {
 input:nth-of-type(5):checked~main#carousel {
     --position: 5;
 }
-
-
-
-
 
 .animate-top {
     animation-name: animate-top;
@@ -4892,11 +4734,6 @@ p.quote:nth-child(2) {
 
 }
 
-.carousel {
-    /* margin-left: 10%; */
-    /* margin-right: 5%; */
-}
-
 ul.slides {
     display: block;
     position: relative;
@@ -4943,16 +4780,6 @@ ul.slides input {
     width: 100%;
 }
 
-/* .encart_bleu {
-    width: 40%;
-    height: 70%;
-    margin: auto;
-    right: 0px;
-    border-radius: 70px;
-    background-color: #114a79;
-    position: relative;
-    z-index: 2;
-} */
 
 .encart_rouge {
     flex: 1;
@@ -5501,8 +5328,6 @@ input:checked+.slide-container .nav label {
 .news_carousel_btn{
     position: absolute;
     right: 7%;
-    /* position: relative; 
-    z-index: 10;  */
 
 }
 
@@ -5510,8 +5335,6 @@ input:checked+.slide-container .nav label {
     position: relative; /* Use 'absolute' if it fits your layout better */
     z-index: 100;       /* Adjust this value as needed */
     pointer-events: auto; /* Ensure it's clickable */
-    /* top: 12vw;
-    margin-left: 20vw; */
 }
 
 .carousel {
@@ -5522,4 +5345,3 @@ input:checked+.slide-container .nav label {
 .nav-item.active .nav-link .sous-titre {
     color: #E91C2A; 
 }
-
