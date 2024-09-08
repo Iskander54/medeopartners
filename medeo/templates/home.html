@@ -12,30 +12,45 @@
       class="image_accueil_loader" >
   </div>
 
-  <div class="container-fluid animate-top">
-    <div class="row">
-      <div class="col-xs-8 col-sm-8">
-        <h1 data-translate class="title_bienvenu_home">{{_('Bienvenue chez Medeo Partners ')}}</h1>
-
-        <h4 data-translate class="banner_text" style="margin-left: 115px;">
-          {{_('Fort de plus 10 ans d\'expertise en comptabilité et fiscalité, nous')}}<br>
-          {{_('accompagnons nos clients de tous secteurs dans leurs démarches')}}<br>
-          {{_('de création d\'entreprise, de projets, et d\'optimisation fiscale.')}}<br />
 
 
-        </h4>
+  <div class="container-fluid animate-top mt-5">
+    <div class="row justify-content-center">
+      <!-- Left empty column to center the content -->
+      <div class="col-xs-0 col-sm-1"></div>
+      
+      <!-- Main content -->
+      <div class="col-xs-12 col-sm-8">
+        <div class="row">
+          <!-- Text Column -->
+          <div class="col-xs-12 col-md-8 text-center text-md-start">
+            <h1 data-translate class="title_bienvenu_home">{{_('Bienvenue chez Medeo Partners ')}}</h1>
+            <h4 data-translate class="banner_text">
+              {{_('Fort de plus 10 ans d\'expertise en comptabilité et fiscalité, nous')}}<br>
+              {{_('accompagnons nos clients de tous secteurs dans leurs démarches')}}<br>
+              {{_('de création d\'entreprise, de projets, et d\'optimisation fiscale.')}}
+            </h4>
+  
+            <div class="readmore_bt mt-3">
+              <a data translate href="{{_('notre_expertise')}}">{{_('Plus d\'informations')}}</a>
+            </div>
 
-        <div class="readmore_bt">
-          <a data translate href="{{_('notre_expertise')}}">{{_('Plus d\'informations')}}</a>
+            
+          </div>
+          
+          <!-- Image Column -->
+          <div class="col-xs-12 col-md-4 text-center">
+            <img class="img_home mt-3 mt-md-0" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" 
+                 alt="Experts en comptabilité chez Medeo Partners">
+          </div>
         </div>
-
-
       </div>
-      <div class="col-xs-4 col-sm-4">
-        <img class="img_home" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" width="100" height="100" alt="Experts en comptabilité chez Medeo Partners">
-      </div>
+  
+      <!-- Right empty column to center the content -->
+      <div class="col-xs-0 col-sm-1"></div>
     </div>
   </div>
+  
 
   <div class="container animate-top">
     <div class="row">
@@ -61,6 +76,9 @@
           services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}</h5>
         </div>
       </div>
+
+      <hr class="custom-hr">
+
       <div id="prez_audit" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
         <img src="{{ url_for('static',filename='images/audit.webp') }}" alt="Services d'audit financier"
         width="70" height="70" loading="lazy"><br>
@@ -73,6 +91,9 @@
           comptables et fiscales en vigueur.')}}
         </div>
       </div>
+
+      <hr class="custom-hr">
+
       <div id="prez_conseil_optimisation" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
         <img src="{{ url_for('static',filename='images/budget.webp') }}"
         width="70" height="70" loading="lazy" alt="Optimisation fiscale et gestion de budget"><br>
@@ -85,6 +106,9 @@
           l\'optimisation de la chaîne d\'approvisionnement et l\'analyse des coûts.')}}</div>
 
       </div>
+
+      <hr class="custom-hr">
+
       <div id="prez_service_info" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
         <img src="{{ url_for('static',filename='images/ux.webp') }}"
           width="70" height="70" loading="lazy" alt="ux-img"><br>
@@ -97,8 +121,6 @@
         </div>
 
       </div>
-      <!-- <div class="col-sm-3 col-md-6 col-lg-2">
-    </div> -->
     </div>
   </div>
 
@@ -126,7 +148,7 @@
           <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
 
           <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
-          <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+          <span class="fa-stack fa-2x icones_home_rouge_workwithus">
             <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
             <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
           </span>
@@ -143,7 +165,7 @@
 
           <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
 
-          <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+          <span class="fa-stack fa-2x icones_home_rouge_workwithus">
             <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
             <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
           </span>
@@ -153,13 +175,13 @@
 
 
     <a href="{{_('nouscontacter#nos_bureaux')}}">
-      <div class="row" style="margin-bottom: 90px;">
+      <div class="row">
         <div class="cocon effet_ombre">
           <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
 
 
           <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
-          <span class="fa-stack fa-2x" style="margin-top: inherit; margin-right: 3%;">
+          <span class="fa-stack fa-2x icones_home_rouge_workwithus" >
             <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px"></i>
             <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
           </span>

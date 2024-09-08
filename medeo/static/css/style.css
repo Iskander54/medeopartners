@@ -213,6 +213,28 @@ img {
 /* Extra Small Devices (e.g., smartphones) */
 @media (max-width: 575px) {
 
+    .icones_home_rouge_workwithus{
+        margin-right: -4%;
+    }
+
+    .encart_rouge{
+        display: none;
+    }
+
+    .encart_bleu{
+        width: 90%!important;
+    }
+
+    .custom-hr {
+        border: none; /* Remove default border */
+        height: 2px; /* Set the thickness */
+        background-color: #114a79; /* Change the color */
+        width: 50%; /* Adjust the width */
+        margin: 20px auto; /* Center it and add space around */
+        border-radius: 5px; /* Make the edges rounded */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+      }
+
     .image_7 {
         display: block;
         margin-left: auto;
@@ -269,7 +291,6 @@ img {
         color: #114a79;
         text-align: center;
         margin: auto;
-        margin-bottom: 35px;
     }
 
 
@@ -294,20 +315,11 @@ img {
     }
 
     .title_bienvenu_home {
-        /* margin-top: 10vw;
         width: 100%;
         float: left;
         color: #114a79;
         font-weight: 900;
-        text-align: center; */
-
-        width: 100%;
-        float: left;
-        color: #114a79;
-        font-weight: 900;
-        margin-top: 10vw;
         text-align: center;
-
     }
 
     .title-nos-expertises {
@@ -383,7 +395,11 @@ img {
     }
 
     .img_home {
-        display: none;
+        width: 60vh!important;
+        height:auto!important;
+        border-radius: 9vh;
+        margin-top: 50px;
+
     }
 
     .banner_main {
@@ -497,7 +513,6 @@ img {
 
 
     .banner_text {
-
         float: left;
         font-size: 16px;
         color: #114a79;
@@ -522,7 +537,7 @@ img {
         float: left;
         font-size: 30px;
         color: #114a79;
-        line-height: 1.5em;
+        line-height: 1em;
         overflow: hidden;
         text-align: center;
         font-weight: 900;
@@ -568,7 +583,28 @@ img {
 }
 /* Small Devices (e.g., larger smartphones and small tablets) */
 @media (min-width: 576px) and (max-width: 767px) {
+    
+    .icones_home_rouge_workwithus{
+        margin-top: inherit;
+        margin-right: 3%;
+    }
+    .encart_rouge{
+        display: none;
+    }
 
+    .encart_bleu{
+        width: 90%!important;
+    }
+    
+    .custom-hr {
+        border: none;
+        height: 2px; /* Set the thickness */
+        background-color: #114a79; /* Change the color */
+        width: 50%; /* Adjust the width */
+        margin: 20px auto; /* Center it and add space around */
+        border-radius: 5px; /* Make the edges rounded */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+      }
     .image_7 {
         display: block;
         margin-left: auto;
@@ -624,7 +660,6 @@ img {
         color: #114a79;
         text-align: center;
         margin: auto;
-        margin-bottom: 35px;
     }
 
     .effet_ombre_boutons_valeurs {
@@ -639,10 +674,7 @@ img {
         float: left;
         font-size: 36px;
         color: #114a79;
-        margin-left: 115px;
         font-weight: 900;
-        margin-top: 10vw;
-
     }
 
     .img_heart {
@@ -704,7 +736,10 @@ img {
     }
 
     .img_home {
-        display: none;
+        width: 60vh!important;
+        height:auto!important;
+        border-radius: 9vh;
+        margin-top: 50px;
     }
 
     .banner_main {
@@ -883,7 +918,7 @@ img {
         width: 100%;
         float: left;
         color: #114a79;
-        line-height: 1.5em;
+        line-height: 1em;
         text-align: center;
         font-weight: 900;
     }
@@ -930,6 +965,11 @@ img {
 
 /* Medium Devices (e.g., larger tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
+
+    .icones_home_rouge_workwithus{
+        margin-top: inherit;
+        margin-right: 3%;
+    }
 
     .image_7 {
         display: block;
@@ -985,17 +1025,13 @@ img {
         color: #114a79;
         text-align: center;
         margin: auto;
-        margin-bottom: 35px;
     }
 
     .title_bienvenu_home {
         float: left;
         font-size: 36px;
         color: #114a79;
-        margin-left: 115px;
         font-weight: 900;
-        margin-top: 10vw;
-
     }
 
     .cocon {
@@ -1257,7 +1293,7 @@ img {
         width: 100%;
         float: left;
         color: #114a79;
-        line-height: 1.5em;
+        line-height: 1em;
         overflow: hidden;
         text-align: center;
         font-weight: 900;
@@ -1308,6 +1344,10 @@ img {
 /* Large Devices (e.g., desktops and laptops) */
 @media (min-width: 992px) and (max-width: 1199px) {
 
+    .icones_home_rouge_workwithus{
+        margin-top: inherit;
+        margin-right: 3%;
+    }
     .image_7 {
         display: block;
         margin-left: auto;
@@ -1362,7 +1402,6 @@ img {
         color: #114a79;
         text-align: center;
         margin: auto;
-        margin-bottom: 35px;
     }
 
 
@@ -1371,10 +1410,7 @@ img {
         float: left;
         font-size: 36px;
         color: #114a79;
-        margin-left: 115px;
         font-weight: 900;
-        margin-top: 10vw;
-
     }
 
     .cocon {
@@ -1455,10 +1491,9 @@ img {
     }
 
     .img_home {
-        width: 60vh!important;
+        width: 70vh!important;
         height: auto!important;
         border-radius: 9vh;
-        margin-top: 50px;
     }
 
     .banner_main {
@@ -1648,7 +1683,7 @@ img {
         float: left;
         font-size: 30px;
         color: #114a79;
-        line-height: 1.5em;
+        line-height: 1em;
         overflow: hidden;
         text-align: center;
         font-weight: 900;
@@ -1697,6 +1732,11 @@ img {
 
 /* Extra Large Devices (e.g., large desktop screens) */
 @media (min-width: 1200px) {
+
+    .icones_home_rouge_workwithus{
+        margin-top: inherit;
+        margin-right: 3%;
+    }
 
     .image_7 {
         display: block;
@@ -1768,7 +1808,6 @@ img {
         color: #114a79;
         text-align: center;
         margin: auto;
-        margin-bottom: 35px;
     }
 
     .banner_taital {
@@ -1802,10 +1841,7 @@ img {
         float: left;
         font-size: 36px;
         color: #114a79;
-        margin-left: 115px;
         font-weight: 900;
-        margin-top: 10vw;
-
     }
 
     .logo-nos-expertises {
@@ -1872,7 +1908,7 @@ img {
         float: left;
         font-size: 30px;
         color: #114a79;
-        line-height: 1.5em;
+        line-height: 1em;
         overflow: hidden;
         text-align: center;
         font-weight: 900;
@@ -1908,10 +1944,9 @@ img {
 
 
     .img_home {
-        width: 60vh!important;
+        width: 70vh!important;
         height: auto!important;
         border-radius: 9vh;
-        margin-top: 50px;
 
     }
 
@@ -2096,7 +2131,7 @@ img {
         float: left;
         font-size: 30px;
         color: #114a79;
-        line-height: 1.5em;
+        line-height: 1em;
         overflow: hidden;
         text-align: center;
         font-weight: 900;
@@ -2148,7 +2183,7 @@ img {
 .readmore_bt {
     width: 170px;
     float: left;
-    margin-left: 115px;
+    /* margin-left: 115px; */
 }
 
 .readmore_bt a {
@@ -3930,7 +3965,12 @@ audio {
     background: linear-gradient(145deg, #d1d5d9, #f8feff);
     box-shadow: 24px 24px 41px #9ea1a4,
         -24px -24px 41px #ffffff;
-    /* padding: 21px; */
+    border: solid 0.5px red;
+}
+
+.effet_ombre:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 30px 30px 50px #9ea1a4, -30px -30px 50px #ffffff; /* Enhanced shadow on hover */
 }
 
 

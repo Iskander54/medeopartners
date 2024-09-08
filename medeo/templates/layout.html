@@ -330,77 +330,76 @@
 
 
    <!-- footer section start -->
-   <div class="footer_section">
-      <div class="container_footer">
-         <div class="footer_section_2">
-            <div class="row">
-               <div class="col">
-                  <h2 class="footer_taital">{{_('À propos')}}</h2>
-                  <a class="footer_text" href="{{_('votre_cabinet')}}">{{_('Le Cabinet')}}</a>
-                  <a class="footer_text" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
-                  <a class="footer_text" href="{{_('audit#commissariatauxcomptes')}}">{{_('Commissariat aux
-                     comptes')}}</a>
-               </div>
-               <div class="col">
-                  <h2 class="footer_taital">{{_('Adresse')}}</h2>
-                  <p class="location_text">
-                     <img src="{{url_for('static', filename='images/map-icon.webp') }}" loading="lazy" alt="icone map footer" width="13" height="18"><span
-                        class="padding_left_10"><a
-                           href="https://www.google.com/maps/search/?api=1&query=97+Boulevard+Malesherbes+75008+Paris">97
-                           Bd Malesherbes <br> 75008 Paris </a></span></br>
-                     <img src="{{url_for('static', filename='images/call-icon.webp') }}" loading="lazy" alt="icone telephone footer" width="13" height="18"><span
-                        class="padding_left_10"><a href="/">01 83 64 16 04</a></span></br>
-                     <img src="{{url_for('static', filename='images/mail-icon.webp') }}" loading="lazy" alt="icone mail footer" width="13" height="18"><span
-                        class="padding_left_10"><a
-                           href="mailto:contact@medeo-partners.com">contact@medeo-partners.com</a></span></br>
-                  </p>
-               </div>
-
-               <div class="col col_footer">
-                  <h2 class="footer_taital">{{_('Nous contacter')}}</h2>
-                  <a class="footer_text" href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
-                  <a class="footer_text" href="{{_('votre_cabinet#carousel_partners')}}">{{_('L\'équipe')}}</a>
-
-               </div>
-               <div class="col">
-                  <img src="{{url_for('static', filename='medeo_images/Medeo_partners_blc.webp') }}"
-                     width="258" height="227" loading="lazy" alt="Image Medeo partners footer"><span class="padding_left_10"></span><br />
-               </div>
-               <div class="col">
-                  <div class="crcc-logo"><a href="https://www.cncc.fr" target="_blank"><img
-                           src="{{url_for('static', filename='images/logo-crcc-black.webp')}}" loading="lazy" alt="Expertise comtpable Paris" aria-label="CNCC Compagnie nationale des commissaires aux comptes" width="180" height="80"></a></div>
-                  <br />
-                  <br />
-                  <div class="crcc-logo">
-                     <a href="https://www.oec-paris.fr/" target="_blank">
-                         <img 
-                             src="{{url_for('static', filename='images/oec.webp')}}" 
-                             loading="lazy" 
-                             alt="OEC Ordre des Experts comptables" 
-                             aria-label="Ordre National des Experts comptables"
-                             width="180" 
-                             height="44">
-                     </a>
-                 </div>
-                 <br />
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <!-- footer section end -->
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-            <div class="row">
-               <p class="copyright_text">{{_('MEDEO Partners Copyright 2023© - Tous droits réservés | ')}}
-                  <a href="{{_('mentions_legales')}}">{{_('Mentions légales')}}</a>
-               </p>
+   <div class="footer_section py-5" style="background-color: #114a79;">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
+                <h2 class="footer_taital text-white">{{_('À propos')}}</h2>
+                <a class="footer_text d-block text-white" href="{{_('votre_cabinet')}}">{{_('Le Cabinet')}}</a>
+                <a class="footer_text d-block text-white" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
+                <a class="footer_text d-block text-white" href="{{_('audit#commissariatauxcomptes')}}">{{_('Commissariat aux comptes')}}</a>
             </div>
 
-         </div>
-      </div>
+            <hr class="custom-hr" style="background-color: white;">
+
+            <!-- Address Section -->
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
+                <h2 class="footer_taital text-white">{{_('Adresse')}}</h2>
+                <p class="location_text text-white">
+                    <img src="{{url_for('static', filename='images/map-icon.webp') }}" alt="icone map footer" width="13" height="18">
+                    <span class="padding_left_10"><a class="text-white" href="https://www.google.com/maps/search/?api=1&query=97+Boulevard+Malesherbes+75008+Paris">97 Bd Malesherbes <br> 75008 Paris </a></span><br>
+                    <img src="{{url_for('static', filename='images/call-icon.webp') }}" alt="icone telephone footer" width="13" height="18">
+                    <span class="padding_left_10"><a class="text-white" href="tel:0183641604">01 83 64 16 04</a></span><br>
+                    <img src="{{url_for('static', filename='images/mail-icon.webp') }}" alt="icone mail footer" width="13" height="18">
+                    <span class="padding_left_10"><a class="text-white" href="mailto:contact@medeo-partners.com">contact@medeo-partners.com</a></span><br>
+                </p>
+            </div>
+
+            <hr class="custom-hr" style="background-color: white;">
+
+            <!-- Contact Section -->
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
+                <h2 class="footer_taital text-white">{{_('Nous contacter')}}</h2>
+                <a class="footer_text d-block text-white" href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
+                <a class="footer_text d-block text-white" href="{{_('votre_cabinet#carousel_partners')}}">{{_('L\'équipe')}}</a>
+            </div>
+
+            <hr class="custom-hr" style="background-color: white;">
+
+            <!-- Logos Section -->
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                <div class="mb-3">
+                    <img src="{{url_for('static', filename='medeo_images/Medeo_partners_blc.webp') }}" width="200" height="180" alt="Medeo Partners logo">
+                </div>
+                <div class="ml-4 crcc-logo">
+                    <a href="https://www.cncc.fr" target="_blank">
+                        <img src="{{url_for('static', filename='images/logo-crcc-black.webp')}}" alt="CNCC" width="180" height="80">
+                    </a>
+                </div>
+                <div class="ml-4 crcc-logo mt-3">
+                    <a href="https://www.oec-paris.fr/" target="_blank">
+                        <img src="{{url_for('static', filename='images/oec.webp')}}" alt="Ordre des Experts Comptables" width="180" height="44">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    
+</div>
+<div class="copyright_section py-3" style="background-color: #001D38;">
+   <div class="container text-center">
+       <p class="text-white mb-0">{{_('MEDEO Partners Copyright 2024© - Tous droits réservés | ')}}
+           <a class="text-white" href="{{_('mentions_legales')}}">{{_('Mentions légales')}}</a>
+       </p>
+       <p class="text-white">
+         Powered By <a href="https://www.bamana-solutions.com" style="color: #fafafa">Bamana Solutions</a>
+       </p>
+       
    </div>
+</div>
    <!-- copyright section end -->
    <!-- Javascript files-->
    <script src="{{url_for('static', filename='js/jquery.min.js') }}"></script>
