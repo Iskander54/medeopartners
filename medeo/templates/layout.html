@@ -77,9 +77,6 @@
    
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
-   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
-
    <link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css"
       rel="stylesheet" />
 
@@ -370,16 +367,16 @@
             <!-- Logos Section -->
             <div class="col-xs-12 col-sm-6 col-md-3 text-center">
                 <div class="mb-3">
-                    <img src="{{url_for('static', filename='medeo_images/Medeo_partners_blc.webp') }}" width="200" height="180" alt="Medeo Partners logo">
+                    <img src="{{url_for('static', filename='medeo_images/Medeo_partners_blc.webp') }}" width="200" height="180" alt="Medeo Partners logo" loading="lazy">
                 </div>
                 <div class="ml-4 crcc-logo">
                     <a href="https://www.cncc.fr" target="_blank">
-                        <img src="{{url_for('static', filename='images/logo-crcc-black.webp')}}" alt="CNCC" width="180" height="80">
+                        <img src="{{url_for('static', filename='images/logo-crcc-black.webp')}}" alt="CNCC" width="180" height="80" loading="lazy">
                     </a>
                 </div>
                 <div class="ml-4 crcc-logo mt-3">
                     <a href="https://www.oec-paris.fr/" target="_blank">
-                        <img src="{{url_for('static', filename='images/oec.webp')}}" alt="Ordre des Experts Comptables" width="180" height="44">
+                        <img src="{{url_for('static', filename='images/oec.webp')}}" alt="Ordre des Experts Comptables" width="180" height="44" loading="lazy">
                     </a>
                 </div>
             </div>
@@ -404,8 +401,6 @@
    <!-- Javascript files-->
    <script src="{{url_for('static', filename='js/jquery.min.js') }}"></script>
    <script src="{{url_for('static', filename='js/dropdown.js') }}"></script>
-   <script src="{{url_for('static', filename='js/popper.min.js') }}"></script>
-   <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
    <script src="{{url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
 
    <script>

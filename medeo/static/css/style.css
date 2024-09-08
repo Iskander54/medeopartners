@@ -223,6 +223,7 @@ img {
 
     .encart_bleu{
         width: 90%!important;
+        height: 50%;
     }
 
     .custom-hr {
@@ -244,8 +245,6 @@ img {
         margin-top: 15px;
     }
     .encart_bleu {
-        width: 40%;
-        height: 40%;
         margin: auto;
         right: 0px;
         border-radius: 70px;
@@ -594,6 +593,8 @@ img {
 
     .encart_bleu{
         width: 90%!important;
+        height: 50%;
+
     }
     
     .custom-hr {
@@ -614,8 +615,6 @@ img {
         margin-top: 15px;
     }
     .encart_bleu {
-        width: 40%;
-        height: 45%;
         margin: auto;
         right: 0px;
         border-radius: 70px;
