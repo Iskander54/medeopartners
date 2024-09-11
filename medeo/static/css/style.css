@@ -2181,7 +2181,8 @@ img {
 
 .readmore_bt {
     width: 170px;
-    float: left;
+    margin: auto;
+    /* float: center; */
     /* margin-left: 115px; */
 }
 
