@@ -2440,15 +2440,7 @@ textarea#comment::placeholder {
     float: right;
 }
 
-.footer_taital {
-    width: 100%;
-    float: left;
-    font-size: 20px;
-    color: #ffffff;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
+
 
 
 .social_icon {
@@ -2826,12 +2818,10 @@ textarea#comment::placeholder {
 
 
 .footer_taital {
-    width: 100%;
-    float: left;
-    font-size: 20px;
     color: #ffffff;
+    font-size: x-large;
+    font-family: 'Roboto';
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
     text-align: center;
 }
 
@@ -3143,16 +3133,17 @@ hr.hr_vertical {
 .footer_text {
     width: 80%;
     float: left;
-    font-size: 16px;
+    font-size: 19px;
     color: white;
     margin: 0px;
-    padding-top: 20px;
+    padding-top: 6px;
     font-family: 'Roboto', sans-serif;
 }
 
 .footer_text:hover {
-    color: red;
+    transform: scale(1.1);
 }
+
 
 .location_text {
     width: 100%;
