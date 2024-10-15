@@ -1,0 +1,48 @@
+<script src="{{url_for('static', filename='js/layout/header.js') }}"></script>
+
+<header id="header" class="sticky top-0 w-full transition transition-300 z-40">
+
+    <nav class="px-8 py-4 mx-auto grid grid-cols-7 items-center">
+        <a class="w-12 h-12" href="{{_('accueil')}}" rel="canonical">
+            <img class="object-contain aspect-square" src="{{url_for('static',filename='medeo_images/Medeo_partners_couleur.webp') }}"
+                width="100" height="88" alt="Cabinet d'experts-comptables à Paris"
+                aria-label="Cabinet d'experts-comptables à Paris">
+        </a>
+
+        <nav class="font-medium flex items-center justify-center gap-6 col-span-5 text-lg">
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('votre_cabinet')}}">«{{_('Votre')}}» {{_('cabinet')}}</a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('notre_expertise')}}">Notre expertise</a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('actualites')}}">Actualités</a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('nouscontacter')}}">Nous contacter</a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('espace_clients')}}">Espace client</a>
+        </nav>
+
+        <ul class="flex items-center gap-4">
+            <a c href="https://instagram.com/medeo_partners" aria-label="Instagram">
+                <i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+                <span class="sr-only">Instagram</span>    
+            </a>
+
+            <a href="https://www.linkedin.com/company/medeo-partners" aria-label="Linkedin">
+                <i class="fa-brands fa-linkedin fa-lg" aria-hidden="true"></i>
+                <span class="sr-only">Linkedin</span>    
+            </a>
+
+            <a href="https://wa.me/33633914614" aria-label="Whatsapp">
+                <i class="fa-brands fa-whatsapp fa-lg" aria-hidden="true"></i>
+                <span class="sr-only">Whatsapp</span>    
+            </a>
+
+            <a href="{{ url_for(request.endpoint, lang_code='en', **request.view_args) }}">
+                <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
+                    loading="lazy" alt="usa icone" style="width: 1.1rem; height: 1.1rem;">
+            </a>
+
+            <a href="{{ url_for(request.endpoint, lang_code='fr') }}">
+                <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
+                    loading="lazy" alt="france icone" style="width: 1.1rem; height: 1.1rem;">
+            </a>
+        </ul>
+    </nav>
+
+</header>

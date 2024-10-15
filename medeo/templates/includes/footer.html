@@ -1,0 +1,55 @@
+<div class="footer_section py-5" style="background-color: #114a79;">
+    <div class="container-fluid px-5">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
+                <h2 class="footer_taital text-white"><u>{{_('À PROPOS')}}</u></h2>
+                <a class="footer_text d-block text-white" href="{{_('votre_cabinet')}}">{{_('Le Cabinet')}}</a>
+                <a class="footer_text d-block text-white" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
+                <a class="footer_text d-block text-white" href="{{_('audit#commissariatauxcomptes')}}">{{_('Commissariat aux comptes')}}</a>
+            </div>
+
+            <hr class="custom-hr" style="background-color: white;">
+
+            <!-- Address Section -->
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
+                  <h2 class="footer_taital text-white"><u>{{_('NOUS CONTACTER')}}</u></h2>
+                  <a class="footer_text d-block text-white" href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
+                  <a class="footer_text d-block text-white" href="{{_('votre_cabinet#carousel_partners')}}">{{_("L\'équipe")}}</a>
+                  
+                  <a class="footer_text d-block text-white" style="width: 100%;" >
+                     <i class="fa-solid fa-location-pin"></i>
+                     97 Bd Malesherbes - 75008 Paris
+                  </a>
+                  <a class="footer_text d-block text-white" style="width: 100%;">
+                     <i class="fa-solid fa-phone"></i>
+                     01 83 64 16 04
+                  </a>
+                  <a class="footer_text d-block text-white" style="width: 100%;">
+                     <i class="fa-solid fa-envelope"></i>
+                     contact@medeo-partners.com
+                  </a>
+  
+            </div>
+
+            <hr class="custom-hr" style="background-color: white;">
+
+
+            <!-- Logos Section -->
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                <div class="mb-3">
+                    <img src="{{url_for('static', filename='medeo_images/Medeo_partners_blc.webp') }}" width="200" height="180" alt="Medeo Partners logo" loading="lazy">
+                </div>
+                <div class="ml-4 crcc-logo">
+                    <a href="https://www.cncc.fr" target="_blank">
+                        <img src="{{url_for('static', filename='images/logo-crcc-black.webp')}}" alt="CNCC" width="180" height="80" loading="lazy">
+                    </a>
+                </div>
+                <div class="ml-4 crcc-logo mt-3">
+                    <a href="https://www.oec-paris.fr/" target="_blank">
+                        <img src="{{url_for('static', filename='images/oec.webp')}}" alt="Ordre des Experts Comptables" width="180" height="44" loading="lazy">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>

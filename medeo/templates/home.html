@@ -1,314 +1,291 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 <link rel="preload" href="{{ url_for('static', filename='images/medeo_logo.webp') }}" as="image">
 <link rel="preload" href="{{ url_for('static', filename='images/accounting.webp') }}" as="image">
 <link rel="preload" href="{{ url_for('static', filename='images/medeo_talking.webp') }}" as="image">
 <link rel="preload" href="{{ url_for('static', filename='images/accounting.webp') }}" as="image">
 
+<div class="bg-image-home"></div>
+
 <div id="content">
 
-  <div id="splash-screen-id" class="splash-screen">
-    <img src="{{url_for('static', filename='images/medeo_logo.webp') }}" alt="Experts en comptabilité chez Medeo Partners"
-      class="image_accueil_loader" >
-  </div>
+    <div id="splash-screen-id" class="hidden">
+        <img src="{{url_for('static', filename='images/medeo_logo.webp') }}" alt="Experts en comptabilité chez Medeo Partners" class="image_accueil_loader">
+    </div>
 
+    <div class="container ease-in-out transition transition-300 mx-auto">
+        <div class="py-24 text-center flex flex-col gap-4 items-center">
+          <h1 data-translate class="text-2xl text-gray-500 font-extrabold">{{_('Bienvenue chez')}}</h1>
+          <h1 data-translate class="text-7xl font-extrabold text-primary mb-2">{{_('Medeo Partners')}}</h1>
+          <h4 data-translate class="text-gray-700">
+              {{_("Fort de plus 10 ans d\'expertise en comptabilité et fiscalité, nous")}}<br>
+              {{_("accompagnons nos clients de tous secteurs dans leurs démarches")}}<br>
+              {{_("de création d\'entreprise, de projets, et d\'optimisation fiscale.")}}
+          </h4>
 
+          <a class="rounded-full px-4 py-2 font-medium bg-primary text-white font-medium w-max" data translate href="{{_('notre_expertise')}}">{{_("Plus d\'informations")}}</a>
 
-  <div class="container-fluid animate-top mt-5">
-    <div class="row justify-content-center">
-      <!-- Left empty column to center the content -->
-      <div class="col-xs-0 col-sm-1"></div>
-      
-      <!-- Main content -->
-      <div class="col-xs-12 col-sm-8">
-        <div class="row">
-          <!-- Text Column -->
-          <div class="col-xs-12 col-md-8 text-center text-md-start">
-            <h1 data-translate class="title_bienvenu_home">{{_('Bienvenue chez Medeo Partners ')}}</h1>
-            <h4 data-translate class="banner_text">
-              {{_('Fort de plus 10 ans d\'expertise en comptabilité et fiscalité, nous')}}<br>
-              {{_('accompagnons nos clients de tous secteurs dans leurs démarches')}}<br>
-              {{_('de création d\'entreprise, de projets, et d\'optimisation fiscale.')}}
-            </h4>
-  
-            <div class="readmore_bt mt-3">
-              <a data translate href="{{_('notre_expertise')}}">{{_('Plus d\'informations')}}</a>
+          <img class="rounded-3xl w-96" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" alt="Experts en comptabilité chez Medeo Partners">
+        </div>
+
+        </div>
+        <div class="row justify-content-center">
+            <!-- Left empty column to center the content -->
+            <div class="col-xs-0 col-sm-1"></div>
+
+            <!-- Main content -->
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <!-- Text Column -->
+                    
+
+                    <!-- Image Column -->
+                    
+                </div>
             </div>
 
-            
-          </div>
-          
-          <!-- Image Column -->
-          <div class="col-xs-12 col-md-4 text-center">
-            <img class="img_home mt-3 mt-md-0" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" 
-                 alt="Experts en comptabilité chez Medeo Partners">
-          </div>
+            <!-- Right empty column to center the content -->
+            <div class="col-xs-0 col-sm-1"></div>
         </div>
-      </div>
-  
-      <!-- Right empty column to center the content -->
-      <div class="col-xs-0 col-sm-1"></div>
     </div>
-  </div>
-  
 
-  <div class="container animate-top">
-    <div class="row">
-      <h1 class="banner_taital">{{_('Notre expertise à votre service')}}</h1>
-      <br>
-      <h3 class="medeo-cure-your-home">{{_('Medeo, "Cure your business"')}}</h3>
 
+    <div class="container animate-top">
+        <div class="row">
+            <h1 class="banner_taital">{{_('Notre expertise à votre service')}}</h1>
+            <br>
+            <h3 class="medeo-cure-your-home">{{_('Medeo, "Cure your business"')}}</h3>
+
+        </div>
     </div>
-  </div>
-  <br>
-  <div class="container-fluid animate-top">
-    <div class="row">
-      <!-- <div class="col-sm-3 col-md-6 col-lg-2">
+    <br>
+    <div class="container-fluid animate-top">
+        <div class="row">
+            <!-- <div class="col-sm-3 col-md-6 col-lg-2">
     </div> -->
 
-    <div id="prez_expert_comptable" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-      <img src="{{ url_for('static',filename='images/accounting.webp') }}" alt="Services de comptabilité"
-          width="70" height="70" loading="lazy" ><br>
-        <h2 class="title_expertise">{{_('Expertise <br>Comptable')}}</h2>
-        <div class="">`</div>
-        <div class="presentation_expertises_home">
-         <h5 class="banner_text"> {{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des \n
-          services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}</h5>
+            <div id="prez_expert_comptable" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <img src="{{ url_for('static',filename='images/accounting.webp') }}" alt="Services de comptabilité" width="70" height="70" loading="lazy"><br>
+                <h2 class="title_expertise">{{_('Expertise <br>Comptable')}}</h2>
+                <div class="">`</div>
+                <div class="presentation_expertises_home">
+                    <h5 class="banner_text"> {{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des \n services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
+                    </h5>
+                </div>
+            </div>
+
+            <hr class="custom-hr">
+
+            <div id="prez_audit" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <img src="{{ url_for('static',filename='images/audit.webp') }}" alt="Services d'audit financier" width="70" height="70" loading="lazy"><br>
+                <h2 class="title_expertise">{{_('Audit')}}<br><br></h2>
+                <div class="">`</div>
+                <div class="presentation_expertises_home">
+                    {{_("Notre cabinet comptable est spécialisé dans l\'audit et la certification \n des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons \n en étroite collaboration avec nos clients pour assurer la conformité de leurs comptes
+                    avec les normes \n comptables et fiscales en vigueur.")}}
+                </div>
+            </div>
+
+            <hr class="custom-hr">
+
+            <div id="prez_conseil_optimisation" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <img src="{{ url_for('static',filename='images/budget.webp') }}" width="70" height="70" loading="lazy" alt="Optimisation fiscale et gestion de budget"><br>
+                <h2 class="title_expertise">{{_('Conseil <br>optimisation ')}}</h2>
+                <div class="">`</div>
+                <div class="presentation_expertises_home">
+                    {{_("Nos services d\'optimisation d\'entreprise incluent l\'analyse de la \n performance, l\'identification des leviers de croissance, la mise en place de plans d\'action pour \n l\'amélioration de la rentabilité, la gestion de projets de transformation,
+                    la gestion du changement, \n l\'optimisation de la chaîne d\'approvisionnement et l\'analyse des coûts.")}}</div>
+
+            </div>
+
+            <hr class="custom-hr">
+
+            <div id="prez_service_info" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <img src="{{ url_for('static',filename='images/ux.webp') }}" width="70" height="70" loading="lazy" alt="ux-img"><br>
+                <h2 class="title_expertise"> {{_('Service <br>Informatique')}}</h2>
+                <div class="">`</div>
+                <div class="presentation_expertises_home">
+                    {{_("Notre département informatique gère tout type de problématiques liés \n aux systèmes d\'information, à la gestion de vos données clients ainsi qu\'à l\'amélioration de vos \n process.")}}
+                </div>
+
+            </div>
         </div>
-      </div>
-
-      <hr class="custom-hr">
-
-      <div id="prez_audit" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-        <img src="{{ url_for('static',filename='images/audit.webp') }}" alt="Services d'audit financier"
-        width="70" height="70" loading="lazy"><br>
-        <h2 class="title_expertise">{{_('Audit')}}<br><br></h2>
-        <div class="">`</div>
-        <div class="presentation_expertises_home">
-          {{_('Notre cabinet comptable est spécialisé dans l\'audit et la certification \n
-          des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons \n
-          en étroite collaboration avec nos clients pour assurer la conformité de leurs comptes avec les normes \n
-          comptables et fiscales en vigueur.')}}
-        </div>
-      </div>
-
-      <hr class="custom-hr">
-
-      <div id="prez_conseil_optimisation" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-        <img src="{{ url_for('static',filename='images/budget.webp') }}"
-        width="70" height="70" loading="lazy" alt="Optimisation fiscale et gestion de budget"><br>
-        <h2 class="title_expertise">{{_('Conseil <br>optimisation ')}}</h2>
-        <div class="">`</div>
-        <div class="presentation_expertises_home">
-          {{_('Nos services d\'optimisation d\'entreprise incluent l\'analyse de la \n
-          performance, l\'identification des leviers de croissance, la mise en place de plans d\'action pour \n
-          l\'amélioration de la rentabilité, la gestion de projets de transformation, la gestion du changement, \n
-          l\'optimisation de la chaîne d\'approvisionnement et l\'analyse des coûts.')}}</div>
-
-      </div>
-
-      <hr class="custom-hr">
-
-      <div id="prez_service_info" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-        <img src="{{ url_for('static',filename='images/ux.webp') }}"
-          width="70" height="70" loading="lazy" alt="ux-img"><br>
-        <h2 class="title_expertise"> {{_('Service <br>Informatique')}}</h2>
-        <div class="">`</div>
-        <div class="presentation_expertises_home">
-          {{_('Notre département informatique gère tout type de problématiques liés \n
-          aux systèmes d\'information, à la gestion de vos données clients ainsi qu\'à l\'amélioration de vos \n
-          process.')}}
-        </div>
-
-      </div>
     </div>
-  </div>
 
 
-  <br />
-  <br />
-  <br />
+    <br />
+    <br />
+    <br /> {% include 'carousel_common.html' %}
 
-
-  {% include 'carousel_common.html' %}
-
-  <br/>
-  <br/>
-  <br/>
+    <br />
+    <br />
+    <br />
 
 
 
-  <div class="container animate-top">
-    <a href="{{_('nouscontacter#nous_ecrire')}}">
-      <div class="row">
-        <br>
-        <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
-        <br>
-        <div class="cocon effet_ombre">
-          <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
+    <div class="container animate-top">
+        <a href="{{_('nouscontacter#nous_ecrire')}}">
+            <div class="row">
+                <br>
+                <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
+                <br>
+                <div class="cocon effet_ombre">
+                    <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
 
-          <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
-          <span class="fa-stack fa-2x icones_home_rouge_workwithus">
+                    <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
+                    <span class="fa-stack fa-2x icones_home_rouge_workwithus">
             <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
             <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
           </span>
 
-        </div>
-      </div>
-    </a>
+                </div>
+            </div>
+        </a>
 
-    <a href="{{_('nouscontacter#nous_rejoindre')}}">
-      <div class="row">
-        <div class="cocon effet_ombre">
-          <div class="my_div_aliza_two col-xs-2 col-sm-3 col-md-6 col-lg-5">
-          </div>
+        <a href="{{_('nouscontacter#nous_rejoindre')}}">
+            <div class="row">
+                <div class="cocon effet_ombre">
+                    <div class="my_div_aliza_two col-xs-2 col-sm-3 col-md-6 col-lg-5">
+                    </div>
 
-          <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
+                    <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
 
-          <span class="fa-stack fa-2x icones_home_rouge_workwithus">
+                    <span class="fa-stack fa-2x icones_home_rouge_workwithus">
             <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
             <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
           </span>
-        </div>
-      </div>
-    </a>
+                </div>
+            </div>
+        </a>
 
 
-    <a href="{{_('nouscontacter#nos_bureaux')}}">
-      <div class="row">
-        <div class="cocon effet_ombre">
-          <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
+        <a href="{{_('nouscontacter#nos_bureaux')}}">
+            <div class="row">
+                <div class="cocon effet_ombre">
+                    <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
 
 
-          <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
-          <span class="fa-stack fa-2x icones_home_rouge_workwithus" >
+                    <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
+                    <span class="fa-stack fa-2x icones_home_rouge_workwithus">
             <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px"></i>
             <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
           </span>
 
 
 
-        </div>
-      </div>
-    </a>
+                </div>
+            </div>
+        </a>
 
 
-  </div>
-  <br /><br /><br />
+    </div>
+    <br /><br /><br />
 
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
 
-    // Loader de la homepage
-    var loaderLogoMedeo = document.getElementById('splash-screen-id');
-    loaderLogoMedeo.style.display = 'block';
-    document.querySelector('.splash-screen img').classList.add('enlarged');
-    setTimeout(function () {
-      loaderLogoMedeo.style.display = 'none';
-    }, 2500);
+        // Loader de la homepage
+        /* var loaderLogoMedeo = document.getElementById('splash-screen-id');
+        loaderLogoMedeo.style.display = 'block';
+        document.querySelector('.splash-screen img').classList.add('enlarged');
+        setTimeout(function () {
+          loaderLogoMedeo.style.display = 'none';
+        }, 2500); */
 
 
 
-    ////   LIENS DES ENCARTS CLICKABLES
-    document.getElementById('prez_expert_comptable').addEventListener('click', function () {
-      window.location.href = 'expertise_comptable';
+        ////   LIENS DES ENCARTS CLICKABLES
+        document.getElementById('prez_expert_comptable').addEventListener('click', function() {
+            window.location.href = 'expertise_comptable';
+        });
+
+        document.getElementById('prez_audit').addEventListener('click', function() {
+            window.location.href = 'audit';
+        });
+
+        document.getElementById('prez_conseil_optimisation').addEventListener('click', function() {
+            window.location.href = 'conseil_optimisation';
+        });
+
+        document.getElementById('prez_service_info').addEventListener('click', function() {
+            window.location.href = 'notre_expertise';
+        });
+
     });
-
-    document.getElementById('prez_audit').addEventListener('click', function () {
-      window.location.href = 'audit';
-    });
-
-    document.getElementById('prez_conseil_optimisation').addEventListener('click', function () {
-      window.location.href = 'conseil_optimisation';
-    });
-
-    document.getElementById('prez_service_info').addEventListener('click', function () {
-      window.location.href = 'notre_expertise';
-    });
-
-  });
 </script>
 
 
 <script>
-  $(document).ready(function () {
-    var totalSlides = $('input[name="radio-buttons"]').length;
-    var currentIndex = 0;
+    $(document).ready(function() {
+        var totalSlides = $('input[name="radio-buttons"]').length;
+        var currentIndex = 0;
 
-    var autoSlide = setInterval(function () {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
-    }, 8000); // Change slide every 6 seconds
+        var autoSlide = setInterval(function() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
+        }, 8000); // Change slide every 6 seconds
 
-    // Reset the interval on manual click
-    $('.carousel-controls label, .carousel-dots label').click(function () {
-      clearInterval(autoSlide);
-      autoSlide = setInterval(function () {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
-      }, 8000);
+        // Reset the interval on manual click
+        $('.carousel-controls label, .carousel-dots label').click(function() {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(function() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
+            }, 8000);
+        });
+
+
+
+        document.querySelectorAll('.readmore_bt').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+        });
+
+
     });
-
-
-
-    document.querySelectorAll('.readmore_bt').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.stopPropagation();
-    });
-});
-
-
-  });
 </script>
 <style>
-  .clickable_encart {
-    cursor: pointer;
-
-  }
-
-
-
-.carousel-cell {
-  width: 66%;
-  height: 800px;
-  margin-right: 10px;
-  position: relative;
-  /* background: #8C8; */
-  border-radius: 5px;
-  counter-increment: gallery-cell;
-}
-
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  /* content: counter(gallery-cell); */
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
-}
-
-
-.square1, .square2{
-  width: 100px;
-  height: 100px;
-  position: absolute;
-}
-
-.square1{
-  background-color: red;
-}
-
-.square2{
-  background-color: blue;
-  left: 10%;
-  top: 10%;
-}
-
-
-
-
+    .clickable_encart {
+        cursor: pointer;
+    }
+    
+    .carousel-cell {
+        width: 66%;
+        height: 800px;
+        margin-right: 10px;
+        position: relative;
+        /* background: #8C8; */
+        border-radius: 5px;
+        counter-increment: gallery-cell;
+    }
+    /* cell number */
+    
+    .carousel-cell:before {
+        display: block;
+        text-align: center;
+        /* content: counter(gallery-cell); */
+        line-height: 200px;
+        font-size: 80px;
+        color: white;
+    }
+    
+    .square1,
+    .square2 {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+    
+    .square1 {
+        background-color: red;
+    }
+    
+    .square2 {
+        background-color: blue;
+        left: 10%;
+        top: 10%;
+    }
 </style>
 
 

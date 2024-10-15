@@ -1,0 +1,21 @@
+.bg-image-home {
+    background-image: url('../images/service/image-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    opacity: 0.5;
+    left: 0;
+    top: 0;
+}
+
+.text-primary {
+    color: #04487a;
+}
+
+.bg-primary {
+    background-color: #04487a;
+}

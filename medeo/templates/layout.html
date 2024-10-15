@@ -8,235 +8,18 @@
    <title>Medeo Partners : expertise en comptabilité , gestion, fiscalité </title>
    {% endif %}
 
-   <!-- Google Tag Manager and Analytics -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNNEV4QVDK"></script>
-   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11452962790"></script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-XNNEV4QVDK');
-      gtag('config', 'AW-11452962790');
-   </script>
-
-
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- mobile metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="robots" content="index,follow">
-   <!-- IExplorer -->
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- image -->
-   <meta property="og:image" content="{{ url_for('static', filename='medeo_images/Medeo_partners_couleur.webp') }}">
-
-   <!-- author -->
-   <meta name="author" content="Bamana-Solutions">
-
-
-   <meta name="description" content="Medeo Partners, expert en comptabilité et fiscalité à Paris, optimise la gestion financière de votre entreprise avec des services personnalisés.">
-   <meta name="keywords" content="Comptabilité, gestion d'entreprise, medeo partners, medeo, fiscalité, entreprise, expertise comptabilité, expert comptable, commissaire aux comptes, audit, compagnie nationale des commissaires aux comptes, ordre des experts-comptables, Paris, services financiers, optimisation fiscale, audit financier, commissariat aux comptes, conseils financiers, services comptables, gestion financière, optimisation financière">
-
-
-   <!-- Open Graph Meta Tags -->
-   <meta property="og:type" content="website">
-   <meta property="og:title" content="Cabinet de Comptabilité et de Commissaire aux Comptes à Paris | Medeo Partners">
-   <meta property="og:site_name" content="Medeo Partners">
-   <meta property="og:url" content="https://www.medeo-partners.com/">
-   <meta property="og:description" content="Découvrez comment Medeo Partners, avec plus de 10 ans d'expertise en comptabilité et fiscalité, optimise la gestion financière et fiscale de votre société. Notre cabinet à Paris vous offre des services personnalisés pour une gestion optimale de votre entreprise.">
-   <!-- Twitter Card Meta Tags -->
-   <meta name="twitter:card" content="summary_large_image">
-   <meta name="twitter:title" content="Cabinet de Comptabilité et de Commissaire aux Comptes à Paris | Medeo Partners">
-   <meta name="twitter:image" content="https://www.medeo-partners.com/static/images/twitter_image.jpg">
-   <meta name="twitter:description" content="Découvrez comment Medeo Partners, avec plus de 10 ans d'expertise en comptabilité et fiscalité, optimise la gestion financière et fiscale de votre société. Notre cabinet à Paris vous offre des services personnalisés pour une gestion optimale de votre entreprise.">
-
-   <!-- Gestion des url canoniques -->
-   <link rel="canonical" href="https://www.medeo-partners.com{{ request.path }}">
-
-   <!-- bootstrap css -->
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-
-   <!-- style css -->
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-   <!-- Responsive-->
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}">
-
-
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" media="print" onload="this.media='all'">
-   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"></noscript>
-
-   <!-- fonts -->
-   <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap"></noscript>
-
-   <!-- Favicon -->
-   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon_io/apple-touch-icon.png') }}">
-   <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon_io/favicon-32x32.png') }}">
-   <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon_io/favicon-16x16.png') }}">
-   <link rel="manifest" href="{{ url_for('static', filename='images/favicon_io/site.webmanifest') }}">
-   
-
-   <link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css"
-      rel="stylesheet" />
-
-   <!-- JSON LD-->
-   <script defer src="{{url_for('static', filename='js/json_ld_local_business.js') }}"></script>
-   <script defer src="{{url_for('static', filename='js/json_ld_service_expertise_comptable.js') }}"></script>
-   <script defer src="{{url_for('static', filename='js/json_ld_service_audit_financier.js') }}"></script>
-   <script defer src="{{url_for('static', filename='js/json_ld_aggr_ranking.js') }}"></script>
-   <script defer src="{{url_for('static', filename='js/json_ld_breadcrumb.js') }}"></script>
-   <script defer src="{{url_for('static', filename='js/json_ld_website.js') }}"></script>
-
-   <link rel="preconnect" href="https://www.googletagmanager.com">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-   <link rel="preconnect" href="https://unpkg.com">
-
-   <link rel="preload" href="{{ url_for('static', filename='medeo_images/Medeo_partners_couleur.webp') }}" as="image">
-  
-
+   {% include 'includes/head/meta.html' %}
+   {% include 'includes/head/google_tm_analytics.html' %}
+   {% include 'includes/head/open_graph.html' %}
+   {% include 'includes/head/twitter.html' %}
+   {% include 'includes/head/styles.html' %}
+   {% include 'includes/head/json_ld.html' %}
+   {% include 'includes/head/scripts.html' %}
 </head>
 
 <body>
-
-   <header class="site-header">
-      <div class="bg-img2"></div>
-      <!-- <div class="imaag"></div> -->
-
-
-      <nav class="navbar navbar-expand-md navbar-light bg-light ">
-         <div class="container-fluid">
-            <a class="navbar-brand" href="{{_('accueil')}}" rel="canonical">
-               <img src="{{url_for('static',filename='medeo_images/Medeo_partners_couleur.webp') }}"
-               width="100" height="88" 
-               style="max-width: 100%;height: auto;" alt="Cabinet d'experts-comptables à Paris" 
-               aria-label="Cabinet d'experts-comptables à Paris">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-               aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-               <ul class="navbar-nav">
-
-                  <li class="nav-item {{ 'active' if active_page == 'votre_cabinet' else '' }}">
-                     <a class="nav-link" href="{{_('votre_cabinet')}}">
-                        <div class="sous-titre">
-                           «{{_('Votre')}}» {{_('cabinet')}}
-                        </div>
-                     </a>
-                  </li>
-
-
-                  <li
-                     class="nav-item dropdown {{ 'active' if active_page in ['notre_expertise', 'expertise_comptable', 'audit', 'conseil_optimisation'] else '' }}">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_dos" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <div class="sous-titre">
-                           {{_('Notre expertise')}}
-                           <span class="dropdown-arrow">&#9662;</span>
-                        </div>
-                     </a>
-                     <ul class="dropdown-menu dropdd" aria-labelledby="navbarDropdown_dos">
-
-                        <li>
-                           <a class="dropdown-item menuderoulant" href="{{_('notre_expertise')}}">{{_('Notre
-                              expertise')}}</a>
-                        </li>
-                        <div class="dropdown-divider"></div>
-
-                        <li>
-                           <a class="dropdown-item menuderoulant"
-                              href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
-                        </li>
-                        <li>
-                           <a class="dropdown-item menuderoulant" href="{{_('audit')}}">{{_('Audit')}}</a>
-                        </li>
-                        <li>
-                           <a class="dropdown-item menuderoulant"
-                              href="{{_('conseil_optimisation')}}">{{_('Conseil-Optimisation')}}</a>
-                        </li>
-                     </ul>
-                  </li>
-
-
-
-                  <li class="nav-item {{ 'active' if active_page == 'actualites' else '' }}">
-                     <a class="nav-link" href="{{_('actualites')}}">
-                        <div class="sous-titre">
-                           {{_('Actualités')}}
-                        </div>
-                     </a>
-                  </li>
-                  <li
-                     class="nav-item {{ 'active' if request.path.endswith('nouscontacter') or request.path.endswith('contactus') else '' }}">
-                     <a class="nav-link" href="{{ url_for('main.nouscontacter', lang_code=g.lang_code) }}">
-                        <div class="sous-titre">
-                           {{ _('Nous contacter') }}
-                        </div>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link " href="{{_('espace_clients')}}">
-                        <div class="sous-titre">
-                           {{_('Espace client')}}
-                        </div>
-                     </a>
-                  </li>
-
-               </ul>
-
-               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row align-items-center justify-content-center">
-                  <li class="nav-item mt-2">
-                      <a class="nav-link" href="https://instagram.com/medeo_partners" aria-label="Instagram">
-                          <div class="nav_icone">
-                              <i class="fa-brands fa-instagram fa-2xl" aria-hidden="true"></i>
-                              <span class="sr-only">Instagram</span>
-                          </div>
-                      </a>
-                  </li>
-              
-                  <li class="nav-item mt-2">
-                      <a class="nav-link" href="https://www.linkedin.com/company/medeo-partners" aria-label="Linkedin">
-                          <div class="nav_icone">
-                              <i class="fa-brands fa-linkedin fa-2xl" aria-hidden="true"></i>
-                              <span class="sr-only">Linkedin</span>
-                          </div>
-                      </a>
-                  </li>
-              
-                  <li class="nav-item mt-2">
-                      <a class="nav-link" href="https://wa.me/33633914614" aria-label="Whatsapp">
-                          <div class="nav_icone">
-                              <i class="fa-brands fa-whatsapp fa-2xl" aria-hidden="true"></i>
-                              <span class="sr-only">Whatsapp</span>
-                          </div>
-                      </a>
-                  </li>
-              
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='en', **request.view_args) }}">
-                          <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}" loading="lazy" alt="usa icone" style="width: 32px; height: 32px;">
-                      </a>
-                  </li>
-              
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{ url_for(request.endpoint, lang_code='fr') }}">
-                          <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}" loading="lazy" alt="france icone" style="width: 32px; height: 32px;">
-                      </a>
-                  </li>
-              </ul>
-              
-            </div>
-         </div>
-
-      </nav>
-
-   </header>
-
-
+   
+   {% include 'includes/header.html' %}
 
    <main role="main" class="container pt-130">
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -249,11 +32,6 @@
       {% endif %}
       {% endwith %}
    </main>
-
-
-
-
-
 
 
 
@@ -326,61 +104,7 @@
 
 
    <!-- footer section start -->
-   <div class="footer_section py-5" style="background-color: #114a79;">
-    <div class="container-fluid px-5">
-        <div class="row">
-            <!-- About Section -->
-            <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
-                <h2 class="footer_taital text-white"><u>{{_('À PROPOS')}}</u></h2>
-                <a class="footer_text d-block text-white" href="{{_('votre_cabinet')}}">{{_('Le Cabinet')}}</a>
-                <a class="footer_text d-block text-white" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
-                <a class="footer_text d-block text-white" href="{{_('audit#commissariatauxcomptes')}}">{{_('Commissariat aux comptes')}}</a>
-            </div>
-
-            <hr class="custom-hr" style="background-color: white;">
-
-            <!-- Address Section -->
-            <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
-                  <h2 class="footer_taital text-white"><u>{{_('NOUS CONTACTER')}}</u></h2>
-                  <a class="footer_text d-block text-white" href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
-                  <a class="footer_text d-block text-white" href="{{_('votre_cabinet#carousel_partners')}}">{{_('L\'équipe')}}</a>
-                  
-                  <a class="footer_text d-block text-white" style="width: 100%;" >
-                     <i class="fa-solid fa-location-pin"></i>
-                     97 Bd Malesherbes - 75008 Paris
-                  </a>
-                  <a class="footer_text d-block text-white" style="width: 100%;">
-                     <i class="fa-solid fa-phone"></i>
-                     01 83 64 16 04
-                  </a>
-                  <a class="footer_text d-block text-white" style="width: 100%;">
-                     <i class="fa-solid fa-envelope"></i>
-                     contact@medeo-partners.com
-                  </a>
-  
-            </div>
-
-            <hr class="custom-hr" style="background-color: white;">
-
-
-            <!-- Logos Section -->
-            <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-                <div class="mb-3">
-                    <img src="{{url_for('static', filename='medeo_images/Medeo_partners_blc.webp') }}" width="200" height="180" alt="Medeo Partners logo" loading="lazy">
-                </div>
-                <div class="ml-4 crcc-logo">
-                    <a href="https://www.cncc.fr" target="_blank">
-                        <img src="{{url_for('static', filename='images/logo-crcc-black.webp')}}" alt="CNCC" width="180" height="80" loading="lazy">
-                    </a>
-                </div>
-                <div class="ml-4 crcc-logo mt-3">
-                    <a href="https://www.oec-paris.fr/" target="_blank">
-                        <img src="{{url_for('static', filename='images/oec.webp')}}" alt="Ordre des Experts Comptables" width="180" height="44" loading="lazy">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+   {% include 'includes/footer.html' %}
 
     <!-- Copyright Section -->
     
@@ -398,9 +122,6 @@
 </div>
 
    <!-- copyright section end -->
-   <!-- Javascript files-->
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 
    <script>
 
