@@ -13,7 +13,7 @@
     </div>
 
     <div class="container ease-in-out transition transition-300 mx-auto">
-        <div class="py-24 text-center flex flex-col gap-4 items-center">
+        <div class="pt-12 pb-24 text-center flex flex-col gap-4 items-center">
           <h1 data-translate class="text-2xl text-gray-500 font-extrabold">{{_('Bienvenue chez')}}</h1>
           <h1 data-translate class="text-7xl font-extrabold text-primary mb-2">{{_('Medeo Partners')}}</h1>
           <h4 data-translate class="text-gray-700">
@@ -22,164 +22,118 @@
               {{_("de création d\'entreprise, de projets, et d\'optimisation fiscale.")}}
           </h4>
 
-          <a class="rounded-full px-4 py-2 font-medium bg-primary text-white font-medium w-max" data translate href="{{_('notre_expertise')}}">{{_("Plus d\'informations")}}</a>
-
-          <img class="rounded-3xl w-96" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" alt="Experts en comptabilité chez Medeo Partners">
-        </div>
-
-        </div>
-        <div class="row justify-content-center">
-            <!-- Left empty column to center the content -->
-            <div class="col-xs-0 col-sm-1"></div>
-
-            <!-- Main content -->
-            <div class="col-xs-12 col-sm-8">
-                <div class="row">
-                    <!-- Text Column -->
-                    
-
-                    <!-- Image Column -->
-                    
-                </div>
-            </div>
-
-            <!-- Right empty column to center the content -->
-            <div class="col-xs-0 col-sm-1"></div>
+          <a class="rounded-full px-4 py-2 font-medium bg-primary text-white font-semibold w-max mt-1" data translate href="{{_('notre_expertise')}}">{{_("Plus d\'informations")}}</a>
         </div>
     </div>
 
-
-    <div class="container animate-top">
-        <div class="row">
-            <h1 class="banner_taital">{{_('Notre expertise à votre service')}}</h1>
-            <br>
-            <h3 class="medeo-cure-your-home">{{_('Medeo, "Cure your business"')}}</h3>
-
-        </div>
-    </div>
-    <br>
-    <div class="container-fluid animate-top">
-        <div class="row">
-            <!-- <div class="col-sm-3 col-md-6 col-lg-2">
-    </div> -->
-
-            <div id="prez_expert_comptable" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <img src="{{ url_for('static',filename='images/accounting.webp') }}" alt="Services de comptabilité" width="70" height="70" loading="lazy"><br>
-                <h2 class="title_expertise">{{_('Expertise <br>Comptable')}}</h2>
-                <div class="">`</div>
-                <div class="presentation_expertises_home">
-                    <h5 class="banner_text"> {{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des \n services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
-                    </h5>
-                </div>
-            </div>
-
-            <hr class="custom-hr">
-
-            <div id="prez_audit" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <img src="{{ url_for('static',filename='images/audit.webp') }}" alt="Services d'audit financier" width="70" height="70" loading="lazy"><br>
-                <h2 class="title_expertise">{{_('Audit')}}<br><br></h2>
-                <div class="">`</div>
-                <div class="presentation_expertises_home">
-                    {{_("Notre cabinet comptable est spécialisé dans l\'audit et la certification \n des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons \n en étroite collaboration avec nos clients pour assurer la conformité de leurs comptes
-                    avec les normes \n comptables et fiscales en vigueur.")}}
-                </div>
-            </div>
-
-            <hr class="custom-hr">
-
-            <div id="prez_conseil_optimisation" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <img src="{{ url_for('static',filename='images/budget.webp') }}" width="70" height="70" loading="lazy" alt="Optimisation fiscale et gestion de budget"><br>
-                <h2 class="title_expertise">{{_('Conseil <br>optimisation ')}}</h2>
-                <div class="">`</div>
-                <div class="presentation_expertises_home">
-                    {{_("Nos services d\'optimisation d\'entreprise incluent l\'analyse de la \n performance, l\'identification des leviers de croissance, la mise en place de plans d\'action pour \n l\'amélioration de la rentabilité, la gestion de projets de transformation,
-                    la gestion du changement, \n l\'optimisation de la chaîne d\'approvisionnement et l\'analyse des coûts.")}}</div>
-
-            </div>
-
-            <hr class="custom-hr">
-
-            <div id="prez_service_info" class="clickable_encart col-sm-3 col-md-6 col-lg-3 col-xl-3" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <img src="{{ url_for('static',filename='images/ux.webp') }}" width="70" height="70" loading="lazy" alt="ux-img"><br>
-                <h2 class="title_expertise"> {{_('Service <br>Informatique')}}</h2>
-                <div class="">`</div>
-                <div class="presentation_expertises_home">
-                    {{_("Notre département informatique gère tout type de problématiques liés \n aux systèmes d\'information, à la gestion de vos données clients ainsi qu\'à l\'amélioration de vos \n process.")}}
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <br />
-    <br />
-    <br /> {% include 'carousel_common.html' %}
-
-    <br />
-    <br />
-    <br />
-
-
-
-    <div class="container animate-top">
-        <a href="{{_('nouscontacter#nous_ecrire')}}">
-            <div class="row">
-                <br>
-                <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
-                <br>
-                <div class="cocon effet_ombre">
-                    <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
-
-                    <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
-                    <span class="fa-stack fa-2x icones_home_rouge_workwithus">
-            <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
-            <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
-          </span>
-
-                </div>
-            </div>
-        </a>
-
-        <a href="{{_('nouscontacter#nous_rejoindre')}}">
-            <div class="row">
-                <div class="cocon effet_ombre">
-                    <div class="my_div_aliza_two col-xs-2 col-sm-3 col-md-6 col-lg-5">
+    <section class="w-full relative">
+        <img class="w-full h-full object-cover absolute" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" alt="Experts en comptabilité chez Medeo Partners">
+        <div class="bg-gray-800 bg-opacity-90 h-full w-full relative z-10 backdrop-filter backdrop-blur-sm">
+            <div class="container mx-auto flex flex-col h-full py-16">
+                <h1 class="text-4xl text-white font-extrabold" data-translate>{{_('Notre expertise à votre service')}}</h1>
+                <h3 class="text-2xl text-white font-semibold opacity-60 italic" data-translate>{{_('Medeo, "Cure your business"')}}</h3>
+                <div class="grid grid-cols-4 mt-8 gap-8 text-center text-white">
+                    <div class="flex flex-col items-center gap-4">
+                        <img src="{{ url_for('static',filename='images/accounting.webp') }}" alt="Services de comptabilité" width="70" height="70" loading="lazy">
+                        <h2 class="text-xl font-bold">{{_('Expertise Comptable')}}</h2>
+                        <div class="text-left text-sm font-medium">
+                            <h5 class="banner_text"> {{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des \n services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
+                            </h5>
+                        </div>
                     </div>
-
-                    <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
-
-                    <span class="fa-stack fa-2x icones_home_rouge_workwithus">
-            <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
-            <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
-          </span>
+        
+                    <div class="flex flex-col items-center gap-4">
+                        <img src="{{ url_for('static',filename='images/audit.webp') }}" alt="Services d'audit financier" width="70" height="70" loading="lazy">
+                        <h2 class="text-xl font-bold">{{_("Audit")}}</h2>
+                        <div class="text-left text-sm font-medium">
+                            {{_("Notre cabinet comptable est spécialisé dans l\'audit et la certification \n des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons \n en étroite collaboration avec nos clients pour assurer la conformité de leurs comptes
+                            avec les normes \n comptables et fiscales en vigueur.")}}
+                        </div>
+                    </div>
+        
+                    <div class="flex flex-col items-center gap-4">
+                        <img src="{{ url_for('static',filename='images/budget.webp') }}" width="70" height="70" loading="lazy" alt="Optimisation fiscale et gestion de budget">
+                        <h2 class="text-xl font-bold">{{_('Conseil optimisation ')}}</h2>
+                        <div class="text-left text-sm font-medium">
+                            {{_("Nos services d\'optimisation d\'entreprise incluent l\'analyse de la \n performance, l\'identification des leviers de croissance, la mise en place de plans d\'action pour \n l\'amélioration de la rentabilité, la gestion de projets de transformation,
+                            la gestion du changement, \n l\'optimisation de la chaîne d\'approvisionnement et l\'analyse des coûts.")}}</div>
+        
+                    </div>
+        
+                    <div class="flex flex-col items-center gap-4">
+                        <img src="{{ url_for('static',filename='images/ux.webp') }}" width="70" height="70" loading="lazy" alt="ux-img">
+                        <h2 class="text-xl font-bold"> {{_('Service Informatique')}}</h2>
+                        <div class="text-left text-sm font-medium">
+                            {{_("Notre département informatique gère tout type de problématiques liés \n aux systèmes d\'information, à la gestion de vos données clients ainsi qu\'à l\'amélioration de vos \n process.")}}
+                        </div>
+        
+                    </div>
                 </div>
             </div>
-        </a>
+        </div>
+    </section>
 
+    <div class="bg-white w-full flex flex-col py-16 gap-8">
+        <h1 class="text-5xl text-primary text-center font-black py-8" data-translate>{{_('Découvrez nos dernières actualités')}}</h1>
+        {% include 'carousel_common.html' %}
 
-        <a href="{{_('nouscontacter#nos_bureaux')}}">
-            <div class="row">
-                <div class="cocon effet_ombre">
-                    <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
+        <div class="container animate-top">
+            <a href="{{_('nouscontacter#nous_ecrire')}}">
+                <div class="row">
+                    <br>
+                    <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
+                    <br>
+                    <div class="cocon effet_ombre">
+                        <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
 
+                        <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
+                        <span class="fa-stack fa-2x icones_home_rouge_workwithus">
+                <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
+                <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
+            </span>
 
-                    <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
-                    <span class="fa-stack fa-2x icones_home_rouge_workwithus">
-            <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px"></i>
-            <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
-          </span>
-
-
-
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+
+            <a href="{{_('nouscontacter#nous_rejoindre')}}">
+                <div class="row">
+                    <div class="cocon effet_ombre">
+                        <div class="my_div_aliza_two col-xs-2 col-sm-3 col-md-6 col-lg-5">
+                        </div>
+
+                        <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
+
+                        <span class="fa-stack fa-2x icones_home_rouge_workwithus">
+                <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
+                <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
+            </span>
+                    </div>
+                </div>
+            </a>
 
 
+            <a href="{{_('nouscontacter#nos_bureaux')}}">
+                <div class="row">
+                    <div class="cocon effet_ombre">
+                        <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
+
+
+                        <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
+                        <span class="fa-stack fa-2x icones_home_rouge_workwithus">
+                <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px"></i>
+                <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
+            </span>
+
+
+
+                    </div>
+                </div>
+            </a>
+
+
+        </div>
     </div>
-    <br /><br /><br />
-
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
