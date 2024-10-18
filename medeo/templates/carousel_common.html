@@ -1,115 +1,107 @@
-<div class="glide container mx-auto px-4">
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
+<div class="relative w-full">
+  <div class="bg-red-500 w-8 h-full absolute top-1/2 left-0 transform -translate-y-1/2 rounded-r-3xl"></div>
+  <div class="glide container mx-auto px-4 relative">
 
-      {# Social #}
-      <li class="glide__slide">
-        <div class="bg-gray-100 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
-          {# Image #}
-          <img class="w-full h-full object-cover" src="{{ url_for('static',filename='images/social.webp') }}" alt="img-social" 
-          width="420" 
-          height="253" 
-          loading="lazy">
-          {# Contenu #}
-          <div class="p-8 flex flex-col gap-4 col-span-2 overflow-auto">
-            <h2 class="text-3xl font-black text-gray-800 col-span-3">{{_('Social')}}</h2>
-            <p class="font-bold">{{_('Une semaine de jurisprudence sociale à la Cour de cassation')}}</p>
-            <p class="text-sm">{{_('Exécution du contrat Le salarié qui relate ou témoigne de faits constitutifs d\'un délit ou
-              d\'un crime dont il aurait eu connaissance dans l\'exercice de ses fonctions n\'est pas soumis à
-              l\'exigence d\'agir de manière désintéressée au sens de l\'article 6 de la loi 2016-1691 du 9
-              décembre 2016. Il ne peut pas être licencié pour ce motif, sauf mauvaise foi, laquelle ne peut
-              résulter que de la connaissance de la fausseté des faits qu\'il dénonce et non de la seule
-              circonstance que les faits dénoncés ne sont pas établis (Cass. soc. 13-9-2023 n° 21-22.301 FS-B).
-              Si des mesures peuvent être réservées à certains salariés, c\'est à la condition que tous ceux
-              placés dans une situation identique, au regard de l\'avantage en cause, aient la possibilité d\'en
-              bénéficier, à moins que la différence de traitement soit justifiée par des raisons objectives et
-              pertinentes. Une cour d\'appel ne peut pas décider que la différence de qualification entre deux
-              salariés lors de leur embauche constitue une raison objective à la différence de salaire dont se
-              plaint l\'un d\'eux, sans préciser en quoi cette différence entre les salariés, respectivement
-              engagés en qualité d\'assistant journaliste reporter d\'images stagiaire et d\'assistant
-              journaliste reporter d\'images, constitue une raison objective et pertinente justifiant la
-              disparité de traitement dans l\'exercice des mêmes fonctions de grand reporter groupe (Cass. soc.
-              13-9-2023 n° 22-11.338 F-PB). Dès lors que les données issues du terminal de saisie portatif
-              destinées aux relevés des consommations d\'énergie pour ERDF/GRDF permettent également de
-              contrôler et de surveiller l\'activité des salariés et ont été utilisées par l\'employeur afin de
-              collecter et d\'exploiter des informations concernant personnellement le salarié, il en résulte
-              que, s\'agissant d\'un traitement de données à caractère personnel, l\'employeur est tenu de
-              procéder à une déclaration préalable auprès de la Cnil et d\'informer les salariés sur
-              l\'utilisation de ce dispositif à cette fin. A défaut, ce moyen de preuve est illicite (Cass. soc.
-              13-9-2023 n° 22-14.461 F-D).')}}</p>
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+
+        {# Social #}
+        <li class="glide__slide">
+          <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+              {# Image #}
+              <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col gap-4 justify-center">
+                  <img class="w-full h-48 object-cover rounded-3xl" src="{{ url_for('static',filename='images/social.webp') }}" alt="img-social" width="420" height="253" loading="lazy">
+                  <h2 class="text-3xl font-black text-white col-span-3">{{_('Social')}}</h2>
+                  <p class="font-bold text-white">{{_('Découvrez toutes nos actualités Social')}}</p>
+              </div>
+              {# Contenu #}
+              <div class="p-8 flex flex-col gap-4 col-span-2 overflow-auto">
+                  <h2 class="text-3xl font-black text-primary col-span-3">{{_('Social')}}</h2>
+                  <p class="font-bold">{{_('Une semaine de jurisprudence sociale à la Cour de cassation')}}</p>
+                  <p class="text-sm max-lines-10">{{_('Exécution du contrat Le salarié qui relate ou témoigne de faits constitutifs d\'un délit ou d\'un crime dont il aurait eu connaissance dans l\'exercice de ses fonctions n\'est pas soumis à l\'exigence d\'agir de manière désintéressée
+                      au sens de l\'article 6 de la loi 2016-1691 du 9 décembre 2016. Il ne peut pas être licencié pour ce motif, sauf mauvaise foi, laquelle ne peut résulter que de la connaissance de la fausseté des faits qu\'il dénonce et non de la seule
+                      circonstance que les faits dénoncés ne sont pas établis (Cass. soc. 13-9-2023 n° 21-22.301 FS-B). Si des mesures peuvent être réservées à certains salariés, c\'est à la condition que tous ceux placés dans une situation identique, au
+                      regard de l\'avantage en cause, aient la possibilité d\'en bénéficier, à moins que la différence de traitement soit justifiée par des raisons objectives et pertinentes. Une cour d\'appel ne peut pas décider que la différence de qualification
+                      entre deux salariés lors de leur embauche constitue une raison objective à la différence de salaire dont se plaint l\'un d\'eux, sans préciser en quoi cette différence entre les salariés, respectivement engagés en qualité d\'assistant
+                      journaliste reporter d\'images stagiaire et d\'assistant journaliste reporter d\'images, constitue une raison objective et pertinente justifiant la disparité de traitement dans l\'exercice des mêmes fonctions de grand reporter groupe
+                      (Cass. soc. 13-9-2023 n° 22-11.338 F-PB). Dès lors que les données issues du terminal de saisie portatif destinées aux relevés des consommations d\'énergie pour ERDF/GRDF permettent également de contrôler et de surveiller l\'activité
+                      des salariés et ont été utilisées par l\'employeur afin de collecter et d\'exploiter des informations concernant personnellement le salarié, il en résulte que, s\'agissant d\'un traitement de données à caractère personnel, l\'employeur
+                      est tenu de procéder à une déclaration préalable auprès de la Cnil et d\'informer les salariés sur l\'utilisation de ce dispositif à cette fin. A défaut, ce moyen de preuve est illicite (Cass. soc. 13-9-2023 n° 22-14.461 F-D).')}}</p>
+                  <a href="#" class="text-blue-800 inline-block text-right">{{_('En savoir plus')}}</a>
+              </div>
+          </div>
+      </li>
+
+
+        {# Juridique #}
+        <li class="glide__slide">
+          <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+            {# Image #}
+            <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col gap-4 justify-center">
+              <img class="w-full h-48 object-cover rounded-3xl" src="{{ url_for('static',filename='images/juridique.webp') }}" alt="img-juridique"
+              width="420"
+              height="253"
+              loading="lazy">
+              <h2 class="text-3xl font-black text-white col-span-3">{{_('Juridique')}}</h2>
+              <p class="font-bold text-white">{{_('Découvrez toutes nos actualités Juridique')}}</p>
+            </div>
+            {# Contenu #}
+            <div class="p-8 flex flex-col gap-4 col-span-2 overflow-auto">
+              <h2 class="text-3xl font-black text-primary col-span-3">{{_('Juridique')}}</h2>
+              <p class="font-bold">{{_("Le mécénat d\'entreprise pour acquérir un manuscrit enluminé")}}</p>
+              <p class="text-sm max-lines-10">
+                Au printemps dernier, la Bibliothèque nationale de France avait ouvert une souscription publique afin d’acquérir un exceptionnel manuscrit enluminé réalisé vers 1370 pour le roi de France Charles V. Mais, début septembre, la somme de 1,6 M€ nécessaire à cette acquisition n’était pas encore réunie. C’est pourquoi l’État se tourne désormais vers le mécénat d’entreprise en vue de collecter la somme de 460 000 €. À ce titre, la ministre de la Culture a publié un avis visant à informer les entreprises soumises à l’impôt sur les sociétés, d’après leur bénéfice réel, qu’elles peuvent profiter d’une réduction d’impôt allant jusqu’à 90 % des dons effectués en contribution à l’achat de cette œuvre présentant un intérêt majeur pour le patrimoine national. À noter : les versements ne sont pas déductibles des résultats imposables de l’entreprise donatrice. Pour cela, les entreprises intéressées doivent adresser, en double exemplaire, une offre de versement, établie selon le modèle prévu à cet effet, à la direction générale des patrimoines et de l’architecture, service des musées de France, 182 rue Saint-Honoré, 75001 Paris. Puis, les dons doivent être acceptés par les ministres de la Culture et du Budget. La réduction s’applique sur l’impôt dû au titre de l’exercice d’acceptation des versements. Et attention, elle ne peut pas excéder 50 % du montant de cet impôt. Précision : l’appel aux dons est ouvert jusqu’au 31 décembre 2023.
+              </p>
               <a href="#" class="text-blue-800 inline-block text-right">{{_('En savoir plus')}}</a>
+            </div>
           </div>
-        </div>
-      </li>
+        </li>
 
+        {# Fiscalité #}
+        <li class="glide__slide">
+          <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+            {# Image #}
+            <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col gap-4 justify-center">
+              <img class="w-full h-48 object-cover rounded-3xl" src="{{ url_for('static',filename='images/work.webp') }}" alt="img-fiscalite"
+              width="420"
+              height="253"
+              loading="lazy">
+              <h2 class="text-3xl font-black text-white col-span-3">{{_('Fiscalité')}}</h2>
+              <p class="font-bold text-white">{{_('Découvrez toutes nos actualités Fiscalité')}}
+            </div>
+            {# Contenu #}
+            <div class="p-8 flex flex-col gap-4 col-span-2 overflow-auto">
+              <h2 class="text-3xl font-black text-primary col-span-3">{{_('Fiscalité')}}</h2>
+              <p class="font-bold">{{_("Plus que quelques jours pour opter pour le régime de l\'auto-entrepreneur en 2024")}}</p>
+              <p class="text-sm max-lines-10">
+                {{_("Les exploitants individuels soumis au régime micro-BIC ou micro-BNC et relevant du régime
+                micro-social ont la possibilité d\'opter pour le régime de l\'auto-entrepreneur prévu à l\'article
+                151-0 du CGI, sous réserve que le montant des revenus nets du foyer fiscal soit inférieur ou égal,
+                pour une part de quotient familial, à 27 478 €. Les exploitants qui optent pour le régime de
+                l\'auto-entrepreneur s\'acquittent auprès d\'un seul interlocuteur de l\'impôt sur le revenu et de
+                l\'ensemble des cotisations et contributions de sécurité sociale par des versements libératoires
+                mensuels ou trimestriels égaux à un pourcentage du chiffre d\'affaires ou des recettes réalisés au
+                cours de la période considérée.
 
-      {# Juridique #}
-      <li class="glide__slide">
-        <div class="bg-gray-100 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
-          {# Image #}
-          <img class="w-full h-full object-cover" src="{{ url_for('static',filename='images/juridique.webp') }}" alt="img-juridique"
-          width="420"
-          height="253"
-          loading="lazy">
-          {# Contenu #}
-          <div class="p-8 flex flex-col gap-4 col-span-2 overflow-auto">
-            <h2 class="text-3xl font-black text-gray-800 col-span-3">{{_('Juridique')}}</h2>
-            <p class="font-bold">{{_("Le mécénat d\'entreprise pour acquérir un manuscrit enluminé")}}</p>
-            <p class="text-sm">
-              Au printemps dernier, la Bibliothèque nationale de France avait ouvert une souscription publique afin d’acquérir un exceptionnel manuscrit enluminé réalisé vers 1370 pour le roi de France Charles V. Mais, début septembre, la somme de 1,6 M€ nécessaire à cette acquisition n’était pas encore réunie. C’est pourquoi l’État se tourne désormais vers le mécénat d’entreprise en vue de collecter la somme de 460 000 €. À ce titre, la ministre de la Culture a publié un avis visant à informer les entreprises soumises à l’impôt sur les sociétés, d’après leur bénéfice réel, qu’elles peuvent profiter d’une réduction d’impôt allant jusqu’à 90 % des dons effectués en contribution à l’achat de cette œuvre présentant un intérêt majeur pour le patrimoine national. À noter : les versements ne sont pas déductibles des résultats imposables de l’entreprise donatrice. Pour cela, les entreprises intéressées doivent adresser, en double exemplaire, une offre de versement, établie selon le modèle prévu à cet effet, à la direction générale des patrimoines et de l’architecture, service des musées de France, 182 rue Saint-Honoré, 75001 Paris. Puis, les dons doivent être acceptés par les ministres de la Culture et du Budget. La réduction s’applique sur l’impôt dû au titre de l’exercice d’acceptation des versements. Et attention, elle ne peut pas excéder 50 % du montant de cet impôt. Précision : l’appel aux dons est ouvert jusqu’au 31 décembre 2023.
-            </p>
-            <a href="#" class="text-blue-800 inline-block text-right">{{_('En savoir plus')}}</a>
+                Pour l\'imposition des revenus perçus en 2024, l\'option pour le régime de l\'auto-entrepreneur
+                doit être exercée au plus tard le 30 septembre 2023 auprès des organismes sociaux compétents.
+
+                A noter :
+                En cas de création d\'entreprise, l\'option pour le régime de l\'auto-entrepreneur doit être
+                exercée au plus tard le dernier jour du troisième mois qui suit celui de la création de
+                l\'entreprise et peut être formulée auprès du guichet unique électronique des formalités
+                d\'entreprises.")}}
+
+                {{_('© Editions Francis Lefebvre - La Quotidienne')}}
+              </p>
+              <a href="#" class="text-blue-800 inline-block text-right">{{_('En savoir plus')}}</a>
+            </div>
           </div>
-        </div>
-      </li>
-
-      {# Fiscalité #}
-      <li class="glide__slide">
-        <div class="bg-gray-100 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
-          {# Image #}
-          <img class="w-full h-full object-cover" src="{{ url_for('static',filename='images/work.webp') }}" alt="img-fiscalite"
-          width="420"
-          height="253"
-          loading="lazy">
-          {# Contenu #}
-          <div class="p-8 flex flex-col gap-4 col-span-2 overflow-auto">
-            <h2 class="text-3xl font-black text-gray-800 col-span-3">{{_('Fiscalité')}}</h2>
-            <p class="font-bold">{{_("Plus que quelques jours pour opter pour le régime de l\'auto-entrepreneur en 2024")}}</p>
-            <p class="text-sm">
-              {{_("Les exploitants individuels soumis au régime micro-BIC ou micro-BNC et relevant du régime
-              micro-social ont la possibilité d\'opter pour le régime de l\'auto-entrepreneur prévu à l\'article
-              151-0 du CGI, sous réserve que le montant des revenus nets du foyer fiscal soit inférieur ou égal,
-              pour une part de quotient familial, à 27 478 €. Les exploitants qui optent pour le régime de
-              l\'auto-entrepreneur s\'acquittent auprès d\'un seul interlocuteur de l\'impôt sur le revenu et de
-              l\'ensemble des cotisations et contributions de sécurité sociale par des versements libératoires
-              mensuels ou trimestriels égaux à un pourcentage du chiffre d\'affaires ou des recettes réalisés au
-              cours de la période considérée.
-
-              Pour l\'imposition des revenus perçus en 2024, l\'option pour le régime de l\'auto-entrepreneur
-              doit être exercée au plus tard le 30 septembre 2023 auprès des organismes sociaux compétents.
-
-              A noter :
-              En cas de création d\'entreprise, l\'option pour le régime de l\'auto-entrepreneur doit être
-              exercée au plus tard le dernier jour du troisième mois qui suit celui de la création de
-              l\'entreprise et peut être formulée auprès du guichet unique électronique des formalités
-              d\'entreprises.")}}
-
-              {{_('© Editions Francis Lefebvre - La Quotidienne')}}
-            </p>
-            <a href="#" class="text-blue-800 inline-block text-right">{{_('En savoir plus')}}</a>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Controls and Bullets -->
-  <div class="glide__arrows" data-glide-el="controls">
-    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">Prev</button>
-    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">Next</button>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {

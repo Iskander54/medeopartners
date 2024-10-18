@@ -19,3 +19,10 @@
 .bg-primary {
     background-color: #04487a;
 }
+
+.max-lines-10 {
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
