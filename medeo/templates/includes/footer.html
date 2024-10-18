@@ -1,38 +1,33 @@
-<div class="footer_section py-5" style="background-color: #114a79;">
-    <div class="container-fluid px-5">
-        <div class="row">
+<div class="footer_section px-4 py-16 bg-primary text-white">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-3">
             <!-- About Section -->
-            <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
-                <h2 class="footer_taital text-white"><u>{{_('À PROPOS')}}</u></h2>
-                <a class="footer_text d-block text-white" href="{{_('votre_cabinet')}}">{{_('Le Cabinet')}}</a>
-                <a class="footer_text d-block text-white" href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
-                <a class="footer_text d-block text-white" href="{{_('audit#commissariatauxcomptes')}}">{{_('Commissariat aux comptes')}}</a>
+            <div class="flex flex-col gap-2">
+                <h2 class="text-xl mb-2 font-extrabold">{{_('À PROPOS')}}</h2>
+                <a href="{{_('votre_cabinet')}}">{{_('Le Cabinet')}}</a>
+                <a href="{{_('expertise_comptable')}}">{{_('Expertise-Comptable')}}</a>
+                <a href="{{_('audit#commissariatauxcomptes')}}">{{_('Commissariat aux comptes')}}</a>
             </div>
-
-            <hr class="custom-hr" style="background-color: white;">
 
             <!-- Address Section -->
-            <div class="col-xs-12 col-sm-6 col-md-3 mb-4">
-                  <h2 class="footer_taital text-white"><u>{{_('NOUS CONTACTER')}}</u></h2>
-                  <a class="footer_text d-block text-white" href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
-                  <a class="footer_text d-block text-white" href="{{_('votre_cabinet#carousel_partners')}}">{{_("L\'équipe")}}</a>
+            <div class="flex flex-col gap-2">
+                  <h2 class="text-xl mb-2 font-extrabold">{{_('NOUS CONTACTER')}}</h2>
+                  <a href="{{_('nouscontacter')}}">{{_('Contact')}}</a>
+                  <a href="{{_('votre_cabinet#carousel_partners')}}">{{_("L\'équipe")}}</a>
                   
-                  <a class="footer_text d-block text-white" style="width: 100%;" >
-                     <i class="fa-solid fa-location-pin"></i>
+                  <a class="flex gap-2 items-center text-gray-200 mt-4">
+                     <i class="fa-solid text-white fa-location-pin"></i>
                      97 Bd Malesherbes - 75008 Paris
                   </a>
-                  <a class="footer_text d-block text-white" style="width: 100%;">
-                     <i class="fa-solid fa-phone"></i>
+                  <a class="flex gap-2 items-center text-gray-200">
+                     <i class="fa-solid text-white fa-phone"></i>
                      01 83 64 16 04
                   </a>
-                  <a class="footer_text d-block text-white" style="width: 100%;">
-                     <i class="fa-solid fa-envelope"></i>
+                  <a class="flex gap-2 items-center text-gray-200">
+                     <i class="fa-solid text-white fa-envelope"></i>
                      contact@medeo-partners.com
                   </a>
-  
             </div>
-
-            <hr class="custom-hr" style="background-color: white;">
 
 
             <!-- Logos Section -->

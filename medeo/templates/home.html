@@ -76,80 +76,45 @@
         </div>
     </section>
 
-    <div class="bg-white w-full flex flex-col py-16 gap-8">
+    <div class="bg-white w-full flex flex-col py-16 gap-16">
         <h1 class="text-5xl text-primary text-center font-black py-8" data-translate>{{_('Découvrez nos dernières actualités')}}</h1>
         {% include 'carousel_common.html' %}
+    </div>
 
-        <div class="container animate-top">
-            <a href="{{_('nouscontacter#nous_ecrire')}}">
-                <div class="row">
-                    <br>
-                    <h1 class="banner_taital">{{_('Travailler avec nous')}}</h1>
-                    <br>
-                    <div class="cocon effet_ombre">
-                        <div class="my_div_aliza col-xs-2 col-sm-3 col-md-6 col-lg-5"> </div>
-
-                        <h2 class="text_bottom_home">{{_('Nous contacter')}}</h2>
-                        <span class="fa-stack fa-2x icones_home_rouge_workwithus">
-                <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
-                <i class="fa-solid fa-phone fa-stack-1x fa-inverse" style="color: white;"></i>
-            </span>
-
+    <div class="bg-primary w-full flex flex-col py-16 gap-16">
+        <div class="container mx-auto flex flex flex-col gap-4">
+            <h1 class="text-white text-4xl font-extrabold">{{_('Travailler avec nous...')}}</h1>
+            <p class="text-white text-lg font-medium">{{_("Besoin d\'un expert comptable pour votre entreprise ? Medeo Partners est là pour vous aider, avec une équipe d\'experts comptables et de fiscalistes prêts à vous accompagner dans la gestion de votre entreprise.")}}</p>
+            <div class="grid grid-cols-3 gap-8 mt-12">
+                <a href="{{_('nouscontacter#nous_ecrire')}}" class="flex flex-col items-center w-full relative rounded-lg shadow-lg h-48 overflow-hidden">
+                    <img src="{{ url_for('static',filename='images/woman_phone.webp') }}" alt="Nous contacter" class="absolute h-full w-full object-cover">
+                    <div class="relative flex flex-col gap-4 items-center justify-center z-10 w-full h-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-50">
+                        <i class="fa-solid fa-phone text-red-500 text-5xl"></i>
+                        <h2 class="text-center text-xl font-bold">{{_('Nous contacter')}}</h2>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <a href="{{_('nouscontacter#nous_rejoindre')}}">
-                <div class="row">
-                    <div class="cocon effet_ombre">
-                        <div class="my_div_aliza_two col-xs-2 col-sm-3 col-md-6 col-lg-5">
-                        </div>
-
-                        <h2 class="text_bottom_home">{{_('Nous rejoindre')}}</h2>
-
-                        <span class="fa-stack fa-2x icones_home_rouge_workwithus">
-                <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px;"></i>
-                <i class="fa-solid fa-hand-point-up fa-stack-1x fa-inverse" style="color: white;"></i>
-            </span>
+                <a href="{{_('nouscontacter#nous_rejoindre')}}" class="flex flex-col items-center w-full relative rounded-lg shadow-lg h-48 overflow-hidden">
+                    <img src="{{ url_for('static',filename='images/main-img.webp') }}" alt="Nous rejoindre" class="absolute h-full w-full object-cover">
+                    <div class="relative flex flex-col gap-4 items-center justify-center z-10 w-full h-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-50">
+                        <i class="fa-solid fa-hand-point-up text-red-500 text-5xl"></i>
+                        <h2 class="text-center text-xl font-bold">{{_('Nous rejoindre')}}</h2>
                     </div>
-                </div>
-            </a>
+                </a>
 
-
-            <a href="{{_('nouscontacter#nos_bureaux')}}">
-                <div class="row">
-                    <div class="cocon effet_ombre">
-                        <div class="my_div_aliza_three col-xs-2 col-sm-3 col-md-6 col-lg-5"></div>
-
-
-                        <h2 class="text_bottom_home">{{_('Nos bureaux')}}</h2>
-                        <span class="fa-stack fa-2x icones_home_rouge_workwithus">
-                <i class="fa-solid fa-circle fa-stack-2x" style="color: #e91d2a; margin-right: 30px"></i>
-                <i class="fa-solid fa-location-dot fa-stack-1x fa-inverse" style="color: white;"></i>
-            </span>
-
-
-
+                <a href="{{_('nouscontacter#nos_bureaux')}}" class="flex flex-col items-center w-full relative rounded-lg shadow-lg h-48 overflow-hidden">
+                    <img src="{{ url_for('static',filename='images/eiffel_tower.webp') }}" alt="Nos bureaux" class="absolute h-full w-full object-cover">
+                    <div class="relative flex flex-col gap-4 items-center justify-center z-10 w-full h-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-50">
+                        <i class="fa-solid fa-location-dot text-red-500 text-5xl"></i>
+                        <h2 class="text-center text-xl font-bold">{{_('Nos bureaux')}}</h2>
                     </div>
-                </div>
-            </a>
-
-
+                </a>
+            </div>
         </div>
     </div>
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-
-        // Loader de la homepage
-        /* var loaderLogoMedeo = document.getElementById('splash-screen-id');
-        loaderLogoMedeo.style.display = 'block';
-        document.querySelector('.splash-screen img').classList.add('enlarged');
-        setTimeout(function () {
-          loaderLogoMedeo.style.display = 'none';
-        }, 2500); */
-
-
 
         ////   LIENS DES ENCARTS CLICKABLES
         document.getElementById('prez_expert_comptable').addEventListener('click', function() {
