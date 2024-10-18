@@ -12,7 +12,7 @@
         <img src="{{url_for('static', filename='images/medeo_logo.webp') }}" alt="Experts en comptabilité chez Medeo Partners" class="image_accueil_loader">
     </div>
 
-    <div class="container ease-in-out transition transition-300 mx-auto">
+    <div class="container ease-in-out transition transition-300 mx-auto grid grid-cols-2 gap-16">
         <div class="pt-12 pb-24 text-center flex flex-col gap-4 items-center">
           <h1 data-translate class="text-2xl text-gray-500 font-extrabold">{{_('Bienvenue chez')}}</h1>
           <h1 data-translate class="text-7xl font-extrabold text-primary mb-2">{{_('Medeo Partners')}}</h1>
@@ -23,6 +23,9 @@
           </h4>
 
           <a class="rounded-full px-4 py-2 font-medium bg-primary text-white font-semibold w-max mt-1" data translate href="{{_('notre_expertise')}}">{{_("Plus d\'informations")}}</a>
+        </div>
+        <div class="w-full h-96 rounded-2xl overflow-hidden relative">
+            <img src="{{ url_for('static',filename='images/medeo_talking.webp') }}" alt="Services de comptabilité" class="object-cover w-full h-full" loading="lazy">
         </div>
     </div>
 
