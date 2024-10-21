@@ -1,31 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="loader-container">
-    <div id="foregid" class="foreg"></div>
-    <span id="loaderid" class="loader"></span>
-</div>
 
+<div class="bg-image-home"></div>
 
-<div class="page-heading-cabinet animate-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="banner_taital">{{_('Conseil-Optimisation')}}</h1>
-                <h4 class="medeo-cure-your" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</h4>
-                <br>
-            </div>
-        </div>
+<!-- Page Content -->
+<div id="content">
+  <div data-translate class="h-96 animate-top">
+    <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
+      <h5 class="text-primary font-bold text-xl opacity-75">{{_("Notre expertise")}}</h5>
+      <h1 class="text-5xl text-primary font-black">{{_('Conseil-Optimisation')}}</h1>
+      <h2 class="italic text-primary opacity-95 font-bold text-2xl">{{_('Medeo, "Cure your business"')}}</h2>
     </div>
-</div>
+  </div>
 
-<div class="container animate-top">
-    <div class="row">
-        <div class="col-7">
-            <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/delegation.webp') }}"
+  <section class="w-full bg-white border-t">
+    <div class="container mx-auto py-16 flex flex-col gap-8">
+
+      <div class="flex flex-col gap-8">
+
+        <div class="flex flex-col gap-4 w-1/2">
+            <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/delegation.webp') }}"
                 alt="blog-img" loading="lazy" alt="Notre expertise">
-            <h3 class="title-nos-expertises"> {{_('Cession')}}</h3><br>
-            <h6 class="speech-nos-expertises" style="line-height: 30px;">
-                {{_("Nous accompagnons les entreprises lors d\'une cession en offrant différent services tels que :")}}
+            <h3 class="text-3xl font-bold text-primary">{{_('Cession')}}</h3>
+            <p class="text-lg text-gray-700">{{_("Nous accompagnons les entreprises lors d'une cession en offrant différent services tels que :")}}
                 <br>
                 {{_("· Détermination précise de la valeur")}}
                 <br>
@@ -37,26 +34,14 @@
                 <br>
                 {{_("· Assistance à la négociation des termes financiers afin de garantir les conditions financières les plus avantageuses")}}
                 <br>
-            </h6>
+            </p>
         </div>
 
-    </div>
-
-
-
-
-    <div class="row">
-        <div class="col-5">
-        </div>
-
-        <div class="col-7">
-            <img class="logo-nos-expertises" style="display: block;margin-left: auto;"
-                src="{{ url_for('static',filename='images/acquisition.webp') }}" alt="blog-img" loading="lazy" alt="Fusion acquisition de sociétés">
-            <h3 class="title-nos-expertises" style="text-align: right;"> {{_('Fusions & Acquisitions')}} </h3><br>
-
-
-            <h6 class="speech-nos-expertises" style="line-height: 30px;">
-                {{_('Nous accompagnons les entreprises dans les processus de fusions et acquisitions  en les aidant à :')}}
+        <div class="ml-auto flex flex-col gap-4 w-1/2">
+            <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/acquisition.webp') }}"
+                alt="Expertise-Comptable Commissariat aux comptes">
+            <h3 class="text-3xl font-bold text-primary">{{_('Fusions & Acquisitions')}} </h3>
+            <p class="text-lg text-gray-700">{{_('Nous accompagnons les entreprises dans les processus de fusions et acquisitions  en les aidant à :')}}
                 <br>
                 {{_('· Évaluer la performance financière de la société cible')}}
                 <br>
@@ -66,82 +51,44 @@
                 <br>
                 {{_('· Négocier les termes financiers de la transaction')}}
                 <br>
-                {{_("· Mettre en place l\'ensemble des éléments financiers nécessaires au bon déroulement de la transaction")}}
+                {{_("· Mettre en place l'ensemble des éléments financiers nécessaires au bon déroulement de la transaction")}}
                 <br>
-            </h6>
-
+            </p>
         </div>
 
-    </div>
-
-
-
-
-
-    <div class="row">
-        <div class="col-7">
-            <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/international.webp') }}"
-                alt="blog-img" loading="lazy" alt="Comptabilité à l'international">
-            <h3 class="title-nos-expertises"> {{_('Accompagnement International')}} </h3><br>
-
-            <h6 class="speech-nos-expertises" style="line-height: 30px;">
-                {{_('Vous souhaitez vous implanter en France ?')}}
+        <div class="flex flex-col gap-4 w-1/2">
+            <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/international.webp') }}"
+                alt="Expertise-Comptable Commissariat aux comptes">
+            <h3 class="text-3xl font-bold text-primary">{{_('Accompagnement International')}}</h3>
+            <p class="text-lg text-gray-700">{{_('Vous souhaitez vous implanter en France ?')}}
                 <br><br>
-                {{_('Nos experts accompagnent les investisseurs et les sociétés étrangères dans \n
+                {{_("Nos experts accompagnent les investisseurs et les sociétés étrangères dans \n
                 la tenue comptable, fiscale \n
-                et sociale de leur structure implantée en France, jusqu\'à la réalisation de due \n
-                diligences, en passant par la domiciliation et un conseil juridique et fiscal d\'exception. \n')}}
-
-            </h6>
+                et sociale de leur structure implantée en France, jusqu'à la réalisation de due \n
+                diligences, en passant par la domiciliation et un conseil juridique et fiscal d\'exception. \n")}}
+            </p>
         </div>
-        <div class="col-5">
-        </div>
-    </div>
 
-
-    <div class="row">
-        <div class="col-5">
-        </div>
-        <div class="col-7">
-
-            <img class="logo-nos-expertises" style="display: block;margin-left: auto;"
-                src="{{ url_for('static',filename='images/ancestors.webp') }}" alt="blog-img" loading="lazy" alt="Conseils financiers aux particuliers">
-            <h5 class="title-nos-expertises" style="text-align: right;"> {{_('Conseil aux particuliers')}} </h5><br>
-            
-            <h6 class="speech-nos-expertises" style="margin-bottom: 10%;line-height: 30px;">
+        <div class="ml-auto flex flex-col gap-4 w-1/2">
+            <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/ancestors.webp') }}"
+                alt="Expertise-Comptable Commissariat aux comptes">
+            <h5 class="text-3xl font-bold text-primary">{{_('Conseil aux particuliers')}}</h5>
+            <p class="text-lg text-gray-700">
                 <br>
-                {{_("Nous accompagnons également les particuliers en leur proposant notre expertise pour les aider dans la gestion de leur patrimoine et leur fournissant des conseils sur la planification fiscale et l\'optimisation de leurs finances personnelles.")}}
+                {{_("Nous accompagnons également les particuliers en leur proposant notre expertise pour les aider dans la gestion de leur patrimoine et leur fournissant des conseils sur la planification fiscale et l'optimisation de leurs finances personnelles.")}}
                 <br><br>
-                {{_("Notre accompagnement inclut l\'explication de leurs obligations fiscales et l\'assistance dans la préparation de leurs déclarations de revenus.")}}
+                {{_("Notre accompagnement inclut l'explication de leurs obligations fiscales et l'assistance dans la préparation de leurs déclarations de revenus.")}}
                 <br><br>
-                {{_("De plus, nous les assistons dans l\'élaboration de stratégies visant à minimiser leurs impôts, à gérer leur épargne et à anticiper leur retraite, ainsi qu\'à prendre des décisions financières judicieuses.")}}
-            </h6>
+                {{_("De plus, nous les assistons dans l'élaboration de stratégies visant à minimiser leurs impôts, à gérer leur épargne et à anticiper leur retraite, ainsi qu'à prendre des décisions financières judicieuses.")}}
+            </p>
         </div>
+
+      </div>
+
+      <a href="{{_('nouscontacter')}}" class="mt-8 bg-primary text-white font-bold text-lg py-2 px-4 w-max mx-auto rounded-full">{{_('Contactez-nous')}}</a>
+
     </div>
-
-
-
-
+  </section>
 </div>
 
-
-<script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-
-        // Loader des autres pages
-        var loaderDiv = document.getElementById('loaderid');
-        var foregroundDiv = document.getElementById('foregid');
-        // Show the div
-        foregroundDiv.style.display = 'block';
-        loaderDiv.style.display = 'block';
-        // Hide the div after 1 seconds
-        setTimeout(function () {
-            loaderDiv.style.display = 'none';
-            foregroundDiv.style.display = 'none';
-        }, 1000);
-    });
-
-
-</script>
 {% endblock content %}
