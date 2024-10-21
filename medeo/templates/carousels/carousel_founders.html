@@ -1,0 +1,85 @@
+<div class="relative w-full">
+    <div class="bg-red-500 w-8 h-full absolute top-1/2 left-0 transform -translate-y-1/2 rounded-r-3xl"></div>
+    <div class="glide container mx-auto px-4 relative">
+  
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides flex items-center">
+  
+          <li class="glide__slide">
+            <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+
+                <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                    <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                    <img alt="photo israel haikou" src="/static/images/israel_haikou.jpg" class="rounded-full w-72 h-72 mx-auto" loading="lazy" alt="Expert-Comptable">
+                    <h2 class="text-3xl font-black text-white mt-4">Israël HAIKOU</h2>
+                    <a class="text-red-200 mb-4 font-semibold" href="israel.haikou@medeo-partners.com">israel.haikou@medeo-partners.com</a>
+                    <p class="font-bold text-white italic opacity-75">{{_('CEO, Expert-Comptable et commissaire aux comptes')}}</p>
+                </div>
+
+                <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                    <p class="font-bold italic text-lg mb-4">{{_("\"Pour réussir, il n\'y a que des plans A pas de plans B \"")}}</p>
+                    <p class="text-sm mb-4 font-semibold">{{_('une phrase qui caractérise bien mon état d\'esprit.')}}</p>
+                    <p class="font-bold italic text-lg">{{_("\"La facon de commencer est d\'arrêter de parler et de commencer à faire\"")}}</p>
+                    <p class="text-xs mb-4 italic">{{_('Walt Disney, cofondateur de The Walt Disney Company')}}</p>
+                    <p>
+                    {{_('Diplômé en Licence d\'économie, je suis me suis réorienté dans un domaine qui m\'a toujours')}} {{_('passionné : la comptabilité. J\'ai donc obtenu une deuxième licence en comptabilité (DCG), un')}} {{_('master en
+                    comptabilité (DSCG), puis le DEC (Bac+8). Mon cursus m\'a permis d\'avoir une vision')}} {{_('plus complète du monde de l\'entreprenariat.')}}
+
+                    <br>
+                    <br> {{_('Depuis le début de ma carrière, j\'ai eu pour ambition de fonder mon propre cabinet. Je m\'étais \n donné une dizaine d\'années pour y parvenir.')}} {{_(' J\'ai exercé pendant plus de 10 ans en France et aux États-Unis,
+                    ce qui m\'a permis d\'acquérir\n une expérience solide et très enrichissante.')}} {{_('Dix ans plus tard, après avoir obtenu mon diplôme d\'Expert-Comptable et de Commissaire aux\n Comptes, j\'ai co-fondé mon entreprise.')}}
+                    {{_('Avant tout, je suis un fervent amateur de la culture entrepreneuriale et un mentor dans l\'âme.')}} {{_('Entreprendre a toujours été pour moi une seconde nature et la comptabilité, une passion.\n Le mélange des deux donne
+                    une personne motivée et déterminée à construire une entreprise de renommée\n internationale.')}} {{_('MEDEO Partners sera plus qu\'un cabinet d\'expertise-comptable et de commissariat \n aux comptes : il sera un partenaire
+                    privilégié pour mes clients, car c\'est ensemble que nous\n avancerons.')}}
+                    </p>
+                </div>
+            </div>
+        </li>
+
+        <li class="glide__slide">
+            <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+
+                <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                    <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                    <img alt="photo avi gozlane" src="/static/images/avi_gozlane.webp" class="rounded-full w-72 h-72 mx-auto" loading="lazy">
+                    <h2 class="text-3xl font-black text-white mt-4">Avi GOZLANE</h2>
+                    <a class="text-red-200 mb-4 font-semibold" href="avi.gozlane@medeo-partners.com">avi.gozlane@medeo-partners.com</a>
+                    <p class="font-bold text-white italic opacity-75">{{_('Associé, Directeur de mission')}}</p>
+                </div>
+
+                <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                    <p class="font-bold italic text-lg">{{_('" L\'art de la réussite consiste à savoir s\'entourer des meilleurs."')}}</p>
+                    <p class="text-xs mb-4 italic">{{_('John Fitzgerald Kennedy')}}</p>
+                    <p>
+                    {{_('Fort de huit années d’expérience en cabinet d’expertise comptable et de commissariat \n aux comptes, et de mon cursus universitaire en comptabilité et gestion, je souhaite accompagner\n les entreprises et prendre
+                    soin de mes clients. ')}}
+                    <br><br> {{_('La diversité de mon parcours professionnel m’a permis de développer une expertise\n considérable dans mon domaine et une assurance au quotidien, au chevet de mes partenaires.')}}
+                    <br><br> {{_('Méticuleux, rigoureux et réactif, je me positionne comme le garant de \n la bonne gestion de votre activité. ')}}
+                    <br><br> {{_('MEDEO Partners sera plus qu’un cabinet d’expertise-comptable et de commissariat\n aux comptes : un appui sans faille pour votre entreprise, que ce soit au niveau juridique, \n fiscal, social, ou dans le cadre
+                    de contrôles sociaux et/ou fiscaux. ')}}
+                    </p>
+                </div>
+            </div>
+        </li>
+  
+  
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var glide = new Glide('.glide', {
+          type: 'carousel',
+          startAt: 0,
+          perView: 1,
+          focusAt: 'center',
+          autoplay: 5000,
+          hoverpause: true,
+          animationDuration: 800,
+          animationTimingFunc: 'ease-in-out'
+        }).mount();
+    });
+  </script>  
