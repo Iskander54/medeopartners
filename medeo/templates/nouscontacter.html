@@ -1,337 +1,215 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="loader-container">
-  <div id="foregid" class="foreg"></div>
-  <span id="loaderid" class="loader"></span>
-</div>
 
+<div class="bg-image-home"></div>
 
-<div class="fade_in page-heading-nouscontacter animate-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="banner_taital">{{_('Nous contacter')}}</h1>
-        <h4 class="medeo-cure-your" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</h4>
-        <h1 class="banner_taital" style=" margin-top: 7vw;">{{_('Nos bureaux')}}</h1>
-      </div>
-    </div>
-  </div>
-</div>
+<div id="content">
 
-
-<div class="fade_in container animate-top" id="nos_bureaux">
-  <div class="row">
-    <div class="cocon_contact effet_ombre_nous_contacter">
-      <iframe style="border-radius: 25px;" height="300" width="60%" frameborder="0" scrolling="no" marginheight="0"
-        marginwidth="0"
-        loading="lazy"
-        title="Medeo Partners 97 boulevard Malesherbes"
-        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=97%20boulevard%20Malesherbes+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
-          href="https://www.maps.ie/population/">Find Population on Map</a></iframe>
-      <div class="adresse_contact">
-        <h1 class="title_contact" style="margin-bottom: 20px;"> PARIS</h1><br>
-
-        <h3 class="banner_taital_h3"> MEDEO PARTNERS</h3>
-        <h3 class="banner_taital_h3"> 97 BD MALESHERBES</h3>
-        <h3 class="banner_taital_h3"> 75008 Paris</h3>
-        <h3 class="banner_taital_h3"> 01 83 64 16 04</h3>
-      </div>
+  <div data-translate class="h-96 animate-top">
+    <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
+      <h1 class="text-5xl text-primary font-black">{{_('Nous contacter')}}</h1>
+      <h2 class="italic text-primary opacity-75 font-bold text-2xl">{{_('Medeo, "Cure your business"')}}</h2>
     </div>
   </div>
 
-  <div class="row">
-    <div class="cocon_contact effet_ombre_nous_contacter">
+  <section class="w-full bg-white border-t">
+    <div class="container py-16 mx-auto flex flex-col gap-16">
+      <h2 class="font-bold text-primary text-2xl">{{_('Nos bureaux')}}</h2>
 
-      <div class="adresse_contact">
-        <h1 class="title_contact" style="margin-bottom: 20px;"> WASHINGTON</h1><br>
-
-        <h3 class="banner_taital_h3"> MEDEO TAX</h3>
-        <h3 class="banner_taital_h3"> 1831 2nd ST NE UNIT#509</h3>
-        <h3 class="banner_taital_h3"> WASHINGTON, DC 20002</h3>
-        <h3 class="banner_taital_h3"> +240 217 90 53</h3>
-      </div>
-      <!-- <iframe style="border-radius: 25px;" height="300" width="60%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=97%20boulevard%20Malesherbes+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Find Population on Map</a></iframe> -->
-      <iframe style="border-radius: 25px;" height="300" width="60%" frameborder="0" scrolling="no" marginheight="0"
-        marginwidth="0"
-        loading="lazy"
-        title="Medeo Tax 97 boulevard Malesherbes"
-        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1831%202nd%20ST%20washington%20DC+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
-          href="https://www.maps.ie/population/">Find Population on Map</a></iframe>
-    </div>
-  </div>
-</div>
-
-
-<div class=" fade_inpage-heading-nouscontacter-dos" id="nous_ecrire">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="banner_taital animate-top">{{_('Nous contacter ')}}</h1>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div id="formulaire" class="fade_in contact_section layout_padding animate-top">
-  <div class="container">
-    </br>
-    <div class="contact_section_2 layout_padding">
-      <div class="row justify-content-md-center">
-        <div class="col-md-10">
-          <div class="contact_main" style="padding-right:25px">
-            <form class="submitForm" method="post" enctype="multipart/form-data" action="">
-              {{ form.hidden_tag() }}
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <!-- {{ form.firstname.label(class="form-control-label white") }} -->
-                    {% if form.firstname.errors %}
-                    {{ form.firstname(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                      {% for error in form.firstname.errors %}
-                      <span>{{ error }}</span>
-                      {% endfor %}
-                    </div>
-                    {% else %}
-                    <!--{{ form.firstname(class="form-control form-control-lg effet_ombre_form") }}-->
-                    <input class="form-control form-control-lg effet_ombre_form" id="firstname" maxlength="30"
-                      minlength="2" name="firstname" placeholder={{_("PRÉNOM")}} required type="text" value>
-                    {% endif %}
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <!-- {{ form.lastname.label(class="form-control-label white") }} -->
-                    {% if form.lastname.errors %}
-                    {{ form.lastname(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                      {% for error in form.lastname.errors %}
-                      <span>{{ error }}</span>
-                      {% endfor %}
-                    </div>
-                    {% else %}
-                    <!--{{ form.lastname(class="form-control form-control-lg effet_ombre_form") }}-->
-                    <input class="form-control form-control-lg effet_ombre_form" id="lastname" maxlength="30"
-                      minlength="2" name="lastname" placeholder={{_("NOM")}} required type="text" value>
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <!-- {{ form.phonenumber.label(class=" form-control-label white") }} -->
-                    {% if form.phonenumber.errors %}
-                    {{ form.phonenumber(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                      {% for error in form.phonenumber.errors %}
-                      <span>{{ error }}</span>
-                      {% endfor %}
-                    </div>
-                    {% else %}
-                    <input class="form-control form-control-lg effet_ombre_form" id="phonenumber" maxlength="10"
-                      minlength="10" name="phonenumber" placeholder={{_("TÉLÉPHONE")}} required type="text" value>
-                    <!-- {{ form.phonenumber(class="form-control form-control-lg effet_ombre_form")}}-->
-                    {% endif %}
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <!-- {{ form.email.label(class="form-control-label white") }} -->
-                    {% if form.email.errors %}
-                    {{ form.email(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                      {% for error in form.email.errors %}
-                      <span>{{ error }}</span>
-                      {% endfor %}
-                    </div>
-                    {% else %}
-                    <input class="form-control form-control-lg effet_ombre_form" id="email" name="email"
-                      placeholder={{_("E-MAIL")}} required type="email" value>
-                    <!-- {{ form.email(class="form-control form-control-lg effet_ombre_form") }}-->
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <!-- {{ form.subject.label(class="form-control-label white") }} -->
-                    {% if form.subject.errors %}
-                    {{ form.subject(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                      {% for error in form.subject.errors %}
-                      <span>{{ error }}</span>
-                      {% endfor %}
-                    </div>
-                    {% else %}
-                    <input class="form-control form-control-lg effet_ombre_form" id="subject" maxlength="50"
-                      minlength="4" name="subject" placeholder={{_("SUJET")}} required type="text" value>
-                    <!-- {{ form.subject(class="form-control form-control-lg effet_ombre_form")}}-->
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <!-- {{ form.content.label(class="form-control-label white") }} -->
-                {% if form.content.errors %}
-                {{ form.content(class="form-control form-control-lg is-invalid") }}
-                <div class="invalid-feedback">
-                  {% for error in form.content.errors %}
-                  <span>{{ error }}</span>
-                  {% endfor %}
-                </div>
-                {% else %}
-                <input class="form-control form-control-lg effet_ombre_form" id="content" maxlength="200" minlength="10"
-                  name="content" placeholder={{_("MESSAGE")}} required type="text" value>
-                <!-- {{ form.content(class="form-control form-control-lg effet_ombre_form") }}-->
-                {% endif %}
-              </div>
-              <div class="form-group">
-                <div class="row recaptcha">
-                  {{form.recaptcha}}
-                  {{ form.submit(class="button_envoyer_contact btn-lg") }}
-                </div>
-              </div>
-            </form>
-          </div>
+      <div class="grid grid-cols-2 gap-24">
+        <div class="flex flex-col">
+          <iframe style="border-radius: 25px;" height="300" width="100%" frameborder="0" scrolling="no" marginheight="0"
+            marginwidth="0"
+            loading="lazy"
+            title="Medeo Partners 97 boulevard Malesherbes"
+            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=97%20boulevard%20Malesherbes+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+              href="https://www.maps.ie/population/">Find Population on Map</a></iframe>
+          
+          <h1 class="text-4xl text-primary font-black my-4"> Paris</h1>
+          <h3 class="text-sm font-semibold"> MEDEO PARTNERS</h3>
+          <h3 class="text-sm font-semibold"> 97 BD MALESHERBES</h3>
+          <h3 class="text-sm font-semibold"> 75008 Paris</h3>
+          <h3 class="text-sm font-semibold"> 01 83 64 16 04</h3>
         </div>
 
-      </div>
-    </div>
-  </div>
-</div>
-
-    <div class="container">
-      <div class="row mx-0_HAKIM">
-        <div class="col-lg-12">
-          <h1 class="banner_taital" id="nous_rejoindre" style="margin-top: 0vw;">{{_('Nous rejoindre')}}</h1>
+        <div class="flex flex-col">
+          <iframe style="border-radius: 25px;" height="300" width="100%" frameborder="0" scrolling="no" marginheight="0"
+          marginwidth="0"
+          loading="lazy"
+          title="Medeo 1831 2nd ST NE UNIT#509"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1831%202nd%20ST%20washington%20DC+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+            href="https://www.maps.ie/population/">Find Population on Map</a></iframe>
+          
+          <h1 class="text-4xl text-primary font-black my-4" style="margin-bottom: 20px;"> Washington</h1>
+          <h3 class="text-sm font-semibold"> MEDEO TAX</h3>
+          <h3 class="text-sm font-semibold"> 1831 2nd ST NE UNIT#509</h3>
+          <h3 class="text-sm font-semibold"> WASHINGTON, DC 20002</h3>
+          <h3 class="text-sm font-semibold"> +240 217 90 53</h3>
         </div>
-      </div>      
+      </div>
+
+      
     </div>
-    <div class="container-fluid">
-      <div class="row justify-content-center text-center">
-        <!-- First Column -->
-        <div class="col-12 col-md-3 mb-4 openposition-card bg-blue">
-          <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Comptabilité" />
-          <div class="header">
-            <div class="main-image">
-              <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" alt="Comptabilité" />
+  </section>
+
+  <section class="w-full bg-primary text-white" id="contact">
+    <div class="container py-16 mx-auto flex flex-col gap-16">
+      <h2 class="font-bold text-5xl">{{_('Nous contacter')}}</h2>
+      <form class="submitForm" method="post" enctype="multipart/form-data" action="">
+        {{ form.hidden_tag() }}
+
+        {# Form: First name, Last name and Number phone #}
+        <div class="grid grid-cols-3 gap-8">
+          <div class="flex flex-col gap-1">
+            {{ form.firstname.label(class="text-sm") }}
+            {% if form.firstname.errors %}
+            {{ form.firstname(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.firstname.errors %}
+              <span class="text-red-500">{{ error }}</span>
+              {% endfor %}
             </div>
+            {% else %}
+            <input class="px-4 py-2 rounded-lg text-black" id="firstname" maxlength="30"
+              minlength="2" name="firstname" placeholder={{_("PRÉNOM")}} required type="text" value>
+            {% endif %}
           </div>
-          <div class="body">
-            <h5 class="titre_carousel_notre_expertise">
-              {{ _('Poste : Expert Comptable CDI (H/F) ') }}
-            </h5>
-            <h6 class="text_carousel_notre_expertise" style="line-height: 30px;">
-              {{ _("Nous recherchons un Expert Comptable expérimenté pour rejoindre notre équipe en tant que\n"
-              "collaborateur en CDI. Si vous avez une solide expérience en expertise comptable et que vous\n"
-              "souhaitez évoluer au sein d'un cabinet de renom, nous aimerions vous rencontrer.") }}
-            </h6>
+
+
+
+          <div class="flex flex-col gap-1">
+            {{ form.lastname.label(class="text-sm") }}
+            {% if form.lastname.errors %}
+            {{ form.lastname(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.lastname.errors %}
+              <span class="text-red-500">{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            <input class="px-4 py-2 rounded-lg text-black" id="lastname" maxlength="30"
+              minlength="2" name="lastname" placeholder={{_("NOM")}} required type="text" value>
+            {% endif %}
+          </div>
+
+
+
+          <div class="flex flex-col gap-1">
+            {{ form.phonenumber.label(class="text-sm") }}
+            {% if form.phonenumber.errors %}
+            {{ form.phonenumber(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.phonenumber.errors %}
+              <span class="text-red-500">{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            <input class="px-4 py-2 rounded-lg text-black" id="phonenumber" maxlength="10"
+              minlength="10" name="phonenumber" placeholder={{_("TÉLÉPHONE")}} required type="text" value>
+            {% endif %}
           </div>
         </div>
-    
-        <!-- Second Column -->
-        <div class="col-12 col-md-3 mb-4 openposition-card bg-red">
-          <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Comptabilité" />
-          <div class="header">
-            <div class="main-image">
-              <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" alt="Comptabilité" />
+
+        {# Form: E-mail and subject #}
+        <div class="grid grid-cols-3 gap-8 mt-8">
+          <div class="flex flex-col gap-1">
+            {{ form.email.label(class="text-sm") }}
+            {% if form.email.errors %}
+            {{ form.email(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.email.errors %}
+              <span class="text-red-500">{{ error }}</span>
+              {% endfor %}
             </div>
+            {% else %}
+            <input class="px-4 py-2 rounded-lg text-black" id="email" name="email"
+              placeholder={{_("E-MAIL")}} required type="email" value>
+            <!-- {{ form.email(class="form-control form-control-lg effet_ombre_form") }}-->
+            {% endif %}
           </div>
-          <div class="body">
-            <h5 class="titre_carousel_notre_expertise">
-              {{ _('Candidature Spontanée') }}
-            </h5>
-            <h6 class="text_carousel_notre_expertise" style="line-height: 30px;">
-              {{ _("Vous êtes passionné par le domaine de la comptabilité et vous souhaitez rejoindre une équipe "
+
+          <div class="flex flex-col gap-1 col-span-2">
+            {{ form.subject.label(class="text-sm") }}
+            {% if form.subject.errors %}
+            {{ form.subject(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.subject.errors %}
+              <span class="text-red-500">{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            <input class="px-4 py-2 rounded-lg text-black" id="subject" maxlength="50"
+              minlength="4" name="subject" placeholder={{_("SUJET")}} required type="text" value>
+            {% endif %}
+          </div>
+        </div>
+
+        {# Form: Message #}
+        <div class="flex flex-col gap-1 mt-8">
+          {{ form.content.label(class="form-control-label white") }}
+          {% if form.content.errors %}
+          {{ form.content(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.content.errors %}
+            <span class="text-red-500">{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %}
+          <textarea class="px-4 py-2 rounded-lg text-black resize-y" id="content" maxlength="200" minlength="10"
+            name="content" placeholder={{_("MESSAGE")}} required type="text" value></textarea>
+          <!-- {{ form.content(class="form-control form-control-lg effet_ombre_form") }}-->
+          {% endif %}
+        </div>
+        <div class="flex justify-between items-center mt-8">
+          {{ form.recaptcha }}
+          {{ form.submit(class="text-primary text-lg bg-white font-semibold rounded-lg py-2 px-8 cursor-pointer") }}
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="w-full bg-white">
+    <div class="container py-16 mx-auto flex flex-col gap-8">
+      <h2 class="font-bold text-primary text-5xl">{{_('Nous rejoindre')}}</h2>
+
+      <div class="grid grid-cols-3 gap-8 select-none">
+        {# First Column #}
+        <div class="flex flex-col gap-4 rounded-3xl bg-primary text-white p-8">
+          <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" class="w-full h-32 rounded-3xl object-cover" alt="Comptabilité" />
+          <h2 class="text-xl font-bold">{{_('Poste : Expert Comptable CDI (H/F) ')}}</h2>
+          <p class="text-sm">{{ _("Nous recherchons un Expert Comptable expérimenté pour rejoindre notre équipe en tant que\n"
+            "collaborateur en CDI. Si vous avez une solide expérience en expertise comptable et que vous\n"
+            "souhaitez évoluer au sein d'un cabinet de renom, nous aimerions vous rencontrer.") }}
+          </p>
+        </div>
+
+        {# Second Column #}
+        <div class="flex flex-col gap-4 rounded-3xl bg-primary text-white p-8">
+          <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" class="w-full h-32 rounded-3xl object-cover" alt="Comptabilité" />
+          <h2 class="text-xl font-bold">{{_('Poste : Alternant en Comptabilité')}}</h2>
+          <p class="text-sm">{{ _("Vous êtes étudiant en comptabilité et vous recherchez un contrat d'alternance pour votre année\n") }}
+          {{ _("d'études ? Nous proposons des contrats d'alternance pour les étudiants en comptabilité qui souhaitent\n") }}
+          {{ _("acquérir une expérience professionnelle enrichissante.") }}
+          </p>
+        </div>
+
+        {# Third Column #}
+        <div class="flex flex-col gap-4 rounded-3xl bg-gray-50 p-8">
+          <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" class="w-full h-32 rounded-3xl object-cover" alt="Comptabilité" />
+          <h2 class="text-xl text-primary font-bold">{{_('Candidature Spontanée')}}</h2>
+          <p class="text-sm">{{ _("Vous êtes passionné par le domaine de la comptabilité et vous souhaitez rejoindre une équipe "
               "d'experts-comptables dynamique ? Nous sommes toujours à la recherche de talents exceptionnels. "
               "Envoyez-nous votre candidature spontanée dès aujourd'hui.") }}
-            </h6>
-          </div>
-        </div>
-    
-        <!-- Third Column -->
-        <div class="col-12 col-md-3 mb-4 openposition-card bg-grey">
-          <img class="quotes-img" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Comptabilité" />
-          <div class="header">
-            <div class="main-image">
-              <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" alt="Comptabilité" />
-            </div>
-          </div>
-          <div class="body">
-            <h5 class="titre_carousel_notre_expertise">
-              {{ _('Poste : Alternant en Comptabilité') }}
-            </h5>
-            <h6 class="text_carousel_notre_expertise" style="line-height: 30px;">
-              {{ _("Vous êtes passionné par le domaine de la comptabilité et vous souhaitez rejoindre une équipe "
-              "d'experts-comptables dynamique ? Nous sommes toujours à la recherche de talents exceptionnels. "
-              "Envoyez-nous votre candidature spontanée dès aujourd'hui.") }}
-            </h6>
-          </div>
+          </p>
         </div>
       </div>
+      {# Rejoignez-nous bouton #}
+      <div class="flex justify-center">
+        <a href="#contact" class="bg-primary text-lg text-white font-semibold rounded-lg py-2 px-8">{{_('Rejoignez-nous')}}</a>
+      </div>
     </div>
+  </section>
 
-
-<style>
-  .titre_carousel_notre_expertise {
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
-  }
-
-  .text_carousel_notre_expertise {
-    color: white;
-    font-size: medium;
-    margin: 0px !important;
-    width: 95%;
-  }
-
-  .main-image {
-    background-color: #fff;
-    height: 100px;
-    width: 100px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-  }
-
-  .main-image img {
-    display: inline-block;
-    width: 100%;
-    border-radius: 50%;
-    margin: auto;
-  }
-</style>
-
-
-
-
-<script>
-
-  document.addEventListener('DOMContentLoaded', function () {
-
-
-    window.scrollTo(0, 0);
-
-    // Loader des autres pages
-    var loaderDiv = document.getElementById('loaderid');
-    var foregroundDiv = document.getElementById('foregid');
-    // Show the div
-    foregroundDiv.style.display = 'block';
-    loaderDiv.style.display = 'block';
-    // Hide the div after 1 seconds
-    setTimeout(function () {
-      loaderDiv.style.display = 'none';
-      foregroundDiv.style.display = 'none';
-    }, 1000);
-  });
-
-
-</script>
-
-
+</div>
 
 {% endblock content %}
