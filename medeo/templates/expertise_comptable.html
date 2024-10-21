@@ -1,130 +1,71 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="loader-container">
-  <div id="foregid" class="foreg"></div>
-  <span id="loaderid" class="loader"></span>
-</div>
+<div class="bg-image-home"></div>
 
+<!-- Page Content -->
+<div id="content">
+  <div data-translate class="h-96 animate-top">
+    <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
+      <h5 class="text-primary font-bold text-xl opacity-75">{{_("Notre expertise")}}</h5>
+      <h1 class="text-5xl text-primary font-black">{{_('Expertise comptable')}}</h1>
+      <h2 class="italic text-primary opacity-95 font-bold text-2xl">{{_('Medeo, "Cure your business"')}}</h2>
+    </div>
+  </div>
 
-<div class="page-heading-cabinet animate-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="banner_taital">{{_('Expertise comptable')}}</h1>
-        <h4 class="medeo-cure-your" style="font-style: italic;">{{_('Medeo, "Cure your business"')}}</h5>
-        <br>
+  <section class="w-full bg-white border-t">
+    <div class="container mx-auto py-16 flex flex-col gap-8">
+
+      <div class="flex flex-col gap-8">
+
+        <div class="flex flex-col gap-4 w-1/2">
+          <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/accounting.webp') }}"
+            alt="Expertise-Comptable Commissariat aux comptes">
+          <h3 class="text-3xl font-bold text-primary">{{_('Expertise comptable')}}</h3>
+          <p class="text-lg text-gray-700">{{_("Nous fournissons des conseils pour aider les entreprises à prendre des décisions financières et fiscales éclairées.")}}
+            <br><br>
+            {{_("Nous les aidons à établir et à surveiller les systèmes financiers et comptables pour garantir l'exactitude de leurs données.")}}
+            <br><br>
+            {{_("Nous préparons et examinons les déclarations fiscales pour s'assurer que les entreprises remplissent leurs obligations fiscales.")}}
+            <br><br>
+            {{_("Nous offrons des conseils stratégiques pour maximiser les opérations commerciales et les stratégies financières des entreprises.")}}
+            <br><br>
+            {{_("Nous aidons à prévenir les litiges financiers et à les gérer lorsqu'ils se produisent.")}}
+          </p>
+        </div>
+
+        <div class="ml-auto flex flex-col gap-4 w-1/2">
+          <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/tax.webp') }}"
+            alt="Expertise-Comptable Commissariat aux comptes">
+          <h3 class="text-3xl font-bold text-primary">{{_('Fiscalité')}}</h3>
+          <p class="text-lg text-gray-700">{{_("Nous accompagnons les entreprises dans la compréhension de leurs obligations fiscales, dans l'élaboration de stratégies visant à optimiser leurs charges fiscales ainsi que dans la préparation et le dépôt de leurs déclarations fiscales et ce, dans le plus strict respect de la législation et des délais imposés.")}}
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-4 w-1/2">
+          <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/compliant.webp') }}"
+            alt="Expertise-Comptable Commissariat aux comptes">
+          <h3 class="text-3xl font-bold text-primary">{{_('Juridique')}}</h3>
+          <p class="text-lg text-gray-700">{{_("Nous offrons des conseils juridiques sur les obligations légales des entreprises.")}}
+            <br><br>
+            {{_("Nous accompagnons également nos clients dans la gestion des litiges afin de protéger leurs intérêts et élaborons des stratégies sur mesure pour réduire les risques juridiques.")}}
+          </p>
+        </div>
+
+        <div class="ml-auto flex flex-col gap-4 w-1/2">
+          <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/ux.webp') }}"
+            alt="Expertise-Comptable Commissariat aux comptes">
+          <h3 class="text-3xl font-bold text-primary">{{_('Social')}}</h3>
+          <p class="text-lg text-gray-700">{{_("Notre mission est d'accompagner les entreprises dans la compréhension et la gestion de leurs obligations sociales en veillant à ce qu'elles respectent les réglementations en matière de de sécurité sociale,de gestion de la paie et protection de l'emploi.")}}
+          </p>
+        </div>
+
       </div>
+
+      <a href="{{_('nouscontacter')}}" class="mt-8 bg-primary text-white font-bold text-lg py-2 px-4 w-max mx-auto rounded-full">{{_('Contactez-nous')}}</a>
+
     </div>
-  </div>
+  </section>
 </div>
 
-<div class="container animate-top">
-  <div class="row">
-    <div class="col-7" id="id_expertise_comptable">
-      <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/accounting.webp') }}" alt="blog-img"
-        loading="lazy" alt="Expertise-Comptable Commissariat aux comptes">
-      <h3 class="title-nos-expertises">{{_('Expertise comptable')}}</h3><br>
-      <h5 class="speech-nos-expertises" style="line-height: 30px;">
-        {{_("Nous fournissons des conseils pour aider les entreprises à prendre des décisions \n
-        financières et fiscales éclairées.")}}
-        <br><br>
-        {{_("Nous les aidons à établir et à surveiller les systèmes financiers et comptables pour \n
-        garantir l\'exactitude de leurs données.")}}
-        <br><br>
-        {{_("Nous préparons et examinons les déclarations fiscales pour s\'assurer que les \n
-        entreprises remplissent leurs obligations fiscales.")}}
-        <br><br>
-        {{_("Nous offrons des conseils stratégiques pour maximiser les opérations commerciales et les \n
-        stratégies financières des entreprises.")}}
-        <br><br>
-        {{_("Nous aidons à prévenir les litiges financiers et à les gérer lorsqu\'ils se produisent.")}} <br><br>
-      </H5>
-    </div>
-    <div class="col-5">
-    </div>
-  </div>
-
-
-
-
-  <div class="row">
-    <div class="col-5">
-    </div>
-
-    <div class="col-7">
-      <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/tax.webp') }}" alt="blog-img"
-        loading="lazy" style="display: block;margin-left: auto;" alt="Expertise-Comptable Commissariat aux comptes">
-      <h3 class="title-nos-expertises" style="text-align: right;"> {{_('Fiscalité')}} </h3><br>
-
-
-      <h5 class="speech-nos-expertises" style="line-height: 30px;">
-        {{_("Nous accompagnons les entreprises dans la compréhension de leurs obligations fiscales, dans l'élaboration de stratégies visant à optimiser leurs charges fiscales ainsi que dans la préparation et le dépôt de leurs déclarations fiscales et ce, dans le plus strict respect de la législation et des délais imposés.")}}
-        <br><br>
-      </h5>
-
-    </div>
-  </div>
-
-
-
-
-  <div class="row">
-    <div class="col-7">
-      <img class="logo-nos-expertises" src="{{ url_for('static',filename='images/compliant.webp') }}" alt="blog-img"
-        loading="lazy" alt="Audit financier Optimisation fiscale">
-      <h3 class="title-nos-expertises"> {{_('Juridique')}} </h3><br>
-
-      <h5 class="speech-nos-expertises" style="line-height: 30px;">
-        {{_('Nous offrons des conseils juridiques sur les obligations légales des entreprises.\n
-Nous accompagnons également nos clients dans la gestion des litiges afin de protéger leurs intérêts et élaborons des stratégies sur mesure pour réduire les risques juridiques. ')}}
-        <br><br>
-
-      </h5>
-    </div>
-    <div class="col-5">
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-5">
-    </div>
-    <div class="col-7">
-
-      <img class="logo-nos-expertises" style="display: block;margin-left: auto;"
-        src="{{ url_for('static',filename='images/ux.webp') }}" alt="Audit financier Optimisation fiscale" loading="lazy">
-      <h3 class="title-nos-expertises" style="text-align: right;"> {{_('Social')}} </h3><br>
-
-      <h6 class="speech-nos-expertises" style="margin-bottom: 10%;line-height: 30px;">
-        <br>
-        {{_("Notre mission est d'accompagner les entreprises dans la compréhension et la gestion de leurs obligations sociales en veillant à ce qu'elles respectent les réglementations en matière de de sécurité sociale,de gestion de la paie et protection de l'emploi.")}}
-        <br><br>
-      </H6>
-    </div>
-  </div>
-</div>
-
-
-
-<script>
-
-  document.addEventListener('DOMContentLoaded', function () {
-
-    // Loader des autres pages
-    var loaderDiv = document.getElementById('loaderid');
-    var foregroundDiv = document.getElementById('foregid');
-    // Show the div
-    foregroundDiv.style.display = 'block';
-    loaderDiv.style.display = 'block';
-    
-    // Hide the div after 1 seconds
-    setTimeout(function () {
-      loaderDiv.style.display = 'none';
-      foregroundDiv.style.display = 'none';
-    }, 1000);
-  });
-
-
-</script>
 {% endblock content %}
