@@ -1,5 +1,15 @@
 <script src="{{url_for('static', filename='js/layout/header.js') }}"></script>
 
+<div class="hidden fixed z-50 top-0 left-0 w-full h-full blocker" id="expertise_dropdown_menu">
+    <div class="absolute flex flex-col top-8 bg-white rounded-lg border">
+        <a class="text-gray-800 transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('notre_expertise')}}">{{_('Notre expertise')}}</a>
+        <hr class="border-t border-gray-200">
+        <a class="text-gray-800 transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('expertise_comptable')}}">{{_('Expertise comptable')}}</a>
+        <a class="text-gray-800 transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('audit')}}">{{_('Audit')}}</a>
+        <a class="text-gray-800 transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('conseil_optimisation')}}">{{_("Conseil et optimisation")}}</a>
+    </div>
+</div>
+
 <header id="header" class="sticky top-0 w-full transition transition-300 z-40">
 
     <nav class="px-8 py-4 mx-auto grid grid-cols-7 items-center">
@@ -11,10 +21,12 @@
 
         <nav class="font-medium flex items-center justify-center gap-6 col-span-5 text-lg">
             <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('votre_cabinet')}}">«{{_('Votre')}}» {{_('cabinet')}}</a>
-            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('notre_expertise')}}">Notre expertise</a>
-            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('actualites')}}">Actualités</a>
-            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('nouscontacter')}}">Nous contacter</a>
-            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('espace_clients')}}">Espace client</a>
+            <a class="text-gray-800 transition transition-300 hover:text-black relative" id="expertise_dropdown" href="#">
+                {{_('Notre expertise')}}
+            </a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('actualites')}}">{{_('Actualités')}}</a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('nouscontacter')}}">{{_('Nous contacter')}}</a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('espace_clients')}}">{{_('Espace client')}}</a>
         </nav>
 
         <ul class="flex items-center gap-4">
