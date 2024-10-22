@@ -16,7 +16,7 @@
     <div class="container py-16 mx-auto flex flex-col gap-16">
       <h2 class="font-bold text-primary text-2xl">{{_('Nos bureaux')}}</h2>
 
-      <div class="grid grid-cols-2 gap-24">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-24">
         <div class="flex flex-col">
           <iframe style="border-radius: 25px;" height="300" width="100%" frameborder="0" scrolling="no" marginheight="0"
             marginwidth="0"
@@ -59,7 +59,7 @@
         {{ form.hidden_tag() }}
 
         {# Form: First name, Last name and Number phone #}
-        <div class="grid grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
           <div class="flex flex-col gap-1">
             {{ form.firstname.label(class="text-sm") }}
             {% if form.firstname.errors %}
@@ -111,7 +111,7 @@
         </div>
 
         {# Form: E-mail and subject #}
-        <div class="grid grid-cols-3 gap-8 mt-8">
+        <div class="grid md:grid-cols-3 gap-8 mt-8">
           <div class="flex flex-col gap-1">
             {{ form.email.label(class="text-sm") }}
             {% if form.email.errors %}
@@ -128,7 +128,7 @@
             {% endif %}
           </div>
 
-          <div class="flex flex-col gap-1 col-span-2">
+          <div class="flex flex-col gap-1 md:col-span-2">
             {{ form.subject.label(class="text-sm") }}
             {% if form.subject.errors %}
             {{ form.subject(class="form-control form-control-lg is-invalid") }}
@@ -160,7 +160,7 @@
           <!-- {{ form.content(class="form-control form-control-lg effet_ombre_form") }}-->
           {% endif %}
         </div>
-        <div class="flex justify-between items-center mt-8">
+        <div class="flex flex-col md:flex-row md:justify-between items-center mt-8 gap-8">
           {{ form.recaptcha }}
           {{ form.submit(class="text-primary text-lg bg-white font-semibold rounded-lg py-2 px-8 cursor-pointer") }}
         </div>
@@ -172,7 +172,7 @@
     <div class="container py-16 mx-auto flex flex-col gap-8">
       <h2 class="font-bold text-primary text-5xl">{{_('Nous rejoindre')}}</h2>
 
-      <div class="grid grid-cols-3 gap-8 select-none">
+      <div class="grid md:grid-cols-3 gap-8 select-none">
         {# First Column #}
         <div class="flex flex-col gap-4 rounded-3xl bg-primary text-white p-8">
           <img src="{{ url_for('static', filename='images/plant_comp.jpeg') }}" class="w-full h-32 rounded-3xl object-cover" alt="Comptabilité" />
