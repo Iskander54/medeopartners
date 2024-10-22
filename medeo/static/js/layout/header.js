@@ -11,19 +11,32 @@ $(() => {
     handleHeaderScroll();
     $(window).scroll(handleHeaderScroll);
 
-    $('#expertise_dropdown').on('click', function() {
-        let menu = $('#expertise_dropdown_menu');
-        menu.toggleClass('hidden');
-        // Set X and Y position of dropdown menu
-        menu = $('#expertise_dropdown_menu > div');
-        let rect = this.getBoundingClientRect();
-        menu.css('top', (rect.bottom + 8) + 'px');
-        menu.css('left', rect.left + 'px');
-    });
+    let listenMenu = (idAction, idMenu, setXY = true) => {
+        $('#' + idAction).on('click', function() {
+            let menu = $('#' + idMenu);
+            menu.toggleClass('hidden');
+            // Set X and Y position of dropdown menu
+            menu = $('#' + idMenu + ' > div');
+            menu.on('click', function(e) {
+                e.stopPropagation();
+            });
+            if (setXY) {
+                let rect = this.getBoundingClientRect();
+                menu.css('top', (rect.bottom + 8) + 'px');
+                menu.css('left', rect.left + 'px');
+            }
+        });
 
-    $('#expertise_dropdown_menu').on('click', function(e) {
-        $('#expertise_dropdown_menu').addClass('hidden');
-        e.stopPropagation();
+        $('#' + idMenu).on('click', function(e) {
+            $('#' + idMenu).addClass('hidden');
+        });
+    }
+
+    listenMenu('expertise_dropdown', 'expertise_dropdown_menu');
+    listenMenu('mobile_menu', 'mobile_menu_dropdown', false);
+
+    $('#close_mobile_menu').on('click', function() {
+        $('#mobile_menu_dropdown').addClass('hidden');
     });
 
 })

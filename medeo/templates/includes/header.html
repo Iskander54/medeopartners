@@ -10,9 +10,58 @@
     </div>
 </div>
 
+<div class="hidden fixed z-50 top-0 left-0 w-full h-full blocker bg-black bg-opacity-50" id="mobile_menu_dropdown">
+    <div class="absolute flex flex-col p-8 right-0 bg-white rounded-l-2xl border w-3/4 h-full">
+        <img class="w-12 h-12 object-contain aspect-square mb-8" src="{{url_for('static',filename='medeo_images/Medeo_partners_couleur.webp') }}"
+            width="100" height="88" alt="Cabinet d'experts-comptables à Paris"
+            aria-label="Cabinet d'experts-comptables à Paris">
+
+        <button class="text-gray-800 absolute w-min top-4 right-4 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" id="close_mobile_menu"><i class="fa-solid fa-times fa-lg" aria-hidden="true"></i></button>
+
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('accueil')}}">Accueil</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('votre_cabinet')}}">«{{_('Votre')}}» {{_('cabinet')}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('notre_expertise')}}">{{_('Notre expertise')}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black pl-8 px-4 py-2" href="{{_('expertise_comptable')}}">{{_('Expertise comptable')}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black pl-8 px-4 py-2" href="{{_('audit')}}">{{_('Audit')}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black pl-8 px-4 py-2" href="{{_('conseil_optimisation')}}">{{_("Conseil et optimisation")}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('actualites')}}">{{_('Actualités')}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('nouscontacter')}}">{{_('Nous contacter')}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('espace_clients')}}">{{_('Espace client')}}</a>
+
+        <div class="flex items-center gap-4 py-4 justify-center">
+            <a href="https://instagram.com/medeo_partners" aria-label="Instagram">
+                <i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+                <span class="sr-only">Instagram</span>    
+            </a>
+
+            <a href="https://www.linkedin.com/company/medeo-partners" aria-label="Linkedin">
+                <i class="fa-brands fa-linkedin fa-lg" aria-hidden="true"></i>
+                <span class="sr-only">Linkedin</span>    
+            </a>
+
+            <a href="https://wa.me/33633914614" aria-label="Whatsapp">
+                <i class="fa-brands fa-whatsapp fa-lg" aria-hidden="true"></i>
+                <span class="sr-only">Whatsapp</span>    
+            </a>
+
+            <a href="{{ url_for(request.endpoint, lang_code='en', **request.view_args) }}">
+                <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
+                    loading="lazy" alt="usa icone" style="width: 1.1rem; height: 1.1rem;">
+            </a>
+
+            <a href="{{ url_for(request.endpoint, lang_code='fr') }}">
+                <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
+                    loading="lazy" alt="france icone" style="width: 1.1rem; height: 1.1rem;">
+            </a>
+        </div>
+
+        <a class="text-gray-800 mt-auto font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('mentions_legales')}}">{{_('Mentions légales')}}</a>
+    </div>
+</div>
+
 <header id="header" class="sticky top-0 w-full transition transition-300 z-40">
 
-    <nav class="px-8 py-4 mx-auto grid grid-cols-7 items-center">
+    <nav class="px-8 py-4 mx-auto hidden md:grid grid-cols-7 items-center">
         <a class="w-12 h-12" href="{{_('accueil')}}" rel="canonical">
             <img class="object-contain aspect-square" src="{{url_for('static',filename='medeo_images/Medeo_partners_couleur.webp') }}"
                 width="100" height="88" alt="Cabinet d'experts-comptables à Paris"
@@ -55,6 +104,18 @@
                     loading="lazy" alt="france icone" style="width: 1.1rem; height: 1.1rem;">
             </a>
         </ul>
+    </nav>
+
+    <nav class="px-8 py-4 mx-auto md:hidden flex items-center justify-between">
+        <a class="w-12 h-12" href="{{_('accueil')}}" rel="canonical">
+            <img class="object-contain aspect-square" src="{{url_for('static',filename='medeo_images/Medeo_partners_couleur.webp') }}"
+                width="100" height="88" alt="Cabinet d'experts-comptables à Paris"
+                aria-label="Cabinet d'experts-comptables à Paris">
+        </a>
+
+        <button class="text-gray-800 transition transition-300 hover:text-black" id="mobile_menu">
+            <i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i>
+        </button>
     </nav>
 
 </header>
