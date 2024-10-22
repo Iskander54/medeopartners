@@ -19,21 +19,21 @@
     <div class="container py-16 mx-auto flex flex-col gap-16">
       <h2 class="font-bold text-5xl">{{_('Notre histoire')}}</h2>
 
-      <div class="grid grid-cols-2 gap-8 items-center">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <h3 class="text-4xl font-semibold">{{_("MEDEO Partners est un cabinet d\'expertise comptable\n
+          <h3 class="text-2xl md:text-4xl font-semibold">{{_("MEDEO Partners est un cabinet d\'expertise comptable\n
             et de commissariat aux comptes")}}</h3><br>
           <h4 class="txt_votrecab" style="line-height: 30px;">{{_("inscrit à <b>l\'Ordre des experts-comptables (OEC) de Paris</b> et auprès de la\n
             <b>Compagnie régionale des commissaires aux comptes de Paris (CRCC).</b>")}}
           </h4>
-          <h4 class="mt-8 text-2xl italic opacity-75">{{_("<b>MEDEO,</b> signifiant <b>«prendre soin de»</b> en grec ancien, caractérise le désir de ses fondateurs d\'incarner le rôle de\n <b>« médecins des entreprises »</b>")}}</h4>
+          <h4 class="mt-8 text-2xl italic">{{_("<b>MEDEO,</b> signifiant <b>«prendre soin de»</b> en grec ancien, caractérise le désir de ses fondateurs d\'incarner le rôle de\n <b>« médecins des entreprises »</b>")}}</h4>
         </div>
-        <img class="rounded-2xl object-cover h-96 w-full" alt="Image du cabinet" alt="Cabinet d'expertise comptable"
+        <img class="rounded-2xl object-cover h-48 md:h-96 w-full" alt="Image du cabinet" alt="Cabinet d'expertise comptable"
           src="{{url_for('static',filename='images/medeo_talking.webp') }}">
       </div>
 
-      <div class="grid grid-cols-2 gap-8 items-center">
-        <img class="rounded-2xl object-cover" alt="image prendre soin" src="{{url_for('static',filename='images/heart_take_care.webp') }}" loading="lazy">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <img class="rounded-2xl object-cover hidden md:block" alt="image prendre soin" src="{{url_for('static',filename='images/heart_take_care.webp') }}" loading="lazy">
         <div>
           <p class="text-xl">
             {{_('<i>PARTNERS</i>, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant\n
@@ -55,7 +55,7 @@
       </div>
 
 
-    <div class="grid grid-cols-2 gap-8 items-center">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
       <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
         <h1 class="text-4xl font-bold">{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne')}}</h1><br>
         <p class="text-xl" style="text-indent: 1px; width: auto; margin-left: 0;line-height: 30px;">
@@ -66,7 +66,7 @@
           la profession du chiffre.")}}<br />
         </p>
       </div>
-      <img class="rounded-2xl h-96 w-full object-cover" alt="Cabinet d'expertise comptable à Paris et Washington" src="{{url_for('static',filename='images/medecin.webp') }}" loading="lazy">
+      <img class="rounded-2xl h-48 md:h-96 w-full object-cover" alt="Cabinet d'expertise comptable à Paris et Washington" src="{{url_for('static',filename='images/medecin.webp') }}" loading="lazy">
     </div>
 
   </section>
@@ -75,7 +75,7 @@
     <div class="container mx-auto flex flex-col gap-8 py-24 items-center text-center">
       <h3 class="text-4xl font-extrabold text-primary">{{_('Nos valeurs')}}</h3>
 
-      <div class="flex flex-wrap gap-4 px-32 justify-center" id="values">
+      <div class="flex flex-wrap gap-4 md:px-32 justify-center" id="values">
         <button for="respect" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Respect')}}</button>
         <button for="communication" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Communication')}}</button>
         <button for="ecologie" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Ecologie')}}</button>

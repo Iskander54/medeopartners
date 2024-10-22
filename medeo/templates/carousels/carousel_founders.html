@@ -1,16 +1,16 @@
 <div class="relative w-full" id="carousel_partners">
-    <div class="bg-red-500 w-8 h-full absolute top-1/2 left-0 transform -translate-y-1/2 rounded-r-3xl"></div>
+    <div class="hidden md:block bg-red-500 w-8 h-full absolute top-1/2 left-0 transform -translate-y-1/2 rounded-r-3xl"></div>
     <div class="glide container mx-auto px-4 relative">
   
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides flex items-center">
   
           <li class="glide__slide">
-            <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+            <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto flex flex-col md:grid md:grid-cols-3 overflow-hidden">
 
                 <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
                     <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
-                    <img alt="photo israel haikou" src="/static/images/israel_haikou.jpg" class="rounded-full w-72 h-72 mx-auto" loading="lazy" alt="Expert-Comptable">
+                    <img alt="photo israel haikou" src="/static/images/israel_haikou.jpg" class="rounded-full w-72 h-72 mx-auto object-cover" loading="lazy" alt="Expert-Comptable">
                     <h2 class="text-3xl font-black text-white mt-4">Israël HAIKOU</h2>
                     <a class="text-red-200 mb-4 font-semibold" href="israel.haikou@medeo-partners.com">israel.haikou@medeo-partners.com</a>
                     <p class="font-bold text-white italic opacity-75">{{_('CEO, Expert-Comptable et commissaire aux comptes')}}</p>
@@ -37,11 +37,11 @@
         </li>
 
         <li class="glide__slide">
-            <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+            <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto flex flex-col md:grid md:grid-cols-3 overflow-hidden">
 
                 <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
                     <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
-                    <img alt="photo avi gozlane" src="/static/images/avi_gozlane.webp" class="rounded-full w-72 h-72 mx-auto" loading="lazy">
+                    <img alt="photo avi gozlane" src="/static/images/avi_gozlane.webp" class="rounded-full w-72 h-72 mx-auto object-cover" loading="lazy">
                     <h2 class="text-3xl font-black text-white mt-4">Avi GOZLANE</h2>
                     <a class="text-red-200 mb-4 font-semibold" href="avi.gozlane@medeo-partners.com">avi.gozlane@medeo-partners.com</a>
                     <p class="font-bold text-white italic opacity-75">{{_('Associé, Directeur de mission')}}</p>
