@@ -1,32 +1,39 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "news/news_template.html" %}
 
-<div class="container">
-    <h1 class="banner_taital" style="margin-top: 10px;">
-        La liste des États qui participent avec la France à la déclaration pays par pays est actualisée    </h1>
+{% block type %}
+Fiscal
+{% endblock %}
 
-    <h3 class="banner_taital_h3">
-        La liste des États qui ont conclu un accord avec la France en vue d’échanger les déclarations pays par pays (CBCR non public) est à nouveau modifiée.
+{% block title %}
+La liste des États qui participent avec la France à la déclaration pays par pays est actualisée
+{% endblock %}
 
-    <img class="image_article" src="{{url_for('static', filename='/images/news/fiscal/news_1200.jpeg')}}" loading="lazy">
+{% block subtitle %}
+La liste des États qui ont conclu un accord avec la France en vue d’échanger les déclarations pays par pays (CBCR non public) est à nouveau modifiée.
+{% endblock %}
 
+{% block image_url %}
+{{ url_for('static', filename='/images/news/fiscal/news_1200.jpeg') }}
+{% endblock %}
 
+{% block news_content %}
+<p>
+    Les entreprises multinationales réalisant un chiffre d'affaires consolidé supérieur ou égal à 750 millions d'euros sont tenues de souscrire chaque année une déclaration pays par pays (« Country by Country Reporting » - CBCR) qui comporte, notamment, des informations sur la localisation des bénéfices (CGI art. 223 quinquies C). Les entités détenues ou contrôlées par une personne morale établie dans un État ayant adopté une réglementation similaire et ayant conclu avec la France un accord permettant l'échange automatique des informations déclarées sont dispensées de cette obligation.
+</p>
 
-    <p class="text_bottom_home">
-        Les entreprises multinationales réalisant un chiffre d'affaires consolidé supérieur ou égal à 750 millions d'euros sont tenues de souscrire chaque année une déclaration pays par pays (« Country by Country Reporting » - CBCR) qui comporte, notamment, des informations sur la localisation des bénéfices (CGI art. 223 quinquies C). Les entités détenues ou contrôlées par une personne morale établie dans un État ayant adopté une réglementation similaire et ayant conclu avec la France un accord permettant l'échange automatique des informations déclarées sont dispensées de cette obligation.
+<p>
+    La liste des États qui participent ainsi à l'échange automatique des déclarations avec la France a été actualisée par l'arrêté ECOE2320258A du 11 août 2023 (JO 13).
+</p>
 
-        La liste des États qui participent ainsi à l'échange automatique des déclarations avec la France a été actualisée par l'arrêté ECOE2320258A du 11 août 2023 (JO 13).
-        
-        Pour les exercices ouverts à compter du 1er janvier 2021, la liste initialement fixée par l'arrêté ECOE1714076A du 6 juillet 2017 et modifiée en dernier lieu par l'arrêté ECOE2201859A du 14 février 2022 (voir La Quotidienne du 23 février 2022) est complétée par les Bahamas, Bahreïn, la Barbade, Israël, les Maldives, la Thaïlande et la Tunisie. La Russie en est retirée.
-        
-        A noter :
-        Le présent dispositif est distinct du dispositif de déclaration pays par pays publique (CBCR public), institué par la directive (UE) 2021/2101 du 24 novembre 2021 et applicable en France aux exercices ouverts à compter du 22 juin 2024 (voir La Quotidienne du 28 juillet 2023).    </p>
+<p>
+    Pour les exercices ouverts à compter du 1er janvier 2021, la liste initialement fixée par l'arrêté ECOE1714076A du 6 juillet 2017 et modifiée en dernier lieu par l'arrêté ECOE2201859A du 14 février 2022 (voir La Quotidienne du 23 février 2022) est complétée par les Bahamas, Bahreïn, la Barbade, Israël, les Maldives, la Thaïlande et la Tunisie. La Russie en est retirée.
+</p>
 
-    <p class="text_bottom_home">
-    
-        © Editions Francis Lefebvre - La Quotidienne
-    </p>
+<p>
+    A noter : Le présent dispositif est distinct du dispositif de déclaration pays par pays publique (CBCR public), institué par la directive (UE) 2021/2101 du 24 novembre 2021 et applicable en France aux exercices ouverts à compter du 22 juin 2024 (voir La Quotidienne du 28 juillet 2023).
+</p>
+{% endblock %}
 
-
-</div>
-{% endblock content %}
+{% block author %}
+© Editions Francis Lefebvre - La Quotidienne
+{% endblock %}

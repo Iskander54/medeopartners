@@ -1,32 +1,35 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "news/news_template.html" %}
 
-<div class="container">
-    <h1 class="banner_taital" style="margin-top: 10px;">
-        Les déficits relatifs à des exercices prescrits peuvent être contrôlés avant même leur imputation    
-    </h1>
+{% block type %}
+Fiscal
+{% endblock %}
 
-    <h3 class="banner_taital_h3">
-        L’administration est fondée à contrôler les déficits constatés en période prescrite, non seulement lorsqu’ils ont été imputés au titre d’exercices non prescrits, mais également sans attendre leur imputation lorsqu’ils ont été reportés faute de résultat bénéficiaire.    </h3>
+{% block title %}
+Les déficits relatifs à des exercices prescrits peuvent être contrôlés avant même leur imputation
+{% endblock %}
 
+{% block subtitle %}
+L’administration est fondée à contrôler les déficits constatés en période prescrite, même sans imputation immédiate.
+{% endblock %}
 
-    <img class="image_article" src="{{url_for('static', filename='/images/news/fiscal/news_5555.jpeg')}}" loading="lazy">
+{% block image_url %}
+{{ url_for('static', filename='images/news/fiscal/news_5555.jpeg') }}
+{% endblock %}
 
+{% block news_content %}
+<p>
+    On sait que, conformément à l’article L 169 du LPF, le droit de reprise de l’administration s’exerce pour l’impôt sur les sociétés et pour l’impôt sur le revenu jusqu’à la fin de la troisième année qui suit celle au titre de laquelle l’imposition est due. Toutefois, la période susceptible d’être vérifiée par l’administration ne coïncide pas nécessairement avec la période non prescrite. En effet, d’une manière générale, la jurisprudence reconnaît à l’administration le droit de contrôler et de remettre en cause, le cas échéant, des déficits nés au cours d’exercices prescrits dès lors qu’ils ont été imputés par l’entreprise sur les résultats d’un exercice non prescrit (notamment CE 13-11-1987 no 56447). Le droit au report en avant des déficits subis par les sociétés soumises à l’impôt sur les sociétés étant illimité, le droit reconnu à l’administration de contrôler la réalité des déficits peut remonter sans limitation dans le temps.
+</p>
 
+<p>
+    Le Conseil d’État complète sa jurisprudence en jugeant que l’administration est fondée à exercer son pouvoir de contrôle et de rectification d’un déficit issu d’exercices antérieurs prescrits, dont l’entreprise déclare disposer à la clôture d’un exercice, alors même que ce déficit n’a pas été imputé sur les bénéfices de cet exercice, et est donc seulement susceptible d’affecter le résultat d’exercices ultérieurs par la voie du report déficitaire.
+</p>
 
-    <p class="text_bottom_home">
-        On sait que, conformément à l’article L 169 du LPF, le droit de reprise de l’administration s’exerce pour l’impôt sur les sociétés et pour l’impôt sur le revenu jusqu’à la fin de la troisième année qui suit celle au titre de laquelle l’imposition est due. Toutefois, la période susceptible d’être vérifiée par l’administration ne coïncide pas nécessairement avec la période non prescrite. En effet, d’une manière générale, la jurisprudence reconnaît à l’administration le droit de contrôler et de remettre en cause, le cas échéant, des déficits nés au cours d’exercices prescrits dès lors qu’ils ont été imputés par l’entreprise sur les résultats d’un exercice non prescrit (notamment CE 13-11-1987 no 56447). Le droit au report en avant des déficits subis par les sociétés soumises à l’impôt sur les sociétés étant illimité, le droit reconnu à l’administration de contrôler la réalité des déficits peut remonter sans limitation dans le temps.
+<p>
+    Au demeurant, le Conseil d’État précise que, dans l’hypothèse où l’administration procède à une telle rectification du montant du déficit reportable, l’entreprise a la faculté de la contester en application de l’article L 190 du LPF, dont le second alinéa dispose que « les réclamations qui tendent à obtenir la réparation d’erreurs commises par l’administration dans la détermination d’un résultat déficitaire » relèvent de la juridiction contentieuse, « même lorsque ces erreurs n’entraînent pas la mise en recouvrement d’une imposition supplémentaire ».
+</p>
+{% endblock %}
 
-        Le Conseil d’État complète sa jurisprudence en jugeant que l’administration est fondée à exercer son pouvoir de contrôle et de rectification d’un déficit issu d’exercices antérieurs prescrits, dont l’entreprise déclare disposer à la clôture d’un exercice, alors même que ce déficit n’a pas été imputé sur les bénéfices de cet exercice, et est donc seulement susceptible d’affecter le résultat d’exercices ultérieurs par la voie du report déficitaire.
-        
-        Au demeurant, le Conseil d’État précise que, dans l’hypothèse où l’administration procède à une telle rectification du montant du déficit reportable, l’entreprise a la faculté de la contester en application de l’article L 190 du LPF, dont le second alinéa dispose que « les réclamations qui tendent à obtenir la réparation d’erreurs commises par l’administration dans la détermination d’un résultat déficitaire » relèvent de la juridiction contentieuse, « même lorsque ces erreurs n’entraînent pas la mise en recouvrement d’une imposition supplémentaire ».
-    </p>
-
-    <p class="text_bottom_home">
-    
-        © Editions Francis Lefebvre - La Quotidienne
-    </p>
-
-
-</div>
-{% endblock content %}
+{% block author %}
+© Editions Francis Lefebvre - La Quotidienne
+{% endblock %}

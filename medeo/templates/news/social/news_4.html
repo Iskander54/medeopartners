@@ -1,58 +1,60 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "news/news_template.html" %}
 
-<div class="container">
-    <h1 class="banner_taital" style="margin-top: 10px;">
-        Forfait jours : un salarié devant être présent 6 heures par jour dans l'entreprise n'est pas autonome
+{% block type %}
+  Social
+{% endblock %}
 
-    </h1>
+{% block title %}
+  Forfait jours : un salarié devant être présent 6 heures par jour dans l'entreprise n'est pas autonome
+{% endblock %}
 
-    <h3 class="banner_taital_h3">
-        Un salarié soumis à une obligation de pointage donnant lieu des relevés informatiques reprenant le nombre d'heures travaillées chaque jour et qui doit effectuer 6 heures de travail pour voir une journée de travail validée ne dispose pas d'une réelle autonomie dans l'organisation de son emploi du temps, si bien qu'il n'est pas éligible à une convention de forfait en jours.
-n
-    <img class="image_article" src="{{url_for('static', filename='/images/news/social/news_1.jpeg')}}" loading="lazy">
+{% block subtitle %}
+  Un salarié soumis à une obligation de pointage ne peut pas être considéré comme autonome pour un forfait en jours.
+{% endblock %}
 
+{% block image_url %}
+  {{ url_for('static', filename='images/news/social/news_1.jpeg') }}
+{% endblock %}
 
-
-    <p class="text_bottom_home">
-        Tout salarié ne peut pas être valablement soumis à une convention de forfait en jours.
-
-        Selon l’article L 3121-58 du Code du travail, seuls les salariés bénéficiant d'une autonomie dans l'organisation de leur emploi du temps peuvent conclure une convention individuelle de forfait en jours sur l'année. Par ailleurs, l’accord collectif mettant en place ce dispositif d’aménagement du temps de travail doit, selon l’article L 3121-64 du même Code, déterminer les catégories de salariés susceptibles de conclure une convention individuelle de forfait, dans le respect des dispositions de l’article L 3121-58 précité.
-        
-        En cas de litige individuel sur l'application d'une convention de forfait, il appartient au juge de vérifier, en tenant compte des fonctions effectivement exercées par le salarié, si celui-ci entre dans le champ défini par l'accord et, en tout état de cause, dans celui défini par le législateur.
-        
-        C’est ainsi que le respect de cette condition d’autonomie a fait l’objet de plusieurs arrêts de la chambre sociale. La présente affaire en est une nouvelle illustration.
-        
-        En l’espèce, un salarié ayant le statut d’agent de maîtrise était soumis à une convention de forfait annuel en jours en application de l’article 14 de l'accord national du 28 juillet 1998 sur l'organisation du travail dans la métallurgie. Il faisait valoir que cette convention était nulle dans la mesure où il ne bénéficiait d’aucune autonomie réelle, notamment dans le cadre de ses temps de travail en usine qui étaient, selon lui, prédéterminés par l’employeur.
-        
-        La cour d’appel avait favorablement accueilli sa demande en retenant que le salarié était soumis à une obligation de pointage lors de son travail en usine, 4 fois par jour, en application du règlement intérieur, et que les pointages ainsi effectués donnaient lieu :
-        
-        à des relevés informatiques au nom du salarié, reprenant par journée l'heure d'arrivée, de pause, de reprise et de départ, avec le décompte d'une demi-journée ou d'un jour de travail au titre du forfait jour, puis le nombre d'heures travaillées ;
-        
-        à des relevés individuels des temps passés en usine, sur la base de décomptes hebdomadaires sur lesquels étaient notés les temps de présence quotidiens en usine et parfois même l’heure d'entrée et de sortie par demi-journée.
-        
-        L’employeur s’était pourvu en cassation en soutenant, notamment, que le contrôle exercé sur les temps passés en usine n'avait d'autre objet que d'assurer le suivi régulier de l'organisation du travail de ce salarié et de sa charge de travail. Il faisait aussi valoir que l'obligation de pointer 4 fois par jour faite par le réglement intérieur concernait les seuls salariés au forfait en heures, pas les non-cadres au forfait en jours.
-        
-        La chambre sociale de la Cour de cassation rejette le pourvoi.
-        
-        Pour elle en effet, dès lors que la cour d'appel avait constaté que le salarié était soumis à une obligation de pointage lors de son entrée dans l'usine, pour chaque demi-journée de présence, donnant lieu à des relevés informatiques reprenant chaque jour les heures d'arrivée et de départ et le nombre d'heures travaillées, et qu'une journée de travail, pour être validée, devait comptabiliser 6 heures de présence dans l'entreprise, elle avait pu en déduire que le salarié ne disposait pas d'une réelle autonomie dans l'organisation de son emploi du temps pour être éligible à une convention de forfait en jours.
-        
-        A notre avis :
-        C’est la première fois à notre connaissance que la chambre sociale se prononce sur le fait de savoir si le critère d’autonomie du salarié est, ou non, rempli dans de telles circonstances factuelles.
-        
-        Selon nous, le principe même de l’obligation de pointage ne prive pas de facto le salarié de l’autonomie nécessaire pour être valablement soumis à une convention de forfait annuel en jours. Un tel système peut en effet participer au décompte du nombre de demi-journées ou de journées travaillées. Mais les modalités de pointage mise en place doivent être compatibles avec l’autonomie dont doivent bénéficier les salariés soumis à un forfait annuel en jours. Tel n’était pas le cas ici, le pointage permettant à l’employeur de réaliser un décompte horaire et de vérifier si le salarié était présent sur site au moins 6 heures par jour pour décompter une journée de travail.
-        
-        Or, cette durée de travail minimale de 6 heures empêche le salarié de disposer d’une réelle autonomie dans l’organisation de son emploi du temps. Sur ce point, la Cour de cassation a pu déjà décider que ne peut pas conclure une convention de forfait en jours le salarié dont l'emploi du temps et/ou le planning des interventions sont déterminés par sa hiérarchie (Cass. soc. 31-10-2007 n° 06-43.876 FS-PBR ; Cass. soc. 23-1-2013 n° 11-12.323 F-D). Étant toutefois précisé que la convention de forfait annuel en jours n'instaure pas au profit du salarié un droit à la libre fixation de ses horaires de travail, indépendamment de toute contrainte liée à l'organisation du travail par l'employeur (Cass. soc. 2-2-2022 n° 20-15.744 F-D).
-        
-        Documents et liens associés
-    
+{% block news_content %}
+<p>
+    Tout salarié ne peut pas être valablement soumis à une convention de forfait en jours. Selon l’article L 3121-58 du Code du travail, seuls les salariés bénéficiant d'une autonomie dans l'organisation de leur emploi du temps peuvent conclure une convention individuelle de forfait en jours sur l'année...
 </p>
 
-    <p class="text_bottom_home">
-    
-        © Editions Francis Lefebvre - La Quotidienne
-    </p>
+<p>
+    En cas de litige individuel sur l'application d'une convention de forfait, il appartient au juge de vérifier, en tenant compte des fonctions effectivement exercées par le salarié...
+</p>
 
+<p>
+    En l’espèce, un salarié ayant le statut d’agent de maîtrise était soumis à une convention de forfait annuel en jours en application de l’article 14 de l'accord national du 28 juillet 1998 sur l'organisation du travail dans la métallurgie. Il faisait valoir que cette convention était nulle dans la mesure où il ne bénéficiait d’aucune autonomie réelle, notamment dans le cadre de ses temps de travail en usine...
+</p>
 
-</div>
-{% endblock content %}
+<p>
+    La cour d’appel avait favorablement accueilli sa demande en retenant que le salarié était soumis à une obligation de pointage lors de son travail en usine, 4 fois par jour, en application du règlement intérieur...
+</p>
+
+<p>
+    L’employeur s’était pourvu en cassation en soutenant, notamment, que le contrôle exercé sur les temps passés en usine n'avait d'autre objet que d'assurer le suivi régulier de l'organisation du travail de ce salarié et de sa charge de travail...
+</p>
+
+<p>
+    La chambre sociale de la Cour de cassation rejette le pourvoi. Pour elle en effet, dès lors que la cour d'appel avait constaté que le salarié était soumis à une obligation de pointage lors de son entrée dans l'usine, pour chaque demi-journée de présence...
+</p>
+
+<p>
+    A notre avis : c’est la première fois à notre connaissance que la chambre sociale se prononce sur le fait de savoir si le critère d’autonomie du salarié est, ou non, rempli dans de telles circonstances factuelles...
+</p>
+
+<p>
+    Selon nous, le principe même de l’obligation de pointage ne prive pas de facto le salarié de l’autonomie nécessaire pour être valablement soumis à une convention de forfait annuel en jours...
+</p>
+
+<p>
+    Documents et liens associés
+</p>
+
+{% endblock %}
+
+{% block author %}
+  © Editions Francis Lefebvre - La Quotidienne
+{% endblock %}

@@ -105,10 +105,6 @@ def news_detail():
 # FISCAL
 ##############
 
-@main.route("template_news")
-def template_news():
-    return render_template('/news/template_news.html',title='News Template')
-
 
 @main.route("news_1234")
 def news_1234():

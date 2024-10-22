@@ -1,4 +1,4 @@
-##   Template news : template_news.html
+##   Template news : scrapped_template_news.html
 
 ### Récuperer le contenu de l'article (titre, description, contenu, image)
 

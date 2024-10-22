@@ -1,64 +1,76 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "news/news_template.html" %}
 
-<div class="container">
-    <h1 class="banner_taital" style="margin-top: 10px;">
-        Une semaine de jurisprudence sociale à la Cour de cassation
-    </h1>
+{% block type %}
+Social
+{% endblock %}
 
-    <h3 class="banner_taital_h3">
-        Nous avons sélectionné pour vous les arrêts les plus marquants rendus cette semaine par la Cour de cassation.
+{% block title %}
+Une semaine de jurisprudence sociale à la Cour de cassation
+{% endblock %}
 
-    <img class="image_article" src="{{url_for('static', filename='/images/news/social/news_1.jpeg')}}" loading="lazy">
+{% block subtitle %}
+Nous avons sélectionné pour vous les arrêts les plus marquants rendus cette semaine par la Cour de cassation.
+{% endblock %}
 
+{% block image_url %}
+{{ url_for('static', filename='/images/news/social/news_1.jpeg') }}
+{% endblock %}
 
+{% block news_content %}
+<p>
+    Exécution du contrat <br>
+    Le salarié qui relate ou témoigne de faits constitutifs d'un délit ou d'un crime dont il aurait eu connaissance dans l'exercice de ses fonctions n'est pas soumis à l'exigence d'agir de manière désintéressée au sens de l'article 6 de la loi 2016-1691 du 9 décembre 2016. Il ne peut pas être licencié pour ce motif, sauf mauvaise foi, laquelle ne peut résulter que de la connaissance de la fausseté des faits qu'il dénonce et non de la seule circonstance que les faits dénoncés ne sont pas établis (Cass. soc. 13-9-2023 n° 21-22.301 FS-B).
+</p>
+<p>
+    Si des mesures peuvent être réservées à certains salariés, c'est à la condition que tous ceux placés dans une situation identique, au regard de l'avantage en cause, aient la possibilité d'en bénéficier, à moins que la différence de traitement soit justifiée par des raisons objectives et pertinentes. Une cour d'appel ne peut pas décider que la différence de qualification entre deux salariés lors de leur embauche constitue une raison objective à la différence de salaire dont se plaint l'un d'eux, sans préciser en quoi cette différence entre les salariés, respectivement engagés en qualité d'assistant journaliste reporter d'images stagiaire et d'assistant journaliste reporter d'images, constitue une raison objective et pertinente justifiant la disparité de traitement dans l'exercice des mêmes fonctions de grand reporter groupe (Cass. soc. 13-9-2023 n° 22-11.338 F-PB).
+</p>
+<p>
+    Dès lors que les données issues du terminal de saisie portatif destinées aux relevés des consommations d'énergie pour ERDF/GRDF permettent également de contrôler et de surveiller l'activité des salariés et ont été utilisées par l'employeur afin de collecter et d'exploiter des informations concernant personnellement le salarié, il en résulte que, s'agissant d'un traitement de données à caractère personnel, l'employeur est tenu de procéder à une déclaration préalable auprès de la Cnil et d'informer les salariés sur l'utilisation de ce dispositif à cette fin. A défaut, ce moyen de preuve est illicite (Cass. soc. 13-9-2023 n° 22-14.461 F-D).
+</p>
+<p>
+    Durée du travail <br>
+    Sont considérés comme ayant la qualité de cadre dirigeant les cadres auxquels sont confiées des responsabilités dont l'importance implique une grande indépendance dans l'organisation de leur emploi du temps, qui sont habilités à prendre des décisions de façon largement autonome et qui perçoivent une rémunération se situant dans les niveaux les plus élevés des systèmes de rémunération pratiqués dans leur entreprise ou établissement. Une cour d’appel ne saurait reconnaître cette qualité à une salariée par des motifs qui ne suffisent pas à caractériser que, dans l'exercice de ses fonctions, la salariée était effectivement habilitée à prendre des décisions de façon largement autonome, l'amenant à participer à la direction de l'entreprise (Cass. soc. 13-9-2023 n° 21-25.830 F-D).
+</p>
+<p>
+    Paie <br>
+    La réduction générale de cotisations patronales est appliquée aux rémunérations versées aux salariés au titre desquels l'employeur est soumis à l'obligation édictée par l'article L 5422-13 du Code du travail et aux salariés mentionnés au 3° de l'article L 5424-1 du même Code, à l'exception des rémunérations versés par les particuliers employeurs. Il résulte de la combinaison des articles L 5424-1 et L 5424-2 du Code du travail que les groupements d'intérêt public (GIP) assurent eux-mêmes la charge et la gestion de l'allocation d'assurance chômage et que, pour leurs agents non statutaires, ils peuvent adhérer au régime de l'assurance chômage, par une option qui n'est pas irrévocable. Dès lors, les GIP n'étant pas, à l'égard de leurs agents non statutaires, dans la même situation que les employeurs privés soumis à l'obligation légale d'assurer leurs salariés contre le risque de perte d'emploi prévue à l'article L 5422-13 du Code du travail ni dans celle des employeurs mentionnés à l'article L 5424-1 du même Code qui ont la faculté, par une option irrévocable, d'adhérer au régime d'assurance chômage, leur exclusion du champ d'application de la réduction générale des cotisations patronales ne porte pas atteinte au principe d'égalité devant la loi énoncé par l'article 6 de la Déclaration des droits de l'homme et du citoyen du 26 août 1789 (Cass. 2e civ. 14-9-2023 n° 23-13.486 FS-D).
+</p>
 
-    <p class="text_bottom_home">
-        Exécution du contrat
-        Le salarié qui relate ou témoigne de faits constitutifs d'un délit ou d'un crime dont il aurait eu connaissance dans l'exercice de ses fonctions n'est pas soumis à l'exigence d'agir de manière désintéressée au sens de l'article 6 de la loi 2016-1691 du 9 décembre 2016. Il ne peut pas être licencié pour ce motif, sauf mauvaise foi, laquelle ne peut résulter que de la connaissance de la fausseté des faits qu'il dénonce et non de la seule circonstance que les faits dénoncés ne sont pas établis (Cass. soc. 13-9-2023 n° 21-22.301 FS-B).
-        
-        Si des mesures peuvent être réservées à certains salariés, c'est à la condition que tous ceux placés dans une situation identique, au regard de l'avantage en cause, aient la possibilité d'en bénéficier, à moins que la différence de traitement soit justifiée par des raisons objectives et pertinentes. Une cour d'appel ne peut pas décider que la différence de qualification entre deux salariés lors de leur embauche constitue une raison objective à la différence de salaire dont se plaint l'un d'eux, sans préciser en quoi cette différence entre les salariés, respectivement engagés en qualité d'assistant journaliste reporter d'images stagiaire et d'assistant journaliste reporter d'images, constitue une raison objective et pertinente justifiant la disparité de traitement dans l'exercice des mêmes fonctions de grand reporter groupe (Cass. soc. 13-9-2023 n° 22-11.338 F-PB).
-        
-        Dès lors que les données issues du terminal de saisie portatif destinées aux relevés des consommations d'énergie pour ERDF/GRDF permettent également de contrôler et de surveiller l'activité des salariés et ont été utilisées par l'employeur afin de collecter et d'exploiter des informations concernant personnellement le salarié, il en résulte que, s'agissant d'un traitement de données à caractère personnel, l'employeur est tenu de procéder à une déclaration préalable auprès de la Cnil et d'informer les salariés sur l'utilisation de ce dispositif à cette fin. A défaut, ce moyen de preuve est illicite (Cass. soc. 13-9-2023 n° 22-14.461 F-D).
-        
-        Durée du travail
-        Sont considérés comme ayant la qualité de cadre dirigeant les cadres auxquels sont confiées des responsabilités dont l'importance implique une grande indépendance dans l'organisation de leur emploi du temps, qui sont habilités à prendre des décisions de façon largement autonome et qui perçoivent une rémunération se situant dans les niveaux les plus élevés des systèmes de rémunération pratiqués dans leur entreprise ou établissement. Une cour d’appel ne saurait reconnaître cette qualité à une salariée par des motifs qui ne suffisent pas à caractériser que, dans l'exercice de ses fonctions, la salariée était effectivement habilitée à prendre des décisions de façon largement autonome, l'amenant à participer à la direction de l'entreprise (Cass. soc. 13-9-2023 n° 21-25.830 F-D).
-        
-        Paie
-        La réduction générale de cotisations patronales est appliquée aux rémunérations versées aux salariés au titre desquels l'employeur est soumis à l'obligation édictée par l'article L 5422-13 du Code du travail et aux salariés mentionnés au 3° de l'article L 5424-1 du même Code, à l'exception des rémunérations versés par les particuliers employeurs. Il résulte de la combinaison des articles L 5424-1 et L 5424-2 du Code du travail que les groupements d'intérêt public (GIP) assurent eux-mêmes la charge et la gestion de l'allocation d'assurance chômage et que, pour leurs agents non statutaires, ils peuvent adhérer au régime de l'assurance chômage, par une option qui n'est pas irrévocable. Dès lors, les GIP n'étant pas, à l'égard de leurs agents non statutaires, dans la même situation que les employeurs privés soumis à l'obligation légale d'assurer leurs salariés contre le risque de perte d'emploi prévue à l'article L 5422-13 du Code du travail ni dans celle des employeurs mentionnés à l'article L 5424-1 du même Code qui ont la faculté, par une option irrévocable, d'adhérer au régime d'assurance chômage, leur exclusion du champ d'application de la réduction générale des cotisations patronales ne porte pas atteinte au principe d'égalité devant la loi énoncé par l'article 6 de la Déclaration des droits de l'homme et du citoyen du 26 août 1789 (Cass. 2e civ. 14-9-2023 n° 23-13.486 FS-D).
-        
-        Rupture du contrat
-        Pour déterminer le caractère réel ou non des concessions contenues dans la transaction, le juge peut, sans heurter l'autorité de la chose jugée attachée à la transaction, restituer aux faits énoncés dans la lettre de licenciement leur véritable qualification. Ayant constaté que la lettre de licenciement reprochait au salarié l'insuffisance de ses résultats commerciaux, une insuffisance de prospection, son absence de réponse à la demande de plan d'action par l'employeur, et le refus des nouveaux postes proposés par celui-ci, la cour d'appel a pu décider que ces faits n'étaient pas susceptibles de recevoir la qualification de faute. Dès lors, en l'absence de concession réciproque, la transaction était nulle (Cass. soc. 13-9-2023 n° 21-25.481 F-D).
-        
-        L'irrégularité commise dans le déroulement de la procédure disciplinaire prévue par une disposition conventionnelle ou un règlement intérieur est assimilée à la violation d'une garantie de fond et rend le licenciement sans cause réelle et sérieuse lorsqu'elle a privé le salarié de droits de sa défense ou lorsqu'elle est susceptible d'avoir exercé en l'espèce une influence sur la décision finale de licenciement par l'employeur. Dès lors que le règlement intérieur de la société prévoit que « lorsque l'employeur envisage de prendre une sanction, il doit dans un premier temps convoquer le salarié à un entretien préalable par lettre recommandée ou remis en main propre en l'informant des griefs retenus contre lui », la cour d'appel doit rechercher si la seule mention dans la lettre de convocation de faits particulièrement graves, non détaillés même sommairement, n'a pas privé la salariée de la possibilité de préparer utilement sa défense lors de l'entretien préalable au licenciement, de sorte qu'elle ne répondait pas aux dispositions du règlement intérieur (Cass. soc. 13-9-2023 n° 21-25.830 F-D).
-        
-        La clause de non-concurrence incluse dans un contrat de travail aux termes de laquelle l'employeur se réserve seul la faculté, après la rupture du contrat de travail qui fixe les droits des parties, de renouveler la durée de l'interdiction de concurrence pour une durée égale à la durée initiale est nulle (Cass. soc. 13-9-2023 n° 21-12.006 F-D).
-        
-        Congés
-        Il convient d'écarter partiellement l'application des dispositions de l'article L 3141-3 du Code du travail en ce qu'elles subordonnent à l'exécution d'un travail effectif l'acquisition de droits à congé payé par un salarié dont le contrat de travail est suspendu par l'effet d'un arrêt de travail pour cause de maladie non professionnelle, et de juger que le salarié peut prétendre à ses droits à congés payés au titre de cette période en application des dispositions des articles L 3141-3 et L 3141-9 du Code du travail (Cass. soc. 13-9-2023 n° 22-17.340  FP-BR).
-        
-        Il convient d'écarter partiellement l'application des dispositions de l'article L 3141-5 du Code du travail en ce qu'elles limitent à une durée ininterrompue d'un an les périodes de suspension du contrat de travail pour cause d'accident du travail ou de maladie professionnelle assimilées à du temps de travail effectif pendant lesquelles le salarié peut acquérir des droits à congé payé et de juger que le salarié peut prétendre à ses droits à congés payés au titre de cette période en application des dispositions des articles L 3141-3 et L 3141-9 du Code du travail (Cass. soc. 13-9-2023 n° 22-17.638 FP-BR et n° 22-17.344 FP-D).
-        
-        Il résulte des articles L 3141-1 et L 1225-55 du Code du travail, interprétés à la lumière de la directive 2010/18/UE du 8 mars 2010, portant application de l'accord-cadre révisé sur le congé parental, que, lorsque le salarié s'est trouvé dans l'impossibilité de prendre ses congés payés annuels au cours de l'année de référence en raison de l'exercice de son droit au congé parental, les congés payés acquis à la date du début du congé parental doivent être reportés après la date de reprise du travail (Cass. soc. 13-9-2023 n° 22-14.043 FP-B).
-        
-        N'ont pas à être pris en compte dans l'assiette de calcul de l'indemnité de congés payés les indemnités et avantages en nature dont le salarié jouit l'ensemble de l'année, temps de travail et temps de congé confondus, et dont le montant ou la valeur ne sont pas diminués du fait des congés payés (Cass. soc. 13-9-2023 n° 21-23.452 F-D).
-        
-        Santé et sécurité
-        L'employeur ne peut rompre le contrat de travail d’un salarié déclaré inapte que s'il justifie soit de son impossibilité de proposer un emploi dans les conditions prévues par le Code du travail, soit du refus par le salarié de l'emploi proposé dans ces conditions, soit de la mention expresse dans l'avis du médecin du travail que tout maintien du salarié dans un emploi serait gravement préjudiciable à sa santé ou que l'état de santé du salarié fait obstacle à tout reclassement dans un emploi. Il s'ensuit que lorsque l'avis d'inaptitude du médecin du travail mentionne que tout maintien du salarié dans un emploi dans cette entreprise serait gravement préjudiciable à sa santé et non pas que tout maintien dans un emploi serait gravement préjudiciable à sa santé, l'employeur n'est pas dispensé de son obligation de procéder à des recherches de reclassement (Cass. soc. 13-9-2023 n° 22-12.970 F-B).
-        
-        Une cour d'appel ne peut pas débouter une salariée inapte à la suite d'un accident du travail de ses demandes d'indemnité compensatrice et d'indemnité spéciale de licenciement au motif qu'il ne peut pas être fait grief à l'employeur de n'avoir pu proposer un seul poste que l'intéressée a expressément refusé, l'obligation de reclassement ayant été remplie loyalement et sérieusement, sans constater le caractère abusif du refus par la salariée du poste proposé (Cass. soc. 13-9-2023 n° 21-11.894 F-D).
-        
-        Contrôle - contentieux
-        Lorsque l'employeur oppose la fin de non-recevoir tirée de la prescription, le point de départ du délai de prescription de l'indemnité de congés payés doit être fixé à l'expiration de la période légale ou conventionnelle au cours de laquelle les congés payés auraient pu être pris dès lors que l'employeur justifie avoir accompli les diligences qui lui incombent légalement afin d'assurer au salarié la possibilité d'exercer effectivement son droit à congé (Cass. soc. 13-9-2023 n° 22-10.529 et 22.11.106 FP-BR).
-        
-        L'action par laquelle une partie demande de qualifier un contrat, dont la nature juridique est indécise ou contestée, de contrat de travail, revêt le caractère d'une action personnelle et relève de la prescription quinquennale de l'article 2224 du Code civil. La qualification dépendant des conditions dans lesquelles est exercée l'activité, le point de départ de ce délai est la date à laquelle la relation contractuelle dont la qualification est contestée a cessé. C'est en effet à cette date que le titulaire connaît l'ensemble des faits lui permettant d'exercer son droit (Cass. soc. 13-9-2023 n° 22-12.878 F-D).
-    </p>
+<p>
+Rupture du contrat<br>
+Pour déterminer le caractère réel ou non des concessions contenues dans la transaction, le juge peut, sans heurter l'autorité de la chose jugée attachée à la transaction, restituer aux faits énoncés dans la lettre de licenciement leur véritable qualification. Ayant constaté que la lettre de licenciement reprochait au salarié l'insuffisance de ses résultats commerciaux, une insuffisance de prospection, son absence de réponse à la demande de plan d'action par l'employeur, et le refus des nouveaux postes proposés par celui-ci, la cour d'appel a pu décider que ces faits n'étaient pas susceptibles de recevoir la qualification de faute. Dès lors, en l'absence de concession réciproque, la transaction était nulle (Cass. soc. 13-9-2023 n° 21-25.481 F-D).<br>
 
-    <p class="text_bottom_home">
-    
-        © Editions Francis Lefebvre - La Quotidienne
-    </p>
+L'irrégularité commise dans le déroulement de la procédure disciplinaire prévue par une disposition conventionnelle ou un règlement intérieur est assimilée à la violation d'une garantie de fond et rend le licenciement sans cause réelle et sérieuse lorsqu'elle a privé le salarié de droits de sa défense ou lorsqu'elle est susceptible d'avoir exercé en l'espèce une influence sur la décision finale de licenciement par l'employeur. Dès lors que le règlement intérieur de la société prévoit que « lorsque l'employeur envisage de prendre une sanction, il doit dans un premier temps convoquer le salarié à un entretien préalable par lettre recommandée ou remis en main propre en l'informant des griefs retenus contre lui », la cour d'appel doit rechercher si la seule mention dans la lettre de convocation de faits particulièrement graves, non détaillés même sommairement, n'a pas privé la salariée de la possibilité de préparer utilement sa défense lors de l'entretien préalable au licenciement, de sorte qu'elle ne répondait pas aux dispositions du règlement intérieur (Cass. soc. 13-9-2023 n° 21-25.830 F-D).<br>
 
+La clause de non-concurrence incluse dans un contrat de travail aux termes de laquelle l'employeur se réserve seul la faculté, après la rupture du contrat de travail qui fixe les droits des parties, de renouveler la durée de l'interdiction de concurrence pour une durée égale à la durée initiale est nulle (Cass. soc. 13-9-2023 n° 21-12.006 F-D).<br>
+</p>
 
-</div>
-{% endblock content %}
+<p>
+Congés<br>
+Il convient d'écarter partiellement l'application des dispositions de l'article L 3141-3 du Code du travail en ce qu'elles subordonnent à l'exécution d'un travail effectif l'acquisition de droits à congé payé par un salarié dont le contrat de travail est suspendu par l'effet d'un arrêt de travail pour cause de maladie non professionnelle, et de juger que le salarié peut prétendre à ses droits à congés payés au titre de cette période en application des dispositions des articles L 3141-3 et L 3141-9 du Code du travail (Cass. soc. 13-9-2023 n° 22-17.340  FP-BR).<br>
+
+Il convient d'écarter partiellement l'application des dispositions de l'article L 3141-5 du Code du travail en ce qu'elles limitent à une durée ininterrompue d'un an les périodes de suspension du contrat de travail pour cause d'accident du travail ou de maladie professionnelle assimilées à du temps de travail effectif pendant lesquelles le salarié peut acquérir des droits à congé payé et de juger que le salarié peut prétendre à ses droits à congés payés au titre de cette période en application des dispositions des articles L 3141-3 et L 3141-9 du Code du travail (Cass. soc. 13-9-2023 n° 22-17.638 FP-BR et n° 22-17.344 FP-D).<br>
+
+Il résulte des articles L 3141-1 et L 1225-55 du Code du travail, interprétés à la lumière de la directive 2010/18/UE du 8 mars 2010, portant application de l'accord-cadre révisé sur le congé parental, que, lorsque le salarié s'est trouvé dans l'impossibilité de prendre ses congés payés annuels au cours de l'année de référence en raison de l'exercice de son droit au congé parental, les congés payés acquis à la date du début du congé parental doivent être reportés après la date de reprise du travail (Cass. soc. 13-9-2023 n° 22-14.043 FP-B).<br>
+
+N'ont pas à être pris en compte dans l'assiette de calcul de l'indemnité de congés payés les indemnités et avantages en nature dont le salarié jouit l'ensemble de l'année, temps de travail et temps de congé confondus, et dont le montant ou la valeur ne sont pas diminués du fait des congés payés (Cass. soc. 13-9-2023 n° 21-23.452 F-D).<br>
+</p>
+
+<p>Santé et sécurité<br>
+
+L'employeur ne peut rompre le contrat de travail d’un salarié déclaré inapte que s'il justifie soit de son impossibilité de proposer un emploi dans les conditions prévues par le Code du travail, soit du refus par le salarié de l'emploi proposé dans ces conditions, soit de la mention expresse dans l'avis du médecin du travail que tout maintien du salarié dans un emploi serait gravement préjudiciable à sa santé ou que l'état de santé du salarié fait obstacle à tout reclassement dans un emploi. Il s'ensuit que lorsque l'avis d'inaptitude du médecin du travail mentionne que tout maintien du salarié dans un emploi dans cette entreprise serait gravement préjudiciable à sa santé et non pas que tout maintien dans un emploi serait gravement préjudiciable à sa santé, l'employeur n'est pas dispensé de son obligation de procéder à des recherches de reclassement (Cass. soc. 13-9-2023 n° 22-12.970 F-B).<br>
+
+Une cour d'appel ne peut pas débouter une salariée inapte à la suite d'un accident du travail de ses demandes d'indemnité compensatrice et d'indemnité spéciale de licenciement au motif qu'il ne peut pas être fait grief à l'employeur de n'avoir pu proposer un seul poste que l'intéressée a expressément refusé, l'obligation de reclassement ayant été remplie loyalement et sérieusement, sans constater le caractère abusif du refus par la salariée du poste proposé (Cass. soc. 13-9-2023 n° 21-11.894 F-D).<br>
+</p>
+
+<p>Contrôle - contentieux<br>
+Lorsque l'employeur oppose la fin de non-recevoir tirée de la prescription, le point de départ du délai de prescription de l'indemnité de congés payés doit être fixé à l'expiration de la période légale ou conventionnelle au cours de laquelle les congés payés auraient pu être pris dès lors que l'employeur justifie avoir accompli les diligences qui lui incombent légalement afin d'assurer au salarié la possibilité d'exercer effectivement son droit à congé (Cass. soc. 13-9-2023 n° 22-10.529 et 22.11.106 FP-BR).<br>
+
+L'action par laquelle une partie demande de qualifier un contrat, dont la nature juridique est indécise ou contestée, de contrat de travail, revêt le caractère d'une action personnelle et relève de la prescription quinquennale de l'article 2224 du Code civil. La qualification dépendant des conditions dans lesquelles est exercée l'activité, le point de départ de ce délai est la date à laquelle la relation contractuelle dont la qualification est contestée a cessé. C'est en effet à cette date que le titulaire connaît l'ensemble des faits lui permettant d'exercer son droit (Cass. soc. 13-9-2023 n° 22-12.878 F-D).<br>
+</p>
+
+{% endblock %}
+
+{% block author %}
+© Editions Francis Lefebvre - La Quotidienne
+{% endblock %}

@@ -1,39 +1,48 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "news/news_template.html" %}
 
-<div class="container">
-    <h1 class="banner_taital" style="margin-top: 10px;">
-        L'employeur qui licencie un salarié ayant requis des élections doit prouver l'absence de discrimination
-    </h1>
+{% block type %}
+    Social
+{% endblock %}
 
-    <h3 class="banner_taital_h3">
-        Lorsque les faits invoqués dans la lettre de licenciement ne caractérisent pas une cause réelle et sérieuse de licenciement, il appartient à l’employeur de démontrer que la rupture du contrat de travail ne constitue pas une mesure de rétorsion à la demande antérieure du salarié d’organiser des élections professionnelles au sein de l’entreprise.
+{% block title %}
+    L'employeur qui licencie un salarié ayant requis des élections doit prouver l'absence de discrimination
+{% endblock %}
 
-    <img class="image_article" src="{{url_for('static', filename='/images/news/social/news_2.jpeg')}}" loading="lazy">
+{% block subtitle %}
+    Lorsque les faits invoqués dans la lettre de licenciement ne caractérisent pas une cause réelle et sérieuse de licenciement, il appartient à l’employeur de démontrer que la rupture du contrat de travail ne constitue pas une mesure de rétorsion à la demande antérieure du salarié d’organiser des élections professionnelles au sein de l’entreprise.
+{% endblock %}
 
+{% block image_url %}
+    {{ url_for('static', filename='/images/news/social/news_2.jpeg') }}
+{% endblock %}
 
-
-    <p class="text_bottom_home">
+{% block news_content %}
+    <p>
         Lorsqu’un litige civil porte sur une méconnaissance du principe de non-discrimination, la charge de la preuve est partagée : le salarié présente tout d’abord des éléments de fait laissant supposer l’existence d’une discrimination, l’employeur devant ensuite prouver que sa décision est justifiée par des éléments objectifs étrangers à toute discrimination (C. trav. art. L 1134-1).
-
-        Dans un arrêt du 28 juin 2023, la Cour de cassation applique ce régime probatoire spécifique au cas d’un salarié mis à pied puis licencié pour faute grave après avoir demandé la tenue d’élections professionnelles. Celui-ci conteste le licenciement et invoque l’existence d’une discrimination syndicale, soutenant que la procédure de licenciement avait été engagée le jour où l’employeur avait reçu sa demande d’organisation des élections. L'intéressé demande en conséquence l'annulation du licenciement, sa réintégration et le paiement de rappels de salaire.
-        
-        Mais il est débouté en appel. En effet, les juges du fond, s'ils estiment bien que le licenciement est dépourvu de cause réelle et sérieuse, écartent la nullité de la rupture au motif que le salarié ne présentait aucun élément de fait laissant supposer l'existence d'une discrimination.
-        
-        Tel n’est pas l’avis de la Cour de cassation qui relève que les juges ont retenu l’absence de cause réelle et sérieuse du licenciement et constaté la concomitance entre la demande d’élections et l’engagement de la procédure de licenciement, ce qui constituait bien les éléments de fait requis par l’article L 1134-1 du Code du travail.
-        
-        La Haute Juridiction pose pour principe que, dès lors que le licenciement a été jugé sans cause réelle et sérieuse, c’est à l’employeur de prouver que la rupture du contrat de travail ne constituait pas une mesure de rétorsion envers le salarié, autrement dit que cette décision était justifiée par des éléments totalement étrangers à la demande d’élections. Ce faisant, elle confirme une position déjà adoptée en cas de licenciement sans cause réelle et sérieuse faisant suite à l'engagement par le salarié d'une action en justice contre son employeur (Cass. soc. 5-12-2018 n° 17-17.687 F-D). A l'inverse, elle juge que lorsque les faits invoqués dans la lettre de licenciement caractérisent une cause réelle et sérieuse de licenciement, il appartient au salarié de démontrer que la rupture de son contrat constitue une mesure de rétorsion (Cass. soc. 9-10-2019 n° 17-24.773 FS-PB).
-        
-        A noter :
-        Le salarié qui demande l’organisation d’élections professionnelles est protégé contre le licenciement à condition d’être mandaté pour cela par un syndicat (C. trav. art. L 2411-6) ou si sa demande est relayée par un syndicat (Cass. soc. 20-3-2013 n° 11-28.034 F-D) remplissant les conditions pour négocier le protocole préélectoral (Cass. soc. 15-10-2015 n° 14-15.995 F-D) et qu’aucun syndicat n’a formulé une telle demande avant lui (Cass. soc. 28-10-1996 n° 94-45.426 PB). Le salarié qui ne remplit pas ces conditions, comme cela semble être le cas dans cette affaire, ne bénéficie pas du statut protecteur, mais il reste protégé contre la discrimination syndicale.  
-        
-        Documents et liens associés    </p>
-
-    <p class="text_bottom_home">
-    
-        © Editions Francis Lefebvre - La Quotidienne
     </p>
 
+    <p>
+        Dans un arrêt du 28 juin 2023, la Cour de cassation applique ce régime probatoire spécifique au cas d’un salarié mis à pied puis licencié pour faute grave après avoir demandé la tenue d’élections professionnelles. Celui-ci conteste le licenciement et invoque l’existence d’une discrimination syndicale, soutenant que la procédure de licenciement avait été engagée le jour où l’employeur avait reçu sa demande d’organisation des élections. L'intéressé demande en conséquence l'annulation du licenciement, sa réintégration et le paiement de rappels de salaire.
+    </p>
 
-</div>
-{% endblock content %}
+    <p>
+        Mais il est débouté en appel. En effet, les juges du fond, s'ils estiment bien que le licenciement est dépourvu de cause réelle et sérieuse, écartent la nullité de la rupture au motif que le salarié ne présentait aucun élément de fait laissant supposer l'existence d'une discrimination.
+    </p>
+
+    <p>
+        Tel n’est pas l’avis de la Cour de cassation qui relève que les juges ont retenu l’absence de cause réelle et sérieuse du licenciement et constaté la concomitance entre la demande d’élections et l’engagement de la procédure de licenciement, ce qui constituait bien les éléments de fait requis par l’article L 1134-1 du Code du travail.
+    </p>
+
+    <p>
+        La Haute Juridiction pose pour principe que, dès lors que le licenciement a été jugé sans cause réelle et sérieuse, c’est à l’employeur de prouver que la rupture du contrat de travail ne constituait pas une mesure de rétorsion envers le salarié, autrement dit que cette décision était justifiée par des éléments totalement étrangers à la demande d’élections. Ce faisant, elle confirme une position déjà adoptée en cas de licenciement sans cause réelle et sérieuse faisant suite à l'engagement par le salarié d'une action en justice contre son employeur (Cass. soc. 5-12-2018 n° 17-17.687 F-D). A l'inverse, elle juge que lorsque les faits invoqués dans la lettre de licenciement caractérisent une cause réelle et sérieuse de licenciement, il appartient au salarié de démontrer que la rupture de son contrat constitue une mesure de rétorsion (Cass. soc. 9-10-2019 n° 17-24.773 FS-PB).
+    </p>
+
+    <p>
+        A noter :
+        Le salarié qui demande l’organisation d’élections professionnelles est protégé contre le licenciement à condition d’être mandaté pour cela par un syndicat (C. trav. art. L 2411-6) ou si sa demande est relayée par un syndicat (Cass. soc. 20-3-2013 n° 11-28.034 F-D) remplissant les conditions pour négocier le protocole préélectoral (Cass. soc. 15-10-2015 n° 14-15.995 F-D) et qu’aucun syndicat n’a formulé une telle demande avant lui (Cass. soc. 28-10-1996 n° 94-45.426 PB). Le salarié qui ne remplit pas ces conditions, comme cela semble être le cas dans cette affaire, ne bénéficie pas du statut protecteur, mais il reste protégé contre la discrimination syndicale.
+    </p>
+{% endblock %}
+
+{% block author %}
+    © Editions Francis Lefebvre - La Quotidienne
+{% endblock %}
