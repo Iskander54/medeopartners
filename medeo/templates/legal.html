@@ -1,65 +1,70 @@
 {% extends "layout.html" %}
+
 {% block content %}
 
-<div class="container">
-    <div class="mentions_legales">
-        <h3 class="titre_mention">
-            {{_('MENTIONS LÉGALES')}}
-        </h3>
+<!-- Page Content -->
+<div class="bg-image-home"></div>
 
-        <h3 class="sous-titre_legal">
-            {{_('Site réalisé et hébergé par Bamana Solutions')}}
-        </h3>
-        <div class="text_legal">
+<div id="content">
+  <div data-translate class="h-96 animate-top">
+    <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
+      <h1 class="text-5xl text-primary font-black">{{_('MENTIONS LÉGALES')}}</h1>
+      <h2 class="italic text-primary opacity-95 font-bold text-2xl">{{_('Site réalisé et hébergé par Bamana Solutions')}}</h2>
+    </div>
+  </div>
 
-            {{_(' SARL au capital de 5 000 euros
-            <br>
-            Siret : 951 922 707 00025
-            <br>
-            RCS : 951 922 707 R.C.S. Paris
-            <br>
-            Siège social : 97 Boulevard Malesherbes 75008 PARIS
-            <br>
-            Tél. : 06 69 06 68 04')}}
-            <br>
+  <section class="w-full bg-white border-t">
+    <div class="container mx-auto py-16 flex flex-col gap-8">
+
+      <div class="flex flex-col gap-8">
+
+        <div class="flex flex-col gap-4 w-full">
+          <h3 class="text-3xl font-bold text-primary">{{_("Informations sur l\'hébergeur")}}</h3>
+          <p class="text-lg text-gray-700">
+            {{_("SARL au capital de 5 000 euros")}}<br>
+            {{_("Siret : 951 922 707 00025")}}<br>
+            {{_("RCS : 951 922 707 R.C.S. Paris")}}<br>
+            {{_("Siège social : 97 Boulevard Malesherbes 75008 PARIS")}}<br>
+            {{_("Tél. : 06 69 06 68 04")}}
+          </p>
         </div>
 
-        <h3 class="sous-titre_legal">{{_('Edition du site')}}</h3>
-        <div class="text_legal">
-
-            {{_('SARL au capital de 10 000 euros
-            <br>
-            Siret : 92078049100022
-            <br>
-            RCS : 920 780 491 R.C.S Paris
-            <br>
-            Siège social : 97 Boulevard Malesherbes 75008 PARIS')}}
-            <br>
+        <div class="flex flex-col gap-4 w-full">
+          <h3 class="text-3xl font-bold text-primary">{{_('Edition du site')}}</h3>
+          <p class="text-lg text-gray-700">
+            {{_("SARL au capital de 10 000 euros")}}<br>
+            {{_("Siret : 92078049100022")}}<br>
+            {{_("RCS : 920 780 491 R.C.S Paris")}}<br>
+            {{_("Siège social : 97 Boulevard Malesherbes 75008 PARIS")}}
+          </p>
         </div>
 
-        <h3 class="sous-titre_legal">{{_('Nous contacter')}}</h3>
-        <div class="text_legal">
-            {{_('Par email : contact@bamana-solutions.com
-            <br>
-            Par téléphone : 06 69 06 68 04')}}
-            <br>
-            {{_('Notre site : ')}}<a
-                href="https://www.bamana-solutions.com/fr/accueil">https://www.bamana-solutions.com</a>
+        <div class="flex flex-col gap-4 w-full">
+          <h3 class="text-3xl font-bold text-primary">{{_('Nous contacter')}}</h3>
+          <p class="text-lg text-gray-700">
+            {{_("Par email : contact@bamana-solutions.com")}}<br>
+            {{_("Par téléphone : 06 69 06 68 04")}}<br>
+            {{_("Notre site : ")}}<a class="text-primary underline" href="https://www.bamana-solutions.com/fr/accueil">{{_("https://www.bamana-solutions.com")}}</a>
+          </p>
         </div>
-        <h3 class="sous-titre_legal">{{_('Hébergeur')}}</h3>
-        <div class="text_legal">
-            {{_('Propriété intellectuelle :L\'ensemble de ce site relève des législations \n
-            Françaises et Internationales sur les droits d\'auteur et la propriété intellectuelle. \n
-            Tous les droits de reproduction sont réservés pour les textes et les photographies de ce site.\n
-            La reproduction de tout ou partie de ce site sur un support électronique ou autre quel qu\'il soit, \n
-            est formellement interdite sauf autorisation écrite de l\'auteur, conformément à l\'article L 122-4 du \n
-            Code de la Propriété intellectuelle.Liens hypertextes & droit de réponse :Les liens hypertextes mis \n
-            en place dans le cadre du présent site internet en direction d\'autres ressources présentes sur le \n
-            réseau Internet, et notamment vers ses partenaires ont fait l\'objet d\'une autorisation préalable \n
-            expresse et écrite auprès de l\'éditeur. - Toute personne citée sur le site peut faire valoir un \n
-            droit de réponse. Une simple demande sera adressée par courrier.')}}
+
+        <div class="flex flex-col gap-4 w-full">
+          <h3 class="text-3xl font-bold text-primary">{{_('Propriété intellectuelle')}}</h3>
+          <p class="text-lg text-gray-700">
+            {{_("L'ensemble de ce site relève des législations Françaises et Internationales sur les droits d'auteur et la propriété intellectuelle.")}}<br>
+            {{_("Tous les droits de reproduction sont réservés pour les textes et les photographies de ce site.")}}<br>
+            {{_("La reproduction de tout ou partie de ce site sur un support électronique ou autre, est formellement interdite sauf autorisation écrite de l'auteur, conformément à l'article L 122-4 du Code de la Propriété intellectuelle.")}}<br><br>
+            {{_("Les liens hypertextes mis en place dans le cadre du présent site internet en direction d'autres ressources présentes sur le réseau Internet, et notamment vers ses partenaires, ont fait l'objet d'une autorisation préalable expresse et écrite auprès de l'éditeur.")}}<br>
+            {{_("Toute personne citée sur le site peut faire valoir un droit de réponse. Une simple demande sera adressée par courrier.")}}
+          </p>
         </div>
+
+      </div>
+
+      <a href="{{ _('nouscontacter') }}" class="mt-8 bg-primary text-white font-bold text-lg py-2 px-4 w-max mx-auto rounded-full">{{_('Contactez-nous')}}</a>
 
     </div>
+  </section>
 </div>
+
 {% endblock content %}
