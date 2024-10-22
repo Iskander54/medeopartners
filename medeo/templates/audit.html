@@ -18,7 +18,7 @@
 
       <div class="flex flex-col gap-8">
 
-        <div class="flex flex-col gap-4 w-1/2">
+        <div class="flex flex-col gap-4 md:w-1/2">
              <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/accounting.webp') }}"
                 alt="Expertise-Comptable Commissariat aux comptes">
              <h3 class="text-3xl font-bold text-primary">{{_('Audit contractuel')}}</h3>
@@ -32,7 +32,7 @@
             </p>
         </div>
 
-        <div class="ml-auto flex flex-col gap-4 w-1/2">
+        <div class="ml-auto flex flex-col gap-4 md:w-1/2">
           <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/audit.webp') }}"
             alt="Expertise-Comptable Commissariat aux comptes">
           <h3 class="text-3xl font-bold text-primary">{{_('Commissariat aux comptes')}}</h3>
@@ -44,13 +44,13 @@
       </div>
 
       <div class="flex flex-col gap-8 mt-16">
-        <h3 class="text-5xl font-black text-primary w-2/3">{{_('Notre mission d’audit contractuel : un gage de transparence et de fiabilité')}}</h3>
+        <h3 class="text-3xl md:text-5xl font-black text-primary md:w-2/3">{{_('Notre mission d’audit contractuel : un gage de transparence et de fiabilité')}}</h3>
 
         <p class="text-xl text-gray-700">
           {{_('En tant qu\'auditeurs qualifiés, nous réalisons un examen indépendant systématique, complet et approfondi des états financiers de nos clients, conformément aux normes d\'audit en vigueur. Voici les principaux objectifs et avantages de notre mission d’audit contractuel :')}}
         </p>
 
-        <ul class="list-disc text-lg text-gray-700 pl-8 w-2/3">
+        <ul class="list-disc text-lg text-gray-700 pl-8 md:w-2/3">
           <li>{{_("<b>Fiabilité des états financiers :</b> Nous vérifions l\'exactitude des informations financières présentées, afin de garantir qu\'elles reflètent fidèlement la situation de l\'entreprise dans l\'objectif de permettre aux actionnaires et autres parties prenantes de prendre des décisions éclairées sur la base de données fiables et actualisées")}}</li>
           <li>{{_("<b>Conformité aux normes comptables :</b> Nos audits visent à assurer que les états financiers respectent scrupuleusement les principes et normes comptables officiels, qu\'ils soient locaux ou internationaux.")}}</li>
           <li>{{_("<b>Détection des erreurs et irrégularités :</b> L’audit contractuel permet de repérer rapidement les erreurs, omissions ou irrégularités financières pouvant affecter la santé de l’entreprise cela afin d\'éviter des répercussions importantes, tant sur la crédibilité de l\'entreprise que sur sa performance financière à long terme.")}}</li>
