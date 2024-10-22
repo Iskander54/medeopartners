@@ -9,13 +9,13 @@
           <li class="glide__slide">
             <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
                 {# Image #}
-                <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col gap-4 justify-center">
+                <div class="hidden bg-primary rounded-3xl overflow-hidden p-8 md:flex flex-col gap-4 justify-center">
                     <img class="w-full h-48 object-cover rounded-3xl" src="{{ url_for('static',filename='images/social.webp') }}" alt="img-social" width="420" height="253" loading="lazy">
                     <h2 class="text-3xl font-black text-white col-span-3">{{_('Social')}}</h2>
                     <p class="font-bold text-white">{{_('Découvrez toutes nos actualités Social')}}</p>
                 </div>
                 {# Contenu #}
-                <div class="p-8 flex flex-col gap-4 col-span-2 overflow-auto">
+                <div class="p-8 flex flex-col gap-4 col-span-3 md:col-span-2 overflow-auto">
                     <h2 class="text-3xl font-black text-primary col-span-3">{{_('Social')}}</h2>
                     <p class="font-bold">{{_('Une semaine de jurisprudence sociale à la Cour de cassation')}}</p>
                     <p class="text-sm max-lines-10">{{_('Exécution du contrat Le salarié qui relate ou témoigne de faits constitutifs d\'un délit ou d\'un crime dont il aurait eu connaissance dans l\'exercice de ses fonctions n\'est pas soumis à l\'exigence d\'agir de manière désintéressée
@@ -37,7 +37,7 @@
           <li class="glide__slide">
             <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
               {# Image #}
-              <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col gap-4 justify-center">
+              <div class="hidden bg-primary rounded-3xl overflow-hidden p-8 md:flex flex-col gap-4 justify-center">
                 <img class="w-full h-48 object-cover rounded-3xl" src="{{ url_for('static',filename='images/juridique.webp') }}" alt="img-juridique"
                 width="420"
                 height="253"
@@ -46,7 +46,7 @@
                 <p class="font-bold text-white">{{_('Découvrez toutes nos actualités Juridique')}}</p>
               </div>
               {# Contenu #}
-              <div class="p-8 flex flex-col gap-4 col-span-2 overflow-auto">
+              <div class="p-8 flex flex-col gap-4 col-span-3 md:col-span-2 overflow-auto">
                 <h2 class="text-3xl font-black text-primary col-span-3">{{_('Juridique')}}</h2>
                 <p class="font-bold">{{_("Le mécénat d\'entreprise pour acquérir un manuscrit enluminé")}}</p>
                 <p class="text-sm max-lines-10">
@@ -61,7 +61,7 @@
           <li class="glide__slide">
             <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
               {# Image #}
-              <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col gap-4 justify-center">
+              <div class="hidden bg-primary rounded-3xl overflow-hidden p-8 md:flex flex-col gap-4 justify-center">
                 <img class="w-full h-48 object-cover rounded-3xl" src="{{ url_for('static',filename='images/work.webp') }}" alt="img-fiscalite"
                 width="420"
                 height="253"
@@ -70,7 +70,7 @@
                 <p class="font-bold text-white">{{_('Découvrez toutes nos actualités Fiscalité')}}
               </div>
               {# Contenu #}
-              <div class="p-8 flex flex-col gap-4 col-span-2 overflow-auto">
+              <div class="p-8 flex flex-col gap-4 col-span-3 md:col-span-2 overflow-auto">
                 <h2 class="text-3xl font-black text-primary col-span-3">{{_('Fiscalité')}}</h2>
                 <p class="font-bold">{{_("Plus que quelques jours pour opter pour le régime de l\'auto-entrepreneur en 2024")}}</p>
                 <p class="text-sm max-lines-10">
