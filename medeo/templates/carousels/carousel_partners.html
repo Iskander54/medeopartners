@@ -1,0 +1,173 @@
+<div class="relative w-full" id="carousel_partners">
+    <div class="bg-red-500 w-8 h-full absolute top-1/2 left-0 transform -translate-y-1/2 rounded-r-3xl"></div>
+    <div class="glide container mx-auto px-4 relative">
+  
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides flex items-center">
+  
+          <li class="glide__slide">
+            <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+
+                <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                    <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                    <img src="{{ url_for('static',filename='images/axonaut_logo.webp') }}" alt="Axonaut" class="rounded-3xl w-32 h-32 mx-auto object-contain" loading="lazy" alt="Expert-Comptable">
+                    <h2 class="text-3xl font-black text-center text-white mt-4">Axonaut</h2>
+                </div>
+
+                <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                    <p class="text-lg">{{_("Axonaut est un logiciel de gestion intégrée, optimisant les opérations des PME avec des outils pour la comptabilité, la facturation, le CRM, les RH et la gestion de projet. Sa plateforme intuitive facilite la centralisation et l'efficacité des processus d'entreprise.")}}</p>
+                    <a class="bg-white text-primary px-4 py-2 rounded-lg mt-auto ml-auto font-semibold" href="https://www.axonaut.com/">Visiter</a>
+                </div>
+            </div>
+          </li>
+
+            <li class="glide__slide">
+                <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+    
+                    <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                        <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                        <img src="{{ url_for('static',filename='images/bamana_solutions_logo.png') }}" alt="Bamana Solutions" class="rounded-3xl w-32 h-32 mx-auto object-contain" loading="lazy" alt="Expert-Comptable">
+                        <h2 class="text-3xl font-black text-center text-white mt-4">Bamana Solutions</h2>
+                    </div>
+    
+                    <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                        <p class="text-lg">{{_("Bamana Solutions est un cabinet de conseil spécialisé dans le numérique, offrant une expertise approfondie pour accompagner les entreprises dans leur transformation digitale et l'optimisation de leurs processus technologiques.")}}</p>
+                        <a class="bg-white text-primary px-4 py-2 rounded-lg mt-auto ml-auto font-semibold" href="https://www.bamanasolutions.com/">Visiter</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="glide__slide">
+                <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+    
+                    <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                        <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                        <img src="{{ url_for('static',filename='images/dext.webp') }}" alt="Dext" class="rounded-3xl w-32 h-32 mx-auto object-contain" loading="lazy" alt="Expert-Comptable">
+                        <h2 class="text-3xl font-black text-center text-white mt-4">Dext</h2>
+                    </div>
+
+                    <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                        <p class="text-lg">{{_("Dext est une solution numérique de gestion des finances et des dépenses, conçue pour simplifier et automatiser la comptabilité des entreprises de toutes tailles, en intégrant la collecte de données, le classement et l'analyse des transactions financières.")}}</p>
+                        <a class="bg-white text-primary px-4 py-2 rounded-lg mt-auto ml-auto font-semibold" href="https://dext.com/">Visiter</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="glide__slide">
+                <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+    
+                    <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                        <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                        <img src="{{ url_for('static',filename='images/docusign.webp') }}" alt="Docusign" class="rounded-3xl w-32 h-32 mx-auto object-contain" loading="lazy" alt="Expert-Comptable">
+                        <h2 class="text-3xl font-black text-center text-white mt-4">Docusign</h2>
+                    </div>
+
+                    <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                        <p class="text-lg">{{_("DocuSign offre une solution de signature électronique sécurisée et efficace, facilitant la gestion des accords et la digitalisation des processus documentaires pour les entreprises et les particuliers.")}}</p>
+                        <a class="bg-white text-primary px-4 py-2 rounded-lg mt-auto ml-auto font-semibold" href="https://www.docusign.fr/">Visiter</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="glide__slide">
+                <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+    
+                    <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                        <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                        <img src="{{ url_for('static',filename='images/gocardless.webp') }}" alt="GoCardless" class="rounded-3xl w-32 h-32 mx-auto object-contain" loading="lazy" alt="Expert-Comptable">
+                        <h2 class="text-3xl font-black text-center text-white mt-4">GoCardless</h2>
+                    </div>
+
+                    <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                        <p class="text-lg">{{_("GoCardless est un service de paiement spécialisé dans la gestion simplifiée des prélèvements bancaires automatiques, aidant les entreprises à collecter et gérer les paiements récurrents de manière efficace et sécurisée.")}}</p>
+                        <a class="bg-white text-primary px-4 py-2 rounded-lg mt-auto ml-auto font-semibold" href="https://gocardless.com/">Visiter</a>
+                    </div>
+
+                </div>
+            </li>
+
+            <li class="glide__slide">
+                <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+    
+                    <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                        <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                        <img src="{{ url_for('static',filename='images/gcp_logo.webp') }}" alt="Google Cloud" class="rounded-3xl w-32 h-32 mx-auto object-contain" loading="lazy" alt="Expert-Comptable">
+                        <h2 class="text-3xl font-black text-center text-white mt-4">Google Cloud</h2>
+                    </div>
+
+                    <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                        <p class="text-lg">{{_("Google Cloud fournit une suite complète de services de cloud computing, offrant des solutions de stockage de données, de calcul en nuage et d'analyse avancée, destinées à favoriser l'innovation et l'efficacité opérationnelle des entreprises.")}}</p>
+                        <a class="bg-white text-primary px-4 py-2 rounded-lg mt-auto ml-auto font-semibold" href="https://cloud.google.com/">Visiter</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="glide__slide">
+                <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+    
+                    <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                        <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                        <img src="{{ url_for('static',filename='images/inpi.webp') }}" alt="INPI" class="rounded-3xl w-32 h-32 mx-auto object-contain" loading="lazy" alt="Expert-Comptable">
+                        <h2 class="text-3xl font-black text-center text-white mt-4">INPI</h2>
+                    </div>
+
+                    <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                        <p class="text-lg">{{_("L'INPI (Institut National de la Propriété Industrielle) est l'organisme français officiel dédié à l'enregistrement et à la protection des brevets, marques, dessins et modèles, soutenant l'innovation et la compétitivité des entreprises et inventeurs.")}}</p>
+                        <a class="bg-white text-primary px-4 py-2 rounded-lg mt-auto ml-auto font-semibold" href="https://www.inpi.fr/">Visiter</a>
+                    </div>
+
+                </div>
+            </li>
+
+            <li class="glide__slide">
+                <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+    
+                    <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                        <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                        <img src="{{ url_for('static',filename='images/sage.jpeg') }}" alt="Sage" class="rounded-3xl w-32 h-32 mx-auto object-contain" loading="lazy" alt="Expert-Comptable">
+                        <h2 class="text-3xl font-black text-center text-white mt-4">Sage</h2>
+                    </div>
+
+                    <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                        <p class="text-lg">{{_("Sage est un leader mondial en solutions de comptabilité et de gestion d'entreprise, offrant des logiciels innovants pour faciliter la finance, la paie et les ressources humaines, adaptés aux besoins des petites et moyennes entreprises.")}}</p>
+                        <a class="bg-white text-primary px-4 py-2 rounded-lg mt-auto ml-auto font-semibold" href="https://www.sage.com/fr-fr/">Visiter</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="glide__slide">
+                <div class="bg-red-500 bg-opacity-20 rounded-3xl mx-auto grid grid-cols-3 overflow-hidden">
+    
+                    <div class="bg-primary rounded-3xl overflow-hidden p-8 flex flex-col justify-center relative">
+                        <img class="w-12 h-12 absolute right-8 top-8 object-contain" src="{{ url_for('static', filename='images/quotes.webp') }}" alt="Quotes" loading="lazy" />
+                        <img src="{{ url_for('static',filename='images/silae_logo.jpeg') }}" alt="Silae" class="rounded-3xl w-32 h-32 mx-auto object-contain" loading="lazy" alt="Expert-Comptable">
+                        <h2 class="text-3xl font-black text-center text-white mt-4">Silae</h2>
+                    </div>
+
+                    <div class="p-8 flex flex-col col-span-2 overflow-auto">
+                        <p class="text-lg">{{_("Silae est un logiciel de paie et de gestion des ressources humaines, conçu pour optimiser et automatiser les processus RH, offrant une solution complète et intuitive adaptée aux besoins spécifiques des entreprises françaises.")}}</p>
+                        <a class="bg-white text-primary px-4 py-2 rounded-lg mt-auto ml-auto font-semibold" href="https://www.silae.fr/">Visiter</a>
+                    </div>
+
+                </div>
+            </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var glide = new Glide('.glide', {
+          type: 'carousel',
+          startAt: 0,
+          perView: 1,
+          focusAt: 'center',
+          autoplay: 5000,
+          hoverpause: true,
+          animationDuration: 800,
+          animationTimingFunc: 'ease-in-out'
+        }).mount();
+    });
+  </script>  

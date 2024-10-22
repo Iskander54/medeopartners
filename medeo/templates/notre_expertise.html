@@ -163,102 +163,10 @@
 
   {# Nos partenaires #}
   <section class="w-full bg-primary text-white">
-    <div class="container mx-auto flex flex-col gap-8 py-24 justify-center">
+    <div class="container mx-auto flex flex-col mb-8 py-24 justify-center">
       <h2 class="font-bold text-5xl">{{_('Partenaires')}}</h2>
-      <div class="grid grid-cols-4 gap-8 gap-y-16 justify-center">
-
-        <div class="flex flex-col gap-4 text-center items-center opacity-95 hover:opacity-100 transition select-none bg-white bg-opacity-5 p-6 rounded-3xl">
-          <img class="w-24 h-24 object-contain rounded-3xl" src="{{ url_for('static',filename='images/axonaut_logo.webp') }}" alt="Axonaut"
-          loading="lazy">
-          <h1 class="text-2xl font-extrabold">{{_('Axonaut')}}</h1>
-          <p class="text-center">
-            {{_("Axonaut est un logiciel de gestion intégrée, optimisant les opérations des PME avec des outils pour la comptabilité, la facturation, le CRM, les RH et la gestion de projet. Sa plateforme intuitive facilite la centralisation et l'efficacité des processus d'entreprise.")}}
-          </p>
-          <a href="https://www.axonaut.com/" class="mt-auto ml-auto px-4 py-2 rounded-lg bg-white text-primary font-bold">{{_('En savoir plus')}}</a>
-        </div>
-
-        <div class="flex flex-col gap-4 text-center items-center opacity-95 hover:opacity-100 transition select-none bg-white bg-opacity-5 p-6 rounded-3xl">
-          <img class="w-24 h-24 object-contain rounded-3xl" src="{{ url_for('static',filename='images/bamana_solutions_logo.webp') }}" alt="Bamana Solutions"
-          loading="lazy">
-          <h1 class="text-2xl font-extrabold">{{_('Bamana Solutions')}}</h1>
-          <p class="text-center">
-            {{_("Bamana Solutions est un cabinet de conseil spécialisé dans le numérique, offrant une expertise approfondie pour accompagner les entreprises dans leur transformation digitale et l'optimisation de leurs processus technologiques.")}}
-          </p>
-          <a href="https://www.bamanasolutions.com/" class="mt-auto ml-auto px-4 py-2 rounded-lg bg-white text-primary font-bold">{{_('En savoir plus')}}</a>
-        </div>
-
-        <div class="flex flex-col gap-4 text-center items-center opacity-95 hover:opacity-100 transition select-none bg-white bg-opacity-5 p-6 rounded-3xl">
-          <img class="w-24 h-24 object-contain rounded-3xl" src="{{ url_for('static',filename='images/dext.webp') }}" alt="Dext"
-          loading="lazy">
-          <h1 class="text-2xl font-extrabold">{{_('Dext')}}</h1>
-          <p class="text-center">
-            {{_("Dext est une solution numérique de gestion des finances et des dépenses, conçue pour simplifier et automatiser la comptabilité des entreprises de toutes tailles, en intégrant la collecte de données, le classement et l'analyse des transactions financières.")}}
-          </p>
-          <a href="https://dext.com/" class="mt-auto ml-auto px-4 py-2 rounded-lg bg-white text-primary font-bold">{{_('En savoir plus')}}</a>
-        </div>
-
-        <div class="flex flex-col gap-4 text-center items-center opacity-95 hover:opacity-100 transition select-none bg-white bg-opacity-5 p-6 rounded-3xl">
-          <img class="w-24 h-24 object-contain rounded-3xl" src="{{ url_for('static',filename='images/docusign.webp') }}" alt="Docusign"
-          loading="lazy">
-          <h1 class="text-2xl font-extrabold">{{_('Docusign')}}</h1>
-          <p class="text-center">
-            {{_("DocuSign offre une solution de signature électronique sécurisée et efficace, facilitant la gestion des accords et la digitalisation des processus documentaires pour les entreprises et les particuliers.")}}
-          </p>
-          <a href="https://www.docusign.fr/" class="mt-auto ml-auto px-4 py-2 rounded-lg bg-white text-primary font-bold">{{_('En savoir plus')}}</a>
-        </div>
-
-        <div class="flex flex-col gap-4 text-center items-center opacity-95 hover:opacity-100 transition select-none bg-white bg-opacity-5 p-6 rounded-3xl">
-          <img class="w-24 h-24 object-contain rounded-3xl" src="{{ url_for('static',filename='images/gocardless.webp') }}" alt="GoCardless"
-          loading="lazy">
-          <h1 class="text-2xl font-extrabold">{{_('GoCardless')}}</h1>
-          <p class="text-center">
-            {{_("GoCardless est un service de paiement spécialisé dans la gestion simplifiée des prélèvements bancaires automatiques, aidant les entreprises à collecter et gérer les paiements récurrents de manière efficace et sécurisée.")}}
-          </p>
-          <a href="https://gocardless.com/" class="mt-auto ml-auto px-4 py-2 rounded-lg bg-white text-primary font-bold">{{_('En savoir plus')}}</a>
-        </div>
-
-        <div class="flex flex-col gap-4 text-center items-center opacity-95 hover:opacity-100 transition select-none bg-white bg-opacity-5 p-6 rounded-3xl">
-          <img class="w-24 h-24 object-contain rounded-3xl" src="{{ url_for('static',filename='images/gcp_logo.webp') }}" alt="Google Cloud"
-          loading="lazy">
-          <h1 class="text-2xl font-extrabold">{{_('Google Cloud')}}</h1>
-          <p class="text-center">
-            {{_("Google Cloud fournit une suite complète de services de cloud computing, offrant des solutions de stockage de données, de calcul en nuage et d'analyse avancée, destinées à favoriser l'innovation et l'efficacité opérationnelle des entreprises.")}}
-          </p>
-          <a href="https://cloud.google.com/" class="mt-auto ml-auto px-4 py-2 rounded-lg bg-white text-primary font-bold">{{_('En savoir plus')}}</a>
-        </div>
-
-        <div class="flex flex-col gap-4 text-center items-center opacity-95 hover:opacity-100 transition select-none bg-white bg-opacity-5 p-6 rounded-3xl">
-          <img class="w-24 h-24 object-contain rounded-3xl" src="{{ url_for('static',filename='images/inpi.webp') }}" alt="INPI"
-          loading="lazy">
-          <h1 class="text-2xl font-extrabold">{{_('INPI')}}</h1>
-          <p class="text-center">
-            {{_("L'INPI (Institut National de la Propriété Industrielle) est l'organisme français officiel dédié à l'enregistrement et à la protection des brevets, marques, dessins et modèles, soutenant l'innovation et la compétitivité des entreprises et inventeurs.")}}
-          </p>
-          <a href="https://www.inpi.fr/" class="mt-auto ml-auto px-4 py-2 rounded-lg bg-white text-primary font-bold">{{_('En savoir plus')}}</a>
-        </div>
-
-        <div class="flex flex-col gap-4 text-center items-center opacity-95 hover:opacity-100 transition select-none bg-white bg-opacity-5 p-6 rounded-3xl">
-          <img class="w-24 h-24 object-contain rounded-3xl" src="{{ url_for('static',filename='images/sage.jpeg') }}" alt="Sage"
-          loading="lazy">
-          <h1 class="text-2xl font-extrabold">{{_('Sage')}}</h1>
-          <p class="text-center">
-            {{_("Sage est un leader mondial en solutions de comptabilité et de gestion d'entreprise, offrant des logiciels innovants pour faciliter la finance, la paie et les ressources humaines, adaptés aux besoins des petites et moyennes entreprises.")}}
-          </p>
-          <a href="https://www.sage.com/fr-fr/" class="mt-auto ml-auto px-4 py-2 rounded-lg bg-white text-primary font-bold">{{_('En savoir plus')}}</a>
-        </div>
-
-        <div class="flex flex-col gap-4 text-center items-center opacity-95 hover:opacity-100 transition select-none bg-white bg-opacity-5 p-6 rounded-3xl">
-          <img class="w-24 h-24 object-contain rounded-3xl" src="{{ url_for('static',filename='images/silae_logo.jpeg') }}" alt="Silae"
-          loading="lazy">
-          <h1 class="text-2xl font-extrabold">{{_('Silae')}}</h1>
-          <p class="text-center">
-            {{_("Silae est un logiciel de paie et de gestion des ressources humaines, conçu pour optimiser et automatiser les processus RH, offrant une solution complète et intuitive adaptée aux besoins spécifiques des entreprises françaises.")}}
-          </p>
-          <a href="https://www.silae.fr/" class="mt-auto ml-auto px-4 py-2 rounded-lg bg-white text-primary font-bold">{{_('En savoir plus')}}</a>
-        </div>
-
-      </div>
     </div>
+    {% include "carousels/carousel_partners.html" %}
   </section>
 </div>
 
