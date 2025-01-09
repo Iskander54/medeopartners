@@ -47,3 +47,79 @@
 .fade {
     animation: fadeIn 1s;
 }
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-from-right {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-right {
+    animation: slide-from-right 0.3s ease-out;
+}
+
+.glide__bullets {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.glide__bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.glide__bullet--active {
+    background-color: #467596; /* Active bullet color */
+}
+
+.glide__bullet:hover,
+.glide__bullet:focus {
+    background-color: #555;
+}
+
+.glide__bullet[aria-current="true"] {
+    background-color: #ff0000; /* Active bullet color */
+}

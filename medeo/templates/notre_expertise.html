@@ -5,17 +5,17 @@
 
 <!-- Page Content -->
 <div id="content">
-  <div data-translate class="h-96 animate-top">
+  <div data-translate class="h-96 animate-top animate-fade-in-up">
     <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
       <h1 class="text-5xl text-primary font-black">{{_('Notre expertise')}}</h1>
       <h2 class="italic text-primary opacity-95 font-bold text-2xl">{{_('Medeo, "Cure your business"')}}</h2>
     </div>
   </div>
 
-  <section class="w-full bg-white border-t">
+  <section class="w-full bg-white border-t animate-fade-in-up">
     <div class="container mx-auto grid md:grid-cols-2 gap-8 py-24 justify-center">
 
-      <div class="flex flex-col gap-6 p-8 bg-gray-50 rounded-3xl">
+      <div class="flex flex-col gap-6 p-8 bg-gray-50 rounded-3xl transition transform hover:scale-105">
         <img class="w-24 h-24 object-contain" src="{{ url_for('static',filename='images/accounting.webp') }}" alt="Comptabilité"
         loading="lazy">
         <h1 class="text-3xl text-primary font-extrabold">{{_('Expertise comptable')}} </h1>
@@ -39,7 +39,7 @@
 
 
 
-      <div class="flex flex-col gap-6 p-8 bg-gray-50 rounded-3xl">
+      <div class="flex flex-col gap-6 p-8 bg-gray-50 rounded-3xl transition transform hover:scale-105">
         <img class="w-24 h-24 object-contain" src="{{ url_for('static',filename='images/audit.webp') }}" alt="Audit"
         loading="lazy">
         <h1 class="text-3xl text-primary font-extrabold">{{_('Audit')}}</h1>
@@ -56,7 +56,7 @@
 
 
 
-      <div class="flex flex-col gap-6 p-8 bg-gray-50 rounded-3xl">
+      <div class="flex flex-col gap-6 p-8 bg-gray-50 rounded-3xl transition transform hover:scale-105">
         <img class="w-24 h-24 object-contain" src="{{ url_for('static',filename='images/budget.webp') }}" alt="Optimisation Fiscale"
         loading="lazy">
         <h1 class="text-3xl text-primary font-extrabold">{{_("Conseil d\'optimisation")}}</h1>
@@ -71,7 +71,7 @@
       </div>
 
 
-      <div class="flex flex-col gap-6 p-8 bg-gray-50 rounded-3xl">
+      <div class="flex flex-col gap-6 p-8 bg-gray-50 rounded-3xl transition transform hover:scale-105">
         <img class="w-24 h-24 object-contain" src="{{ url_for('static',filename='images/ux.webp') }}" alt="Cabinet comptable digital"
         loading="lazy">
         <h1 class="text-3xl text-primary font-extrabold">{{_('Conseil informatique')}}</h1>
@@ -82,7 +82,7 @@
           <br><br>\n
           En outre, nous aidons les entreprises à renforcer la sécurité de leurs données afin de garantir la protection des informations sensibles liées à leur activité.")}}
         </p>
-        <a href="{{_('conseil_informatique')}}" class="mt-auto ml-auto text-primary font-bold">{{_('En savoir plus')}}</a>
+        <a href="#" class="mt-auto ml-auto text-primary font-bold">{{_('En savoir plus')}}</a>
       </div>
 
     </div>
@@ -96,7 +96,7 @@
       <h3 class="font-bold text-2xl text-gray-500">{{_('Ils nous ont fait confiance...')}}</h3>
       <div class="grid md:grid-cols-2 gap-8">
 
-        <div class="bg-white rounded-2xl shadow-lg p-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 transition transform hover:scale-105">
           <img class="w-16 h-16 object-contain rounded-full border" src="{{ url_for('static',filename='images/fintis_logo.webp') }}" alt="Fintis"
           loading="lazy">
           <h1 class="text-lg text-primary font-extrabold">{{_('Cabinet de conseil en investissement')}}</h1>
@@ -105,7 +105,7 @@
           </p>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-lg p-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 transition transform hover:scale-105">
           <img class="w-16 h-16 object-contain rounded-full border" src="{{ url_for('static',filename='images/energy_consulting_logo.webp') }}" alt="Energy Consulting"
           loading="lazy">
           <h1 class="text-lg text-primary font-extrabold">{{_('Cabinet de consulting en ingénierie')}}</h1>
@@ -114,7 +114,7 @@
           </p>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-lg p-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 transition transform hover:scale-105">
           <img class="w-16 h-16 object-contain rounded-full border" src="{{ url_for('static',filename='images/empruntis_logo.webp') }}" alt="Empruntis"
           loading="lazy">
           <h1 class="text-lg text-primary font-extrabold">{{_('Courtier immobilier')}}</h1>
@@ -123,7 +123,7 @@
           </p>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-lg p-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 transition transform hover:scale-105">
           <img class="w-16 h-16 object-contain rounded-full border" src="{{ url_for('static',filename='images/bamana_solutions_logo.webp') }}" alt="Bamana Solutions"
           loading="lazy">
           <h1 class="text-lg text-primary font-extrabold">{{_('Cabinet de conseil en numérique et transformation digitale')}}</h1>
@@ -135,7 +135,7 @@
           </p>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-lg p-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 transition transform hover:scale-105">
           <img class="w-16 h-16 object-contain rounded-full border" src="{{ url_for('static',filename='images/DMC_logo.webp') }}" alt="Agence DMC"
           loading="lazy">
           <h1 class="text-lg text-primary font-extrabold">{{_('Agence DMC')}}</h1>
@@ -146,7 +146,7 @@
           </p>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-lg p-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 transition transform hover:scale-105">
           <img class="w-16 h-16 object-contain rounded-full border" src="{{ url_for('static',filename='images/rc_consulting.webp') }}" alt="Cabinet de conseil en investissements financiers"
           loading="lazy">
           <h1 class="text-lg text-primary font-extrabold">{{_('Cabinet de conseil en investissements financiers')}}</h1>

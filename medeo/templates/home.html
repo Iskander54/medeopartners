@@ -7,101 +7,104 @@
 <div class="bg-image-home"></div>
 
 <div id="content">
-
+    <!-- Hero Section avec animation de fondu -->
     <div class="container ease-in-out transition transition-300 mx-auto grid md:grid-cols-2 gap-8 md:gap-16 py-16">
-        <div class="md:pb-24 text-center flex flex-col gap-4 items-center">
-          <h1 data-translate class="text-2xl text-gray-500 font-extrabold">{{_('Bienvenue chez')}}</h1>
-          <h1 data-translate class="text-7xl font-extrabold text-primary mb-2">{{_('Medeo Partners')}}</h1>
-          <h4 data-translate class="text-gray-700">
+        <div class="md:pb-24 text-center flex flex-col gap-4 items-center transform transition-all duration-1000 hover:scale-105">
+          <h1 data-translate class="text-2xl text-gray-500 font-extrabold animate-fade-in-down">{{_('Bienvenue chez')}}</h1>
+          <h1 data-translate class="text-7xl font-extrabold text-primary mb-2 animate-fade-in-up">{{_('Medeo Partners')}}</h1>
+          <h4 data-translate class="text-gray-700 animate-fade-in">
               {{_("Fort de plus 10 ans d\'expertise en comptabilité et fiscalité, nous")}}
               {{_("accompagnons nos clients de tous secteurs dans leurs démarches")}}
               {{_("de création d\'entreprise, de projets, et d\'optimisation fiscale.")}}
           </h4>
 
-          <a class="rounded-full px-4 py-2 font-medium bg-primary text-white font-semibold w-max mt-1" data translate href="{{_('notre_expertise')}}">{{_("Plus d\'informations")}}</a>
+          <a class="rounded-full px-4 py-2 font-medium bg-primary text-white font-semibold w-max mt-1 transform transition-all duration-300 hover:scale-110 hover:shadow-lg" data-translate href="{{_('notre_expertise')}}">{{_("Plus d\'informations")}}</a>
         </div>
-        <div class="w-full h-64 md:h-96 rounded-2xl overflow-hidden relative">
-            <img src="{{ url_for('static',filename='images/medeo_talking.webp') }}" alt="Services de comptabilité" class="object-cover w-full h-full" loading="lazy">
+        <div class="w-full h-64 md:h-96 rounded-2xl overflow-hidden relative transform transition-all duration-500 hover:scale-105">
+            <img src="{{ url_for('static',filename='images/medeo_talking.webp') }}" alt="Services de comptabilité" class="object-cover w-full h-full transition-transform duration-700 hover:scale-110" loading="lazy">
         </div>
     </div>
 
+    <!-- Section Expertise avec effet parallax -->
     <section class="w-full relative">
-        <img class="w-full h-full object-cover absolute" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" alt="Experts en comptabilité chez Medeo Partners">
+        <img class="w-full h-full object-cover absolute transform transition-all duration-1000 hover:scale-105" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" alt="Experts en comptabilité chez Medeo Partners">
         <div class="bg-gray-800 bg-opacity-90 h-full w-full relative z-10 backdrop-filter backdrop-blur-sm">
             <div class="container mx-auto flex flex-col h-full py-16">
-                <h1 class="text-4xl text-white font-extrabold" data-translate>{{_('Notre expertise à votre service')}}</h1>
-                <h3 class="text-2xl text-white font-semibold opacity-60 italic" data-translate>{{_('Medeo, "Cure your business"')}}</h3>
+                <h1 class="text-4xl text-white font-extrabold animate-fade-in-down" data-translate>{{_('Notre expertise à votre service')}}</h1>
+                <h3 class="text-2xl text-white font-semibold opacity-60 italic animate-fade-in" data-translate>{{_('Medeo, "Cure your business"')}}</h3>
                 <div class="grid lg:grid-cols-4 mt-8 gap-8 text-center text-white">
-                    <div class="flex flex-col items-center gap-4">
-                        <img src="{{ url_for('static',filename='images/accounting.webp') }}" alt="Services de comptabilité" width="70" height="70" loading="lazy">
+                    <!-- Cartes d'expertise avec hover effects -->
+                    <div class="flex flex-col items-center gap-4 transform transition-all duration-300 hover:scale-105 hover:shadow-xl p-4 rounded-lg">
+                        <img src="{{ url_for('static',filename='images/accounting.webp') }}" alt="Services de comptabilité" width="70" height="70" loading="lazy" class="transform transition-all duration-500 hover:rotate-12">
                         <h2 class="text-xl font-bold">{{_('Expertise Comptable')}}</h2>
-                        <div class="text-left text-sm font-medium">
+                        <div class="text-left text-sm font-medium transition-all duration-300 hover:text-primary">
                             <h5 class="banner_text"> {{_('Notre équipe dispose d\'une expertise de haut niveau pour vous offrir des \n services de conseil et d\'assistance dans les domaines de la gestion financière, comptable et fiscale.')}}
                             </h5>
                         </div>
                     </div>
-        
-                    <div class="flex flex-col items-center gap-4">
-                        <img src="{{ url_for('static',filename='images/audit.webp') }}" alt="Services d'audit financier" width="70" height="70" loading="lazy">
+                    
+                    <!-- Répéter le même pattern pour les autres cartes d'expertise -->
+                    <div class="flex flex-col items-center gap-4 transform transition-all duration-300 hover:scale-105 hover:shadow-xl p-4 rounded-lg">
+                        <img src="{{ url_for('static',filename='images/audit.webp') }}" alt="Services d'audit financier" width="70" height="70" loading="lazy" class="transform transition-all duration-500 hover:rotate-12">
                         <h2 class="text-xl font-bold">{{_("Audit")}}</h2>
-                        <div class="text-left text-sm font-medium">
-                            {{_("Notre cabinet comptable est spécialisé dans l\'audit et la certification \n des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons \n en étroite collaboration avec nos clients pour assurer la conformité de leurs comptes
-                            avec les normes \n comptables et fiscales en vigueur.")}}
+                        <div class="text-left text-sm font-medium transition-all duration-300 hover:text-primary">
+                            {{_("Notre cabinet comptable est spécialisé dans l\'audit et la certification \n des comptes des entreprises de toutes tailles et de tous secteurs. Nous travaillons \n en étroite collaboration avec nos clients pour assurer la conformité de leurs comptes avec les normes \n comptables et fiscales en vigueur.")}}
                         </div>
                     </div>
-        
-                    <div class="flex flex-col items-center gap-4">
-                        <img src="{{ url_for('static',filename='images/budget.webp') }}" width="70" height="70" loading="lazy" alt="Optimisation fiscale et gestion de budget">
+
+                    <div class="flex flex-col items-center gap-4 transform transition-all duration-300 hover:scale-105 hover:shadow-xl p-4 rounded-lg">
+                        <img src="{{ url_for('static',filename='images/budget.webp') }}" width="70" height="70" loading="lazy" alt="Optimisation fiscale et gestion de budget" class="transform transition-all duration-500 hover:rotate-12">
                         <h2 class="text-xl font-bold">{{_('Conseil optimisation ')}}</h2>
-                        <div class="text-left text-sm font-medium">
-                            {{_("Nos services d\'optimisation d\'entreprise incluent l\'analyse de la \n performance, l\'identification des leviers de croissance, la mise en place de plans d\'action pour \n l\'amélioration de la rentabilité, la gestion de projets de transformation,
-                            la gestion du changement, \n l\'optimisation de la chaîne d\'approvisionnement et l\'analyse des coûts.")}}</div>
-        
+                        <div class="text-left text-sm font-medium transition-all duration-300 hover:text-primary">
+                            {{_("Nos services d\'optimisation d\'entreprise incluent l\'analyse de la \n performance, l\'identification des leviers de croissance, la mise en place de plans d\'action pour \n l\'amélioration de la rentabilité, la gestion de projets de transformation, la gestion du changement, \n l\'optimisation de la chaîne d\'approvisionnement et l\'analyse des coûts.")}}
+                        </div>
                     </div>
-        
-                    <div class="flex flex-col items-center gap-4">
-                        <img src="{{ url_for('static',filename='images/ux.webp') }}" width="70" height="70" loading="lazy" alt="ux-img">
-                        <h2 class="text-xl font-bold"> {{_('Service Informatique')}}</h2>
-                        <div class="text-left text-sm font-medium">
+
+                    <div class="flex flex-col items-center gap-4 transform transition-all duration-300 hover:scale-105 hover:shadow-xl p-4 rounded-lg">
+                        <img src="{{ url_for('static',filename='images/ux.webp') }}" width="70" height="70" loading="lazy" alt="ux-img" class="transform transition-all duration-500 hover:rotate-12">
+                        <h2 class="text-xl font-bold">{{_('Service Informatique')}}</h2>
+                        <div class="text-left text-sm font-medium transition-all duration-300 hover:text-primary">
                             {{_("Notre département informatique prend en charge l'ensemble des problématiques liées aux systèmes d'information, à la gestion des données clients, ainsi qu'à l'optimisation de vos processus internes.")}}
                         </div>
-        
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Section Actualités avec animation au scroll -->
     <div class="bg-white w-full flex flex-col py-16 gap-16">
-        <h1 class="text-5xl text-primary text-center font-black py-8" data-translate>{{_('Découvrez nos dernières actualités')}}</h1>
+        <h1 class="text-5xl text-primary text-center font-black py-8 animate-fade-in-up" data-translate>{{_('Découvrez nos dernières actualités')}}</h1>
         {% include 'carousels/carousel_home.html' %}
     </div>
 
+    <!-- Section Contact avec effets de survol -->
     <div class="bg-primary w-full flex flex-col py-16 gap-16">
         <div class="container mx-auto flex flex flex-col gap-4">
-            <h1 class="text-white text-4xl font-extrabold">{{_('Travailler avec nous...')}}</h1>
-            <p class="text-white text-lg font-medium">{{_("Besoin d\'un expert comptable pour votre entreprise ? Medeo Partners est là pour vous aider, avec une équipe d\'experts comptables et de fiscalistes prêts à vous accompagner dans la gestion de votre entreprise.")}}</p>
+            <h1 class="text-white text-4xl font-extrabold animate-fade-in">{{_('Travailler avec nous...')}}</h1>
+            <p class="text-white text-lg font-medium animate-fade-in-up">{{_("Besoin d\'un expert comptable pour votre entreprise ? Medeo Partners est là pour vous aider, avec une équipe d\'experts comptables et de fiscalistes prêts à vous accompagner dans la gestion de votre entreprise.")}}</p>
             <div class="grid lg:grid-cols-3 gap-8 mt-12">
-                <a href="{{_('nouscontacter#nous_ecrire')}}" class="flex flex-col items-center w-full relative rounded-lg shadow-lg h-48 overflow-hidden">
-                    <img src="{{ url_for('static',filename='images/woman_phone.webp') }}" alt="Nous contacter" class="absolute h-full w-full object-cover">
-                    <div class="relative flex flex-col gap-4 items-center justify-center z-10 w-full h-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-50">
-                        <i class="fa-solid fa-phone text-red-500 text-5xl"></i>
+                <!-- Cartes de contact avec animations -->
+                <a href="{{_('nouscontacter#nous_ecrire')}}" class="flex flex-col items-center w-full relative rounded-lg shadow-lg h-48 overflow-hidden transform transition-all duration-500 hover:scale-105">
+                    <img src="{{ url_for('static',filename='images/woman_phone.webp') }}" alt="Nous contacter" class="absolute h-full w-full object-cover transition-transform duration-700 hover:scale-110">
+                    <div class="relative flex flex-col gap-4 items-center justify-center z-10 w-full h-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-50 transition-all duration-300 hover:bg-opacity-70">
+                        <i class="fa-solid fa-phone text-red-500 text-5xl transform transition-all duration-300 hover:rotate-12"></i>
                         <h2 class="text-center text-xl font-bold">{{_('Nous contacter')}}</h2>
                     </div>
                 </a>
 
-                <a href="{{_('nouscontacter#nous_rejoindre')}}" class="flex flex-col items-center w-full relative rounded-lg shadow-lg h-48 overflow-hidden">
-                    <img src="{{ url_for('static',filename='images/main-img.webp') }}" alt="Nous rejoindre" class="absolute h-full w-full object-cover">
-                    <div class="relative flex flex-col gap-4 items-center justify-center z-10 w-full h-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-50">
-                        <i class="fa-solid fa-hand-point-up text-red-500 text-5xl"></i>
+                <a href="{{_('nouscontacter#nous_rejoindre')}}" class="flex flex-col items-center w-full relative rounded-lg shadow-lg h-48 overflow-hidden transform transition-all duration-500 hover:scale-105">
+                    <img src="{{ url_for('static',filename='images/main-img.webp') }}" alt="Nous rejoindre" class="absolute h-full w-full object-cover transition-transform duration-700 hover:scale-110">
+                    <div class="relative flex flex-col gap-4 items-center justify-center z-10 w-full h-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-50 transition-all duration-300 hover:bg-opacity-70">
+                        <i class="fa-solid fa-hand-point-up text-red-500 text-5xl transform transition-all duration-300 hover:rotate-12"></i>
                         <h2 class="text-center text-xl font-bold">{{_('Nous rejoindre')}}</h2>
                     </div>
                 </a>
 
-                <a href="{{_('nouscontacter#nos_bureaux')}}" class="flex flex-col items-center w-full relative rounded-lg shadow-lg h-48 overflow-hidden">
-                    <img src="{{ url_for('static',filename='images/eiffel_tower.webp') }}" alt="Nos bureaux" class="absolute h-full w-full object-cover">
-                    <div class="relative flex flex-col gap-4 items-center justify-center z-10 w-full h-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-50">
-                        <i class="fa-solid fa-location-dot text-red-500 text-5xl"></i>
+                <a href="{{_('nouscontacter#nos_bureaux')}}" class="flex flex-col items-center w-full relative rounded-lg shadow-lg h-48 overflow-hidden transform transition-all duration-500 hover:scale-105">
+                    <img src="{{ url_for('static',filename='images/eiffel_tower.webp') }}" alt="Nos bureaux" class="absolute h-full w-full object-cover transition-transform duration-700 hover:scale-110">
+                    <div class="relative flex flex-col gap-4 items-center justify-center z-10 w-full h-full backdrop-filter backdrop-blur-sm bg-white bg-opacity-50 transition-all duration-300 hover:bg-opacity-70">
+                        <i class="fa-solid fa-location-dot text-red-500 text-5xl transform transition-all duration-300 hover:rotate-12"></i>
                         <h2 class="text-center text-xl font-bold">{{_('Nos bureaux')}}</h2>
                     </div>
                 </a>
@@ -109,103 +112,5 @@
         </div>
     </div>
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-
-        ////   LIENS DES ENCARTS CLICKABLES
-        document.getElementById('prez_expert_comptable').addEventListener('click', function() {
-            window.location.href = 'expertise_comptable';
-        });
-
-        document.getElementById('prez_audit').addEventListener('click', function() {
-            window.location.href = 'audit';
-        });
-
-        document.getElementById('prez_conseil_optimisation').addEventListener('click', function() {
-            window.location.href = 'conseil_optimisation';
-        });
-
-        document.getElementById('prez_service_info').addEventListener('click', function() {
-            window.location.href = 'notre_expertise';
-        });
-
-    });
-</script>
-
-
-<script>
-    $(document).ready(function() {
-        var totalSlides = $('input[name="radio-buttons"]').length;
-        var currentIndex = 0;
-
-        var autoSlide = setInterval(function() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
-        }, 8000); // Change slide every 6 seconds
-
-        // Reset the interval on manual click
-        $('.carousel-controls label, .carousel-dots label').click(function() {
-            clearInterval(autoSlide);
-            autoSlide = setInterval(function() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                $('input[name="radio-buttons"]').eq(currentIndex).prop('checked', true);
-            }, 8000);
-        });
-
-
-
-        document.querySelectorAll('.readmore_bt').forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.stopPropagation();
-            });
-        });
-
-
-    });
-</script>
-<style>
-    .clickable_encart {
-        cursor: pointer;
-    }
-    
-    .carousel-cell {
-        width: 66%;
-        height: 800px;
-        margin-right: 10px;
-        position: relative;
-        /* background: #8C8; */
-        border-radius: 5px;
-        counter-increment: gallery-cell;
-    }
-    /* cell number */
-    
-    .carousel-cell:before {
-        display: block;
-        text-align: center;
-        /* content: counter(gallery-cell); */
-        line-height: 200px;
-        font-size: 80px;
-        color: white;
-    }
-    
-    .square1,
-    .square2 {
-        width: 100px;
-        height: 100px;
-        position: absolute;
-    }
-    
-    .square1 {
-        background-color: red;
-    }
-    
-    .square2 {
-        background-color: blue;
-        left: 10%;
-        top: 10%;
-    }
-</style>
-
-
 
 {% endblock content %}

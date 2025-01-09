@@ -1,70 +1,79 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="bg-image-home"></div>
+<div class="bg-image-home animate-fade-in-up"></div>
 
 <!-- Page Content -->
 <div id="content">
-  <div data-translate class="h-96 animate-top">
+  <div data-translate class="h-96 animate-fade-in-up">
     <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
-      <h5 class="text-primary font-bold text-xl opacity-75">{{_("Notre expertise")}}</h5>
-      <h1 class="text-5xl text-primary font-black">{{_('Audit')}}</h1>
-      <h2 class="italic text-primary opacity-95 font-bold text-2xl">{{_('Medeo, "Cure your business"')}}</h2>
+      <h5 class="text-primary font-bold text-xl opacity-75 animate-fade-in-up">
+        {{_("Notre expertise")}}
+      </h5>
+      <h1 class="text-5xl text-primary font-black animate-slide-in-left">
+        {{_('Audit')}}
+      </h1>
+      <h2 class="italic text-primary opacity-95 font-bold text-2xl animate-slide-in-right">
+        {{_('Medeo, "Cure your business"')}}
+      </h2>
     </div>
   </div>
 
   <section class="w-full bg-white border-t">
-    <div class="container mx-auto py-16 flex flex-col gap-8">
+    <div class="container mx-auto py-16 flex flex-col gap-8 animate-fade-in-up">
 
       <div class="flex flex-col gap-8">
 
-        <div class="flex flex-col gap-4 md:w-1/2">
-             <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/accounting.webp') }}"
-                alt="Expertise-Comptable Commissariat aux comptes">
-             <h3 class="text-3xl font-bold text-primary">{{_('Audit contractuel')}}</h3>
-             <p class="text-lg text-gray-700">
-                {{_("Nous réalisons un examen indépendant systématique et méthodique des états financiers de nos clients en tant qu'auditeurs qualifiés conformément aux normes d'audit.")}}
-                <br>
-                {{_("L'objectif de notre audit contractuel est d'émettre une opinion sur la fiabilité des états financiers et leur conformité avec les principes comptables officiellement en vigueur.")}}
-                <br>
-                {{_("Notre mission consiste également à détecter les erreurs, omissions et irrégularités financières afin de garantir l'exactitude des informations dans un soucis de transparence ce qui permet, de renforcer la confiance des parties prenantes et d'assurer la conformité avec la réglementation.")}}
-                <br><br>
-            </p>
+        <div class="flex flex-col gap-4 md:w-1/2 transition transform hover:scale-105">
+          <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/accounting.webp') }}"
+            alt="Expertise-Comptable Commissariat aux comptes">
+          <h3 class="text-3xl font-bold text-primary">{{_('Audit contractuel')}}</h3>
+          <p class="text-lg text-gray-700">
+            {{_("Nous réalisons un examen indépendant systématique et méthodique des états financiers de nos clients en tant qu'auditeurs qualifiés conformément aux normes d'audit.")}}
+            <br>
+            {{_("L'objectif de notre audit contractuel est d'émettre une opinion sur la fiabilité des états financiers et leur conformité avec les principes comptables officiellement en vigueur.")}}
+            <br>
+            {{_("Notre mission consiste également à détecter les erreurs, omissions et irrégularités financières afin de garantir l'exactitude des informations dans un souci de transparence ce qui permet de renforcer la confiance des parties prenantes et d'assurer la conformité avec la réglementation.")}}
+          </p>
         </div>
 
-        <div class="ml-auto flex flex-col gap-4 md:w-1/2">
+        <div class="ml-auto flex flex-col gap-4 md:w-1/2 transition transform hover:scale-105">
           <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/audit.webp') }}"
             alt="Expertise-Comptable Commissariat aux comptes">
           <h3 class="text-3xl font-bold text-primary">{{_('Commissariat aux comptes')}}</h3>
           <p class="text-lg text-gray-700">
-            {{_("En tant que commissaires indépendants,nous proposons un service de commissariat aux compotes afin d'assurer la fiabilité et la transparence des états financiers de nos clients. Notre mission consiste à émettre des avis sur la sincérité et l'exactitude des états financiers et à signaler toute non-conformité éventuelle.")}}
+            {{_("En tant que commissaires indépendants, nous proposons un service de commissariat aux comptes afin d'assurer la fiabilité et la transparence des états financiers de nos clients. Notre mission consiste à émettre des avis sur la sincérité et l'exactitude des états financiers et à signaler toute non-conformité éventuelle.")}}
           </p>
         </div>
 
       </div>
 
       <div class="flex flex-col gap-8 mt-16">
-        <h3 class="text-3xl md:text-5xl font-black text-primary md:w-2/3">{{_('Notre mission d’audit contractuel : un gage de transparence et de fiabilité')}}</h3>
+        <h3 class="text-3xl md:text-5xl font-black text-primary md:w-2/3 animate-slide-in-left">
+          {{_('Notre mission d’audit contractuel : un gage de transparence et de fiabilité')}}
+        </h3>
 
-        <p class="text-xl text-gray-700">
+        <p class="text-xl text-gray-700 animate-fade-in-up">
           {{_('En tant qu\'auditeurs qualifiés, nous réalisons un examen indépendant systématique, complet et approfondi des états financiers de nos clients, conformément aux normes d\'audit en vigueur. Voici les principaux objectifs et avantages de notre mission d’audit contractuel :')}}
         </p>
 
-        <ul class="list-disc text-lg text-gray-700 pl-8 md:w-2/3">
+        <ul class="list-disc text-lg text-gray-700 pl-8 md:w-2/3 animate-fade-in-up">
           <li>{{_("<b>Fiabilité des états financiers :</b> Nous vérifions l\'exactitude des informations financières présentées, afin de garantir qu\'elles reflètent fidèlement la situation de l\'entreprise dans l\'objectif de permettre aux actionnaires et autres parties prenantes de prendre des décisions éclairées sur la base de données fiables et actualisées")}}</li>
           <li>{{_("<b>Conformité aux normes comptables :</b> Nos audits visent à assurer que les états financiers respectent scrupuleusement les principes et normes comptables officiels, qu\'ils soient locaux ou internationaux.")}}</li>
           <li>{{_("<b>Détection des erreurs et irrégularités :</b> L’audit contractuel permet de repérer rapidement les erreurs, omissions ou irrégularités financières pouvant affecter la santé de l’entreprise cela afin d\'éviter des répercussions importantes, tant sur la crédibilité de l\'entreprise que sur sa performance financière à long terme.")}}</li>
           <li>{{_("<b>Renforcement de la confiance des parties prenantes :</b> Un audit indépendant renforce la confiance des investisseurs, des créanciers, et des partenaires commerciaux en la transparence et la gestion rigoureuse de l’entreprise. Cela peut également faciliter l\'accès au financement et consolider la réputation de l\'entreprise sur le marché.")}}</li>
-            <li>{{_("<b>Prévention des risques financiers :</b> En identifiant les faiblesses des systèmes de contrôle interne, notre audit aide à prévenir les risques financiers. Nous proposons des recommandations pratiques pour améliorer les processus internes et sécuriser les flux financiers.")}}</li>
-            <li>{{_("<b>Optimisation des pratiques comptables :</b> Nos auditeurs apportent également des conseils sur l’amélioration des pratiques comptables et financières, pour assurer une meilleure gestion des ressources et des performances accrues à long terme.")}}</li>
+          <li>{{_("<b>Prévention des risques financiers :</b> En identifiant les faiblesses des systèmes de contrôle interne, notre audit aide à prévenir les risques financiers. Nous proposons des recommandations pratiques pour améliorer les processus internes et sécuriser les flux financiers.")}}</li>
+          <li>{{_("<b>Optimisation des pratiques comptables :</b> Nos auditeurs apportent également des conseils sur l’amélioration des pratiques comptables et financières, pour assurer une meilleure gestion des ressources et des performances accrues à long terme.")}}</li>
         </ul>
 
-        <p class="text-lg text-gray-700">
+        <p class="text-lg text-gray-700 animate-fade-in-up">
           {{_("En conclusion, notre mission d’audit contractuel ne se limite pas à une simple vérification des chiffres. Elle offre une vision globale de la santé financière de votre entreprise, tout en vous accompagnant dans la conformité, la gestion des risques et l’amélioration continue.")}}
         </p>
       </div>
 
-      <a href="{{_('nouscontacter')}}" class="mt-8 bg-primary text-white font-bold text-lg py-2 px-4 w-max mx-auto rounded-full">{{_('Contactez-nous')}}</a>
+      <a href="{{_('nouscontacter')}}" class="mt-8 bg-primary text-white font-bold text-lg py-2 px-4 w-max mx-auto rounded-full transition transform hover:scale-105">
+        {{_('Contactez-nous')}}
+      </a>
 
     </div>
   </section>

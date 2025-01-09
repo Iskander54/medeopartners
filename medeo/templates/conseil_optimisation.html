@@ -5,7 +5,7 @@
 
 <!-- Page Content -->
 <div id="content">
-  <div data-translate class="h-96 animate-top">
+  <div data-translate class="h-96 animate-top animate-fade-in-up">
     <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
       <h5 class="text-primary font-bold text-xl opacity-75">{{_("Notre expertise")}}</h5>
       <h1 class="hidden md:block text-5xl text-primary font-black">{{_('Conseil-Optimisation')}}</h1>
@@ -19,7 +19,7 @@
 
       <div class="flex flex-col gap-8">
 
-        <div class="flex flex-col gap-4 md:w-1/2">
+        <div class="flex flex-col gap-4 md:w-1/2 transition transform hover:scale-105">
             <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/delegation.webp') }}"
                 alt="blog-img" loading="lazy" alt="Notre expertise">
             <h3 class="text-3xl font-bold text-primary">{{_('Cession')}}</h3>
@@ -38,7 +38,7 @@
             </p>
         </div>
 
-        <div class="ml-auto flex flex-col gap-4 md:w-1/2">
+        <div class="ml-auto flex flex-col gap-4 md:w-1/2 transition transform hover:scale-105">
             <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/acquisition.webp') }}"
                 alt="Expertise-Comptable Commissariat aux comptes">
             <h3 class="text-3xl font-bold text-primary">{{_('Fusions & Acquisitions')}} </h3>
@@ -57,7 +57,7 @@
             </p>
         </div>
 
-        <div class="flex flex-col gap-4 md:w-1/2">
+        <div class="flex flex-col gap-4 md:w-1/2 transition transform hover:scale-105">
             <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/international.webp') }}"
                 alt="Expertise-Comptable Commissariat aux comptes">
             <h3 class="text-3xl font-bold text-primary">{{_('Accompagnement International')}}</h3>
@@ -70,7 +70,7 @@
             </p>
         </div>
 
-        <div class="ml-auto flex flex-col gap-4 md:w-1/2">
+        <div class="ml-auto flex flex-col gap-4 md:w-1/2 transition transform hover:scale-105">
             <img class="object-contain w-24 h-24" src="{{ url_for('static',filename='images/ancestors.webp') }}"
                 alt="Expertise-Comptable Commissariat aux comptes">
             <h5 class="text-3xl font-bold text-primary">{{_('Conseil aux particuliers')}}</h5>
@@ -86,7 +86,7 @@
 
       </div>
 
-      <a href="{{_('nouscontacter')}}" class="mt-8 bg-primary text-white font-bold text-lg py-2 px-4 w-max mx-auto rounded-full">{{_('Contactez-nous')}}</a>
+      <a href="{{_('nouscontacter')}}" class="transition transform hover:scale-105 mt-8 bg-primary text-white font-bold text-lg py-2 px-4 w-max mx-auto rounded-full">{{_('Contactez-nous')}}</a>
 
     </div>
   </section>

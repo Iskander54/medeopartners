@@ -4,7 +4,7 @@
 <div class="bg-image-home"></div>
 
 <section class="w-full">
-  <div data-translate class="h-96 animate-top">
+  <div data-translate class="h-96 animate-top animate-fade-in-up">
     <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
       <h1 class="text-5xl text-primary font-black">{{_('Actualités')}}</h1>
       <h2 class="italic text-primary opacity-75 font-bold text-2xl">{{_('Medeo, "Cure your business"')}}</h2>
@@ -17,14 +17,14 @@
     <h1 class="text-5xl text-primary font-black">{{_('Nos derniers articles')}}</h1>
     
     <div class="flex flex-wrap gap-4 select-none">
-      <a filer-article="" class="text-white bg-primary font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl md:mr-16">{{_('Toutes catégories')}}</a>
-      <a filer-article="fiscal" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl">{{_('Fiscal')}}</a>
-      <a filer-article="social" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl">{{_('Social')}}</a>
-      <a filer-article="juridique" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl">{{_('Juridique')}}</a>
+      <a filter-article="" class="text-white bg-primary font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl md:mr-16 transition">{{_('Toutes catégories')}}</a>
+      <a filter-article="fiscal" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl transition">{{_('Fiscal')}}</a>
+      <a filter-article="social" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl transition">{{_('Social')}}</a>
+      <a filter-article="juridique" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl transition">{{_('Juridique')}}</a>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_1234')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_1234')}}">
         <div class="card-img"></div>
         <a href="{{_('news_1234')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/fiscal/news_1234.jpeg') }}" alt="news" />
@@ -40,7 +40,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_787')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_787')}}">
         <div class="card-img"></div>
         <a href="{{_('news_787')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/fiscal/news_787.jpeg') }}" alt="news" />
@@ -56,7 +56,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_1112')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_1112')}}">
         <div class="card-img"></div>
         <a href="{{_('news_1112')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/fiscal/news_1112.jpeg') }}" alt="news" />
@@ -75,7 +75,7 @@
       
 
       
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_5555')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_5555')}}">
         <div class="card-img"></div>
         <a href="{{_('news_5555')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/fiscal/news_5555.jpeg') }}" alt="news" />
@@ -91,7 +91,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_1212')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_1212')}}">
         <div class="card-img"></div>
         <a href="{{_('news_1212')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/fiscal/news_1212.jpeg') }}" alt="news" />
@@ -107,7 +107,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_4322')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_4322')}}">
         <div class="card-img"></div>
         <a href="{{_('news_4322')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/fiscal/news_4322.jpeg') }}" alt="news" />
@@ -123,7 +123,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_1200')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_1200')}}">
         <div class="card-img"></div>
         <a href="{{_('news_1200')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/fiscal/news_1200.jpeg') }}" alt="news" />
@@ -139,7 +139,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card social" data-href="{{_('news_1')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card social" data-href="{{_('news_1')}}">
         <div class="card-img"></div>
         <a href="{{_('news_1')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/social/news_1.jpeg') }}" alt="news" />
@@ -154,7 +154,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card social" data-href="{{_('news_2')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card social" data-href="{{_('news_2')}}">
         <div class="card-img"></div>
         <a href="{{_('news_2')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/social/news_2.jpeg') }}" alt="news" />
@@ -170,7 +170,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card social" data-href="{{_('news_3')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card social" data-href="{{_('news_3')}}">
         <div class="card-img"></div>
         <a href="{{_('news_3')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/social/news_3.jpeg') }}" alt="news" />
@@ -186,7 +186,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card social" data-href="{{_('news_4')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card social" data-href="{{_('news_4')}}">
         <div class="card-img"></div>
         <a href="{{_('news_4')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/social/news_4.jpeg') }}" alt="news" />
@@ -202,7 +202,7 @@
           </h6>
         </div>
       </div>
-      <div class="p-6 flex flex-col gap-4 select-none cursor-pointer transition hover:bg-gray-50 rounded-3xl card juridique" data-href="{{_('news_12')}}">
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card juridique" data-href="{{_('news_12')}}">
         <div class="card-img"></div>
         <a href="{{_('news_12')}}" class="card-link">
           <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/juridique/juridique_one.jpeg') }}" alt="news" />"
@@ -229,10 +229,10 @@
 <script>
 
   $(() => {
-    $('[filer-article]').click(function() {
-      const filter = $(this).attr('filer-article');
-      $('[filer-article]').removeClass('bg-primary text-white text-blue-500 bg-gray-50');
-      $('[filer-article]').addClass('text-blue-500 bg-gray-50');
+    $('[filter-article]').click(function() {
+      const filter = $(this).attr('filter-article');
+      $('[filter-article]').removeClass('bg-primary text-white text-blue-500 bg-gray-50');
+      $('[filter-article]').addClass('text-blue-500 bg-gray-50');
       $(this).removeClass('bg-primary text-white text-blue-500 bg-gray-50');
       $(this).addClass('bg-primary text-white');
       if (filter) {

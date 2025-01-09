@@ -15,6 +15,8 @@ $(() => {
         $('#' + idAction).on('click', function() {
             let menu = $('#' + idMenu);
             menu.toggleClass('hidden');
+            $('#menu_visible').removeClass('animate-slide-right');
+            $('#menu_visible').addClass('animate-slide-right');
             // Set X and Y position of dropdown menu
             menu = $('#' + idMenu + ' > div');
             menu.on('click', function(e) {

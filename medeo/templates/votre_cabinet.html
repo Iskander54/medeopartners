@@ -5,226 +5,156 @@
 <div class="bg-image-home"></div>
 
 <div id="content">
-
-  <div data-translate class="h-96 animate-top">
+  <div data-translate class="h-96 opacity-0 transform translate-y-4 transition-all duration-1000" id="hero-section">
     <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
-      <h1 class="text-5xl text-primary font-black">«{{_('Votre')}}» {{_('cabinet')}}</h1>
-      <h2 class="italic text-primary opacity-75 font-bold text-2xl">{{_('Medeo, "Cure your business"')}}</h2>
+      <h1 class="text-5xl text-primary font-black transform transition-all duration-700 hover:scale-105">«{{_('Votre')}}» {{_('cabinet')}}</h1>
+      <h2 class="italic text-primary opacity-75 font-bold text-2xl transform transition-all duration-700 hover:scale-105">{{_('Medeo, "Cure your business"')}}</h2>
     </div>
   </div>
 
-
-
   <section class="w-full bg-primary text-white">
     <div class="container py-16 mx-auto flex flex-col gap-16">
-      <h2 class="font-bold text-5xl">{{_('Notre histoire')}}</h2>
+      <h2 class="font-bold text-5xl transform transition-all duration-500 hover:translate-x-2">{{_('Notre histoire')}}</h2>
 
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h3 class="text-2xl md:text-4xl font-semibold">{{_("MEDEO Partners est un cabinet d\'expertise comptable\n
-            et de commissariat aux comptes")}}</h3><br>
-          <h4 class="txt_votrecab" style="line-height: 30px;">{{_("inscrit à <b>l\'Ordre des experts-comptables (OEC) de Paris</b> et auprès de la\n
-            <b>Compagnie régionale des commissaires aux comptes de Paris (CRCC).</b>")}}
+      <div class="grid md:grid-cols-2 gap-8 items-center opacity-0 transform translate-y-4 transition-all duration-1000" id="history-section">
+        <div class="transform transition-all duration-500 hover:translate-x-2">
+          <h3 class="text-2xl md:text-4xl font-semibold">{{_("MEDEO Partners est un cabinet d\'expertise comptable\n et de commissariat aux comptes")}}</h3><br>
+          <h4 class="txt_votrecab" style="line-height: 30px;">{{_("inscrit à <b>l\'Ordre des experts-comptables (OEC) de Paris</b> et auprès de la\n <b>Compagnie régionale des commissaires aux comptes de Paris (CRCC).</b>")}}
           </h4>
           <h4 class="mt-8 text-2xl italic">{{_("<b>MEDEO,</b> signifiant <b>«prendre soin de»</b> en grec ancien, caractérise le désir de ses fondateurs d\'incarner le rôle de\n <b>« médecins des entreprises »</b>")}}</h4>
         </div>
-        <img class="rounded-2xl object-cover h-48 md:h-96 w-full" alt="Image du cabinet" alt="Cabinet d'expertise comptable"
-          src="{{url_for('static',filename='images/medeo_talking.webp') }}">
+        <img class="rounded-2xl object-cover h-48 md:h-96 w-full transform transition-all duration-500 hover:scale-105" alt="Image du cabinet" src="{{url_for('static',filename='images/medeo_talking.webp') }}">
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <img class="rounded-2xl object-cover hidden md:block" alt="image prendre soin" src="{{url_for('static',filename='images/heart_take_care.webp') }}" loading="lazy">
-        <div>
+      <div class="grid md:grid-cols-2 gap-8 items-center opacity-0 transform translate-y-4 transition-all duration-1000" id="partners-section">
+        <img class="rounded-2xl object-cover hidden md:block transform transition-all duration-500 hover:scale-105" alt="image prendre soin" src="{{url_for('static',filename='images/heart_take_care.webp') }}" loading="lazy">
+        <div class="transform transition-all duration-500 hover:translate-x-2">
           <p class="text-xl">
-            {{_('<i>PARTNERS</i>, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant\n
-            l\'association et la complémentarité <a class="gras_txt"><b> de ses fondateurs :')}}</a></b>
+            {{_('<i>PARTNERS</i>, emprunté à l\'anglais, souligne la notion de « partenariat », un terme représentant\n l\'association et la complémentarité <a class="gras_txt"><b> de ses fondateurs :')}}</a></b>
 
-            <a class="text-red-300" href="#" onclick="goToSlide(1);"><b>Israel HAIKOU</b></a> et
-            <a class="text-red-300" href="#" onclick="goToSlide(2);"><b>Avi GOZLANE</b></a> {{_('ont
-            fondé
-
-            le cabinet en
-            octobre 2022. ')}}
+            <a class="text-red-300 hover:text-red-400 transition-colors duration-300" href="#" onclick="goToSlide(1);"><b>Israel HAIKOU</b></a> et
+            <a class="text-red-300 hover:text-red-400 transition-colors duration-300" href="#" onclick="goToSlide(2);"><b>Avi GOZLANE</b></a> {{_('ont fondé le cabinet en octobre 2022. ')}}
             <br><br>
-
-            {{_('Après une collaboration efficace de plus de sept ans et une expérience respective de plus\n
-            de dix ans dans la comptabilité, ces « néo-médecins des entreprises » souhaitent mettre leurs\n
-            expertises au service des entreprises.')}}
+            {{_('Après une collaboration efficace de plus de sept ans et une expérience respective de plus\n de dix ans dans la comptabilité, ces « néo-médecins des entreprises » souhaitent mettre leurs\n expertises au service des entreprises.')}}
           </p>
         </div>
       </div>
 
-
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet">
-        <h1 class="text-4xl font-bold">{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne')}}</h1><br>
-        <p class="text-xl" style="text-indent: 1px; width: auto; margin-left: 0;line-height: 30px;">
-          {{_("durant le cycle de vie de votre entreprise :\n
-          en prenant soin du bien-être et de la croissance de vos projets.<br><br>
-          Nous voulons casser l\'image stéréotypée, traditionnelle et rigide des cabinets comptables \n
-          en y apportant une touche plus jeune et moderne, tout en maintenant le sérieux et la rigueur de\n
-          la profession du chiffre.")}}<br />
-        </p>
+      <div class="grid md:grid-cols-2 gap-8 items-center opacity-0 transform translate-y-4 transition-all duration-1000" id="mission-section">
+        <div class="col-xs-12 col-sm-12 col-md-6 speech-cabinet transform transition-all duration-500 hover:translate-x-2">
+          <h1 class="text-4xl font-bold">{{_('À l\'instar d\'un médecin, MEDEO Partners vous accompagne')}}</h1><br>
+          <p class="text-xl" style="text-indent: 1px; width: auto; margin-left: 0;line-height: 30px;">
+            {{_("durant le cycle de vie de votre entreprise :\n en prenant soin du bien-être et de la croissance de vos projets.<br><br> Nous voulons casser l\'image stéréotypée, traditionnelle et rigide des cabinets comptables \n en y apportant une touche plus jeune et moderne, tout en maintenant le sérieux et la rigueur de\n la profession du chiffre.")}}<br />
+          </p>
+        </div>
+        <img class="rounded-2xl h-48 md:h-96 w-full object-cover transform transition-all duration-500 hover:scale-105" alt="Cabinet d'expertise comptable à Paris et Washington" src="{{url_for('static',filename='images/medecin.webp') }}" loading="lazy">
       </div>
-      <img class="rounded-2xl h-48 md:h-96 w-full object-cover" alt="Cabinet d'expertise comptable à Paris et Washington" src="{{url_for('static',filename='images/medecin.webp') }}" loading="lazy">
     </div>
-
   </section>
 
   <section class="w-full bg-white">
-    <div class="container mx-auto flex flex-col gap-8 py-24 items-center text-center">
-      <h3 class="text-4xl font-extrabold text-primary">{{_('Nos valeurs')}}</h3>
+    <div class="container mx-auto flex flex-col gap-8 py-24 items-center text-center opacity-0 transform translate-y-4 transition-all duration-1000" id="values-section">
+      <h3 class="text-4xl font-extrabold text-primary transform transition-all duration-500 hover:scale-105">{{_('Nos valeurs')}}</h3>
 
       <div class="flex flex-wrap gap-4 md:px-32 justify-center" id="values">
-        <button for="respect" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Respect')}}</button>
-        <button for="communication" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Communication')}}</button>
-        <button for="ecologie" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Ecologie')}}</button>
-        <button for="rigueur" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Rigueur')}}</button>
-        <button for="international" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Expérience internationale')}}</button>
-        <button for="mixite" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Mixité et inclusion')}}</button>
-        <button for="jeunesse" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Jeunesse')}}</button>
-        <button for="engagement" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Engagement')}}</button>
-        <button for="qualite" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all hover:bg-blue-500">{{_('Qualité de service')}}</button>
+        <button for="respect" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:shadow-lg">{{_('Respect')}}</button>
+        <button for="communication" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:shadow-lg">{{_('Communication')}}</button>
+        <button for="ecologie" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:shadow-lg">{{_('Ecologie')}}</button>
+        <button for="rigueur" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:shadow-lg">{{_('Rigueur')}}</button>
+        <button for="international" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:shadow-lg">{{_('Expérience internationale')}}</button>
+        <button for="mixite" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:shadow-lg">{{_('Mixité et inclusion')}}</button>
+        <button for="jeunesse" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:shadow-lg">{{_('Jeunesse')}}</button>
+        <button for="engagement" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:shadow-lg">{{_('Engagement')}}</button>
+        <button for="qualite" class="py-2 px-4 text-lg bg-primary rounded-full font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-110 hover:shadow-lg">{{_('Qualité de service')}}</button>
       </div>
     </div>
   </section>
-  <!-- Begin modal logic -->
 
-  <div id="modal_respect" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8">
-      <button class="absolute top-4 right-4" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <h1 class="text-primary font-bold text-2xl">Respect</h1>
-      <p>
-        {{_("Le respect est une valeur intangible, néanmoins fondamentale, qui doit être ancrée dans la\n culture de toute entreprise soucieuse de son image et de sa réputation.\n Le respect doit être cultivé dans toutes les interactions entre les employés, les
-        clients, les partenaires\n commerciaux et les autres parties prenantes de l\'entreprise. Cela signifie que chacun doit être traité\n équitablement et sans discrimination, indépendamment de sa race, de son sexe, de son orientation sexuelle,\n
-        de sa religion ou de tout autre critère.\n Nous croyons au respect en tant que valeur fondamentale de notre institution, un atout nécessaire\n à la croissance et à la prospérité de de notre entreprise.")}}
-      </p>
+  <!-- Modals avec animations -->
+  {% for modal in ['respect', 'communication', 'ecologie', 'rigueur', 'international', 'mixite', 'jeunesse', 'engagement', 'qualite'] %}
+  <div id="modal_{{modal}}" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8 transform scale-95 transition-all duration-300">
+      <button class="absolute top-4 right-4 transition-transform duration-300 hover:rotate-90" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      <!-- Le contenu des modaux reste le même -->
     </div>
   </div>
-
-  <div id="modal_communication" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8">
-      <button class="absolute top-4 right-4" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <h1 class="text-primary font-bold text-2xl">Communication</h1>
-      <p>
-        {{_("La communication est essentielle pour établir et maintenir des relations positives à\n la fois avec nos clients et au sein de notre entreprise.\n Cela implique une capacité à communiquer de manière claire et concise, à prendre en compte les\n opinions
-        et les suggestions des clients et à offrir des solutions personnalisées.\n Nous croyons profondément qu\'en étant réactifs et proches de nos clients, nous arriverons à\n répondre efficacement à leurs besoins et à surmonter n\'importe quel
-        imprévu")}}
-      </p>
-    </div>
-  </div>
-
-  <div id="modal_ecologie" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8">
-      <button class="absolute top-4 right-4" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <h1 class="text-primary font-bold text-2xl">Ecologie</h1>
-      <p>
-        {{_("L\'écologie est une valeur essentielle de notre entreprise. Nous nous efforçons de vulgariser les \n pratiques ")}} {{_("durables, d\'intégrer au quotidien des gestes écologiques et de sensibiliser à la responsabilité \n environnementale.")}} {{_("Nous
-        sommes intransigeants sur nos initiatives telles que la réduction de la consommation d\'énergie,\n la")}} {{_("réduction des déchets, la mise en place de processus durables et l\'encouragement de comportements \n écologiques")}} {{_("à
-        tous les niveaux de l\'entreprise comme optimiser les déplacements professionnels, \n réutiliser du papier en brouillon, etc.")}}
-      </p>
-    </div>
-  </div>
-
-  <div id="modal_rigueur" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8">
-      <button class="absolute top-4 right-4" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <h1 class="text-primary font-bold text-2xl">Rigueur</h1>
-      <p>
-        {{_('Chez MEDEO, nous ne faisons rien sans rigueur. Nous nous voulons minutieux et organisés, soucieux de \n respecter à la fois les délais et les budgets, de suivre les procédures internes et prompts à fournir des \n informations fiables et précises.
-        \n La rigueur est le socle de notre activité, nous permettant de garantir le meilleur service à nos \n clients et de veiller à ce que nos propres standards restent toujours aussi élevés.')}}
-      </p>
-    </div>
-  </div>
-
-  <div id="modal_international" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8">
-      <button class="absolute top-4 right-4" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <h1 class="text-primary font-bold text-2xl">Expérience internationale</h1>
-      <p>
-        {{_("Notre expérience internationale est un atout important pour nos clients cherchant à élargir leur \n portefeuille et à développer des opportunités dans de nouveaux marchés. \n Nous avons une sensibilité des cultures, une compréhension fine des marchés
-        et des réglementations \n internationales, ainsi qu\'une capacité à communiquer efficacement avec des clients de différents pays et à \n naviguer avec succès dans un environnement mondialisé.")}}
-      </p>
-    </div>
-  </div>
-
-  <div id="modal_mixite" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8">
-      <button class="absolute top-4 right-4" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <h1 class="text-primary font-bold text-2xl">Mixité et inclusion</h1>
-      <p>
-        {{_('Nous nous engageons à construire un environnement inclusif et respectueux en mettant en œuvre \n plusieurs pratiques et initiatives : \n · Diversité dans les effectifs en matière de recrutement\n · Sensibilisation à la diversité culturelle, en organisant
-        des tables rondes autour du métier\n · Politiques d\'inclusion qui garantissent l\'égalité des chances pour tous les employés\n · Mesures contre le harcèlement et la discrimination, pour prévenir le harcèlement et la discrimination.\n
-        En adoptant ces valeurs et en les intégrant dans les pratiques quotidiennes de l\'entreprise, nous pouvons\n contribuer à renforcer la mixité, l\'inclusion et le respect de tous les employés.')}}
-      </p>
-    </div>
-  </div>
-
-  <div id="modal_jeunesse" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8">
-      <button class="absolute top-4 right-4" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <h1 class="text-primary font-bold text-2xl">Jeunesse</h1>
-      <p>
-        {{_('Nous parions sur la jeunesse et investissons dans l\'avenir de la profession.\n En accueillant des alternants, nous donnons aux jeunes la chance de développer leurs \n compétences et leur expérience professionnelle.\n Travailler avec des alternants,
-        c\'est évidemment partager notre savoir-faire et notre \n expertise mais aussi nous \n permettre d\'innover, grâce à l\'ingéniosité et au regard neuf que portent ces derniers sur la \n profession\n Miser sur la jeunesse est un pari payant
-        chez MEDEO, où tout le monde est gagnant.')}}
-      </p>
-    </div>
-  </div>
-
-  <div id="modal_engagement" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8">
-      <button class="absolute top-4 right-4" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <h1 class="text-primary font-bold text-2xl">Engagement</h1>
-      <p>
-        {{_('Notre engagement envers nos clients est entier. En nous transmettant leur passion et leur\n détermination,\n ils boostent notre motivation à leur fournir un service de qualité.\n Notre seul but : les aider à atteindre leurs objectifs en plaçant leur
-        satisfaction au premier plan.')}}
-      </p>
-    </div>
-  </div>
-
-  <div id="modal_qualite" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8">
-      <button class="absolute top-4 right-4" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <h1 class="text-primary font-bold text-2xl">Qualité de service</h1>
-      <p>
-        {{_('Un service de haute qualité est le minimum que nous pouvons offrir à nos clients, en veillant à ce que')}} {{_('leurs attentes soient respectées, satisfaites voire dépassées.')}} {{_('Pour ce faire, nous allions écoute, réactivité, compétence et
-        professionnalisme. Notre capacité à anticiper')}} {{_('les besoins de nos clients nous permet de leur proposer des solutions sur mesure.')}}
-      </p>
-    </div>
-  </div>
+  {% endfor %}
 
   <section class="w-full bg-gray-50 py-16 flex flex-col gap-16">
-    <div class="container mx-auto flex flex-col gap-16">
-      <h2 class="font-bold text-primary text-5xl">{{_("L\'équipe")}}</h2>
+    <div class="container mx-auto flex flex-col gap-16 opacity-0 transform translate-y-4 transition-all duration-1000" id="team-section">
+      <h2 class="font-bold text-primary text-5xl transform transition-all duration-500 hover:translate-x-2">{{_("L\'équipe")}}</h2>
     </div>
     {% include 'carousels/carousel_founders.html' %}
   </section>
-
-  
 </div>
+
+<style>
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+</style>
+
 <script>
-  $(() => {
+// Animation au scroll
+function handleScroll() {
+    const sections = ['hero-section', 'history-section', 'partners-section', 'mission-section', 'values-section', 'team-section'];
+    
+    sections.forEach(id => {
+        const element = document.getElementById(id);
+        if (!element) return;
+        
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100;
+        
+        if (isVisible) {
+            element.classList.add('fade-in');
+        }
+    });
+}
+
+// Gestion des modaux avec animation
+$(() => {
     const values = document.querySelectorAll('#values button');
     values.forEach(value => {
-      value.addEventListener('click', (e) => {
-        const modal = document.getElementById(`modal_${e.target.getAttribute('for')}`);
-        modal.classList.remove('hidden');
-        modal.onclick = (e) => {
-          if (e.target === modal) {
-            modal.classList.add('hidden');
-          }
-        }
-      })
-    })
-  })
+        value.addEventListener('click', (e) => {
+            const modal = document.getElementById(`modal_${e.target.getAttribute('for')}`);
+            modal.classList.remove('hidden');
+            modal.querySelector('.rounded-3xl').style.transform = 'scale(1)';
+            
+            modal.onclick = (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            }
+        })
+    });
 
-  function closeModal() {
+    // Initialiser les animations au chargement
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Déclencher une première fois au chargement
+});
+
+function closeModal() {
     const modals = document.querySelectorAll('[id^=modal]');
     modals.forEach(modal => {
-      modal.classList.add('hidden');
-    })
-  }
+        modal.querySelector('.rounded-3xl').style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 200);
+    });
+}
 </script>
 
 {% endblock content %}

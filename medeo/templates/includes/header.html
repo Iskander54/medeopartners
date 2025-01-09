@@ -11,7 +11,7 @@
 </div>
 
 <div class="hidden fixed z-50 top-0 left-0 w-full h-full blocker bg-black bg-opacity-50" id="mobile_menu_dropdown">
-    <div class="absolute flex flex-col p-8 right-0 bg-white rounded-l-2xl border w-96 h-full">
+    <div class="absolute flex flex-col p-8 right-0 bg-white rounded-l-2xl border w-96 h-full" id="menu_visible">
         <img class="w-12 h-12 object-contain aspect-square mb-8" src="{{url_for('static',filename='medeo_images/Medeo_partners_couleur.webp') }}"
             width="100" height="88" alt="Cabinet d'experts-comptables à Paris"
             aria-label="Cabinet d'experts-comptables à Paris">
@@ -70,8 +70,9 @@
 
         <nav class="font-medium flex items-center justify-center gap-6 col-span-5 text-lg">
             <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('votre_cabinet')}}">«{{_('Votre')}}» {{_('cabinet')}}</a>
-            <a class="text-gray-800 transition transition-300 hover:text-black relative cursor-pointer" id="expertise_dropdown">
+            <a class="text-gray-800 transition transition-300 hover:text-black relative cursor-pointer flex items-center gap-1" id="expertise_dropdown">
                 {{_('Notre expertise')}}
+                <i class="bi bi-caret-down-fill text-xs"></i>
             </a>
             <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('actualites')}}">{{_('Actualités')}}</a>
             <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('nouscontacter')}}">{{_('Nous contacter')}}</a>
@@ -119,3 +120,25 @@
     </nav>
 
 </header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentUrl = window.location.href; // URL actuelle
+        const links = document.querySelectorAll('header a[href]'); // Tous les liens
+        
+        links.forEach(link => {
+            if (link.href === currentUrl) {
+                link.classList.add('text-blue-600'); // Ajout d'une classe pour styliser
+                link.classList.remove('text-gray-800', 'hover:text-black'); // Suppression des classes par défaut
+            }
+        });
+
+        if(currentUrl.includes('notre_expertise') ||
+        currentUrl.includes('expertise_comptable') ||
+        currentUrl.includes('audit') ||
+        currentUrl.includes('conseil_optimisation')) {
+            document.getElementById('expertise_dropdown').classList.add('text-blue-600');
+            document.getElementById('expertise_dropdown').classList.remove('text-gray-800', 'hover:text-black');
+        }
+    });
+</script>
