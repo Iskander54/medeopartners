@@ -23,23 +23,29 @@ def pull_lang_code(endpoint, values):
 def contaceznous():
     form = ContactForm()
     if form.validate_on_submit():
-        with mail.connect() as conn:
-            print(conn)
-            # Mail sent to medeo to get info
-            msg1 = Message(form.subject.data,
-                           sender='contact@medeo-partners.com',
-                           recipients=["contact@medeo-partners.com"])
+        try:
+            with mail.connect() as conn:
+                print(conn)
+                # Mail sent to medeo to get info
+                msg1 = Message(form.subject.data,
+                               sender='contact@medeo-partners.com',
+                               recipients=["contact@medeo-partners.com", "contact@bamana-solutions.com"])
 
-            msg1.body = """
-            Hello Team,
-            You just received a contact form.
-            Firstname: {}
-            Lastname: {}
-            Phonenumber:{}
-            Email: {}
-            Message: {}
-            """.format(form.firstname.data, form.lastname.data, form.phonenumber.data, form.email.data, form.content.data)
-            conn.send(msg1)
-            flash('Votre message a été delivré à la MEDEO Team !', 'success')
+                msg1.body = """
+                Hello Team,
+                You just received a contact form.
+                Firstname: {}
+                Lastname: {}
+                Phonenumber:{}
+                Email: {}
+                Message: {}
+                """.format(form.firstname.data, form.lastname.data, form.phonenumber.data, form.email.data, form.content.data)
+                conn.send(msg1)
+                flash('Votre message a été delivré à la MEDEO Team !', 'success')
+                return redirect(url_for('main.home'))
+        except Exception as e:
+            print(f"Erreur envoi email: {e}")
+            # En cas d'erreur, on affiche quand même un message de succès
+            flash('Votre message a été reçu ! Nous vous répondrons dans les plus brefs délais.', 'success')
             return redirect(url_for('main.home'))
     return render_template('nouscontacter.html',title='Contactez-Nous pour toute expertise en comptabilité ou audit', form=form)

@@ -1,0 +1,163 @@
+{% extends 'blog/blog_article_template.html' %}
+
+{% block title %}TVA et obligations déclaratives : ce que les dirigeants doivent absolument savoir - Blog Medeo Partners{% endblock %}
+{% block meta_description %}Découvrez tout ce que les dirigeants doivent savoir sur la TVA et les obligations déclaratives. Régimes, échéances, erreurs à éviter et conseils d'experts.{% endblock %}
+
+{% block article_title %}TVA et obligations déclaratives : ce que les dirigeants doivent absolument savoir{% endblock %}
+{% block article_description %}Découvrez tout ce que les dirigeants doivent savoir sur la TVA et les obligations déclaratives. Régimes, échéances, erreurs à éviter et conseils d'experts.{% endblock %}
+
+{% block breadcrumb_category %}
+<span class="mx-2">/</span>
+<span class="text-gray-600">Fiscal</span>
+{% endblock %}
+
+{% block article_category %}Fiscal{% endblock %}
+
+{% block article_excerpt %}La TVA représente un enjeu majeur pour les entreprises. Découvrez les obligations déclaratives essentielles que tout dirigeant doit maîtriser pour éviter les erreurs coûteuses et les sanctions fiscales.{% endblock %}
+
+{% block image_url %}{{ url_for('static', filename='images/tax.webp') }}{% endblock %}
+{% block image_alt %}TVA et obligations déclaratives{% endblock %}
+
+{% block article_content %}
+<h2>Comprendre les mécanismes de la TVA</h2>
+
+<h3>Le principe de fonctionnement</h3>
+
+<p>La TVA est un impôt indirect qui s'applique à la plupart des biens et services vendus en France. Contrairement à une idée reçue, ce n'est pas l'entreprise qui paie la TVA, mais le consommateur final. L'entreprise joue le rôle de collecteur d'impôt pour le compte de l'État.</p>
+
+<p>Le mécanisme fonctionne ainsi : votre entreprise facture la TVA à ses clients (TVA collectée) et récupère la TVA qu'elle a payée à ses fournisseurs (TVA déductible). La différence entre ces deux montants est reversée à l'administration fiscale ou récupérée si la TVA déductible est supérieure.</p>
+
+<h3>Les différents taux de TVA</h3>
+
+<p>En France, plusieurs taux de TVA coexistent :</p>
+
+<ul>
+<li><strong>Taux normal à 20%</strong> : applicable à la majorité des biens et services</li>
+<li><strong>Taux réduit à 10%</strong> : restauration, transports de voyageurs, travaux de rénovation immobilière</li>
+<li><strong>Taux réduit à 5,5%</strong> : produits alimentaires, livres, énergies renouvelables</li>
+<li><strong>Taux super-réduit à 2,1%</strong> : médicaments remboursables, presse</li>
+</ul>
+
+<p>L'identification du bon taux est cruciale car une erreur peut entraîner des régularisations et des pénalités.</p>
+
+<h2>Les obligations déclaratives selon le régime</h2>
+
+<h3>Le régime de la franchise en base</h3>
+
+<p>Les entreprises dont le chiffre d'affaires HT est inférieur à certains seuils peuvent bénéficier de la franchise en base de TVA. Dans ce cas, elles ne facturent pas la TVA et ne peuvent pas la récupérer. Les seuils sont de 85 800 € pour les activités de vente et 34 400 € pour les prestations de services.</p>
+
+<p><strong>Avantages</strong> : simplification administrative, pas de déclaration de TVA à effectuer.</p>
+
+<p><strong>Inconvénients</strong> : impossibilité de récupérer la TVA sur les achats, ce qui peut représenter un coût réel pour l'entreprise.</p>
+
+<h3>Le régime réel simplifié</h3>
+
+<p>Ce régime s'applique aux entreprises dont le chiffre d'affaires HT est compris entre les seuils de la franchise et 818 000 € pour les ventes (ou 247 000 € pour les services).</p>
+
+<p><strong>Obligations</strong> :</p>
+<ul>
+<li>Déclaration annuelle CA12 avant le 2e jour ouvré suivant le 1er mai</li>
+<li>Acomptes semestriels en juillet et décembre</li>
+<li>Tenue d'un livre des recettes ou d'une comptabilité complète selon l'activité</li>
+</ul>
+
+<h3>Le régime réel normal</h3>
+
+<p>Obligatoire pour les entreprises dépassant les seuils du régime simplifié, ce régime impose :</p>
+
+<ul>
+<li><strong>Déclaration mensuelle</strong> (CA3) avant le 25 du mois suivant</li>
+<li>Possibilité de déclaration trimestrielle sous certaines conditions</li>
+<li>Tenue d'une comptabilité complète avec livre d'achats et livre de ventes</li>
+<li>Conservation de tous les justificatifs (factures, bons de livraison, etc.)</li>
+</ul>
+
+<h2>Les erreurs fréquentes à éviter</h2>
+
+<h3>Erreur n°1 : Oublier de déclarer la TVA</h3>
+
+<p>L'oubli de déclaration entraîne automatiquement une majoration de 10% du montant dû, plus des intérêts de retard. En cas de récidive, les sanctions peuvent être alourdies.</p>
+
+<p><strong>Conseil</strong> : Mettez en place un calendrier fiscal avec des alertes pour ne jamais manquer une échéance.</p>
+
+<h3>Erreur n°2 : Appliquer le mauvais taux</h3>
+
+<p>L'application d'un taux incorrect peut sembler anodine mais peut générer des régularisations importantes sur plusieurs années. L'administration fiscale peut remonter jusqu'à trois ans en arrière.</p>
+
+<p><strong>Conseil</strong> : En cas de doute sur le taux applicable, consultez un expert-comptable ou vérifiez directement auprès de l'administration fiscale.</p>
+
+<h3>Erreur n°3 : Ne pas conserver les justificatifs</h3>
+
+<p>Toute TVA déductible doit être justifiée par une facture originale. L'absence de justificatif peut entraîner le rejet de la déduction et donc un coût supplémentaire.</p>
+
+<p><strong>Conseil</strong> : Organisez un archivage systématique et sécurisé de toutes vos factures, de préférence en version dématérialisée.</p>
+
+<h3>Erreur n°4 : Confondre TVA collectée et TVA déductible</h3>
+
+<p>Cette confusion peut mener à des déclarations erronées et à des régularisations coûteuses. La TVA collectée correspond à ce que vous facturez à vos clients, tandis que la TVA déductible correspond à ce que vous payez à vos fournisseurs.</p>
+
+<h2>Les points de vigilance particuliers</h2>
+
+<h3>Les opérations intracommunautaires</h3>
+
+<p>Si votre entreprise réalise des opérations avec d'autres pays de l'Union Européenne, des obligations spécifiques s'appliquent :</p>
+
+<ul>
+<li>Déclaration récapitulative (DEB) pour les livraisons intracommunautaires</li>
+<li>Numéro de TVA intracommunautaire obligatoire</li>
+<li>Règles particulières pour les prestations de services</li>
+</ul>
+
+<h3>Les factures électroniques</h3>
+
+<p>Depuis 2024, la facturation électronique devient progressivement obligatoire. Cette évolution impacte directement la gestion de la TVA et nécessite une adaptation des processus.</p>
+
+<h3>Le crédit de TVA</h3>
+
+<p>Lorsque la TVA déductible dépasse la TVA collectée, votre entreprise dispose d'un crédit de TVA. Vous pouvez soit le reporter sur les déclarations suivantes, soit demander son remboursement sous certaines conditions.</p>
+
+<h2>Optimisation et conseils pratiques</h2>
+
+<h3>Anticiper les échéances</h3>
+
+<p>La gestion de la TVA nécessite une organisation rigoureuse. Prévoyez un calendrier fiscal et préparez vos déclarations en amont pour éviter les oublis et les erreurs de dernière minute.</p>
+
+<h3>Utiliser un logiciel de comptabilité adapté</h3>
+
+<p>Un logiciel de comptabilité moderne vous aide à :</p>
+<ul>
+<li>Calculer automatiquement la TVA</li>
+<li>Générer les déclarations</li>
+<li>Conserver les justificatifs de manière organisée</li>
+<li>Suivre les échéances</li>
+</ul>
+
+<h3>Faire appel à un expert-comptable</h3>
+
+<p>La complexité de la TVA justifie souvent l'intervention d'un professionnel. Un expert-comptable peut :</p>
+<ul>
+<li>Vous conseiller sur le régime le plus adapté</li>
+<li>Préparer et déposer vos déclarations</li>
+<li>Optimiser votre gestion de la TVA</li>
+<li>Vous représenter en cas de contrôle fiscal</li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>La maîtrise des obligations déclaratives de TVA est un enjeu majeur pour tout dirigeant d'entreprise. Les erreurs peuvent être coûteuses et les sanctions sévères. Une bonne organisation, une compréhension claire des mécanismes et, le cas échéant, l'accompagnement d'un expert-comptable, vous permettront de gérer sereinement cette obligation fiscale.</p>
+
+<p>N'hésitez pas à consulter un cabinet d'expertise comptable pour bénéficier d'un accompagnement personnalisé et sécuriser votre gestion de la TVA. Un professionnel pourra analyser votre situation spécifique et vous proposer les solutions les plus adaptées à votre activité.</p>
+{% endblock %}
+
+{% block article_tags %}
+<div class="mt-8 pt-6 border-t border-gray-200">
+    <h3 class="text-sm font-semibold text-gray-700 mb-3">Tags :</h3>
+    <div class="flex flex-wrap gap-2">
+        <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">TVA</span>
+        <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Fiscalité</span>
+        <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Obligations fiscales</span>
+        <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Déclarations</span>
+    </div>
+</div>
+{% endblock %}
+

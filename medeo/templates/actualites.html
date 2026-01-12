@@ -17,13 +17,47 @@
     <h1 class="text-5xl text-primary font-black">{{_('Nos derniers articles')}}</h1>
     
     <div class="flex flex-wrap gap-4 select-none">
-      <a filter-article="" class="text-white bg-primary font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl md:mr-16 transition">{{_('Toutes catégories')}}</a>
-      <a filter-article="fiscal" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl transition">{{_('Fiscal')}}</a>
-      <a filter-article="social" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl transition">{{_('Social')}}</a>
-      <a filter-article="juridique" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl transition">{{_('Juridique')}}</a>
+      <a href="{{ url_for('main.actualites', lang_code=g.lang_code) }}" filter-article="" class="text-white bg-primary font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl md:mr-16 transition">{{_('Toutes catégories')}}</a>
+      <a href="{{ url_for('main.actualites', lang_code=g.lang_code) }}#fiscal" filter-article="fiscal" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl transition">{{_('Fiscal')}}</a>
+      <a href="{{ url_for('main.actualites', lang_code=g.lang_code) }}#social" filter-article="social" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl transition">{{_('Social')}}</a>
+      <a href="{{ url_for('main.actualites', lang_code=g.lang_code) }}#juridique" filter-article="juridique" class="text-blue-500 font-semibold cursor-pointer bg-gray-50 px-4 py-2 rounded-xl transition">{{_('Juridique')}}</a>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
+      {# Articles du blog - les plus récents en premier #}
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal blog-article" data-href="{{ url_for('blog.article', slug='creation-entreprise-erreurs-comptables-fiscales-premiere-annee', lang_code=g.lang_code) }}">
+        <div class="card-img"></div>
+        <a href="{{ url_for('blog.article', slug='creation-entreprise-erreurs-comptables-fiscales-premiere-annee', lang_code=g.lang_code) }}" class="card-link">
+          <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/news/fiscal/news_1234.jpeg') }}" alt="Création d'entreprise" />
+        </a>
+        <div class="card-info flex flex-col gap-4">
+          <div class="card-about flex justify-between items-center">
+            <a class="card-tag px-3 py-2 bg-primary text-white inline-block rounded-lg font-semibold text-sm tag-fiscal">Fiscal</a>
+            <div class="card-time text-sm text-gray-500">{{_('Publié le 12/01/2026')}}</div>
+          </div>
+          <h6 class="card-title">
+            Création d'entreprise : erreurs comptables et fiscales à éviter dès la première année
+          </h6>
+        </div>
+      </div>
+      
+      <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal blog-article" data-href="{{ url_for('blog.article', slug='tva-obligations-declaratives-dirigeants', lang_code=g.lang_code) }}">
+        <div class="card-img"></div>
+        <a href="{{ url_for('blog.article', slug='tva-obligations-declaratives-dirigeants', lang_code=g.lang_code) }}" class="card-link">
+          <img class="rounded-3xl w-full h-32 object-cover" src="{{url_for('static',filename='images/tax.webp') }}" alt="TVA obligations déclaratives" />
+        </a>
+        <div class="card-info flex flex-col gap-4">
+          <div class="card-about flex justify-between items-center">
+            <a class="card-tag px-3 py-2 bg-primary text-white inline-block rounded-lg font-semibold text-sm tag-fiscal">Fiscal</a>
+            <div class="card-time text-sm text-gray-500">{{_('Publié le 12/01/2026')}}</div>
+          </div>
+          <h6 class="card-title">
+            TVA et obligations déclaratives : ce que les dirigeants doivent absolument savoir
+          </h6>
+        </div>
+      </div>
+      
+      {# Articles news existants #}
       <div class="p-6 flex flex-col gap-4 select-none transform hover:scale-105 cursor-pointer transition hover:bg-gray-50 rounded-3xl card fiscal" data-href="{{_('news_1234')}}">
         <div class="card-img"></div>
         <a href="{{_('news_1234')}}" class="card-link">
@@ -229,16 +263,33 @@
 <script>
 
   $(() => {
-    $('[filter-article]').click(function() {
+    // Gérer le filtrage au chargement de la page si un hash est présent
+    const hash = window.location.hash.replace('#', '');
+    if (hash && ['fiscal', 'social', 'juridique'].includes(hash)) {
+      const filter = hash;
+      $('[filter-article]').removeClass('bg-primary text-white text-blue-500 bg-gray-50');
+      $('[filter-article]').addClass('text-blue-500 bg-gray-50');
+      $(`[filter-article="${filter}"]`).removeClass('bg-primary text-white text-blue-500 bg-gray-50');
+      $(`[filter-article="${filter}"]`).addClass('bg-primary text-white');
+      $('.card').hide();
+      $(`.card.${filter}`).show();
+    }
+    
+    $('[filter-article]').click(function(e) {
+      e.preventDefault(); // Empêcher la navigation par défaut
       const filter = $(this).attr('filter-article');
       $('[filter-article]').removeClass('bg-primary text-white text-blue-500 bg-gray-50');
       $('[filter-article]').addClass('text-blue-500 bg-gray-50');
       $(this).removeClass('bg-primary text-white text-blue-500 bg-gray-50');
       $(this).addClass('bg-primary text-white');
+      
+      // Mettre à jour l'URL sans recharger la page
       if (filter) {
+        window.history.pushState(null, '', '#' + filter);
         $('.card').hide();
         $(`.card.${filter}`).show();
       } else {
+        window.history.pushState(null, '', window.location.pathname);
         $('.card').show();
       }
     });
@@ -248,7 +299,16 @@
   cards.forEach(card => {
     card.addEventListener('click', () => {
       const href = card.getAttribute('data-href');
-      window.location.href = href;
+      if (href) {
+        window.location.href = href;
+      }
+    });
+  });
+  
+  // Empêcher la propagation du clic pour les liens des articles du blog
+  document.querySelectorAll('.blog-article .card-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
   });
 

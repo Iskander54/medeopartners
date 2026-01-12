@@ -132,3 +132,15 @@ medeo/desktop.ini
 desktop.ini
 
 /tmp.html
+
+# macOS
+.DS_Store
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+medeo/site.db
+
+# Translations (generated)
+*.mo

@@ -1,4 +1,4 @@
-from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response,send_from_directory,current_app, send_from_directory
+from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response,send_from_directory,current_app, send_from_directory, jsonify
 from flask_babel import _,refresh
 
 main = Blueprint('main', __name__, url_prefix='/<lang_code>')
@@ -91,6 +91,10 @@ def expertise_comptable():
 def legal():
     return render_template('/legal.html',title='Mentions Légales')
 
+@main.route("/our_services",defaults={'lang_code':'en'})
+@main.route("/nos_services",defaults={'lang_code':'fr'})
+def nos_services():
+    return render_template('nos_services.html',title='Nos Services - Expertise Comptable, Audit et Conseil',active_page='nos_services')
 
 
 ############################
@@ -207,6 +211,7 @@ def sitemap():
         {'loc': url_for('main.expertise_comptable', _external=True)},
         {'loc': url_for('main.audit', _external=True)},
         {'loc': url_for('main.conseil_optimisation', _external=True)},
+        {'loc': url_for('main.nos_services', _external=True)},
         {'loc': url_for('main.actualites', _external=True)},
         {'loc': url_for('main.nouscontacter', _external=True)},
     ]
@@ -226,3 +231,187 @@ def sitemap():
     response.headers["Content-Type"] = "application/xml"    
 
     return response
+
+@main.route('/api/analytics', methods=['POST'])
+def analytics():
+    """Endpoint pour recevoir les données analytics"""
+    try:
+        data = request.get_json()
+        
+        # Log des événements analytics
+        current_app.logger.info(f"Analytics event: {data.get('event')} - {data.get('url')}")
+        
+        # Ici vous pouvez ajouter le stockage en base de données
+        # ou l'envoi vers un service externe
+        
+        return jsonify({'status': 'success'}), 200
+    except Exception as e:
+        current_app.logger.error(f"Analytics error: {str(e)}")
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@main.route('/api/lead-magnet', methods=['POST'])
+def lead_magnet():
+    """Endpoint pour gérer les soumissions de lead magnets"""
+    try:
+        data = request.get_json()
+        
+        # Validation des données
+        required_fields = ['magnetId', 'name', 'email']
+        for field in required_fields:
+            if not data.get(field):
+                return jsonify({'status': 'error', 'message': f'Champ requis manquant: {field}'}), 400
+        
+        # Log de la soumission
+        current_app.logger.info(f"Lead magnet submission: {data.get('magnetId')} - {data.get('email')}")
+        
+        # Ici vous pouvez ajouter :
+        # - Stockage en base de données
+        # - Envoi d'email de confirmation
+        # - Intégration avec un CRM
+        # - Envoi vers un service d'email marketing
+        
+        # Exemple d'envoi d'email (à implémenter)
+        # send_lead_magnet_email(data)
+        
+        return jsonify({'status': 'success', 'message': 'Lead enregistré avec succès'}), 200
+        
+    except Exception as e:
+        current_app.logger.error(f"Lead magnet error: {str(e)}")
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+def get_static_pages():
+    """Retourne la liste des pages statiques avec leurs métadonnées SEO"""
+    return [
+        {
+            "url": "/fr/accueil",
+            "changefreq": "weekly",
+            "priority": "1.0",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/home",
+            "changefreq": "weekly", 
+            "priority": "1.0",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/votre_cabinet",
+            "changefreq": "monthly",
+            "priority": "0.9",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/your_firm",
+            "changefreq": "monthly",
+            "priority": "0.9", 
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/notre_expertise",
+            "changefreq": "monthly",
+            "priority": "0.9",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/our_expertise",
+            "changefreq": "monthly",
+            "priority": "0.9",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/expertise_comptable",
+            "changefreq": "monthly",
+            "priority": "0.8",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/accounting",
+            "changefreq": "monthly",
+            "priority": "0.8",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/audit",
+            "changefreq": "monthly",
+            "priority": "0.8",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/auditing",
+            "changefreq": "monthly",
+            "priority": "0.8",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/conseil_optimisation",
+            "changefreq": "monthly",
+            "priority": "0.8",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/council_optimization",
+            "changefreq": "monthly",
+            "priority": "0.8",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/nos_services",
+            "changefreq": "monthly",
+            "priority": "0.9",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/our_services",
+            "changefreq": "monthly",
+            "priority": "0.9",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/actualites",
+            "changefreq": "weekly",
+            "priority": "0.7",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/news",
+            "changefreq": "weekly",
+            "priority": "0.7",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/nouscontacter",
+            "changefreq": "monthly",
+            "priority": "0.6",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/contactus",
+            "changefreq": "monthly",
+            "priority": "0.6",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/espace_clients",
+            "changefreq": "monthly",
+            "priority": "0.5",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/account",
+            "changefreq": "monthly",
+            "priority": "0.5",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/fr/blog",
+            "changefreq": "daily",
+            "priority": "0.8",
+            "lastmod": "2024-01-15"
+        },
+        {
+            "url": "/en/blog",
+            "changefreq": "daily",
+            "priority": "0.8",
+            "lastmod": "2024-01-15"
+        }
+    ]

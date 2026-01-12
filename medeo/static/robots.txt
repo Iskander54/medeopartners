@@ -1,4 +1,33 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://medeo-partners.com/fr/sitemap.xml
+# Sitemap
+Sitemap: https://www.medeo-partners.com/sitemap.xml
+
+# Pages importantes
+Allow: /fr/accueil
+Allow: /en/home
+Allow: /fr/votre_cabinet
+Allow: /en/your_firm
+Allow: /fr/notre_expertise
+Allow: /en/our_expertise
+Allow: /fr/expertise_comptable
+Allow: /en/accounting
+Allow: /fr/audit
+Allow: /en/auditing
+Allow: /fr/conseil_optimisation
+Allow: /en/council_optimization
+Allow: /fr/actualites
+Allow: /en/news
+Allow: /fr/blog
+Allow: /en/blog
+
+# Pages à ne pas indexer
+Disallow: /fr/espace_clients
+Disallow: /en/account
+Disallow: /api/
+Disallow: /admin/
+Disallow: /static/admin/
+
+# Crawl-delay pour éviter de surcharger le serveur
+Crawl-delay: 1

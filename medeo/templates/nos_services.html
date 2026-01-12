@@ -1,0 +1,309 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="preload" href="{{ url_for('static', filename='images/team_working.jpeg') }}" as="image">
+
+<div class="bg-image-home"></div>
+
+<div id="content">
+  <div data-translate class="h-96 opacity-0 transform translate-y-4 transition-all duration-1000" id="hero-section">
+    <div class="container mx-auto flex flex-col gap-4 text-center items-center justify-center h-full">
+      <h1 class="text-5xl text-primary font-black transform transition-all duration-700 hover:scale-105">{{_('Nos services')}}</h1>
+      <h2 class="italic text-primary opacity-75 font-bold text-2xl transform transition-all duration-700 hover:scale-105">{{_('Des solutions complètes pour votre entreprise')}}</h2>
+    </div>
+  </div>
+
+  <!-- Section Services par catégorie -->
+  <section class="w-full bg-white py-16">
+    <div class="container mx-auto">
+      <div class="text-center mb-16 opacity-0 transform translate-y-4 transition-all duration-1000" id="intro-section">
+        <h2 class="text-4xl font-bold text-primary mb-6">{{_('Concentrez-vous sur la réussite de votre entreprise')}}</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">{{_('MEDEO Partners vous propose des solutions clé en main pour vous permettre d\'être plus efficace dans votre métier. Notre expertise couvre tous les aspects de la gestion d\'entreprise.')}}</p>
+      </div>
+
+      <!-- Créateurs et repreneurs -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16 opacity-0 transform translate-y-4 transition-all duration-1000" id="creators-section">
+        <div class="bg-primary text-white p-8 rounded-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center mb-6">
+            <i class="fas fa-rocket text-4xl mb-4"></i>
+            <h3 class="text-2xl font-bold mb-4">{{_('Créateurs et repreneurs')}}</h3>
+          </div>
+          <ul class="space-y-3 text-lg">
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-green-300"></i>
+              {{_('Accompagnement à la création')}}
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-green-300"></i>
+              {{_('Création de statuts')}}
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-green-300"></i>
+              {{_('Prévisionnel et business plan')}}
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-green-300"></i>
+              {{_('Choix de la forme juridique')}}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Entrepreneurs et professionnels -->
+        <div class="bg-gray-50 p-8 rounded-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-xl border border-gray-200">
+          <div class="text-center mb-6">
+            <i class="fas fa-briefcase text-4xl mb-4 text-primary"></i>
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">{{_('Entrepreneurs et professionnels')}}</h3>
+          </div>
+          <ul class="space-y-3 text-lg text-gray-700">
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-primary"></i>
+              {{_('Comptabilité')}}
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-primary"></i>
+              {{_('Paie et gestion des salariés')}}
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-primary"></i>
+              {{_('Conseils et accompagnement juridiques')}}
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-primary"></i>
+              {{_('Conseil en gestion de patrimoine')}}
+            </li>
+          </ul>
+        </div>
+
+        <!-- PME, ETI et Grandes Entreprises -->
+        <div class="bg-primary text-white p-8 rounded-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center mb-6">
+            <i class="fas fa-building text-4xl mb-4"></i>
+            <h3 class="text-2xl font-bold mb-4">{{_('PME, ETI et Grandes Entreprises')}}</h3>
+          </div>
+          <ul class="space-y-3 text-lg">
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-green-300"></i>
+              {{_('Audit')}}
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-green-300"></i>
+              {{_('Droit des affaires et contentieux')}}
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-green-300"></i>
+              {{_('Conseil en organisation')}}
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle mr-3 text-green-300"></i>
+              {{_('Optimisation fiscale')}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services par métier -->
+  <section class="w-full bg-gray-50 py-16">
+    <div class="container mx-auto">
+      <div class="text-center mb-16 opacity-0 transform translate-y-4 transition-all duration-1000" id="metiers-section">
+        <h2 class="text-4xl font-bold text-primary mb-6">{{_('Spécialistes de votre métier')}}</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">{{_('Nous avons développé des connaissances sectorielles spécifiques pour mieux conseiller nos clients dans leur domaine d\'activité.')}}</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 opacity-0 transform translate-y-4 transition-all duration-1000" id="metiers-grid">
+        <!-- Métiers -->
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center">
+            <i class="fas fa-car text-3xl text-primary mb-4"></i>
+            <h4 class="font-semibold text-gray-800">{{_('Automobile')}}</h4>
+            <p class="text-sm text-gray-600 mt-2">{{_('Motocycle et Machinisme Agricole')}}</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center">
+            <i class="fas fa-hammer text-3xl text-primary mb-4"></i>
+            <h4 class="font-semibold text-gray-800">{{_('Bâtiment')}}</h4>
+            <p class="text-sm text-gray-600 mt-2">{{_('Construction et rénovation')}}</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center">
+            <i class="fas fa-birthday-cake text-3xl text-primary mb-4"></i>
+            <h4 class="font-semibold text-gray-800">{{_('Boulangerie')}}</h4>
+            <p class="text-sm text-gray-600 mt-2">{{_('Pâtisserie Chocolaterie')}}</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center">
+            <i class="fas fa-tooth text-3xl text-primary mb-4"></i>
+            <h4 class="font-semibold text-gray-800">{{_('Chirurgiens-dentistes')}}</h4>
+            <p class="text-sm text-gray-600 mt-2">{{_('Cabinet dentaire')}}</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center">
+            <i class="fas fa-cut text-3xl text-primary mb-4"></i>
+            <h4 class="font-semibold text-gray-800">{{_('Coiffure')}}</h4>
+            <p class="text-sm text-gray-600 mt-2">{{_('Esthétique et beauté')}}</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center">
+            <i class="fas fa-store text-3xl text-primary mb-4"></i>
+            <h4 class="font-semibold text-gray-800">{{_('Commerces de proximité')}}</h4>
+            <p class="text-sm text-gray-600 mt-2">{{_('Commerce local')}}</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center">
+            <i class="fas fa-utensils text-3xl text-primary mb-4"></i>
+            <h4 class="font-semibold text-gray-800">{{_('Hôtellerie')}}</h4>
+            <p class="text-sm text-gray-600 mt-2">{{_('Restauration')}}</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-center">
+            <i class="fas fa-user-md text-3xl text-primary mb-4"></i>
+            <h4 class="font-semibold text-gray-800">{{_('Médecins')}}</h4>
+            <p class="text-sm text-gray-600 mt-2">{{_('Professionnels de santé')}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Nos valeurs -->
+  <section class="w-full bg-primary text-white py-16">
+    <div class="container mx-auto">
+      <div class="text-center mb-16 opacity-0 transform translate-y-4 transition-all duration-1000" id="valeurs-section">
+        <h2 class="text-4xl font-bold mb-6">{{_('Nos valeurs')}}</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 opacity-0 transform translate-y-4 transition-all duration-1000" id="valeurs-grid">
+        <div class="text-center transform transition-all duration-500 hover:scale-105">
+          <i class="fas fa-map-marker-alt text-4xl mb-4 text-green-300"></i>
+          <h3 class="text-xl font-bold mb-3">{{_('PROXIMITÉ')}}</h3>
+          <p class="text-lg">{{_('Notre réseau local vous garantit un accompagnement de proximité partout en France.')}}</p>
+        </div>
+
+        <div class="text-center transform transition-all duration-500 hover:scale-105">
+          <i class="fas fa-chart-line text-4xl mb-4 text-green-300"></i>
+          <h3 class="text-xl font-bold mb-3">{{_('VALEUR AJOUTÉE ET EXPERTISE')}}</h3>
+          <p class="text-lg">{{_('Nous développons avec soin nos expertises pour vous proposer des services à réelle valeur ajoutée.')}}</p>
+        </div>
+
+        <div class="text-center transform transition-all duration-500 hover:scale-105">
+          <i class="fas fa-lightbulb text-4xl mb-4 text-green-300"></i>
+          <h3 class="text-xl font-bold mb-3">{{_('CONNAISSANCE DE VOTRE MÉTIER')}}</h3>
+          <p class="text-lg">{{_('Nous avons développé des connaissances sectorielles spécifiques pour mieux conseiller nos clients.')}}</p>
+        </div>
+
+        <div class="text-center transform transition-all duration-500 hover:scale-105">
+          <i class="fas fa-shield-alt text-4xl mb-4 text-green-300"></i>
+          <h3 class="text-xl font-bold mb-3">{{_('RIGUEUR ET SÉCURITÉ')}}</h3>
+          <p class="text-lg">{{_('Rigueur, respect des engagements, sécurité et confidentialité sont au cœur de nos méthodes de travail.')}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section CTA -->
+  <section class="w-full bg-white py-16">
+    <div class="container mx-auto text-center opacity-0 transform translate-y-4 transition-all duration-1000" id="cta-section">
+      <h2 class="text-4xl font-bold text-primary mb-6">{{_('Prêt à nous rejoindre ?')}}</h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">{{_('Contactez-nous pour découvrir comment MEDEO Partners peut accompagner votre entreprise vers le succès.')}}</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="{{_('nouscontacter')}}" class="bg-primary text-white px-8 py-4 rounded-full font-semibold text-lg transform transition-all duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+          {{_('Nous contacter')}}
+        </a>
+        <a href="{{_('votre_cabinet')}}" class="bg-gray-100 text-gray-800 px-8 py-4 rounded-full font-semibold text-lg transform transition-all duration-300 hover:bg-gray-200 hover:scale-105 hover:shadow-lg">
+          {{_('Découvrir notre cabinet')}}
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Styles spécifiques pour la page services */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.metier-card {
+    transition: all 0.3s ease;
+}
+
+.metier-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+</style>
+
+<script>
+// Animation au scroll
+function handleScroll() {
+    const sections = ['hero-section', 'intro-section', 'creators-section', 'metiers-section', 'metiers-grid', 'valeurs-section', 'valeurs-grid', 'cta-section'];
+    
+    sections.forEach(id => {
+        const element = document.getElementById(id);
+        if (!element) return;
+        
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100;
+        
+        if (isVisible) {
+            element.classList.add('fade-in');
+        }
+    });
+}
+
+// Initialiser les animations au chargement
+window.addEventListener('scroll', handleScroll);
+handleScroll(); // Déclencher une première fois au chargement
+
+// Ajouter des classes pour les animations au hover
+document.addEventListener('DOMContentLoaded', function() {
+    // Ajouter la classe service-card aux cartes de services
+    const serviceCards = document.querySelectorAll('.bg-primary, .bg-gray-50');
+    serviceCards.forEach(card => {
+        card.classList.add('service-card');
+    });
+
+    // Ajouter la classe metier-card aux cartes de métiers
+    const metierCards = document.querySelectorAll('#metiers-grid > div');
+    metierCards.forEach(card => {
+        card.classList.add('metier-card');
+    });
+});
+</script>
+
+{% endblock content %} 

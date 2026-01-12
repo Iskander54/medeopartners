@@ -74,7 +74,9 @@
   {% for modal in ['respect', 'communication', 'ecologie', 'rigueur', 'international', 'mixite', 'jeunesse', 'engagement', 'qualite'] %}
   <div id="modal_{{modal}}" class="hidden fixed z-50 w-full h-full top-0 left-0 overflow-y-auto bg-black bg-opacity-50 flex flex-col items-center justify-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     <div class="w-96 md:w-1/2 p-8 bg-white rounded-3xl relative flex flex-col gap-8 transform scale-95 transition-all duration-300">
-      <button class="absolute top-4 right-4 transition-transform duration-300 hover:rotate-90" aria-label="Close modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      <button class="absolute top-4 right-4 transition-transform duration-300 hover:rotate-90" aria-label="Close modal" onclick="closeModal()">
+        <i class="fas fa-times"></i>
+      </button>
       <!-- Le contenu des modaux reste le même -->
     </div>
   </div>

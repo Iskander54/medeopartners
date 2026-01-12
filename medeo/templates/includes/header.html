@@ -1,5 +1,3 @@
-<script src="{{url_for('static', filename='js/layout/header.js') }}"></script>
-
 <div class="hidden fixed z-50 top-0 left-0 w-full h-full blocker" id="expertise_dropdown_menu">
     <div class="absolute flex flex-col top-8 bg-white rounded-lg border">
         <a class="text-gray-800 transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('notre_expertise')}}">{{_('Notre expertise')}}</a>
@@ -16,7 +14,10 @@
             width="100" height="88" alt="Cabinet d'experts-comptables à Paris"
             aria-label="Cabinet d'experts-comptables à Paris">
 
-        <button class="text-gray-800 absolute w-min top-4 right-4 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" id="close_mobile_menu"><i class="fa-solid fa-times fa-lg" aria-hidden="true"></i></button>
+        <button class="text-gray-800 absolute w-min top-4 right-4 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" id="close_mobile_menu" aria-label="{{_('Fermer le menu de navigation')}}" aria-controls="mobile_menu_dropdown">
+            <i class="fa-solid fa-times fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">{{_('Fermer')}}</span>
+        </button>
 
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('accueil')}}">Accueil</a>
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('votre_cabinet')}}">«{{_('Votre')}}» {{_('cabinet')}}</a>
@@ -24,9 +25,10 @@
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black pl-8 px-4 py-2" href="{{_('expertise_comptable')}}">{{_('Expertise comptable')}}</a>
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black pl-8 px-4 py-2" href="{{_('audit')}}">{{_('Audit')}}</a>
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black pl-8 px-4 py-2" href="{{_('conseil_optimisation')}}">{{_("Conseil et optimisation")}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('nos_services')}}">{{_('Nos services')}}</a>
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('actualites')}}">{{_('Actualités')}}</a>
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('nouscontacter')}}">{{_('Nous contacter')}}</a>
-        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('espace_clients')}}">{{_('Espace client')}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="https://azo-vf-frontend-dev-1088553818836.europe-west9.run.app/auth/login" target="_blank" rel="noopener noreferrer">{{_('Espace client')}}</a>
 
         <div class="flex items-center gap-4 py-4 justify-center">
             <a href="https://instagram.com/medeo_partners" aria-label="Instagram">
@@ -44,15 +46,25 @@
                 <span class="sr-only">Whatsapp</span>    
             </a>
 
-            <a href="{{ url_for(request.endpoint, lang_code='en', **request.view_args) }}">
-                <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
-                    loading="lazy" alt="usa icone" style="width: 1.1rem; height: 1.1rem;">
-            </a>
-
-            <a href="{{ url_for(request.endpoint, lang_code='fr') }}">
-                <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
-                    loading="lazy" alt="france icone" style="width: 1.1rem; height: 1.1rem;">
-            </a>
+            {% if request.endpoint == 'blog.article' %}
+                <a href="{{ url_for('main.home', lang_code='en') }}">
+                    <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
+                        loading="lazy" alt="usa icone" style="width: 1.1rem; height: 1.1rem;">
+                </a>
+                <a href="{{ url_for('main.home', lang_code='fr') }}">
+                    <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
+                        loading="lazy" alt="france icone" style="width: 1.1rem; height: 1.1rem;">
+                </a>
+            {% else %}
+                <a href="{{ url_for(request.endpoint or 'main.home', lang_code='en', **(request.view_args or {})) if request.endpoint else '#' }}">
+                    <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
+                        loading="lazy" alt="usa icone" style="width: 1.1rem; height: 1.1rem;">
+                </a>
+                <a href="{{ url_for(request.endpoint or 'main.home', lang_code='fr', **(request.view_args or {})) if request.endpoint else '#' }}">
+                    <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
+                        loading="lazy" alt="france icone" style="width: 1.1rem; height: 1.1rem;">
+                </a>
+            {% endif %}
         </div>
 
         <a class="text-gray-800 mt-auto font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('mentions_legales')}}">{{_('Mentions légales')}}</a>
@@ -74,9 +86,10 @@
                 {{_('Notre expertise')}}
                 <i class="bi bi-caret-down-fill text-xs"></i>
             </a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('nos_services')}}">{{_('Nos services')}}</a>
             <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('actualites')}}">{{_('Actualités')}}</a>
             <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('nouscontacter')}}">{{_('Nous contacter')}}</a>
-            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('espace_clients')}}">{{_('Espace client')}}</a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="https://azo-vf-frontend-dev-1088553818836.europe-west9.run.app/auth/login" target="_blank" rel="noopener noreferrer">{{_('Espace client')}}</a>
         </nav>
 
         <ul class="flex items-center gap-4">
@@ -95,15 +108,25 @@
                 <span class="sr-only">Whatsapp</span>    
             </a>
 
-            <a href="{{ url_for(request.endpoint, lang_code='en', **request.view_args) }}">
-                <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
-                    loading="lazy" alt="usa icone" style="width: 1.1rem; height: 1.1rem;">
-            </a>
-
-            <a href="{{ url_for(request.endpoint, lang_code='fr') }}">
-                <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
-                    loading="lazy" alt="france icone" style="width: 1.1rem; height: 1.1rem;">
-            </a>
+            {% if request.endpoint == 'blog.article' %}
+                <a href="{{ url_for('main.home', lang_code='en') }}">
+                    <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
+                        loading="lazy" alt="usa icone" style="width: 1.1rem; height: 1.1rem;">
+                </a>
+                <a href="{{ url_for('main.home', lang_code='fr') }}">
+                    <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
+                        loading="lazy" alt="france icone" style="width: 1.1rem; height: 1.1rem;">
+                </a>
+            {% else %}
+                <a href="{{ url_for(request.endpoint or 'main.home', lang_code='en', **(request.view_args or {})) if request.endpoint else '#' }}">
+                    <img class="icones_langues" src="{{url_for('static',filename='flags/usa.webp') }}"
+                        loading="lazy" alt="usa icone" style="width: 1.1rem; height: 1.1rem;">
+                </a>
+                <a href="{{ url_for(request.endpoint or 'main.home', lang_code='fr', **(request.view_args or {})) if request.endpoint else '#' }}">
+                    <img class="icones_langues" src="{{url_for('static',filename='flags/france.webp') }}"
+                        loading="lazy" alt="france icone" style="width: 1.1rem; height: 1.1rem;">
+                </a>
+            {% endif %}
         </ul>
     </nav>
 
@@ -114,8 +137,9 @@
                 aria-label="Cabinet d'experts-comptables à Paris">
         </a>
 
-        <button class="text-gray-800 transition transition-300 hover:text-black" id="mobile_menu">
+        <button class="text-gray-800 transition transition-300 hover:text-black" id="mobile_menu" aria-label="{{_('Ouvrir le menu de navigation')}}" aria-expanded="false" aria-controls="mobile_menu_dropdown">
             <i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">{{_('Menu')}}</span>
         </button>
     </nav>
 
@@ -139,6 +163,14 @@
         currentUrl.includes('conseil_optimisation')) {
             document.getElementById('expertise_dropdown').classList.add('text-blue-600');
             document.getElementById('expertise_dropdown').classList.remove('text-gray-800', 'hover:text-black');
+        }
+
+        if(currentUrl.includes('nos_services')) {
+            const nosServicesLink = document.querySelector('a[href*="nos_services"]');
+            if (nosServicesLink) {
+                nosServicesLink.classList.add('text-blue-600');
+                nosServicesLink.classList.remove('text-gray-800', 'hover:text-black');
+            }
         }
     });
 </script>

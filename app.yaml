@@ -12,8 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-runtime: python39
+runtime: python312
 entrypoint: gunicorn -w 2 run:app
+
+automatic_scaling:
+  max_instances: 20
 
 handlers:
 - url: /.*
@@ -23,3 +26,10 @@ handlers:
 env_variables:
   CAPTCHA_PUBLIC_KEY: '6LdlSeolAAAAAEtXiWHFMbkBOQfMUXwKaLrJO5yI'
   CAPTCHA_PRIVATE_KEY: '6LdlSeolAAAAAFADdbOZcXm_0RB4v2pKvXI-SIYA'
+  # Configuration email Gmail avec validation en deux étapes
+  EMAIL_SERVER: 'smtp.gmail.com'
+  EMAIL_PORT: '587'
+  EMAIL_USER: 'contact@medeo-partners.com'
+  EMAIL_PASS: 'manh ohkn uxpb iisb'
+  # Configuration base de données pour la production
+  DATABASE_URL: 'mysql+mysqldb://root:**********@**.**.***.***/development?unix_socket=/cloudsql/mystical-runway-364716:medeotax'

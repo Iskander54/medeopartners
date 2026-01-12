@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ g.lang_code or 'fr' }}">
 
 <head>
+   {% block title %}
    {% if title %}
    <title>Medeo Partners - {{ title }}</title>
    {% else %}
    <title>Medeo Partners : expertise en comptabilité , gestion, fiscalité </title>
    {% endif %}
+   {% endblock %}
 
    {% include 'includes/head/meta.html' %}
    {% include 'includes/head/google_tm_analytics.html' %}
@@ -25,8 +27,44 @@
       {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
       {% for category, message in messages %}
-      <div class="alert alert-{{ category }}">
-         {{ message }}
+      <div class="flash-message flash-{{ category }}" id="flash-{{ loop.index }}">
+         <div class="flash-content">
+            <div class="flash-icon">
+               {% if category == 'success' %}
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22,4 12,14.01 9,11.01"></polyline>
+               </svg>
+               {% elif category == 'error' %}
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="15" y1="9" x2="9" y2="15"></line>
+                  <line x1="9" y1="9" x2="15" y2="15"></line>
+               </svg>
+               {% elif category == 'warning' %}
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+               </svg>
+               {% else %}
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+               </svg>
+               {% endif %}
+            </div>
+            <div class="flash-text">
+               {{ message }}
+            </div>
+            <button class="flash-close" onclick="closeFlash('flash-{{ loop.index }}')">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+               </svg>
+            </button>
+         </div>
       </div>
       {% endfor %}
       {% endif %}
@@ -122,13 +160,41 @@
 
    <script>
 
+      // Flash Messages JavaScript
+      function closeFlash(flashId) {
+         const flashElement = document.getElementById(flashId);
+         if (flashElement) {
+            flashElement.classList.add('closing');
+            setTimeout(() => {
+               flashElement.remove();
+            }, 300);
+         }
+      }
 
+      // Auto-hide flash messages after 5 seconds
+      document.addEventListener('DOMContentLoaded', function() {
+         const flashMessages = document.querySelectorAll('.flash-message');
+         flashMessages.forEach((message, index) => {
+            setTimeout(() => {
+               if (message && !message.classList.contains('closing')) {
+                  closeFlash(message.id);
+               }
+            }, 5000);
+         });
+      });
 
       // Fonction pour ajuster la hauteur du contenu principal
       function adjustMainContentHeight() {
-         var windowHeight = window.innerHeight;
-         var bgImageHeight = document.querySelector('.bg-img2').clientHeight;
+         var bgImage = document.querySelector('.bg-img2');
          var mainContent = document.querySelector('main');
+         
+         // Vérifier que les éléments existent avant de les utiliser
+         if (!bgImage || !mainContent) {
+            return;
+         }
+         
+         var windowHeight = window.innerHeight;
+         var bgImageHeight = bgImage.clientHeight;
 
          // Calculer la hauteur du contenu principal
          var mainContentHeight = windowHeight - bgImageHeight;

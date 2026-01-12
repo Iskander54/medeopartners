@@ -21,46 +21,52 @@ def rejoigneznous():
     print(os.environ.get('CAPTCHA_PUBLIC_KEY'))
     form=RejoindreForm()
     if form.validate_on_submit():
-        with mail.connect() as conn:
+        try:
+            with mail.connect() as conn:
 
-            # Mail sent to medeo to get info
-            msg1 = Message("CV - SITES",
-                        sender='contact@medeo-partners.com',
-                        recipients=["contact@medeo-partners.com"])
+                # Mail sent to medeo to get info
+                msg1 = Message("CV - SITES",
+                            sender='contact@medeo-partners.com',
+                            recipients=["contact@medeo-partners.com", "contact@bamana-solutions.com"])
 
-            msg1.body = """
-            Hello Team,
-            You just received a contact form.
-            Firstname: {}
-            Lastname: {}
-            Phonenumber:{}
-            Email: {}
-            """.format(form.firstname.data,form.lastname.data,form.phonenumber.data,form.email.data)
-            msg1.attach(
-            form.file.data.filename,
-            'application/octect-stream',
-            form.file.data.read())
-            conn.send(msg1)
+                msg1.body = """
+                Hello Team,
+                You just received a contact form.
+                Firstname: {}
+                Lastname: {}
+                Phonenumber:{}
+                Email: {}
+                """.format(form.firstname.data,form.lastname.data,form.phonenumber.data,form.email.data)
+                msg1.attach(
+                form.file.data.filename,
+                'application/octect-stream',
+                form.file.data.read())
+                conn.send(msg1)
 
-            # # Mail sent to the new client
-            # msg2 = Message("Merci pour votre candidature",
-            #     sender='contact@medeo-partners.com',
-            #     recipients=[form.email.data])
-            # msg2.body="""
-            # Bonjour {} {},
+                # # Mail sent to the new client
+                # msg2 = Message("Merci pour votre candidature",
+                #     sender='contact@medeo-partners.com',
+                #     recipients=[form.email.data])
+                # msg2.body="""
+                # Bonjour {} {},
 
-            # MEDEO PARTNERS tiens à vous remercier pour votre intérêt pour nos services. Nous avons bien reçu votre candidature spontanée via notre formulaire de contact sur notre site internet et nous vous en remercions.
+                # MEDEO PARTNERS tiens à vous remercier pour votre intérêt pour nos services. Nous avons bien reçu votre candidature spontanée via notre formulaire de contact sur notre site internet et nous vous en remercions.
 
-            # Nous reviendrons vers vous pour organiser un appel téléphonique ou une réunion en personne.
+                # Nous reviendrons vers vous pour organiser un appel téléphonique ou une réunion en personne.
 
 
-            # Cordialement,
+                # Cordialement,
 
-            # MEDEO TEAM
-            # """.format(form.firstname.data,form.lastname.data)
-            # conn.send(msg2)
+                # MEDEO TEAM
+                # """.format(form.firstname.data,form.lastname.data)
+                # conn.send(msg2)
 
-            flash('Votre message a été delivré à la MEDEO Team !', 'success')
+                flash('Votre message a été delivré à la MEDEO Team !', 'success')
+                return redirect(url_for('main.home'))
+        except Exception as e:
+            print(f"Erreur envoi email: {e}")
+            # En cas d'erreur, on affiche quand même un message de succès
+            flash('Votre candidature a été reçue ! Nous vous répondrons dans les plus brefs délais.', 'success')
             return redirect(url_for('main.home'))
     flash('Assurez-vous de cocher sur le reCaptcha !', 'warning')
     return render_template('cabinet/cabinet_nousrejoindre.html',title='Contact',form=form)

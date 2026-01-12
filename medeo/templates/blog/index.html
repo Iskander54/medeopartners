@@ -1,0 +1,146 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+
+{% block content %}
+<div class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4">
+        <!-- Header du blog -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+                Blog Expertise Comptable
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Découvrez nos articles d'expertise en comptabilité, fiscalité et conseil d'entreprise. 
+                Actualités, guides pratiques et conseils d'experts.
+            </p>
+        </div>
+
+        <!-- Barre de recherche -->
+        <div class="max-w-2xl mx-auto mb-12">
+            <form action="{{ url_for('blog.search', lang_code=g.lang_code) }}" method="GET" class="relative">
+                <input type="text" name="q" placeholder="Rechercher un article..." 
+                       class="w-full px-6 py-4 text-lg border-2 border-gray-200 rounded-full focus:border-primary focus:outline-none">
+                <button type="submit" class="absolute right-2 top-2 bg-primary text-white px-6 py-2 rounded-full hover:bg-primary-dark">
+                    Rechercher
+                </button>
+            </form>
+        </div>
+
+        <!-- Catégories principales -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Catégories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {% for category in categories %}
+                <a href="{{ url_for('blog.category', slug=category.slug, lang_code=g.lang_code) }}" 
+                   class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+                    <h3 class="font-semibold text-primary">{{ category.name }}</h3>
+                    <p class="text-sm text-gray-600 mt-2">{{ category.description[:60] }}...</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Articles récents -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Articles récents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for article in articles.items %}
+                <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    {% if article.featured_image %}
+                    <img src="{{ article.featured_image }}" alt="{{ article.alt_image or article.title }}" 
+                         class="w-full h-48 object-cover">
+                    {% endif %}
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-primary text-white text-xs px-3 py-1 rounded-full">
+                                {{ article.category.name }}
+                            </span>
+                            <span class="text-gray-500 text-sm ml-auto">
+                                {{ article.published_at.strftime('%d/%m/%Y') if article.published_at }}
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">
+                            <a href="{{ url_for('blog.article', slug=article.slug, lang_code=g.lang_code) }}" 
+                               class="hover:text-primary transition-colors">
+                                {{ article.title }}
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">{{ article.excerpt[:150] }}...</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">
+                                ⏱️ {{ article.reading_time or 5 }} min de lecture
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                👁️ {{ article.view_count or 0 }} vues
+                            </span>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        {% if articles.pages > 1 %}
+        <div class="flex justify-center">
+            <nav class="flex space-x-2">
+                {% if articles.has_prev %}
+                <a href="{{ url_for('blog.index', page=articles.prev_num, lang_code=g.lang_code) }}" 
+                   class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
+                    Précédent
+                </a>
+                {% endif %}
+                
+                {% for page_num in articles.iter_pages() %}
+                    {% if page_num %}
+                        {% if page_num != articles.page %}
+                        <a href="{{ url_for('blog.index', page=page_num, lang_code=g.lang_code) }}" 
+                           class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
+                            {{ page_num }}
+                        </a>
+                        {% else %}
+                        <span class="px-4 py-2 bg-primary text-white rounded-lg">{{ page_num }}</span>
+                        {% endif %}
+                    {% else %}
+                    <span class="px-4 py-2">...</span>
+                    {% endif %}
+                {% endfor %}
+                
+                {% if articles.has_next %}
+                <a href="{{ url_for('blog.index', page=articles.next_num, lang_code=g.lang_code) }}" 
+                   class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
+                    Suivant
+                </a>
+                {% endif %}
+            </nav>
+        </div>
+        {% endif %}
+
+        <!-- Articles populaires -->
+        {% if popular_articles %}
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Articles populaires</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {% for article in popular_articles %}
+                <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-4">
+                    <h3 class="font-semibold text-gray-800 mb-2">
+                        <a href="{{ url_for('blog.article', slug=article.slug, lang_code=g.lang_code) }}" 
+                           class="hover:text-primary transition-colors">
+                            {{ article.title }}
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-3">{{ article.excerpt[:100] }}...</p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>{{ article.category.name }}</span>
+                        <span>👁️ {{ article.view_count or 0 }} vues</span>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %} 

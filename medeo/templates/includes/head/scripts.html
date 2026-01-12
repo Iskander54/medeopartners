@@ -1,2 +1,13 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Détection WebP et fallback images -->
+<script src="{{ url_for('static', filename='js/image-fallback.js') }}"></script>
+
+<!-- Analytics et Lead Magnets -->
+<script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+<script src="{{ url_for('static', filename='js/lead-magnets.js') }}"></script>
+
+<!-- Scripts personnalisés -->
+<script src="{{ url_for('static', filename='js/layout/header.js') }}"></script>

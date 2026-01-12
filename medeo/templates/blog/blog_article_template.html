@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block content %}
+<article id="blog-article" class="py-16 bg-white">
+    <div class="container mx-auto flex flex-col gap-8 max-w-4xl">
+
+        {# Breadcrumb #}
+        <nav class="text-gray-500 text-sm">
+            <a href="{{url_for('main.home', lang_code=g.lang_code)}}" class="hover:text-primary">Accueil</a>
+            <span class="mx-2">/</span>
+            <a href="{{url_for('blog.index', lang_code=g.lang_code)}}" class="hover:text-primary">Blog</a>
+            {% block breadcrumb_category %}{% endblock %}
+        </nav>
+
+        <div class="bg-gray-100 px-4 py-2 rounded-lg font-semibold text-gray-500 w-max">
+            {% block article_category %}{% endblock %}
+        </div>
+
+        <h1 class="text-3xl md:text-4xl font-extrabold text-primary md:w-4/5">
+            {% block article_title %}{% endblock %}
+        </h1>
+
+        <h3 class="text-lg text-gray-500 md:w-4/5">
+            {% block article_excerpt %}{% endblock %}
+        </h3>
+
+        {% block article_image %}
+        <img class="w-full h-64 rounded-3xl object-cover" src="{% block image_url %}{% endblock %}" loading="lazy" alt="{% block image_alt %}{% endblock %}">
+        {% endblock %}
+
+        <div class="prose prose-lg max-w-none mt-8 article-content">
+            {% block article_content %}{% endblock %}
+        </div>
+
+        {% block article_tags %}{% endblock %}
+
+        {# Call to Action #}
+        <div class="mt-8 p-6 bg-primary bg-opacity-10 rounded-lg border-l-4 border-primary">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Besoin d'un accompagnement personnalisé ?</h3>
+            <p class="text-gray-600 mb-4">
+                Notre équipe d'experts-comptables est à votre disposition pour vous conseiller et vous accompagner dans la gestion de votre entreprise.
+            </p>
+            <a href="{{ url_for('contacts.contaceznous', lang_code=g.lang_code) }}" 
+               class="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors font-semibold">
+                Contactez-nous
+            </a>
+        </div>
+    </div>
+</article>
+
+<!-- Styles pour le contenu -->
+<style>
+.article-content {
+    color: #374151;
+    line-height: 1.75;
+}
+
+.article-content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.article-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+}
+
+.article-content p {
+    margin-bottom: 1.25rem;
+}
+
+.article-content ul, .article-content ol {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.625rem;
+}
+
+.article-content li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.article-content strong {
+    font-weight: 600;
+    color: #111827;
+}
+
+.article-content a {
+    color: #114a79;
+    text-decoration: underline;
+}
+
+.article-content a:hover {
+    color: #0d3a5f;
+}
+</style>
+{% endblock %}
+

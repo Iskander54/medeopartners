@@ -21,15 +21,14 @@ jsonschema>=3.2.0
 multiaddr>=0.0.9
 multidict>=6.0.2
 notebook>=6.0.3
-Pillow>=9.5.0
+Pillow>=10.0.0
 platformdirs>=2.5.2
 PyMySQL>=1.0.2
-mysqlclient>=2.0.0
 requests>=2.22.0
 rlp>=2.0.1
 SQLAlchemy>=1.4.41
 testpath>=0.4.4
-typing-extensions>=4.5.0
+typing-extensions>=3.10.0.2
 urllib3>=1.25.8
 virtualenv>=20.16.3
 wcwidth>=0.1.8
@@ -47,10 +46,4 @@ flask_sitemap>=0.4.0
 openai>=1.3.0
 python-slugify>=8.0.1
 beautifulsoup4>=4.12.2
-lxml>=4.9.3
-
-# Cache et Performance
-Flask-Caching==2.1.0
-
-# Analytics et Tracking
-google-analytics-data==0.18.0
+lxml>=4.9.3 

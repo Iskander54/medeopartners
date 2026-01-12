@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
         "@type": "LocalBusiness",
         "name": "Medeo Partners - Cabinet d'Expertise Comptable à Paris",
         "url": "https://www.medeo-partners.com",
-        "logo": "https://www.medeo-partners.com/path-to-logo.jpg",
-        "image": "https://www.medeo-partners.com/path-to-image.jpg",
+        "logo": "https://www.medeo-partners.com/static/medeo_images/Medeo_partners_couleur.webp",
+        "image": "https://www.medeo-partners.com/static/medeo_images/Medeo_partners_couleur.webp",
         "description": "Découvrez comment Medeo Partners, avec plus de 10 ans d'expertise en comptabilité et fiscalité, optimise la gestion financière et fiscale de votre société.",
         "telephone": "+33183641604",
         "address": {

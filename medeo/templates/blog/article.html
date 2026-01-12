@@ -1,0 +1,205 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ article.meta_title or article.title }}{% endblock %}
+{% block meta_description %}{{ article.meta_description or article.excerpt }}{% endblock %}
+
+{% block content %}
+<div class="bg-gray-50 py-8">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Breadcrumb -->
+        <nav class="mb-6 text-sm">
+            <a href="{{ url_for('main.home', lang_code=g.lang_code) }}" class="text-primary hover:underline">Accueil</a>
+            <span class="mx-2 text-gray-400">/</span>
+            <a href="{{ url_for('blog.index', lang_code=g.lang_code) }}" class="text-primary hover:underline">Blog</a>
+            <span class="mx-2 text-gray-400">/</span>
+            <a href="{{ url_for('blog.category', slug=article.category.slug, lang_code=g.lang_code) }}" class="text-primary hover:underline">{{ article.category.name }}</a>
+            <span class="mx-2 text-gray-400">/</span>
+            <span class="text-gray-600">{{ article.title }}</span>
+        </nav>
+
+        <!-- Article Header -->
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+            {% if article.featured_image %}
+            <img src="{{ article.featured_image }}" alt="{{ article.alt_image or article.title }}" 
+                 class="w-full h-64 md:h-96 object-cover">
+            {% endif %}
+            
+            <div class="p-8">
+                <!-- Category and Date -->
+                <div class="flex items-center justify-between mb-4">
+                    <span class="bg-primary text-white text-sm px-4 py-1 rounded-full">
+                        {{ article.category.name }}
+                    </span>
+                    <div class="text-sm text-gray-500">
+                        {% if article.published_at %}
+                        {{ article.published_at.strftime('%d/%m/%Y') }}
+                        {% endif %}
+                        <span class="mx-2">•</span>
+                        <span>⏱️ {{ article.reading_time or 5 }} min de lecture</span>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    {{ article.title }}
+                </h1>
+
+                <!-- Excerpt -->
+                {% if article.excerpt %}
+                <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+                    {{ article.excerpt }}
+                </p>
+                {% endif %}
+
+                <!-- Article Content -->
+                <div class="prose prose-lg max-w-none mt-8 article-content">
+                    {{ article.content | markdown | safe }}
+                </div>
+
+                <!-- Tags -->
+                {% if article.tags %}
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Tags :</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {% for tag in article.tags %}
+                        <a href="{{ url_for('blog.tag', slug=tag.slug, lang_code=g.lang_code) }}" 
+                           class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full hover:bg-primary hover:text-white transition-colors">
+                            {{ tag.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Call to Action -->
+                <div class="mt-8 p-6 bg-primary bg-opacity-10 rounded-lg border-l-4 border-primary">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Besoin d'un accompagnement personnalisé ?</h3>
+                    <p class="text-gray-600 mb-4">
+                        Notre équipe d'experts-comptables est à votre disposition pour vous conseiller et vous accompagner dans la gestion de votre entreprise.
+                    </p>
+                    <a href="{{ url_for('contacts.contaceznous', lang_code=g.lang_code) }}" 
+                       class="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors font-semibold">
+                        Contactez-nous
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Similar Articles -->
+        {% if similar_articles %}
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Articles similaires</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {% for similar in similar_articles %}
+                <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    {% if similar.featured_image %}
+                    <img src="{{ similar.featured_image }}" alt="{{ similar.alt_image or similar.title }}" 
+                         class="w-full h-48 object-cover">
+                    {% endif %}
+                    <div class="p-4">
+                        <span class="text-xs text-primary font-semibold">{{ similar.category.name }}</span>
+                        <h3 class="text-lg font-bold text-gray-800 mt-2 mb-2">
+                            <a href="{{ url_for('blog.article', slug=similar.slug, lang_code=g.lang_code) }}" 
+                               class="hover:text-primary transition-colors">
+                                {{ similar.title }}
+                            </a>
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-3">{{ similar.excerpt[:100] }}...</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span>⏱️ {{ similar.reading_time or 5 }} min</span>
+                            <span>👁️ {{ similar.view_count or 0 }} vues</span>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Popular Articles in Category -->
+        {% if popular_in_category %}
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Articles populaires dans cette catégorie</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {% for popular in popular_in_category %}
+                <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    {% if popular.featured_image %}
+                    <img src="{{ popular.featured_image }}" alt="{{ popular.alt_image or popular.title }}" 
+                         class="w-full h-48 object-cover">
+                    {% endif %}
+                    <div class="p-4">
+                        <span class="text-xs text-primary font-semibold">{{ popular.category.name }}</span>
+                        <h3 class="text-lg font-bold text-gray-800 mt-2 mb-2">
+                            <a href="{{ url_for('blog.article', slug=popular.slug, lang_code=g.lang_code) }}" 
+                               class="hover:text-primary transition-colors">
+                                {{ popular.title }}
+                            </a>
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-3">{{ popular.excerpt[:100] }}...</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span>⏱️ {{ popular.reading_time or 5 }} min</span>
+                            <span>👁️ {{ popular.view_count or 0 }} vues</span>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Styles pour le contenu markdown -->
+<style>
+.prose {
+    color: #374151;
+    line-height: 1.75;
+}
+
+.prose h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.prose h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+}
+
+.prose p {
+    margin-bottom: 1.25rem;
+}
+
+.prose ul, .prose ol {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.625rem;
+}
+
+.prose li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.prose strong {
+    font-weight: 600;
+    color: #111827;
+}
+
+.prose a {
+    color: #114a79;
+    text-decoration: underline;
+}
+
+.prose a:hover {
+    color: #0d3a5f;
+}
+</style>
+{% endblock %}
+
