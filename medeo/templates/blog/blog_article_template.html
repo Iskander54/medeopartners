@@ -27,27 +27,87 @@
             {% block article_excerpt %}{% endblock %}
         </h3>
 
+        {# Métadonnées de l'article #}
+        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+            {% block article_meta %}
+            <span>📅 Publié le {% block article_date %}{% endblock %}</span>
+            <span>⏱️ {% block reading_time %}5{% endblock %} min de lecture</span>
+            {% if block('article_updated_date') %}
+            <span>🔄 Mis à jour le {% block article_updated_date %}{% endblock %}</span>
+            {% endif %}
+            {% endblock %}
+        </div>
+
         {% block article_image %}
         <img class="w-full h-64 rounded-3xl object-cover" src="{% block image_url %}{% endblock %}" loading="lazy" alt="{% block image_alt %}{% endblock %}">
+        {% endblock %}
+
+        {# Table des matières (sommaire cliquable) #}
+        {% block table_of_contents %}
+        {% if block('toc_items') %}
+        <div class="bg-gray-50 border-l-4 border-primary p-6 rounded-lg mt-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">📑 Sommaire</h2>
+            <nav class="table-of-contents">
+                {% block toc_items %}{% endblock %}
+            </nav>
+        </div>
+        {% endif %}
         {% endblock %}
 
         <div class="prose prose-lg max-w-none mt-8 article-content">
             {% block article_content %}{% endblock %}
         </div>
 
+        {# Encadré "À retenir" #}
+        {% block key_takeaways %}
+        {% if block('takeaways_content') %}
+        <div class="mt-8 p-6 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
+            <h3 class="text-xl font-bold text-gray-800 mb-3">💡 À retenir</h3>
+            <div class="text-gray-700">
+                {% block takeaways_content %}{% endblock %}
+            </div>
+        </div>
+        {% endif %}
+        {% endblock %}
+
         {% block article_tags %}{% endblock %}
 
-        {# Call to Action #}
+        {# Call to Action contextuel optimisé #}
+        {% block cta_contextual %}
         <div class="mt-8 p-6 bg-primary bg-opacity-10 rounded-lg border-l-4 border-primary">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Besoin d'un accompagnement personnalisé ?</h3>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">{% block cta_title %}Besoin d'un accompagnement personnalisé ?{% endblock %}</h3>
             <p class="text-gray-600 mb-4">
-                Notre équipe d'experts-comptables est à votre disposition pour vous conseiller et vous accompagner dans la gestion de votre entreprise.
+                {% block cta_description %}Notre équipe d'experts-comptables est à votre disposition pour vous conseiller et vous accompagner dans la gestion de votre entreprise.{% endblock %}
             </p>
-            <a href="{{ url_for('contacts.contaceznous', lang_code=g.lang_code) }}" 
-               class="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors font-semibold">
-                Contactez-nous
-            </a>
+            <div class="flex flex-wrap gap-4">
+                <a href="{{ url_for('contacts.contaceznous', lang_code=g.lang_code) }}" 
+                   class="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors font-semibold">
+                    📞 Contactez-nous
+                </a>
+                {% block cta_secondary %}
+                <a href="https://calendly.com/medeo-partners/30min" target="_blank" rel="noopener noreferrer"
+                   class="inline-block bg-white border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors font-semibold">
+                    📅 Prendre rendez-vous
+                </a>
+                {% endblock %}
+            </div>
+            <p class="text-sm text-gray-500 mt-4">
+                ☎️ <strong>01 83 64 16 04</strong> | 📧 <a href="mailto:contact@medeo-partners.com" class="text-primary hover:underline">contact@medeo-partners.com</a>
+            </p>
         </div>
+        {% endblock %}
+
+        {# Articles liés / Suggestions #}
+        {% block related_articles %}
+        {% if block('related_articles_list') %}
+        <div class="mt-12 border-t-2 border-gray-200 pt-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">📚 Articles similaires</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {% block related_articles_list %}{% endblock %}
+            </div>
+        </div>
+        {% endif %}
+        {% endblock %}
     </div>
 </article>
 
@@ -101,6 +161,76 @@
 
 .article-content a:hover {
     color: #0d3a5f;
+}
+
+/* Table des matières */
+.table-of-contents {
+    list-style: none;
+    padding-left: 0;
+}
+
+.table-of-contents li {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+}
+
+.table-of-contents a {
+    color: #04487a;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.table-of-contents a:hover {
+    color: #0d3a5f;
+    text-decoration: underline;
+}
+
+.table-of-contents ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+/* Encadrés dans le contenu */
+.article-content blockquote {
+    border-left: 4px solid #04487a;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #4b5563;
+}
+
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.article-content table th,
+.article-content table td {
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.article-content table th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .article-content {
+        font-size: 1rem;
+    }
+    
+    .article-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .article-content h3 {
+        font-size: 1.25rem;
+    }
 }
 </style>
 {% endblock %}

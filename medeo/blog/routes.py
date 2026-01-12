@@ -2,6 +2,7 @@ from flask import render_template, request, Blueprint, g, current_app, abort, ur
 from flask_babel import _
 from medeo.models import BlogArticle, BlogCategory, BlogTag, KeywordResearch
 from medeo import db
+from medeo.blog.blog_config import get_article_metadata, get_related_articles, get_category_info
 import json
 from datetime import datetime
 import re
@@ -79,13 +80,20 @@ def article(slug):
     article_templates = {
         'tva-obligations-declaratives-dirigeants': 'blog/articles/tva-obligations-declaratives-dirigeants.html',
         'creation-entreprise-erreurs-comptables-fiscales-premiere-annee': 'blog/articles/creation-entreprise-erreurs-comptables-fiscales-premiere-annee.html',
+        'loi-finances-2026-impact-entreprise': 'blog/articles/loi-finances-2026-impact-entreprise.html',
     }
     
     template_path = article_templates.get(slug)
     if not template_path:
         abort(404)
     
-    return render_template(template_path)
+    # Récupérer les métadonnées et articles liés
+    metadata = get_article_metadata(slug)
+    related_articles = get_related_articles(slug)
+    
+    return render_template(template_path, 
+                         article_metadata=metadata,
+                         related_articles=related_articles)
 
 @blog.route("/tag/<slug>")
 def tag(slug):
