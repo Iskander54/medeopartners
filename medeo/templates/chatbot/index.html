@@ -1,0 +1,440 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+
+{% block content %}
+<div class="bg-gray-50 min-h-screen py-16">
+    <div class="container mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+                Assistant Fiscal Expert
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Posez vos questions fiscales et comptables à notre assistant expert. 
+                Conseils gratuits et personnalisés pour votre entreprise.
+            </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Interface de chat -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <!-- Header du chat -->
+                        <div class="bg-primary text-white p-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-primary text-2xl">🤖</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h2 class="text-xl font-bold">Assistant Medeo</h2>
+                                    <p class="text-primary-light">Expert en fiscalité et comptabilité</p>
+                                </div>
+                                <div class="ml-auto flex items-center space-x-4">
+                                    <!-- Compteur de questions -->
+                                    <div id="question-counter" class="bg-white bg-opacity-20 rounded-full px-4 py-2">
+                                        <span class="text-sm font-semibold">
+                                            <span id="questions-remaining">{{ questions_remaining }}</span> / 3 questions restantes
+                                        </span>
+                                    </div>
+                                    <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Zone de messages -->
+                        <div id="chat-messages" class="h-96 overflow-y-auto p-6 space-y-4">
+                            <!-- Message de bienvenue -->
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-white text-sm">🤖</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-4 max-w-3xl">
+                                    <p class="text-gray-800">
+                                        Bonjour ! Je suis votre assistant fiscal et comptable. 
+                                        Posez-moi vos questions sur la comptabilité, la fiscalité, 
+                                        le droit social ou tout autre sujet lié à la gestion d'entreprise.
+                                    </p>
+                                    <p class="text-sm text-gray-600 mt-2">
+                                        💡 <strong>Exemples de questions :</strong><br>
+                                        • "Comment calculer ma TVA ?"<br>
+                                        • "Quels sont les seuils de TVA en 2024 ?"<br>
+                                        • "Comment optimiser fiscalement mon entreprise ?"
+                                    </p>
+                                    <p class="text-xs text-orange-600 mt-3 font-semibold">
+                                        ⚠️ Vous avez droit à 3 questions gratuites. Après cela, contactez-nous pour un conseil personnalisé.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Zone de saisie -->
+                        <div class="border-t border-gray-200 p-6">
+                            <!-- Message de limite atteinte -->
+                            <div id="limit-reached-message" class="hidden bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg p-6 mb-4">
+                                <h3 class="text-xl font-bold mb-3">📞 Contactez-nous pour un conseil personnalisé</h3>
+                                <p class="mb-4">Vous avez atteint la limite de 3 questions gratuites. Pour obtenir des conseils approfondis adaptés à votre situation, contactez directement notre cabinet.</p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                                        <p class="font-semibold mb-2">📞 Téléphone</p>
+                                        <a href="tel:0183641604" class="text-2xl font-bold hover:underline">{{ contact_phone }}</a>
+                                    </div>
+                                    <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                                        <p class="font-semibold mb-2">✉️ Email</p>
+                                        <a href="mailto:{{ contact_email }}" class="text-lg hover:underline break-all">{{ contact_email }}</a>
+                                    </div>
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4">
+                                    <p class="font-semibold mb-2">📍 Adresse</p>
+                                    <p>97 Boulevard Malesherbes, 75008 Paris</p>
+                                </div>
+                                <a href="{{ url_for('main.nouscontacter', lang_code=g.lang_code) }}" 
+                                   class="bg-white text-primary px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors inline-block font-semibold">
+                                    📝 Remplir le formulaire de contact
+                                </a>
+                            </div>
+                            
+                            <form id="chat-form" class="flex space-x-4">
+                                <input type="text" id="message-input" 
+                                       placeholder="Tapez votre question..." 
+                                       class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
+                                       required>
+                                <button type="submit" id="submit-btn"
+                                        class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors flex items-center">
+                                    <span>Envoyer</span>
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- Avertissement dernière question -->
+                            <div id="last-question-warning" class="hidden mt-4 bg-orange-50 border-l-4 border-orange-400 p-4 rounded">
+                                <p class="text-orange-800 text-sm">
+                                    <strong>⚠️ Attention :</strong> C'est votre dernière question gratuite. Après cela, contactez-nous au <strong>{{ contact_phone }}</strong> pour des conseils personnalisés.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar avec FAQ et catégories -->
+                <div class="space-y-6">
+                    <!-- FAQ -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">Questions fréquentes</h3>
+                        <div id="faq-list" class="space-y-3">
+                            <!-- FAQ sera chargée via JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Catégories -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">Catégories</h3>
+                        <div id="categories-list" class="space-y-2">
+                            <!-- Catégories seront chargées via JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="bg-primary text-white rounded-lg p-6">
+                        <h3 class="text-lg font-bold mb-4">Besoin d'un conseil personnalisé ?</h3>
+                        <p class="text-primary-light mb-4">
+                            Notre assistant donne des conseils généraux. Pour un accompagnement personnalisé, 
+                            contactez nos experts.
+                        </p>
+                        <a href="{{ url_for('main.nouscontacter', lang_code=g.lang_code) }}" 
+                           class="bg-white text-primary px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors inline-block">
+                            Nous contacter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript pour le chat -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chatMessages = document.getElementById('chat-messages');
+    const chatForm = document.getElementById('chat-form');
+    const messageInput = document.getElementById('message-input');
+    const submitBtn = document.getElementById('submit-btn');
+    const faqList = document.getElementById('faq-list');
+    const categoriesList = document.getElementById('categories-list');
+    const questionCounter = document.getElementById('questions-remaining');
+    const limitReachedMessage = document.getElementById('limit-reached-message');
+    const lastQuestionWarning = document.getElementById('last-question-warning');
+    
+    let questionsRemaining = {{ questions_remaining }};
+
+    // Vérifier si la limite est déjà atteinte au chargement
+    if (questionsRemaining === 0) {
+        disableChatForm();
+        showLimitReachedMessage();
+    }
+
+    // Charger la FAQ
+    loadFAQ();
+    
+    // Charger les catégories
+    loadCategories();
+
+    // Gestion du formulaire de chat
+    chatForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const message = messageInput.value.trim();
+        if (!message) return;
+
+        // Vérifier si la limite est atteinte
+        if (questionsRemaining <= 0) {
+            return;
+        }
+
+        // Ajouter le message utilisateur
+        addMessage(message, 'user');
+        messageInput.value = '';
+
+        // Afficher l'indicateur de chargement
+        const loadingId = addLoadingMessage();
+
+        try {
+            // Envoyer la requête
+            const response = await fetch('{{ url_for("chatbot.chat", lang_code=g.lang_code) }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message })
+            });
+
+            const data = await response.json();
+
+            // Supprimer l'indicateur de chargement
+            removeLoadingMessage(loadingId);
+
+            if (data.error) {
+                addMessage('Désolé, une erreur est survenue. Veuillez réessayer.', 'assistant');
+            } else if (data.limit_reached) {
+                // Limite atteinte
+                questionsRemaining = 0;
+                updateQuestionCounter();
+                addMessage(data.message, 'assistant');
+                addContactInfoMessage(data.contact_info);
+                disableChatForm();
+                showLimitReachedMessage();
+            } else {
+                // Ajouter la réponse de l'assistant
+                addMessage(data.response, 'assistant', data.relevant_articles);
+                
+                // Mettre à jour le compteur
+                questionsRemaining = data.questions_remaining || 0;
+                updateQuestionCounter();
+                
+                // Afficher l'avertissement si dernière question
+                if (data.warning_message) {
+                    addMessage(data.warning_message, 'assistant');
+                    showLastQuestionWarning();
+                }
+                
+                // Si c'est la dernière question, désactiver après la réponse
+                if (questionsRemaining === 0) {
+                    disableChatForm();
+                    showLimitReachedMessage();
+                } else if (questionsRemaining === 1) {
+                    showLastQuestionWarning();
+                }
+            }
+
+        } catch (error) {
+            console.error('Erreur:', error);
+            removeLoadingMessage(loadingId);
+            addMessage('Désolé, une erreur de connexion est survenue.', 'assistant');
+        }
+    });
+    
+    function updateQuestionCounter() {
+        if (questionCounter) {
+            questionCounter.textContent = questionsRemaining;
+            if (questionsRemaining === 0) {
+                questionCounter.parentElement.classList.add('bg-red-500', 'bg-opacity-20');
+                questionCounter.parentElement.classList.remove('bg-white', 'bg-opacity-20');
+            }
+        }
+    }
+    
+    function disableChatForm() {
+        messageInput.disabled = true;
+        messageInput.placeholder = 'Limite de questions atteinte. Contactez-nous pour continuer.';
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        submitBtn.classList.remove('hover:bg-primary-dark');
+    }
+    
+    function showLimitReachedMessage() {
+        if (limitReachedMessage) {
+            limitReachedMessage.classList.remove('hidden');
+        }
+    }
+    
+    function showLastQuestionWarning() {
+        if (lastQuestionWarning) {
+            lastQuestionWarning.classList.remove('hidden');
+        }
+    }
+    
+    function addContactInfoMessage(contactInfo) {
+        if (!contactInfo) return;
+        
+        const contactDiv = document.createElement('div');
+        contactDiv.className = 'flex items-start space-x-3 mt-4';
+        contactDiv.innerHTML = `
+            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-sm">📞</span>
+            </div>
+            <div class="bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg p-6 max-w-3xl w-full">
+                <h3 class="text-xl font-bold mb-3">Contactez-nous pour un conseil personnalisé</h3>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                        <p class="font-semibold mb-2">📞 Téléphone</p>
+                        <a href="tel:${contactInfo.phone}" class="text-2xl font-bold hover:underline">${contactInfo.phone}</a>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                        <p class="font-semibold mb-2">✉️ Email</p>
+                        <a href="mailto:${contactInfo.email}" class="text-lg hover:underline break-all">${contactInfo.email}</a>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-4">
+                    <p class="font-semibold mb-2">📍 Adresse</p>
+                    <p>${contactInfo.address}</p>
+                </div>
+                <a href="${contactInfo.contact_url}" 
+                   class="bg-white text-primary px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors inline-block font-semibold">
+                    📝 Remplir le formulaire de contact
+                </a>
+            </div>
+        `;
+        chatMessages.appendChild(contactDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function addMessage(content, sender, relevantArticles = null) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'flex items-start space-x-3';
+        
+        const avatar = document.createElement('div');
+        avatar.className = `w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+            sender === 'user' ? 'bg-gray-300' : 'bg-primary'
+        }`;
+        avatar.innerHTML = sender === 'user' ? '👤' : '🤖';
+        
+        const messageContent = document.createElement('div');
+        messageContent.className = `rounded-lg p-4 max-w-3xl ${
+            sender === 'user' ? 'bg-primary text-white ml-auto' : 'bg-gray-100'
+        }`;
+        
+        messageContent.innerHTML = `<p class="${sender === 'user' ? 'text-white' : 'text-gray-800'}">${content}</p>`;
+        
+        // Ajouter les articles pertinents si disponibles
+        if (relevantArticles && relevantArticles.length > 0) {
+            const articlesDiv = document.createElement('div');
+            articlesDiv.className = 'mt-4 pt-4 border-t border-gray-200';
+            articlesDiv.innerHTML = '<p class="text-sm font-semibold text-gray-700 mb-2">📚 Articles connexes :</p>';
+            
+            relevantArticles.forEach(article => {
+                articlesDiv.innerHTML += `
+                    <a href="${article.url}" class="block text-sm text-primary hover:underline mb-1">
+                        • ${article.title}
+                    </a>
+                `;
+            });
+            
+            messageContent.appendChild(articlesDiv);
+        }
+        
+        messageDiv.appendChild(avatar);
+        messageDiv.appendChild(messageContent);
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function addLoadingMessage() {
+        const loadingId = 'loading-' + Date.now();
+        const loadingDiv = document.createElement('div');
+        loadingDiv.id = loadingId;
+        loadingDiv.className = 'flex items-start space-x-3';
+        loadingDiv.innerHTML = `
+            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-sm">🤖</span>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-4">
+                <div class="flex space-x-1">
+                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                </div>
+            </div>
+        `;
+        
+        chatMessages.appendChild(loadingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return loadingId;
+    }
+
+    function removeLoadingMessage(loadingId) {
+        const loadingElement = document.getElementById(loadingId);
+        if (loadingElement) {
+            loadingElement.remove();
+        }
+    }
+
+    async function loadFAQ() {
+        try {
+            const response = await fetch('{{ url_for("chatbot.faq", lang_code=g.lang_code) }}');
+            const data = await response.json();
+            
+            faqList.innerHTML = data.faqs.map(faq => `
+                <div class="border border-gray-200 rounded-lg p-3 hover:bg-gray-50 cursor-pointer" 
+                     onclick="askQuestion('${faq.question}')">
+                    <p class="text-sm font-medium text-gray-800">${faq.question}</p>
+                </div>
+            `).join('');
+        } catch (error) {
+            console.error('Erreur chargement FAQ:', error);
+        }
+    }
+
+    async function loadCategories() {
+        try {
+            const response = await fetch('{{ url_for("chatbot.categories", lang_code=g.lang_code) }}');
+            const data = await response.json();
+            
+            categoriesList.innerHTML = data.categories.map(cat => `
+                <div class="border border-gray-200 rounded-lg p-3 hover:bg-gray-50 cursor-pointer" 
+                     onclick="askCategory('${cat.name}')">
+                    <p class="text-sm font-medium text-gray-800">${cat.name}</p>
+                    <p class="text-xs text-gray-600 mt-1">${cat.description}</p>
+                </div>
+            `).join('');
+        } catch (error) {
+            console.error('Erreur chargement catégories:', error);
+        }
+    }
+});
+
+// Fonctions globales pour les clics
+function askQuestion(question) {
+    document.getElementById('message-input').value = question;
+    document.getElementById('chat-form').dispatchEvent(new Event('submit'));
+}
+
+function askCategory(category) {
+    document.getElementById('message-input').value = `Parle-moi de ${category}`;
+    document.getElementById('chat-form').dispatchEvent(new Event('submit'));
+}
+</script>
+{% endblock %} 
