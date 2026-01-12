@@ -87,9 +87,15 @@ def article(slug):
     if not template_path:
         abort(404)
     
-    # Récupérer les métadonnées et articles liés
-    metadata = get_article_metadata(slug)
-    related_articles = get_related_articles(slug)
+    # Récupérer les métadonnées et articles liés (avec gestion d'erreur)
+    try:
+        metadata = get_article_metadata(slug)
+        related_articles = get_related_articles(slug)
+    except Exception as e:
+        # En cas d'erreur, utiliser des valeurs par défaut
+        current_app.logger.error(f"Erreur récupération métadonnées pour {slug}: {e}")
+        metadata = {}
+        related_articles = []
     
     return render_template(template_path, 
                          article_metadata=metadata,
