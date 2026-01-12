@@ -1,0 +1,267 @@
+{% extends 'blog/blog_article_template.html' %}
+
+{% block title %}Loi de Finances 2026 : Impact sur votre entreprise parisienne - Blog Medeo Partners{% endblock %}
+{% block meta_description %}Découvrez les changements de la Loi de Finances 2026 pour votre entreprise. Analyse d'expert-comptable Paris. Conseil gratuit ☎️ 01 83 64 16 04{% endblock %}
+
+{% block article_title %}Loi de Finances 2026 : Impact sur votre entreprise parisienne{% endblock %}
+{% block article_excerpt %}La Loi de Finances 2026 apporte des changements significatifs pour les entreprises. Découvrez les mesures qui impactent directement votre activité et comment les anticiper avec l'aide d'un expert-comptable.{% endblock %}
+
+{% block breadcrumb_category %}
+<span class="mx-2">/</span>
+<span class="text-gray-600">Actualité fiscale</span>
+{% endblock %}
+
+{% block article_category %}📊 Actualité fiscale{% endblock %}
+
+{% block article_date %}12 janvier 2026{% endblock %}
+{% block reading_time %}12{% endblock %}
+{% block article_updated_date %}12 janvier 2026{% endblock %}
+
+{% block image_url %}{{url_for('static', filename='images/news/fiscal/news_1234.jpeg')}}{% endblock %}
+{% block image_alt %}Loi de Finances 2026 - Impact fiscal entreprise{% endblock %}
+
+{% block table_of_contents %}
+{% block toc_items %}
+<ul class="table-of-contents">
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#mesures-impot-societes">Mesures impactant l'impôt sur les sociétés</a>
+        <ul>
+            <li><a href="#taux-is-2026">Taux d'IS 2026</a></li>
+            <li><a href="#reduction-impot">Réduction d'impôt et crédits d'impôt</a></li>
+        </ul>
+    </li>
+    <li><a href="#mesures-tva">Évolutions de la TVA</a></li>
+    <li><a href="#mesures-sociales">Mesures sociales et charges</a></li>
+    <li><a href="#dispositifs-aides">Nouveaux dispositifs d'aides</a></li>
+    <li><a href="#conseils-anticipation">Conseils pour anticiper ces changements</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+{% endblock %}
+{% endblock %}
+
+{% block article_content %}
+{{ article_content_loi_finances | markdown }}
+{% endblock %}
+
+{% block key_takeaways %}
+{% block takeaways_content %}
+<ul class="list-disc list-inside space-y-2">
+    <li><strong>Taux d'IS :</strong> Le taux normal reste à 25% pour les exercices ouverts à compter du 1er janvier 2026</li>
+    <li><strong>CVAE :</strong> Suppression reportée, contribution complémentaire maintenue</li>
+    <li><strong>Crédits d'impôt :</strong> Prorogation du CIR et autres dispositifs d'aide</li>
+    <li><strong>Anticipation :</strong> Faites le point avec votre expert-comptable dès maintenant pour optimiser votre situation fiscale</li>
+</ul>
+{% endblock %}
+{% endblock %}
+
+{% block article_tags %}
+<div class="mt-4 flex flex-wrap gap-2">
+    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Loi de Finances 2026</span>
+    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Fiscalité</span>
+    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Impôt sur les sociétés</span>
+    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Actualité fiscale</span>
+    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Paris</span>
+</div>
+{% endblock %}
+
+{% block cta_contextual %}
+<div class="mt-8 p-6 bg-primary bg-opacity-10 rounded-lg border-l-4 border-primary">
+    <h3 class="text-xl font-bold text-gray-800 mb-2">📊 Simulez l'impact de la Loi de Finances 2026 pour votre entreprise</h3>
+    <p class="text-gray-600 mb-4">
+        Notre équipe d'experts-comptables analyse l'impact concret de ces mesures sur votre situation. Bénéficiez d'un audit fiscal gratuit de 30 minutes pour identifier les opportunités d'optimisation.
+    </p>
+    <div class="flex flex-wrap gap-4">
+        <a href="{{ url_for('contacts.contaceznous', lang_code=g.lang_code) }}" 
+           class="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors font-semibold">
+            📞 Demander un audit gratuit
+        </a>
+        <a href="https://calendly.com/medeo-partners/30min" target="_blank" rel="noopener noreferrer"
+           class="inline-block bg-white border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors font-semibold">
+            📅 Prendre rendez-vous
+        </a>
+    </div>
+    <p class="text-sm text-gray-500 mt-4">
+        ☎️ <strong>01 83 64 16 04</strong> | 📧 <a href="mailto:contact@medeo-partners.com" class="text-primary hover:underline">contact@medeo-partners.com</a> | 📍 Paris 8ème, Boulevard Malesherbes
+    </p>
+</div>
+{% endblock %}
+
+{% block related_articles %}
+{% if related_articles %}
+<div class="mt-12 border-t-2 border-gray-200 pt-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">📚 Articles similaires</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for related in related_articles %}
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+            <div class="p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-2">
+                    <a href="{{ url_for('blog.article', slug=related.slug, lang_code=g.lang_code) }}" 
+                       class="hover:text-primary transition-colors">
+                        {{ related.title }}
+                    </a>
+                </h3>
+                <p class="text-gray-600 text-sm mb-4">{{ related.excerpt }}</p>
+                <a href="{{ url_for('blog.article', slug=related.slug, lang_code=g.lang_code) }}" 
+                   class="text-primary hover:underline font-semibold text-sm">
+                    Lire l'article →
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% set article_content_loi_finances %}
+## Introduction {#introduction}
+
+La **Loi de Finances 2026** a été promulguée et apporte des modifications importantes pour les entreprises françaises. En tant que dirigeant d'une PME, TPE ou indépendant basé à Paris, il est crucial de comprendre ces changements pour optimiser votre gestion fiscale et anticiper leurs impacts sur votre trésorerie.
+
+Cet article décrypte les principales mesures de la **loi de finances 2026** qui vous concernent directement et vous donne les clés pour les appréhender avec sérénité, avec l'accompagnement d'un **expert comptable Paris**. Que vous soyez une **entreprise parisienne** ou une PME en région, ces **nouveautés fiscales** impactent directement votre stratégie d'**optimisation fiscale**.
+
+## Mesures impactant l'impôt sur les sociétés {#mesures-impot-societes}
+
+### Taux d'IS 2026 {#taux-is-2026}
+
+Le taux normal de l'**impôt sur les sociétés** reste fixé à **25%** pour les exercices ouverts à compter du 1er janvier 2026. Cette stabilité est une bonne nouvelle pour la planification fiscale des entreprises.
+
+**Points d'attention sur le taux d'IS :**
+- Les entreprises réalisant un CA inférieur à 10 M€ bénéficient toujours du **taux réduit de 15%** sur les premiers 42 500 € de bénéfices
+- Le taux réduit de 15% s'applique sur les 38 120 premiers euros de bénéfices pour les entreprises dont le CA est compris entre 10 M€ et 50 M€
+
+**Impact concret de la loi finances 2026 :** Pour une PME parisienne réalisant 100 000 € de bénéfices, l'économie d'impôt grâce au taux réduit représente environ **4 250 €**. Cette mesure de la **loi de finances 2026** permet aux petites entreprises de bénéficier d'une fiscalité allégée, favorisant ainsi leur développement.
+
+### Réduction d'impôt et crédits d'impôt {#reduction-impot}
+
+Plusieurs dispositifs de **crédit impôt** sont prorogés ou modifiés dans le cadre de la **loi finances 2026** :
+
+**Crédit Impôt Recherche (CIR) :**
+- Taux maintenu à 30% pour les dépenses jusqu'à 100 M€
+- Taux de 5% pour les dépenses au-delà de 100 M€
+- **Important :** Les entreprises innovantes peuvent cumuler le **crédit impôt recherche** et le statut JEI (Jeune Entreprise Innovante)
+
+**Crédit Impôt Innovation (CII) :**
+- Taux de 20% sur les dépenses d'innovation
+- Plafond de 400 000 € par an
+
+Ces **crédits d'impôt** constituent des leviers importants d'**optimisation fiscale** pour les entreprises investissant dans la recherche et l'innovation. Un **expert comptable Paris** peut vous accompagner dans l'identification et la valorisation de ces dispositifs.
+
+**Tableau récapitulatif des crédits d'impôt 2026 :**
+
+| Dispositif | Taux | Plafond annuel | Conditions |
+|------------|------|----------------|------------|
+| CIR | 30% / 5% | 100 M€ | Dépenses de R&D |
+| CII | 20% | 400 000 € | Dépenses d'innovation |
+| CICE | Supprimé | - | - |
+
+## Évolutions de la TVA {#mesures-tva}
+
+### Taux de TVA en 2026
+
+Les **taux de TVA** restent inchangés en 2026 selon la **loi finances 2026** :
+- **Taux normal :** 20%
+- **Taux intermédiaire :** 10%
+- **Taux réduit :** 5,5%
+- **Taux super réduit :** 2,1%
+
+### Déclaration de TVA
+
+**Nouveauté importante de la loi finances 2026 :** La généralisation de la **déclaration mensuelle de TVA** pour toutes les entreprises, quelle que soit leur taille, est maintenue. Cette mesure simplifie la gestion mais nécessite une vigilance accrue sur les échéances fiscales.
+
+**Conseil d'expert comptable :** Mettez en place un calendrier fiscal avec alertes pour ne jamais manquer une échéance de déclaration. Notre **cabinet comptable Paris** peut vous accompagner dans cette organisation et vous aider à optimiser votre gestion de la TVA.
+
+## Mesures sociales et charges {#mesures-sociales}
+
+### Cotisations sociales
+
+Les taux de cotisations sociales restent stables en 2026, ce qui permet une meilleure prévisibilité pour la gestion de votre masse salariale.
+
+**Point d'attention :** Les entreprises doivent anticiper les évolutions prévues dans le cadre de la réforme des retraites et leurs impacts sur les charges sociales à moyen terme.
+
+### Barème kilométrique 2026
+
+Le barème kilométrique pour les frais professionnels est actualisé chaque année. Pour 2026, les montants sont en légère hausse :
+
+| Puissance fiscale | Montant par km (2026) |
+|-------------------|----------------------|
+| 3 CV et moins | 0,529 € |
+| 4 CV | 0,636 € |
+| 5 CV | 0,745 € |
+| 6 CV et plus | 0,835 € |
+
+**Optimisation :** Vérifiez que vos remboursements de frais kilométriques sont bien alignés avec ce barème pour maximiser vos déductions fiscales.
+
+## Nouveaux dispositifs d'aides {#dispositifs-aides}
+
+### CVAE 2026 : Report de suppression
+
+La suppression de la **CVAE** (Contribution sur la Valeur Ajoutée des Entreprises) est **reportée** dans le cadre de la **loi finances 2026**. Une **contribution complémentaire** est maintenue pour certaines entreprises.
+
+**Entreprises concernées par la CVAE 2026 :**
+- CA entre 500 000 € et 2 M€ : exonération totale
+- CA entre 2 M€ et 10 M€ : réduction progressive
+- CA supérieur à 10 M€ : contribution complémentaire maintenue
+
+**Impact de la loi finances 2026 :** Pour une entreprise parisienne avec un CA de 5 M€, l'économie de CVAE représente environ **15 000 € par an**. Cette mesure de la **loi finances 2026** impact directement la trésorerie des PME et nécessite une analyse précise avec votre **expert comptable**.
+
+### Aides à la transition écologique
+
+De nouveaux crédits d'impôt sont disponibles pour les entreprises investissant dans la transition écologique :
+- **Crédit d'impôt transition écologique :** 25% des dépenses d'investissement
+- **Plafond :** 25 000 € par an
+
+## Conseils pour anticiper ces changements {#conseils-anticipation}
+
+### 1. Faites le point avec votre expert-comptable Paris
+
+Un **audit fiscal** réalisé par un **expert comptable Paris** permet d'identifier :
+- Les opportunités d'**optimisation fiscale** dans le cadre de la **loi finances 2026**
+- Les dispositifs d'aides auxquels vous êtes éligible (CIR, CII, CVAE)
+- Les impacts concrets sur votre trésorerie et votre stratégie fiscale
+
+Un **cabinet comptable Paris** comme Medeo Partners peut vous accompagner dans cette analyse approfondie.
+
+### 2. Planifiez vos investissements avec la loi finances 2026
+
+Certains investissements peuvent être optimisés fiscalement grâce aux mesures de la **loi finances 2026** :
+- Investissements en R&D (crédit impôt recherche)
+- Investissements écologiques (crédit d'impôt transition écologique)
+- Investissements en innovation (crédit impôt innovation)
+
+### 3. Anticipez les échéances fiscales
+
+Mettez en place un calendrier fiscal avec votre **expert comptable** comprenant :
+- Dates de déclarations (TVA, impôt sur les sociétés, liasse fiscale)
+- Dates de paiement des acomptes d'impôt sur les sociétés
+- Alertes automatiques pour ne rien manquer
+
+### 4. Optimisez votre structure avec un expert comptable
+
+Selon votre situation, certaines optimisations peuvent être envisagées avec l'aide d'un **expert comptable Paris** :
+- Holding pour optimiser la transmission et l'**optimisation fiscale**
+- SCI pour la gestion du patrimoine
+- Statuts adaptés à votre activité et à la **loi finances 2026**
+
+**Attention :** Ces optimisations doivent être réalisées avec l'accompagnement d'un **expert comptable** et d'un avocat fiscaliste pour garantir leur conformité avec la législation fiscale en vigueur.
+
+## Conclusion {#conclusion}
+
+La **Loi de Finances 2026** apporte des changements significatifs mais prévisibles pour les entreprises. L'enjeu principal est de **bien comprendre ces mesures de la loi finances 2026** et de **les anticiper** pour optimiser votre situation fiscale.
+
+**Les 3 actions prioritaires avec votre expert comptable :**
+1. ✅ Faire un audit fiscal avec votre **expert comptable Paris** pour analyser l'impact de la **loi finances 2026**
+2. ✅ Identifier les dispositifs d'aides auxquels vous êtes éligible (CIR, CII, CVAE)
+3. ✅ Mettre en place un calendrier fiscal avec votre **cabinet comptable** pour ne rien manquer
+
+Chez **Medeo Partners**, **cabinet d'expertise comptable** situé à **Paris 8ème**, Boulevard Malesherbes, nous accompagnons les PME, TPE et indépendants dans la gestion de leur fiscalité. Notre expertise nous permet de vous conseiller sur les meilleures stratégies d'**optimisation fiscale** dans le cadre de la **loi finances 2026**, toujours dans le respect de la législation en vigueur.
+
+**Ne laissez pas ces changements de la loi finances 2026 impacter négativement votre entreprise.** Un accompagnement par un **expert comptable Paris** vous permettra de transformer ces évolutions réglementaires en opportunités d'**optimisation fiscale**.
+
+---
+
+**Besoin d'un accompagnement personnalisé sur la Loi de Finances 2026 ?**
+
+Contactez Medeo Partners, votre **expert comptable Paris**, dès aujourd'hui pour un **audit fiscal gratuit de 30 minutes**. Nous analyserons l'impact concret de ces **nouveautés fiscales** sur votre entreprise et vous proposerons des solutions d'**optimisation fiscale** adaptées à votre situation.
+{% endset %}
+
