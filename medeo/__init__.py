@@ -134,6 +134,43 @@ def create_app(config_class=Config):
         return g.lang_code
 
     babel.init_app(app, locale_selector=get_locale)
+    
+    @app.before_request
+    def normalize_url():
+        """Normalize URLs globally: force HTTPS and www"""
+        # Skip for static files, robots.txt, sitemap, and health checks
+        if request.endpoint in ['static', 'robots_txt', 'sitemap', 'android_chrome_icons']:
+            return None
+        
+        # Only process in production (not localhost)
+        if request.host.startswith('localhost') or request.host.startswith('127.0.0.1'):
+            return None
+        
+        host = request.host
+        scheme = request.scheme
+        
+        # Normalize to www.medeo-partners.com with HTTPS
+        needs_redirect = False
+        new_host = host
+        
+        # Check and fix www
+        if host == 'medeo-partners.com':
+            new_host = 'www.medeo-partners.com'
+            needs_redirect = True
+        elif host.startswith('medeo-partners.com:'):
+            # Handle with port
+            new_host = host.replace('medeo-partners.com', 'www.medeo-partners.com')
+            needs_redirect = True
+        
+        # Force HTTPS
+        if scheme != 'https':
+            needs_redirect = True
+        
+        if needs_redirect:
+            new_url = f"https://www.medeo-partners.com{request.full_path}"
+            return redirect(new_url, code=301)
+        
+        return None
 
     @app.route('/')
     def start():
@@ -184,6 +221,11 @@ def create_app(config_class=Config):
         
         # Articles de blog statiques (templates HTML)
         blog_articles = [
+            {
+                'slug': 'loi-finances-2026-impact-entreprise',
+                'lastmod': '2026-01-12',
+                'priority': '0.9'
+            },
             {
                 'slug': 'tva-obligations-declaratives-dirigeants',
                 'lastmod': '2026-01-12',

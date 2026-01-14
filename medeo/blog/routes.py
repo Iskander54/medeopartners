@@ -31,27 +31,45 @@ def before_request():
 @blog.route("/index")
 def index():
     """Page d'accueil du blog avec articles récents"""
-    page = request.args.get('page', 1, type=int)
-    per_page = 12
-    
-    articles = BlogArticle.query.filter_by(status='published').order_by(
-        BlogArticle.published_at.desc()
-    ).paginate(page=page, per_page=per_page, error_out=False)
-    
-    # Articles populaires
-    popular_articles = BlogArticle.query.filter_by(status='published').order_by(
-        BlogArticle.view_count.desc()
-    ).limit(5).all()
-    
-    # Catégories principales
-    categories = BlogCategory.query.filter_by(parent_id=None).all()
-    
-    return render_template('blog/index.html',
-                         articles=articles,
-                         popular_articles=popular_articles,
-                         categories=categories,
-                         title='Blog - Expertise Comptable et Fiscalité',
-                         meta_description='Découvrez nos articles d\'expertise en comptabilité, fiscalité et conseil d\'entreprise. Actualités, guides pratiques et conseils d\'experts.')
+    try:
+        page = request.args.get('page', 1, type=int)
+        per_page = 12
+        
+        # Gestion d'erreur pour les requêtes DB
+        try:
+            articles = BlogArticle.query.filter_by(status='published').order_by(
+                BlogArticle.published_at.desc()
+            ).paginate(page=page, per_page=per_page, error_out=False)
+        except Exception as e:
+            current_app.logger.error(f"Erreur requête articles: {e}")
+            articles = None
+        
+        # Articles populaires
+        try:
+            popular_articles = BlogArticle.query.filter_by(status='published').order_by(
+                BlogArticle.view_count.desc()
+            ).limit(5).all()
+        except Exception as e:
+            current_app.logger.error(f"Erreur requête articles populaires: {e}")
+            popular_articles = []
+        
+        # Catégories principales
+        try:
+            categories = BlogCategory.query.filter_by(parent_id=None).all()
+        except Exception as e:
+            current_app.logger.error(f"Erreur requête catégories: {e}")
+            categories = []
+        
+        return render_template('blog/index.html',
+                             articles=articles,
+                             popular_articles=popular_articles,
+                             categories=categories,
+                             title='Blog - Expertise Comptable et Fiscalité',
+                             meta_description='Découvrez nos articles d\'expertise en comptabilité, fiscalité et conseil d\'entreprise. Actualités, guides pratiques et conseils d\'experts.')
+    except Exception as e:
+        current_app.logger.error(f"Erreur critique dans blog.index: {e}", exc_info=True)
+        # Retourner une page d'erreur plutôt qu'une 500
+        abort(500)
 
 @blog.route("/categorie/<slug>")
 def category(slug):
@@ -85,21 +103,34 @@ def article(slug):
     
     template_path = article_templates.get(slug)
     if not template_path:
+        current_app.logger.warning(f"Article non trouvé: {slug}")
         abort(404)
     
-    # Récupérer les métadonnées et articles liés (avec gestion d'erreur)
+    # Vérifier que le template existe avant de le rendre
     try:
-        metadata = get_article_metadata(slug)
-        related_articles = get_related_articles(slug)
-    except Exception as e:
-        # En cas d'erreur, utiliser des valeurs par défaut
-        current_app.logger.error(f"Erreur récupération métadonnées pour {slug}: {e}")
-        metadata = {}
-        related_articles = []
+        # Récupérer les métadonnées et articles liés (avec gestion d'erreur robuste)
+        try:
+            metadata = get_article_metadata(slug)
+        except Exception as e:
+            current_app.logger.error(f"Erreur récupération métadonnées pour {slug}: {e}")
+            metadata = {}
+        
+        try:
+            related_articles = get_related_articles(slug)
+        except Exception as e:
+            current_app.logger.error(f"Erreur récupération articles liés pour {slug}: {e}")
+            related_articles = []
+        
+        # Rendre le template avec gestion d'erreur
+        return render_template(template_path, 
+                             article_metadata=metadata,
+                             related_articles=related_articles)
     
-    return render_template(template_path, 
-                         article_metadata=metadata,
-                         related_articles=related_articles)
+    except Exception as e:
+        # Log l'erreur complète pour le débogage
+        current_app.logger.error(f"Erreur lors du rendu de l'article {slug}: {e}", exc_info=True)
+        # Retourner une 404 au lieu d'une 500 pour éviter les erreurs d'indexation
+        abort(404)
 
 @blog.route("/tag/<slug>")
 def tag(slug):
