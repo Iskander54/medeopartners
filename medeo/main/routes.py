@@ -13,11 +13,22 @@ def pull_lang_code(endpoint, values):
 
 @main.before_request
 def enforce_www():
-    """Redirect requests to www if not already on www."""
-    netloc = request.url.split('/')[2]
-    if netloc == 'medeo-partners.com':  # Adjust the condition based on your preference
-        new_url = request.url.replace('://medeo-partners.com', '://www.medeo-partners.com')
-        return redirect(new_url, code=301)
+    """Additional check for www and HTTPS (backup to global middleware)"""
+    # This is a backup check - the global middleware in __init__.py should handle this
+    # But we keep this as a safety net for the main blueprint
+    if request.host.startswith('localhost') or request.host.startswith('127.0.0.1'):
+        return None
+    
+    host = request.host
+    scheme = request.scheme
+    
+    # Only redirect if not already on www.medeo-partners.com with HTTPS
+    if host != 'www.medeo-partners.com' or scheme != 'https':
+        if host == 'medeo-partners.com' or (not host.startswith('www.') and 'medeo-partners.com' in host):
+            new_url = f"https://www.medeo-partners.com{request.full_path}"
+            return redirect(new_url, code=301)
+    
+    return None
         
 @main.before_request
 def before_request():
@@ -71,6 +82,17 @@ def nouscontacter():
 def espace_clients():
     return render_template('espace_clients.html',title='Espace Clients')
 
+# Redirections pour éviter les 404
+@main.route("/en/espace_clients")
+def redirect_espace_clients_en():
+    """Redirige /en/espace_clients vers /en/account"""
+    return redirect(url_for('main.espace_clients', lang_code='en'), code=301)
+
+@main.route("/en/nos_services")
+def redirect_nos_services_en():
+    """Redirige /en/nos_services vers /en/our_services"""
+    return redirect(url_for('main.nos_services', lang_code='en'), code=301)
+
 @main.route("/council_optimization",defaults={'lang_code':'en'})
 @main.route("/conseil_optimisation",defaults={'lang_code':'fr'})
 def conseil_optimisation():
@@ -95,6 +117,12 @@ def legal():
 @main.route("/nos_services",defaults={'lang_code':'fr'})
 def nos_services():
     return render_template('nos_services.html',title='Nos Services - Expertise Comptable, Audit et Conseil',active_page='nos_services')
+
+# Route pour la recherche (retourne 404 car pas implémentée)
+@main.route("/search")
+def search():
+    """Route pour la recherche - retourne 404 car non implémentée"""
+    abort(404)
 
 
 ############################
@@ -415,3 +443,14 @@ def get_static_pages():
             "lastmod": "2024-01-15"
         }
     ]
+
+# Route catch-all pour gérer les URLs invalides avec emails ou autres patterns (DOIT être la dernière route)
+@main.route("/<path:path>")
+def catch_invalid_urls(path):
+    """Gère les URLs invalides avec emails ou autres patterns invalides - DOIT être la dernière route"""
+    # Si l'URL contient un @, c'est probablement un email mal formé dans l'URL
+    if '@' in path:
+        current_app.logger.warning(f"URL invalide avec email détectée: /{path}")
+        abort(404)
+    # Pour toutes les autres URLs non matchées, retourner 404
+    abort(404)
