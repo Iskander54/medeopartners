@@ -1716,7 +1716,7 @@ msgstr "John Fitzgerald Kennedy"
 
 #: medeo/templates/votre_cabinet.html:480
 msgid ""
-"Fort de huit années d’expérience en cabinet d’expertise comptable et de "
+"Fort de huit années d'expérience en cabinet d'expertise comptable et de "
 "commissariat \n"
 "\n"
 "                aux comptes, et de mon cursus universitaire en "
@@ -1727,7 +1727,7 @@ msgstr "With eight years of experience in an accounting and auditing firm, and m
 
 #: medeo/templates/votre_cabinet.html:484
 msgid ""
-"La diversité de mon parcours professionnel m’a permis de développer une "
+"La diversité de mon parcours professionnel m'a permis de développer une "
 "expertise\n"
 "\n"
 "                considérable dans mon domaine et une assurance au "
@@ -1743,7 +1743,7 @@ msgstr "Diligent, rigorous, and responsive, I position myself as the guarantor o
 
 #: medeo/templates/votre_cabinet.html:490
 msgid ""
-"MEDEO Partners sera plus qu’un cabinet d’expertise-comptable et de "
+"MEDEO Partners sera plus qu'un cabinet d'expertise-comptable et de "
 "commissariat\n"
 "\n"
 "                aux comptes : un appui sans faille pour votre entreprise,"
@@ -1764,3 +1764,207 @@ msgid ""
 "'#114a79', textColor: '#ffffff', branding: true }); }</script>\n"
 "   "
 msgstr "<script type="text/javascript">window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/medeo-partners/30min', text: '<div class="btn_calendly">Schedule Appointment', color: '#114a79', textColor: '#ffffff', branding: true }); }</script>"
+
+#: medeo/templates/nos_services.html:12
+msgid "Nos services"
+msgstr "Our Services"
+
+#: medeo/templates/nos_services.html:13
+msgid "Des solutions complètes pour votre entreprise"
+msgstr "Complete solutions for your business"
+
+#: medeo/templates/nos_services.html:20
+msgid "Concentrez-vous sur la réussite de votre entreprise"
+msgstr "Focus on your business success"
+
+#: medeo/templates/nos_services.html:21
+msgid "MEDEO Partners vous propose des solutions clé en main pour vous permettre d'être plus efficace dans votre métier. Notre expertise couvre tous les aspects de la gestion d'entreprise."
+msgstr "MEDEO Partners offers you turnkey solutions to help you be more efficient in your business. Our expertise covers all aspects of business management."
+
+#: medeo/templates/nos_services.html:28
+msgid "Créateurs et repreneurs"
+msgstr "Creators and Buyers"
+
+#: medeo/templates/nos_services.html:32
+msgid "Accompagnement à la création"
+msgstr "Business creation support"
+
+#: medeo/templates/nos_services.html:35
+msgid "Création de statuts"
+msgstr "Articles of association creation"
+
+#: medeo/templates/nos_services.html:38
+msgid "Prévisionnel et business plan"
+msgstr "Forecasting and business plan"
+
+#: medeo/templates/nos_services.html:41
+msgid "Choix de la forme juridique"
+msgstr "Legal form choice"
+
+#: medeo/templates/nos_services.html:47
+msgid "Entrepreneurs et professionnels"
+msgstr "Entrepreneurs and Professionals"
+
+#: medeo/templates/nos_services.html:51
+msgid "Comptabilité"
+msgstr "Accounting"
+
+#: medeo/templates/nos_services.html:54
+msgid "Paie et gestion des salariés"
+msgstr "Payroll and employee management"
+
+#: medeo/templates/nos_services.html:57
+msgid "Conseils et accompagnement juridiques"
+msgstr "Legal advice and support"
+
+#: medeo/templates/nos_services.html:60
+msgid "Conseil en gestion de patrimoine"
+msgstr "Wealth management advice"
+
+#: medeo/templates/nos_services.html:66
+msgid "PME, ETI et Grandes Entreprises"
+msgstr "SMEs, Mid-Size Companies and Large Corporations"
+
+#: medeo/templates/nos_services.html:70
+msgid "Audit"
+msgstr "Audit"
+
+#: medeo/templates/nos_services.html:73
+msgid "Droit des affaires et contentieux"
+msgstr "Business law and litigation"
+
+#: medeo/templates/nos_services.html:76
+msgid "Conseil en organisation"
+msgstr "Organizational consulting"
+
+#: medeo/templates/nos_services.html:79
+msgid "Optimisation fiscale"
+msgstr "Tax optimization"
+
+#: medeo/templates/nos_services.html:87
+msgid "Spécialistes de votre métier"
+msgstr "Specialists in your field"
+
+#: medeo/templates/nos_services.html:88
+msgid "Nous avons développé des connaissances sectorielles spécifiques pour mieux conseiller nos clients dans leur domaine d'activité."
+msgstr "We have developed specific sector knowledge to better advise our clients in their field of activity."
+
+#: medeo/templates/nos_services.html:95
+msgid "Automobile"
+msgstr "Automotive"
+
+#: medeo/templates/nos_services.html:96
+msgid "Motocycle et Machinisme Agricole"
+msgstr "Motorcycle and Agricultural Machinery"
+
+#: medeo/templates/nos_services.html:103
+msgid "Bâtiment"
+msgstr "Construction"
+
+#: medeo/templates/nos_services.html:104
+msgid "Construction et rénovation"
+msgstr "Construction and renovation"
+
+#: medeo/templates/nos_services.html:111
+msgid "Boulangerie"
+msgstr "Bakery"
+
+#: medeo/templates/nos_services.html:112
+msgid "Pâtisserie Chocolaterie"
+msgstr "Pastry and Chocolate"
+
+#: medeo/templates/nos_services.html:119
+msgid "Chirurgiens-dentistes"
+msgstr "Dentists"
+
+#: medeo/templates/nos_services.html:120
+msgid "Cabinet dentaire"
+msgstr "Dental practice"
+
+#: medeo/templates/nos_services.html:127
+msgid "Coiffure"
+msgstr "Hair Salon"
+
+#: medeo/templates/nos_services.html:128
+msgid "Esthétique et beauté"
+msgstr "Aesthetics and beauty"
+
+#: medeo/templates/nos_services.html:135
+msgid "Commerces de proximité"
+msgstr "Local Retail"
+
+#: medeo/templates/nos_services.html:136
+msgid "Commerce local"
+msgstr "Local commerce"
+
+#: medeo/templates/nos_services.html:143
+msgid "Hôtellerie"
+msgstr "Hospitality"
+
+#: medeo/templates/nos_services.html:144
+msgid "Restauration"
+msgstr "Restaurant"
+
+#: medeo/templates/nos_services.html:151
+msgid "Médecins"
+msgstr "Doctors"
+
+#: medeo/templates/nos_services.html:152
+msgid "Professionnels de santé"
+msgstr "Healthcare professionals"
+
+#: medeo/templates/nos_services.html:162
+msgid "Nos valeurs"
+msgstr "Our Values"
+
+#: medeo/templates/nos_services.html:168
+msgid "PROXIMITÉ"
+msgstr "PROXIMITY"
+
+#: medeo/templates/nos_services.html:169
+msgid "Notre réseau local vous garantit un accompagnement de proximité partout en France."
+msgstr "Our local network guarantees you close support throughout France."
+
+#: medeo/templates/nos_services.html:175
+msgid "VALEUR AJOUTÉE ET EXPERTISE"
+msgstr "ADDED VALUE AND EXPERTISE"
+
+#: medeo/templates/nos_services.html:176
+msgid "Nous développons avec soin nos expertises pour vous proposer des services à réelle valeur ajoutée."
+msgstr "We carefully develop our expertise to offer you services with real added value."
+
+#: medeo/templates/nos_services.html:182
+msgid "CONNAISSANCE DE VOTRE MÉTIER"
+msgstr "KNOWLEDGE OF YOUR PROFESSION"
+
+#: medeo/templates/nos_services.html:183
+msgid "Nous avons développé des connaissances sectorielles spécifiques pour mieux conseiller nos clients."
+msgstr "We have developed specific sector knowledge to better advise our clients."
+
+#: medeo/templates/nos_services.html:189
+msgid "RIGUEUR ET SÉCURITÉ"
+msgstr "RIGOR AND SECURITY"
+
+#: medeo/templates/nos_services.html:190
+msgid "Rigueur, respect des engagements, sécurité et confidentialité sont au cœur de nos méthodes de travail."
+msgstr "Rigor, respect for commitments, security and confidentiality are at the heart of our working methods."
+
+#: medeo/templates/nos_services.html:200
+msgid "Prêt à nous rejoindre ?"
+msgstr "Ready to join us?"
+
+#: medeo/templates/nos_services.html:201
+msgid "Contactez-nous pour découvrir comment MEDEO Partners peut accompagner votre entreprise vers le succès."
+msgstr "Contact us to discover how MEDEO Partners can support your business towards success."
+
+#: medeo/templates/nos_services.html:204
+msgid "Nous contacter"
+msgstr "Contact us"
+
+#: medeo/templates/nos_services.html:206
+msgid "Découvrir notre cabinet"
+msgstr "Discover our firm"
+
+#: medeo/templates/includes/header.html:75
+msgid "Nos services"
+msgstr "Our Services"
