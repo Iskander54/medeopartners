@@ -1,4 +1,4 @@
-from flask import render_template, Response,request, Blueprint, g,current_app, abort,url_for,redirect,render_template_string,make_response,send_from_directory,current_app, send_from_directory, jsonify
+from flask import render_template, Response, request, Blueprint, g, current_app, abort, url_for, redirect, make_response, send_from_directory, jsonify
 from flask_babel import _,refresh
 
 main = Blueprint('main', __name__, url_prefix='/<lang_code>')
@@ -225,40 +225,6 @@ def news_12():
 #     # return send_from_directory(current_app.static_folder, 'fr/robots.txt')
 #     return send_from_directory(current_app.static_folder, 'robots.txt')
 
-@main.route('/sitemap.xml')
-def sitemap():
-    host_components = request.host.split('.')
-    domain = f"{host_components[-2]}.{host_components[-1]}"  # assuming a domain like www.example.com
-    url_root = request.url_root[:-1]  # remove trailing slash
-
-    # List of routes to include in the sitemap
-    static_urls = [
-        {'loc': url_for('main.home', _external=True)},
-        {'loc': url_for('main.votre_cabinet', _external=True)},
-        {'loc': url_for('main.notre_expertise', _external=True)},
-        {'loc': url_for('main.expertise_comptable', _external=True)},
-        {'loc': url_for('main.audit', _external=True)},
-        {'loc': url_for('main.conseil_optimisation', _external=True)},
-        {'loc': url_for('main.nos_services', _external=True)},
-        {'loc': url_for('main.actualites', _external=True)},
-        {'loc': url_for('main.nouscontacter', _external=True)},
-    ]
-
-    # Optional: Add dynamic URLs, like news details
-    # for news_id in range(1, 100):  # Example: iterate over a range of news IDs
-    #     static_urls.append({'loc': url_for('main.news_detail', news_id=news_id, _external=True)})
-
-    xml_sitemap = render_template_string('''<?xml version="1.0" encoding="UTF-8"?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            {% for url in urls %}
-                <url><loc>{{ url.loc }}</loc></url>
-            {% endfor %}
-        </urlset>''', urls=static_urls)
-
-    response = make_response(xml_sitemap)
-    response.headers["Content-Type"] = "application/xml"    
-
-    return response
 
 @main.route('/api/analytics', methods=['POST'])
 def analytics():

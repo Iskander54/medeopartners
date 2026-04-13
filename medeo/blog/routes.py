@@ -93,43 +93,65 @@ def category(slug):
 
 @blog.route("/article/<slug>")
 def article(slug):
-    """Page d'article individuel avec optimisation SEO - Utilise des templates statiques comme les news"""
-    # Mapping des slugs vers les templates
-    article_templates = {
+    """Page d'article individuel — DB en priorité, fallback sur templates statiques."""
+
+    # Templates statiques legacy (3 articles HTML existants)
+    STATIC_ARTICLE_TEMPLATES = {
         'tva-obligations-declaratives-dirigeants': 'blog/articles/tva-obligations-declaratives-dirigeants.html',
         'creation-entreprise-erreurs-comptables-fiscales-premiere-annee': 'blog/articles/creation-entreprise-erreurs-comptables-fiscales-premiere-annee.html',
         'loi-finances-2026-impact-entreprise': 'blog/articles/loi-finances-2026-impact-entreprise.html',
     }
-    
-    template_path = article_templates.get(slug)
-    if not template_path:
+
+    try:
+        # 1. Chercher l'article en DB (published)
+        db_article = BlogArticle.query.filter_by(slug=slug, status='published').first()
+
+        if db_article:
+            # Incrémenter le compteur de vues
+            try:
+                db_article.view_count = (db_article.view_count or 0) + 1
+                from medeo import db as _db
+                _db.session.commit()
+            except Exception:
+                pass
+
+            # Articles liés (même catégorie, excl. article courant)
+            try:
+                related = BlogArticle.query.filter(
+                    BlogArticle.category_id == db_article.category_id,
+                    BlogArticle.id != db_article.id,
+                    BlogArticle.status == 'published'
+                ).order_by(BlogArticle.published_at.desc()).limit(3).all()
+            except Exception:
+                related = []
+
+            return render_template('blog/article.html',
+                                   article=db_article,
+                                   related_articles=related,
+                                   title=db_article.meta_title or db_article.title,
+                                   meta_description=db_article.meta_description or db_article.excerpt)
+
+        # 2. Fallback sur template statique
+        template_path = STATIC_ARTICLE_TEMPLATES.get(slug)
+        if template_path:
+            try:
+                metadata = get_article_metadata(slug)
+            except Exception:
+                metadata = {}
+            try:
+                related_articles = get_related_articles(slug)
+            except Exception:
+                related_articles = []
+            return render_template(template_path,
+                                   article_metadata=metadata,
+                                   related_articles=related_articles)
+
+        # 3. Introuvable
         current_app.logger.warning(f"Article non trouvé: {slug}")
         abort(404)
-    
-    # Vérifier que le template existe avant de le rendre
-    try:
-        # Récupérer les métadonnées et articles liés (avec gestion d'erreur robuste)
-        try:
-            metadata = get_article_metadata(slug)
-        except Exception as e:
-            current_app.logger.error(f"Erreur récupération métadonnées pour {slug}: {e}")
-            metadata = {}
-        
-        try:
-            related_articles = get_related_articles(slug)
-        except Exception as e:
-            current_app.logger.error(f"Erreur récupération articles liés pour {slug}: {e}")
-            related_articles = []
-        
-        # Rendre le template avec gestion d'erreur
-        return render_template(template_path, 
-                             article_metadata=metadata,
-                             related_articles=related_articles)
-    
+
     except Exception as e:
-        # Log l'erreur complète pour le débogage
         current_app.logger.error(f"Erreur lors du rendu de l'article {slug}: {e}", exc_info=True)
-        # Retourner une 404 au lieu d'une 500 pour éviter les erreurs d'indexation
         abort(404)
 
 @blog.route("/tag/<slug>")
