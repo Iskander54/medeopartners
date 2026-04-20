@@ -1,6 +1,10 @@
 # Ajouter dans .env ou app.yaml :
 CHATBOT_PROVIDER=groq
-GROQ_API_KEY=gsk_...
+GROQ_API_KEY=gsk_...         # Utilisé par le chatbot public ET l'agent Mesoutils
+
+# Clés optionnelles :
+PAPPERS_API_KEY=...           # Obligatoire pour les recherches entreprise dans Mesoutils
+GROQ_MODEL=llama-3.3-70b-versatile  # Modèle par défaut (modifiable)
 
 # Insérer les articles (une seule fois) :
 cd /path/to/medeopartners

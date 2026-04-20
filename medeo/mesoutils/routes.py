@@ -1,21 +1,36 @@
 """
 Routes Flask pour le module Mesoutils.
-Accessible uniquement depuis les IPs autorisées (variable MESOUTILS_ALLOWED_IPS).
-URL de base : /mesoutils
+Accès protégé par mot de passe (MESOUTILS_PASSWORD) + optionnellement par IP.
+URL de base : /fr/mesoutils
 """
+import hashlib
 import json
 import logging
 import os
 
 from flask import (
     abort, current_app, jsonify, render_template, request,
-    Response, session, stream_with_context
+    Response, session, stream_with_context, redirect, url_for, flash
 )
 
 from medeo.mesoutils import mesoutils
-from medeo.mesoutils.agent import agent, check_ollama_health
+from medeo.mesoutils.agent import agent, check_groq_health
 
 logger = logging.getLogger(__name__)
+
+_MESOUTILS_PASSWORD = os.getenv("MESOUTILS_PASSWORD", "Medeo2026$")
+_SESSION_KEY = "mesoutils_auth"
+
+
+def _check_password(candidate: str) -> bool:
+    """Comparaison en temps constant pour éviter les timing attacks."""
+    expected = hashlib.sha256(_MESOUTILS_PASSWORD.encode()).hexdigest()
+    received = hashlib.sha256(candidate.encode()).hexdigest()
+    return expected == received
+
+
+def _is_authenticated() -> bool:
+    return session.get(_SESSION_KEY) is True
 
 # ---------------------------------------------------------------------------
 # Restriction d'accès par IP
@@ -49,21 +64,63 @@ def _get_allowed_ips() -> list:
 
 
 @mesoutils.before_request
-def restrict_by_ip():
+def restrict_access():
     """
-    Restreint l'accès par IP si MESOUTILS_ALLOWED_IPS est configurée.
-    Sans cette variable, toutes les IPs sont autorisées.
+    Double protection :
+    1. Restriction IP optionnelle (MESOUTILS_ALLOWED_IPS)
+    2. Authentification par mot de passe (MESOUTILS_PASSWORD)
+    Les routes /login et /logout sont exemptées.
     """
-    allowed = _get_allowed_ips()
-    if not allowed:
-        return None  # Pas de restriction configurée
+    # Exemption des routes d'auth
+    if request.endpoint in ("mesoutils.login", "mesoutils.logout"):
+        return None
 
-    client_ip = _get_client_ip()
-    if client_ip not in allowed:
-        logger.warning(f"Accès Mesoutils refusé pour IP : {client_ip} (IPs autorisées : {allowed})")
-        abort(403)
+    # Restriction IP (optionnelle)
+    allowed = _get_allowed_ips()
+    if allowed:
+        client_ip = _get_client_ip()
+        if client_ip not in allowed:
+            logger.warning(f"Accès Mesoutils refusé pour IP : {client_ip}")
+            abort(403)
+
+    # Vérification mot de passe
+    if not _is_authenticated():
+        return redirect(url_for("mesoutils.login", next=request.path))
 
     return None
+
+
+# ---------------------------------------------------------------------------
+# Authentification
+# ---------------------------------------------------------------------------
+
+@mesoutils.route("/login", methods=["GET", "POST"])
+def login():
+    """Page de connexion protégée par mot de passe."""
+    if _is_authenticated():
+        return redirect(url_for("mesoutils.index"))
+
+    error = None
+    if request.method == "POST":
+        password = request.form.get("password", "")
+        if _check_password(password):
+            session[_SESSION_KEY] = True
+            session.permanent = True
+            next_url = request.args.get("next") or url_for("mesoutils.index")
+            logger.info(f"Connexion Mesoutils réussie depuis {_get_client_ip()}")
+            return redirect(next_url)
+        else:
+            error = "Mot de passe incorrect."
+            logger.warning(f"Tentative de connexion Mesoutils échouée depuis {_get_client_ip()}")
+
+    return render_template("mesoutils/login.html", error=error)
+
+
+@mesoutils.route("/logout", methods=["POST"])
+def logout():
+    """Déconnexion."""
+    session.pop(_SESSION_KEY, None)
+    return redirect(url_for("mesoutils.login"))
 
 
 # ---------------------------------------------------------------------------
@@ -73,15 +130,12 @@ def restrict_by_ip():
 @mesoutils.route("/", methods=["GET"])
 def index():
     """Page principale du chat agent interne."""
-    health = check_ollama_health()
-    # Sur GAE Standard, les réponses HTTP ont un timeout dur de 60s.
-    # On utilise le mode sync pour éviter les coupures SSE.
-    # En local ou sur GAE Flexible, le streaming SSE fonctionne pleinement.
+    health = check_groq_health()
     on_gae = bool(os.getenv("GAE_ENV") or os.getenv("GAE_APPLICATION"))
     return render_template(
         "mesoutils/index.html",
-        ollama_status=health,
-        ollama_model=os.getenv("OLLAMA_MODEL", "qwen2.5:14b"),
+        groq_status=health,
+        groq_model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
         pappers_configured=bool(os.getenv("PAPPERS_API_KEY")),
         langfuse_configured=bool(os.getenv("LANGFUSE_SECRET_KEY")),
         langfuse_host=os.getenv("LANGFUSE_HOST", "http://localhost:3000"),
@@ -193,12 +247,12 @@ def reset():
 
 @mesoutils.route("/api/status", methods=["GET"])
 def status():
-    """Retourne le statut des services (Ollama, Pappers, Langfuse)."""
-    health = check_ollama_health()
+    """Retourne le statut des services (Groq, Pappers, Langfuse)."""
+    health = check_groq_health()
     allowed = _get_allowed_ips()
     return jsonify({
-        "ollama": health,
-        "model": os.getenv("OLLAMA_MODEL", "qwen2.5:14b"),
+        "groq": health,
+        "model": os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
         "pappers_configured": bool(os.getenv("PAPPERS_API_KEY")),
         "langfuse_configured": bool(os.getenv("LANGFUSE_SECRET_KEY")),
         "ip_restriction": "active" if allowed else "disabled",

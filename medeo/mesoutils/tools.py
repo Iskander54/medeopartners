@@ -8,8 +8,61 @@ import json
 import requests
 from datetime import datetime
 
-PAPPERS_API_KEY = os.getenv("PAPPERS_API_KEY", "")
-PAPPERS_BASE_URL = "https://api.pappers.fr/v2"
+PAPPERS_API_KEY    = os.getenv("PAPPERS_API_KEY", "")
+PAPPERS_BASE_URL   = "https://api.pappers.fr/v2"
+ANNUAIRE_BASE_URL  = "https://recherche-entreprises.api.gouv.fr"
+BODACC_API_URL     = "https://bodacc.fr/api/explore/v2.1/catalog/datasets/annonces-commerciales/records"
+VIES_API_URL       = "https://ec.europa.eu/taxation_customs/vies/rest-api/check-vat-number"
+
+# ---------------------------------------------------------------------------
+# Barèmes fiscaux et sociaux 2025 / 2026
+# Sources : DGFiP, URSSAF, Légifrance, Journal Officiel
+# ---------------------------------------------------------------------------
+BAREME = {
+    # Plafond Annuel Sécurité Sociale
+    "pass_2024": 46368,
+    "pass_2025": 47100,
+    # SMIC
+    "smic_horaire_brut_2025": 11.88,
+    "smic_mensuel_brut_2025": 1801.80,
+    "smic_annuel_brut_2025": 21621.60,
+    # Taux d'intérêt légal (Banque de France, art. L313-2 CMF)
+    "taux_interet_legal_pro_s1_2025": 4.92,     # % professionnel S1 2025
+    "taux_interet_legal_conso_s1_2025": 7.07,   # % consommateur S1 2025
+    # Pénalités de retard B2B (art. L441-10 C.com.)
+    "indemnite_forfaitaire_recouvrement": 40,    # € forfait
+    # Plafonds régimes micro (CA HT annuel)
+    "micro_bic_ventes_2025": 188700,
+    "micro_bic_services_2025": 77700,
+    "micro_bnc_2025": 77700,
+    # Abattements micro
+    "micro_bic_ventes_abattement": 71,    # %
+    "micro_bic_services_abattement": 50,  # %
+    "micro_bnc_abattement": 34,           # %
+    # IS
+    "is_taux_reduit_pct": 15,
+    "is_seuil_taux_reduit": 42500,
+    "is_taux_normal_pct": 25,
+    # Tranches IR 2025 (revenus 2024)
+    "ir_tranches": [
+        {"min": 0,      "max": 11294,  "taux": 0},
+        {"min": 11294,  "max": 28797,  "taux": 11},
+        {"min": 28797,  "max": 82341,  "taux": 30},
+        {"min": 82341,  "max": 177106, "taux": 41},
+        {"min": 177106, "max": None,   "taux": 45},
+    ],
+    # Cotisations TNS (SSI / ex-RSI) — gérant majoritaire SARL / EI
+    "tns_maladie_taux_1": 6.50,         # % sur totalité revenu
+    "tns_ij_taux": 0.85,                # % plafonné à 1 PASS
+    "tns_retraite_base_taux_1pass": 17.75,  # % jusqu'à 1 PASS
+    "tns_retraite_base_taux_sup":   0.60,   # % au-delà de 1 PASS
+    "tns_retraite_compl_taux_4pass": 7.00,  # % de 0 à 4 PASS
+    "tns_retraite_compl_taux_8pass": 8.00,  # % de 4 à 8 PASS
+    "tns_invalidite_deces_taux": 1.30,      # % plafonné à 1 PASS
+    "tns_csg_crds_taux": 9.70,              # % sur assiette élargie
+    "tns_formation_taux": 0.25,             # %
+    "tns_assiette_minimale_annee": 4710,    # € (10% du PASS)
+}
 
 
 # ---------------------------------------------------------------------------
@@ -163,6 +216,164 @@ TOOLS_DEFINITIONS = [
     {
         "type": "function",
         "function": {
+            "name": "bodacc_annonces",
+            "description": (
+                "Recherche les annonces légales publiées au BODACC (Bulletin Officiel des Annonces Civiles et Commerciales) "
+                "pour une entreprise française. Permet de détecter les procédures collectives (redressement, liquidation), "
+                "jugements, radiations, cessions de fonds de commerce et modifications importantes. "
+                "Très utile pour la due diligence client avant toute mission."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "siren": {
+                        "type": "string",
+                        "description": "Numéro SIREN de l'entreprise (9 chiffres) ou raison sociale."
+                    },
+                    "nb_annonces": {
+                        "type": "integer",
+                        "description": "Nombre d'annonces à retourner (défaut : 5, max : 20).",
+                        "default": 5
+                    }
+                },
+                "required": ["siren"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "valider_tva_vies",
+            "description": (
+                "Valide un numéro de TVA intracommunautaire via le système VIES de la Commission Européenne. "
+                "Retourne la validité du numéro, le nom et l'adresse de l'entreprise enregistrée. "
+                "Indispensable avant toute facturation intra-UE en exonération de TVA."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "code_pays": {
+                        "type": "string",
+                        "description": "Code pays ISO 2 lettres (ex: FR, DE, ES, IT, BE, NL...)."
+                    },
+                    "numero_tva": {
+                        "type": "string",
+                        "description": "Numéro TVA sans le code pays (ex: pour FR12345678901 → '12345678901')."
+                    }
+                },
+                "required": ["code_pays", "numero_tva"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "baremes_fiscaux_sociaux",
+            "description": (
+                "Retourne les principaux barèmes fiscaux et sociaux français en vigueur (2025/2026) : "
+                "PASS, SMIC, plafonds régimes micro (BIC/BNC), tranches IR, taux IS, "
+                "taux d'intérêt légal, indemnité forfaitaire de recouvrement, taux cotisations TNS."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "categorie": {
+                        "type": "string",
+                        "enum": ["tout", "social", "fiscal", "micro", "taux"],
+                        "description": "Filtrer par catégorie. 'tout' retourne toutes les données (défaut).",
+                        "default": "tout"
+                    }
+                },
+                "required": []
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "calculer_cotisations_tns",
+            "description": (
+                "Calcule les cotisations sociales obligatoires d'un travailleur non salarié (TNS) : "
+                "gérant majoritaire de SARL, entrepreneur individuel, professionnel libéral affilié SSI. "
+                "Inclut : maladie, retraite de base, retraite complémentaire, invalidité-décès, CSG/CRDS, formation. "
+                "Résultat indicatif — à valider avec l'URSSAF et un expert-comptable."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "revenu_net": {
+                        "type": "number",
+                        "description": "Revenu professionnel net annuel en euros (avant cotisations sociales, hors CSG non déductible)."
+                    },
+                    "annee": {
+                        "type": "integer",
+                        "description": "Année de référence pour les barèmes (défaut : 2025).",
+                        "default": 2025
+                    }
+                },
+                "required": ["revenu_net"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "calculer_penalites_retard",
+            "description": (
+                "Calcule les pénalités de retard de paiement applicables entre professionnels (B2B) "
+                "conformément à l'article L441-10 du Code de commerce. "
+                "Inclut : pénalités au taux légal (minimum 3× taux BCE), indemnité forfaitaire de 40€, "
+                "et le total réclamable. À mentionner sur les CGV et les factures."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "montant_ht": {
+                        "type": "number",
+                        "description": "Montant HT de la facture impayée en euros."
+                    },
+                    "date_echeance": {
+                        "type": "string",
+                        "description": "Date d'échéance de la facture au format YYYY-MM-DD ou DD/MM/YYYY."
+                    },
+                    "date_paiement": {
+                        "type": "string",
+                        "description": "Date de paiement réel (ou date du jour si toujours impayée) au format YYYY-MM-DD ou DD/MM/YYYY."
+                    },
+                    "taux_tva": {
+                        "type": "number",
+                        "description": "Taux de TVA applicable en % (défaut : 20).",
+                        "default": 20
+                    }
+                },
+                "required": ["montant_ht", "date_echeance", "date_paiement"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "calculer_tva_intracommunautaire",
+            "description": (
+                "Calcule le numéro de TVA intracommunautaire français d'une entreprise à partir de son SIREN. "
+                "Formule officielle : FR + clé (2 chiffres) + SIREN (9 chiffres). "
+                "Utilise cet outil dès qu'on te demande le numéro TVA d'une entreprise et que tu as son SIREN."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "siren": {
+                        "type": "string",
+                        "description": "Numéro SIREN de l'entreprise (9 chiffres, sans espaces)."
+                    }
+                },
+                "required": ["siren"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
             "name": "info_date_echeance",
             "description": (
                 "Donne les prochaines échéances fiscales et sociales importantes pour une entreprise française. "
@@ -194,6 +405,94 @@ TOOLS_DEFINITIONS = [
 # Exécuteurs des outils
 # ---------------------------------------------------------------------------
 
+def _calculer_cle_tva(siren: str) -> str:
+    """Calcule la clé de contrôle du numéro TVA intracommunautaire français."""
+    cle = (12 + 3 * (int(siren) % 97)) % 97
+    return f"{cle:02d}"
+
+
+def _annuaire_rechercher(q: str, par_page: int = 5) -> dict:
+    """
+    Fallback gratuit : API Annuaire Entreprises (data.gouv.fr).
+    Aucune clé API requise.
+    """
+    try:
+        response = requests.get(
+            f"{ANNUAIRE_BASE_URL}/search",
+            params={"q": q, "per_page": min(par_page, 20)},
+            timeout=10,
+        )
+        if response.status_code != 200:
+            return {"erreur": f"API Annuaire Entreprises indisponible (HTTP {response.status_code})."}
+        data = response.json()
+        resultats = []
+        for e in data.get("results", []):
+            siege = e.get("siege", {})
+            siren = e.get("siren", "")
+            resultats.append({
+                "siren": siren,
+                "siret_siege": siege.get("siret"),
+                "raison_sociale": e.get("nom_complet"),
+                "forme_juridique": e.get("nature_juridique"),
+                "code_naf": siege.get("activite_principale"),
+                "adresse": siege.get("adresse"),
+                "ville": siege.get("libelle_commune"),
+                "code_postal": siege.get("code_postal"),
+                "statut": "Actif" if e.get("etat_administratif") == "A" else "Cessé",
+                "date_creation": e.get("date_creation"),
+                "tva_intracommunautaire": (
+                    f"FR{_calculer_cle_tva(siren)}{siren}" if siren else None
+                ),
+                "source": "annuaire-entreprises.data.gouv.fr",
+            })
+        return {
+            "total": data.get("total_results", len(resultats)),
+            "resultats": resultats,
+            "source": "annuaire-entreprises.data.gouv.fr",
+        }
+    except requests.exceptions.Timeout:
+        return {"erreur": "Timeout API Annuaire Entreprises (>10s)."}
+    except Exception as e:
+        return {"erreur": f"Erreur API Annuaire Entreprises : {str(e)}"}
+
+
+def _annuaire_fiche(siren: str) -> dict:
+    """Récupère la fiche d'une entreprise via l'API Annuaire Entreprises."""
+    try:
+        response = requests.get(
+            f"{ANNUAIRE_BASE_URL}/search",
+            params={"q": siren, "per_page": 1},
+            timeout=10,
+        )
+        if response.status_code != 200:
+            return {"erreur": f"API Annuaire Entreprises indisponible (HTTP {response.status_code})."}
+        data = response.json()
+        results = data.get("results", [])
+        if not results:
+            return {"erreur": f"Entreprise SIREN {siren} non trouvée dans l'Annuaire Entreprises."}
+        e = results[0]
+        siege = e.get("siege", {})
+        siren_val = e.get("siren", siren)
+        return {
+            "siren": siren_val,
+            "denomination": e.get("nom_complet"),
+            "forme_juridique": e.get("nature_juridique"),
+            "date_creation": e.get("date_creation"),
+            "statut": "Actif" if e.get("etat_administratif") == "A" else "Cessé",
+            "code_naf": siege.get("activite_principale"),
+            "tranche_effectif": e.get("tranche_effectif_salarie"),
+            "adresse_siege": {
+                "adresse": siege.get("adresse"),
+                "code_postal": siege.get("code_postal"),
+                "ville": siege.get("libelle_commune"),
+            },
+            "tva_intracommunautaire": f"FR{_calculer_cle_tva(siren_val)}{siren_val}",
+            "source": "annuaire-entreprises.data.gouv.fr",
+        }
+    except Exception as e:
+        return {"erreur": f"Erreur API Annuaire Entreprises : {str(e)}"}
+
+
 def _pappers_get(endpoint: str, params: dict) -> dict:
     """Helper pour appeler l'API Pappers avec gestion d'erreurs."""
     if not PAPPERS_API_KEY:
@@ -222,13 +521,20 @@ def _pappers_get(endpoint: str, params: dict) -> dict:
 def exec_pappers_rechercher_entreprise(q: str, par_page: int = 5) -> dict:
     par_page = min(max(1, par_page), 20)
     result = _pappers_get("recherche", {"q": q, "par_page": par_page})
+
     if "erreur" in result:
-        return result
+        # Fallback sur l'API Annuaire Entreprises (data.gouv.fr)
+        fallback = _annuaire_rechercher(q, par_page)
+        if "erreur" not in fallback:
+            fallback["avertissement"] = f"Pappers indisponible ({result['erreur']}). Source : Annuaire Entreprises (data.gouv.fr)."
+        return fallback
+
     entreprises = result.get("resultats", [])
     simplifie = []
     for e in entreprises:
+        siren = e.get("siren", "")
         simplifie.append({
-            "siren": e.get("siren"),
+            "siren": siren,
             "siret_siege": e.get("siret_siege"),
             "raison_sociale": e.get("nom_entreprise") or e.get("denomination"),
             "forme_juridique": e.get("forme_juridique"),
@@ -241,11 +547,13 @@ def exec_pappers_rechercher_entreprise(q: str, par_page: int = 5) -> dict:
             "date_creation": e.get("date_creation"),
             "capital": e.get("capital"),
             "devise_capital": e.get("devise_capital"),
+            "tva_intracommunautaire": f"FR{_calculer_cle_tva(siren)}{siren}" if siren else None,
         })
     return {
         "total": result.get("total", len(simplifie)),
         "page": result.get("page", 1),
-        "resultats": simplifie
+        "resultats": simplifie,
+        "source": "pappers.fr",
     }
 
 
@@ -259,10 +567,17 @@ def exec_pappers_fiche_entreprise(siren: str) -> dict:
         "finances": True,
         "procedures_collectives": True,
     })
+
     if "erreur" in result:
-        return result
+        # Fallback sur l'API Annuaire Entreprises
+        fallback = _annuaire_fiche(siren)
+        if "erreur" not in fallback:
+            fallback["avertissement"] = f"Pappers indisponible ({result['erreur']}). Source : Annuaire Entreprises (data.gouv.fr)."
+        return fallback
+
+    siren_val = result.get("siren", siren)
     return {
-        "siren": result.get("siren"),
+        "siren": siren_val,
         "denomination": result.get("denomination") or result.get("nom_entreprise"),
         "forme_juridique": result.get("forme_juridique"),
         "capital_social": result.get("capital"),
@@ -273,6 +588,7 @@ def exec_pappers_fiche_entreprise(siren: str) -> dict:
         "code_naf": result.get("code_naf"),
         "libelle_naf": result.get("libelle_code_naf"),
         "tranche_effectif": result.get("tranche_effectif"),
+        "tva_intracommunautaire": f"FR{_calculer_cle_tva(siren_val)}{siren_val}" if siren_val else None,
         "adresse_siege": {
             "adresse": result.get("siege", {}).get("adresse_ligne_1"),
             "code_postal": result.get("siege", {}).get("code_postal"),
@@ -309,6 +625,7 @@ def exec_pappers_fiche_entreprise(siren: str) -> dict:
             result.get("finances", [{}])[0].get("annee")
             if result.get("finances") else None
         ),
+        "source": "pappers.fr",
     }
 
 
@@ -460,7 +777,320 @@ def exec_info_date_echeance(regime_tva: str = "reel_normal", forme_juridique: st
 # Registre des exécuteurs
 # ---------------------------------------------------------------------------
 
+def exec_bodacc_annonces(siren: str, nb_annonces: int = 5) -> dict:
+    """Recherche les annonces BODACC pour un SIREN via l'API Opendatasoft."""
+    nb_annonces = min(max(1, nb_annonces), 20)
+    try:
+        response = requests.get(
+            BODACC_API_URL,
+            params={
+                "q": siren,
+                "limit": nb_annonces,
+                "order_by": "dateparution desc",
+            },
+            timeout=10,
+        )
+        if response.status_code != 200:
+            return {"erreur": f"API BODACC indisponible (HTTP {response.status_code})."}
+
+        data = response.json()
+        records = data.get("results", [])
+        if not records:
+            return {
+                "siren_recherche": siren,
+                "total": 0,
+                "annonces": [],
+                "message": "Aucune annonce BODACC trouvée pour ce SIREN. L'entreprise n'a peut-être jamais publié au BODACC.",
+            }
+
+        annonces = []
+        for r in records:
+            contenu = r.get("contenu_blob") or {}
+            if isinstance(contenu, str):
+                try:
+                    contenu = json.loads(contenu)
+                except Exception:
+                    contenu = {}
+            annonces.append({
+                "date_parution": r.get("dateparution"),
+                "type_annonce": r.get("typeavis_lib"),
+                "commercant": r.get("commercant"),
+                "tribunal": r.get("tribunal"),
+                "ville_rcs": r.get("ville"),
+                "registre": r.get("registre"),
+                "detail": contenu,
+            })
+
+        return {
+            "siren_recherche": siren,
+            "total_trouve": data.get("total_count", len(annonces)),
+            "annonces": annonces,
+            "source": "bodacc.fr",
+        }
+    except requests.exceptions.Timeout:
+        return {"erreur": "Timeout API BODACC (>10s)."}
+    except Exception as e:
+        return {"erreur": f"Erreur API BODACC : {str(e)}"}
+
+
+def exec_valider_tva_vies(code_pays: str, numero_tva: str) -> dict:
+    """Valide un numéro TVA intracommunautaire via le système VIES (Commission Européenne)."""
+    code_pays = code_pays.strip().upper()
+    numero_tva = numero_tva.strip().upper().replace(" ", "")
+    # Retirer le code pays si l'utilisateur l'a inclus dans le numéro
+    if numero_tva.startswith(code_pays):
+        numero_tva = numero_tva[len(code_pays):]
+    try:
+        response = requests.post(
+            VIES_API_URL,
+            json={"countryCode": code_pays, "vatNumber": numero_tva},
+            headers={"Content-Type": "application/json"},
+            timeout=15,
+        )
+        if response.status_code != 200:
+            return {
+                "erreur": f"Service VIES indisponible (HTTP {response.status_code}). "
+                          "Essayez sur https://ec.europa.eu/taxation_customs/vies/"
+            }
+        data = response.json()
+        numero_complet = f"{code_pays}{numero_tva}"
+        return {
+            "numero_tva": numero_complet,
+            "valide": data.get("valid", False),
+            "nom_entreprise": data.get("traderName") or "(non communiqué par l'État membre)",
+            "adresse": data.get("traderAddress") or "(non communiqué par l'État membre)",
+            "pays": code_pays,
+            "date_consultation": datetime.now().strftime("%d/%m/%Y %H:%M"),
+            "note": (
+                "Numéro TVA valide — vous pouvez facturer en exonération de TVA (autoliquidation)."
+                if data.get("valid")
+                else "Numéro TVA invalide ou non enregistré dans VIES — appliquer la TVA du pays vendeur."
+            ),
+            "source": "VIES — Commission Européenne",
+        }
+    except requests.exceptions.Timeout:
+        return {"erreur": "Timeout VIES (>15s). Le service peut être temporairement surchargé."}
+    except Exception as e:
+        return {"erreur": f"Erreur VIES : {str(e)}"}
+
+
+def exec_baremes_fiscaux_sociaux(categorie: str = "tout") -> dict:
+    """Retourne les barèmes fiscaux et sociaux 2025/2026."""
+    social = {
+        "PASS_2024": f"{BAREME['pass_2024']:,}€",
+        "PASS_2025": f"{BAREME['pass_2025']:,}€",
+        "SMIC_horaire_brut_2025": f"{BAREME['smic_horaire_brut_2025']}€",
+        "SMIC_mensuel_brut_2025": f"{BAREME['smic_mensuel_brut_2025']}€",
+        "SMIC_annuel_brut_2025": f"{BAREME['smic_annuel_brut_2025']:,}€",
+        "taux_interet_legal_professionnel_S1_2025": f"{BAREME['taux_interet_legal_pro_s1_2025']}%",
+        "taux_interet_legal_consommateur_S1_2025": f"{BAREME['taux_interet_legal_conso_s1_2025']}%",
+        "indemnite_forfaitaire_recouvrement": f"{BAREME['indemnite_forfaitaire_recouvrement']}€",
+    }
+    fiscal = {
+        "IS_taux_reduit_PME": f"{BAREME['is_taux_reduit_pct']}% (jusqu'à {BAREME['is_seuil_taux_reduit']:,}€)",
+        "IS_taux_normal": f"{BAREME['is_taux_normal_pct']}%",
+        "tranches_IR_2025": [
+            f"{t['taux']}% de {t['min']:,}€ à {str(t['max']) + '€' if t['max'] else '∞'}"
+            for t in BAREME["ir_tranches"]
+        ],
+    }
+    micro = {
+        "micro_BIC_ventes_plafond_2025": f"{BAREME['micro_bic_ventes_2025']:,}€ (abattement {BAREME['micro_bic_ventes_abattement']}%)",
+        "micro_BIC_services_plafond_2025": f"{BAREME['micro_bic_services_2025']:,}€ (abattement {BAREME['micro_bic_services_abattement']}%)",
+        "micro_BNC_plafond_2025": f"{BAREME['micro_bnc_2025']:,}€ (abattement {BAREME['micro_bnc_abattement']}%)",
+    }
+    taux_cotisations = {
+        "maladie": f"{BAREME['tns_maladie_taux_1']}% (totalité revenu)",
+        "indemnites_journalieres": f"{BAREME['tns_ij_taux']}% (plafonné à 1 PASS)",
+        "retraite_base_jusqu_1pass": f"{BAREME['tns_retraite_base_taux_1pass']}%",
+        "retraite_base_au_dela_1pass": f"{BAREME['tns_retraite_base_taux_sup']}%",
+        "retraite_complementaire_0_4pass": f"{BAREME['tns_retraite_compl_taux_4pass']}%",
+        "retraite_complementaire_4_8pass": f"{BAREME['tns_retraite_compl_taux_8pass']}%",
+        "invalidite_deces": f"{BAREME['tns_invalidite_deces_taux']}% (plafonné à 1 PASS)",
+        "CSG_CRDS": f"{BAREME['tns_csg_crds_taux']}% (assiette élargie)",
+        "formation_professionnelle": f"{BAREME['tns_formation_taux']}%",
+    }
+
+    result: dict = {"annee_reference": "2025/2026", "source": "DGFiP, URSSAF, Légifrance"}
+    if categorie in ("tout", "social"):
+        result["social"] = social
+    if categorie in ("tout", "fiscal"):
+        result["fiscal"] = fiscal
+    if categorie in ("tout", "micro"):
+        result["regimes_micro"] = micro
+    if categorie in ("tout", "taux"):
+        result["taux_cotisations_tns"] = taux_cotisations
+    return result
+
+
+def exec_calculer_cotisations_tns(revenu_net: float, annee: int = 2025) -> dict:
+    """
+    Calcule les cotisations SSI (ex-RSI) pour un TNS (gérant majoritaire SARL ou EI).
+    Méthode : cotisations calculées sur le revenu net (N-2 en régime définitif,
+    approximation sur revenu N pour simulation).
+    """
+    pass_val = BAREME["pass_2025"] if annee >= 2025 else BAREME["pass_2024"]
+    revenu = max(revenu_net, BAREME["tns_assiette_minimale_annee"])
+
+    # Maladie-maternité
+    maladie = revenu * BAREME["tns_maladie_taux_1"] / 100
+
+    # Indemnités journalières
+    assiette_ij = min(revenu, pass_val)
+    ij = assiette_ij * BAREME["tns_ij_taux"] / 100
+
+    # Retraite de base
+    if revenu <= pass_val:
+        retraite_base = revenu * BAREME["tns_retraite_base_taux_1pass"] / 100
+    else:
+        retraite_base = (
+            pass_val * BAREME["tns_retraite_base_taux_1pass"] / 100
+            + (revenu - pass_val) * BAREME["tns_retraite_base_taux_sup"] / 100
+        )
+
+    # Retraite complémentaire (en points, simplifié en €)
+    if revenu <= 4 * pass_val:
+        retraite_compl = revenu * BAREME["tns_retraite_compl_taux_4pass"] / 100
+    elif revenu <= 8 * pass_val:
+        retraite_compl = (
+            4 * pass_val * BAREME["tns_retraite_compl_taux_4pass"] / 100
+            + (revenu - 4 * pass_val) * BAREME["tns_retraite_compl_taux_8pass"] / 100
+        )
+    else:
+        retraite_compl = (
+            4 * pass_val * BAREME["tns_retraite_compl_taux_4pass"] / 100
+            + 4 * pass_val * BAREME["tns_retraite_compl_taux_8pass"] / 100
+        )
+
+    # Invalidité-décès
+    assiette_inv = min(revenu, pass_val)
+    invalidite = assiette_inv * BAREME["tns_invalidite_deces_taux"] / 100
+
+    # Formation professionnelle
+    formation = pass_val * BAREME["tns_formation_taux"] / 100
+
+    # Sous-total hors CSG/CRDS
+    sous_total = maladie + ij + retraite_base + retraite_compl + invalidite + formation
+
+    # CSG/CRDS : assiette = revenu + cotisations obligatoires (hors CSG) × 98%
+    assiette_csg = (revenu + sous_total) * 0.98
+    csg_crds = assiette_csg * BAREME["tns_csg_crds_taux"] / 100
+
+    total = sous_total + csg_crds
+    taux_effectif = round(total / revenu_net * 100, 1) if revenu_net > 0 else 0
+
+    return {
+        "revenu_net_base": round(revenu_net, 2),
+        "pass_utilise": pass_val,
+        "detail_cotisations": {
+            "maladie_maternite": round(maladie, 2),
+            "indemnites_journalieres": round(ij, 2),
+            "retraite_base": round(retraite_base, 2),
+            "retraite_complementaire": round(retraite_compl, 2),
+            "invalidite_deces": round(invalidite, 2),
+            "formation_professionnelle": round(formation, 2),
+            "CSG_CRDS": round(csg_crds, 2),
+        },
+        "total_cotisations": round(total, 2),
+        "taux_effectif_global": f"{taux_effectif}%",
+        "revenu_disponible_estime": round(revenu_net - total, 2),
+        "note": (
+            "Simulation indicative SSI 2025 (gérant maj. SARL / EI). "
+            "Les cotisations réelles sont calculées sur le revenu N-2 avec régularisation N. "
+            "Valider avec votre URSSAF et un expert-comptable."
+        ),
+    }
+
+
+def exec_calculer_penalites_retard(
+    montant_ht: float,
+    date_echeance: str,
+    date_paiement: str,
+    taux_tva: float = 20.0,
+) -> dict:
+    """Calcule les pénalités de retard B2B (art. L441-10 C.com.)."""
+    def _parse_date(s: str):
+        for fmt in ("%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y"):
+            try:
+                return datetime.strptime(s.strip(), fmt)
+            except ValueError:
+                continue
+        raise ValueError(f"Format de date non reconnu : '{s}'. Utilisez YYYY-MM-DD ou DD/MM/YYYY.")
+
+    try:
+        d_echeance  = _parse_date(date_echeance)
+        d_paiement  = _parse_date(date_paiement)
+    except ValueError as e:
+        return {"erreur": str(e)}
+
+    if d_paiement <= d_echeance:
+        return {
+            "montant_ht": montant_ht,
+            "jours_retard": 0,
+            "penalites": 0.0,
+            "indemnite_forfaitaire": 0.0,
+            "total_reclamable": 0.0,
+            "message": "Aucun retard : la date de paiement est antérieure ou égale à l'échéance.",
+        }
+
+    jours_retard = (d_paiement - d_echeance).days
+    montant_ttc  = montant_ht * (1 + taux_tva / 100)
+
+    # Taux minimum légal B2B = 3 fois le taux d'intérêt légal professionnel
+    taux_annuel = BAREME["taux_interet_legal_pro_s1_2025"] * 3
+    penalites   = montant_ttc * (taux_annuel / 100) * (jours_retard / 365)
+    forfait     = BAREME["indemnite_forfaitaire_recouvrement"]
+    total       = penalites + forfait
+
+    return {
+        "montant_ht": round(montant_ht, 2),
+        "montant_ttc": round(montant_ttc, 2),
+        "taux_tva": f"{taux_tva}%",
+        "date_echeance": d_echeance.strftime("%d/%m/%Y"),
+        "date_paiement": d_paiement.strftime("%d/%m/%Y"),
+        "jours_retard": jours_retard,
+        "taux_penalites_annuel": f"{taux_annuel:.2f}% (3 × taux légal pro S1 2025 : {BAREME['taux_interet_legal_pro_s1_2025']}%)",
+        "penalites_calculees": round(penalites, 2),
+        "indemnite_forfaitaire_recouvrement": forfait,
+        "total_reclamable": round(total, 2),
+        "formule": f"{montant_ttc:.2f}€ TTC × {taux_annuel:.2f}% × ({jours_retard}j / 365) + {forfait}€ forfait",
+        "base_legale": "Art. L441-10 Code de commerce — à mentionner sur CGV et factures.",
+    }
+
+
+def exec_calculer_tva_intracommunautaire(siren: str) -> dict:
+    siren = siren.replace(" ", "").replace("-", "")
+    if not siren.isdigit() or len(siren) != 9:
+        return {"erreur": f"SIREN invalide : '{siren}'. Doit contenir exactement 9 chiffres."}
+    cle = _calculer_cle_tva(siren)
+    numero = f"FR{cle}{siren}"
+    return {
+        "siren": siren,
+        "numero_tva_intracommunautaire": numero,
+        "cle_controle": cle,
+        "note": "Numéro calculé selon la formule officielle française (FR + clé + SIREN). Vérifiable sur le portail VIES de la Commission Européenne."
+    }
+
+
 TOOL_EXECUTORS = {
+    "bodacc_annonces": lambda args: exec_bodacc_annonces(
+        siren=args["siren"], nb_annonces=args.get("nb_annonces", 5)
+    ),
+    "valider_tva_vies": lambda args: exec_valider_tva_vies(
+        code_pays=args["code_pays"], numero_tva=args["numero_tva"]
+    ),
+    "baremes_fiscaux_sociaux": lambda args: exec_baremes_fiscaux_sociaux(
+        categorie=args.get("categorie", "tout")
+    ),
+    "calculer_cotisations_tns": lambda args: exec_calculer_cotisations_tns(
+        revenu_net=args["revenu_net"], annee=args.get("annee", 2025)
+    ),
+    "calculer_penalites_retard": lambda args: exec_calculer_penalites_retard(
+        montant_ht=args["montant_ht"],
+        date_echeance=args["date_echeance"],
+        date_paiement=args["date_paiement"],
+        taux_tva=args.get("taux_tva", 20.0),
+    ),
     "pappers_rechercher_entreprise": lambda args: exec_pappers_rechercher_entreprise(
         q=args["q"], par_page=args.get("par_page", 5)
     ),
@@ -481,6 +1111,9 @@ TOOL_EXECUTORS = {
     "calculer_is": lambda args: exec_calculer_is(
         resultat_fiscal=args["resultat_fiscal"],
         est_pme=args.get("est_pme", True)
+    ),
+    "calculer_tva_intracommunautaire": lambda args: exec_calculer_tva_intracommunautaire(
+        siren=args["siren"]
     ),
     "info_date_echeance": lambda args: exec_info_date_echeance(
         regime_tva=args.get("regime_tva", "reel_normal"),

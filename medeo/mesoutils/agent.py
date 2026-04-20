@@ -1,6 +1,6 @@
 """
 Agent IA pour Mesoutils.
-Utilise Ollama via l'API compatible OpenAI avec tool/function calling.
+Utilise Groq (llama-3.3-70b-versatile) avec tool/function calling.
 Monitoring optionnel via Langfuse si les variables d'environnement sont configurées.
 """
 import os
@@ -9,7 +9,7 @@ import logging
 import time
 from typing import Generator
 
-import requests
+from groq import Groq
 
 from medeo.mesoutils.tools import TOOLS_DEFINITIONS, execute_tool
 
@@ -19,24 +19,38 @@ logger = logging.getLogger(__name__)
 # Configuration
 # ---------------------------------------------------------------------------
 
-OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:14b")
-OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "120"))
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+GROQ_MODEL   = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
 
 SYSTEM_PROMPT = """Tu es un assistant IA interne pour les collaborateurs experts-comptables du cabinet Medeo Partners.
-Tu as accès à des outils spécialisés pour :
-- Rechercher des informations sur des entreprises françaises via l'API Pappers (SIREN, dirigeants, bilans, statuts)
-- Effectuer des calculs fiscaux (TVA, IS)
-- Consulter les prochaines échéances fiscales et sociales
+Tu as accès aux outils suivants. Utilise-les systématiquement dès qu'une question s'y prête.
+
+OUTILS ENTREPRISES (APIs publiques) :
+- pappers_rechercher_entreprise : recherche par nom / SIREN / SIRET (avec fallback Annuaire data.gouv.fr si Pappers est indisponible). Retourne directement le numéro TVA intracommunautaire.
+- pappers_fiche_entreprise : fiche complète (dirigeants, capital, bilans, bénéficiaires effectifs).
+- pappers_dirigeants : dirigeants et mandataires sociaux.
+- pappers_comptes_annuels : bilans et comptes de résultat publics.
+- bodacc_annonces : annonces légales BODACC (procédures collectives, liquidations, jugements, radiations). Indispensable pour due diligence avant prise de mission.
+- calculer_tva_intracommunautaire : calcule le n° TVA FR depuis un SIREN.
+- valider_tva_vies : valide un n° TVA intracommunautaire EU via le système VIES (Commission Européenne). Obligatoire avant toute facturation intra-UE en exonération.
+
+OUTILS CALCULS FISCAUX ET SOCIAUX :
+- calculer_tva : calcul TVA HT↔TTC (taux 20%, 10%, 5.5%, 2.1%).
+- calculer_is : IS estimé selon barème PME ou taux normal.
+- calculer_cotisations_tns : cotisations sociales SSI pour TNS (gérant maj. SARL, EI, indépendant).
+- calculer_penalites_retard : pénalités retard B2B (art. L441-10 C.com.) avec indemnité forfaitaire 40€.
+- baremes_fiscaux_sociaux : PASS, SMIC, plafonds micro BIC/BNC, tranches IR, taux IS, taux légaux.
+- info_date_echeance : prochaines échéances TVA, IS, DSN, CFE selon régime.
 
 Règles de comportement :
-1. Réponds en français de manière professionnelle et concise.
-2. Utilise systématiquement les outils disponibles quand c'est pertinent (recherche d'entreprise, calculs).
-3. Cite les résultats des outils dans ta réponse de manière structurée.
-4. Pour les calculs fiscaux, précise toujours qu'il s'agit d'estimations indicatives.
-5. En cas de doute sur une situation complexe, recommande de consulter la documentation officielle (BOFIP, CGI).
-6. Ne fournis jamais de conseils fiscaux personnalisés définitifs sans préciser leurs limites.
-7. Si une recherche Pappers ne donne pas de résultat, propose d'affiner avec le SIREN exact.
+1. Réponds en français, de manière professionnelle et structurée (utilise des listes et tableaux markdown).
+2. Utilise TOUJOURS les outils disponibles avant de répondre de mémoire.
+3. Pour trouver le n° TVA d'une entreprise : utilise pappers_rechercher_entreprise (champ tva_intracommunautaire inclus) ou calculer_tva_intracommunautaire si tu as le SIREN.
+4. Pour valider un n° TVA reçu d'un client EU : utilise valider_tva_vies.
+5. Pour un nouveau client : propose de consulter BODACC pour détecter d'éventuelles procédures en cours.
+6. Mentionne toujours la source des données (Pappers / Annuaire Entreprises / BODACC / VIES).
+7. Pour les calculs fiscaux et sociaux, précise qu'il s'agit d'estimations indicatives à valider.
+8. En cas de situation complexe, cite les textes de référence (CGI, BOFIP, C.com., URSSAF).
 
 Tu es un outil interne professionnel, pas un chatbot public. Sois direct et efficace."""
 
@@ -45,6 +59,7 @@ Tu es un outil interne professionnel, pas un chatbot public. Sois direct et effi
 # ---------------------------------------------------------------------------
 
 _langfuse = None
+
 
 def _get_langfuse():
     global _langfuse
@@ -66,22 +81,17 @@ def _get_langfuse():
 
 
 # ---------------------------------------------------------------------------
-# Vérification de disponibilité Ollama
+# Health check
 # ---------------------------------------------------------------------------
 
-def check_ollama_health() -> dict:
-    """Vérifie si Ollama est disponible et retourne les modèles installés."""
-    try:
-        response = requests.get(f"{OLLAMA_BASE_URL}/api/tags", timeout=5)
-        if response.status_code == 200:
-            data = response.json()
-            models = [m["name"] for m in data.get("models", [])]
-            return {"status": "ok", "models": models}
-        return {"status": "error", "message": f"HTTP {response.status_code}"}
-    except requests.exceptions.ConnectionError:
-        return {"status": "error", "message": "Ollama non accessible (vérifiez que le service tourne sur " + OLLAMA_BASE_URL + ")"}
-    except Exception as e:
-        return {"status": "error", "message": str(e)}
+def check_groq_health() -> dict:
+    """Vérifie si la clé API Groq est configurée."""
+    if not GROQ_API_KEY:
+        return {
+            "status": "error",
+            "message": "Clé API Groq non configurée (variable GROQ_API_KEY manquante)."
+        }
+    return {"status": "ok", "model": GROQ_MODEL}
 
 
 # ---------------------------------------------------------------------------
@@ -90,55 +100,42 @@ def check_ollama_health() -> dict:
 
 class MesoutilsAgent:
     """
-    Agent IA qui orchestre les appels LLM (Ollama) et l'exécution des outils.
+    Agent IA qui orchestre les appels LLM (Groq) et l'exécution des outils.
     Utilise la boucle : LLM → tool_calls → execute → LLM → réponse finale.
     """
 
     def __init__(self):
-        self.model = OLLAMA_MODEL
-        self.base_url = OLLAMA_BASE_URL
-        self.timeout = OLLAMA_TIMEOUT
+        self.model = GROQ_MODEL
+        self.client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
 
-    def _call_ollama(self, messages: list, tools: list = None, stream: bool = False) -> dict:
-        """
-        Appelle l'API Ollama /api/chat avec format OpenAI.
-        Retourne la réponse complète ou lève une exception.
-        """
-        payload = {
+    def _call_groq(self, messages: list, tools: list = None) -> object:
+        """Appelle l'API Groq et retourne la réponse complète."""
+        if not self.client:
+            raise RuntimeError(
+                "Clé API Groq non configurée. "
+                "Ajoutez GROQ_API_KEY dans votre fichier .env ou app.yaml."
+            )
+        kwargs = {
             "model": self.model,
             "messages": messages,
-            "stream": stream,
-            "options": {
-                "temperature": 0.3,
-                "num_ctx": 8192,
-            }
+            "temperature": 0.3,
+            "max_tokens": 1024,
         }
         if tools:
-            payload["tools"] = tools
-
+            kwargs["tools"] = tools
+            kwargs["tool_choice"] = "auto"
         try:
-            response = requests.post(
-                f"{self.base_url}/api/chat",
-                json=payload,
-                timeout=self.timeout,
-                stream=stream
-            )
-            response.raise_for_status()
-            if stream:
-                return response
-            return response.json()
-        except requests.exceptions.ConnectionError:
-            raise RuntimeError(
-                f"Impossible de contacter Ollama sur {self.base_url}. "
-                "Vérifiez que le service est démarré (docker compose up ollama)."
-            )
-        except requests.exceptions.Timeout:
-            raise RuntimeError(
-                f"Timeout après {self.timeout}s. Le modèle {self.model} est peut-être trop lent "
-                "ou n'est pas chargé. Essayez un modèle plus petit."
-            )
-        except requests.exceptions.HTTPError as e:
-            raise RuntimeError(f"Erreur HTTP Ollama : {e}")
+            return self.client.chat.completions.create(**kwargs)
+        except Exception as e:
+            raise RuntimeError(f"Erreur API Groq : {e}")
+
+    def _get_final_response(self, messages: list) -> str:
+        """
+        Appelle Groq SANS tools pour forcer une réponse textuelle.
+        Nécessaire car Groq retourne parfois content=None après des tool_calls.
+        """
+        response = self._call_groq(messages, tools=None)
+        return (response.choices[0].message.content or "").strip()
 
     def run(self, user_message: str, history: list = None) -> dict:
         """
@@ -185,43 +182,49 @@ class MesoutilsAgent:
                 else:
                     generation = None
 
-                raw = self._call_ollama(messages, tools=TOOLS_DEFINITIONS)
-
-                message = raw.get("message", {})
-                finish_reason = "tool_calls" if message.get("tool_calls") else "stop"
+                response = self._call_groq(messages, tools=TOOLS_DEFINITIONS)
+                choice = response.choices[0]
+                message = choice.message
+                finish_reason = choice.finish_reason
 
                 if generation:
                     try:
-                        generation.end(output=message, usage=raw.get("eval_count"))
+                        generation.end(
+                            output=message.content,
+                            usage=getattr(response, "usage", None)
+                        )
                     except Exception:
                         pass
 
-                if finish_reason == "tool_calls" and message.get("tool_calls"):
+                if finish_reason == "tool_calls" and message.tool_calls:
                     messages.append({
                         "role": "assistant",
-                        "content": message.get("content", ""),
-                        "tool_calls": message["tool_calls"]
+                        "content": message.content or "",
+                        "tool_calls": [
+                            {
+                                "id": tc.id,
+                                "type": "function",
+                                "function": {
+                                    "name": tc.function.name,
+                                    "arguments": tc.function.arguments,
+                                }
+                            }
+                            for tc in message.tool_calls
+                        ]
                     })
 
-                    for tool_call in message["tool_calls"]:
-                        fn = tool_call.get("function", {})
-                        tool_name = fn.get("name", "")
-                        tool_args = fn.get("arguments", {})
-
-                        if isinstance(tool_args, str):
-                            try:
-                                tool_args = json.loads(tool_args)
-                            except Exception:
-                                tool_args = {}
+                    for tc in message.tool_calls:
+                        tool_name = tc.function.name
+                        try:
+                            tool_args = json.loads(tc.function.arguments)
+                        except Exception:
+                            tool_args = {}
 
                         logger.info(f"Outil appelé : {tool_name} avec args : {tool_args}")
 
                         if lf and trace:
                             try:
-                                span = trace.span(
-                                    name=f"tool-{tool_name}",
-                                    input=tool_args
-                                )
+                                span = trace.span(name=f"tool-{tool_name}", input=tool_args)
                             except Exception:
                                 span = None
                         else:
@@ -243,11 +246,19 @@ class MesoutilsAgent:
 
                         messages.append({
                             "role": "tool",
+                            "tool_call_id": tc.id,
                             "content": json.dumps(result, ensure_ascii=False)
                         })
 
                 else:
-                    final_response = message.get("content", "").strip()
+                    final_response = (message.content or "").strip()
+
+                    # Groq retourne parfois content=None après des tool_calls.
+                    # On relance sans tools pour forcer une réponse textuelle.
+                    if not final_response and tool_calls_log:
+                        logger.info("Contenu vide après tool_calls, relance sans tools.")
+                        final_response = self._get_final_response(messages)
+
                     elapsed = round(time.time() - start_time, 2)
 
                     if lf and trace:
@@ -286,7 +297,7 @@ class MesoutilsAgent:
                 "tool_calls_log": tool_calls_log,
                 "elapsed_seconds": round(time.time() - start_time, 2),
                 "model": self.model,
-                "error": "ollama_error"
+                "error": "groq_error"
             }
         except Exception as e:
             logger.exception(f"Erreur inattendue agent : {e}")
@@ -301,8 +312,11 @@ class MesoutilsAgent:
     def stream(self, user_message: str, history: list = None) -> Generator[str, None, None]:
         """
         Version streaming de run(). Génère des événements SSE.
-        Format : data: <json>\n\n
+        Format : data: <json>\\n\\n
         Types d'événements : tool_start, tool_end, token, done, error
+
+        Les phases de tool_calls utilisent l'API non-streaming (nécessaire pour récupérer
+        les tool_call_id). La réponse finale est streamée token par token.
         """
         history = history or []
         tool_calls_log = []
@@ -323,26 +337,34 @@ class MesoutilsAgent:
             while iteration < max_iterations:
                 iteration += 1
 
-                # Appel non-streaming pour gérer les tool calls proprement
-                raw = self._call_ollama(messages, tools=TOOLS_DEFINITIONS, stream=False)
-                message = raw.get("message", {})
+                response = self._call_groq(messages, tools=TOOLS_DEFINITIONS)
+                choice = response.choices[0]
+                message = choice.message
+                finish_reason = choice.finish_reason
 
-                if message.get("tool_calls"):
+                if finish_reason == "tool_calls" and message.tool_calls:
                     messages.append({
                         "role": "assistant",
-                        "content": message.get("content", ""),
-                        "tool_calls": message["tool_calls"]
+                        "content": message.content or "",
+                        "tool_calls": [
+                            {
+                                "id": tc.id,
+                                "type": "function",
+                                "function": {
+                                    "name": tc.function.name,
+                                    "arguments": tc.function.arguments,
+                                }
+                            }
+                            for tc in message.tool_calls
+                        ]
                     })
 
-                    for tool_call in message["tool_calls"]:
-                        fn = tool_call.get("function", {})
-                        tool_name = fn.get("name", "")
-                        tool_args = fn.get("arguments", {})
-                        if isinstance(tool_args, str):
-                            try:
-                                tool_args = json.loads(tool_args)
-                            except Exception:
-                                tool_args = {}
+                    for tc in message.tool_calls:
+                        tool_name = tc.function.name
+                        try:
+                            tool_args = json.loads(tc.function.arguments)
+                        except Exception:
+                            tool_args = {}
 
                         yield sse("tool_start", {"tool": tool_name, "arguments": tool_args})
 
@@ -360,33 +382,23 @@ class MesoutilsAgent:
 
                         messages.append({
                             "role": "tool",
+                            "tool_call_id": tc.id,
                             "content": json.dumps(result, ensure_ascii=False)
                         })
+
                 else:
-                    # Réponse finale — on streame token par token via l'API streaming Ollama
-                    final_messages = list(messages)
-                    try:
-                        stream_response = self._call_ollama(final_messages, stream=True)
-                        buffer = ""
-                        for line in stream_response.iter_lines():
-                            if not line:
-                                continue
-                            try:
-                                chunk = json.loads(line)
-                                token = chunk.get("message", {}).get("content", "")
-                                if token:
-                                    buffer += token
-                                    yield sse("token", {"content": token})
-                                if chunk.get("done"):
-                                    break
-                            except json.JSONDecodeError:
-                                continue
-                        yield sse("done", {"tool_calls_log": tool_calls_log})
-                    except Exception:
-                        # Fallback : envoyer la réponse complète
-                        final_response = message.get("content", "").strip()
+                    # Réponse finale — on envoie le contenu déjà reçu
+                    final_response = (message.content or "").strip()
+
+                    # Groq retourne parfois content=None après des tool_calls.
+                    # On relance sans tools pour forcer une réponse textuelle.
+                    if not final_response and tool_calls_log:
+                        logger.info("Contenu vide après tool_calls, relance sans tools.")
+                        final_response = self._get_final_response(messages)
+
+                    if final_response:
                         yield sse("token", {"content": final_response})
-                        yield sse("done", {"tool_calls_log": tool_calls_log})
+                    yield sse("done", {"tool_calls_log": tool_calls_log})
                     return
 
         except RuntimeError as e:
@@ -401,8 +413,7 @@ def _summarize_tool_result(tool_name: str, result: dict) -> str:
     if "erreur" in result:
         return f"Erreur : {result['erreur']}"
     if tool_name == "pappers_rechercher_entreprise":
-        total = result.get("total", 0)
-        return f"{total} entreprise(s) trouvée(s)"
+        return f"{result.get('total', 0)} entreprise(s) trouvée(s)"
     if tool_name == "pappers_fiche_entreprise":
         nom = result.get("denomination", "?")
         statut = result.get("statut", "?")

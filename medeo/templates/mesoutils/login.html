@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mesoutils — Accès collaborateurs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <style>
+    :root { --primary: #114a79; --primary-dark: #0d3a5e; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #0d3a5e 0%, #114a79 50%, #1a6496 100%);
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen px-4">
+
+  <div class="w-full max-w-sm">
+
+    <!-- Logo + titre -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl shadow-lg mb-4">
+        <i class="fas fa-robot text-2xl" style="color: var(--primary);"></i>
+      </div>
+      <h1 class="text-white text-2xl font-bold tracking-tight">Mesoutils</h1>
+      <p class="text-blue-200 text-sm mt-1">Agent IA interne — Medeo Partners</p>
+    </div>
+
+    <!-- Carte login -->
+    <div class="bg-white rounded-2xl shadow-2xl p-8">
+
+      {% if error %}
+      <div class="mb-5 flex items-center gap-2 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3">
+        <i class="fas fa-circle-exclamation flex-shrink-0"></i>
+        <span>{{ error }}</span>
+      </div>
+      {% endif %}
+
+      <form method="POST" action="{{ url_for('mesoutils.login') }}{% if request.args.get('next') %}?next={{ request.args.get('next') }}{% endif %}">
+        <div class="mb-6">
+          <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">
+            <i class="fas fa-lock mr-1 text-gray-400"></i>Mot de passe collaborateur
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autofocus
+            autocomplete="current-password"
+            placeholder="••••••••••"
+            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none text-sm transition"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full py-3 rounded-xl text-white font-semibold text-sm transition-all hover:opacity-90 active:scale-95"
+          style="background: var(--primary);"
+        >
+          <i class="fas fa-arrow-right-to-bracket mr-2"></i>Accéder à Mesoutils
+        </button>
+      </form>
+
+      <p class="text-center text-xs text-gray-400 mt-6">
+        <i class="fas fa-shield-halved mr-1"></i>Accès réservé aux collaborateurs Medeo Partners
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <p class="text-center text-blue-300 text-xs mt-6 opacity-60">
+      © Medeo Partners · 97 Bd Malesherbes, 75008 Paris
+    </p>
+  </div>
+
+  <script>
+    // Soumettre avec Entrée
+    document.getElementById('password').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); this.closest('form').submit(); }
+    });
+  </script>
+</body>
+</html>

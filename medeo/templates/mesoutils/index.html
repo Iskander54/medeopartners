@@ -127,15 +127,15 @@
     </div>
   </div>
   <div class="flex items-center gap-4">
-    <!-- Ollama status -->
+    <!-- Groq status -->
     <div class="flex items-center gap-2">
-      <div id="ollama-dot" class="status-dot {% if ollama_status.status == 'ok' %}status-ok{% else %}status-err{% endif %}"></div>
+      <div class="status-dot {% if groq_status.status == 'ok' %}status-ok{% else %}status-err{% endif %}"></div>
       <span class="text-xs text-blue-100">
-        Ollama
-        {% if ollama_status.status == 'ok' %}
-          <span class="text-green-300">(actif)</span>
+        Groq
+        {% if groq_status.status == 'ok' %}
+          <span class="text-green-300">(configuré)</span>
         {% else %}
-          <span class="text-red-300">(hors-ligne)</span>
+          <span class="text-red-300">(non configuré)</span>
         {% endif %}
       </span>
     </div>
@@ -148,24 +148,30 @@
     </div>
     <!-- Model badge -->
     <span class="text-xs bg-blue-800 text-blue-100 px-2 py-1 rounded">
-      <i class="fas fa-microchip mr-1"></i>{{ ollama_model }}
+      <i class="fas fa-microchip mr-1"></i>{{ groq_model }}
     </span>
     <!-- Reset button -->
     <button id="btn-reset" title="Nouvelle conversation"
             class="text-blue-200 hover:text-white transition-colors text-sm">
       <i class="fas fa-rotate-right"></i> Réinitialiser
     </button>
+    <!-- Logout -->
+    <form method="POST" action="{{ url_for('mesoutils.logout') }}" class="inline">
+      <button type="submit" title="Se déconnecter"
+              class="text-blue-300 hover:text-white transition-colors text-sm ml-2">
+        <i class="fas fa-right-from-bracket"></i>
+      </button>
+    </form>
   </div>
 </div>
 
-{% if ollama_status.status != 'ok' %}
-<!-- Ollama offline banner -->
+{% if groq_status.status != 'ok' %}
 <div class="bg-red-50 border-b border-red-200 px-5 py-2 flex items-center gap-2">
   <i class="fas fa-triangle-exclamation text-red-500 text-sm"></i>
   <p class="text-red-700 text-sm">
-    <strong>Ollama non disponible :</strong> {{ ollama_status.message }}
-    — Démarrez le service avec <code class="bg-red-100 px-1 rounded">docker compose up -d ollama</code>
-    puis lancez <code class="bg-red-100 px-1 rounded">ollama pull {{ ollama_model }}</code>.
+    <strong>Groq non configuré :</strong> {{ groq_status.message }}
+    — Ajoutez <code class="bg-red-100 px-1 rounded">GROQ_API_KEY=gsk_...</code>
+    dans votre fichier <code class="bg-red-100 px-1 rounded">.env</code> ou <code class="bg-red-100 px-1 rounded">app.yaml</code>.
   </p>
 </div>
 {% endif %}
@@ -206,40 +212,47 @@
         <i class="fas fa-toolbox mr-1"></i>Outils disponibles
       </p>
       <div class="space-y-2 text-xs">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mt-1">Entreprises</p>
         <div class="flex items-start gap-2">
           <i class="fas fa-building text-blue-500 mt-0.5 w-4 flex-shrink-0"></i>
-          <div>
-            <p class="font-medium text-gray-700">Pappers — Recherche</p>
-            <p class="text-gray-500">Par nom, SIREN ou SIRET</p>
-          </div>
+          <div><p class="font-medium text-gray-700">Pappers — Recherche</p><p class="text-gray-500">Nom, SIREN, SIRET + n° TVA</p></div>
         </div>
         <div class="flex items-start gap-2">
           <i class="fas fa-id-card text-blue-500 mt-0.5 w-4 flex-shrink-0"></i>
-          <div>
-            <p class="font-medium text-gray-700">Pappers — Fiche complète</p>
-            <p class="text-gray-500">Dirigeants, capital, bilans</p>
-          </div>
+          <div><p class="font-medium text-gray-700">Pappers — Fiche complète</p><p class="text-gray-500">Dirigeants, capital, bilans</p></div>
         </div>
         <div class="flex items-start gap-2">
+          <i class="fas fa-newspaper text-orange-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">BODACC — Annonces légales</p><p class="text-gray-500">Liquidations, jugements, radiations</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-globe text-blue-400 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">VIES — Validation TVA EU</p><p class="text-gray-500">Vérif. n° TVA intracommunautaire</p></div>
+        </div>
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mt-2">Calculs fiscaux & sociaux</p>
+        <div class="flex items-start gap-2">
           <i class="fas fa-calculator text-green-500 mt-0.5 w-4 flex-shrink-0"></i>
-          <div>
-            <p class="font-medium text-gray-700">Calcul TVA</p>
-            <p class="text-gray-500">HT↔TTC, taux 20/10/5.5/2.1%</p>
-          </div>
+          <div><p class="font-medium text-gray-700">Calcul TVA</p><p class="text-gray-500">HT↔TTC, taux 20/10/5.5/2.1%</p></div>
         </div>
         <div class="flex items-start gap-2">
           <i class="fas fa-percent text-green-500 mt-0.5 w-4 flex-shrink-0"></i>
-          <div>
-            <p class="font-medium text-gray-700">Calcul IS</p>
-            <p class="text-gray-500">Barème PME & taux normal</p>
-          </div>
+          <div><p class="font-medium text-gray-700">Calcul IS</p><p class="text-gray-500">Barème PME & taux normal</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-user-tie text-indigo-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Cotisations TNS</p><p class="text-gray-500">SSI — gérant maj. SARL / EI</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-triangle-exclamation text-red-400 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Pénalités de retard B2B</p><p class="text-gray-500">Art. L441-10 C.com. + forfait 40€</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-table-list text-teal-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Barèmes 2025/2026</p><p class="text-gray-500">PASS, SMIC, micro, IR, taux légaux</p></div>
         </div>
         <div class="flex items-start gap-2">
           <i class="fas fa-calendar-check text-purple-500 mt-0.5 w-4 flex-shrink-0"></i>
-          <div>
-            <p class="font-medium text-gray-700">Échéances fiscales</p>
-            <p class="text-gray-500">TVA, IS, DSN, CFE…</p>
-          </div>
+          <div><p class="font-medium text-gray-700">Échéances fiscales</p><p class="text-gray-500">TVA, IS, DSN, CFE…</p></div>
         </div>
       </div>
     </div>
@@ -290,7 +303,7 @@
               <li>Répondre à vos <strong>questions comptables et fiscales</strong></li>
             </ul>
             <p class="mt-2 text-xs text-gray-500">
-              <i class="fas fa-lock mr-1"></i>Outil interne — données traitées localement.
+              <i class="fas fa-lock mr-1"></i>Outil interne — accès restreint aux collaborateurs.
             </p>
           </div>
         </div>
@@ -307,7 +320,7 @@
                     class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none resize-none text-sm transition"
                     style="max-height: 120px;"
           ></textarea>
-          <span class="absolute bottom-3 right-3 text-xs text-gray-400">⌘↵</span>
+          <span class="absolute bottom-3 right-3 text-xs text-gray-400">↵ envoyer</span>
         </div>
         <button type="submit" id="submit-btn"
                 class="flex items-center gap-2 px-5 py-3 rounded-xl text-white font-medium text-sm transition-all"
@@ -319,7 +332,7 @@
         </button>
       </form>
       <p class="text-xs text-gray-400 mt-2 text-center">
-        Réponses générées par IA locale ({{ ollama_model }}) — À titre indicatif, valider avec les sources officielles.
+        Réponses générées par Groq ({{ groq_model }}) — À titre indicatif, valider avec les sources officielles.
       </p>
     </div>
   </main>
@@ -340,12 +353,16 @@ const CHAT_ENDPOINT    = '{{ url_for("mesoutils.chat") }}';
 const RESET_ENDPOINT   = '{{ url_for("mesoutils.reset") }}';
 
 const QUICK_PROMPTS = [
-  { icon: 'fa-building', text: 'Recherche entreprise SIREN 552032534' },
-  { icon: 'fa-id-card',  text: 'Fiche complète : Apple (SIREN 410155965)' },
-  { icon: 'fa-calculator', text: 'Calcule TVA 20% sur 8 500 € HT' },
-  { icon: 'fa-percent',  text: 'Calcule IS PME pour résultat fiscal 85 000 €' },
-  { icon: 'fa-calendar', text: 'Prochaines échéances pour une SAS au réel normal' },
-  { icon: 'fa-question', text: 'Quel est le taux IS réduit pour les PME en 2025 ?' },
+  { icon: 'fa-building',            text: 'Recherche entreprise SIREN 552032534' },
+  { icon: 'fa-id-card',             text: 'Fiche complète : Apple (SIREN 410155965)' },
+  { icon: 'fa-newspaper',           text: 'Annonces BODACC pour SIREN 552032534' },
+  { icon: 'fa-globe',               text: 'Valide le numéro TVA DE811156472 (Allemagne)' },
+  { icon: 'fa-calculator',          text: 'Calcule TVA 20% sur 8 500 € HT' },
+  { icon: 'fa-percent',             text: 'Calcule IS PME pour résultat fiscal 85 000 €' },
+  { icon: 'fa-user-tie',            text: 'Cotisations TNS pour un revenu net de 60 000 €' },
+  { icon: 'fa-triangle-exclamation', text: 'Pénalités de retard : facture 12 000€ HT échue le 01/02/2025, payée le 15/04/2025' },
+  { icon: 'fa-table-list',          text: 'Quels sont les barèmes fiscaux et sociaux 2025 ?' },
+  { icon: 'fa-calendar',            text: 'Prochaines échéances pour une SAS au réel normal' },
 ];
 
 // ── DOM refs ─────────────────────────────────────────────────────────────────
@@ -363,9 +380,9 @@ let isStreaming = false;
 document.addEventListener('DOMContentLoaded', () => {
   renderQuickPrompts();
 
-  // ⌘+Enter or Ctrl+Enter to submit
+  // Enter = envoyer, Shift+Enter = retour à la ligne
   messageInput.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       chatForm.dispatchEvent(new Event('submit'));
     }
@@ -380,14 +397,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // ── Quick prompts ─────────────────────────────────────────────────────────────
 function renderQuickPrompts() {
   const container = document.getElementById('quick-prompts');
-  container.innerHTML = QUICK_PROMPTS.map(p => `
-    <button type="button"
-            class="quick-prompt w-full text-left text-xs px-3 py-2 border border-gray-200 rounded-lg text-gray-700 flex items-center gap-2"
-            onclick="setPrompt(${JSON.stringify(p.text)})">
-      <i class="fas ${p.icon} text-blue-400 w-4 flex-shrink-0"></i>
-      <span>${p.text}</span>
-    </button>
-  `).join('');
+  container.innerHTML = '';
+  QUICK_PROMPTS.forEach(p => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'quick-prompt w-full text-left text-xs px-3 py-2 border border-gray-200 rounded-lg text-gray-700 flex items-center gap-2';
+    btn.innerHTML = `<i class="fas ${p.icon} text-blue-400 w-4 flex-shrink-0"></i><span>${escapeHtml(p.text)}</span>`;
+    btn.addEventListener('click', () => setPrompt(p.text));
+    container.appendChild(btn);
+  });
 }
 
 function setPrompt(text) {
@@ -507,7 +525,13 @@ function _summarize(toolName, result) {
   if (toolName === 'pappers_comptes_annuels') return `${(result.finances||[]).length} exercice(s)`;
   if (toolName === 'calculer_tva') return `TVA: ${result.montant_tva}€`;
   if (toolName === 'calculer_is') return `IS: ${result.is_estime}€`;
-  if (toolName === 'info_date_echeance') return `${(result.prochaines_echeances||[]).length} échéances`;
+    if (toolName === 'bodacc_annonces') return `${(result.annonces||[]).length} annonce(s) BODACC`;
+    if (toolName === 'valider_tva_vies') return result.valide ? `✓ Valide — ${result.nom_entreprise||''}` : '✗ Invalide';
+    if (toolName === 'baremes_fiscaux_sociaux') return 'Barèmes 2025/2026';
+    if (toolName === 'calculer_cotisations_tns') return `Total cotisations : ${result.total_cotisations}€`;
+    if (toolName === 'calculer_penalites_retard') return `${result.jours_retard}j retard — ${result.total_reclamable}€ réclamable`;
+    if (toolName === 'calculer_tva_intracommunautaire') return result.numero_tva_intracommunautaire || 'Calculé';
+    if (toolName === 'info_date_echeance') return `${(result.prochaines_echeances||[]).length} échéances`;
   return 'OK';
 }
 
@@ -668,13 +692,19 @@ function escapeHtml(text) {
 
 function getToolLabel(name) {
   const labels = {
-    'pappers_rechercher_entreprise': 'Pappers · Recherche',
-    'pappers_fiche_entreprise':      'Pappers · Fiche',
-    'pappers_dirigeants':            'Pappers · Dirigeants',
-    'pappers_comptes_annuels':       'Pappers · Comptes',
-    'calculer_tva':                  'Calcul TVA',
-    'calculer_is':                   'Calcul IS',
-    'info_date_echeance':            'Échéances fiscales',
+    'pappers_rechercher_entreprise':    'Pappers · Recherche',
+    'pappers_fiche_entreprise':         'Pappers · Fiche',
+    'pappers_dirigeants':               'Pappers · Dirigeants',
+    'pappers_comptes_annuels':          'Pappers · Comptes',
+    'bodacc_annonces':                  'BODACC · Annonces légales',
+    'valider_tva_vies':                 'VIES · Validation TVA EU',
+    'baremes_fiscaux_sociaux':          'Barèmes fiscaux & sociaux',
+    'calculer_cotisations_tns':         'Cotisations TNS',
+    'calculer_penalites_retard':        'Pénalités de retard',
+    'calculer_tva':                     'Calcul TVA',
+    'calculer_is':                      'Calcul IS',
+    'calculer_tva_intracommunautaire':  'TVA Intracommunautaire',
+    'info_date_echeance':               'Échéances fiscales',
   };
   return labels[name] || name;
 }
