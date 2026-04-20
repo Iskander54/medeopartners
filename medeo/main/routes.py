@@ -51,31 +51,41 @@ def before_request():
 @main.route("/home", defaults={'lang_code':'en'})
 def home():
     page = request.args.get('page', 1, type=int)
-    return render_template('home.html',apikey=current_app.config['G_API_KEY'])
+    return render_template('home.html', apikey=current_app.config['G_API_KEY'],
+        title='Expert-Comptable & Commissaire aux Comptes — Paris 8e',
+        meta_description="Medeo Partners, cabinet d'expertise comptable et de commissariat aux comptes à Paris 8e (75008). Comptabilité, audit, optimisation fiscale pour PME et dirigeants. Inscrit OEC & CNCC.")
 
 @main.route("/your_firm",defaults={'lang_code':'en'})
 @main.route("/votre_cabinet",defaults={'lang_code':'fr'})
 def votre_cabinet():
-    return render_template('votre_cabinet.html',title='Votre Cabinet d\'Expertise Comptable et Conseil Fiscal', active_page='votre_cabinet')
-
+    return render_template('votre_cabinet.html',
+        title='Votre Cabinet d\'Expertise Comptable à Paris 8e — Medeo Partners',
+        meta_description="Découvrez Medeo Partners, cabinet d'experts-comptables et commissaires aux comptes situé au 97 bd Malesherbes, Paris 8e. Une équipe dédiée à la réussite de votre entreprise.",
+        active_page='votre_cabinet')
 
 @main.route("/our_expertise",defaults={'lang_code':'en'})
 @main.route("/notre_expertise",defaults={'lang_code':'fr'})
 def notre_expertise():
-    return render_template('notre_expertise.html',title='Expertise en Comptabilité, Fiscalité et Gestion',active_page='notre_expertise')
-
+    return render_template('notre_expertise.html',
+        title='Notre Expertise — Comptabilité, Audit, Fiscalité à Paris',
+        meta_description="Expertise comptable, audit financier et commissariat aux comptes, conseil fiscal et optimisation patrimoniale. Medeo Partners, votre partenaire financier à Paris.",
+        active_page='notre_expertise')
 
 @main.route("/news",defaults={'lang_code':'en'})
 @main.route("/actualites",defaults={'lang_code':'fr'})
 def actualites():
-    active_page = 'actualites'
-    return render_template('actualites.html',title='Actualités et Insights sur la Comptabilité et la Fiscalité', active_page='actualites')
+    return render_template('actualites.html',
+        title='Actualités Comptables et Fiscales — Medeo Partners',
+        meta_description="Suivez les actualités comptables, fiscales et juridiques pour les entreprises françaises. Analyses et conseils pratiques par les experts de Medeo Partners, Paris 8e.",
+        active_page='actualites')
 
 @main.route("/contactus",defaults={'lang_code':'en'})
 @main.route("/nouscontacter",defaults={'lang_code':'fr'})
 def nouscontacter():
-    active_page = 'nouscontacter'
-    return render_template('nouscontacter.html',title='Contactez-Nous pour toute expertise en comptabilité ou audit', active_page='nouscontacter')
+    return render_template('nouscontacter.html',
+        title='Contactez Medeo Partners — Expert-Comptable Paris 8e',
+        meta_description="Contactez Medeo Partners, cabinet d'expertise comptable au 97 bd Malesherbes, Paris 8e. Tél : +33 1 83 64 16 04. Prenez rendez-vous pour un premier entretien gratuit.",
+        active_page='nouscontacter')
 
 @main.route("/account",defaults={'lang_code':'en'})
 @main.route("/espace_clients",defaults={'lang_code':'fr'})
@@ -96,17 +106,41 @@ def redirect_nos_services_en():
 @main.route("/council_optimization",defaults={'lang_code':'en'})
 @main.route("/conseil_optimisation",defaults={'lang_code':'fr'})
 def conseil_optimisation():
-    return render_template('/conseil_optimisation.html',title='Conseils en Optimisation Fiscale et Financière',active_page='conseil_optimisation')
+    faq_items = [
+        {"question": "Qu'est-ce que l'optimisation fiscale légale pour une entreprise ?", "answer": "L'optimisation fiscale légale consiste à utiliser les dispositifs prévus par la loi pour réduire la charge fiscale de votre entreprise : choix de la forme juridique, régimes d'exonération, crédits d'impôt (CIR, CII), holding, etc. Chez Medeo Partners, nous vous accompagnons dans une démarche 100% conforme."},
+        {"question": "Comment choisir entre IS et IR pour son entreprise ?", "answer": "Le choix entre l'Impôt sur les Sociétés (IS) et l'Impôt sur le Revenu (IR) dépend de votre situation personnelle, de la rentabilité de votre entreprise et de vos objectifs patrimoniaux. Nos experts-comptables à Paris analysent votre situation pour vous recommander le régime le plus avantageux."},
+        {"question": "Quels sont les avantages d'une holding patrimoniale ?", "answer": "Une holding permet de centraliser la gestion de vos participations, d'optimiser la remontée des dividendes (régime mère-fille, quasi-exonération à 95%), de faciliter la transmission d'entreprise et de protéger votre patrimoine personnel. Medeo Partners vous accompagne dans la création et la gestion de votre holding."},
+        {"question": "Que peut déduire une entreprise de ses charges ?", "answer": "Les charges déductibles incluent les salaires et charges sociales, les loyers, les frais de déplacement, les amortissements, les intérêts d'emprunt, les frais de formation, etc. Notre cabinet vous aide à identifier toutes les charges déductibles pour optimiser votre résultat fiscal."}
+    ]
+    return render_template('/conseil_optimisation.html', title='Conseils en Optimisation Fiscale et Financière', active_page='conseil_optimisation',
+        meta_description="Cabinet conseil en optimisation fiscale à Paris 8e. Holding, IS/IR, charges déductibles, CIR : Medeo Partners optimise la fiscalité de votre entreprise.",
+        faq_items=faq_items)
 
 @main.route("/auditing",defaults={'lang_code':'en'})
 @main.route("/audit",defaults={'lang_code':'fr'})
 def audit():
-    return render_template('/audit.html',title='Spécialistes en Audit Financier et Conformité',active_page='audit')
+    faq_items = [
+        {"question": "Qu'est-ce qu'un commissaire aux comptes et quand est-il obligatoire ?", "answer": "Le commissaire aux comptes (CAC) certifie les comptes annuels d'une société. Il est obligatoire dans les SA, SAS et SARL dépassant 2 des 3 seuils suivants : 4 M€ de bilan, 8 M€ de CA, 50 salariés. Medeo Partners dispose de commissaires aux comptes inscrits à la CNCC."},
+        {"question": "Quelle est la différence entre audit légal et audit contractuel ?", "answer": "L'audit légal (commissariat aux comptes) est imposé par la loi et vise à certifier les comptes. L'audit contractuel est choisi volontairement pour fiabiliser l'information financière, préparer une levée de fonds, une acquisition ou une cession d'entreprise."},
+        {"question": "Comment se déroule une mission d'audit chez Medeo Partners ?", "answer": "Notre démarche comprend : une phase de compréhension de votre activité, une évaluation des risques, des tests sur les cycles comptables clés, et la rédaction d'un rapport d'audit. Nous assurons une communication transparente tout au long de la mission."},
+        {"question": "Quel est le coût d'un commissaire aux comptes à Paris ?", "answer": "Les honoraires d'un CAC dépendent de la taille et de la complexité de la société, du nombre d'heures nécessaires et de la nature de la mission. Contactez Medeo Partners pour obtenir un devis personnalisé adapté à votre situation."}
+    ]
+    return render_template('/audit.html', title='Commissariat aux Comptes et Audit Financier à Paris', active_page='audit',
+        meta_description="Cabinet d'audit et commissariat aux comptes à Paris 8e. Audit légal, audit contractuel, certification des comptes. Medeo Partners, membres CNCC.",
+        faq_items=faq_items)
 
 @main.route("/accounting",defaults={'lang_code':'en'})
 @main.route("/expertise_comptable",defaults={'lang_code':'fr'})
 def expertise_comptable():
-    return render_template('/expertise_comptable.html',title='Spécialistes en Comptabilité et Optimisation Fiscale',active_page='expertise_comptable')
+    faq_items = [
+        {"question": "Pourquoi externaliser sa comptabilité à un cabinet expert-comptable ?", "answer": "Externaliser sa comptabilité permet de se concentrer sur son cœur de métier, de bénéficier d'une expertise à jour sur les évolutions fiscales et sociales, de sécuriser ses obligations légales et d'optimiser sa fiscalité. Medeo Partners assure une comptabilité rigoureuse pour les PME et TPE parisiennes."},
+        {"question": "Quelles sont les obligations comptables d'une entreprise en France ?", "answer": "Toute entreprise commerciale doit tenir une comptabilité, établir des comptes annuels (bilan, compte de résultat, annexe) et respecter les délais de dépôt au greffe. Les obligations varient selon la forme juridique (SAS, SARL, SA) et la taille de l'entreprise."},
+        {"question": "Comment choisir son expert-comptable à Paris ?", "answer": "Choisissez un expert-comptable inscrit à l'Ordre des Experts-Comptables, avec une expérience dans votre secteur d'activité, disponible et réactif. Medeo Partners, situé au 97 bd Malesherbes Paris 8e, accompagne des entreprises de toutes tailles avec une approche personnalisée."},
+        {"question": "Quels sont les délais pour déposer ses comptes annuels ?", "answer": "Pour une SARL : 6 mois après la clôture. Pour une SA/SAS : 6 mois après la clôture. En cas de clôture au 31/12, le dépôt doit intervenir avant le 30 juin de l'année suivante. Notre cabinet vous accompagne dans le respect de ces délais."}
+    ]
+    return render_template('/expertise_comptable.html', title='Expert-Comptable à Paris 8e — Medeo Partners', active_page='expertise_comptable',
+        meta_description="Cabinet d'expertise comptable à Paris 8e (75008). Comptabilité, fiscalité, bilan, liasses fiscales pour PME et TPE. Medeo Partners, membre de l'Ordre des Experts-Comptables.",
+        faq_items=faq_items)
 
 @main.route("/legal",defaults={'lang_code':'en'})
 @main.route("/mentions_legales",defaults={'lang_code':'fr'})

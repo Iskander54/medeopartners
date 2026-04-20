@@ -1,13 +1,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
-<meta name="robots" content="index,follow">
-
-<!-- IExplorer -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% block meta_robots %}<meta name="robots" content="index,follow">{% endblock %}
 
 <!-- Author -->
-<meta name="author" content="Bamana-Solutions">
+<meta name="author" content="Medeo Partners">
 
 <!-- SEO -->
 {% block meta_description %}
@@ -29,6 +26,10 @@
 <link rel="alternate" hreflang="fr" href="https://www.medeo-partners.com{{ request.path|replace('/en/', '/fr/')|replace('/home', '/accueil')|replace('/your_firm', '/votre_cabinet')|replace('/our_expertise', '/notre_expertise')|replace('/contactus', '/nouscontacter')|replace('/news', '/actualites') }}">
 {% endif %}
 <link rel="alternate" hreflang="x-default" href="https://www.medeo-partners.com/fr/accueil">
+
+<!-- Bing Webmaster Tools verification -->
+<!-- Remplacer la valeur content par ton code depuis https://www.bing.com/webmasters -->
+<meta name="msvalidate.01" content="REMPLACER_PAR_CODE_BING">
 
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon_io/apple-touch-icon.png') }}">

@@ -1,6 +1,7 @@
-<!-- Twitter Card Meta Tags -->
+<!-- Twitter / X Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cabinet de Comptabilité et de Commissaire aux Comptes à Paris | Medeo Partners">
-<meta name="twitter:image" content="https://www.medeo-partners.com/static/images/twitter_image.jpg">
-<meta name="twitter:description" content="Découvrez comment Medeo Partners, avec plus de 10 ans d'expertise en comptabilité et fiscalité, optimise la gestion financière et fiscale de votre société. Notre cabinet à Paris vous offre des services personnalisés pour une gestion optimale de votre entreprise.">
+<meta name="twitter:site" content="@MedeoPartners">
+<meta name="twitter:title" content="{% if og_title %}{{ og_title }}{% elif title %}Medeo Partners — {{ title }}{% else %}Cabinet de Comptabilité et Commissariat aux Comptes à Paris | Medeo Partners{% endif %}">
+<meta name="twitter:description" content="{% if meta_description %}{{ meta_description }}{% else %}Medeo Partners, expert en comptabilité et fiscalité à Paris, optimise la gestion financière de votre entreprise avec des services personnalisés.{% endif %}">
+<meta name="twitter:image" content="{% if og_image %}{{ og_image }}{% else %}https://www.medeo-partners.com/static/images/twitter_image.jpg{% endif %}">
  

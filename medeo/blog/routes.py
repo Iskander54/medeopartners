@@ -3,6 +3,7 @@ from flask_babel import _
 from medeo.models import BlogArticle, BlogCategory, BlogTag, KeywordResearch
 from medeo import db
 from medeo.blog.blog_config import get_article_metadata, get_related_articles, get_category_info
+from medeo.utils.indexnow import notify_indexnow
 import json
 from datetime import datetime
 import re
@@ -112,6 +113,14 @@ def article(slug):
                 db_article.view_count = (db_article.view_count or 0) + 1
                 from medeo import db as _db
                 _db.session.commit()
+            except Exception:
+                pass
+
+            # Notifier Bing/IndexNow si c'est la première vue (indexation fraîche)
+            try:
+                if db_article.view_count == 1:
+                    article_url = f"https://www.medeo-partners.com{url_for('blog.article', slug=slug, lang_code='fr')}"
+                    notify_indexnow(article_url)
             except Exception:
                 pass
 

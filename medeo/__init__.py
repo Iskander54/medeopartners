@@ -182,6 +182,12 @@ def create_app(config_class=Config):
     @app.route('/robots.txt')
     def robots_txt():
         return send_from_directory(app.static_folder, 'robots.txt')
+
+    @app.route('/3a8fe26a40ad3a0570b5cd15f2ca5222.txt')
+    def indexnow_key():
+        """Fichier de vérification IndexNow pour Bing/Yandex."""
+        return send_from_directory(app.static_folder, '3a8fe26a40ad3a0570b5cd15f2ca5222.txt',
+                                   mimetype='text/plain')
     
     @app.route('/android-chrome-192x192.png')
     @app.route('/android-chrome-512x512.png')

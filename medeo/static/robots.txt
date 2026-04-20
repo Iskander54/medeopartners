@@ -29,5 +29,5 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /static/admin/
 
-# Crawl-delay pour éviter de surcharger le serveur
-Crawl-delay: 1
+# Sitemap Bing
+Sitemap: https://www.medeo-partners.com/sitemap.xml
