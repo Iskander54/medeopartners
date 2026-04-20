@@ -111,6 +111,10 @@ env.bak/
 venv.bak/
 medeo/env_variables.yaml
 
+# Fichiers de configuration avec secrets (clés API, mots de passe)
+app.yaml
+app.*.yaml
+
 # Spyder project settings
 .spyderproject
 .spyproject
