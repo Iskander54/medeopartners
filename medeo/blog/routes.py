@@ -222,27 +222,33 @@ def sitemap():
 @blog.route("/api/articles")
 def api_articles():
     """API pour récupérer les articles (pour le chatbot)"""
-    articles = BlogArticle.query.filter_by(status='published').order_by(
-        BlogArticle.published_at.desc()
-    ).limit(10).all()
-    
-    return jsonify([{
-        'id': article.id,
-        'title': article.title,
-        'excerpt': article.excerpt,
-        'category': article.category.name,
-        'url': url_for('blog.article', slug=article.slug, lang_code=g.lang_code),
-        'published_at': article.published_at.isoformat() if article.published_at else None
-    } for article in articles])
+    try:
+        articles = BlogArticle.query.filter_by(status='published').order_by(
+            BlogArticle.published_at.desc()
+        ).limit(10).all()
+        return jsonify([{
+            'id': article.id,
+            'title': article.title,
+            'excerpt': article.excerpt,
+            'category': article.category.name,
+            'url': url_for('blog.article', slug=article.slug, lang_code=g.lang_code),
+            'published_at': article.published_at.isoformat() if article.published_at else None
+        } for article in articles])
+    except Exception as e:
+        current_app.logger.warning(f"Blog api_articles DB error: {e}")
+        return jsonify([]), 200
 
 @blog.route("/api/categories")
 def api_categories():
     """API pour récupérer les catégories (pour le chatbot)"""
-    categories = BlogCategory.query.all()
-    
-    return jsonify([{
-        'id': cat.id,
-        'name': cat.name,
-        'slug': cat.slug,
-        'description': cat.description
-    } for cat in categories]) 
+    try:
+        categories = BlogCategory.query.all()
+        return jsonify([{
+            'id': cat.id,
+            'name': cat.name,
+            'slug': cat.slug,
+            'description': cat.description
+        } for cat in categories])
+    except Exception as e:
+        current_app.logger.warning(f"Blog api_categories DB error: {e}")
+        return jsonify([]), 200 
