@@ -1,7 +1,234 @@
 {% extends "layout.html" %}
+
+{% block title %}
+<title>Medeo Partners – {{ '404 · Page introuvable' if g.lang_code == 'fr' else '404 · Page Not Found' }}</title>
+{% endblock %}
+
 {% block content %}
-    <div class="content-section">
-        <h1>Oops. Page Not Found (404)</h1>
-        <p>That page does not exist. Please try a different location</p>
+<section class="medeo-404-section">
+  <div class="medeo-404-inner">
+
+    <!-- Decorative SVG backdrop -->
+    <div class="medeo-404-bg-shape" aria-hidden="true">
+      <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <circle cx="500" cy="80"  r="220" fill="rgba(17,74,121,0.06)"/>
+        <circle cx="80"  cy="340" r="160" fill="rgba(17,74,121,0.04)"/>
+      </svg>
     </div>
+
+    <!-- Icon -->
+    <div class="medeo-404-icon" aria-hidden="true">
+      <svg width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="11" stroke="#114a79" stroke-width="1.5"/>
+        <path d="M9.17 14.83A4 4 0 0 0 15 9" stroke="#114a79" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="9"  cy="9.5"  r="1" fill="#114a79"/>
+        <circle cx="15" cy="9.5"  r="1" fill="#114a79"/>
+        <path d="M8 16s1.5-2 4-2 4 2 4 2" stroke="#114a79" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- 404 number -->
+    <div class="medeo-404-number" aria-label="404">404</div>
+
+    <!-- Headline -->
+    <h1 class="medeo-404-title">
+      {% if g.lang_code == 'fr' %}
+        Page introuvable
+      {% else %}
+        Page Not Found
+      {% endif %}
+    </h1>
+
+    <!-- Sub-message -->
+    <p class="medeo-404-desc">
+      {% if g.lang_code == 'fr' %}
+        La page que vous recherchez n'existe pas ou a été déplacée.<br>
+        Revenez à l'accueil ou explorez nos services.
+      {% else %}
+        The page you are looking for doesn't exist or has been moved.<br>
+        Head back home or explore our services.
+      {% endif %}
+    </p>
+
+    <!-- CTA buttons -->
+    <div class="medeo-404-actions">
+      <a href="{{ url_for('main.home', lang_code=g.lang_code) }}" class="medeo-btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/>
+        </svg>
+        {{ "Retour à l'accueil" if g.lang_code == 'fr' else 'Back to Home' }}
+      </a>
+      <a href="{{ url_for('main.nouscontacter', lang_code=g.lang_code) }}" class="medeo-btn-outline">
+        {{ 'Nous contacter' if g.lang_code == 'fr' else 'Contact Us' }}
+      </a>
+    </div>
+
+    <!-- Quick links -->
+    <div class="medeo-404-links">
+      <span class="medeo-404-links-label">
+        {{ 'Liens utiles :' if g.lang_code == 'fr' else 'Useful links:' }}
+      </span>
+      <a href="{{ url_for('main.notre_expertise', lang_code=g.lang_code) }}">
+        {{ 'Notre expertise' if g.lang_code == 'fr' else 'Our Expertise' }}
+      </a>
+      <a href="{{ url_for('main.nos_services', lang_code=g.lang_code) }}">
+        {{ 'Nos services' if g.lang_code == 'fr' else 'Our Services' }}
+      </a>
+      <a href="{{ url_for('blog.index', lang_code=g.lang_code) }}">
+        {{ 'Actualités' if g.lang_code == 'fr' else 'News' }}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ── 404 Page ───────────────────────────────────────────────── */
+.medeo-404-section {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 60px;
+  position: relative;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.medeo-404-bg-shape {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.medeo-404-bg-shape svg {
+  width: 100%;
+  height: 100%;
+}
+
+.medeo-404-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.medeo-404-icon {
+  margin-bottom: 20px;
+  animation: medeo404-float 3.5s ease-in-out infinite;
+}
+
+@keyframes medeo404-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.medeo-404-number {
+  font-size: clamp(7rem, 20vw, 10rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -4px;
+  background: linear-gradient(135deg, #114a79 30%, #1a6fad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.medeo-404-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: #0f2d4a;
+  margin-bottom: 16px;
+}
+
+.medeo-404-desc {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* ── Buttons ── */
+.medeo-404-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.medeo-btn-primary,
+.medeo-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.medeo-btn-primary {
+  background: #114a79;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(17, 74, 121, 0.30);
+}
+.medeo-btn-primary:hover {
+  background: #0d3a5f;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(17, 74, 121, 0.40);
+  text-decoration: none;
+}
+
+.medeo-btn-outline {
+  border: 2px solid #114a79;
+  color: #114a79;
+  background: transparent;
+}
+.medeo-btn-outline:hover {
+  background: #114a79;
+  color: #fff;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ── Quick links ── */
+.medeo-404-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 0.875rem;
+}
+
+.medeo-404-links-label {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.medeo-404-links a {
+  color: #114a79;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+.medeo-404-links a:hover {
+  border-bottom-color: #114a79;
+  text-decoration: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .medeo-404-actions { flex-direction: column; align-items: center; }
+  .medeo-btn-primary,
+  .medeo-btn-outline  { width: 100%; justify-content: center; }
+}
+</style>
 {% endblock content %}

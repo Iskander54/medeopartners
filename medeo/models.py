@@ -1,5 +1,5 @@
 from datetime import datetime
-# from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from itsdangerous import URLSafeTimedSerializer as Serializer
 from flask import current_app
 from medeo import db, login_manager
 from flask_login import UserMixin
@@ -21,15 +21,15 @@ class User(db.Model, UserMixin):
     taxreturns = db.relationship('Taxreturn', backref='user',lazy=True)
 
     def get_reset_token(self, expires_sec=1800):
-        s = Serializer(current_app.config['SECRET_KEY'], expires_sec)
-        return s.dumps({'user_id': self.id}).decode('utf-8')
+        s = Serializer(current_app.config['SECRET_KEY'])
+        return s.dumps({'user_id': self.id})
 
     @staticmethod
-    def verify_reset_token(token):
+    def verify_reset_token(token, expires_sec=1800):
         s = Serializer(current_app.config['SECRET_KEY'])
         try:
-            user_id = s.loads(token)['user_id']
-        except:
+            user_id = s.loads(token, max_age=expires_sec)['user_id']
+        except Exception:
             return None
         return User.query.get(user_id)
 
@@ -145,4 +145,44 @@ class ContentCalendar(db.Model):
     planned_date = db.Column(db.Date)
     status = db.Column(db.String(20), default='planned')  # planned, in_progress, published
     assigned_to = db.Column(db.Integer, db.ForeignKey('user.id'))
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+# ===== MODÈLES CHATBOT — PERSISTANCE =====
+
+class ChatbotSession(db.Model):
+    """Session de conversation du chatbot"""
+    __tablename__ = 'chatbot_session'
+    id = db.Column(db.Integer, primary_key=True)
+    session_identifier = db.Column(db.String(64), unique=True, nullable=False, index=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
+    lang_code = db.Column(db.String(5), default='fr')
+    ip_address = db.Column(db.String(45))
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    last_activity = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    messages = db.relationship('ChatbotMessage', backref='session', lazy=True,
+                               cascade='all, delete-orphan')
+    usage_logs = db.relationship('ChatbotUsageLog', backref='session', lazy=True,
+                                 cascade='all, delete-orphan')
+
+
+class ChatbotMessage(db.Model):
+    """Message individuel d'une session chatbot"""
+    __tablename__ = 'chatbot_message'
+    id = db.Column(db.Integer, primary_key=True)
+    session_id = db.Column(db.Integer, db.ForeignKey('chatbot_session.id'), nullable=False)
+    role = db.Column(db.String(10), nullable=False)   # 'user' | 'assistant'
+    content = db.Column(db.Text, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+class ChatbotUsageLog(db.Model):
+    """Log de consommation tokens par requête"""
+    __tablename__ = 'chatbot_usage_log'
+    id = db.Column(db.Integer, primary_key=True)
+    session_id = db.Column(db.Integer, db.ForeignKey('chatbot_session.id'), nullable=True)
+    provider = db.Column(db.String(20))   # groq | openai | gemini
+    model = db.Column(db.String(60))
+    prompt_tokens = db.Column(db.Integer, default=0)
+    completion_tokens = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)

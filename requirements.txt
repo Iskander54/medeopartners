@@ -1,56 +1,115 @@
-wheel>=0.37.1
-bcrypt>=4.0.0
-chardet>=3.0.4
-charset-normalizer>=2.0.10
-click>=8.1.3
-decorator>=4.4.1
-defusedxml>=0.6.0
-distlib>=0.3.5
-dnspython>=2.2.1
-email-validator>=1.3.0
-entrypoints>=0.3
-filelock>=3.8.0
-Flask>=2.2.2
-Flask-Bcrypt>=1.0.1
-Flask-Login>=0.6.2
-Flask-Mail>=0.9.1
-Flask-SQLAlchemy>=2.5.1
-Flask-WTF>=1.0.1
-itsdangerous>=2.0.1
-jsonschema>=3.2.0
-multiaddr>=0.0.9
-multidict>=6.0.2
-notebook>=6.0.3
-Pillow>=9.5.0
-platformdirs>=2.5.2
-PyMySQL>=1.0.2
-mysqlclient>=2.0.0
-requests>=2.22.0
-rlp>=2.0.1
-SQLAlchemy>=1.4.41
-testpath>=0.4.4
-typing-extensions>=4.5.0
-urllib3>=1.25.8
-virtualenv>=20.16.3
-wcwidth>=0.1.8
-webencodings>=0.5.1
-websockets>=9.1
-Werkzeug>=2.2.2
-WTForms>=3.0.1
-zipp>=2.1.0
-gunicorn>=19.3.0
-python-dotenv>=0.21.1
-flask-babel>=3.1.0
-# flask-babelex>=0.9.4  # Commenté car conflit avec flask-babel
-flask-sslify>=0.1.5
-flask_sitemap>=0.4.0
-openai>=1.3.0
-python-slugify>=8.0.1
-beautifulsoup4>=4.12.2
-lxml>=4.9.3
+# ============================================================
+# requirements.txt — versions épinglées depuis venv local
+# Généré le 2026-04-20 pour résoudre les conflits Cloud Build
+# ============================================================
 
-# Cache et Performance
+# Flask & extensions
+Flask==3.1.3
+Werkzeug==3.1.8
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+click==8.3.2
+blinker==1.9.0
+itsdangerous==2.2.0
+Flask-Login==0.6.3
+Flask-Mail==0.10.0
+Flask-Bcrypt==1.0.1
+Flask-SQLAlchemy==3.1.1
+Flask-WTF==1.2.2
 Flask-Caching==2.1.0
+Flask-SSLify==0.1.5
+Flask-Sitemap==0.4.0
+flask-babel==4.0.0
+WTForms==3.2.1
+cachelib==0.9.0
 
-# Analytics et Tracking
+# Base de données
+SQLAlchemy==2.0.49
+PyMySQL==1.1.2
+greenlet==3.2.2
+
+# Serveur
+gunicorn==25.3.0
+
+# Auth & sécurité
+bcrypt==5.0.0
+cryptography==46.0.7
+pyasn1==0.6.3
+pyasn1_modules==0.4.2
+
+# HTTP & réseau
+requests==2.33.1
+urllib3==2.6.3
+certifi==2026.2.25
+charset-normalizer==3.4.7
+idna==3.11
+httpx==0.28.1
+httpcore==1.0.9
+h11==0.16.0
+anyio==4.13.0
+sniffio==1.3.1
+
+# Groq LLM
+groq==1.1.2
+openai==2.31.0
+pydantic==2.13.0
+pydantic_core==2.46.0
+annotated-types==0.7.0
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+jiter==0.14.0
+distro==1.9.0
+tqdm==4.67.3
+
+# Monitoring (optionnel — désactivé si clés manquantes)
+langfuse==2.60.10
+backoff==2.2.1
+wrapt==1.17.3
+mmh3==5.2.1
+morphys==1.0
+
+# Google Analytics
 google-analytics-data==0.18.0
+google-api-core==2.25.2
+google-auth==2.49.2
+googleapis-common-protos==1.74.0
+grpcio==1.80.0
+grpcio-status==1.62.3
+proto-plus==1.27.2
+protobuf==4.25.9
+
+# Formulaires & validation
+email-validator==2.3.0
+dnspython==2.8.0
+WTForms==3.2.1
+
+# Templates & rendu
+pillow==12.2.0
+beautifulsoup4==4.14.3
+lxml==6.0.4
+soupsieve==2.8.3
+python-slugify==8.0.4
+text-unidecode==1.3
+babel==2.18.0
+pytz==2026.1.post1
+tzdata==2026.1
+
+# Utilitaires
+python-dotenv==1.2.2
+python-dateutil==2.9.0.post0
+six==1.17.0
+decorator==5.2.1
+defusedxml==0.7.1
+entrypoints==0.4
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+rpds-py==0.30.0
+attrs==26.1.0
+packaging==24.2
+importlib_metadata==9.0.0
+zipp==3.23.0
+multidict==6.7.1
+websockets==16.0
+lark==1.3.1
+arrow==1.4.0

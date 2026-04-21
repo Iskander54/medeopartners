@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mesoutils — Agent IA Interne | Medeo Partners</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <!-- Marked.js for Markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #114a79;
+      --primary-dark: #0d3a5e;
+      --primary-light: #e8f1f8;
+      --accent: #2d8bba;
+    }
+
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f4f8; }
+
+    .sidebar { width: 280px; min-width: 280px; }
+
+    #chat-messages {
+      height: calc(100vh - 280px);
+      min-height: 300px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    .msg-assistant { background: #ffffff; border: 1px solid #e2e8f0; }
+    .msg-user      { background: var(--primary); color: #fff; }
+    .msg-system    { background: #fef3c7; border: 1px solid #fde68a; }
+
+    .tool-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: #e0f2fe; color: #0369a1;
+      border-radius: 9999px; padding: 2px 10px;
+      font-size: 0.72rem; font-weight: 600;
+    }
+
+    /* Streaming cursor */
+    .cursor-blink::after {
+      content: '▌';
+      animation: blink 0.7s steps(1) infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* Markdown styles inside messages */
+    .prose-msg h1, .prose-msg h2, .prose-msg h3 {
+      font-weight: 700; margin-top: 0.75rem; margin-bottom: 0.25rem;
+    }
+    .prose-msg h1 { font-size: 1.1rem; }
+    .prose-msg h2 { font-size: 1rem; }
+    .prose-msg h3 { font-size: 0.9rem; }
+    .prose-msg p  { margin-bottom: 0.5rem; line-height: 1.6; }
+    .prose-msg ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 0.5rem; }
+    .prose-msg ol { list-style: decimal; padding-left: 1.25rem; margin-bottom: 0.5rem; }
+    .prose-msg li { margin-bottom: 0.2rem; }
+    .prose-msg code {
+      background: #f1f5f9; border-radius: 3px;
+      padding: 1px 5px; font-size: 0.85em; font-family: monospace;
+    }
+    .prose-msg pre {
+      background: #1e293b; color: #e2e8f0;
+      border-radius: 6px; padding: 0.75rem 1rem;
+      overflow-x: auto; margin: 0.5rem 0;
+      font-size: 0.82rem;
+    }
+    .prose-msg pre code { background: none; padding: 0; color: inherit; }
+    .prose-msg strong { font-weight: 700; }
+    .prose-msg blockquote {
+      border-left: 3px solid #94a3b8;
+      padding-left: 0.75rem; color: #64748b;
+      margin: 0.5rem 0;
+    }
+    .prose-msg table { border-collapse: collapse; width: 100%; margin: 0.5rem 0; }
+    .prose-msg th, .prose-msg td {
+      border: 1px solid #e2e8f0; padding: 0.35rem 0.6rem;
+      font-size: 0.85rem;
+    }
+    .prose-msg th { background: #f8fafc; font-weight: 600; }
+
+    /* Scrollbar */
+    #chat-messages::-webkit-scrollbar { width: 5px; }
+    #chat-messages::-webkit-scrollbar-track { background: #f1f5f9; }
+    #chat-messages::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+
+    /* Status dot */
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .status-ok   { background: #22c55e; }
+    .status-err  { background: #ef4444; }
+    .status-warn { background: #f59e0b; }
+
+    /* Tool activity item */
+    .tool-item {
+      border-left: 3px solid #3b82f6;
+      background: #eff6ff;
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* Quick prompt button */
+    .quick-prompt {
+      cursor: pointer; transition: background 0.15s;
+    }
+    .quick-prompt:hover { background: #dbeafe; border-color: #93c5fd; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOP BAR
+     ============================================================ -->
+<div class="flex items-center justify-between px-5 py-3 shadow-sm"
+     style="background: var(--primary);">
+  <div class="flex items-center gap-3">
+    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+      <i class="fas fa-robot text-sm" style="color: var(--primary);"></i>
+    </div>
+    <div>
+      <p class="text-white font-bold text-sm leading-tight">Mesoutils — Agent IA Interne</p>
+      <p class="text-blue-200 text-xs">Medeo Partners · Accès restreint</p>
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <!-- Groq status -->
+    <div class="flex items-center gap-2">
+      <div class="status-dot {% if groq_status.status == 'ok' %}status-ok{% else %}status-err{% endif %}"></div>
+      <span class="text-xs text-blue-100">
+        Groq
+        {% if groq_status.status == 'ok' %}
+          <span class="text-green-300">(configuré)</span>
+        {% else %}
+          <span class="text-red-300">(non configuré)</span>
+        {% endif %}
+      </span>
+    </div>
+    <!-- Pappers status -->
+    <div class="flex items-center gap-2">
+      <div class="status-dot {% if pappers_configured %}status-ok{% else %}status-warn{% endif %}"></div>
+      <span class="text-xs text-blue-100">
+        Pappers {% if not pappers_configured %}<span class="text-yellow-300">(non configuré)</span>{% endif %}
+      </span>
+    </div>
+    <!-- Model badge -->
+    <span class="text-xs bg-blue-800 text-blue-100 px-2 py-1 rounded">
+      <i class="fas fa-microchip mr-1"></i>{{ groq_model }}
+    </span>
+    <!-- Reset button -->
+    <button id="btn-reset" title="Nouvelle conversation"
+            class="text-blue-200 hover:text-white transition-colors text-sm">
+      <i class="fas fa-rotate-right"></i> Réinitialiser
+    </button>
+    <!-- Logout -->
+    <form method="POST" action="{{ url_for('mesoutils.logout') }}" class="inline">
+      <button type="submit" title="Se déconnecter"
+              class="text-blue-300 hover:text-white transition-colors text-sm ml-2">
+        <i class="fas fa-right-from-bracket"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+{% if groq_status.status != 'ok' %}
+<div class="bg-red-50 border-b border-red-200 px-5 py-2 flex items-center gap-2">
+  <i class="fas fa-triangle-exclamation text-red-500 text-sm"></i>
+  <p class="text-red-700 text-sm">
+    <strong>Groq non configuré :</strong> {{ groq_status.message }}
+    — Ajoutez <code class="bg-red-100 px-1 rounded">GROQ_API_KEY=gsk_...</code>
+    dans votre fichier <code class="bg-red-100 px-1 rounded">.env</code> ou <code class="bg-red-100 px-1 rounded">app.yaml</code>.
+  </p>
+</div>
+{% endif %}
+
+{% if not pappers_configured %}
+<div class="bg-yellow-50 border-b border-yellow-200 px-5 py-2 flex items-center gap-2">
+  <i class="fas fa-key text-yellow-500 text-sm"></i>
+  <p class="text-yellow-700 text-sm">
+    <strong>Pappers non configuré :</strong> Ajoutez <code class="bg-yellow-100 px-1 rounded">PAPPERS_API_KEY=votre_clé</code>
+    dans votre fichier <code class="bg-yellow-100 px-1 rounded">.env</code>.
+    Clé gratuite disponible sur <a href="https://www.pappers.fr/api" target="_blank" class="underline">pappers.fr/api</a>.
+  </p>
+</div>
+{% endif %}
+
+
+<!-- ============================================================
+     MAIN LAYOUT
+     ============================================================ -->
+<div class="flex h-screen overflow-hidden" style="height: calc(100vh - 56px);">
+
+  <!-- -------- LEFT SIDEBAR -------- -->
+  <aside class="sidebar hidden lg:flex flex-col bg-white border-r border-gray-200 overflow-y-auto">
+
+    <!-- Quick prompts -->
+    <div class="p-4 border-b border-gray-100">
+      <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+        <i class="fas fa-bolt mr-1"></i>Prompts rapides
+      </p>
+      <div class="space-y-2" id="quick-prompts">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- Tools reference -->
+    <div class="p-4 border-b border-gray-100">
+      <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+        <i class="fas fa-toolbox mr-1"></i>Outils disponibles
+      </p>
+      <div class="space-y-2 text-xs">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mt-1">Entreprises</p>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-building text-blue-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Pappers — Recherche</p><p class="text-gray-500">Nom, SIREN, SIRET + n° TVA</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-id-card text-blue-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Pappers — Fiche complète</p><p class="text-gray-500">Dirigeants, capital, bilans</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-newspaper text-orange-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">BODACC — Annonces légales</p><p class="text-gray-500">Liquidations, jugements, radiations</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-globe text-blue-400 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">VIES — Validation TVA EU</p><p class="text-gray-500">Vérif. n° TVA intracommunautaire</p></div>
+        </div>
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mt-2">Calculs fiscaux & sociaux</p>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-calculator text-green-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Calcul TVA</p><p class="text-gray-500">HT↔TTC, taux 20/10/5.5/2.1%</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-percent text-green-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Calcul IS</p><p class="text-gray-500">Barème PME & taux normal</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-user-tie text-indigo-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Cotisations TNS</p><p class="text-gray-500">SSI — gérant maj. SARL / EI</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-triangle-exclamation text-red-400 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Pénalités de retard B2B</p><p class="text-gray-500">Art. L441-10 C.com. + forfait 40€</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-table-list text-teal-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Barèmes 2025/2026</p><p class="text-gray-500">PASS, SMIC, micro, IR, taux légaux</p></div>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-calendar-check text-purple-500 mt-0.5 w-4 flex-shrink-0"></i>
+          <div><p class="font-medium text-gray-700">Échéances fiscales</p><p class="text-gray-500">TVA, IS, DSN, CFE…</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tool activity log -->
+    <div class="p-4 flex-1">
+      <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+        <i class="fas fa-activity mr-1"></i>Activité des outils
+      </p>
+      <div id="tool-activity-log" class="space-y-2 text-xs">
+        <p class="text-gray-400 italic">Les appels aux outils apparaîtront ici.</p>
+      </div>
+    </div>
+
+    <!-- Monitoring link -->
+    {% if langfuse_configured %}
+    <div class="p-4 border-t border-gray-100">
+      <a href="{{ langfuse_host }}" target="_blank"
+         class="flex items-center gap-2 text-xs text-indigo-600 hover:text-indigo-800">
+        <i class="fas fa-chart-line"></i>
+        Monitoring Langfuse
+        <i class="fas fa-external-link text-xs"></i>
+      </a>
+    </div>
+    {% endif %}
+  </aside>
+
+
+  <!-- -------- MAIN CHAT AREA -------- -->
+  <main class="flex-1 flex flex-col overflow-hidden">
+
+    <!-- Messages -->
+    <div id="chat-messages" class="flex-1 overflow-y-auto p-5 space-y-4">
+      <!-- Welcome message -->
+      <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm"
+             style="background: var(--primary);">
+          <i class="fas fa-robot text-xs"></i>
+        </div>
+        <div class="msg-assistant rounded-xl p-4 max-w-2xl shadow-sm">
+          <div class="prose-msg text-gray-800 text-sm">
+            <p class="font-semibold text-base mb-2">Bonjour ! Je suis votre assistant IA interne.</p>
+            <p>Je peux vous aider à :</p>
+            <ul>
+              <li><strong>Rechercher une entreprise</strong> sur Pappers (SIREN, dirigeants, bilans publics)</li>
+              <li><strong>Calculer</strong> la TVA, l'IS estimé</li>
+              <li><strong>Consulter les échéances</strong> fiscales et sociales</li>
+              <li>Répondre à vos <strong>questions comptables et fiscales</strong></li>
+            </ul>
+            <p class="mt-2 text-xs text-gray-500">
+              <i class="fas fa-lock mr-1"></i>Outil interne — accès restreint aux collaborateurs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="bg-white border-t border-gray-200 p-4">
+      <form id="chat-form" class="flex gap-3 items-end">
+        <div class="flex-1 relative">
+          <textarea id="message-input"
+                    rows="2"
+                    placeholder="Posez votre question… (Ex: recherche info sur SIREN 123456789, calcule TVA sur 5000€ HT, quelles sont les prochaines échéances IS ?)"
+                    class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-xl focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none resize-none text-sm transition"
+                    style="max-height: 120px;"
+          ></textarea>
+          <span class="absolute bottom-3 right-3 text-xs text-gray-400">↵ envoyer</span>
+        </div>
+        <button type="submit" id="submit-btn"
+                class="flex items-center gap-2 px-5 py-3 rounded-xl text-white font-medium text-sm transition-all"
+                style="background: var(--primary);"
+                onmouseover="this.style.background='var(--primary-dark)'"
+                onmouseout="this.style.background='var(--primary)'">
+          <i class="fas fa-paper-plane"></i>
+          <span id="btn-label">Envoyer</span>
+        </button>
+      </form>
+      <p class="text-xs text-gray-400 mt-2 text-center">
+        Réponses générées par Groq ({{ groq_model }}) — À titre indicatif, valider avec les sources officielles.
+      </p>
+    </div>
+  </main>
+
+</div><!-- end main layout -->
+
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+// ── Configuration ────────────────────────────────────────────────────────────
+// Sur GAE Standard, on utilise le mode synchrone (timeout 60s côté proxy).
+// En local ou GAE Flexible, le streaming SSE est activé.
+const USE_SYNC_MODE    = {{ 'true' if use_sync_mode else 'false' }};
+const STREAM_ENDPOINT  = '{{ url_for("mesoutils.stream") }}';
+const CHAT_ENDPOINT    = '{{ url_for("mesoutils.chat") }}';
+const RESET_ENDPOINT   = '{{ url_for("mesoutils.reset") }}';
+
+const QUICK_PROMPTS = [
+  { icon: 'fa-building',            text: 'Recherche entreprise SIREN 552032534' },
+  { icon: 'fa-id-card',             text: 'Fiche complète : Apple (SIREN 410155965)' },
+  { icon: 'fa-newspaper',           text: 'Annonces BODACC pour SIREN 552032534' },
+  { icon: 'fa-globe',               text: 'Valide le numéro TVA DE811156472 (Allemagne)' },
+  { icon: 'fa-calculator',          text: 'Calcule TVA 20% sur 8 500 € HT' },
+  { icon: 'fa-percent',             text: 'Calcule IS PME pour résultat fiscal 85 000 €' },
+  { icon: 'fa-user-tie',            text: 'Cotisations TNS pour un revenu net de 60 000 €' },
+  { icon: 'fa-triangle-exclamation', text: 'Pénalités de retard : facture 12 000€ HT échue le 01/02/2025, payée le 15/04/2025' },
+  { icon: 'fa-table-list',          text: 'Quels sont les barèmes fiscaux et sociaux 2025 ?' },
+  { icon: 'fa-calendar',            text: 'Prochaines échéances pour une SAS au réel normal' },
+];
+
+// ── DOM refs ─────────────────────────────────────────────────────────────────
+const chatMessages  = document.getElementById('chat-messages');
+const chatForm      = document.getElementById('chat-form');
+const messageInput  = document.getElementById('message-input');
+const submitBtn     = document.getElementById('submit-btn');
+const btnLabel      = document.getElementById('btn-label');
+const toolActivity  = document.getElementById('tool-activity-log');
+const btnReset      = document.getElementById('btn-reset');
+
+let isStreaming = false;
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  renderQuickPrompts();
+
+  // Enter = envoyer, Shift+Enter = retour à la ligne
+  messageInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      chatForm.dispatchEvent(new Event('submit'));
+    }
+  });
+  // Auto-resize textarea
+  messageInput.addEventListener('input', () => {
+    messageInput.style.height = 'auto';
+    messageInput.style.height = Math.min(messageInput.scrollHeight, 120) + 'px';
+  });
+});
+
+// ── Quick prompts ─────────────────────────────────────────────────────────────
+function renderQuickPrompts() {
+  const container = document.getElementById('quick-prompts');
+  container.innerHTML = '';
+  QUICK_PROMPTS.forEach(p => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'quick-prompt w-full text-left text-xs px-3 py-2 border border-gray-200 rounded-lg text-gray-700 flex items-center gap-2';
+    btn.innerHTML = `<i class="fas ${p.icon} text-blue-400 w-4 flex-shrink-0"></i><span>${escapeHtml(p.text)}</span>`;
+    btn.addEventListener('click', () => setPrompt(p.text));
+    container.appendChild(btn);
+  });
+}
+
+function setPrompt(text) {
+  messageInput.value = text;
+  messageInput.focus();
+  messageInput.dispatchEvent(new Event('input'));
+}
+
+// ── Submit handler ────────────────────────────────────────────────────────────
+chatForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (isStreaming) return;
+
+  const message = messageInput.value.trim();
+  if (!message) return;
+
+  messageInput.value = '';
+  messageInput.style.height = 'auto';
+  appendUserMessage(message);
+  setLoading(true);
+
+  if (USE_SYNC_MODE) {
+    await sendSync(message);
+  } else {
+    await sendStream(message);
+  }
+});
+
+// ── Mode synchrone (GAE Standard) ─────────────────────────────
+async function sendSync(message) {
+  const assistantBubble = appendAssistantMessage('', false);
+  const el = assistantBubble.querySelector('.prose-msg');
+  if (el) el.innerHTML = '<span class="text-gray-400 animate-pulse">Traitement en cours…</span>';
+
+  try {
+    const response = await fetch(CHAT_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    });
+    const data = await response.json();
+
+    if (!response.ok || data.error) {
+      finalizeAssistantBubble(assistantBubble, `**Erreur :** ${data.error || response.statusText}`, [], true);
+      return;
+    }
+
+    // Log tool calls
+    const toolsUsed = (data.tool_calls_log || []).map(tc => {
+      const logItem = addToolActivityItem(tc.tool, tc.arguments, tc.result);
+      updateToolActivityItem(logItem, _summarize(tc.tool, tc.result));
+      return { tool: tc.tool, args: tc.arguments, resultSummary: _summarize(tc.tool, tc.result), logItem };
+    });
+
+    finalizeAssistantBubble(assistantBubble, data.response || '_Aucune réponse._', toolsUsed);
+  } catch (err) {
+    finalizeAssistantBubble(assistantBubble, `**Erreur :** ${err.message}`, [], true);
+  } finally {
+    setLoading(false);
+  }
+}
+
+// ── Mode streaming SSE (local / GAE Flexible) ──────────────────
+async function sendStream(message) {
+  const assistantBubble = appendAssistantMessage('', true);
+  const toolsUsed = [];
+
+  try {
+    const response = await fetch(STREAM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${await response.text()}`);
+    }
+
+    const reader  = response.body.getReader();
+    const decoder = new TextDecoder();
+    let   buffer  = '';
+    let   content = '';
+
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop();
+
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue;
+        const raw = line.slice(6).trim();
+        if (!raw) continue;
+        try {
+          const event = JSON.parse(raw);
+          handleSSEEvent(event, assistantBubble, toolsUsed, (t) => { content += t; });
+        } catch { /* JSON malformé, on ignore */ }
+      }
+    }
+
+    finalizeAssistantBubble(assistantBubble, content, toolsUsed);
+  } catch (err) {
+    console.error('Stream error:', err);
+    finalizeAssistantBubble(assistantBubble, `**Erreur :** ${err.message}`, toolsUsed, true);
+  } finally {
+    setLoading(false);
+  }
+}
+
+// ── Helper résumé résultat outil ───────────────────────────────
+function _summarize(toolName, result) {
+  if (!result || result.erreur) return result?.erreur || 'Erreur';
+  if (toolName === 'pappers_rechercher_entreprise') return `${result.total || 0} résultat(s)`;
+  if (toolName === 'pappers_fiche_entreprise') return result.denomination || result.siren;
+  if (toolName === 'pappers_dirigeants') return `${(result.dirigeants||[]).length} dirigeant(s)`;
+  if (toolName === 'pappers_comptes_annuels') return `${(result.finances||[]).length} exercice(s)`;
+  if (toolName === 'calculer_tva') return `TVA: ${result.montant_tva}€`;
+  if (toolName === 'calculer_is') return `IS: ${result.is_estime}€`;
+    if (toolName === 'bodacc_annonces') return `${(result.annonces||[]).length} annonce(s) BODACC`;
+    if (toolName === 'valider_tva_vies') return result.valide ? `✓ Valide — ${result.nom_entreprise||''}` : '✗ Invalide';
+    if (toolName === 'baremes_fiscaux_sociaux') return 'Barèmes 2025/2026';
+    if (toolName === 'calculer_cotisations_tns') return `Total cotisations : ${result.total_cotisations}€`;
+    if (toolName === 'calculer_penalites_retard') return `${result.jours_retard}j retard — ${result.total_reclamable}€ réclamable`;
+    if (toolName === 'calculer_tva_intracommunautaire') return result.numero_tva_intracommunautaire || 'Calculé';
+    if (toolName === 'info_date_echeance') return `${(result.prochaines_echeances||[]).length} échéances`;
+  return 'OK';
+}
+
+// ── SSE event handler ─────────────────────────────────────────────────────────
+function handleSSEEvent(event, bubble, toolsUsed, onToken) {
+  switch (event.type) {
+    case 'token': {
+      onToken(event.content);
+      // Live-update bubble (raw text for now, markdown on finalize)
+      const el = bubble.querySelector('.prose-msg');
+      if (el) el.textContent = el.textContent + event.content;
+      scrollToBottom();
+      break;
+    }
+    case 'tool_start': {
+      const logItem = addToolActivityItem(event.tool, event.arguments, null);
+      toolsUsed.push({ tool: event.tool, args: event.arguments, logItem });
+      addToolCallBubble(event.tool, event.arguments);
+      break;
+    }
+    case 'tool_end': {
+      const item = toolsUsed.find(t => t.tool === event.tool && !t.resultSummary);
+      if (item) {
+        item.resultSummary = event.result_summary;
+        updateToolActivityItem(item.logItem, event.result_summary);
+      }
+      break;
+    }
+    case 'done': {
+      break;
+    }
+    case 'error': {
+      const el = bubble.querySelector('.prose-msg');
+      if (el) el.innerHTML = `<span class="text-red-600"><i class="fas fa-circle-exclamation mr-1"></i>${event.message}</span>`;
+      break;
+    }
+  }
+}
+
+// ── Message DOM helpers ────────────────────────────────────────────────────────
+function appendUserMessage(text) {
+  const div = document.createElement('div');
+  div.className = 'flex items-start gap-3 justify-end';
+  div.innerHTML = `
+    <div class="msg-user rounded-xl px-4 py-3 max-w-xl shadow-sm text-sm">
+      <p>${escapeHtml(text)}</p>
+    </div>
+    <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 text-gray-600 text-xs">
+      <i class="fas fa-user"></i>
+    </div>`;
+  chatMessages.appendChild(div);
+  scrollToBottom();
+}
+
+function appendAssistantMessage(text, streaming = false) {
+  const div = document.createElement('div');
+  div.className = 'flex items-start gap-3';
+  div.innerHTML = `
+    <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs"
+         style="background: var(--primary);">
+      <i class="fas fa-robot"></i>
+    </div>
+    <div class="msg-assistant rounded-xl p-4 max-w-3xl shadow-sm flex-1">
+      <div class="prose-msg text-gray-800 text-sm ${streaming ? 'cursor-blink' : ''}"></div>
+    </div>`;
+  chatMessages.appendChild(div);
+  scrollToBottom();
+  return div;
+}
+
+function finalizeAssistantBubble(div, content, toolsUsed, isError = false) {
+  const el = div.querySelector('.prose-msg');
+  if (!el) return;
+  el.classList.remove('cursor-blink');
+  if (isError) {
+    el.innerHTML = marked.parse(content);
+    el.querySelector('p')?.classList.add('text-red-600');
+  } else {
+    el.innerHTML = marked.parse(content || '_Aucune réponse reçue._');
+  }
+  // Add tools summary below if any
+  if (toolsUsed.length > 0) {
+    const badge = document.createElement('div');
+    badge.className = 'mt-3 flex flex-wrap gap-2';
+    badge.innerHTML = toolsUsed.map(t => `
+      <span class="tool-badge">
+        <i class="fas fa-gear text-xs"></i>${getToolLabel(t.tool)}
+        ${t.resultSummary ? `<span class="opacity-70">· ${t.resultSummary}</span>` : ''}
+      </span>`).join('');
+    div.querySelector('.msg-assistant').appendChild(badge);
+  }
+  scrollToBottom();
+}
+
+function addToolCallBubble(toolName, args) {
+  const div = document.createElement('div');
+  div.className = 'flex items-center gap-2 ml-11 my-1';
+  div.innerHTML = `
+    <div class="flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-lg px-3 py-1.5 text-xs text-blue-700">
+      <i class="fas fa-gear animate-spin text-blue-400" style="animation-duration:2s"></i>
+      <span>Appel outil : <strong>${getToolLabel(toolName)}</strong></span>
+      <span class="text-blue-400">${getToolArgsPreview(toolName, args)}</span>
+    </div>`;
+  chatMessages.appendChild(div);
+  scrollToBottom();
+}
+
+// ── Tool activity log helpers ─────────────────────────────────────────────────
+function addToolActivityItem(toolName, args, result) {
+  // Remove placeholder
+  const placeholder = toolActivity.querySelector('.text-gray-400');
+  if (placeholder) placeholder.remove();
+
+  const div = document.createElement('div');
+  div.className = 'tool-item px-3 py-2 rounded-r-lg';
+  div.innerHTML = `
+    <div class="flex items-center gap-2 mb-1">
+      <i class="fas fa-gear text-blue-400 animate-spin" style="animation-duration:2s"></i>
+      <span class="font-semibold text-gray-700">${getToolLabel(toolName)}</span>
+    </div>
+    <p class="text-gray-500 truncate">${getToolArgsPreview(toolName, args)}</p>
+    <p class="result-text text-blue-600 mt-1 hidden"></p>`;
+  toolActivity.appendChild(div);
+  toolActivity.scrollTop = toolActivity.scrollHeight;
+  return div;
+}
+
+function updateToolActivityItem(div, resultSummary) {
+  if (!div) return;
+  div.querySelector('i')?.classList.remove('animate-spin');
+  div.querySelector('i')?.classList.replace('text-blue-400', 'text-green-500');
+  div.querySelector('i')?.classList.replace('fa-gear', 'fa-check');
+  const resEl = div.querySelector('.result-text');
+  if (resEl) { resEl.textContent = resultSummary; resEl.classList.remove('hidden'); }
+}
+
+// ── UI helpers ────────────────────────────────────────────────────────────────
+function setLoading(on) {
+  isStreaming = on;
+  submitBtn.disabled = on;
+  messageInput.disabled = on;
+  if (on) {
+    btnLabel.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i>En cours…';
+    submitBtn.style.opacity = '0.7';
+  } else {
+    btnLabel.innerHTML = 'Envoyer';
+    submitBtn.style.opacity = '1';
+  }
+}
+
+function scrollToBottom() {
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function escapeHtml(text) {
+  return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function getToolLabel(name) {
+  const labels = {
+    'pappers_rechercher_entreprise':    'Pappers · Recherche',
+    'pappers_fiche_entreprise':         'Pappers · Fiche',
+    'pappers_dirigeants':               'Pappers · Dirigeants',
+    'pappers_comptes_annuels':          'Pappers · Comptes',
+    'bodacc_annonces':                  'BODACC · Annonces légales',
+    'valider_tva_vies':                 'VIES · Validation TVA EU',
+    'baremes_fiscaux_sociaux':          'Barèmes fiscaux & sociaux',
+    'calculer_cotisations_tns':         'Cotisations TNS',
+    'calculer_penalites_retard':        'Pénalités de retard',
+    'calculer_tva':                     'Calcul TVA',
+    'calculer_is':                      'Calcul IS',
+    'calculer_tva_intracommunautaire':  'TVA Intracommunautaire',
+    'info_date_echeance':               'Échéances fiscales',
+  };
+  return labels[name] || name;
+}
+
+function getToolArgsPreview(name, args) {
+  if (!args) return '';
+  if (args.q)                return `"${String(args.q).substring(0,30)}"`;
+  if (args.siren)            return `SIREN ${args.siren}`;
+  if (args.montant != null)  return `${args.montant}€ (${args.taux || 20}%)`;
+  if (args.resultat_fiscal != null) return `${args.resultat_fiscal}€`;
+  return JSON.stringify(args).substring(0, 40);
+}
+
+// ── Reset ─────────────────────────────────────────────────────────────────────
+btnReset.addEventListener('click', async () => {
+  if (!confirm('Réinitialiser la conversation ?')) return;
+  await fetch(RESET_ENDPOINT, { method: 'POST' });
+  chatMessages.innerHTML = '';
+  toolActivity.innerHTML = '<p class="text-gray-400 italic text-xs">Les appels aux outils apparaîtront ici.</p>';
+  // Re-add welcome
+  appendSystemMessage('Conversation réinitialisée. Posez votre nouvelle question.');
+});
+
+function appendSystemMessage(text) {
+  const div = document.createElement('div');
+  div.className = 'flex justify-center';
+  div.innerHTML = `
+    <div class="msg-system rounded-lg px-4 py-2 text-xs text-yellow-800 flex items-center gap-2">
+      <i class="fas fa-circle-info text-yellow-500"></i>${text}
+    </div>`;
+  chatMessages.appendChild(div);
+}
+</script>
+
+</body>
+</html>

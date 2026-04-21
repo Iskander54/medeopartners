@@ -16,7 +16,7 @@ class Config:
     PROJECT_ID ="mystical-runway-364716"
     INSTANCE_NAME ="medeotax"
 
-    SECRET_KEY = '5791628bb0b13ce0c676dfde280ba245'
+    SECRET_KEY = os.getenv('SECRET_KEY', '5791628bb0b13ce0c676dfde280ba245')
     # Configuration base de données
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:///medeo/site.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -1,20 +1,153 @@
-version: '2'
+version: '3.8'
+
+# ============================================================
+# Medeo Partners — Stack complète avec Agent IA interne
+# ============================================================
+#
+# Usage développement :
+#   docker compose up -d
+#
+# Usage production (avec GPU NVIDIA) :
+#   docker compose --profile gpu up -d
+#
+# Après démarrage, télécharger le modèle LLM :
+#   docker exec ollama ollama pull qwen2.5:14b
+#
+# Accès :
+#   - Application Flask :  http://localhost:5000
+#   - Agent IA interne :   http://localhost:5000/mesoutils  (IP restreinte)
+#   - Monitoring Langfuse: http://localhost:3000
+#   - Ollama API :         http://localhost:11434
+# ============================================================
 
 services:
+
+  # ── Application Flask principale ──────────────────────────
   medeo:
     build: .
     container_name: medeo
     ports:
-      - 5000:5000
+      - "5000:5000"
     volumes:
       - ./:/app
     environment:
       - EMAIL_SERVER=maildev
       - EMAIL_PORT=1025
+      # ── Mesoutils ──
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=qwen2.5:14b
+      - OLLAMA_TIMEOUT=120
+      # Clé API Pappers (https://www.pappers.fr/api — 100 req/mois gratuit)
+      - PAPPERS_API_KEY=${PAPPERS_API_KEY:-}
+      # IPs autorisées pour /mesoutils (séparées par virgules)
+      # Ex: MESOUTILS_ALLOWED_IPS=192.168.1.10,10.0.0.5
+      - MESOUTILS_ALLOWED_IPS=${MESOUTILS_ALLOWED_IPS:-127.0.0.1,::1}
+      # Monitoring Langfuse (optionnel — laisser vide pour désactiver)
+      - LANGFUSE_SECRET_KEY=${LANGFUSE_SECRET_KEY:-}
+      - LANGFUSE_PUBLIC_KEY=${LANGFUSE_PUBLIC_KEY:-}
+      - LANGFUSE_HOST=http://langfuse:3000
+    depends_on:
+      - ollama
+      - maildev
+    networks:
+      - medeo-net
 
+  # ── LLM local Ollama ───────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_NUM_PARALLEL=2
+    restart: unless-stopped
+    networks:
+      - medeo-net
+
+  # ── LLM local Ollama avec GPU NVIDIA (profil gpu) ─────────
+  ollama-gpu:
+    image: ollama/ollama:latest
+    container_name: ollama
+    profiles: ["gpu"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_NUM_PARALLEL=2
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+    networks:
+      - medeo-net
+
+  # ── Monitoring Langfuse (optionnel) ───────────────────────
+  # Documentation : https://langfuse.com/docs/deployment/self-host
+  langfuse:
+    image: langfuse/langfuse:latest
+    container_name: langfuse
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://langfuse:langfuse@langfuse-db:5432/langfuse
+      - NEXTAUTH_SECRET=${LANGFUSE_NEXTAUTH_SECRET:-changeme-secret-key-32chars-min}
+      - NEXTAUTH_URL=http://localhost:3000
+      - ENCRYPTION_KEY=${LANGFUSE_ENCRYPTION_KEY:-0000000000000000000000000000000000000000000000000000000000000000}
+      - TELEMETRY_ENABLED=false
+    depends_on:
+      langfuse-db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - medeo-net
+
+  langfuse-db:
+    image: postgres:15-alpine
+    container_name: langfuse-db
+    environment:
+      - POSTGRES_USER=langfuse
+      - POSTGRES_PASSWORD=langfuse
+      - POSTGRES_DB=langfuse
+    volumes:
+      - langfuse_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U langfuse"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - medeo-net
+
+  # ── Mail de développement ─────────────────────────────────
   maildev:
     image: maildev/maildev
     container_name: maildev
     ports:
-    - 1080:1080
-    - 1025:1025
+      - "1080:1080"
+      - "1025:1025"
+    networks:
+      - medeo-net
+
+
+# ── Volumes persistants ────────────────────────────────────────
+volumes:
+  ollama_data:
+    driver: local
+  langfuse_db_data:
+    driver: local
+
+
+# ── Réseau interne ─────────────────────────────────────────────
+networks:
+  medeo-net:
+    driver: bridge

@@ -1,0 +1,52 @@
+# ============================================================
+# app.yaml.example — Template de configuration App Engine
+# Copier ce fichier en app.yaml et remplir les valeurs réelles.
+# ⚠️  app.yaml est dans .gitignore — NE JAMAIS COMMITTER les secrets.
+# ============================================================
+
+runtime: python312
+entrypoint: gunicorn -w 2 --timeout 90 --worker-class sync run:app
+
+automatic_scaling:
+  max_instances: 20
+
+handlers:
+- url: /.*
+  script: auto
+  secure: always
+
+env_variables:
+  # ── Sécurité session Flask ──────────────────────────────────
+  # Générer avec : python3 -c "import secrets; print(secrets.token_hex(32))"
+  SECRET_KEY: 'REMPLACER_PAR_CLE_ALEATOIRE_64_CHARS'
+
+  # ── ReCAPTCHA ───────────────────────────────────────────────
+  CAPTCHA_PUBLIC_KEY: 'VOTRE_CLE_PUBLIQUE_RECAPTCHA'
+  CAPTCHA_PRIVATE_KEY: 'VOTRE_CLE_PRIVEE_RECAPTCHA'
+
+  # ── Email Gmail ─────────────────────────────────────────────
+  EMAIL_SERVER: 'smtp.gmail.com'
+  EMAIL_PORT: '587'
+  EMAIL_USER: 'contact@medeo-partners.com'
+  EMAIL_PASS: 'MOT_DE_PASSE_APPLICATION_GMAIL'
+
+  # ── Base de données Cloud SQL ────────────────────────────────
+  DATABASE_URL: 'mysql+mysqldb://root:PASSWORD@IP/DBNAME?unix_socket=/cloudsql/PROJECT:REGION:INSTANCE'
+
+  # ── Mesoutils — Agent IA interne ────────────────────────────
+  PAPPERS_API_KEY: 'VOTRE_CLE_PAPPERS'
+
+  # Groq LLM (https://console.groq.com/keys)
+  GROQ_API_KEY: 'gsk_VOTRE_CLE_GROQ'
+  GROQ_MODEL: 'llama-3.1-8b-instant'   # ou llama-3.3-70b-versatile pour plus de qualité
+
+  # Mot de passe partagé entre collaborateurs pour /mesoutils
+  MESOUTILS_PASSWORD: 'VOTRE_MOT_DE_PASSE'
+
+  # Restriction IP additionnelle (laisser vide = seul le mdp protège)
+  MESOUTILS_ALLOWED_IPS: ''
+
+  # Monitoring Langfuse (laisser vide pour désactiver)
+  LANGFUSE_SECRET_KEY: ''
+  LANGFUSE_PUBLIC_KEY: ''
+  LANGFUSE_HOST: 'http://localhost:3000'

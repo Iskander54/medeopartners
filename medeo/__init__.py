@@ -118,6 +118,7 @@ def create_app(config_class=Config):
     from medeo.rejoindre.routes import rejoindre
     from medeo.blog.routes import blog
     from medeo.chatbot.routes import chatbot
+    from medeo.mesoutils import mesoutils
     
     app.register_blueprint(contacts)
     app.register_blueprint(rejoindre)
@@ -127,6 +128,7 @@ def create_app(config_class=Config):
     app.register_blueprint(errors)
     app.register_blueprint(blog)
     app.register_blueprint(chatbot)
+    app.register_blueprint(mesoutils)
 
     def get_locale():
         if not g.get('lang_code', None):
@@ -180,6 +182,12 @@ def create_app(config_class=Config):
     @app.route('/robots.txt')
     def robots_txt():
         return send_from_directory(app.static_folder, 'robots.txt')
+
+    @app.route('/3a8fe26a40ad3a0570b5cd15f2ca5222.txt')
+    def indexnow_key():
+        """Fichier de vérification IndexNow pour Bing/Yandex."""
+        return send_from_directory(app.static_folder, '3a8fe26a40ad3a0570b5cd15f2ca5222.txt',
+                                   mimetype='text/plain')
     
     @app.route('/android-chrome-192x192.png')
     @app.route('/android-chrome-512x512.png')
@@ -211,79 +219,82 @@ def create_app(config_class=Config):
 
     @app.route('/sitemap.xml')
     @app.route('/fr/sitemap.xml')
-    # @cache.cached(timeout=3600)  # Cache 1 heure
     def sitemap():
-        """Génère un sitemap XML dynamique"""
+        """Génère un sitemap XML dynamique avec hreflang et articles DB."""
         from medeo.main.routes import get_static_pages
-        
-        # Pages statiques
-        static_pages = get_static_pages()
-        
-        # Articles de blog statiques (templates HTML)
-        blog_articles = [
-            {
-                'slug': 'loi-finances-2026-impact-entreprise',
-                'lastmod': '2026-01-12',
-                'priority': '0.9'
-            },
-            {
-                'slug': 'tva-obligations-declaratives-dirigeants',
-                'lastmod': '2026-01-12',
-                'priority': '0.8'
-            },
-            {
-                'slug': 'creation-entreprise-erreurs-comptables-fiscales-premiere-annee',
-                'lastmod': '2026-01-12',
-                'priority': '0.8'
-            }
-        ]
-        
-        # Générer le XML avec xmlns:xhtml pour hreflang
+        from medeo.models import BlogArticle
+
+        DOMAIN = 'https://www.medeo-partners.com'
+        today = datetime.now().strftime('%Y-%m-%d')
+
+        def url_entry(loc_fr, loc_en, lastmod, changefreq='monthly', priority='0.8'):
+            return (
+                f'  <url>\n'
+                f'    <loc>{DOMAIN}{loc_fr}</loc>\n'
+                f'    <lastmod>{lastmod}</lastmod>\n'
+                f'    <changefreq>{changefreq}</changefreq>\n'
+                f'    <priority>{priority}</priority>\n'
+                f'    <xhtml:link rel="alternate" hreflang="fr" href="{DOMAIN}{loc_fr}"/>\n'
+                f'    <xhtml:link rel="alternate" hreflang="en" href="{DOMAIN}{loc_en}"/>\n'
+                f'    <xhtml:link rel="alternate" hreflang="x-default" href="{DOMAIN}{loc_fr}"/>\n'
+                f'  </url>\n'
+            )
+
         xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
         xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-        
-        # Pages statiques avec versions FR et EN
-        for page in static_pages:
-            url_fr = page["url"]
-            url_en = url_fr.replace('/fr/', '/en/').replace('/accueil', '/home').replace('/votre_cabinet', '/your_firm').replace('/notre_expertise', '/our_expertise').replace('/nouscontacter', '/contactus').replace('/actualites', '/news')
-            
-            xml += f'  <url>\n'
-            xml += f'    <loc>https://www.medeo-partners.com{url_fr}</loc>\n'
-            xml += f'    <lastmod>{page.get("lastmod", datetime.now().strftime("%Y-%m-%d"))}</lastmod>\n'
-            xml += f'    <changefreq>{page.get("changefreq", "monthly")}</changefreq>\n'
-            xml += f'    <priority>{page.get("priority", "0.8")}</priority>\n'
-            # Ajouter hreflang si c'est une page FR
-            if '/fr/' in url_fr:
-                xml += f'    <xhtml:link rel="alternate" hreflang="fr" href="https://www.medeo-partners.com{url_fr}"/>\n'
-                xml += f'    <xhtml:link rel="alternate" hreflang="en" href="https://www.medeo-partners.com{url_en}"/>\n'
-                xml += f'    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.medeo-partners.com{url_fr}"/>\n'
-            xml += f'  </url>\n'
-        
-        # Page d'accueil du blog
-        xml += f'  <url>\n'
-        xml += f'    <loc>https://www.medeo-partners.com/fr/blog/</loc>\n'
-        xml += f'    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>\n'
-        xml += f'    <changefreq>weekly</changefreq>\n'
-        xml += f'    <priority>0.7</priority>\n'
-        xml += f'    <xhtml:link rel="alternate" hreflang="fr" href="https://www.medeo-partners.com/fr/blog/"/>\n'
-        xml += f'    <xhtml:link rel="alternate" hreflang="en" href="https://www.medeo-partners.com/en/blog/"/>\n'
-        xml += f'    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.medeo-partners.com/fr/blog/"/>\n'
-        xml += f'  </url>\n'
-        
-        # Articles de blog statiques
-        for article in blog_articles:
-            xml += f'  <url>\n'
-            xml += f'    <loc>https://www.medeo-partners.com/fr/blog/article/{article["slug"]}</loc>\n'
-            xml += f'    <lastmod>{article["lastmod"]}</lastmod>\n'
-            xml += f'    <changefreq>monthly</changefreq>\n'
-            xml += f'    <priority>{article["priority"]}</priority>\n'
-            xml += f'    <xhtml:link rel="alternate" hreflang="fr" href="https://www.medeo-partners.com/fr/blog/article/{article["slug"]}"/>\n'
-            xml += f'    <xhtml:link rel="alternate" hreflang="en" href="https://www.medeo-partners.com/en/blog/article/{article["slug"]}"/>\n'
-            xml += f'    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.medeo-partners.com/fr/blog/article/{article["slug"]}"/>\n'
-            xml += f'  </url>\n'
-        
+
+        # Pages statiques avec hreflang FR/EN
+        for page in get_static_pages():
+            url_fr = page['url']
+            if '/fr/' not in url_fr:
+                continue
+            url_en = (url_fr
+                      .replace('/fr/', '/en/')
+                      .replace('/accueil', '/home')
+                      .replace('/votre_cabinet', '/your_firm')
+                      .replace('/notre_expertise', '/our_expertise')
+                      .replace('/nouscontacter', '/contactus')
+                      .replace('/actualites', '/news')
+                      .replace('/nos_services', '/our_services')
+                      .replace('/expertise_comptable', '/accounting')
+                      .replace('/conseil_optimisation', '/council_optimization')
+                      .replace('/espace_clients', '/account'))
+            xml += url_entry(url_fr, url_en,
+                             page.get('lastmod', today),
+                             page.get('changefreq', 'monthly'),
+                             page.get('priority', '0.8'))
+
+        # Page index blog
+        xml += url_entry('/fr/blog/', '/en/blog/', today, 'weekly', '0.8')
+
+        # Articles statiques legacy (toujours inclus)
+        static_slugs = [
+            ('loi-finances-2026-impact-entreprise',         '2026-01-12', '0.9'),
+            ('tva-obligations-declaratives-dirigeants',      '2026-01-12', '0.8'),
+            ('creation-entreprise-erreurs-comptables-fiscales-premiere-annee', '2026-01-12', '0.8'),
+        ]
+        seen_slugs = {s[0] for s in static_slugs}
+
+        for slug, lastmod, priority in static_slugs:
+            xml += url_entry(f'/fr/blog/article/{slug}', f'/en/blog/article/{slug}',
+                             lastmod, 'monthly', priority)
+
+        # Articles DB publiés (exclure les slugs statiques déjà listés)
+        try:
+            db_articles = BlogArticle.query.filter_by(status='published').order_by(
+                BlogArticle.published_at.desc()
+            ).all()
+            for art in db_articles:
+                if art.slug in seen_slugs:
+                    continue
+                lastmod_art = (art.updated_at or art.published_at or datetime.now()).strftime('%Y-%m-%d')
+                xml += url_entry(f'/fr/blog/article/{art.slug}', f'/en/blog/article/{art.slug}',
+                                 lastmod_art, 'monthly', '0.8')
+        except Exception as e:
+            current_app.logger.warning(f'Sitemap: impossible de charger les articles DB: {e}')
+
         xml += '</urlset>'
-        
+
         response = make_response(xml)
         response.headers['Content-Type'] = 'application/xml'
         return response

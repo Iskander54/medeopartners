@@ -27,6 +27,7 @@
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black pl-8 px-4 py-2" href="{{_('conseil_optimisation')}}">{{_("Conseil et optimisation")}}</a>
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('nos_services')}}">{{_('Nos services')}}</a>
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('actualites')}}">{{_('Actualités')}}</a>
+        <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{ url_for('blog.index', lang_code=g.lang_code) }}">{{_('Blog')}}</a>
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="{{_('nouscontacter')}}">{{_('Nous contacter')}}</a>
         <a class="text-gray-800 font-medium transition transition-300 hover:bg-gray-100 hover:text-black px-4 py-2" href="https://azo-vf-frontend-dev-1088553818836.europe-west9.run.app/auth/login" target="_blank" rel="noopener noreferrer">{{_('Espace client')}}</a>
 
@@ -88,6 +89,7 @@
             </a>
             <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('nos_services')}}">{{_('Nos services')}}</a>
             <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('actualites')}}">{{_('Actualités')}}</a>
+            <a class="text-gray-800 transition transition-300 hover:text-black" href="{{ url_for('blog.index', lang_code=g.lang_code) }}">{{_('Blog')}}</a>
             <a class="text-gray-800 transition transition-300 hover:text-black" href="{{_('nouscontacter')}}">{{_('Nous contacter')}}</a>
             <a class="text-gray-800 transition transition-300 hover:text-black" href="https://azo-vf-frontend-dev-1088553818836.europe-west9.run.app/auth/login" target="_blank" rel="noopener noreferrer">{{_('Espace client')}}</a>
         </nav>
@@ -171,6 +173,13 @@
                 nosServicesLink.classList.add('text-blue-600');
                 nosServicesLink.classList.remove('text-gray-800', 'hover:text-black');
             }
+        }
+
+        if(currentUrl.includes('/blog')) {
+            document.querySelectorAll('a[href*="/blog"]').forEach(el => {
+                el.classList.add('text-blue-600');
+                el.classList.remove('text-gray-800', 'hover:text-black');
+            });
         }
     });
 </script>
