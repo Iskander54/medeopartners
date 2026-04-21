@@ -9,7 +9,7 @@ import logging
 import time
 from typing import Generator
 
-from groq import Groq
+from groq import Groq, RateLimitError, APIStatusError
 
 from medeo.mesoutils.tools import TOOLS_DEFINITIONS, execute_tool
 
@@ -106,7 +106,9 @@ class MesoutilsAgent:
 
     def __init__(self):
         self.model = GROQ_MODEL
-        self.client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
+        # max_retries=0 : désactive le sleep automatique du SDK Groq en cas de 429.
+        # Sans ça, time.sleep() bloque le worker gunicorn qui se fait tuer (SIGKILL → 500).
+        self.client = Groq(api_key=GROQ_API_KEY, max_retries=0) if GROQ_API_KEY else None
 
     def _call_groq(self, messages: list, tools: list = None) -> object:
         """Appelle l'API Groq et retourne la réponse complète."""
@@ -126,6 +128,14 @@ class MesoutilsAgent:
             kwargs["tool_choice"] = "auto"
         try:
             return self.client.chat.completions.create(**kwargs)
+        except RateLimitError:
+            raise RuntimeError(
+                "⏳ Limite de requêtes Groq atteinte (429). "
+                "Patientez quelques secondes puis réessayez. "
+                "Si le problème persiste, contactez l'administrateur pour upgrader le plan Groq."
+            )
+        except APIStatusError as e:
+            raise RuntimeError(f"Erreur API Groq ({e.status_code}) : {e.message}")
         except Exception as e:
             raise RuntimeError(f"Erreur API Groq : {e}")
 
@@ -290,6 +300,17 @@ class MesoutilsAgent:
                 "error": "max_iterations_exceeded"
             }
 
+        except RateLimitError:
+            msg = ("⏳ Limite de requêtes Groq atteinte (429). "
+                   "Patientez quelques secondes puis réessayez.")
+            logger.warning("Groq 429 Rate Limit dans run()")
+            return {
+                "response": msg,
+                "tool_calls_log": tool_calls_log,
+                "elapsed_seconds": round(time.time() - start_time, 2),
+                "model": self.model,
+                "error": "rate_limit"
+            }
         except RuntimeError as e:
             logger.error(f"Erreur agent : {e}")
             return {
@@ -402,9 +423,16 @@ class MesoutilsAgent:
                     return
 
         except RuntimeError as e:
-            yield sse("error", {"message": str(e)})
+            msg = str(e)
+            logger.warning(f"Erreur agent (stream) : {msg}")
+            yield sse("error", {"message": msg})
+        except RateLimitError:
+            msg = ("⏳ Limite de requêtes Groq atteinte. "
+                   "Patientez quelques secondes puis réessayez.")
+            logger.warning("Groq 429 Rate Limit dans stream()")
+            yield sse("error", {"message": msg})
         except Exception as e:
-            logger.exception(f"Erreur stream agent : {e}")
+            logger.exception(f"Erreur inattendue stream agent : {e}")
             yield sse("error", {"message": f"Erreur inattendue : {str(e)}"})
 
 
