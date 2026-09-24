@@ -183,6 +183,47 @@ def create_app(config_class=Config):
         
         return None
 
+    # ------------------------------------------------------------------
+    # Cache HTTP des assets statiques
+    #
+    # La prod renvoyait Cache-Control: no-cache sur TOUT le statique : chaque
+    # visite revalidait chaque image, CSS et JS. On peut mettre un cache long
+    # sans risque de servir une version périmée parce que url_for('static')
+    # suffixe désormais chaque URL de la date de modification du fichier :
+    # modifier un fichier change son URL, donc invalide son cache.
+    # ------------------------------------------------------------------
+    STATIC_MAX_AGE = 31536000  # 1 an, sûr grâce au versionnage ci-dessous
+
+    @app.context_processor
+    def override_url_for():
+        def versioned_url_for(endpoint, **values):
+            if endpoint == 'static' and 'filename' in values and 'v' not in values:
+                try:
+                    full = os.path.join(app.static_folder, values['filename'])
+                    values['v'] = int(os.stat(full).st_mtime)
+                except OSError:
+                    # Fichier absent ou illisible : on sert l'URL sans version
+                    # plutôt que de casser le rendu de la page.
+                    pass
+            return url_for(endpoint, **values)
+        return dict(url_for=versioned_url_for)
+
+    @app.after_request
+    def add_cache_headers(response):
+        if request.endpoint == 'static' and response.status_code == 200:
+            if request.args.get('v'):
+                # URL versionnée : le contenu ne changera jamais sous cette URL.
+                response.headers['Cache-Control'] = (
+                    f'public, max-age={STATIC_MAX_AGE}, immutable')
+            else:
+                # URL non versionnée (lien en dur, asset appelé de l'extérieur) :
+                # cache court, on ne veut pas figer un contenu qui peut changer.
+                response.headers['Cache-Control'] = 'public, max-age=3600'
+        elif response.status_code == 200 and response.mimetype == 'text/html':
+            # Le HTML est revalidé à chaque fois : le contenu du blog bouge.
+            response.headers.setdefault('Cache-Control', 'no-cache')
+        return response
+
     @app.route('/')
     def start():
         g.lang_code = 'fr'
