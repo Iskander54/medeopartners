@@ -28,8 +28,13 @@
 <link rel="alternate" hreflang="x-default" href="https://www.medeo-partners.com/fr/accueil">
 
 <!-- Bing Webmaster Tools verification -->
-<!-- Remplacer la valeur content par ton code depuis https://www.bing.com/webmasters -->
-<meta name="msvalidate.01" content="REMPLACER_PAR_CODE_BING">
+{#- Le code est fourni par la variable d'environnement BING_SITE_VERIFICATION
+    (https://www.bing.com/webmasters). Tant qu'elle n'est pas renseignée, on
+    n'émet AUCUNE balise : un msvalidate.01 avec une valeur bidon fait échouer
+    la vérification Bing au lieu de la laisser simplement en attente. -#}
+{% if config.BING_SITE_VERIFICATION %}
+<meta name="msvalidate.01" content="{{ config.BING_SITE_VERIFICATION }}">
+{% endif %}
 
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon_io/apple-touch-icon.png') }}">

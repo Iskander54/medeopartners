@@ -55,6 +55,90 @@ def _static_article_cards():
     return cards
 
 
+SITE_URL = 'https://www.medeo-partners.com'
+
+# Éditeur commun à tous les BlogPosting.
+_PUBLISHER = {
+    '@type': 'Organization',
+    'name': 'Medeo Partners',
+    'url': SITE_URL,
+    'logo': {
+        '@type': 'ImageObject',
+        'url': f'{SITE_URL}/static/medeo_images/Medeo_partners_couleur.webp',
+    },
+}
+
+
+def _absolute_static(path):
+    """URL absolue d'un asset statique, requise par schema.org."""
+    if not path:
+        return None
+    if path.startswith('http://') or path.startswith('https://'):
+        return path
+    return f"{SITE_URL}{url_for('static', filename=path.lstrip('/'))}"
+
+
+def _iso_date(value):
+    """Normalise une date (datetime, date ou chaîne ISO) en chaîne ISO 8601."""
+    if not value:
+        return None
+    if isinstance(value, str):
+        return value
+    try:
+        return value.isoformat()
+    except AttributeError:
+        return None
+
+
+def _article_jsonld(*, slug, title, description, image, published, modified,
+                    section=None, keywords=None, author=None, word_count=None):
+    """Construit le JSON-LD BlogPosting d'un article.
+
+    Rendu inline côté serveur (cf. includes/head/json_ld.html) : les crawlers
+    le voient sans exécuter de JavaScript, contrairement aux autres blocs
+    JSON-LD du site qui sont injectés par des scripts.
+    """
+    url = f"{SITE_URL}{url_for('blog.article', slug=slug, lang_code=g.get('lang_code', 'fr'))}"
+    data = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        'mainEntityOfPage': {'@type': 'WebPage', '@id': url},
+        'url': url,
+        'headline': (title or '')[:110],  # Google tronque au-delà de ~110 car.
+        'inLanguage': 'fr-FR' if g.get('lang_code', 'fr') == 'fr' else 'en-US',
+        'author': {'@type': 'Organization', 'name': author or 'Medeo Partners',
+                   'url': SITE_URL},
+        'publisher': _PUBLISHER,
+        'isAccessibleForFree': True,
+    }
+    if description:
+        data['description'] = description
+    absolute_image = _absolute_static(image)
+    if absolute_image:
+        data['image'] = [absolute_image]
+    published_iso = _iso_date(published)
+    if published_iso:
+        data['datePublished'] = published_iso
+        # dateModified est requis par Google ; repli sur datePublished.
+        data['dateModified'] = _iso_date(modified) or published_iso
+    if section:
+        data['articleSection'] = section
+    if keywords:
+        data['keywords'] = ', '.join(keywords) if isinstance(keywords, (list, tuple)) else keywords
+    if word_count:
+        data['wordCount'] = word_count
+    return data
+
+
+def _safe_article_jsonld(**kwargs):
+    """_article_jsonld() sans jamais faire échouer le rendu de l'article."""
+    try:
+        return _article_jsonld(**kwargs)
+    except Exception as e:
+        current_app.logger.warning(f"JSON-LD article non généré: {e}")
+        return None
+
+
 def _render_blog_unavailable(title, message=None):
     """Page de repli 503 quand la DB est indisponible : jamais de 500, contenu utile."""
     html = render_template('blog/index.html',
@@ -200,11 +284,30 @@ def article(slug):
             except Exception:
                 related = []
 
+            try:
+                section = db_article.category.name if db_article.category_id else None
+            except Exception:
+                section = None
+            try:
+                keywords = [t.name for t in db_article.tags]
+            except Exception:
+                keywords = None
+
             return render_template('blog/article.html',
                                    article=db_article,
                                    related_articles=related,
                                    title=db_article.meta_title or db_article.title,
-                                   meta_description=db_article.meta_description or db_article.excerpt)
+                                   meta_description=db_article.meta_description or db_article.excerpt,
+                                   article_jsonld=_safe_article_jsonld(
+                                       slug=slug,
+                                       title=db_article.meta_title or db_article.title,
+                                       description=db_article.meta_description or db_article.excerpt,
+                                       image=db_article.featured_image,
+                                       published=db_article.published_at or db_article.created_at,
+                                       modified=db_article.updated_at,
+                                       section=section,
+                                       keywords=keywords or db_article.focus_keyword,
+                                   ))
         except Exception as e:
             current_app.logger.error(f"Erreur rendu article DB '{slug}': {e}", exc_info=True)
             # On retombe sur le template statique s'il existe (cf. ci-dessous)
@@ -220,9 +323,24 @@ def article(slug):
             related_articles = get_related_articles(slug)
         except Exception:
             related_articles = []
+        try:
+            section = get_category_info(metadata.get('category', 'fiscal')).get('name')
+        except Exception:
+            section = None
+
         return render_template(template_path,
                                article_metadata=metadata,
-                               related_articles=related_articles)
+                               related_articles=related_articles,
+                               article_jsonld=_safe_article_jsonld(
+                                   slug=slug,
+                                   title=metadata.get('title'),
+                                   description=metadata.get('excerpt'),
+                                   image=metadata.get('image'),
+                                   published=metadata.get('published'),
+                                   modified=metadata.get('modified'),
+                                   section=section,
+                                   keywords=metadata.get('keywords'),
+                               ))
 
     # 3. Introuvable
     current_app.logger.warning(f"Article non trouvé: {slug}")
