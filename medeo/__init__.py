@@ -9,6 +9,8 @@ from flask_babel import Babel
 # from flask_sslify import SSLify
 # from flask_sitemap import Sitemap
 # from flask_migrate import Migrate
+from flask_limiter import Limiter
+from medeo.security import get_client_ip
 from datetime import datetime
 import os
 # from flask_caching import Cache
@@ -21,6 +23,20 @@ login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 mail = Mail()
 
+# Limitation de débit sur les routes d'authentification.
+#
+# ATTENTION : le stockage par défaut est EN MÉMOIRE, donc par instance.
+# App Engine peut faire tourner jusqu'à 20 instances : un attaquant réparti
+# sur les instances obtient de fait 20x la limite annoncée. C'est un
+# ralentisseur utile, pas une protection solide. Une vraie limite partagée
+# demande un backend commun (Memorystore/Redis ou table SQL) à provisionner :
+# renseigner RATELIMIT_STORAGE_URI suffit alors à basculer dessus.
+limiter = Limiter(
+    key_func=get_client_ip,
+    storage_uri=os.getenv('RATELIMIT_STORAGE_URI', 'memory://'),
+    strategy='fixed-window',
+)
+
 # cache = Cache()
 
 
@@ -29,8 +45,19 @@ def create_app(config_class=Config):
     # ext = Sitemap(app=app)
     # sslify = SSLify(app)
 
-    app.config.from_object(Config)
-    
+    # from_object(Config) ignorait le paramètre config_class : run_local.py
+    # passait config_local.Config sans le moindre effet, et le local repartait
+    # sur la config de production.
+    app.config.from_object(config_class)
+
+    if not app.config.get('SECRET_KEY'):
+        raise RuntimeError(
+            "SECRET_KEY n'est pas définie. Renseignez la variable "
+            "d'environnement SECRET_KEY (app.yaml en production, .env en "
+            "local). Pour générer une valeur :\n"
+            '    python -c "import secrets; print(secrets.token_hex(32))"'
+        )
+
     # Ajouter un filtre markdown pour convertir le contenu des articles
     @app.template_filter('markdown')
     def markdown_filter(text):
@@ -117,6 +144,7 @@ def create_app(config_class=Config):
     bcrypt.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
+    limiter.init_app(app)
 
 
     from medeo.users.routes import users
@@ -182,6 +210,19 @@ def create_app(config_class=Config):
             return redirect(new_url, code=301)
         
         return None
+
+    @app.after_request
+    def add_security_headers(response):
+        from medeo.security import apply_security_headers
+        # En local on sert en http : poser HSTS y épinglerait https://localhost
+        # dans le navigateur du développeur pour un an.
+        is_local = (request.host.startswith('localhost')
+                    or request.host.startswith('127.0.0.1'))
+        return apply_security_headers(
+            response,
+            https=not is_local,
+            csp_report_only=not app.config.get('CSP_ENFORCE'),
+        )
 
     @app.route('/')
     def start():
