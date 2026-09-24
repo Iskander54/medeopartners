@@ -17,8 +17,25 @@ handlers:
 
 env_variables:
   # ── Sécurité session Flask ──────────────────────────────────
+  # OBLIGATOIRE : l'application REFUSE de démarrer sans cette variable.
+  # Il n'y a plus aucune valeur par défaut (celle d'avant venait d'un
+  # tutoriel public : n'importe qui pouvait forger un cookie de session).
   # Générer avec : python3 -c "import secrets; print(secrets.token_hex(32))"
   SECRET_KEY: 'REMPLACER_PAR_CLE_ALEATOIRE_64_CHARS'
+
+  # ── Durcissement (facultatif) ───────────────────────────────
+  # Nombre de proxys de confiance devant l'app (App Engine = 1).
+  # Sert à déterminer l'IP client réelle depuis X-Forwarded-For.
+  TRUSTED_PROXY_COUNT: '1'
+  # Backend partagé pour la limitation de débit. Vide = mémoire, donc
+  # par instance : inefficace au-delà d'une instance. Ex. Memorystore :
+  # RATELIMIT_STORAGE_URI: 'redis://10.0.0.3:6379'
+  RATELIMIT_STORAGE_URI: ''
+  # Passer la CSP de Report-Only à bloquante une fois les violations
+  # observées et corrigées.
+  CSP_ENFORCE: '0'
+  # Code de vérification Bing Webmaster Tools (cf. PR SEO).
+  BING_SITE_VERIFICATION: ''
 
   # ── ReCAPTCHA ───────────────────────────────────────────────
   CAPTCHA_PUBLIC_KEY: 'VOTRE_CLE_PUBLIQUE_RECAPTCHA'

@@ -656,40 +656,6 @@
 
 
 
-      // Google Translate API key (replace with your own)
-      const apiKey = "{{ apikey }} ";
-      // Function to translate text using Google Translate API
-      function translateText(text, targetLanguage, callback) {
-         const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}&q=${text}&target=${targetLanguage}`;
-
-         fetch(url)
-            .then(response => response.json())
-            .then(data => {
-               const translatedText = data.data.translations[0].translatedText;
-               callback(translatedText);
-            })
-            .catch(error => console.error(error));
-      }
-
-      // Function to automatically translate content based on user's selected or detected language
-      function autoTranslateContent() {
-         const languageSelector = document.getElementById('languageSelect');
-         const content = document.getElementById('content');
-         //const contents = document.querySelectorAll
-         // Get the selected or detected language
-         const selectedLanguage = languageSelector.value;
-
-         // Translate content based on the selected or detected language
-         content.querySelectorAll('[data-translate]').forEach(element => {
-            const textKey = element.getAttribute('data-translate');
-
-            // Translate and replace the text
-            translateText(element.textContent, selectedLanguage, translatedText => {
-               element.textContent = translatedText;
-            });
-         });
-      }
-
    </script>
 
 </body>

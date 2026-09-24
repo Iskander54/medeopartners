@@ -5,11 +5,14 @@ from medeo.models import User
 from medeo.users.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
                                    RequestResetForm, ResetPasswordForm)
 from medeo.users.utils import save_picture, send_reset_email
+from medeo.security import safe_redirect_target
+from medeo import limiter
 
 users = Blueprint('users', __name__)
 
 
 @users.route("/register", methods=['GET', 'POST'])
+@limiter.limit("5 per hour", methods=['POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
@@ -25,6 +28,7 @@ def register():
 
 
 @users.route("/login", methods=['GET', 'POST'])
+@limiter.limit("10 per minute; 50 per hour", methods=['POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
@@ -33,7 +37,7 @@ def login():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
-            next_page = request.args.get('next')
+            next_page = safe_redirect_target(request.args.get('next'))
             return redirect(next_page) if next_page else redirect(url_for('main.home'))
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
@@ -78,19 +82,26 @@ def user_posts(username):
 
 '''
 @users.route("/reset_password", methods=['GET', 'POST'])
+@limiter.limit("5 per hour; 20 per day", methods=['POST'])
 def reset_request():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
     form = RequestResetForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
-        send_reset_email(user)
+        # user vaut None pour une adresse inconnue : send_reset_email(None)
+        # levait alors une AttributeError (500). On garde en plus le même
+        # message dans les deux cas, pour ne pas révéler quelles adresses
+        # existent en base.
+        if user is not None:
+            send_reset_email(user)
         flash('An email has been sent with instructions to reset your password.', 'info')
         return redirect(url_for('users.login'))
     return render_template('reset_request.html', title='Reset Password', form=form)
 
 
 @users.route("/reset_password/<token>", methods=['GET', 'POST'])
+@limiter.limit("10 per hour", methods=['POST'])
 def reset_token(token):
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))

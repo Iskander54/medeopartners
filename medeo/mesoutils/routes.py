@@ -14,6 +14,7 @@ from flask import (
 )
 
 from medeo.mesoutils import mesoutils
+from medeo.security import get_client_ip, safe_redirect_target
 from medeo.mesoutils.agent import agent, check_groq_health
 
 logger = logging.getLogger(__name__)
@@ -37,17 +38,15 @@ def _is_authenticated() -> bool:
 # ---------------------------------------------------------------------------
 
 def _get_client_ip() -> str:
+    """IP réelle du client, en ne faisant confiance qu'aux proxys connus.
+
+    L'implémentation précédente prenait la PREMIÈRE entrée de X-Forwarded-For,
+    celle que l'appelant contrôle entièrement : « X-Forwarded-For: 1.2.3.4 »
+    suffisait à contourner la restriction MESOUTILS_ALLOWED_IPS ci-dessous et
+    à polluer les logs d'accès. On compte désormais depuis la droite.
+    Cf. medeo/security.get_client_ip.
     """
-    Retourne l'IP réelle du client en tenant compte des reverse proxies.
-    Priorise X-Forwarded-For, puis X-Real-IP, puis remote_addr.
-    """
-    forwarded_for = request.headers.get("X-Forwarded-For")
-    if forwarded_for:
-        return forwarded_for.split(",")[0].strip()
-    real_ip = request.headers.get("X-Real-IP")
-    if real_ip:
-        return real_ip.strip()
-    return request.remote_addr or ""
+    return get_client_ip()
 
 
 def _get_allowed_ips() -> list:
@@ -106,7 +105,8 @@ def login():
         if _check_password(password):
             session[_SESSION_KEY] = True
             session.permanent = True
-            next_url = request.args.get("next") or url_for("mesoutils.index")
+            next_url = (safe_redirect_target(request.args.get("next"))
+                        or url_for("mesoutils.index"))
             logger.info(f"Connexion Mesoutils réussie depuis {_get_client_ip()}")
             return redirect(next_url)
         else:

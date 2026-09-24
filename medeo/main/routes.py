@@ -51,7 +51,10 @@ def before_request():
 @main.route("/home", defaults={'lang_code':'en'})
 def home():
     page = request.args.get('page', 1, type=int)
-    return render_template('home.html', apikey=current_app.config['G_API_KEY'],
+    # apikey n'est plus passé au template : il alimentait un bloc de traduction
+    # client Google Translate désormais supprimé, qui injectait la clé
+    # G_API_KEY en clair dans le HTML servi à tous les visiteurs.
+    return render_template('home.html',
         title='Expert-Comptable & Commissaire aux Comptes — Paris 8e',
         meta_description="Medeo Partners, cabinet d'expertise comptable et de commissariat aux comptes à Paris 8e (75008). Comptabilité, audit, optimisation fiscale pour PME et dirigeants. Inscrit OEC & CNCC.")
 

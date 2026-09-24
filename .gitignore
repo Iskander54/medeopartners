@@ -148,3 +148,28 @@ medeo/site.db
 
 # Translations (generated)
 *.mo
+# ---------------------------------------------------------------------------
+# Artefacts qui n'ont jamais dû être versionnés (dé-suivis, cf. PR sécurité)
+# ---------------------------------------------------------------------------
+
+# Base SQLite de développement. La version versionnée contenait de vraies
+# données client (email, hash bcrypt, nom, date de naissance) -> RGPD.
+# Recréer en local avec : python scripts/init_db_and_create_articles.py
+medeo/site.db
+*.sqlite
+*.sqlite3
+
+# Virtualenv Python 3.7 commité dans le dépôt
+medeo/bin/
+medeo/pyvenv.cfg
+medeo/lib/
+medeo/lib64/
+medeo/include/
+medeo/share/
+
+# Installeur pip commité
+get-pip.py
+
+# Secrets de déploiement : app.yaml contient clés API et mots de passe
+app.yaml
+.env

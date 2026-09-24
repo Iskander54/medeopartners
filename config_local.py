@@ -1,4 +1,5 @@
 import os
+import secrets
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -11,7 +12,21 @@ class ConfigLocal:
     RECAPTCHA_PUBLIC_KEY = os.getenv('CAPTCHA_PUBLIC_KEY')
     RECAPTCHA_PRIVATE_KEY = os.getenv('CAPTCHA_PRIVATE_KEY')
 
-    SECRET_KEY = '5791628bb0b13ce0c676dfde280ba245'
+    # Clé de développement uniquement. Générée aléatoirement à chaque
+    # démarrage si SECRET_KEY n'est pas fournie : aucune valeur en dur ne peut
+    # donc se retrouver en production par copier-coller. Effet de bord assumé
+    # en local : les sessions sont perdues à chaque redémarrage.
+    SECRET_KEY = os.getenv('SECRET_KEY') or secrets.token_hex(32)
+
+    # En local on sert en http : un cookie Secure ne serait jamais envoyé et
+    # la connexion échouerait silencieusement.
+    SESSION_COOKIE_SECURE = False
+    SESSION_COOKIE_HTTPONLY = True
+    SESSION_COOKIE_SAMESITE = 'Lax'
+    REMEMBER_COOKIE_SECURE = False
+    REMEMBER_COOKIE_HTTPONLY = True
+    REMEMBER_COOKIE_SAMESITE = 'Lax'
+    CSP_ENFORCE = False
 
     # Configuration pour développement local avec SQLite
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', _DEFAULT_DB)
