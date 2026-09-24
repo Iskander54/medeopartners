@@ -479,3 +479,37 @@
     padding-top: 130px;
 }
 
+
+/* ── Lien d'évitement (accessibilité) ───────────────────────────────────
+   Masqué hors écran tant qu'il n'a pas le focus, puis affiché en haut à
+   gauche. On n'utilise pas display:none, qui le retirerait de l'ordre de
+   tabulation et le rendrait inatteignable au clavier.
+   Placé dans critical.css : c'est le premier élément focusable de la page,
+   il doit être stylé avant tout chargement différé. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  z-index: 10000;
+  padding: 12px 20px;
+  background: #114a79;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.15s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 0;
+  color: #fff;
+  text-decoration: none;
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}
+
+/* La cible du lien reçoit le focus par programme (tabindex="-1") : on évite
+   le contour disgracieux au clic tout en le gardant au clavier. */
+main:focus {
+  outline: none;
+}

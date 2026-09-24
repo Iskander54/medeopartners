@@ -10,8 +10,13 @@
     <!-- Hero Section avec animation de fondu -->
     <div class="container ease-in-out transition transition-300 mx-auto grid md:grid-cols-2 gap-8 md:gap-16 py-16">
         <div class="md:pb-24 text-center flex flex-col gap-4 items-center transform transition-all duration-1000 hover:scale-105">
-          <h1 data-translate class="text-2xl text-gray-500 font-extrabold animate-fade-in-down">{{_('Bienvenue chez')}}</h1>
-          <h1 data-translate class="text-7xl font-extrabold text-primary mb-2 animate-fade-in-up">{{_('Medeo Partners')}}</h1>
+          {#- Un seul titre de niveau 1 par page : ces deux lignes formaient
+              le même titre, découpé en deux titres de niveau 1. Les
+              span.block reproduisent exactement la mise en page d'origine. -#}
+          <h1 class="mb-2">
+            <span data-translate class="block text-2xl text-gray-500 font-extrabold animate-fade-in-down">{{_('Bienvenue chez')}}</span>
+            <span data-translate class="block text-7xl font-extrabold text-primary animate-fade-in-up">{{_('Medeo Partners')}}</span>
+          </h1>
           <h4 data-translate class="text-gray-700 animate-fade-in">
               {{_("Fort de plus 10 ans d\'expertise en comptabilité et fiscalité, nous")}}
               {{_("accompagnons nos clients de tous secteurs dans leurs démarches")}}
@@ -30,7 +35,7 @@
         <img class="w-full h-full object-cover absolute transform transition-all duration-1000 hover:scale-105" src="{{ url_for('static',filename='images/medeo_talking.webp') }}" alt="Experts en comptabilité chez Medeo Partners">
         <div class="bg-gray-800 bg-opacity-90 h-full w-full relative z-10 backdrop-filter backdrop-blur-sm">
             <div class="container mx-auto flex flex-col h-full py-16">
-                <h1 class="text-4xl text-white font-extrabold animate-fade-in-down" data-translate>{{_('Notre expertise à votre service')}}</h1>
+                <h2 class="text-4xl text-white font-extrabold animate-fade-in-down" data-translate>{{_('Notre expertise à votre service')}}</h2>
                 <h3 class="text-2xl text-white font-semibold opacity-60 italic animate-fade-in" data-translate>{{_('Medeo, "Cure your business"')}}</h3>
                 <div class="grid lg:grid-cols-4 mt-8 gap-8 text-center text-white">
                     <!-- Cartes d'expertise avec hover effects -->
@@ -74,14 +79,14 @@
 
     <!-- Section Actualités avec animation au scroll -->
     <div class="bg-white w-full flex flex-col py-16 gap-16">
-        <h1 class="text-5xl text-primary text-center font-black py-8 animate-fade-in-up" data-translate>{{_('Découvrez nos dernières actualités')}}</h1>
+        <h2 class="text-5xl text-primary text-center font-black py-8 animate-fade-in-up" data-translate>{{_('Découvrez nos dernières actualités')}}</h2>
         {% include 'carousels/carousel_home.html' %}
     </div>
 
     <!-- Section Contact avec effets de survol -->
     <div class="bg-primary w-full flex flex-col py-16 gap-16">
         <div class="container mx-auto flex flex flex-col gap-4">
-            <h1 class="text-white text-4xl font-extrabold animate-fade-in">{{_('Travailler avec nous...')}}</h1>
+            <h2 class="text-white text-4xl font-extrabold animate-fade-in">{{_('Travailler avec nous...')}}</h2>
             <p class="text-white text-lg font-medium animate-fade-in-up">{{_("Besoin d\'un expert comptable pour votre entreprise ? Medeo Partners est là pour vous aider, avec une équipe d\'experts comptables et de fiscalistes prêts à vous accompagner dans la gestion de votre entreprise.")}}</p>
             <div class="grid lg:grid-cols-3 gap-8 mt-12">
                 <!-- Cartes de contact avec animations -->
