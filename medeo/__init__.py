@@ -145,7 +145,23 @@ def create_app(config_class=Config):
         return g.lang_code
 
     babel.init_app(app, locale_selector=get_locale)
-    
+
+    @app.before_request
+    def ensure_lang_code():
+        """Garantit que g.lang_code est toujours défini.
+
+        Les blueprints localisés le renseignent via url_value_preprocessor, mais
+        seulement quand une route matche. Sur une URL non matchée (ex. /fr/), le
+        preprocessor ne tourne jamais : layout.html appelle alors
+        url_for(..., lang_code=g.lang_code) sans valeur, ce qui lève un BuildError
+        dans la page d'erreur elle-même (double faute -> 500 Werkzeug brute).
+        """
+        if g.get('lang_code', None):
+            return None
+        segment = request.path.lstrip('/').split('/', 1)[0]
+        g.lang_code = segment if segment in app.config['LANGUAGES'] else 'fr'
+        return None
+
     @app.before_request
     def normalize_url():
         """Normalize URLs globally: force HTTPS and www"""
@@ -186,7 +202,19 @@ def create_app(config_class=Config):
     @app.route('/')
     def start():
         g.lang_code = 'fr'
-        return redirect(url_for('main.home'))
+        return redirect(url_for('main.home'), code=301)
+
+    @app.route('/<any(fr, en):lang_code>/')
+    @app.route('/<any(fr, en):lang_code>')
+    def lang_root(lang_code):
+        """Le préfixe de langue seul (/fr/, /en/) ne matchait aucune route.
+
+        Résultat en prod : 404 -> rendu de 404.html -> BuildError sur
+        g.lang_code absent -> 500. On renvoie maintenant un 301 vers l'accueil
+        de la langue demandée.
+        """
+        g.lang_code = lang_code
+        return redirect(url_for('main.home', lang_code=lang_code), code=301)
 
     @app.route('/robots.txt')
     def robots_txt():
