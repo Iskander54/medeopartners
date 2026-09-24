@@ -1,7 +1,146 @@
 {% extends "layout.html" %}
+
+{% block title %}
+<title>Medeo Partners – {{ '500 · Une erreur est survenue' if g.lang_code == 'fr' else '500 · Something Went Wrong' }}</title>
+{% endblock %}
+
 {% block content %}
-    <div class="content-section">
-        <h1>Something went wrong (500)</h1>
-        <p>We're experiencing some trouble on our end. Please try again in the near future</p>
+<section class="medeo-500-section">
+  <div class="medeo-500-inner">
+
+    <div class="medeo-500-icon" aria-hidden="true">
+      <svg width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="11" stroke="#114a79" stroke-width="1.5"/>
+        <path d="M12 7v6" stroke="#114a79" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="12" cy="16.5" r="1.1" fill="#114a79"/>
+      </svg>
     </div>
+
+    <div class="medeo-500-number" aria-label="500">500</div>
+
+    <h1 class="medeo-500-title">
+      {{ 'Une erreur est survenue' if g.lang_code == 'fr' else 'Something went wrong' }}
+    </h1>
+
+    <p class="medeo-500-desc">
+      {% if g.lang_code == 'fr' %}
+        Un incident technique est en cours de notre côté.<br>
+        Merci de réessayer dans quelques instants.
+      {% else %}
+        We're experiencing a technical issue on our end.<br>
+        Please try again in a few moments.
+      {% endif %}
+    </p>
+
+    <div class="medeo-500-actions">
+      <a href="{{ url_for('main.home', lang_code=g.lang_code) }}" class="medeo-btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/>
+        </svg>
+        {{ "Retour à l'accueil" if g.lang_code == 'fr' else 'Back to Home' }}
+      </a>
+      <a href="{{ url_for('main.nouscontacter', lang_code=g.lang_code) }}" class="medeo-btn-outline">
+        {{ 'Nous contacter' if g.lang_code == 'fr' else 'Contact Us' }}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ── 500 Page ───────────────────────────────────────────────── */
+.medeo-500-section {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 60px;
+  background: #f8fafc;
+}
+
+.medeo-500-inner {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.medeo-500-icon { margin-bottom: 20px; }
+
+.medeo-500-number {
+  font-size: clamp(7rem, 20vw, 10rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -4px;
+  background: linear-gradient(135deg, #114a79 30%, #1a6fad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.medeo-500-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: #0f2d4a;
+  margin-bottom: 16px;
+}
+
+.medeo-500-desc {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.medeo-500-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.medeo-500-actions .medeo-btn-primary,
+.medeo-500-actions .medeo-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.medeo-500-actions .medeo-btn-primary {
+  background: #114a79;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(17, 74, 121, 0.30);
+}
+.medeo-500-actions .medeo-btn-primary:hover {
+  background: #0d3a5f;
+  color: #fff;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.medeo-500-actions .medeo-btn-outline {
+  border: 2px solid #114a79;
+  color: #114a79;
+  background: transparent;
+}
+.medeo-500-actions .medeo-btn-outline:hover {
+  background: #114a79;
+  color: #fff;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .medeo-500-actions { flex-direction: column; align-items: center; }
+  .medeo-500-actions .medeo-btn-primary,
+  .medeo-500-actions .medeo-btn-outline { width: 100%; justify-content: center; }
+}
+</style>
 {% endblock content %}
