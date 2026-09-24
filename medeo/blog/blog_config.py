@@ -83,24 +83,45 @@ RELATED_ARTICLES = {
 }
 
 # Métadonnées des articles (pour génération automatique de certaines infos)
+#
+# 'title', 'excerpt', 'published', 'modified' et 'image' alimentent le JSON-LD
+# BlogPosting des articles servis depuis les templates statiques (quand la DB
+# est HS, cf. STATIC_ARTICLE_TEMPLATES). Les articles en base utilisent leurs
+# propres colonnes. Dates au format ISO (AAAA-MM-JJ) : elles correspondent à la
+# mise en ligne des templates.
 ARTICLE_METADATA = {
     'tva-obligations-declaratives-dirigeants': {
         'category': 'fiscal',
         'reading_time': 8,
         'keywords': ['TVA', 'obligations déclaratives', 'fiscalité', 'entreprise', 'dirigeant'],
-        'related_slugs': ['creation-entreprise-erreurs-comptables-fiscales-premiere-annee', 'loi-finances-2026-impact-entreprise']
+        'related_slugs': ['creation-entreprise-erreurs-comptables-fiscales-premiere-annee', 'loi-finances-2026-impact-entreprise'],
+        'title': "TVA et obligations déclaratives : ce que les dirigeants doivent absolument savoir",
+        'excerpt': "La TVA représente un enjeu majeur pour les entreprises. Découvrez les obligations déclaratives essentielles que tout dirigeant doit maîtriser pour éviter les erreurs coûteuses et les sanctions fiscales.",
+        'published': '2026-01-12',
+        'modified': '2026-01-12',
+        'image': 'images/tax.webp',
     },
     'creation-entreprise-erreurs-comptables-fiscales-premiere-annee': {
         'category': 'creation-entreprise',
         'reading_time': 10,
         'keywords': ['création entreprise', 'erreurs comptables', 'fiscalité', 'première année'],
-        'related_slugs': ['tva-obligations-declaratives-dirigeants', 'loi-finances-2026-impact-entreprise']
+        'related_slugs': ['tva-obligations-declaratives-dirigeants', 'loi-finances-2026-impact-entreprise'],
+        'title': "Création d'entreprise : erreurs comptables et fiscales à éviter dès la première année",
+        'excerpt': "La première année d'activité est déterminante. Découvrez les erreurs comptables et fiscales les plus fréquentes commises par les nouveaux entrepreneurs et comment les éviter pour sécuriser votre projet.",
+        'published': '2026-01-12',
+        'modified': '2026-01-12',
+        'image': 'images/accounting.webp',
     },
     'loi-finances-2026-impact-entreprise': {
         'category': 'actualite-fiscale',
         'reading_time': 12,
         'keywords': ['loi finances 2026', 'fiscalité entreprise 2026', 'nouveautés fiscales', 'impôt sur les sociétés', 'CVAE', 'Paris'],
-        'related_slugs': ['tva-obligations-declaratives-dirigeants', 'creation-entreprise-erreurs-comptables-fiscales-premiere-annee']
+        'related_slugs': ['tva-obligations-declaratives-dirigeants', 'creation-entreprise-erreurs-comptables-fiscales-premiere-annee'],
+        'title': 'Loi de Finances 2026 : Impact sur votre entreprise parisienne',
+        'excerpt': "La Loi de Finances 2026 apporte des changements significatifs pour les entreprises. Découvrez les mesures qui impactent directement votre activité et comment les anticiper avec l'aide d'un expert-comptable.",
+        'published': '2026-01-12',
+        'modified': '2026-09-24',
+        'image': 'images/budget.webp',
     }
 }
 

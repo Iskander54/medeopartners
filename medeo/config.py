@@ -17,6 +17,10 @@ class Config:
     INSTANCE_NAME ="medeotax"
 
     SECRET_KEY = os.getenv('SECRET_KEY', '5791628bb0b13ce0c676dfde280ba245')
+
+    # Code de vérification Bing Webmaster Tools (https://www.bing.com/webmasters).
+    # Non renseigné -> la balise msvalidate.01 n'est pas émise du tout.
+    BING_SITE_VERIFICATION = os.getenv('BING_SITE_VERIFICATION')
     # Configuration base de données
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:///medeo/site.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
