@@ -39,10 +39,19 @@ def create_app(config_class=Config):
         if not text:
             return ''
         
-        # Convertir les titres
-        text = re.sub(r'^# (.+)$', r'<h1>\1</h1>', text, flags=re.MULTILINE)
-        text = re.sub(r'^## (.+)$', r'<h2>\1</h2>', text, flags=re.MULTILINE)
-        text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.MULTILINE)
+        # Convertir les titres (avec ancres optionnelles `{#mon-ancre}` pour le sommaire)
+        def _heading(level):
+            def repl(match):
+                title = match.group('title').strip()
+                anchor = match.group('anchor')
+                attr = f' id="{anchor}"' if anchor else ''
+                return f'<h{level}{attr}>{title}</h{level}>'
+            return repl
+
+        for level, hashes in ((1, '#'), (2, '##'), (3, '###')):
+            text = re.sub(
+                r'^' + hashes + r' (?P<title>.+?)(?:\s*\{#(?P<anchor>[\w-]+)\})?$',
+                _heading(level), text, flags=re.MULTILINE)
         
         # Convertir les listes à puces
         text = re.sub(r'^- (.+)$', r'<li>\1</li>', text, flags=re.MULTILINE)

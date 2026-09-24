@@ -40,7 +40,7 @@
 {% endblock %}
 
 {% block article_content %}
-{{ article_content_loi_finances | markdown }}
+{{ article_content_loi_finances | markdown | safe }}
 {% endblock %}
 
 {% block key_takeaways %}
@@ -113,7 +113,7 @@
 {% endif %}
 {% endblock %}
 
-{% set article_content_loi_finances %}
+{% set article_content_loi_finances %}{% raw %}
 ## Introduction {#introduction}
 
 La **Loi de Finances 2026** a été promulguée et apporte des modifications importantes pour les entreprises françaises. En tant que dirigeant d'une PME, TPE ou indépendant basé à Paris, il est crucial de comprendre ces changements pour optimiser votre gestion fiscale et anticiper leurs impacts sur votre trésorerie.
@@ -263,5 +263,5 @@ Chez **Medeo Partners**, **cabinet d'expertise comptable** situé à **Paris 8è
 **Besoin d'un accompagnement personnalisé sur la Loi de Finances 2026 ?**
 
 Contactez Medeo Partners, votre **expert comptable Paris**, dès aujourd'hui pour un **audit fiscal gratuit de 30 minutes**. Nous analyserons l'impact concret de ces **nouveautés fiscales** sur votre entreprise et vous proposerons des solutions d'**optimisation fiscale** adaptées à votre situation.
-{% endset %}
+{% endraw %}{% endset %}
 
