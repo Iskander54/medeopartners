@@ -20,10 +20,17 @@
 </head>
 
 <body>
-   
+
+   {#- Lien d'évitement : premier élément focusable, invisible tant qu'il n'a
+       pas le focus. Permet d'atteindre le contenu sans traverser tout le
+       menu au clavier ou au lecteur d'écran. -#}
+   <a href="#contenu-principal" class="skip-link">
+      {{ 'Aller au contenu principal' if g.lang_code == 'fr' else 'Skip to main content' }}
+   </a>
+
    {% include 'includes/header.html' %}
 
-   <main role="main" class="container pt-130">
+   <main id="contenu-principal" role="main" class="container pt-130" tabindex="-1">
       {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
       {% for category, message in messages %}
@@ -69,12 +76,14 @@
       {% endfor %}
       {% endif %}
       {% endwith %}
+
+      {#- Le contenu de page était auparavant APRÈS </main> : le repère
+          principal ne contenait que les messages flash, donc « aller au
+          contenu » tombait sur une zone vide et toute la page se retrouvait
+          hors de tout repère ARIA. -#}
+      {% block content %}{% endblock %}
+
    </main>
-
-
-
-   {% block content %}{% endblock %}
-
 
 
    <!-- Calendly badge widget begin -->
