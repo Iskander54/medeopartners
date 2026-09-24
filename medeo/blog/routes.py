@@ -10,6 +10,64 @@ import re
 
 blog = Blueprint('blog', __name__, url_prefix='/<lang_code>/blog')
 
+# Articles legacy disponibles en templates statiques (servis même si la DB est HS)
+STATIC_ARTICLE_TEMPLATES = {
+    'tva-obligations-declaratives-dirigeants': 'blog/articles/tva-obligations-declaratives-dirigeants.html',
+    'creation-entreprise-erreurs-comptables-fiscales-premiere-annee': 'blog/articles/creation-entreprise-erreurs-comptables-fiscales-premiere-annee.html',
+    'loi-finances-2026-impact-entreprise': 'blog/articles/loi-finances-2026-impact-entreprise.html',
+}
+
+# Résumés statiques utilisés pour l'index du blog quand la DB ne répond pas.
+STATIC_ARTICLE_CARDS = [
+    {
+        'slug': 'loi-finances-2026-impact-entreprise',
+        'title': 'Loi de Finances 2026 : impact sur votre entreprise',
+        'excerpt': "Les changements fiscaux de la Loi de Finances 2026 et ce qu'ils impliquent concrètement pour votre entreprise.",
+    },
+    {
+        'slug': 'tva-obligations-declaratives-dirigeants',
+        'title': "TVA et obligations déclaratives : ce que les dirigeants doivent savoir",
+        'excerpt': "Régimes, échéances et pièges fréquents : maîtrisez vos obligations TVA de bout en bout.",
+    },
+    {
+        'slug': 'creation-entreprise-erreurs-comptables-fiscales-premiere-annee',
+        'title': "Création d'entreprise : erreurs comptables et fiscales de la première année",
+        'excerpt': "Les erreurs les plus fréquentes lors de la première année d'activité, et comment les éviter.",
+    },
+]
+
+
+def _static_article_cards():
+    """Cartes d'articles statiques enrichies des métadonnées locales (sans DB)."""
+    cards = []
+    for card in STATIC_ARTICLE_CARDS:
+        try:
+            metadata = get_article_metadata(card['slug'])
+        except Exception:
+            metadata = {}
+        category_slug = metadata.get('category', 'fiscal')
+        try:
+            category_name = get_category_info(category_slug).get('name', 'Fiscal')
+        except Exception:
+            category_name = 'Fiscal'
+        cards.append(dict(card, category_name=category_name,
+                          reading_time=metadata.get('reading_time', 5)))
+    return cards
+
+
+def _render_blog_unavailable(title, message=None):
+    """Page de repli 503 quand la DB est indisponible : jamais de 500, contenu utile."""
+    html = render_template('blog/index.html',
+                           articles=None,
+                           popular_articles=[],
+                           categories=[],
+                           static_articles=_static_article_cards(),
+                           db_unavailable=True,
+                           unavailable_message=message,
+                           title=title,
+                           meta_description="Nos articles d'expertise en comptabilité et fiscalité.")
+    return html, 503, {'Retry-After': '600'}
+
 @blog.url_defaults
 def add_language_code(endpoint, values):
     values.setdefault('lang_code', g.lang_code)
@@ -31,61 +89,71 @@ def before_request():
 @blog.route("/")
 @blog.route("/index")
 def index():
-    """Page d'accueil du blog avec articles récents"""
+    """Page d'accueil du blog : DB en priorité, repli sur les articles statiques."""
+    page = request.args.get('page', 1, type=int)
+    per_page = 12
+
     try:
-        page = request.args.get('page', 1, type=int)
-        per_page = 12
-        
-        # Gestion d'erreur pour les requêtes DB
-        try:
-            articles = BlogArticle.query.filter_by(status='published').order_by(
-                BlogArticle.published_at.desc()
-            ).paginate(page=page, per_page=per_page, error_out=False)
-        except Exception as e:
-            current_app.logger.error(f"Erreur requête articles: {e}")
-            articles = None
-        
-        # Articles populaires
-        try:
-            popular_articles = BlogArticle.query.filter_by(status='published').order_by(
-                BlogArticle.view_count.desc()
-            ).limit(5).all()
-        except Exception as e:
-            current_app.logger.error(f"Erreur requête articles populaires: {e}")
-            popular_articles = []
-        
-        # Catégories principales
-        try:
-            categories = BlogCategory.query.filter_by(parent_id=None).all()
-        except Exception as e:
-            current_app.logger.error(f"Erreur requête catégories: {e}")
-            categories = []
-        
-        return render_template('blog/index.html',
-                             articles=articles,
-                             popular_articles=popular_articles,
-                             categories=categories,
-                             title='Blog - Expertise Comptable et Fiscalité',
-                             meta_description='Découvrez nos articles d\'expertise en comptabilité, fiscalité et conseil d\'entreprise. Actualités, guides pratiques et conseils d\'experts.')
+        articles = BlogArticle.query.filter_by(status='published').order_by(
+            BlogArticle.published_at.desc()
+        ).paginate(page=page, per_page=per_page, error_out=False)
     except Exception as e:
-        current_app.logger.error(f"Erreur critique dans blog.index: {e}", exc_info=True)
-        # Retourner une page d'erreur plutôt qu'une 500
-        abort(500)
+        current_app.logger.error(f"Erreur requête articles: {e}")
+        articles = None
+
+    try:
+        popular_articles = BlogArticle.query.filter_by(status='published').order_by(
+            BlogArticle.view_count.desc()
+        ).limit(5).all()
+    except Exception as e:
+        current_app.logger.error(f"Erreur requête articles populaires: {e}")
+        popular_articles = []
+
+    try:
+        categories = BlogCategory.query.filter_by(parent_id=None).all()
+    except Exception as e:
+        current_app.logger.error(f"Erreur requête catégories: {e}")
+        categories = []
+
+    # Si la DB n'a rien rendu, on sert quand même les articles statiques legacy.
+    has_db_articles = bool(articles and articles.items)
+    static_articles = [] if has_db_articles else _static_article_cards()
+
+    return render_template('blog/index.html',
+                           articles=articles,
+                           popular_articles=popular_articles,
+                           categories=categories,
+                           static_articles=static_articles,
+                           db_unavailable=articles is None,
+                           title='Blog - Expertise Comptable et Fiscalité',
+                           meta_description='Découvrez nos articles d\'expertise en comptabilité, fiscalité et conseil d\'entreprise. Actualités, guides pratiques et conseils d\'experts.')
 
 @blog.route("/categorie/<slug>")
 def category(slug):
     """Page de catégorie avec articles filtrés"""
-    category = BlogCategory.query.filter_by(slug=slug).first_or_404()
     page = request.args.get('page', 1, type=int)
     per_page = 12
-    
-    articles = BlogArticle.query.filter_by(
-        category_id=category.id,
-        status='published'
-    ).order_by(BlogArticle.published_at.desc()).paginate(
-        page=page, per_page=per_page, error_out=False
-    )
-    
+
+    try:
+        category = BlogCategory.query.filter_by(slug=slug).first()
+    except Exception as e:
+        current_app.logger.error(f"Blog category '{slug}' — DB indisponible: {e}")
+        return _render_blog_unavailable('Blog - Expertise Comptable et Fiscalité')
+
+    if category is None:
+        abort(404)
+
+    try:
+        articles = BlogArticle.query.filter_by(
+            category_id=category.id,
+            status='published'
+        ).order_by(BlogArticle.published_at.desc()).paginate(
+            page=page, per_page=per_page, error_out=False
+        )
+    except Exception as e:
+        current_app.logger.error(f"Blog category '{slug}' — erreur requête articles: {e}")
+        articles = None
+
     return render_template('blog/category.html',
                          category=category,
                          articles=articles,
@@ -96,18 +164,16 @@ def category(slug):
 def article(slug):
     """Page d'article individuel — DB en priorité, fallback sur templates statiques."""
 
-    # Templates statiques legacy (3 articles HTML existants)
-    STATIC_ARTICLE_TEMPLATES = {
-        'tva-obligations-declaratives-dirigeants': 'blog/articles/tva-obligations-declaratives-dirigeants.html',
-        'creation-entreprise-erreurs-comptables-fiscales-premiere-annee': 'blog/articles/creation-entreprise-erreurs-comptables-fiscales-premiere-annee.html',
-        'loi-finances-2026-impact-entreprise': 'blog/articles/loi-finances-2026-impact-entreprise.html',
-    }
-
+    # 1. Chercher l'article en DB (published).
+    #    Isolé dans son propre try : une DB HS ne doit pas empêcher le fallback statique.
     try:
-        # 1. Chercher l'article en DB (published)
         db_article = BlogArticle.query.filter_by(slug=slug, status='published').first()
+    except Exception as e:
+        current_app.logger.error(f"Blog article '{slug}' — DB indisponible, fallback statique: {e}")
+        db_article = None
 
-        if db_article:
+    if db_article:
+        try:
             # Incrémenter le compteur de vues
             try:
                 db_article.view_count = (db_article.view_count or 0) + 1
@@ -139,41 +205,52 @@ def article(slug):
                                    related_articles=related,
                                    title=db_article.meta_title or db_article.title,
                                    meta_description=db_article.meta_description or db_article.excerpt)
+        except Exception as e:
+            current_app.logger.error(f"Erreur rendu article DB '{slug}': {e}", exc_info=True)
+            # On retombe sur le template statique s'il existe (cf. ci-dessous)
 
-        # 2. Fallback sur template statique
-        template_path = STATIC_ARTICLE_TEMPLATES.get(slug)
-        if template_path:
-            try:
-                metadata = get_article_metadata(slug)
-            except Exception:
-                metadata = {}
-            try:
-                related_articles = get_related_articles(slug)
-            except Exception:
-                related_articles = []
-            return render_template(template_path,
-                                   article_metadata=metadata,
-                                   related_articles=related_articles)
+    # 2. Fallback sur template statique
+    template_path = STATIC_ARTICLE_TEMPLATES.get(slug)
+    if template_path:
+        try:
+            metadata = get_article_metadata(slug)
+        except Exception:
+            metadata = {}
+        try:
+            related_articles = get_related_articles(slug)
+        except Exception:
+            related_articles = []
+        return render_template(template_path,
+                               article_metadata=metadata,
+                               related_articles=related_articles)
 
-        # 3. Introuvable
-        current_app.logger.warning(f"Article non trouvé: {slug}")
-        abort(404)
-
-    except Exception as e:
-        current_app.logger.error(f"Erreur lors du rendu de l'article {slug}: {e}", exc_info=True)
-        abort(404)
+    # 3. Introuvable
+    current_app.logger.warning(f"Article non trouvé: {slug}")
+    abort(404)
 
 @blog.route("/tag/<slug>")
 def tag(slug):
     """Page de tag avec articles filtrés"""
-    tag = BlogTag.query.filter_by(slug=slug).first_or_404()
     page = request.args.get('page', 1, type=int)
     per_page = 12
-    
-    articles = tag.articles.filter_by(status='published').order_by(
-        BlogArticle.published_at.desc()
-    ).paginate(page=page, per_page=per_page, error_out=False)
-    
+
+    try:
+        tag = BlogTag.query.filter_by(slug=slug).first()
+    except Exception as e:
+        current_app.logger.error(f"Blog tag '{slug}' — DB indisponible: {e}")
+        return _render_blog_unavailable('Blog - Expertise Comptable et Fiscalité')
+
+    if tag is None:
+        abort(404)
+
+    try:
+        articles = tag.articles.filter_by(status='published').order_by(
+            BlogArticle.published_at.desc()
+        ).paginate(page=page, per_page=per_page, error_out=False)
+    except Exception as e:
+        current_app.logger.error(f"Blog tag '{slug}' — erreur requête articles: {e}")
+        articles = None
+
     return render_template('blog/tag.html',
                          tag=tag,
                          articles=articles,
@@ -185,19 +262,22 @@ def search():
     query = request.args.get('q', '')
     page = request.args.get('page', 1, type=int)
     per_page = 12
-    
+
+    articles = None
     if query:
-        articles = BlogArticle.query.filter(
-            BlogArticle.status == 'published',
-            (BlogArticle.title.contains(query) |
-             BlogArticle.content.contains(query) |
-             BlogArticle.excerpt.contains(query))
-        ).order_by(BlogArticle.published_at.desc()).paginate(
-            page=page, per_page=per_page, error_out=False
-        )
-    else:
-        articles = None
-    
+        try:
+            articles = BlogArticle.query.filter(
+                BlogArticle.status == 'published',
+                (BlogArticle.title.contains(query) |
+                 BlogArticle.content.contains(query) |
+                 BlogArticle.excerpt.contains(query))
+            ).order_by(BlogArticle.published_at.desc()).paginate(
+                page=page, per_page=per_page, error_out=False
+            )
+        except Exception as e:
+            current_app.logger.error(f"Blog search '{query}' — DB indisponible: {e}")
+            articles = None
+
     return render_template('blog/search.html',
                          articles=articles,
                          query=query,
@@ -206,12 +286,26 @@ def search():
 @blog.route("/plan-du-site")
 def sitemap():
     """Plan du site du blog"""
-    categories = BlogCategory.query.all()
-    articles = BlogArticle.query.filter_by(status='published').order_by(
-        BlogArticle.published_at.desc()
-    ).all()
-    tags = BlogTag.query.all()
-    
+    try:
+        categories = BlogCategory.query.all()
+    except Exception as e:
+        current_app.logger.error(f"Blog sitemap — erreur catégories: {e}")
+        categories = []
+
+    try:
+        articles = BlogArticle.query.filter_by(status='published').order_by(
+            BlogArticle.published_at.desc()
+        ).all()
+    except Exception as e:
+        current_app.logger.error(f"Blog sitemap — erreur articles: {e}")
+        articles = []
+
+    try:
+        tags = BlogTag.query.all()
+    except Exception as e:
+        current_app.logger.error(f"Blog sitemap — erreur tags: {e}")
+        tags = []
+
     return render_template('blog/sitemap.html',
                          categories=categories,
                          articles=articles,
